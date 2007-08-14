@@ -1,0 +1,23 @@
+.TH NFOVIEW 1 "August 13, 2007"
+.SH NAME
+nfoview \- viewer for NFO files
+.SH SYNOPSIS
+.B nfoview
+FILE
+.SH DESCRIPTION
+.PP
+.B nfoview
+is a simple viewer for NFO files, which are "ASCII" art in the CP437
+codepage.  The advantages of using
+.B nfoview
+instead of a text editor are preset font and encoding settings,
+automatic window size and clickable hyperlinks.
+.SH CONFIGURATION
+.PP
+.B nfoview
+can be configured by editing the file ~/.nfoview, which is written on
+each successful program exit.  White borders between box characters can be
+removed by adjusting the "pixels_above_lines" attribute, whose optimal value
+depends on the font and font size used.
+.SH AUTHOR
+Written by Osmo Salomaa <otsaloma@cc.hut.fi>.

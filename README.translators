@@ -1,0 +1,6 @@
+Translating NFO Viewer
+======================
+
+Please translate the translatable fields in files "nfoview.desktop"
+and "nfoview.xml" directly.  That's all.  No gettext.  Email the
+output of command "svn diff" to <otsaloma@cc.hut.fi>.

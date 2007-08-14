@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NFO Viewer
+Name[fi]=NFO-katselin
+Comment=View NFO files
+Comment[fi]=Katsele NFO tiedostoja
+Exec=nfoview %f
+Terminal=false
+StartupNotify=true
+Icon=dialog-information
+Type=Application
+MimeType=text/x-nfo;
+Categories=GTK;Utility;Viewer;
+NoDisplay=true

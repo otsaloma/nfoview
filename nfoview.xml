@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="text/x-nfo">
+    <sub-class-of type="text/plain"/>
+    <comment>NFO document</comment>
+    <comment xml:lang="fi">NFO-asiakirja</comment>
+    <glob pattern="*.nfo"/>
+  </mime-type>
+</mime-info>

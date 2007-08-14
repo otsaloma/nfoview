@@ -1,0 +1,21 @@
+Installation
+============
+
+To install, run command
+
+    ./setup.py install [--prefix=...]
+
+
+Uninstallation
+==============
+
+To uninstall, remove files
+
+    .../bin/nfoview
+    .../share/man/man1/nfoview.1
+    .../share/mime/packages/nfoview.xml
+
+and run commands
+
+    update-desktop-database .../share/applications
+    update-mime-database .../share/mime
