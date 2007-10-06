@@ -1,3 +1,9 @@
+2007-10-06  Bernd Mueller  <ragnar76@googlemail.com>
+
+	* nfoview.desktop:
+	* nfoview.xml:
+	Add German (de) translations.
+
 2007-08-14  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	Initial import to version control.

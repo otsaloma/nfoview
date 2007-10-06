@@ -3,6 +3,7 @@ Encoding=UTF-8
 Name=NFO Viewer
 Name[fi]=NFO-katselin
 Comment=View NFO files
+Comment[de]=NFO Datein anzeigen lassen
 Comment[fi]=Katsele NFO tiedostoja
 Exec=nfoview %f
 Terminal=false
