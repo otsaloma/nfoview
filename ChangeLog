@@ -1,5 +1,16 @@
 2008-01-07  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
+	* po:
+	* po/ChangeLog:
+	* po/de.po:
+	* po/fi.po:
+	* po/nfoview.pot:
+	* po/POTFILES.in:
+	* po/README:
+	Add gettext files.
+
+2008-01-07  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
 	* bin/nfoview:
 	* data/nfoview.desktop.in:
 	* data/nfoview.xml.in:

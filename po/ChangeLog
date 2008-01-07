@@ -1,0 +1,6 @@
+2008-01-07  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* de.po: Move Bernd Mueller's German translation.
+	* fi.po: Add Finnish translation.
+	* nfoview.pot: Update for upcoming release.
+	* POTFILES.in: Add to be able to use intltool-update.

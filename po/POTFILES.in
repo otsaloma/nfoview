@@ -1,0 +1,8 @@
+[encoding: UTF-8]
+data/nfoview.desktop.in
+data/nfoview.xml.in
+data/preferences-dialog.glade
+nfoview/about.py
+nfoview/actions.py
+nfoview/open.py
+nfoview/schemes.py

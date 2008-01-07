@@ -1,0 +1,35 @@
+# German translations for nfoview package.
+# Copyright (C) 2007 THE NFOVIEW'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nfoview package.
+# Bernd Mueller <ragnar76@googlemail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hd 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-07 01:29+0200\n"
+"PO-Revision-Date: 2007-10-06 12:00+0200\n"
+"Last-Translator: Bernd Mueller <ragnar76@googlemail.com>\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/nfoview.desktop.in.h:2
+msgid "View NFO files"
+msgstr "NFO Datein anzeigen lassen"
+
+#: ../data/nfoview.xml.in.h:1
+msgid "NFO document"
+msgstr "NFO Dokument"
+
+#. Translators: This is a special message that shouldn't be translated
+#. literally. It is used in the about dialog to give credits to the
+#. translators. Thus, you should translate it to your name and email
+#. address. You can also include other translators who have contributed
+#. to this translation; in that case, please write them on separate
+#. lines seperated by newlines (\n).
+#: ../nfoview/about.py:66
+msgid "translator-credits"
+msgstr "Bernd Mueller <ragnar76@googlemail.com>"
