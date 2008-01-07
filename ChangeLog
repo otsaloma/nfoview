@@ -1,3 +1,23 @@
+2008-01-07  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* bin/nfoview:
+	* data/nfoview.desktop.in:
+	* data/nfoview.xml.in:
+	* data/preferences-dialog.glade:
+	* data/ui.xml:
+	* doc/nfoview.1:
+	* doc/RELEASING:
+	* INSTALL:
+	* MANIFEST.in:
+	* NEWS:
+	* po:
+	* README:
+	* setup.py:
+	* TODO:
+	Refactor code into multiple files.
+	Redesign the user interface.
+	Use gettext for translations.
+
 2007-10-06  Bernd Mueller  <ragnar76@googlemail.com>
 
 	* nfoview.desktop:

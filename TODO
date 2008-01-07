@@ -1,0 +1,23 @@
+NFO Viewer 1.1
+==============
+
+ * Add a menubar
+ * Add open-, preferences- and about dialogs
+ * Allow files to be opened by drag-and-drop
+ * Use Terminus font, size 12, by default
+ * Use text and background colors from GTK theme by default
+ * Improve detection of the default web browser
+ * Add a menu entry in the desktop file
+ * Change configuration file style save the configuration file to
+   $XDG_CONFIG_HOME/nfoview (usually $HOME/.config/nfoview) as per
+   freedesktop.org's XDG Base Directory Specification
+ * Refactor code and reorganize source directory structure
+
+
+NFO Viewer 3000
+===============
+
+ * https://bugs.freedesktop.org/show_bug.cgi?id=12721
+ * Application icon, preferrably following Tango style guidelines
+ * Use sensible defaults for link and visited link colors
+ * Make hyperlinks activatable by keyboard

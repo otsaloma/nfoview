@@ -1,6 +1,11 @@
 Installation
 ============
 
+The installation process requires that you have Python, gettext and
+intltool installed. Depending on your distro's Python packaging you
+may also need a package called python-dev or python-devel. For
+dependencies required to run NFO Viewer, see the file "README".
+
 To install, run command
 
     ./setup.py install [--prefix=...]
@@ -9,13 +14,16 @@ To install, run command
 Uninstallation
 ==============
 
-To uninstall, remove files
+To uninstall, remove files and directories
 
     .../bin/nfoview
+    .../lib/pythonX.Y/site-packages/nfoview*
+    .../share/applications/nfoview.desktop
+    .../share/locale/*/LC_MESSAGES/nfoview.mo
+    .../share/nfoview/
     .../share/man/man1/nfoview.1
     .../share/mime/packages/nfoview.xml
 
-and run commands
+and run command
 
-    update-desktop-database .../share/applications
     update-mime-database .../share/mime

@@ -1,0 +1,17 @@
+<ui>
+  <menubar name="menubar">
+    <menu name="file" action="show_file_menu">
+      <menuitem name="open" action="open_file"/>
+      <menuitem name="close" action="close_document"/>
+    </menu>
+    <menu name="edit" action="show_edit_menu">
+      <menuitem name="copy" action="copy_text"/>
+      <menuitem name="select_all" action="select_all_text"/>
+      <separator/>
+      <menuitem name="preferences" action="edit_preferences"/>
+    </menu>
+    <menu name="help" action="show_help_menu">
+      <menuitem name="about" action="show_about_dialog"/>
+    </menu>
+  </menubar>
+</ui>

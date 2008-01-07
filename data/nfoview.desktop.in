@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=NFO Viewer
+_Comment=View NFO files
+Exec=nfoview %F
+Terminal=false
+StartupNotify=true
+Icon=dialog-information
+Type=Application
+MimeType=text/x-nfo;
+Categories=GTK;Utility;Viewer;
