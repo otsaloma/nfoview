@@ -1,6 +1,12 @@
 2008-01-08  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview:
+	* nfoview/test:
+	Set svn:ignore properties.
+
+2008-01-08  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* nfoview:
 	* nfoview/about.py:
 	* nfoview/actions.py:
 	* nfoview/conf.py:
