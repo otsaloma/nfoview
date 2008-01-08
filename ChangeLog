@@ -1,5 +1,9 @@
 2008-01-08  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
+	* README: Update.
+
+2008-01-08  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
 	* nfoview:
 	* nfoview/test:
 	Set svn:ignore properties.

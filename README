@@ -9,6 +9,11 @@ size and clickable hyperlinks.
 NFO Viewer is free software released under the GNU General Public
 License (GPL), see the file "COPYING" for details.
 
+To try NFO Viewer without installation from the source directory, use
+command "bin/nfoview". Installation is, however, necessary for
+mimetype integration, application menu entry and user interface
+translations. For installing NFO Viewer, see the file "INSTALL".
+
 
 Dependencies
 ============
@@ -21,10 +26,6 @@ Terminus font [4] is recommended and used by default.
  [2] http://www.pygtk.org/
  [3] http://freedesktop.org/wiki/Software/shared-mime-info
  [4] http://www.is-vn.bg/hamster/jimmy-en.html
-
-
-Font Issues
-===========
 
 Terminus font is used by default because it draws drawing characters
 taller than text characters. You can use any other fixed width font
