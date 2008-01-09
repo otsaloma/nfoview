@@ -1,5 +1,11 @@
 2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
+	* nfoview/__init__.py (__version__): Bump to 1.1.
+
+	RELEASE 1.1
+
+2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
 	* setup.py (SDistGna.run): Replace Tarfile.extractall call as
 	the method does not exist in Python 2.4.
 
