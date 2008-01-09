@@ -8,7 +8,7 @@ Releasing a New Version
     intltool-update -m
     intltool-update -p -g nfoview
     $EDITOR nfoview/__init__.py
-    $EDITOR NEWS TODO ChangeLog
+    $EDITOR NEWS TODO ChangeLog po/ChangeLog
     svn commit
 
  * Tag the subversion trunk as NFOVIEW_X_Y[_Z]

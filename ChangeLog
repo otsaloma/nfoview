@@ -1,3 +1,8 @@
+2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* setup.py (SDistGna.run): Replace Tarfile.extractall call as
+	the method does not exist in Python 2.4.
+
 2008-01-08  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* README: Update.

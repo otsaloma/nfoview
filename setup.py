@@ -189,12 +189,15 @@ class SDistGna(sdist):
         # Compare tarball contents with working copy.
         temp_dir = tempfile.gettempdir()
         test_dir = os.path.join(temp_dir, basename)
-        tarfile.open(tarballs[-1], "r").extractall(temp_dir)
+        tobj = tarfile.open(tarballs[-1], "r")
+        for member in tobj.getmembers():
+            tobj.extract(member, temp_dir)
         log.info("comparing tarball (tmp) with working copy (../..)")
         os.system('diff -qr -x ".*" -x "*.pyc" ../.. %s' % test_dir)
         response = raw_input("Are all files in the tarball [Y/n]? ")
         if response.lower() == "n":
             raise SystemExit("Must edit MANIFEST.in.")
+        dir_util.remove_tree(test_dir)
 
         # Create extra distribution files.
         log.info("calculating md5sums")
