@@ -1,4 +1,4 @@
-# Copyright (C) 2007 Osmo Salomaa
+# Copyright (C) 2008 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #

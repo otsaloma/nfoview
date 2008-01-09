@@ -1,5 +1,39 @@
 2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
+	* nfoview/about.py:
+	* nfoview/actions.py:
+	* nfoview/conf.py:
+	* nfoview/i18n.py:
+	* nfoview/__init__.py:
+	* nfoview/main.py:
+	* nfoview/open.py:
+	* nfoview/paths.py:
+	* nfoview/preferences.py:
+	* nfoview/schemes.py:
+	* nfoview/test/test_about.py:
+	* nfoview/test/test_actions.py:
+	* nfoview/test/test_conf.py:
+	* nfoview/test/test_i18n.py:
+	* nfoview/test/test___init__.py:
+	* nfoview/test/test_main.py:
+	* nfoview/test/test_open.py:
+	* nfoview/test/test_paths.py:
+	* nfoview/test/test_preferences.py:
+	* nfoview/test/test_schemes.py:
+	* nfoview/test/test_util.py:
+	* nfoview/test/test_view.py:
+	* nfoview/test/test_window.py:
+	* nfoview/unittest.py:
+	* nfoview/util.py:
+	* nfoview/view.py:
+	* nfoview/window.py:
+	* po/fi.po:
+	Fix all copyright notices that erroneously stated 2007 as the (latest)
+	publication year, even though it obviously should be 2008 as per the
+	commits made on 2008-01-07 and 2008-01-08.
+
+2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
 	* nfoview/__init__.py (__version__): Bump to 1.1.
 
 	RELEASE 1.1
