@@ -1,3 +1,7 @@
+2008-01-20  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* nfoview/util.py (_command_exists -> is_command): Rename.
+
 2008-01-09  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/about.py:

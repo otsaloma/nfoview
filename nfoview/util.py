@@ -23,15 +23,6 @@ import urllib
 import urlparse
 import webbrowser
 
-
-def _command_exists(command):
-    """Return True if command exists as a file in $PATH."""
-
-    for directory in os.environ.get("PATH", "").split(os.pathsep):
-        path = os.path.join(directory, command)
-        if os.path.isfile(path): return True
-    return False
-
 def browse_url(url, browser=None):
     """Open URL in web browser."""
 
@@ -45,11 +36,19 @@ def browse_url(url, browser=None):
         return subprocess.Popen(("open", url))
     if sys.platform == "win32":
         return subprocess.Popen(("start", url))
-    if _command_exists("xdg-open"):
+    if is_command("xdg-open"):
         return subprocess.Popen(("xdg-open", url))
-    if _command_exists("exo-open"):
+    if is_command("exo-open"):
         return subprocess.Popen(("exo-open", url))
     return webbrowser.open(url)
+
+def is_command(command):
+    """Return True if command exists as a file in $PATH."""
+
+    for directory in os.environ.get("PATH", "").split(os.pathsep):
+        path = os.path.join(directory, command)
+        if os.path.isfile(path): return True
+    return False
 
 def uri_to_path(uri):
     """Convert URI to local filepath."""
