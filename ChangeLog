@@ -1,3 +1,8 @@
+2008-04-28  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* nfoview/actions.py (SelectAllTextAction): Check if
+	gtk.STOCK_SELECT_ALL is available. Fixes #11585.
+
 2008-01-20  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/util.py (_command_exists -> is_command): Rename.

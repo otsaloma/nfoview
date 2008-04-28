@@ -1,7 +1,21 @@
+NFO Viewer 1.1.1
+================
+
+ * Fix unavailable stock icon usage on GTK+ < 2.10 (#11585)
+
+
+NFO Viewer 1.2
+==============
+
+ * Bump optional shared-mime-info dependency to version 0.24
+ * Remove application-specific mimetype integration files and use
+   the new text/x-nfo mimetype added with shared-mime-info 0.24
+ * Run 'update-destkop-database' if --root not given?
+
+
 NFO Viewer 3000
 ===============
 
- * https://bugs.freedesktop.org/show_bug.cgi?id=12721
  * Application icon, preferrably following Tango style guidelines
  * Use sensible defaults for link and visited link colors
  * Make hyperlinks activatable by keyboard

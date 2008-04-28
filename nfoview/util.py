@@ -23,6 +23,7 @@ import urllib
 import urlparse
 import webbrowser
 
+
 def browse_url(url, browser=None):
     """Open URL in web browser."""
 

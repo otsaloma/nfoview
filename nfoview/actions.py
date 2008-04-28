@@ -145,7 +145,8 @@ class SelectAllTextAction(Action):
 
         Action.__init__(self, "select_all_text")
         self.props.label = _("_Select All")
-        self.props.stock_id = gtk.STOCK_SELECT_ALL
+        if hasattr(gtk, "STOCK_SELECT_ALL"):
+            self.props.stock_id = gtk.STOCK_SELECT_ALL
         self.props.tooltip = _("Select all text in the document")
         self.accelerator = "<Control>A"
 
