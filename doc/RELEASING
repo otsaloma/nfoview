@@ -3,11 +3,11 @@ Releasing a New Version
 
  * Make final edits to files
 
+    $EDITOR nfoview/__init__.py
     pylint bin/nfoview nfoview setup.py
     py.test --tb=no nfoview
     intltool-update -m
     intltool-update -p -g nfoview
-    $EDITOR nfoview/__init__.py
     $EDITOR NEWS TODO ChangeLog po/ChangeLog
     svn commit
 

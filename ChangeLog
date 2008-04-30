@@ -1,3 +1,9 @@
+2008-04-30  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* nfoview/__init__.py (__version__): Bump to 1.1.1.
+
+	RELEASE 1.1.1
+
 2008-04-28  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/actions.py (SelectAllTextAction): Check if
