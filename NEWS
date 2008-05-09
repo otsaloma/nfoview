@@ -1,8 +1,14 @@
+NFO Viewer 1.1.2
+================
+
+ * Fix setup.py to allow building and installing outside X
+ * Fix setup.py to run 'update-desktop-database' in addition to
+   'update-mime-database' if installing and --root not given
+
 NFO Viewer 1.1.1
 ================
 
  * Fix unavailable stock icon usage on GTK+ < 2.10 (#11585)
-
 
 NFO Viewer 1.1
 ==============
