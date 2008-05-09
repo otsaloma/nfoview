@@ -1,10 +1,17 @@
+NFO Viewer 1.1.2
+================
+
+ * Fix setup.py to allow building and installing outside X
+ * Fix setup.py to run 'update-desktop-database' in addition to
+   'update-mime-database' if installing and --root not given
+
+
 NFO Viewer 1.2
 ==============
 
  * Bump optional shared-mime-info dependency to version 0.24
  * Remove application-specific mimetype integration files and use
    the new text/x-nfo mimetype added with shared-mime-info 0.24
- * Run 'update-destkop-database' if --root not given?
 
 
 NFO Viewer 3000

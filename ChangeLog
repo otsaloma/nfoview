@@ -1,3 +1,9 @@
+2008-05-10  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* setup.py (get_version_number): New function to get version number by
+	reading it from file. Replaces importing, which failed outside X.
+	(Install.run): Run update-desktop-database.
+
 2008-04-30  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/__init__.py (__version__): Bump to 1.1.1.

@@ -26,9 +26,9 @@ process: (1) writing the nfoview.paths module, (2) handling translations and
 import glob
 import itertools
 import os
+import re
 import shutil
 import subprocess
-import sys
 import tarfile
 import tempfile
 
@@ -41,8 +41,15 @@ from distutils.command.sdist import sdist
 from distutils.core import setup
 
 os.chdir(os.path.dirname(__file__) or ".")
-sys.path.insert(0, os.path.dirname(__file__))
-from nfoview import __version__
+
+
+def get_version_number():
+    """Return version number from nfoview/__init__.py."""
+
+    # Cannot import this, because importing __version__ from nfoview causes
+    # a segfault if building or compiling outside X (with no $DISPLAY).
+    text = open(os.path.join("nfoview", "__init__.py"), "r").read()
+    return re.search(r"__version__ *= *['\"](.*?)['\"]", text).group(1)
 
 
 class Clean(clean):
@@ -78,7 +85,7 @@ class Install(install):
     """Command to install everything."""
 
     def run(self):
-        """Install everything and update the mime database."""
+        """Install everything and update databases."""
 
         install.run(self)
 
@@ -86,11 +93,17 @@ class Install(install):
         root = get_command_obj("install").root
         data_dir = get_command_obj("install_data").install_dir
         # Assume we're actually installing if --root was not given.
-        if (root is None) and (data_dir is not None):
-            directory = os.path.join(data_dir, "share", "mime")
-            log.info("updating mime database in '%s'" % directory)
-            try: subprocess.call(("update-mime-database", directory))
-            except OSError: log.info("...failed")
+        if (root is not None) or (data_dir is None): return
+
+        directory = os.path.join(data_dir, "share", "mime")
+        log.info("updating mime database in '%s'" % directory)
+        try: subprocess.call(("update-mime-database", directory))
+        except OSError: log.info("...failed")
+
+        directory = os.path.join(data_dir, "share", "applications")
+        log.info("updating desktop database in '%s'" % directory)
+        try: subprocess.call(("update-desktop-database", directory))
+        except OSError: log.info("...failed")
 
 
 class InstallData(install_data):
@@ -168,6 +181,7 @@ class SDistGna(sdist):
 
     """Command to create a source distribution for gna.org."""
 
+    __version = get_version_number()
     description = "create source distribution for gna.org"
 
     def finalize_options(self):
@@ -175,14 +189,14 @@ class SDistGna(sdist):
 
         # pylint: disable-msg=W0201
         sdist.finalize_options(self)
-        branch = ".".join(__version__.split(".")[:2])
+        branch = ".".join(self.__version.split(".")[:2])
         self.dist_dir = os.path.join(self.dist_dir, branch)
 
     def run(self):
         """Build tarballs and create additional files."""
 
         sdist.run(self)
-        basename = "nfoview-%s" % __version__
+        basename = "nfoview-%s" % self.__version
         tarballs = os.listdir(self.dist_dir)
         os.chdir(self.dist_dir)
 
@@ -215,7 +229,7 @@ class SDistGna(sdist):
 
 setup(
     name="nfoview",
-    version=__version__,
+    version=get_version_number(),
     requires=["gtk (>=2.8.0)"],
     platforms=["Platform Independent"],
     author="Osmo Salomaa",
