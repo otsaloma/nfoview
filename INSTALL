@@ -22,8 +22,3 @@ To uninstall, remove files and directories
     .../share/locale/*/LC_MESSAGES/nfoview.mo
     .../share/nfoview/
     .../share/man/man1/nfoview.1
-    .../share/mime/packages/nfoview.xml
-
-and run command
-
-    update-mime-database .../share/mime

@@ -14,14 +14,12 @@ Dependencies
 ============
 
 NFO Viewer requires Python [1] 2.4 or greater and PyGTK [2] 2.8 or
-greater. shared-mime-info [3] is required for mimetype integration.
-Terminus font [4] is recommended and used by default. For dependencies
-required during installation, see the file "INSTALL".
+greater. Terminus font [3] is recommended and used by default. For
+dependencies required during installation, see the file "INSTALL".
 
  [1] http://www.python.org/
  [2] http://www.pygtk.org/
- [3] http://freedesktop.org/wiki/Software/shared-mime-info
- [4] http://www.is-vn.bg/hamster/jimmy-en.html
+ [3] http://www.is-vn.bg/hamster/jimmy-en.html
 
 Terminus font is used by default because it draws drawing characters
 taller than text characters. You can use any other fixed width font

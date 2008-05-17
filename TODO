@@ -1,9 +1,8 @@
 NFO Viewer 1.2
 ==============
 
- * Bump optional shared-mime-info dependency to version 0.24
- * Remove application-specific mimetype integration files and use
-   the new text/x-nfo mimetype added with shared-mime-info 0.24
+ * Remove mimetype installation files and use the new 'text/x-nfo'
+   mimetype added with freedesktop.org's shared-mime-info 0.30
 
 NFO Viewer 3000
 ===============

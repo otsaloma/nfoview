@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
 """
-There are three relevant customizations to the standard distutils installation
-process: (1) writing the nfoview.paths module, (2) handling translations and
-(3) updating the mime database cache.
+There are two relevant customizations to the standard distutils installation
+process: (1) writing the nfoview.paths module and (2) handling translations.
 
 (1) NFO Viewer finds non-Python files based on the paths written in module
     nfoview.paths. In nfoview/paths.py the paths default to the ones in the
@@ -14,13 +13,8 @@ process: (1) writing the nfoview.paths module, (2) handling translations and
     file gets correctly written.
 
 (2) During installation, the .po files are compiled into .mo files and the
-    desktop and XML files are translated. This requires gettext and intltool,
-    more specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
-
-(3) After installation the mime database cache is updated with the
-    'update-mime-database' command from shared-mime-info if the --root option
-    was not given. Distro-packagers can do their packaging with the --root
-    option and call update-mime-database after the package installation.
+    desktop file is translated. This requires gettext and intltool, more
+    specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
 """
 
 import glob
@@ -56,8 +50,8 @@ class Clean(clean):
 
     """Command to remove files and directories created."""
 
-    __glob_targets = ("build", "dist", "locale", "MANIFEST",
-        "data/nfoview.desktop", "data/nfoview.xml",)
+    __glob_targets = ("build", "dist", "locale",
+        "MANIFEST", "data/nfoview.desktop",)
 
     def run(self):
         """Remove files and directories listed in self.__targets."""
@@ -85,7 +79,7 @@ class Install(install):
     """Command to install everything."""
 
     def run(self):
-        """Install everything and update databases."""
+        """Install everything and update the desktop file database."""
 
         install.run(self)
 
@@ -94,11 +88,6 @@ class Install(install):
         data_dir = get_command_obj("install_data").install_dir
         # Assume we're actually installing if --root was not given.
         if (root is not None) or (data_dir is None): return
-
-        directory = os.path.join(data_dir, "share", "mime")
-        log.info("updating mime database in '%s'" % directory)
-        try: subprocess.call(("update-mime-database", directory))
-        except OSError: log.info("...failed")
 
         directory = os.path.join(data_dir, "share", "applications")
         log.info("updating desktop database in '%s'" % directory)
@@ -131,20 +120,12 @@ class InstallData(install_data):
         os.system("msgfmt %s -o %s" % (po_file, mo_file))
         return (dest_dir, (mo_file,))
 
-    def __get_xml_file(self):
-        """Return a tuple for the translated XML file."""
-
-        path = os.path.join("data", "nfoview.xml")
-        os.system("intltool-merge -x po %s.in %s" % (path, path))
-        return ("share/mime/packages", (path,))
-
     def run(self):
         """Install data files after translating them."""
 
         for po_file in glob.glob("po/*.po"):
             self.data_files.append(self.__get_mo_file(po_file))
         self.data_files.append(self.__get_desktop_file())
-        self.data_files.append(self.__get_xml_file())
         install_data.run(self)
 
 
