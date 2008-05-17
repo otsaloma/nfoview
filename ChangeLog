@@ -1,5 +1,10 @@
 2008-05-18  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
+	* setup.py (InstallLib.install): Make sure (assert) that the paths
+	module string replacements are feasible.
+
+2008-05-18  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
 	* data/nfoview.xml.in: Remove.
 
 	* setup.py: Remove all mimetype file handling.

@@ -150,8 +150,10 @@ class InstallLib(install_lib):
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r").read()
         string = 'get_source_directory("data")'
+        assert text.count(string) == 1
         text = text.replace(string, repr(data_dir))
         string = 'get_source_directory("locale")'
+        assert text.count(string) == 1
         text = text.replace(string, repr(locale_dir))
         open(path, "w").write(text)
 
