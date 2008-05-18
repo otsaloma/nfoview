@@ -1,3 +1,9 @@
+NFO Viewer 1.2
+==============
+
+ * Remove mimetype installation files and use the new 'text/x-nfo'
+   mimetype added with freedesktop.org's shared-mime-info 0.30
+
 NFO Viewer 1.1.2
 ================
 

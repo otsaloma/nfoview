@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-07 01:29+0200\n"
+"POT-Creation-Date: 2008-05-18 02:56+0300\n"
 "PO-Revision-Date: 2008-01-07 01:34+0200\n"
 "Last-Translator: Osmo Salomaa <otsaloma@cc.hut.fi>\n"
 "Language-Team: Finnish\n"
@@ -23,10 +23,6 @@ msgstr "NFO-katselin"
 #: ../data/nfoview.desktop.in.h:2
 msgid "View NFO files"
 msgstr "Katsele NFO tiedostoja"
-
-#: ../data/nfoview.xml.in.h:1
-msgid "NFO document"
-msgstr "NFO-asiakirja"
 
 #: ../data/preferences-dialog.glade.h:1
 msgid "<b>Colors</b>"
@@ -150,19 +146,19 @@ msgstr "Näytä tietoja NFO-katselimesta"
 msgid "_Select All"
 msgstr "_Valitse kaikki"
 
-#: ../nfoview/actions.py:149
+#: ../nfoview/actions.py:150
 msgid "Select all text in the document"
 msgstr "Valitse kaikki teksti asiakirjassa"
 
-#: ../nfoview/actions.py:166
+#: ../nfoview/actions.py:167
 msgid "_Edit"
 msgstr "_Muokkaa"
 
-#: ../nfoview/actions.py:176
+#: ../nfoview/actions.py:177
 msgid "_File"
 msgstr "_Tiedosto"
 
-#: ../nfoview/actions.py:186
+#: ../nfoview/actions.py:187
 msgid "_Help"
 msgstr "O_hje"
 
