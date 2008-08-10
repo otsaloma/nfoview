@@ -3,28 +3,27 @@ Releasing a New Version
 
  * Make final edits to files
 
-    $EDITOR nfoview/__init__.py
-    pylint bin/nfoview nfoview setup.py
-    py.test --tb=no nfoview
-    intltool-update -m
-    intltool-update -p -g nfoview
-    $EDITOR NEWS TODO ChangeLog po/ChangeLog
-    svn commit
+     $EDITOR nfoview/__init__.py
+     pylint bin/nfoview nfoview setup.py
+     py.test --tb=no nfoview
+     intltool-update -m
+     intltool-update -p -g nfoview
+     $EDITOR NEWS TODO ChangeLog po/ChangeLog
+     svn commit
 
  * Tag the subversion trunk as NFOVIEW_X_Y[_Z]
 
  * Build tarballs and edit related files
 
-    ./setup.py clean
-    ./setup.py sdist_gna --formats bztar,gztar
-    $EDITOR dist/*/*.news dist/*/*.changes
+     ./setup.py clean sdist_gna --formats bztar,gztar
+     $EDITOR dist/*/*.news dist/*/*.changes
 
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
  * Send announcements and update web sites
 
-    - http://home.gna.org/nfoview
-    - nfoview-announcements@gna.org
-    - http://gna.org/news/?group=nfoview
-    - http://www.gnomefiles.com/devs
-    - http://freshmeat.net/projects/nfoview
+   - http://home.gna.org/nfoview
+   - nfoview-announcements@gna.org
+   - http://gna.org/news/?group=nfoview
+   - http://www.gnomefiles.com/devs
+   - http://freshmeat.net/projects/nfoview

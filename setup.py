@@ -213,8 +213,8 @@ class SDistGna(sdist):
 setup(
     name="nfoview",
     version=get_version_number(),
-    requires=["gtk (>=2.8.0)"],
-    platforms=["Platform Independent"],
+    requires=("gtk (>=2.8.0)",),
+    platforms=("Platform Independent",),
     author="Osmo Salomaa",
     author_email="otsaloma@cc.hut.fi",
     url="http://home.gna.org/nfoview/",

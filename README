@@ -15,7 +15,8 @@ Dependencies
 
 NFO Viewer requires Python [1] 2.4 or greater and PyGTK [2] 2.8 or
 greater. Terminus font [3] is recommended and used by default. For
-dependencies required during installation, see the file "INSTALL".
+dependencies required only during installation, see the file
+"INSTALL".
 
  [1] http://www.python.org/
  [2] http://www.pygtk.org/
