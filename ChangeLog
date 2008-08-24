@@ -1,3 +1,7 @@
+2008-08-24  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* nfoview/util.py (browse_url): Don't try to use 'start' on Windows.
+
 2008-05-18  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/__init__.py (__version__): Bump to 1.2.
