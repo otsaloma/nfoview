@@ -1,3 +1,7 @@
+2008-09-07  Osmo Salomaa  <otsaloma@cc.hut.fi>
+
+	* data/preferences-dialog.glade: Center on parent.
+
 2008-08-24  Osmo Salomaa  <otsaloma@cc.hut.fi>
 
 	* nfoview/util.py (browse_url): Don't try to use 'start' on Windows.
