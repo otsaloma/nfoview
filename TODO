@@ -1,7 +1,10 @@
 NFO Viewer 1.2.1
 ================
 
- * Add Simplified Chinese translation (Jonathan Ye)
+ [ ] Switch version-control from svn to git
+ [ ] Remove misuse of assertions that broke some parts, when
+     used with Python's optimization (-O switch)
+ [D] Add Simplified Chinese translation (Jonathan Ye)
 
 NFO Viewer 3000
 ===============
