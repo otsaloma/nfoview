@@ -2,7 +2,7 @@
 
 # Generate a GNU ChangeLog file from old ChangeLog and git logs.
 
-SINCE=52a2a384298758ab45bdae53934c5989f050743a
+SINCE=27ad7ae19df69bd845aa52e321571c8fc04a5020
 
 cd $(dirname "$0")/..
 rm -f ChangeLog
