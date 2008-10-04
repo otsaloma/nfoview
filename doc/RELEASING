@@ -1,17 +1,19 @@
 Releasing a New Version
 =======================
 
- * Make final edits to files
+ * Do final quality checks
 
-     $EDITOR nfoview/__init__.py
      pylint bin/nfoview nfoview setup.py
      py.test --tb=no nfoview
-     intltool-update -m
-     intltool-update -p -g nfoview
-     $EDITOR NEWS TODO ChangeLog po/ChangeLog
-     svn commit
 
- * Tag the subversion trunk as NFOVIEW_X_Y[_Z]
+ * Make final edits to files, commit and tag
+
+     $EDITOR nfoview/__init__.py
+     po: intltool-update -m
+     po: intltool-update -p -g nfoview
+     $EDITOR NEWS TODO
+     git commit -a
+     git tag -s X.Y.Z
 
  * Build tarballs and edit related files
 

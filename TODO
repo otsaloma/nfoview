@@ -1,9 +1,10 @@
 NFO Viewer 1.2.1
 ================
 
- [ ] Switch version-control from svn to git
+ [W] Switch version-control from svn to git
  [ ] Remove misuse of assertions that broke some parts, when
      used with Python's optimization (-O switch)
+ [ ] http://gna.org/bugs/?12388
  [D] Add Simplified Chinese translation (Jonathan Ye)
 
 NFO Viewer 3000

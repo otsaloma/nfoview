@@ -5,6 +5,7 @@ include data/*.xml
 include doc/nfoview.1
 include doc/RELEASING
 recursive-include nfoview *.py
+recursive-include tools *
 include po/*.po
 include po/ChangeLog
 include po/nfoview.pot

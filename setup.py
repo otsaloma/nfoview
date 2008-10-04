@@ -51,7 +51,7 @@ class Clean(clean):
     """Command to remove files and directories created."""
 
     __glob_targets = ("build", "dist", "locale",
-        "MANIFEST", "data/nfoview.desktop",)
+        "ChangeLog", "MANIFEST", "data/nfoview.desktop",)
 
     def run(self):
         """Remove files and directories listed in self.__targets."""
@@ -178,6 +178,8 @@ class SDistGna(sdist):
     def run(self):
         """Build tarballs and create additional files."""
 
+        os.system("tools/change-log")
+        assert os.path.isfile("ChangeLog")
         sdist.run(self)
         basename = "nfoview-%s" % self.__version
         tarballs = os.listdir(self.dist_dir)
