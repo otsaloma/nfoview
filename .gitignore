@@ -1,0 +1,8 @@
+*.py[co]
+.hidden
+build/
+ChangeLog
+data/nfoview.desktop
+dist/
+locale/
+MANIFEST
