@@ -13,6 +13,7 @@ include po/README
 include AUTHORS
 include ChangeLog
 include COPYING
+include CREDITS
 include INSTALL
 include MANIFEST.in
 include NEWS
