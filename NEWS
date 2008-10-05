@@ -1,3 +1,12 @@
+NFO Viewer 1.2.1
+================
+
+ * Remove misuse of assertions that broke menu item sensitivity
+   updates when used with Python's optimization (-O switch)
+ * Fix AssertionError when installing multiple times (#12388)
+ * Add Simplified Chinese translation (Jonathan Ye)
+ * Switch version-control from svn to git
+
 NFO Viewer 1.2
 ==============
 

@@ -16,7 +16,7 @@
 
 """Viewer for NFO files."""
 
-__version__ = "1.2"
+__version__ = "1.2.1"
 
 from nfoview.errors import *
 from nfoview.unittest import *
