@@ -28,6 +28,12 @@ class TestModule(nfoview.TestCase):
         try: return nfoview.util.browse_url(url)
         except OSError: return None
 
+    def test_affirm(self):
+
+        nfoview.util.affirm(0 == 0)
+        error = nfoview.AffirmationError
+        self.raises(error, nfoview.util.affirm, 1 == 0)
+
     def test_browse_url(self):
 
         nfoview.util.browse_url(self.url)

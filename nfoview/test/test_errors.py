@@ -14,23 +14,24 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer for NFO files."""
+import nfoview
 
-__version__ = "1.2"
 
-from nfoview.errors import *
-from nfoview.unittest import *
-from nfoview.paths import *
-from nfoview import i18n
-from nfoview import util
-from nfoview.conf import *
-conf = Configuration()
-conf.read_from_file()
-from nfoview import schemes
-from nfoview.about import *
-from nfoview.open import *
-from nfoview.preferences import *
-from nfoview.view import *
-from nfoview import actions
-from nfoview.window import *
-from nfoview import main
+class TestError(nfoview.TestCase):
+
+    def test_raise(self):
+
+        try:
+            raise nfoview.Error
+        except nfoview.Error:
+            pass
+
+
+class TestAffirmationError(nfoview.TestCase):
+
+    def test_raise(self):
+
+        try:
+            raise nfoview.AffirmationError
+        except nfoview.AffirmationError:
+            pass

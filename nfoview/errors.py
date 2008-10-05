@@ -14,23 +14,25 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer for NFO files."""
+"""All error classes."""
 
-__version__ = "1.2"
+__all__ = ("Error", "AffirmationError",)
 
-from nfoview.errors import *
-from nfoview.unittest import *
-from nfoview.paths import *
-from nfoview import i18n
-from nfoview import util
-from nfoview.conf import *
-conf = Configuration()
-conf.read_from_file()
-from nfoview import schemes
-from nfoview.about import *
-from nfoview.open import *
-from nfoview.preferences import *
-from nfoview.view import *
-from nfoview import actions
-from nfoview.window import *
-from nfoview import main
+
+class Error(Exception):
+
+    """Base class for all NFO Viewer errors."""
+
+    pass
+
+
+class AffirmationError(Error):
+
+    """Something expected to be True was False.
+
+    This is similar to AssertionError, but without the special reliance on
+    __debug__ and given optimization options. AffirmationError is used to
+    provide essential checks instead of optional debug checks.
+    """
+
+    pass

@@ -47,17 +47,17 @@ class Action(gtk.Action):
 
         gtk.Action.__init__(self, name, None, None, None)
 
-    def _assert_doable(self, window):
-        """Raise AssertionError if action cannot be done."""
+    def _affirm_doable(self, window):
+        """Raise AffirmationError if action cannot be done."""
 
-        assert True
+        pass
 
     def update_sensitivity(self, window):
         """Update the sensitivity of action."""
 
         try:
-            self._assert_doable(window)
-        except AssertionError:
+            self._affirm_doable(window)
+        except nfoview.AffirmationError:
             return self.set_sensitive(False)
         return self.set_sensitive(True)
 
@@ -89,13 +89,13 @@ class CopyTextAction(Action):
         self.props.tooltip = _("Copy the selected text to the clipboard")
         self.accelerator = "<Control>C"
 
-    def _assert_doable(self, window):
-        """Raise AssertionError if action cannot be done."""
+    def _affirm_doable(self, window):
+        """Raise AffirmationError if action cannot be done."""
 
-        assert window.view is not None
-        assert window.view.props.sensitive
+        nfoview.util.affirm(window.view is not None)
+        nfoview.util.affirm(window.view.props.sensitive)
         text_buffer = window.view.get_buffer()
-        assert text_buffer.get_has_selection()
+        nfoview.util.affirm(text_buffer.get_has_selection())
 
 
 class EditPreferencesAction(Action):
@@ -150,11 +150,11 @@ class SelectAllTextAction(Action):
         self.props.tooltip = _("Select all text in the document")
         self.accelerator = "<Control>A"
 
-    def _assert_doable(self, window):
-        """Raise AssertionError if action cannot be done."""
+    def _affirm_doable(self, window):
+        """Raise AffirmationError if action cannot be done."""
 
-        assert window.view is not None
-        assert window.view.props.sensitive
+        nfoview.util.affirm(window.view is not None)
+        nfoview.util.affirm(window.view.props.sensitive)
 
 
 class ShowEditMenuAction(Action):

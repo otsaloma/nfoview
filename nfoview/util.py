@@ -16,12 +16,20 @@
 
 """Miscellaneous functions."""
 
+import nfoview
 import os
 import subprocess
 import sys
 import urllib
 import urlparse
 import webbrowser
+
+
+def affirm(value):
+    """Raise AffirmationError if value evaluates to False."""
+
+    if not value:
+        raise nfoview.AffirmationError
 
 
 def browse_url(url, browser=None):
