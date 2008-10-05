@@ -1,7 +1,7 @@
 NFO Viewer 1.2.1
 ================
 
- [ ] Remove misuse of assertions that broke some parts, when
+ [D] Remove misuse of assertions that broke some parts, when
      used with Python's optimization (-O switch)
  [D] Fix AssertionError when installing multiple times (#12388)
  [D] Add Simplified Chinese translation (Jonathan Ye)
