@@ -7,7 +7,6 @@ include doc/RELEASING
 recursive-include nfoview *.py
 recursive-include tools *
 include po/*.po
-include po/ChangeLog
 include po/nfoview.pot
 include po/POTFILES.*
 include po/README
