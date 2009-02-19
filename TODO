@@ -2,6 +2,9 @@ NFO Viewer 1.2.2
 ================
 
  [D] Remove deprecated Encoding field from the desktop file
+ [D] Use six-character hexadecimal color codes
+ [D] Fix GtkWarning: GtkSpinButton: setting an adjustment with
+     non-zero page size is deprecated
 
 NFO Viewer 3000
 ===============

@@ -65,7 +65,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                            <property name="adjustment">1 -99 99 1 2 2</property>
+                            <property name="adjustment">1 -99 99 1 2 0</property>
                             <property name="numeric">True</property>
                           </widget>
                           <packing>
