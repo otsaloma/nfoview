@@ -28,16 +28,15 @@ class Configuration(object):
 
     _fields = {
         # name: (default value, decode function, encode function)
-        # Colors use the same string format as gtk.gdk.Color.to_string.
-        "background_color": ("#ffffffffffff", str, str),
+        "background_color": ("#ffffff", str, str),
         "color_scheme": ("default", str, str),
         "font": ("Terminus 12", str, str),
-        "foreground_color": ("#000000000000", str, str),
-        "link_color": ("#00000000ffff", str, str),
+        "foreground_color": ("#000000", str, str),
+        "link_color": ("#0000ff", str, str),
         "pixels_above_lines": (0, int, str),
         "pixels_below_lines": (0, int, str),
         "version": ("", str, str),
-        "visited_link_color": ("#ffff0000ffff", str, str),}
+        "visited_link_color": ("#ff00ff", str, str),}
 
     path = os.path.join(nfoview.CONFIG_DIR, "nfoview.conf")
 

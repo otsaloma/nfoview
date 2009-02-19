@@ -109,7 +109,8 @@ class PreferencesDialog(object):
         """Save the new color and update window and its view."""
 
         color = color_button.get_color()
-        nfoview.conf.background_color = color.to_string()
+        string = nfoview.util.gdk_color_to_hex(color)
+        nfoview.conf.background_color = string
         nfoview.schemes.CustomScheme.background = color
         for window in nfoview.main.windows:
             window.view.update_colors()
@@ -118,7 +119,8 @@ class PreferencesDialog(object):
         """Save the new color and update window and its view."""
 
         color = color_button.get_color()
-        nfoview.conf.foreground_color = color.to_string()
+        string = nfoview.util.gdk_color_to_hex(color)
+        nfoview.conf.foreground_color = string
         nfoview.schemes.CustomScheme.foreground = color
         for window in nfoview.main.windows:
             window.view.update_colors()
@@ -135,7 +137,8 @@ class PreferencesDialog(object):
         """Save the new color and update window and its view."""
 
         color = color_button.get_color()
-        nfoview.conf.link_color = color.to_string()
+        string = nfoview.util.gdk_color_to_hex(color)
+        nfoview.conf.link_color = string
         nfoview.schemes.CustomScheme.link = color
         for window in nfoview.main.windows:
             window.view.update_colors()
@@ -164,7 +167,8 @@ class PreferencesDialog(object):
         """Save the new color and update window and its view."""
 
         color = color_button.get_color()
-        nfoview.conf.visited_link_color = color.to_string()
+        string = nfoview.util.gdk_color_to_hex(color)
+        nfoview.conf.visited_link_color = string
         nfoview.schemes.CustomScheme.visited_link = color
         for window in nfoview.main.windows:
             window.view.update_colors()

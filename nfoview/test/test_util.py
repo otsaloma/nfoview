@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
+import gtk
 import nfoview
 import os
 import sys
@@ -89,6 +90,12 @@ class TestModule(nfoview.TestCase):
         nfoview.util.browse_url(self.url)
         os.environ = environment
         sys.platform = platform
+
+    def test_gdk_color_to_hex(self):
+
+        for string in ("#ff0000", "#a1ee03", "#010110", "#eaae33"):
+            color = gtk.gdk.color_parse(string)
+            assert nfoview.util.gdk_color_to_hex(color) == string
 
     def test_is_command(self):
 

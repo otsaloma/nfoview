@@ -31,7 +31,6 @@ def affirm(value):
     if not value:
         raise nfoview.AffirmationError
 
-
 def browse_url(url, browser=None):
     """Open URL in web browser."""
 
@@ -48,6 +47,14 @@ def browse_url(url, browser=None):
     if is_command("exo-open"):
         return subprocess.Popen(("exo-open", url))
     return webbrowser.open(url)
+
+def gdk_color_to_hex(color):
+    """Return 7-character hexadecimal string for GDK color."""
+
+    red = int(color.red / 256.0)
+    green = int(color.green / 256.0)
+    blue = int(color.blue / 256.0)
+    return "#%02x%02x%02x" % (red, green, blue)
 
 def is_command(command):
     """Return True if command exists as a file in $PATH."""
