@@ -48,7 +48,7 @@ class AboutDialog(gtk.AboutDialog):
         self.set_title(_("About NFO Viewer"))
         self.set_name(_("NFO Viewer"))
         self.set_version(nfoview.__version__)
-        self.set_copyright(u"Copyright \xa9 2005-2008 Osmo Salomaa")
+        self.set_copyright(u"Copyright \xa9 2005-2009 Osmo Salomaa")
         self.set_comments(_("Viewer for NFO files"))
         self.set_license(_LICENSE)
         self.set_wrap_license(True)
