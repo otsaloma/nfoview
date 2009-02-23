@@ -44,6 +44,6 @@ class OpenDialog(gtk.FileChooserDialog):
 
         file_filter = gtk.FileFilter()
         file_filter.set_name(_("NFO files (*.nfo)"))
-        file_filter.add_pattern("*.nfo")
+        file_filter.add_pattern("*.[Nn][Ff][Oo]")
         self.add_filter(file_filter)
         self.set_filter(file_filter)

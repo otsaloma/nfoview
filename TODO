@@ -5,6 +5,8 @@ NFO Viewer 1.2.2
  [D] Use six-character hexadecimal color codes
  [D] Fix GtkWarning: GtkSpinButton: setting an adjustment with
      non-zero page size is deprecated
+ [D] Fix open dialog file filter to list files with upper- and mixed
+     case extensions as well (Simon Morgan, #572877)
 
 NFO Viewer 3000
 ===============
