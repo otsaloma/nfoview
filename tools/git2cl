@@ -1,9 +1,5 @@
 #!/usr/bin/perl
 
-# Copyright (C) 2008 Osmo Salomaa <otsaloma@cc.hut.fi>
-# * Change output style based on whether the log message has originally been
-#   copied verbatim from a ChangeLog file and whether there are changes to
-#   multiple files or only one.
 # Copyright (C) 2007, 2008 Simon Josefsson <simon@josefsson.org>
 # Copyright (C) 2007 Luis Mondesi <lemsx1@gmail.com>
 # * calls git directly. To use it just:
@@ -16,6 +12,10 @@
 #     go into $state 2)
 #   - behaves like a pipe/filter if input is given from the CLI
 #     else it calls git log by itself
+# Copyright (C) 2008 Osmo Salomaa <otsaloma@cc.hut.fi>
+# * Change output style based on whether the log message has originally been
+#   copied verbatim from a ChangeLog file and whether there are changes to
+#   multiple files or only one.
 #
 # The functions mywrap, last_line_len, wrap_log_entry are derived from
 # the cvs2cl tool, see <http://www.red-bean.com/cvs2cl/>:

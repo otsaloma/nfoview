@@ -7,6 +7,9 @@ NFO Viewer 1.2.2
      non-zero page size is deprecated
  [D] Fix open dialog file filter to list files with upper- and mixed
      case extensions as well (Simon Morgan, #572877)
+ [D] Migrate from Libglade to GtkBuilder
+ [D] Raise PyGTK dependency to 2.12 or greater
+
 
 NFO Viewer 3000
 ===============

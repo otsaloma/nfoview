@@ -13,7 +13,7 @@ License (GPL), see the file "COPYING" for details.
 Dependencies
 ============
 
-NFO Viewer requires Python [1] 2.4 or greater and PyGTK [2] 2.8 or
+NFO Viewer requires Python [1] 2.4 or greater and PyGTK [2] 2.12 or
 greater. Terminus font [3] is recommended and used by default. For
 dependencies required only during installation, see the file
 "INSTALL".
