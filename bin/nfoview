@@ -7,7 +7,7 @@ import sys
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 source_dir = os.path.abspath(os.path.join(parent_dir, ".."))
 test_file = os.path.join(source_dir, "data", "nfoview.desktop.in")
-if os.path.isfile(test_file) and (not source_dir in sys.path):
+if os.path.isfile(test_file):
     sys.path.insert(0, source_dir)
 
 import nfoview
