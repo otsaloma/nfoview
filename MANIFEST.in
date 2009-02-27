@@ -1,15 +1,9 @@
-include bin/nfoview
-include data/*.glade
-include data/*.in
-include data/*.xml
-include doc/nfoview.1
-include doc/RELEASING
+include bin/*
+include data/*
+include doc/*
 recursive-include nfoview *.py
-recursive-include tools *
-include po/*.po
-include po/nfoview.pot
-include po/POTFILES.*
-include po/README
+include tools/*
+include po/*
 include AUTHORS
 include ChangeLog
 include COPYING
