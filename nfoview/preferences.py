@@ -31,20 +31,22 @@ class PreferencesDialog(object):
 
     def __init__(self, parent):
 
-        path = os.path.join(nfoview.DATA_DIR, "preferences-dialog.glade")
-        get_widget = gtk.glade.XML(path).get_widget
-        self._bg_color_button = get_widget("bg_color_button")
-        self._bg_color_label = get_widget("bg_color_label")
-        self._dialog = get_widget("dialog")
-        self._fg_color_button = get_widget("fg_color_button")
-        self._fg_color_label = get_widget("fg_color_label")
-        self._font_button = get_widget("font_button")
-        self._line_spacing_spin = get_widget("line_spacing_spin")
-        self._link_color_button = get_widget("link_color_button")
-        self._link_color_label = get_widget("link_color_label")
-        self._scheme_combo = get_widget("scheme_combo")
-        self._vlink_color_button = get_widget("vlink_color_button")
-        self._vlink_color_label = get_widget("vlink_color_label")
+        path = os.path.join(nfoview.DATA_DIR, "preferences-dialog.ui")
+        builder = gtk.Builder()
+        builder.add_from_file(path)
+        get_object = builder.get_object
+        self._bg_color_button = get_object("bg_color_button")
+        self._bg_color_label = get_object("bg_color_label")
+        self._dialog = get_object("dialog")
+        self._fg_color_button = get_object("fg_color_button")
+        self._fg_color_label = get_object("fg_color_label")
+        self._font_button = get_object("font_button")
+        self._line_spacing_spin = get_object("line_spacing_spin")
+        self._link_color_button = get_object("link_color_button")
+        self._link_color_label = get_object("link_color_label")
+        self._scheme_combo = get_object("scheme_combo")
+        self._vlink_color_button = get_object("vlink_color_button")
+        self._vlink_color_label = get_object("vlink_color_label")
 
         self._init_scheme_combo()
         self._init_values()
