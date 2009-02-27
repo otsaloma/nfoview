@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-05 14:17+0300\n"
+"POT-Creation-Date: 2009-02-28 01:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,51 +24,51 @@ msgstr ""
 msgid "View NFO files"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:1
+#: ../data/preferences-dialog.ui.h:1
 msgid "<b>Colors</b>"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:2
+#: ../data/preferences-dialog.ui.h:2
 msgid "<b>Text</b>"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:3
+#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:4
+#: ../data/preferences-dialog.ui.h:4
 msgid "Fo_reground:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:5
+#: ../data/preferences-dialog.ui.h:5
 msgid "Line-_spacing:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:6
+#: ../data/preferences-dialog.ui.h:6
 msgid "Preferences"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:7
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Color"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:8
+#: ../data/preferences-dialog.ui.h:8
 msgid "Select Font"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:9
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Built-in schemes:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:10
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Font:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:11
+#: ../data/preferences-dialog.ui.h:11
 msgid "_Link:"
 msgstr ""
 
-#: ../data/preferences-dialog.glade.h:12
+#: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
 msgstr ""
 

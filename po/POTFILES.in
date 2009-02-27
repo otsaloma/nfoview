@@ -1,6 +1,6 @@
 [encoding: UTF-8]
 data/nfoview.desktop.in
-data/preferences-dialog.glade
+[type: gettext/glade]data/preferences-dialog.ui
 nfoview/about.py
 nfoview/actions.py
 nfoview/open.py
