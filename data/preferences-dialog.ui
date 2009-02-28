@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!--Generated with glade3 3.4.5 on Sun Sep  7 02:12:29 2008 -->
 <interface>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">99</property>

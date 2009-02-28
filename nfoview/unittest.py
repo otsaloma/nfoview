@@ -41,10 +41,8 @@ class TestCase(object):
     def raises(self, exception, function, *args, **kwargs):
         """Assert that calling function raises exception."""
 
-        try:
-            function(*args, **kwargs)
-        except exception:
-            return
+        try: function(*args, **kwargs)
+        except exception: return
         raise AssertionError
 
     def setUp(self):
