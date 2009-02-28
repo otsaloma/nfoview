@@ -27,6 +27,7 @@ from nfoview.conf import *
 conf = Configuration()
 conf.read_from_file()
 from nfoview import schemes
+from nfoview.builder import *
 from nfoview.about import *
 from nfoview.open import *
 from nfoview.preferences import *
