@@ -41,6 +41,7 @@ class Configuration(object):
     path = os.path.join(nfoview.CONFIG_DIR, "nfoview.conf")
 
     def __init__(self):
+        """Initialize a Configuration instance."""
 
         self.background_color = None
         self.color_scheme = None

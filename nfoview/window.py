@@ -30,6 +30,7 @@ class Window(gtk.Window):
     """Viewer window for NFO files."""
 
     def __init__(self, path=None):
+        """Initialize a Window instance."""
 
         gtk.Window.__init__(self)
         self._about_dialog = None

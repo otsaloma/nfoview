@@ -28,6 +28,7 @@ class OpenDialog(gtk.FileChooserDialog):
     """Dialog for selecting NFO files to open."""
 
     def __init__(self, parent):
+        """Initialize an OpenDialog instance."""
 
         gtk.FileChooserDialog.__init__(self, parent=parent)
         self.set_title(_("Open"))

@@ -28,6 +28,7 @@ class TextView(gtk.TextView):
     """Text view widget for NFO text."""
 
     def __init__(self):
+        """Initialize a TextView instance."""
 
         gtk.TextView.__init__(self)
         self._init_properties()

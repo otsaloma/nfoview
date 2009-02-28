@@ -44,6 +44,7 @@ class Action(gtk.Action):
     accelerator = ""
 
     def __init__(self, name):
+        """Initialize an Action instance."""
 
         gtk.Action.__init__(self, name, None, None, None)
 
@@ -67,6 +68,7 @@ class CloseDocumentAction(Action):
     """Close document."""
 
     def __init__(self):
+        """Initialize a CloseDocumentAction instance."""
 
         Action.__init__(self, "close_document")
         self.props.label = _("_Close")
@@ -80,6 +82,7 @@ class CopyTextAction(Action):
     """Copy the selected text to the clipboard."""
 
     def __init__(self):
+        """Initialize a CopyTextAction instance."""
 
         Action.__init__(self, "copy_text")
         self.props.is_important = True
@@ -103,6 +106,7 @@ class EditPreferencesAction(Action):
     """Edit NFO Viewer preferences."""
 
     def __init__(self):
+        """Initialize an EditPreferencesAction instance."""
 
         Action.__init__(self, "edit_preferences")
         self.props.label = _("_Preferences")
@@ -115,6 +119,7 @@ class OpenFileAction(Action):
     """Open file."""
 
     def __init__(self):
+        """Initialize an OpenFileAction instance."""
 
         Action.__init__(self, "open_file")
         self.props.is_important = True
@@ -130,6 +135,7 @@ class ShowAboutDialogAction(Action):
     """Show information about NFO Viewer."""
 
     def __init__(self):
+        """Initialize a ShowAboutDialogAction instance."""
 
         Action.__init__(self, "show_about_dialog")
         self.props.label = _("_About")
@@ -142,6 +148,7 @@ class SelectAllTextAction(Action):
     """Select all text in the document."""
 
     def __init__(self):
+        """Initialize a SelectAllTextAction instance."""
 
         Action.__init__(self, "select_all_text")
         self.props.label = _("_Select All")
@@ -162,6 +169,7 @@ class ShowEditMenuAction(Action):
     """Show the edit menu."""
 
     def __init__(self):
+        """Initialize a ShowEditMenuAction instance."""
 
         Action.__init__(self, "show_edit_menu")
         self.props.label = _("_Edit")
@@ -172,6 +180,7 @@ class ShowFileMenuAction(Action):
     """Show the file menu."""
 
     def __init__(self):
+        """Initialize a ShowFileMenuAction instance."""
 
         Action.__init__(self, "show_file_menu")
         self.props.label = _("_File")
@@ -182,6 +191,7 @@ class ShowHelpMenuAction(Action):
     """Show the help menu."""
 
     def __init__(self):
+        """Initialize a ShowHelpMenuAction instance."""
 
         Action.__init__(self, "show_help_menu")
         self.props.label = _("_Help")

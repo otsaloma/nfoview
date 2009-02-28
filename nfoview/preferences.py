@@ -30,6 +30,7 @@ class PreferencesDialog(object):
         return getattr(self._dialog, name)
 
     def __init__(self, parent):
+        """Initialize a PreferencesDialog instance."""
 
         path = os.path.join(nfoview.DATA_DIR, "preferences-dialog.ui")
         builder = gtk.Builder()
