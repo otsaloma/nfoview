@@ -29,8 +29,7 @@ def _on_window_delete_event(window, event):
     windows.pop(index)
     if windows: return
     nfoview.conf.write_to_file()
-    try:
-        gtk.main_quit()
+    try: gtk.main_quit()
     except RuntimeError:
         raise SystemExit(1)
 
@@ -46,9 +45,8 @@ def open_window(path=None):
 def main(args):
     """Start viewer windows for given arguments."""
 
-    for path in args:
-        if os.path.isfile(path):
-            open_window(path)
+    for path in filter(os.path.isfile, args):
+        open_window(path)
     if not windows:
         # If no arguments were given,
         # or none of them exist,

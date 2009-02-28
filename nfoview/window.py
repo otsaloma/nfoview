@@ -40,7 +40,6 @@ class Window(gtk.Window):
         self.clipboard = gtk.Clipboard()
         self.path = path
         self.view = nfoview.TextView()
-
         self._init_uim()
         self._init_properties()
         self._init_contents()
