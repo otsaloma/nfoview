@@ -51,18 +51,17 @@ def browse_url(url, browser=None):
 def gdk_color_to_hex(color):
     """Return 7-character hexadecimal string for GDK color."""
 
-    red = int(color.red / 256.0)
-    green = int(color.green / 256.0)
-    blue = int(color.blue / 256.0)
-    return "#%02x%02x%02x" % (red, green, blue)
+    return "#%02x%02x%02x" % (
+        int(color.red / 256.0),
+        int(color.green / 256.0),
+        int(color.blue / 256.0))
 
 def is_command(command):
     """Return True if command exists as a file in $PATH."""
 
-    for directory in os.environ.get("PATH", "").split(os.pathsep):
-        path = os.path.join(directory, command)
-        if os.path.isfile(path): return True
-    return False
+    dirs = os.environ.get("PATH", "").split(os.pathsep)
+    paths = [os.path.join(x, command) for x in dirs]
+    return any(map(os.path.isfile, paths))
 
 def uri_to_path(uri):
     """Convert URI to local filepath."""

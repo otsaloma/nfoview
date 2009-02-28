@@ -17,6 +17,7 @@
 import gtk
 import nfoview
 import os
+import random
 import sys
 
 
@@ -58,13 +59,15 @@ class TestModule(nfoview.TestCase):
     def test_browse_url__environment(self):
 
         environment = os.environ.copy()
-        os.environ.clear()
         platform = sys.platform
         sys.platform = "linux2"
         os.environ["GNOME_DESKTOP_SESSION_ID"] = "1"
         self.browse_url_silent(self.url)
-        os.environ.clear()
+        del os.environ["GNOME_DESKTOP_SESSION_ID"]
         os.environ["KDE_FULL_SESSION"] = "1"
+        self.browse_url_silent(self.url)
+        del os.environ["KDE_FULL_SESSION"]
+        print os.environ
         self.browse_url_silent(self.url)
         os.environ = environment
         sys.platform = platform
@@ -93,14 +96,21 @@ class TestModule(nfoview.TestCase):
 
     def test_gdk_color_to_hex(self):
 
-        for string in ("#ff0000", "#a1ee03", "#010110", "#eaae33"):
+        gdk_color_to_hex = nfoview.util.gdk_color_to_hex
+        for i in range(100):
+            r = random.randint(0, 16)
+            g = random.randint(0, 16)
+            b = random.randint(0, 16)
+            string = "#%02x%02x%02x" % (r, g, b)
             color = gtk.gdk.color_parse(string)
-            assert nfoview.util.gdk_color_to_hex(color) == string
+            assert gdk_color_to_hex(color) == string
 
     def test_is_command(self):
 
-        if os.path.isfile("/bin/sh"):
-            assert nfoview.util.is_command("sh")
+        if os.path.isfile("/bin/echo"):
+            assert nfoview.util.is_command("echo")
+        if os.path.isfile("/usr/bin/python"):
+            nfoview.util.is_command("python")
         assert not nfoview.util.is_command("+?")
 
     def test_uri_to_path__unix(self):
