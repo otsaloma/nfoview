@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-import gtk.glade
+import gtk
 import nfoview
 import os
 import pango
@@ -22,20 +22,14 @@ import pango
 __all__ = ("PreferencesDialog",)
 
 
-class PreferencesDialog(object):
-
-    def __getattr__(self, name):
-
-        # Allow others to think this class is a dialog.
-        return getattr(self._dialog, name)
+class PreferencesDialog(nfoview.BuilderDialog):
 
     def __init__(self, parent):
         """Initialize a PreferencesDialog instance."""
 
         path = os.path.join(nfoview.DATA_DIR, "preferences-dialog.ui")
-        builder = gtk.Builder()
-        builder.add_from_file(path)
-        get_object = builder.get_object
+        nfoview.BuilderDialog.__init__(self, path)
+        get_object = self._builder.get_object
         self._bg_color_button = get_object("bg_color_button")
         self._bg_color_label = get_object("bg_color_label")
         self._dialog = get_object("dialog")
