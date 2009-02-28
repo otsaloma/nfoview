@@ -50,24 +50,20 @@ class Clean(clean):
 
     """Command to remove files and directories created."""
 
-    __glob_targets = ("build", "dist", "locale",
-        "ChangeLog", "MANIFEST", "data/nfoview.desktop",)
+    __glob_targets = (
+        "build", "dist", "locale", "ChangeLog", "MANIFEST",
+        "data/nfoview.desktop", "nfoview/*.py[co]")
 
     def run(self):
-        """Remove files and directories listed in self.__targets."""
+        """Remove files and directories listed in self.__glob_targets."""
 
         clean.run(self)
-
-        log.info("removing .pyc files under 'nfoview'")
-        for (root, dirs, files) in os.walk("nfoview"):
-            for name in (x for x in files if x.endswith(".pyc")):
-                path = os.path.join(root, name)
-                if not self.dry_run: os.remove(path)
 
         targets = [glob.glob(x) for x in self.__glob_targets]
         iterator = itertools.chain(*targets)
         for target in (x for x in iterator if os.path.isdir(x)):
-            dir_util.remove_tree(target, dry_run=self.dry_run)
+            log.info("removing '%s'" % target)
+            if not self.dry_run: shutil.rmtree(target)
         iterator = itertools.chain(*targets)
         for target in (x for x in iterator if os.path.isfile(x)):
             log.info("removing '%s'" % target)
@@ -138,22 +134,24 @@ class InstallLib(install_lib):
 
         # Allow --root to be used as a destination directory.
         root = self.distribution.get_command_obj("install").root
-        parent = self.distribution.get_command_obj("install").install_data
+        prefix = self.distribution.get_command_obj("install").install_data
         if root is not None:
             root = os.path.abspath(root)
-            parent = os.path.abspath(parent)
-            parent = parent.replace(root, "")
-        data_dir = os.path.join(parent, "share", "nfoview")
-        locale_dir = os.path.join(parent, "share", "locale")
+            prefix = os.path.abspath(prefix)
+            prefix = prefix.replace(root, "")
+        data_dir = os.path.join(prefix, "share", "nfoview")
+        locale_dir = os.path.join(prefix, "share", "locale")
 
         # Write changes to the nfoview.paths module.
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r").read()
-        string = 'get_source_directory("data")'
-        text = text.replace(string, repr(data_dir))
+        patt = 'DATA_DIR = get_source_directory("data")'
+        repl = "DATA_DIR = %s" % repr(data_dir)
+        text = text.replace(patt, repl)
         assert text.count(repr(data_dir)) > 0
-        string = 'get_source_directory("locale")'
-        text = text.replace(string, repr(locale_dir))
+        patt = 'LOCALE_DIR = get_source_directory("locale")'
+        repl = "LOCALE_DIR = %s" % repr(locale_dir)
+        text = text.replace(patt, repl)
         assert text.count(repr(locale_dir)) > 0
         open(path, "w").write(text)
 
@@ -217,7 +215,7 @@ class SDistGna(sdist):
 setup(
     name="nfoview",
     version=get_version_number(),
-    requires=("gtk (>=2.8.0)",),
+    requires=("gtk (>=2.12.0)",),
     platforms=("Platform Independent",),
     author="Osmo Salomaa",
     author_email="otsaloma@cc.hut.fi",
@@ -228,9 +226,8 @@ setup(
     scripts=("bin/nfoview",),
     data_files=[
         ("share/man/man1", ("doc/nfoview.1",)),
-        ("share/nfoview", (
-            "data/preferences-dialog.glade",
-            "data/ui.xml")),],
+        ("share/nfoview", ("data/preferences-dialog.ui",)),
+        ("share/nfoview", ("data/ui.xml",)),],
     cmdclass={
         "clean": Clean,
         "install": Install,
