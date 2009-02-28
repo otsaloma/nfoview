@@ -17,7 +17,6 @@
 """Internationalization functions."""
 
 import gettext
-import gtk.glade
 import locale
 import nfoview
 
@@ -25,9 +24,7 @@ __all__ = ("_", "dgettext", "ngettext")
 
 locale.setlocale(locale.LC_ALL, "")
 gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
-gtk.glade.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
 gettext.textdomain("nfoview")
-gtk.glade.textdomain("nfoview")
 
 _ = gettext.gettext
 dgettext = gettext.dgettext
