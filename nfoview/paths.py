@@ -32,7 +32,6 @@ def get_source_directory(child):
     source = os.path.abspath(os.path.join(parent, ".."))
     return os.path.abspath(os.path.join(source, child))
 
+CONFIG_DIR = get_config_directory()
 DATA_DIR = get_source_directory("data")
 LOCALE_DIR = get_source_directory("locale")
-CONFIG_DIR = get_config_directory()
-del get_config_directory, get_source_directory
