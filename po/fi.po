@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-18 02:56+0300\n"
+"POT-Creation-Date: 2009-03-01 17:19+0200\n"
 "PO-Revision-Date: 2008-01-07 01:34+0200\n"
 "Last-Translator: Osmo Salomaa <otsaloma@cc.hut.fi>\n"
 "Language-Team: Finnish\n"
@@ -24,51 +24,51 @@ msgstr "NFO-katselin"
 msgid "View NFO files"
 msgstr "Katsele NFO tiedostoja"
 
-#: ../data/preferences-dialog.glade.h:1
+#: ../data/preferences-dialog.ui.h:1
 msgid "<b>Colors</b>"
 msgstr "<b>Värit</b>"
 
-#: ../data/preferences-dialog.glade.h:2
+#: ../data/preferences-dialog.ui.h:2
 msgid "<b>Text</b>"
 msgstr "<b>Teksti</b>"
 
-#: ../data/preferences-dialog.glade.h:3
+#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr "_Tausta:"
 
-#: ../data/preferences-dialog.glade.h:4
+#: ../data/preferences-dialog.ui.h:4
 msgid "Fo_reground:"
 msgstr "_Edusta:"
 
-#: ../data/preferences-dialog.glade.h:5
+#: ../data/preferences-dialog.ui.h:5
 msgid "Line-_spacing:"
 msgstr "_Riviväli:"
 
-#: ../data/preferences-dialog.glade.h:6
+#: ../data/preferences-dialog.ui.h:6
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: ../data/preferences-dialog.glade.h:7
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Color"
 msgstr "Valitse väri"
 
-#: ../data/preferences-dialog.glade.h:8
+#: ../data/preferences-dialog.ui.h:8
 msgid "Select Font"
 msgstr "Valitse kirjasin"
 
-#: ../data/preferences-dialog.glade.h:9
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Built-in schemes:"
 msgstr "Sisää_nrakennetut teemat:"
 
-#: ../data/preferences-dialog.glade.h:10
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Font:"
 msgstr "_Kirjasin:"
 
-#: ../data/preferences-dialog.glade.h:11
+#: ../data/preferences-dialog.ui.h:11
 msgid "_Link:"
 msgstr "_Linkki:"
 
-#: ../data/preferences-dialog.glade.h:12
+#: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
 msgstr "_Vierailtu linkki:"
 
@@ -94,79 +94,79 @@ msgstr "NFO-katselimen www-sivut"
 msgid "translator-credits"
 msgstr "Osmo Salomaa <otsaloma@cc.hut.fi>"
 
-#: ../nfoview/actions.py:72
+#: ../nfoview/actions.py:74
 msgid "_Close"
 msgstr "_Sulje"
 
-#: ../nfoview/actions.py:74
+#: ../nfoview/actions.py:76
 msgid "Close document"
 msgstr "Sulje asiakirja"
 
-#: ../nfoview/actions.py:86
+#: ../nfoview/actions.py:89
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: ../nfoview/actions.py:87
+#: ../nfoview/actions.py:90
 msgid "Copy"
 msgstr "Kopioi"
 
-#: ../nfoview/actions.py:89
+#: ../nfoview/actions.py:92
 msgid "Copy the selected text to the clipboard"
 msgstr "Kopioi valittu teksti leikepöydälle"
 
-#: ../nfoview/actions.py:108
+#: ../nfoview/actions.py:112
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: ../nfoview/actions.py:110
+#: ../nfoview/actions.py:114
 msgid "Edit NFO Viewer preferences"
 msgstr "Muokkaa NFO-katselimen asetuksia"
 
-#: ../nfoview/actions.py:121
+#: ../nfoview/actions.py:126
 msgid "_Open..."
 msgstr "_Avaa..."
 
-#: ../nfoview/actions.py:122 ../nfoview/open.py:33
+#: ../nfoview/actions.py:127 ../nfoview/open.py:34
 msgid "Open"
 msgstr "Avaa"
 
-#: ../nfoview/actions.py:124
+#: ../nfoview/actions.py:129
 msgid "Open file"
 msgstr "Avaa tiedosto"
 
-#: ../nfoview/actions.py:135
+#: ../nfoview/actions.py:141
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../nfoview/actions.py:137
+#: ../nfoview/actions.py:143
 msgid "Show information about NFO Viewer"
 msgstr "Näytä tietoja NFO-katselimesta"
 
-#: ../nfoview/actions.py:147
+#: ../nfoview/actions.py:154
 msgid "_Select All"
 msgstr "_Valitse kaikki"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:157
 msgid "Select all text in the document"
 msgstr "Valitse kaikki teksti asiakirjassa"
 
-#: ../nfoview/actions.py:167
+#: ../nfoview/actions.py:175
 msgid "_Edit"
 msgstr "_Muokkaa"
 
-#: ../nfoview/actions.py:177
+#: ../nfoview/actions.py:186
 msgid "_File"
 msgstr "_Tiedosto"
 
-#: ../nfoview/actions.py:187
+#: ../nfoview/actions.py:197
 msgid "_Help"
 msgstr "O_hje"
 
-#: ../nfoview/open.py:41
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "Kaikki tiedostot"
 
-#: ../nfoview/open.py:46
+#: ../nfoview/open.py:47
 msgid "NFO files (*.nfo)"
 msgstr "NFO-tiedostot (*.nfo)"
 

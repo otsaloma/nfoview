@@ -26,7 +26,7 @@ import subprocess
 import tarfile
 import tempfile
 
-from distutils import dir_util, log
+from distutils import log
 from distutils.command.clean import clean
 from distutils.command.install import install
 from distutils.command.install_data import install_data
@@ -196,7 +196,7 @@ class SDistGna(sdist):
         response = raw_input("Are all files in the tarball [Y/n]? ")
         if response.lower() == "n":
             raise SystemExit("Must edit MANIFEST.in.")
-        dir_util.remove_tree(test_dir)
+        shutil.rmtree(test_dir)
 
         # Create extra distribution files.
         log.info("calculating md5sums")
