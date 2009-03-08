@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -142,7 +142,10 @@ class TextView(gtk.TextView):
         """Update the colors to match the current color scheme."""
 
         scheme = nfoview.conf.color_scheme
-        scheme = nfoview.schemes.get_color_scheme(scheme)
+        try: scheme = nfoview.schemes.get_color_scheme(scheme)
+        except ValueError:
+            scheme = nfoview.schemes.get_color_scheme("default")
+            nfoview.conf.color_scheme = "default"
         self.modify_text(gtk.STATE_NORMAL, scheme.foreground)
         self.modify_base(gtk.STATE_NORMAL, scheme.background)
         for tag in self._link_tags:

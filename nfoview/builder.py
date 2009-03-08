@@ -44,9 +44,9 @@ class BuilderDialog(object):
         self._builder.set_translation_domain("nfoview")
         self._builder.add_from_file(ui_file_path)
         self._dialog = self._builder.get_object("dialog")
-        # Work around a deeply mysterious bug that prevents strings in the
-        # GtkBuilder file from being translated even though calling
-        # gettext.gettext manually gives a translation.
+        # Work around a GtkBuilder translation bug by calling gettext.gettext
+        # explicitly on all strings in the GtkBuilder file.
+        # http://bugzilla.gnome.org/show_bug.cgi?id=574520
         # TODO: Remove this shit once GtkBuilder works properly.
         self.__translate_labels()
         self.__translate_titles()

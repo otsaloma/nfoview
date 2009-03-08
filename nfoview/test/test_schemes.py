@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -23,6 +23,11 @@ class TestModule(nfoview.TestCase):
 
         nfoview.schemes.get_color_scheme("default")
         nfoview.schemes.get_color_scheme("custom")
+
+    def test_get_color_scheme(self):
+
+        function = nfoview.schemes.get_color_scheme
+        self.raises(ValueError, function, "null")
 
     def test_get_color_schemes__attributes(self):
 

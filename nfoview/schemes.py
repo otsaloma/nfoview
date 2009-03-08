@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -45,6 +45,18 @@ class CustomScheme(object):
     visited_link = gtk.gdk.color_parse(nfoview.conf.visited_link_color)
 
 
+class DarkGreyOnLightGrayScheme(object):
+
+    """Color scheme with dark grey text on light grey background."""
+
+    name = "dark-grey-on-light-grey"
+    label = _("Dark grey on light grey")
+    foreground = gtk.gdk.color_parse("#666666")
+    background = gtk.gdk.color_parse("#f2f2f2")
+    link = gtk.gdk.color_parse("#5455ff")
+    visited_link = gtk.gdk.color_parse("#ff54ff")
+
+
 class DefaultScheme(object):
 
     """Color scheme with default fore- and background colors."""
@@ -70,6 +82,18 @@ class GreyOnBlackScheme(object):
     visited_link = gtk.gdk.color_parse("#ffabff")
 
 
+class LightGreyOnDarkGrayScheme(object):
+
+    """Color scheme with light grey text on dark grey background."""
+
+    name = "light-grey-on-dark-grey"
+    label = _("Light grey on dark grey")
+    foreground = gtk.gdk.color_parse("#f2f2f2")
+    background = gtk.gdk.color_parse("#666666")
+    link = gtk.gdk.color_parse("#abacff")
+    visited_link = gtk.gdk.color_parse("#ffabff")
+
+
 class WhiteOnBlackScheme(object):
 
     """Color scheme with white text on black background."""
@@ -88,8 +112,10 @@ def _get_color_scheme_classes():
     return [eval(x) for x in globals() if x.endswith("Scheme")]
 
 def get_color_scheme(name):
-    """Get the color scheme class with given name."""
+    """Get the color scheme class with given name.
 
+    Raise ValueError if name not found among color schemes.
+    """
     schemes = _get_color_scheme_classes()
     names = [x.name for x in schemes]
     return schemes[names.index(name)]

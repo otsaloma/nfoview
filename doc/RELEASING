@@ -2,28 +2,24 @@ Releasing a New Version
 =======================
 
  * Do final quality checks
-
-     pylint bin/nfoview nfoview setup.py
-     py.test --tb=no nfoview
+   $ pylint bin/nfoview nfoview setup.py
+   $ py.test --tb=no nfoview
 
  * Make final edits to files, commit and tag
-
-     $EDITOR nfoview/__init__.py
-     @po: intltool-update -m
-     @po: intltool-update -p -g nfoview
-     $EDITOR NEWS TODO
-     git commit -a -m "RELEASE X.Y.Z"
-     git tag -s X.Y.Z
+   $ $EDITOR nfoview/__init__.py
+   po$ intltool-update -m
+   po$ intltool-update -p -g nfoview
+   $ $EDITOR NEWS TODO
+   $ git commit -a -m "RELEASE X.Y.Z"
+   $ git tag -s X.Y.Z
 
  * Build tarballs and edit related files
-
-     ./setup.py clean sdist_gna --formats bztar,gztar
-     $EDITOR dist/*/*.news dist/*/*.changes
+   $ ./setup.py clean sdist_gna --formats bztar,gztar
+   $ $EDITOR dist/*/*.news dist/*/*.changes
 
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
  * Send announcements and update web sites
-
    - http://home.gna.org/nfoview
    - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview
    - nfoview-announcements@gna.org
