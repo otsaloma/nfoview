@@ -141,8 +141,8 @@ class TextView(gtk.TextView):
     def update_colors(self):
         """Update the colors to match the current color scheme."""
 
-        scheme = nfoview.conf.color_scheme
-        try: scheme = nfoview.schemes.get_color_scheme(scheme)
+        name = nfoview.conf.color_scheme
+        try: scheme = nfoview.schemes.get_color_scheme(name)
         except ValueError:
             scheme = nfoview.schemes.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
