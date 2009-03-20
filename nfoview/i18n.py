@@ -23,6 +23,9 @@ import nfoview
 __all__ = ("_", "dgettext", "ngettext")
 
 locale.setlocale(locale.LC_ALL, "")
+locale.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
+locale.textdomain("nfoview")
+
 gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
 gettext.textdomain("nfoview")
 

@@ -1,7 +1,11 @@
+NFO Viewer 1.3.1
+================
+
+ [D] Fix gettext translation system for GtkBuilder files
+
 NFO Viewer 3000
 ===============
 
- * http://bugzilla.gnome.org/show_bug.cgi?id=574520
  * Application icon, preferrably following Tango style guidelines
  * Use sensible defaults for link and visited link colors
  * Make hyperlinks activatable by keyboard

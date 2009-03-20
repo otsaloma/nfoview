@@ -44,34 +44,6 @@ class BuilderDialog(object):
         self._builder.set_translation_domain("nfoview")
         self._builder.add_from_file(ui_file_path)
         self._dialog = self._builder.get_object("dialog")
-        # Work around a GtkBuilder translation bug by calling gettext.gettext
-        # explicitly on all strings in the GtkBuilder file.
-        # http://bugzilla.gnome.org/show_bug.cgi?id=574520
-        # TODO: Remove this shit once GtkBuilder works properly.
-        self.__translate_labels()
-        self.__translate_titles()
-
-    def __translate_labels(self):
-        """Call nfoview.i18n._ on texts of all labels in self._builder."""
-
-        for obj in self._builder.get_objects():
-            if not isinstance(obj, gtk.Label): continue
-            if not obj.get_text(): continue
-            use_underline = obj.get_use_underline()
-            if obj.get_use_markup():
-                obj.set_markup(_(obj.props.label))
-            else: # Not using markup.
-                obj.set_text(_(obj.props.label))
-            obj.set_use_underline(use_underline)
-
-    def __translate_titles(self):
-        """Call nfoview.i18n._ on titles of all widgets in self._builder."""
-
-        for obj in self._builder.get_objects():
-            if not hasattr(obj, "get_title"): continue
-            if not hasattr(obj, "set_title"): continue
-            if not obj.get_title(): continue
-            obj.set_title(_(obj.get_title()))
 
     def run(self):
         """Show the dialog, run it and return response."""
