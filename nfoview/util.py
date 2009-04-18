@@ -16,6 +16,7 @@
 
 """Miscellaneous functions."""
 
+import codecs
 import nfoview
 import os
 import subprocess
@@ -47,6 +48,24 @@ def browse_url(url, browser=None):
     if is_command("exo-open"):
         return subprocess.Popen(("exo-open", url))
     return webbrowser.open(url)
+
+def detect_encoding(path):
+    """Detect and return NFO file encoding."""
+
+    line = open(path, "r").readline()
+    if line.startswith(codecs.BOM_UTF32_BE):
+        return "utf_32_be"
+    if line.startswith(codecs.BOM_UTF32_LE):
+        return "utf_32_le"
+    if line.startswith(codecs.BOM_UTF8):
+        return "utf_8"
+    if line.startswith(codecs.BOM_UTF16_BE):
+        return "utf_16_be"
+    if line.startswith(codecs.BOM_UTF16_LE):
+        return "utf_16_le"
+    # If no encoding was explicitly recognized, as a fallback,
+    # return the de facto standard encoding for NFO files, CP437.
+    return "cp437"
 
 def gdk_color_to_hex(color):
     """Return 7-character hexadecimal string for GDK color."""

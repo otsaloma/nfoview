@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -172,13 +172,16 @@ class Window(gtk.Window):
         self._about_dialog.connect("response", destroy, self)
         self._about_dialog.show()
 
-    def _read_file(self, path):
+    def _read_file(self, path, encoding=None):
         """Read and return the text of the NFO file.
 
         Discard trailing space, trailing blank lines and all odd or even lines
         if they do not contain non-space characters.
         """
-        lines = codecs.open(path, "r", "cp437").readlines()
+        if encoding is None:
+            encoding = nfoview.util.detect_encoding(path)
+            return self._read_file(path, encoding)
+        lines = codecs.open(path, "r", encoding).readlines()
         lines = list(x.rstrip() for x in lines)
         while not lines[-1]:
             lines.pop()

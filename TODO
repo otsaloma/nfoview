@@ -1,3 +1,9 @@
+NFO Viewer 1.4
+==============
+
+ [D] Handle files with UTF8, UTF16 and UTF32 BOMs
+ [?] Add missing exception messages
+
 NFO Viewer 3000
 ===============
 

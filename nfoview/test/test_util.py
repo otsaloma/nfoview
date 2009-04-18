@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
+import codecs
 import gtk
 import nfoview
 import os
@@ -93,6 +94,52 @@ class TestModule(nfoview.TestCase):
         nfoview.util.browse_url(self.url)
         os.environ = environment
         sys.platform = platform
+
+    def test_detect_encoding_cp437(self):
+
+        path = self.get_nfo_file()
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "cp437"
+
+    def test_detect_encoding_utf_8(self):
+
+        path = self.get_nfo_file()
+        text = open(path, "r").read()
+        open(path, "w").write(codecs.BOM_UTF8 + text)
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "utf_8"
+
+    def test_detect_encoding_utf_16_be(self):
+
+        path = self.get_nfo_file()
+        text = open(path, "r").read()
+        open(path, "w").write(codecs.BOM_UTF16_BE + text)
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "utf_16_be"
+
+    def test_detect_encoding_utf_16_le(self):
+
+        path = self.get_nfo_file()
+        text = open(path, "r").read()
+        open(path, "w").write(codecs.BOM_UTF16_LE + text)
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "utf_16_le"
+
+    def test_detect_encoding_utf_32_be(self):
+
+        path = self.get_nfo_file()
+        text = open(path, "r").read()
+        open(path, "w").write(codecs.BOM_UTF32_BE + text)
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "utf_32_be"
+
+    def test_detect_encoding_utf_32_le(self):
+
+        path = self.get_nfo_file()
+        text = open(path, "r").read()
+        open(path, "w").write(codecs.BOM_UTF32_LE + text)
+        encoding = nfoview.util.detect_encoding(path)
+        assert encoding == "utf_32_le"
 
     def test_gdk_color_to_hex(self):
 
