@@ -107,7 +107,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF8 + text)
         encoding = nfoview.util.detect_encoding(path)
-        assert encoding == "utf_8"
+        if nfoview.util.is_valid_encoding("utf_8"):
+            assert encoding == "utf_8"
 
     def test_detect_encoding_utf_16_be(self):
 
@@ -115,7 +116,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF16_BE + text)
         encoding = nfoview.util.detect_encoding(path)
-        assert encoding == "utf_16_be"
+        if nfoview.util.is_valid_encoding("utf_16_be"):
+            assert encoding == "utf_16_be"
 
     def test_detect_encoding_utf_16_le(self):
 
@@ -123,7 +125,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF16_LE + text)
         encoding = nfoview.util.detect_encoding(path)
-        assert encoding == "utf_16_le"
+        if nfoview.util.is_valid_encoding("utf_16_le"):
+            assert encoding == "utf_16_le"
 
     def test_detect_encoding_utf_32_be(self):
 
@@ -131,7 +134,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF32_BE + text)
         encoding = nfoview.util.detect_encoding(path)
-        assert encoding == "utf_32_be"
+        if nfoview.util.is_valid_encoding("utf_32_be"):
+            assert encoding == "utf_32_be"
 
     def test_detect_encoding_utf_32_le(self):
 
@@ -139,7 +143,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF32_LE + text)
         encoding = nfoview.util.detect_encoding(path)
-        assert encoding == "utf_32_le"
+        if nfoview.util.is_valid_encoding("utf_32_le"):
+            assert encoding == "utf_32_le"
 
     def test_gdk_color_to_hex(self):
 
@@ -159,6 +164,13 @@ class TestModule(nfoview.TestCase):
         if os.path.isfile("/usr/bin/python"):
             nfoview.util.is_command("python")
         assert not nfoview.util.is_command("+?")
+
+    def test_is_valid_encoding(self):
+
+        assert nfoview.util.is_valid_encoding("ascii")
+        assert nfoview.util.is_valid_encoding("cp437")
+        assert nfoview.util.is_valid_encoding("utf_8")
+        assert not nfoview.util.is_valid_encoding("xxx")
 
     def test_uri_to_path__unix(self):
 

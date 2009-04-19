@@ -53,15 +53,20 @@ def detect_encoding(path):
     """Detect and return NFO file encoding."""
 
     line = open(path, "r").readline()
-    if line.startswith(codecs.BOM_UTF32_BE):
+    if (line.startswith(codecs.BOM_UTF32_BE) and
+        is_valid_encoding("utf_32_be")):
         return "utf_32_be"
-    if line.startswith(codecs.BOM_UTF32_LE):
+    if (line.startswith(codecs.BOM_UTF32_LE) and
+        is_valid_encoding("utf_32_le")):
         return "utf_32_le"
-    if line.startswith(codecs.BOM_UTF8):
+    if (line.startswith(codecs.BOM_UTF8) and
+        is_valid_encoding("utf_8")):
         return "utf_8"
-    if line.startswith(codecs.BOM_UTF16_BE):
+    if (line.startswith(codecs.BOM_UTF16_BE) and
+        is_valid_encoding("utf_16_be")):
         return "utf_16_be"
-    if line.startswith(codecs.BOM_UTF16_LE):
+    if (line.startswith(codecs.BOM_UTF16_LE) and
+        is_valid_encoding("utf_16_le")):
         return "utf_16_le"
     # If no encoding was explicitly recognized, as a fallback,
     # return the de facto standard encoding for NFO files, CP437.
@@ -81,6 +86,15 @@ def is_command(command):
     dirs = os.environ.get("PATH", "").split(os.pathsep)
     paths = [os.path.join(x, command) for x in dirs]
     return any(map(os.path.isfile, paths))
+
+def is_valid_encoding(encoding):
+    """Return True if encoding is a valid and supported encoding."""
+
+    try:
+        codecs.lookup(encoding)
+        return True
+    except LookupError:
+        return False
 
 def uri_to_path(uri):
     """Convert URI to local filepath."""
