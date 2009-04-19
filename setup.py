@@ -99,7 +99,8 @@ class InstallData(install_data):
         """Return a tuple for the translated desktop file."""
 
         path = os.path.join("data", "nfoview.desktop")
-        os.system("intltool-merge -d po %s.in %s" % (path, path))
+        command = "intltool-merge -d po %s.in %s" % (path, path)
+        run_command_or_exit(command)
         return ("share/applications", (path,))
 
     def __get_mo_file(self, po_file):
@@ -113,7 +114,8 @@ class InstallData(install_data):
         mo_file = os.path.join(mo_dir, "nfoview.mo")
         dest_dir = os.path.join("share", mo_dir)
         log.info("compiling '%s'" % mo_file)
-        os.system("msgfmt %s -o %s" % (po_file, mo_file))
+        command = "msgfmt %s -o %s" % (po_file, mo_file)
+        run_command_or_exit(command)
         return (dest_dir, (mo_file,))
 
     def run(self):
@@ -210,6 +212,13 @@ class SDistGna(sdist):
         for tarball in tarballs:
             log.info("signing '%s'" % tarball)
             os.system("gpg --detach %s" % tarball)
+
+
+def run_command_or_exit(command):
+    """Run command in shell and raise SystemExit if it fails."""
+
+    if os.system(command) != 0:
+        raise SystemExit("Error: Command '%s' failed." % command)
 
 
 setup(
