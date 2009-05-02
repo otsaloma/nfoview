@@ -41,6 +41,7 @@ class Window(gtk.Window):
         self.path = path
         self.view = nfoview.TextView()
         self._init_uim()
+        self._init_keys()
         self._init_properties()
         self._init_contents()
         self._init_signal_handlers()
@@ -64,6 +65,15 @@ class Window(gtk.Window):
         vbox.pack_start(scroller, True, True, 0)
         vbox.show_all()
         self.add(vbox)
+
+    def _init_keys(self):
+        """Initialize keybindings not handled by UI manager."""
+
+        accel_group = gtk.AccelGroup()
+        key = gtk.keysyms.Escape
+        callback = self._on_escape_pressed
+        accel_group.connect_group(key, 0, gtk.ACCEL_MASK, callback)
+        self.add_accel_group(accel_group)
 
     def _init_properties(self):
         """Initialize the window properties."""
@@ -134,6 +144,11 @@ class Window(gtk.Window):
             self._preferences_dialog = None
         self._preferences_dialog.connect("response", destroy, self)
         self._preferences_dialog.show()
+
+    def _on_escape_pressed(self, *args):
+        """Delete the window to close the document."""
+
+        self.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
 
     def _on_open_file_activate(self, *args):
         """Show the open file dialog and open the chosen file."""
