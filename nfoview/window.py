@@ -152,6 +152,12 @@ class Window(gtk.Window):
         for path in paths:
             nfoview.main.open_window(path)
 
+    def _on_quit_activate(self, *args):
+        """Delete all windows to quit NFO Viewer."""
+
+        for window in nfoview.main.windows[:]:
+            window.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
+
     def _on_select_all_text_activate(self, *args):
         """Select all text in the document."""
 

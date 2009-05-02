@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -25,6 +25,7 @@ __all__ = (
     "CopyTextAction",
     "EditPreferencesAction",
     "OpenFileAction",
+    "QuitAction",
     "SelectAllTextAction",
     "ShowAboutDialogAction",
     "ShowEditMenuAction",
@@ -128,6 +129,20 @@ class OpenFileAction(Action):
         self.props.stock_id = gtk.STOCK_OPEN
         self.props.tooltip = _("Open file")
         self.accelerator = "<Control>O"
+
+
+class QuitAction(Action):
+
+    """Close all documents and quit NFO Viewer."""
+
+    def __init__(self):
+        """Initialize a QuitAction instance."""
+
+        Action.__init__(self, "quit")
+        self.props.label = _("_Quit")
+        self.props.stock_id = gtk.STOCK_QUIT
+        self.props.tooltip = _("Quit NFO Viewer")
+        self.accelerator = "<Control>Q"
 
 
 class ShowAboutDialogAction(Action):

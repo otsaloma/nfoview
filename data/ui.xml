@@ -3,6 +3,7 @@
     <menu name="file" action="show_file_menu">
       <menuitem name="open" action="open_file"/>
       <menuitem name="close" action="close_document"/>
+      <menuitem name="quit" action="quit"/>
     </menu>
     <menu name="edit" action="show_edit_menu">
       <menuitem name="copy" action="copy_text"/>
