@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-19 20:34+0300\n"
+"POT-Creation-Date: 2009-05-02 18:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,71 +94,79 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#: ../nfoview/actions.py:74
+#: ../nfoview/actions.py:75
 msgid "_Close"
 msgstr ""
 
-#: ../nfoview/actions.py:76
+#: ../nfoview/actions.py:77
 msgid "Close document"
 msgstr ""
 
-#: ../nfoview/actions.py:89
+#: ../nfoview/actions.py:90
 msgid "_Copy"
 msgstr ""
 
-#: ../nfoview/actions.py:90
+#: ../nfoview/actions.py:91
 msgid "Copy"
 msgstr ""
 
-#: ../nfoview/actions.py:92
+#: ../nfoview/actions.py:93
 msgid "Copy the selected text to the clipboard"
 msgstr ""
 
-#: ../nfoview/actions.py:112
+#: ../nfoview/actions.py:113
 msgid "_Preferences"
 msgstr ""
 
-#: ../nfoview/actions.py:114
+#: ../nfoview/actions.py:115
 msgid "Edit NFO Viewer preferences"
 msgstr ""
 
-#: ../nfoview/actions.py:126
+#: ../nfoview/actions.py:127
 msgid "_Open..."
 msgstr ""
 
-#: ../nfoview/actions.py:127 ../nfoview/open.py:34
+#: ../nfoview/actions.py:128 ../nfoview/open.py:34
 msgid "Open"
 msgstr ""
 
-#: ../nfoview/actions.py:129
+#: ../nfoview/actions.py:130
 msgid "Open file"
 msgstr ""
 
-#: ../nfoview/actions.py:141
+#: ../nfoview/actions.py:142
+msgid "_Quit"
+msgstr ""
+
+#: ../nfoview/actions.py:144
+msgid "Quit NFO Viewer"
+msgstr ""
+
+#: ../nfoview/actions.py:156
 msgid "_About"
 msgstr ""
 
-#: ../nfoview/actions.py:143
+#: ../nfoview/actions.py:158
 msgid "Show information about NFO Viewer"
 msgstr ""
 
-#: ../nfoview/actions.py:154
+#: ../nfoview/actions.py:169
 msgid "_Select All"
 msgstr ""
 
-#: ../nfoview/actions.py:157
+#: ../nfoview/actions.py:172
 msgid "Select all text in the document"
 msgstr ""
 
-#: ../nfoview/actions.py:175
+#: ../nfoview/actions.py:190
 msgid "_Edit"
 msgstr ""
 
-#: ../nfoview/actions.py:186
+#: ../nfoview/actions.py:201
 msgid "_File"
 msgstr ""
 
-#: ../nfoview/actions.py:197
+#: ../nfoview/actions.py:212
 msgid "_Help"
 msgstr ""
 
