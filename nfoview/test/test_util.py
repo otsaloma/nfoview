@@ -107,8 +107,8 @@ class TestModule(nfoview.TestCase):
         text = open(path, "r").read()
         open(path, "w").write(codecs.BOM_UTF8 + text)
         encoding = nfoview.util.detect_encoding(path)
-        if nfoview.util.is_valid_encoding("utf_8"):
-            assert encoding == "utf_8"
+        if nfoview.util.is_valid_encoding("utf_8_sig"):
+            assert encoding == "utf_8_sig"
 
     def test_detect_encoding_utf_16_be(self):
 

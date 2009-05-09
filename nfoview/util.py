@@ -60,8 +60,8 @@ def detect_encoding(path):
         is_valid_encoding("utf_32_le")):
         return "utf_32_le"
     if (line.startswith(codecs.BOM_UTF8) and
-        is_valid_encoding("utf_8")):
-        return "utf_8"
+        is_valid_encoding("utf_8_sig")):
+        return "utf_8_sig"
     if (line.startswith(codecs.BOM_UTF16_BE) and
         is_valid_encoding("utf_16_be")):
         return "utf_16_be"
