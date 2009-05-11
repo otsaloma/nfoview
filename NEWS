@@ -1,3 +1,12 @@
+NFO Viewer 1.5
+==============
+
+ * Add a quit menu item to close all windows (#581091)
+ * Allow windows to be closed by pressing Escape (#581091)
+ * Update German translation (Christoph Wickert)
+ * Add Swiss German translation (Fabian Affolter)
+ * Add Bulgarian translation (Svetoslav Stefanov)
+
 NFO Viewer 1.4
 ==============
 
