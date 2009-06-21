@@ -1,7 +1,10 @@
-NFO Viewer 1.5.1
+NFO Viewer 1.6
 ================
 
- * Update Simplified Chinese translation (Jonathan Ye)
+ [D] Add configuration file option 'text_view_max_lines' to set the
+     maximum window height to an amount of lines and raise its default
+     value from 40 to 50 lines
+ [D] Update Simplified Chinese translation (Jonathan Ye)
 
 NFO Viewer 3000
 ===============

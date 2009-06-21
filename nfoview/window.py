@@ -234,8 +234,14 @@ class Window(gtk.Window):
     def resize_to_text(self):
         """Set the window size based on the text in the view."""
 
+        # Get the width of text view from the text to be displayed or default
+        # to 80 times the width of 'x' for blank windows. Get the height from
+        # the text to be displayed, but limit it to maximum amount of lines
+        # defined in 'text_view_max_lines' or for blank windows default to the
+        # same. Ensure that the window in its entirety fits on the screen.
         text = self.view.get_text()
-        basic_text = "\n".join(["x" * 80] * 40)
+        height = nfoview.conf.text_view_max_lines
+        basic_text = "\n".join(["x" * 80] * height)
         label = gtk.Label(text or basic_text)
         attrs = pango.AttrList()
         font_desc = pango.FontDescription(nfoview.conf.font)
