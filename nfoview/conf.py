@@ -35,7 +35,7 @@ class Configuration(object):
         "link_color": ("#0000ff", str, str),
         "pixels_above_lines": (0, int, str),
         "pixels_below_lines": (0, int, str),
-        "text_view_max_lines": (40, int, str),
+        "text_view_max_lines": (50, int, str),
         "version": ("", str, str),
         "visited_link_color": ("#ff00ff", str, str),}
 
