@@ -19,6 +19,7 @@
 import gtk
 import nfoview
 import pango
+import re
 
 __all__ = ("TextView",)
 
@@ -111,6 +112,12 @@ class TextView(gtk.TextView):
     def set_text(self, text):
         """Set the text displayed in the text view."""
 
+        re_url = re.compile(
+            r"(([0-9a-zA-Z]+://%s+?\.%s+)|(www\.%s+?\.%s+))" %
+            (r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
+             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
+             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
+             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]"))
         self._link_tags = []
         self._visited_link_tags = []
         text_buffer = self.get_buffer()
@@ -120,17 +127,13 @@ class TextView(gtk.TextView):
         for i, line in enumerate(lines):
             words = line.split(" ")
             for j, word in enumerate(words):
-                if word.count("://"):
-                    k = word.index("://")
-                    while (k > 0) and word[k - 1].isalnum():
-                        k -= 1
-                    self._insert_word(word[:k])
-                    self._insert_url(word[k:])
-                elif word.count("www."):
-                    k = word.index("www.")
-                    self._insert_word(word[:k])
-                    self._insert_url(word[k:])
-                else:
+                match = re_url.search(word)
+                if match is not None:
+                    a, z = match.span()
+                    self._insert_word(word[:a])
+                    self._insert_url(word[a:z])
+                    self._insert_word(word[z:])
+                else: # Normal text.
                     self._insert_word(word)
                 if j < (len(words) - 1):
                     self._insert_word(" ")
