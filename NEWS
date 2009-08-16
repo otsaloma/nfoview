@@ -1,3 +1,12 @@
+NFO Viewer 1.6
+================
+
+ * Add configuration file option 'text_view_max_lines' to set the
+   maximum window height to an amount of lines and raise its default
+   value from 40 to 45 lines
+ * Fix URL-detection to be more strict
+ * Update Simplified Chinese translation (Jonathan Ye)
+
 NFO Viewer 1.5
 ==============
 
