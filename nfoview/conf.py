@@ -51,6 +51,7 @@ class Configuration(object):
         self.link_color = None
         self.pixels_above_lines = None
         self.pixels_below_lines = None
+        self.text_view_max_lines = None
         self.version = None
         self.visited_link_color = None
 
