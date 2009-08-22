@@ -97,3 +97,12 @@ class TestWindow(nfoview.TestCase):
     def test_resize_to_text(self):
 
         self.window.resize_to_text()
+
+    def test_resize_to_text__long_lines(self):
+
+        path = self.get_nfo_file()
+        fobj = open(path, "w")
+        fobj.write("aaa " * 100)
+        fobj.close()
+        self.window.open_file(path)
+        self.window.resize_to_text()

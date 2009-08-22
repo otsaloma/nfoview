@@ -30,7 +30,8 @@ __all__ = (
     "ShowAboutDialogAction",
     "ShowEditMenuAction",
     "ShowFileMenuAction",
-    "ShowHelpMenuAction",)
+    "ShowHelpMenuAction",
+    "WrapLinesAction",)
 
 
 class Action(gtk.Action):
@@ -62,6 +63,13 @@ class Action(gtk.Action):
         except nfoview.AffirmationError:
             return self.set_sensitive(False)
         return self.set_sensitive(True)
+
+
+class ToggleAction(Action, gtk.ToggleAction):
+
+    """Base class for UI manager toggle actions."""
+
+    pass
 
 
 class CloseDocumentAction(Action):
@@ -210,3 +218,22 @@ class ShowHelpMenuAction(Action):
 
         Action.__init__(self, "show_help_menu")
         self.props.label = _("_Help")
+
+
+class WrapLinesAction(ToggleAction):
+
+    """Break long lines at word borders."""
+
+    def __init__(self):
+        """Initialize a WrapLinesAction instance."""
+
+        ToggleAction.__init__(self, "wrap_lines")
+        self.props.active = False
+        self.props.label = _("_Wrap Lines")
+        self.props.tooltip = _("Break long lines at word borders")
+        self.accelerator = "<Control>R"
+
+    def _affirm_doable(self, window):
+        """Raise AffirmationError if action cannot be done."""
+
+        nfoview.util.affirm(window.view is not None)

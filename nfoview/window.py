@@ -21,6 +21,7 @@ import gtk
 import nfoview
 import os
 import pango
+import textwrap
 
 __all__ = ("Window",)
 
@@ -51,6 +52,24 @@ class Window(gtk.Window):
             self.open_file(path)
         self.resize_to_text()
         self._update_action_sensitivities()
+
+    def _get_action(self, name):
+        """Return action from the UI manager by name."""
+
+        for action_group in self._uim.get_action_groups():
+            action = action_group.get_action(name)
+            if action is not None: return action
+        raise ValueError("Action group %s not found" % repr(name))
+
+    def _get_size_test_label(self):
+        """Return a label to use for text size calculations."""
+
+        label = gtk.Label()
+        attrs = pango.AttrList()
+        font_desc = pango.FontDescription(nfoview.conf.font)
+        attrs.insert(pango.AttrFontDesc(font_desc, 0, -1))
+        label.set_attributes(attrs)
+        return label
 
     def _init_contents(self):
         """Initialize containers and pack contents."""
@@ -193,6 +212,14 @@ class Window(gtk.Window):
         self._about_dialog.connect("response", destroy, self)
         self._about_dialog.show()
 
+    def _on_wrap_lines_activate(self, action, *args):
+        """Break long lines at word borders."""
+
+        if action.props.active:
+            self.view.set_wrap_mode(gtk.WRAP_WORD)
+        else: # not action.props.active
+            self.view.set_wrap_mode(gtk.WRAP_NONE)
+
     def _read_file(self, path, encoding=None):
         """Read and return the text of the NFO file.
 
@@ -234,30 +261,40 @@ class Window(gtk.Window):
     def resize_to_text(self):
         """Set the window size based on the text in the view."""
 
-        # Get the width of text view from the text to be displayed or default
-        # to 80 times the width of 'x' for blank windows. Get the height from
-        # the text to be displayed, but limit it to maximum amount of lines
-        # defined in 'text_view_max_lines' or for blank windows default to the
-        # same. Ensure that the window in its entirety fits on the screen.
-        text = self.view.get_text()
-        height = nfoview.conf.text_view_max_lines
-        basic_text = "\n".join(["x" * 80] * height)
-        label = gtk.Label(text or basic_text)
-        attrs = pango.AttrList()
-        font_desc = pango.FontDescription(nfoview.conf.font)
-        attrs.insert(pango.AttrFontDesc(font_desc, 0, -1))
-        label.set_attributes(attrs)
-        width, height = label.size_request()
-        label.set_text(basic_text)
-        height = min(height, label.size_request()[1])
+        # Get the pixel size of the text to be displayed. If the width exceeds
+        # 'text_view_max_chars', switch to line wrapping and use 80 characters
+        # for the window width. Limit the height of the window to
+        # 'text_view_max_lines'. Finally limit both the width and height of the
+        # window to 80 % of the screen to ensure it fits on the screen.
+        label = self._get_size_test_label()
+        req_text = self.view.get_text()
+        blank_text = "\n".join(["x" * 80] * 40)
+        label.set_text(req_text or blank_text)
+        req_size = list(label.size_request())
+        max_chars = nfoview.conf.text_view_max_chars
+        max_lines =  nfoview.conf.text_view_max_lines
+        max_text = "\n".join(["x" * max_chars] * max_lines)
+        label.set_text(max_text)
+        max_size = list(label.size_request())
+        size = list(req_size)
+        if req_size[0] > max_size[0]:
+            self._get_action("wrap_lines").activate()
+            lines = req_text.split("\n")
+            for i, line in enumerate(lines):
+                lines[i] = textwrap.fill(line, 80)
+            req_text = "\n".join(lines)
+            label.set_text(req_text)
+            req_size = list(label.size_request())
+            size[0] = min(req_size[0], max_size[0])
+        size[1] = min(req_size[1], max_size[1])
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         lines = self.view.get_text().split("\n")
-        height += ((pixels_above + pixels_below) * len(lines))
+        size[1] += ((pixels_above + pixels_below) * len(lines))
         # Assume 32 pixels for scrollbars, 24 for menubar height
         # and 12 pixels total for text view left and right margins.
-        width = max(200, width + 12 + 32)
-        height = max(100, height + 24 + 32)
-        width = min(width, int(0.8 * gtk.gdk.screen_width()))
-        height = min(height, int(0.8 * gtk.gdk.screen_height()))
-        self.resize(width, height)
+        size[0] = max(200, size[0] + 12 + 32)
+        size[1] = max(100, size[1] + 24 + 32)
+        size[0] = min(size[0], int(0.8 * gtk.gdk.screen_width()))
+        size[1] = min(size[1], int(0.8 * gtk.gdk.screen_height()))
+        self.resize(size[0], size[1])

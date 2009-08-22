@@ -35,6 +35,7 @@ class Configuration(object):
         "link_color": ("#0000ff", str, str),
         "pixels_above_lines": (0, int, str),
         "pixels_below_lines": (0, int, str),
+        "text_view_max_chars": (160, int, str),
         "text_view_max_lines": (45, int, str),
         "version": ("", str, str),
         "visited_link_color": ("#ff00ff", str, str),}
@@ -51,6 +52,7 @@ class Configuration(object):
         self.link_color = None
         self.pixels_above_lines = None
         self.pixels_below_lines = None
+        self.text_view_max_chars = None
         self.text_view_max_lines = None
         self.version = None
         self.visited_link_color = None

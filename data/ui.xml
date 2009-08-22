@@ -9,6 +9,8 @@
       <menuitem name="copy" action="copy_text"/>
       <menuitem name="select_all" action="select_all_text"/>
       <separator/>
+      <menuitem name="wrap_lines" action="wrap_lines"/>
+      <separator/>
       <menuitem name="preferences" action="edit_preferences"/>
     </menu>
     <menu name="help" action="show_help_menu">
