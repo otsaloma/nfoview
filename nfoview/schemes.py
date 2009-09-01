@@ -20,6 +20,14 @@ import gtk
 import nfoview
 _ = nfoview.i18n._
 
+__all__ = ("BlackOnWhiteScheme",
+           "CustomScheme",
+           "DarkGreyOnLightGrayScheme",
+           "DefaultScheme",
+           "GreyOnBlackScheme",
+           "LightGreyOnDarkGrayScheme",
+           "WhiteOnBlackScheme",)
+
 
 class BlackOnWhiteScheme(object):
 
@@ -53,8 +61,8 @@ class DarkGreyOnLightGrayScheme(object):
     label = _("Dark grey on light grey")
     foreground = gtk.gdk.color_parse("#666666")
     background = gtk.gdk.color_parse("#f2f2f2")
-    link = gtk.gdk.color_parse("#5455ff")
-    visited_link = gtk.gdk.color_parse("#ff54ff")
+    link = gtk.gdk.color_parse("#5555ff")
+    visited_link = gtk.gdk.color_parse("#ff55ff")
 
 
 class DefaultScheme(object):
@@ -66,8 +74,8 @@ class DefaultScheme(object):
     _style = gtk.TextView().rc_get_style()
     foreground = _style.text[gtk.STATE_NORMAL]
     background = _style.base[gtk.STATE_NORMAL]
-    link = gtk.gdk.color_parse("#5455ff")
-    visited_link = gtk.gdk.color_parse("#ff54ff")
+    link = gtk.gdk.color_parse("#5555ff")
+    visited_link = gtk.gdk.color_parse("#ff55ff")
 
 
 class GreyOnBlackScheme(object):
@@ -78,8 +86,8 @@ class GreyOnBlackScheme(object):
     label = _("Grey on black")
     foreground = gtk.gdk.color_parse("#aaaaaa")
     background = gtk.gdk.color_parse("#000000")
-    link = gtk.gdk.color_parse("#abacff")
-    visited_link = gtk.gdk.color_parse("#ffabff")
+    link = gtk.gdk.color_parse("#aaaaff")
+    visited_link = gtk.gdk.color_parse("#ffaaff")
 
 
 class LightGreyOnDarkGrayScheme(object):
@@ -90,8 +98,8 @@ class LightGreyOnDarkGrayScheme(object):
     label = _("Light grey on dark grey")
     foreground = gtk.gdk.color_parse("#f2f2f2")
     background = gtk.gdk.color_parse("#666666")
-    link = gtk.gdk.color_parse("#abacff")
-    visited_link = gtk.gdk.color_parse("#ffabff")
+    link = gtk.gdk.color_parse("#aaaaff")
+    visited_link = gtk.gdk.color_parse("#ffaaff")
 
 
 class WhiteOnBlackScheme(object):
@@ -102,31 +110,5 @@ class WhiteOnBlackScheme(object):
     label = _("White on black")
     foreground = gtk.gdk.color_parse("#ffffff")
     background = gtk.gdk.color_parse("#000000")
-    link = gtk.gdk.color_parse("#abacff")
-    visited_link = gtk.gdk.color_parse("#ffabff")
-
-
-def _get_color_scheme_classes():
-    """Get a list of all color scheme classes."""
-
-    return [eval(x) for x in globals() if x.endswith("Scheme")]
-
-def get_color_scheme(name):
-    """Get the color scheme class with given name.
-
-    Raise ValueError if name not found among color schemes.
-    """
-    schemes = _get_color_scheme_classes()
-    names = [x.name for x in schemes]
-    return schemes[names.index(name)]
-
-def get_color_schemes():
-    """Get a list of all color scheme classes in proper order."""
-
-    schemes = _get_color_scheme_classes()
-    schemes.remove(DefaultScheme)
-    schemes.remove(CustomScheme)
-    schemes.sort(lambda x, y: cmp(x.label, y.label))
-    schemes.insert(0, DefaultScheme)
-    schemes.append(CustomScheme)
-    return schemes
+    link = gtk.gdk.color_parse("#aaaaff")
+    visited_link = gtk.gdk.color_parse("#ffaaff")

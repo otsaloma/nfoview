@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -16,24 +16,31 @@
 
 import nfoview
 import os
+import sys
 
 
 class TestModule(nfoview.TestCase):
 
-    def test_attributes__no_environment(self):
-
-        environment = os.environ.copy()
+    @nfoview.deco.monkey_patch(os, "environ")
+    def test_config_home_dir__no_environment(self):
         os.environ.clear()
-        assert hasattr(nfoview, "CONFIG_DIR")
-        assert os.path.isdir(nfoview.DATA_DIR)
-        assert hasattr(nfoview, "LOCALE_DIR")
-        os.environ = environment
+        reload(nfoview.paths)
+        assert hasattr(nfoview, "CONFIG_HOME_DIR")
 
-    def test_attributes__xdg_environment(self):
+    @nfoview.deco.monkey_patch(sys, "platform")
+    def test_config_home_dir__win32(self):
+        sys.platform = "win32"
+        reload(nfoview.paths)
+        assert hasattr(nfoview, "CONFIG_HOME_DIR")
 
-        environment = os.environ.copy()
-        os.environ.clear()
+    @nfoview.deco.monkey_patch(os, "environ")
+    def test_config_home_dir__xdg_environment(self):
         os.environ["XDG_CONFIG_HOME"] = "xdg"
         reload(nfoview.paths)
-        assert hasattr(nfoview, "CONFIG_DIR")
-        os.environ = environment
+        assert hasattr(nfoview, "CONFIG_HOME_DIR")
+
+    def test_data_dir__source(self):
+        assert os.path.isdir(nfoview.DATA_DIR)
+
+    def test_locale_dir__source(self):
+        assert hasattr(nfoview, "LOCALE_DIR")

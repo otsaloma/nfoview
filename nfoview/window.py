@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer window for NFO files."""
+"""Viewer window and user interface controller for NFO files."""
 
 import codecs
 import gtk
@@ -28,11 +28,10 @@ __all__ = ("Window",)
 
 class Window(gtk.Window):
 
-    """Viewer window for NFO files."""
+    """Viewer window and user interface controller for NFO files."""
 
     def __init__(self, path=None):
-        """Initialize a Window instance."""
-
+        """Initialize a Window instance and open NFO file at path."""
         gtk.Window.__init__(self)
         self._about_dialog = None
         self._actions = []
@@ -41,21 +40,10 @@ class Window(gtk.Window):
         self.clipboard = gtk.Clipboard()
         self.path = path
         self.view = nfoview.TextView()
-        self._init_uim()
-        self._init_keys()
-        self._init_properties()
-        self._init_contents()
-        self._init_signal_handlers()
-        self.view.set_sensitive(False)
-        self.view.drag_dest_unset()
-        if path is not None:
-            self.open_file(path)
-        self.resize_to_text()
-        self._update_action_sensitivities()
+        self._init_window()
 
     def _get_action(self, name):
         """Return action from the UI manager by name."""
-
         for action_group in self._uim.get_action_groups():
             action = action_group.get_action(name)
             if action is not None: return action
@@ -63,7 +51,6 @@ class Window(gtk.Window):
 
     def _get_size_test_label(self):
         """Return a label to use for text size calculations."""
-
         label = gtk.Label()
         attrs = pango.AttrList()
         font_desc = pango.FontDescription(nfoview.conf.font)
@@ -71,53 +58,8 @@ class Window(gtk.Window):
         label.set_attributes(attrs)
         return label
 
-    def _init_contents(self):
-        """Initialize containers and pack contents."""
-
-        vbox = gtk.VBox()
-        menubar = self._uim.get_widget("/ui/menubar")
-        vbox.pack_start(menubar, False, False, 0)
-        scroller = gtk.ScrolledWindow()
-        scroller.set_policy(*((gtk.POLICY_AUTOMATIC,) * 2))
-        scroller.set_shadow_type(gtk.SHADOW_ETCHED_IN)
-        scroller.add(self.view)
-        vbox.pack_start(scroller, True, True, 0)
-        vbox.show_all()
-        self.add(vbox)
-
-    def _init_keys(self):
-        """Initialize keybindings not handled by UI manager."""
-
-        accel_group = gtk.AccelGroup()
-        key = gtk.keysyms.Escape
-        callback = self._on_escape_pressed
-        accel_group.connect_group(key, 0, gtk.ACCEL_MASK, callback)
-        self.add_accel_group(accel_group)
-
-    def _init_properties(self):
-        """Initialize the window properties."""
-
-        self.set_position(gtk.WIN_POS_CENTER)
-        self.set_icon_name("gtk-dialog-info")
-        gtk.window_set_default_icon_name("gtk-dialog-info")
-        flags = gtk.DEST_DEFAULT_ALL
-        targets = [("text/uri-list", 0, 0)]
-        types = gtk.gdk.ACTION_COPY
-        self.drag_dest_set(flags, targets, types)
-        callback = self._on_drag_data_received
-        self.connect("drag-data-received", callback)
-
-    def _init_signal_handlers(self):
-        """Initialize signal handlers."""
-
-        def update(text_buffer, spec, self):
-            self._update_action_sensitivities()
-        text_buffer = self.view.get_buffer()
-        text_buffer.connect("notify::has-selection", update, self)
-
-    def _init_uim(self):
-        """Initialize the UI manager actions."""
-
+    def _init_action_groups_and_uim(self):
+        """Initialize action groups and UI manager actions."""
         action_group = gtk.ActionGroup("main")
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
@@ -127,25 +69,75 @@ class Window(gtk.Window):
             action_group.add_action_with_accel(action, action.accelerator)
             self._actions.append(action)
         self._uim.insert_action_group(action_group, 0)
-        ui_xml_file = os.path.join(nfoview.DATA_DIR, "ui.xml")
-        self._uim.add_ui_from_file(ui_xml_file)
+        self._uim.add_ui_from_file(os.path.join(nfoview.DATA_DIR, "ui.xml"))
         self.add_accel_group(self._uim.get_accel_group())
         self._uim.ensure_update()
 
+    def _init_contents(self):
+        """Initialize child containers and pack contents."""
+        main_vbox = gtk.VBox()
+        menubar = self._uim.get_widget("/ui/menubar")
+        main_vbox.pack_start(menubar, False, False, 0)
+        scroller = gtk.ScrolledWindow()
+        scroller.set_policy(*((gtk.POLICY_AUTOMATIC,) * 2))
+        scroller.set_shadow_type(gtk.SHADOW_ETCHED_IN)
+        scroller.add(self.view)
+        main_vbox.pack_start(scroller, True, True, 0)
+        main_vbox.show_all()
+        self.add(main_vbox)
+
+    def _init_keys(self):
+        """Set keybindings not handled by UI manager."""
+        accel_group = gtk.AccelGroup()
+        key = gtk.keysyms.Escape
+        callback = self._on_escape_pressed
+        accel_group.connect_group(key, 0, gtk.ACCEL_MASK, callback)
+        self.add_accel_group(accel_group)
+
+    def _init_properties(self):
+        """Set window properties."""
+        self.set_position(gtk.WIN_POS_CENTER)
+        self.set_icon_name("gtk-dialog-info")
+        gtk.window_set_default_icon_name("gtk-dialog-info")
+        self.drag_dest_set(gtk.DEST_DEFAULT_ALL,
+                           [("text/uri-list", 0, 0)],
+                           gtk.gdk.ACTION_COPY)
+
+        self.connect("drag-data-received",
+                     self._on_drag_data_received)
+
+    def _init_text_view_and_buffer(self):
+        """Set text view and text buffer properties."""
+        self.view.set_sensitive(False)
+        self.view.drag_dest_unset()
+        def update(text_buffer, spec, self):
+            self._update_action_sensitivities()
+        text_buffer = self.view.get_buffer()
+        text_buffer.connect("notify::has-selection", update, self)
+
+    def _init_window(self):
+        """Initialize widgets and set initial properties."""
+        self._init_action_groups_and_uim()
+        self._init_properties()
+        self._init_keys()
+        self._init_contents()
+        self._init_text_view_and_buffer()
+        if self.path is not None:
+            self.open_file(self.path)
+        self.resize_to_text()
+        self._update_action_sensitivities()
+
     def _on_close_document_activate(self, *args):
         """Delete the window to close the document."""
-
         self.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
 
     def _on_copy_text_activate(self, *args):
         """Copy the selected text to the clipboard."""
-
         text_buffer = self.view.get_buffer()
         text_buffer.copy_clipboard(self.clipboard)
 
     def _on_drag_data_received(self, widget, context, x, y, sdata, info, time):
         """Open files dragged from a file browser."""
-
         paths = map(nfoview.util.uri_to_path, sdata.get_uris())
         if self.path is None:
             self.open_file(paths.pop(0))
@@ -154,7 +146,6 @@ class Window(gtk.Window):
 
     def _on_edit_preferences_activate(self, *args):
         """Show the preferences dialog."""
-
         if self._preferences_dialog is not None:
             return self._preferences_dialog.present()
         self._preferences_dialog = nfoview.PreferencesDialog(self)
@@ -166,12 +157,10 @@ class Window(gtk.Window):
 
     def _on_escape_pressed(self, *args):
         """Delete the window to close the document."""
-
         self.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
 
     def _on_open_file_activate(self, *args):
         """Show the open file dialog and open the chosen file."""
-
         dialog = nfoview.OpenDialog(self)
         if self.path is not None:
             directory = os.path.dirname(self.path)
@@ -188,13 +177,11 @@ class Window(gtk.Window):
 
     def _on_quit_activate(self, *args):
         """Delete all windows to quit NFO Viewer."""
-
         for window in nfoview.main.windows[:]:
             window.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
 
     def _on_select_all_text_activate(self, *args):
         """Select all text in the document."""
-
         text_buffer = self.view.get_buffer()
         bounds = text_buffer.get_bounds()
         text_buffer.select_range(*bounds)
@@ -202,7 +189,6 @@ class Window(gtk.Window):
 
     def _on_show_about_dialog_activate(self, *args):
         """Show the about dialog."""
-
         if self._about_dialog is not None:
             return self._about_dialog.present()
         self._about_dialog = nfoview.AboutDialog(self)
@@ -214,7 +200,6 @@ class Window(gtk.Window):
 
     def _on_wrap_lines_activate(self, action, *args):
         """Break long lines at word borders."""
-
         if action.props.active:
             self.view.set_wrap_mode(gtk.WRAP_WORD)
         else: # not action.props.active
@@ -230,26 +215,22 @@ class Window(gtk.Window):
             encoding = nfoview.util.detect_encoding(path)
             return self._read_file(path, encoding)
         lines = codecs.open(path, "r", encoding).readlines()
-        lines = list(x.rstrip() for x in lines)
+        lines = [x.rstrip() for x in lines]
         while not lines[-1]:
             lines.pop()
-        odd_lines = [lines[i] for i in range(0, len(lines), 2)]
-        even_lines = [lines[i] for i in range(1, len(lines), 2)]
-        if not sum(len(x) for x in odd_lines):
-            lines = even_lines
-        if not sum(len(x) for x in even_lines):
-            lines = odd_lines
+        lines0 = [lines[i] for i in range(0, len(lines), 2)]
+        lines1 = [lines[i] for i in range(1, len(lines), 2)]
+        if not sum(map(len, lines0)): lines = lines1
+        if not sum(map(len, lines1)): lines = lines0
         return "\n".join(lines)
 
     def _update_action_sensitivities(self):
         """Update the sensitivities of all UI manager actions."""
-
         for action in self._actions:
             action.update_sensitivity(self)
 
     def open_file(self, path):
-        """Read the file and show its text in the text view."""
-
+        """Read the file and show its text in the view."""
         self.path = os.path.abspath(path)
         self.set_title(os.path.basename(path))
         text = self._read_file(path)
@@ -259,8 +240,7 @@ class Window(gtk.Window):
         self._update_action_sensitivities()
 
     def resize_to_text(self):
-        """Set the window size based on the text in the view."""
-
+        """Set the default window size based on the text in the view."""
         # Get the pixel size of the text to be displayed. If the width exceeds
         # 'text_view_max_chars', switch to line wrapping and use 80 characters
         # for the window width. Limit the height of the window to
@@ -272,8 +252,8 @@ class Window(gtk.Window):
         label.set_text(req_text or blank_text)
         req_size = list(label.size_request())
         max_chars = nfoview.conf.text_view_max_chars
-        max_lines =  nfoview.conf.text_view_max_lines
-        max_text = "\n".join(["x" * max_chars] * max_lines)
+        max_lines = nfoview.conf.text_view_max_lines
+        max_text = "\n".join(("x" * max_chars,) * max_lines)
         label.set_text(max_text)
         max_size = list(label.size_request())
         size = list(req_size)

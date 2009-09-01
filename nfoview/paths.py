@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -17,21 +17,45 @@
 """Paths to files and directories used."""
 
 import os
+import sys
 
-__all__ = ("CONFIG_DIR", "DATA_DIR", "LOCALE_DIR")
+__all__ = ("CONFIG_HOME_DIR", "DATA_DIR", "LOCALE_DIR")
 
 
-def get_config_directory():
+def get_config_home_directory():
+    """Return path to the user's configuration directory."""
+    if sys.platform == "win32":
+        return get_config_home_directory_windows()
+    return get_config_home_directory_xdg()
+
+def get_config_home_directory_windows():
+    """Return path to the user's configuration directory on Windows."""
+    directory = os.path.expanduser("~")
+    directory = os.environ.get("APPDATA", directory)
+    directory = os.path.join(directory, "nfoview")
+    return os.path.abspath(directory)
+
+def get_config_home_directory_xdg():
+    """Return path to the user's XDG configuration directory."""
     directory = os.path.join(os.path.expanduser("~"), ".config")
     directory = os.environ.get("XDG_CONFIG_HOME", directory)
-    directory = os.path.abspath(directory)
-    return os.path.join(directory, "nfoview")
+    directory = os.path.join(directory, "nfoview")
+    return os.path.abspath(directory)
 
-def get_source_directory(child):
-    parent = os.path.dirname(os.path.abspath(__file__))
-    source = os.path.abspath(os.path.join(parent, ".."))
-    return os.path.abspath(os.path.join(source, child))
+def get_data_directory_source():
+    """Return path to the global data directory when running from source."""
+    directory = os.path.dirname(os.path.abspath(__file__))
+    directory = os.path.abspath(os.path.join(directory, ".."))
+    directory = os.path.join(directory, "data")
+    return os.path.abspath(directory)
 
-CONFIG_DIR = get_config_directory()
-DATA_DIR = get_source_directory("data")
-LOCALE_DIR = get_source_directory("locale")
+def get_locale_directory_source():
+    """Return path to the locale directory when running from source."""
+    directory = os.path.dirname(os.path.abspath(__file__))
+    directory = os.path.abspath(os.path.join(directory, ".."))
+    directory = os.path.join(directory, "locale")
+    return os.path.abspath(directory)
+
+CONFIG_HOME_DIR = get_config_home_directory()
+DATA_DIR = get_data_directory_source()
+LOCALE_DIR = get_locale_directory_source()

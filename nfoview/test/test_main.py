@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -20,42 +20,40 @@ import nfoview
 
 class TestModule(nfoview.TestCase):
 
-    delete_event = gtk.gdk.Event(gtk.gdk.DELETE)
-
     def setup_method(self, method):
-
-        self.gtk_main = gtk.main
-        self.gtk_main_quit = gtk.main_quit
-        gtk.main = lambda *args: None
-        gtk.main_quit = lambda *args: None
         nfoview.main.windows = []
 
-    def teardown_method(self, method):
-
-        for window in nfoview.main.windows:
-            window.emit("delete-event", self.delete_event)
-        gtk.main = self.gtk_main
-        gtk.main_quit = self.gtk_main_quit
-
     def test__on_window_delete_event(self):
-
-        nfoview.main.open_window(self.get_nfo_file())
-        nfoview.main.open_window(self.get_nfo_file())
+        nfoview.main.open_window(self.new_temp_nfo_file())
+        nfoview.main.open_window(self.new_temp_nfo_file())
         for window in nfoview.main.windows:
-            window.emit("delete-event", self.delete_event)
+            window.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
 
-    def test_open_window(self):
-
+    def test_open_window__empty(self):
         nfoview.main.open_window()
-        nfoview.main.open_window(self.get_nfo_file())
-        assert len(nfoview.main.windows) == 2
 
-    def test_main(self):
+    def test_open_window__file(self):
+        nfoview.main.open_window(self.new_temp_nfo_file())
 
+    @nfoview.deco.monkey_patch(gtk, "main")
+    def test_main__empty(self):
+        gtk.main = lambda *args: None
         nfoview.main.main(())
-        paths = (
-            self.get_nfo_file(),
-            self.get_nfo_file(),
-            self.get_nfo_file() + "x",)
+        assert len(nfoview.main.windows) == 1
+
+    @nfoview.deco.monkey_patch(gtk, "main")
+    def test_main__files(self):
+        gtk.main = lambda *args: None
+        paths = (self.new_temp_nfo_file(),
+                 self.new_temp_nfo_file(),
+                 self.new_temp_nfo_file(),)
+
         nfoview.main.main(paths)
         assert len(nfoview.main.windows) == 3
+
+    @nfoview.deco.monkey_patch(gtk, "main")
+    def test_main__non_files(self):
+        gtk.main = lambda *args: None
+        path = "%s.xxx" % self.new_temp_nfo_file()
+        nfoview.main.main((path,))
+        assert len(nfoview.main.windows) == 1

@@ -9,7 +9,6 @@ size and clickable hyperlinks.
 NFO Viewer is free software released under the GNU General Public
 License (GPL), see the file "COPYING" for details.
 
-
 Dependencies
 ============
 
@@ -28,7 +27,6 @@ that has support for the necessary CP437 drawing characters (e.g.
 DejaVu Sans Mono), but with them you need to decrease the line-spacing
 (to a negative value that depends on the font and font size) in order
 to remove blank space between adjacent lines of drawing characters.
-
 
 Running
 =======

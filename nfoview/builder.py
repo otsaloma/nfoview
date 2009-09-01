@@ -14,39 +14,43 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Wrapper for gtk.Builder constructed dialogs."""
+"""Baseclass and wrapper for gtk.Builder constructed dialogs."""
 
 import gtk
-import nfoview
-_ = nfoview.i18n._
 
 __all__ = ("BuilderDialog",)
 
 
 class BuilderDialog(object):
 
-    """Wrapper for gtk.Builder constructed dialogs.
+    """Baseclass and wrapper for gtk.Builder constructed dialogs.
 
-    The gtk.Builder instance is saved as instance variable '_builder' and from
-    the widget tree the widget name 'dialog' as '_dialog'.
+    All widgets defined in self.widgets are assigned as instance variables with
+    names preceded by a single underscore. All signals defined in the UI
+    definition file are connected to self. All getattr calls not found in self
+    are delegated to self._dialog allowing self to look and act like a
+    gtk.Dialog.
     """
+
+    widgets = (NotImplementedError,)
 
     def __getattr__(self, name):
         """Return attribute from either self or self._dialog."""
-
-        # Allow others to think this class is a dialog.
         return getattr(self._dialog, name)
 
     def __init__(self, ui_file_path):
         """Initialize a BuilderDialog object from ui_file_path."""
-
         self._builder = gtk.Builder()
         self._builder.set_translation_domain("nfoview")
         self._builder.add_from_file(ui_file_path)
+        self._builder.connect_signals(self)
         self._dialog = self._builder.get_object("dialog")
+
+        for name in self.widgets:
+            widget = self._builder.get_object(name)
+            setattr(self, "_%s" % name, widget)
 
     def run(self):
         """Show the dialog, run it and return response."""
-
         self._dialog.show()
         return self._dialog.run()

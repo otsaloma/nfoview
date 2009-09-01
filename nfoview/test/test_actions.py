@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -17,27 +17,86 @@
 import nfoview
 
 
-class TestModule(nfoview.TestCase):
+class _TestAction(nfoview.TestCase):
 
-    def test_attributes(self):
-
-        for name in nfoview.actions.__all__:
-            action = getattr(nfoview.actions, name)()
-            assert hasattr(action, "accelerator")
-            assert hasattr(action.props, "name")
-            assert hasattr(action.props, "label")
-            assert hasattr(action.props, "tooltip")
+    def setup_method(self, method):
+        self.action = None
+        raise NotImplementedError
 
     def test_update_sensitivity__insensitive_view(self):
-
         window = nfoview.Window()
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             action.update_sensitivity(window)
 
     def test_update_sensitivity__sensitive_view(self):
-
-        window = nfoview.Window(self.get_nfo_file())
+        window = nfoview.Window(self.new_temp_nfo_file())
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             action.update_sensitivity(window)
+
+
+class TestCloseDocumentAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.CloseDocumentAction()
+
+
+class TestCopyTextAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.CopyTextAction()
+
+
+class TestEditPreferencesAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.EditPreferencesAction()
+
+
+class TestOpenFileAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.OpenFileAction()
+
+
+class TestQuitAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.QuitAction()
+
+
+class TestSelectAllTextAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.SelectAllTextAction()
+
+
+class TestShowAboutDialogAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.ShowAboutDialogAction()
+
+
+class TestShowEditMenuAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.ShowEditMenuAction()
+
+
+class TestShowFileMenuAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.ShowFileMenuAction()
+
+
+class TestShowHelpMenuAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.ShowHelpMenuAction()
+
+
+class TestWrapLinesAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.WrapLinesAction()

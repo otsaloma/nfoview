@@ -20,6 +20,5 @@ import nfoview
 class TestModule(nfoview.TestCase):
 
     def test___version__(self):
-
         # pylint: disable-msg=W0104
-        (int(x) for x in nfoview.__version__.split("."))
+        [int(x) for x in nfoview.__version__.split(".")]

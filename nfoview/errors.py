@@ -30,9 +30,10 @@ class AffirmationError(Error):
 
     """Something expected to be True was False.
 
-    This is similar to AssertionError, but without the special reliance on
-    __debug__ and given optimization options. AffirmationError is used to
-    provide essential checks instead of optional debug checks.
+    AffirmationError is by nature similar to the built-in AssertionError, but
+    without the special reliance on __debug__ and given optimization options.
+    AffirmationError is used to provide essential checks of boolean values
+    instead of optional debug checks.
     """
 
     pass

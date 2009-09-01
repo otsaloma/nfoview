@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -19,8 +19,7 @@ import nfoview
 
 class TestError(nfoview.TestCase):
 
-    def test_raise(self):
-
+    def test_raise__error(self):
         try:
             raise nfoview.Error
         except nfoview.Error:
@@ -29,9 +28,14 @@ class TestError(nfoview.TestCase):
 
 class TestAffirmationError(nfoview.TestCase):
 
-    def test_raise(self):
-
+    def test_raise__affirmation_error(self):
         try:
             raise nfoview.AffirmationError
         except nfoview.AffirmationError:
+            pass
+
+    def test_raise__error(self):
+        try:
+            raise nfoview.AffirmationError
+        except nfoview.Error:
             pass

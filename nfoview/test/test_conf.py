@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -16,26 +16,25 @@
 
 import nfoview
 import os
+import shutil
 import tempfile
 
 
-class TestConfiguration(nfoview.TestCase):
+class TestConfigurationStore(nfoview.TestCase):
 
-    fields = {
-        "background_color": "#ff0000",
-        "browser": "echo",
-        "color_scheme": "default",
-        "font": "monospace 12",
-        "foreground_color": "#00ff00",
-        "link_color": "#0000ff",
-        "pixels_above_lines": 1,
-        "pixels_below_lines": 0,
-        "text_view_max_chars": 160,
-        "text_view_max_lines": 45,
-        "visited_link_color": "#ffff00",}
+    fields = {"background_color": "#ff0000",
+              "color_scheme": "default",
+              "font": "monospace 12",
+              "foreground_color": "#00ff00",
+              "link_color": "#0000ff",
+              "pixels_above_lines": 1,
+              "pixels_below_lines": -1,
+              "text_view_max_chars": 160,
+              "text_view_max_lines": 45,
+              "visited_link_color": "#ffff00",
+              }
 
     def setup_method(self, method):
-
         self.temp_dir = tempfile.mkdtemp()
         conf_dir = os.path.join(self.temp_dir, "test")
         nfoview.conf.restore_defaults()
@@ -44,12 +43,9 @@ class TestConfiguration(nfoview.TestCase):
             setattr(nfoview.conf, name, value)
 
     def teardown_method(self, method):
+        shutil.rmtree(self.temp_dir)
 
-        from distutils import dir_util
-        dir_util.remove_tree(self.temp_dir)
-
-    def test_read_and_write(self):
-
+    def test_read_from_file(self):
         nfoview.conf.write_to_file()
         nfoview.conf.restore_defaults()
         nfoview.conf.read_from_file()
@@ -57,17 +53,22 @@ class TestConfiguration(nfoview.TestCase):
             assert getattr(nfoview.conf, name) == value
 
     def test_restore_defaults(self):
-
         nfoview.conf.restore_defaults()
         for name, attrs in nfoview.conf._fields.items():
-            if name == "version": continue
-            assert getattr(nfoview.conf, name) == attrs[0]
-        assert nfoview.conf.version == nfoview.__version__
+            value = getattr(nfoview.conf, name)
+            if name == "version":
+                assert value == nfoview.__version__
+            else: # name != "version"
+                assert value == attrs[0]
 
-    def test_write__os_error(self):
-
-        directory = os.path.dirname(nfoview.conf.path)
-        directory = os.path.abspath(os.path.join(directory, ".."))
-        os.chmod(directory, 0000)
+    def test_write_to_file(self):
         nfoview.conf.write_to_file()
-        os.chmod(directory, 0777)
+        nfoview.conf.restore_defaults()
+        nfoview.conf.read_from_file()
+        for name, value in self.fields.items():
+            assert getattr(nfoview.conf, name) == value
+
+    def test_write_to_file__os_error(self):
+        os.chmod(self.temp_dir, 0000)
+        nfoview.conf.write_to_file()
+        os.chmod(self.temp_dir, 0777)

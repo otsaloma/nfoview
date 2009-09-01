@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -23,59 +23,47 @@ class TestPreferencesDialog(nfoview.TestCase):
     color = gtk.gdk.Color(122, 123, 124)
 
     def setup_method(self, method):
-
-        window = nfoview.Window(self.get_nfo_file())
-        nfoview.main.windows.append(window)
+        window1 = nfoview.Window(self.new_temp_nfo_file())
+        window2 = nfoview.Window(self.new_temp_nfo_file())
+        nfoview.main.windows.append(window1)
+        nfoview.main.windows.append(window2)
         self.dialog = nfoview.PreferencesDialog(gtk.Window())
 
     def teardown_method(self, method):
-
         nfoview.main.windows = []
 
-    def test___getattr__(self):
-
-        self.dialog.show()
-        self.dialog.hide()
-
     def test__on_bg_color_button_color_set(self):
-
         store = self.dialog._scheme_combo.get_model()
         self.dialog._scheme_combo.set_active(len(store) - 1)
         self.dialog._bg_color_button.set_color(self.color)
         self.dialog._bg_color_button.emit("color-set")
 
     def test__on_fg_color_button_color_set(self):
-
         store = self.dialog._scheme_combo.get_model()
         self.dialog._scheme_combo.set_active(len(store) - 1)
         self.dialog._fg_color_button.set_color(self.color)
         self.dialog._fg_color_button.emit("color-set")
 
     def test__on_font_button_font_set(self):
-
         self.dialog._font_button.set_font_name("monospace 8")
         self.dialog._font_button.emit("font-set")
 
-    def test__on_link_color_button_color_set(self):
+    def test__on_line_spacing_spin_value_changed(self):
+        self.dialog._line_spacing_spin.set_value(3)
+        self.dialog._line_spacing_spin.set_value(-3)
 
+    def test__on_link_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()
         self.dialog._scheme_combo.set_active(len(store) - 1)
         self.dialog._link_color_button.set_color(self.color)
         self.dialog._link_color_button.emit("color-set")
 
     def test__on_scheme_combo_changed(self):
-
         store = self.dialog._scheme_combo.get_model()
         for i in range(len(store)):
             self.dialog._scheme_combo.set_active(i)
 
-    def test__on_line_spacing_spin_value_changed(self):
-
-        self.dialog._line_spacing_spin.set_value(3)
-        self.dialog._line_spacing_spin.set_value(-3)
-
     def test__on_vlink_color_button_color_set(self):
-
         store = self.dialog._scheme_combo.get_model()
         self.dialog._scheme_combo.set_active(len(store) - 1)
         self.dialog._vlink_color_button.set_color(self.color)

@@ -19,11 +19,11 @@ import nfoview
 
 class TestModule(nfoview.TestCase):
 
-    def test_attributes(self):
+    def test__(self):
+        nfoview.i18n._("message")
 
-        function = nfoview.i18n._
-        function("message")
-        function = nfoview.i18n.dgettext
-        function("domain", "message")
-        function = nfoview.i18n.ngettext
-        function("singular", "plural", 1)
+    def test_dgettext(self):
+        nfoview.i18n.dgettext("domain", "message")
+
+    def test_ngettext(self):
+        nfoview.i18n.ngettext("singular", "plural", 1)

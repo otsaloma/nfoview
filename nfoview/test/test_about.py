@@ -21,13 +21,12 @@ import nfoview
 class TestAboutDialog(nfoview.TestCase):
 
     def setup_method(self, method):
-
         self.dialog = nfoview.AboutDialog(gtk.Window())
 
     def test__on_url_clicked(self):
-
         # pylint: disable-msg=E1101
         vbox = self.dialog.vbox.get_children()[0]
         hbox = vbox.get_children()[-1]
         link_button = hbox.get_children()[0]
+        print link_button
         link_button.clicked()

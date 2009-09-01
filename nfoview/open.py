@@ -29,7 +29,6 @@ class OpenDialog(gtk.FileChooserDialog):
 
     def __init__(self, parent):
         """Initialize an OpenDialog instance."""
-
         gtk.FileChooserDialog.__init__(self, parent=parent)
         self.set_title(_("Open"))
         self.set_transient_for(parent)

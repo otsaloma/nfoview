@@ -17,33 +17,58 @@
 import nfoview
 
 
-class TestModule(nfoview.TestCase):
+class  _TestScheme(nfoview.TestCase):
 
-    def test_get_color_scheme(self):
+    def setup_method(self, method):
+        self.scheme = None
+        raise NotImplementedError
 
-        nfoview.schemes.get_color_scheme("default")
-        nfoview.schemes.get_color_scheme("custom")
+    def test_attributes(self):
+        assert hasattr(self.scheme, "name")
+        assert hasattr(self.scheme, "label")
+        assert hasattr(self.scheme, "foreground")
+        assert hasattr(self.scheme, "background")
+        assert hasattr(self.scheme, "link")
+        assert hasattr(self.scheme, "visited_link")
 
-    def test_get_color_scheme(self):
 
-        function = nfoview.schemes.get_color_scheme
-        self.raises(ValueError, function, "null")
+class TestBlackOnWhiteScheme(_TestScheme):
 
-    def test_get_color_schemes__attributes(self):
+    def setup_method(self, method):
+        self.scheme = nfoview.BlackOnWhiteScheme
 
-        schemes = nfoview.schemes.get_color_schemes()
-        for scheme in schemes:
-            assert hasattr(scheme, "name")
-            assert hasattr(scheme, "label")
-            assert hasattr(scheme, "foreground")
-            assert hasattr(scheme, "background")
-            assert hasattr(scheme, "link")
-            assert hasattr(scheme, "visited_link")
 
-    def test_get_color_schemes__names(self):
+class TestCustomScheme(_TestScheme):
 
-        schemes = nfoview.schemes.get_color_schemes()
-        assert schemes[0].name == "default"
-        assert schemes[-1].name == "custom"
-        names = [x.name for x in schemes]
-        assert len(names) == len(set(names))
+    def setup_method(self, method):
+        self.scheme = nfoview.CustomScheme
+
+
+class TestDarkGreyOnLightGrayScheme(_TestScheme):
+
+    def setup_method(self, method):
+        self.scheme = nfoview.DarkGreyOnLightGrayScheme
+
+
+class TestDefaultScheme(_TestScheme):
+
+    def setup_method(self, method):
+        self.scheme = nfoview.DefaultScheme
+
+
+class TestGreyOnBlackScheme(_TestScheme):
+
+    def setup_method(self, method):
+        self.scheme = nfoview.GreyOnBlackScheme
+
+
+class TestLightGreyOnDarkGrayScheme(_TestScheme):
+
+    def setup_method(self, method):
+        self.scheme = nfoview.LightGreyOnDarkGrayScheme
+
+
+class TestWhiteOnBlackScheme(_TestScheme):
+
+    def setup_method(self, method):
+        self.scheme = nfoview.WhiteOnBlackScheme

@@ -39,7 +39,6 @@ os.chdir(os.path.dirname(__file__) or ".")
 
 def get_version_number():
     """Return version number from nfoview/__init__.py."""
-
     # Cannot import this, because importing __version__ from nfoview causes
     # a segfault if building or compiling outside X (with no $DISPLAY).
     text = open(os.path.join("nfoview", "__init__.py"), "r").read()
@@ -50,24 +49,30 @@ class Clean(clean):
 
     """Command to remove files and directories created."""
 
-    __glob_targets = (
-        "build", "dist", "locale", "ChangeLog", "MANIFEST",
-        "data/nfoview.desktop", "nfoview/*.py[co]")
+    __glob_targets = ("build",
+                      "ChangeLog",
+                      "data/nfoview.desktop",
+                      "dist",
+                      "locale",
+                      "MANIFEST",
+                      "nfoview/*.py[co]",
+                      )
 
     def run(self):
         """Remove files and directories listed in self.__glob_targets."""
-
         clean.run(self)
 
-        targets = [glob.glob(x) for x in self.__glob_targets]
+        targets = map(glob.glob, self.__glob_targets)
         iterator = itertools.chain(*targets)
-        for target in (x for x in iterator if os.path.isdir(x)):
+        for target in filter(os.path.isdir, iterator):
             log.info("removing '%s'" % target)
-            if not self.dry_run: shutil.rmtree(target)
+            if not self.dry_run:
+                shutil.rmtree(target)
         iterator = itertools.chain(*targets)
-        for target in (x for x in iterator if os.path.isfile(x)):
+        for target in filter(os.path.isfile, iterator):
             log.info("removing '%s'" % target)
-            if not self.dry_run: os.remove(target)
+            if not self.dry_run:
+                os.remove(target)
 
 
 class Install(install):
@@ -76,7 +81,6 @@ class Install(install):
 
     def run(self):
         """Install everything and update the desktop file database."""
-
         install.run(self)
 
         get_command_obj = self.distribution.get_command_obj
@@ -97,7 +101,6 @@ class InstallData(install_data):
 
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
-
         path = os.path.join("data", "nfoview.desktop")
         command = "intltool-merge -d po %s.in %s" % (path, path)
         run_command_or_exit(command)
@@ -105,7 +108,6 @@ class InstallData(install_data):
 
     def __get_mo_file(self, po_file):
         """Return a tuple for the compiled .mo file."""
-
         locale = os.path.basename(po_file[:-3])
         mo_dir = os.path.join("locale", locale, "LC_MESSAGES")
         if not os.path.isdir(mo_dir):
@@ -120,7 +122,6 @@ class InstallData(install_data):
 
     def run(self):
         """Install data files after translating them."""
-
         for po_file in glob.glob("po/*.po"):
             self.data_files.append(self.__get_mo_file(po_file))
         self.data_files.append(self.__get_desktop_file())
@@ -133,7 +134,6 @@ class InstallLib(install_lib):
 
     def install(self):
         """Install library files after writing changes."""
-
         # Allow --root to be used as a destination directory.
         root = self.distribution.get_command_obj("install").root
         prefix = self.distribution.get_command_obj("install").install_data
@@ -147,11 +147,11 @@ class InstallLib(install_lib):
         # Write changes to the nfoview.paths module.
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r").read()
-        patt = 'DATA_DIR = get_source_directory("data")'
+        patt = 'DATA_DIR = get_data_directory_source()'
         repl = "DATA_DIR = %s" % repr(data_dir)
         text = text.replace(patt, repl)
         assert text.count(repr(data_dir)) > 0
-        patt = 'LOCALE_DIR = get_source_directory("locale")'
+        patt = 'LOCALE_DIR = get_locale_directory_source()'
         repl = "LOCALE_DIR = %s" % repr(locale_dir)
         text = text.replace(patt, repl)
         assert text.count(repr(locale_dir)) > 0
@@ -169,7 +169,6 @@ class SDistGna(sdist):
 
     def finalize_options(self):
         """Set the distribution directory to 'dist/X.Y'."""
-
         # pylint: disable-msg=W0201
         sdist.finalize_options(self)
         branch = ".".join(self.__version.split(".")[:2])
@@ -177,10 +176,9 @@ class SDistGna(sdist):
 
     def run(self):
         """Build tarballs and create additional files."""
-
         if os.path.isfile("ChangeLog"):
             os.remove("ChangeLog")
-        os.system("tools/git2cl > ChangeLog")
+        os.system("tools/generate-change-log > ChangeLog")
         assert os.path.isfile("ChangeLog")
         sdist.run(self)
         basename = "nfoview-%s" % self.__version
@@ -216,7 +214,6 @@ class SDistGna(sdist):
 
 def run_command_or_exit(command):
     """Run command in shell and raise SystemExit if it fails."""
-
     if os.system(command) != 0:
         raise SystemExit("Error: Command '%s' failed." % command)
 

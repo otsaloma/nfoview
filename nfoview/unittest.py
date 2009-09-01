@@ -27,9 +27,8 @@ class TestCase(object):
 
     """Base class for unit test cases."""
 
-    def get_nfo_file(self):
-        """Return path to a temporary NFO file."""
-
+    def new_temp_nfo_file(self):
+        """Return path to a new temporary NFO file."""
         handle, path = tempfile.mkstemp()
         fobj = os.fdopen(handle, "w")
         fobj.write("qwertyuiop asdfghjkl zxcvbnm\n")
@@ -40,27 +39,25 @@ class TestCase(object):
 
     def raises(self, exception, function, *args, **kwargs):
         """Assert that calling function raises exception."""
-
-        try: function(*args, **kwargs)
-        except exception: return
-        raise AssertionError
+        try:
+            function(*args, **kwargs)
+        except exception:
+            return
+        raise AssertionError("Function '%s' failed to raise exception '%s'"
+                             % (repr(function), repr(exception)))
 
     def setUp(self):
         """Compatibility alias for 'setup_method'."""
-
         self.setup_method(None)
 
     def setup_method(self, method):
-        """Set proper state for executing tests in method."""
-
+        """Set state for executing tests in method."""
         pass
 
     def tearDown(self):
         """Compatibility alias for 'teardown_method'."""
-
         self.teardown_method(None)
 
     def teardown_method(self, method):
         """Remove state set for executing tests in method."""
-
         pass

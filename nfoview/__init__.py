@@ -22,11 +22,14 @@ from nfoview.errors import *
 from nfoview.unittest import *
 from nfoview.paths import *
 from nfoview import i18n
+from nfoview import deco
 from nfoview import util
 from nfoview.conf import *
-conf = Configuration()
+
+conf = ConfigurationStore()
 conf.read_from_file()
-from nfoview import schemes
+
+from nfoview.schemes import *
 from nfoview.builder import *
 from nfoview.about import *
 from nfoview.open import *

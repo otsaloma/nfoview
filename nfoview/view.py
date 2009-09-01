@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Text view widget for NFO text."""
+"""Text view widget for NFO text with support for clickable hyperlinks."""
 
 import gtk
 import nfoview
@@ -26,11 +26,10 @@ __all__ = ("TextView",)
 
 class TextView(gtk.TextView):
 
-    """Text view widget for NFO text."""
+    """Text view widget for NFO text with support for clickable hyperlinks."""
 
     def __init__(self):
         """Initialize a TextView instance."""
-
         gtk.TextView.__init__(self)
         self._init_properties()
         self._link_tags = []
@@ -39,24 +38,21 @@ class TextView(gtk.TextView):
 
     def _init_properties(self):
         """Initliaze the text view widget properties."""
-
+        pixels_above = nfoview.conf.pixels_above_lines
+        pixels_below = nfoview.conf.pixels_below_lines
+        font_desc = pango.FontDescription(nfoview.conf.font)
         self.set_cursor_visible(False)
         self.set_editable(False)
         self.set_wrap_mode(gtk.WRAP_NONE)
-        pixels_above = nfoview.conf.pixels_above_lines
         self.set_pixels_above_lines(pixels_above)
-        pixels_below = nfoview.conf.pixels_below_lines
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
         self.set_right_margin(6)
-        font_desc = pango.FontDescription(nfoview.conf.font)
         self.modify_font(font_desc)
-        callback = self._on_motion_notify_event
-        self.connect("motion-notify-event", callback)
+        nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
-        """Insert URL into the text view as a link."""
-
+        """Insert URL into the text view as a hyperlink."""
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
         tag.props.underline = pango.UNDERLINE_SINGLE
@@ -68,14 +64,12 @@ class TextView(gtk.TextView):
 
     def _insert_word(self, word, *tags):
         """Insert word into the text view with tags."""
-
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
         text_buffer.insert_with_tags_by_name(itr, word, *tags)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
-        """Open clicked link in web browser."""
-
+        """Open clicked hyperlink in web browser."""
         if event.type != gtk.gdk.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
@@ -86,8 +80,7 @@ class TextView(gtk.TextView):
             self.update_colors()
 
     def _on_motion_notify_event(self, text_view, event):
-        """Change the mouse pointer when hovering over a link."""
-
+        """Change the mouse pointer when hovering over a hyperlink."""
         x = int(event.x)
         y = int(event.y)
         window = gtk.TEXT_WINDOW_WIDGET
@@ -104,20 +97,14 @@ class TextView(gtk.TextView):
 
     def get_text(self):
         """Return the text in the text view."""
-
         text_buffer = self.get_buffer()
         bounds = text_buffer.get_bounds()
         return text_buffer.get_text(*bounds)
 
     def set_text(self, text):
         """Set the text displayed in the text view."""
-
-        re_url = re.compile(
-            r"(([0-9a-zA-Z]+://%s+?\.%s+)|(www\.%s+?\.%s+))" %
-            (r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
-             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
-             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",
-             r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]"))
+        re_url = re.compile(r"(([0-9a-zA-Z]+://%s+?\.%s+)|(www\.%s+?\.%s+))" %
+                            ((r"[0-9a-zA-Z$\-_.+!*'()$&+,/:;=?@]",) * 4))
         self._link_tags = []
         self._visited_link_tags = []
         text_buffer = self.get_buffer()
@@ -142,12 +129,11 @@ class TextView(gtk.TextView):
         self.update_colors()
 
     def update_colors(self):
-        """Update the colors to match the current color scheme."""
-
+        """Update colors to match the current color scheme."""
         name = nfoview.conf.color_scheme
-        try: scheme = nfoview.schemes.get_color_scheme(name)
+        try: scheme = nfoview.util.get_color_scheme(name)
         except ValueError:
-            scheme = nfoview.schemes.get_color_scheme("default")
+            scheme = nfoview.util.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
         self.modify_text(gtk.STATE_NORMAL, scheme.foreground)
         self.modify_base(gtk.STATE_NORMAL, scheme.background)

@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -20,25 +20,27 @@ import nfoview
 class TestTextView(nfoview.TestCase):
 
     def setup_method(self, method):
-
         self.view = nfoview.TextView()
-        self.view.set_text("test www.test.org")
+        text = "testing...\nhttp://home.gna.org/nfoview"
+        self.view.set_text(text)
 
     def test_get_text(self):
-
-        self.view.set_text("test")
-        assert self.view.get_text() == "test"
+        self.view.set_text("test\ntest")
+        text = self.view.get_text()
+        assert text == "test\ntest"
 
     def test_set_text(self):
-
-        self.view.set_text("test and rest")
-        self.view.set_text("test\nwww.test.org")
-        self.view.set_text("test\nhttp://www.test.org")
+        path = self.new_temp_nfo_file()
+        text = open(path, "r").read()
+        self.view.set_text(text)
 
     def test_update_colors(self):
-
         self.view.update_colors()
-        lst = self.view._link_tags
+        tags = self.view._link_tags
         self.view._link_tags = []
-        self.view._visited_link_tags = lst
+        self.view._visited_link_tags = tags
+        self.view.update_colors()
+
+    def test_update_colors__value_error(self):
+        nfoview.conf.color_scheme = "xxx"
         self.view.update_colors()
