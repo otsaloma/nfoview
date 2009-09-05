@@ -3,7 +3,7 @@
 import os
 import sys
 
-# Allow running straight from the source directory.
+# Allow running directly from the source directory.
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 source_dir = os.path.abspath(os.path.join(parent_dir, ".."))
 test_file = os.path.join(source_dir, "data", "nfoview.desktop.in")
