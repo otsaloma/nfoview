@@ -19,6 +19,7 @@
 import codecs
 import nfoview
 import os
+import pango
 import subprocess
 import sys
 import urllib
@@ -116,6 +117,13 @@ def get_color_schemes():
     schemes.insert(0, nfoview.DefaultScheme)
     schemes.append(nfoview.CustomScheme)
     return schemes
+
+def get_font_description(fallback="monospace"):
+    """Return font description from conf with fallback added."""
+    font_desc = pango.FontDescription(nfoview.conf.font)
+    family = font_desc.get_family()
+    font_desc.set_family(",".join((family, fallback)))
+    return font_desc
 
 def is_command(command):
     """Return True if command exists as a file in $PATH."""

@@ -1,11 +1,11 @@
-NFO Viewer 1.6.1
-================
+NFO Viewer 1.7
+==============
 
  [D] Add menu item to toggle line-wrapping
  [D] Automatically switch to wrapping lines if a line longer than
      160 characters is found in the file
  [D] Fix URL-detection to be less strict
- [ ] Fall back to 'monospace' if preferred font is not found
+ [D] Fall back to 'monospace' if preferred font is not found
  [D] Add Italian translation (Alessio Treglia)
 
 NFO Viewer 3000

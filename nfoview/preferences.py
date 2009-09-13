@@ -19,7 +19,6 @@
 import gtk
 import nfoview
 import os
-import pango
 
 __all__ = ("PreferencesDialog",)
 
@@ -101,7 +100,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
     def _on_font_button_font_set(self, font_button):
         """Save the new font and update window and its view."""
         nfoview.conf.font = font_button.get_font_name()
-        font_desc = pango.FontDescription(nfoview.conf.font)
+        font_desc = nfoview.util.get_font_description()
         for window in nfoview.main.windows:
             window.view.modify_font(font_desc)
 

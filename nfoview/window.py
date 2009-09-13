@@ -53,7 +53,7 @@ class Window(gtk.Window):
         """Return a label to use for text size calculations."""
         label = gtk.Label()
         attrs = pango.AttrList()
-        font_desc = pango.FontDescription(nfoview.conf.font)
+        font_desc = nfoview.util.get_font_description()
         attrs.insert(pango.AttrFontDesc(font_desc, 0, -1))
         label.set_attributes(attrs)
         return label

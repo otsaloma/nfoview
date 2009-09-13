@@ -40,7 +40,7 @@ class TextView(gtk.TextView):
         """Initliaze the text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
-        font_desc = pango.FontDescription(nfoview.conf.font)
+        font_desc = nfoview.util.get_font_description()
         self.set_cursor_visible(False)
         self.set_editable(False)
         self.set_wrap_mode(gtk.WRAP_NONE)

@@ -184,6 +184,12 @@ class TestModule(nfoview.TestCase):
     def test_get_color_scheme__value_error(self):
         self.raises(ValueError, nfoview.util.get_color_scheme, "xxx")
 
+    @nfoview.deco.monkey_patch(nfoview.conf, "font")
+    def test_get_font_description(self):
+        nfoview.conf.font = "Foo"
+        font_desc = nfoview.util.get_font_description()
+        assert font_desc.get_family() == "Foo,monospace"
+
     def test_color_schemes(self):
         schemes = nfoview.util.get_color_schemes()
         assert schemes[0] is nfoview.DefaultScheme
