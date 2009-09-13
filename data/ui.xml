@@ -8,7 +8,6 @@
     <menu name="edit" action="show_edit_menu">
       <menuitem name="copy" action="copy_text"/>
       <menuitem name="select_all" action="select_all_text"/>
-      <separator/>
       <menuitem name="wrap_lines" action="wrap_lines"/>
       <separator/>
       <menuitem name="preferences" action="edit_preferences"/>
