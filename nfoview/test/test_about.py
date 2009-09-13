@@ -28,5 +28,4 @@ class TestAboutDialog(nfoview.TestCase):
         vbox = self.dialog.vbox.get_children()[0]
         hbox = vbox.get_children()[-1]
         link_button = hbox.get_children()[0]
-        print link_button
         link_button.clicked()

@@ -44,7 +44,6 @@ def open_window(path=None):
 
 def main(args):
     """Start viewer windows for files given as arguments."""
-    print args
     for path in sorted(filter(os.path.isfile, args)):
         open_window(path)
     if not windows:
