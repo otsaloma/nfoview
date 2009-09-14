@@ -21,7 +21,7 @@ import functools
 
 
 def monkey_patch(obj, name):
-    """Save obj's attribute and restore it after function returns.
+    """Decorator for functions that temporarily change obj's name attribute.
 
     Attribute in question must be able to handle copy.deepcopy.
     """
@@ -33,11 +33,10 @@ def monkey_patch(obj, name):
             setattr(obj, name, copy.deepcopy(attr))
             try: return function(*args, **kwargs)
             finally:
-                if has_attr:
-                    setattr(obj, name, attr)
-                    assert getattr(obj, name) == attr
-                    assert getattr(obj, name) is attr
-                else: # Remove attribute.
+                setattr(obj, name, attr)
+                assert getattr(obj, name) == attr
+                assert getattr(obj, name) is attr
+                if not has_attr:
                     delattr(obj, name)
                     assert not hasattr(obj, name)
         return inner_wrapper

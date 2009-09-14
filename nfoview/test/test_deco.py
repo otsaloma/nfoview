@@ -26,7 +26,7 @@ class TestModule(nfoview.TestCase):
         def modify_nfoview():
             sys.nfoview = True
         modify_nfoview()
-        assert not hasattr(sys, "foo")
+        assert not hasattr(sys, "nfoview")
 
     def test_monkey_patch__os_environ(self):
         @nfoview.deco.monkey_patch(os, "environ")
