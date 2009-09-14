@@ -21,6 +21,13 @@ import sys
 
 class TestModule(nfoview.TestCase):
 
+    def test_monkey_patch__no_attribute(self):
+        @nfoview.deco.monkey_patch(sys, "nfoview")
+        def modify_nfoview():
+            sys.nfoview = True
+        modify_nfoview()
+        assert not hasattr(sys, "foo")
+
     def test_monkey_patch__os_environ(self):
         @nfoview.deco.monkey_patch(os, "environ")
         def modify_environment():

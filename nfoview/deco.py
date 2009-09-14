@@ -28,12 +28,17 @@ def monkey_patch(obj, name):
     def outer_wrapper(function):
         @functools.wraps(function)
         def inner_wrapper(*args, **kwargs):
-            attr = getattr(obj, name)
+            has_attr = hasattr(obj, name)
+            attr = getattr(obj, name, None)
             setattr(obj, name, copy.deepcopy(attr))
             try: return function(*args, **kwargs)
             finally:
-                setattr(obj, name, attr)
-                assert getattr(obj, name) == attr
-                assert getattr(obj, name) is attr
+                if has_attr:
+                    setattr(obj, name, attr)
+                    assert getattr(obj, name) == attr
+                    assert getattr(obj, name) is attr
+                else: # Remove attribute.
+                    delattr(obj, name)
+                    assert not hasattr(obj, name)
         return inner_wrapper
     return outer_wrapper

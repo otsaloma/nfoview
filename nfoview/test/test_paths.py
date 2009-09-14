@@ -21,12 +21,6 @@ import sys
 
 class TestModule(nfoview.TestCase):
 
-    @nfoview.deco.monkey_patch(os, "environ")
-    def test_config_home_dir__no_environment(self):
-        os.environ.clear()
-        reload(nfoview.paths)
-        assert hasattr(nfoview, "CONFIG_HOME_DIR")
-
     @nfoview.deco.monkey_patch(sys, "platform")
     def test_config_home_dir__win32(self):
         sys.platform = "win32"
@@ -36,6 +30,12 @@ class TestModule(nfoview.TestCase):
     @nfoview.deco.monkey_patch(os, "environ")
     def test_config_home_dir__xdg_environment(self):
         os.environ["XDG_CONFIG_HOME"] = "xdg"
+        reload(nfoview.paths)
+        assert hasattr(nfoview, "CONFIG_HOME_DIR")
+
+    @nfoview.deco.monkey_patch(os, "environ")
+    def test_config_home_dir__xdg_no_environment(self):
+        os.environ.clear()
         reload(nfoview.paths)
         assert hasattr(nfoview, "CONFIG_HOME_DIR")
 
