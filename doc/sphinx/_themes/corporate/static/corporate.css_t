@@ -179,7 +179,7 @@ div.seealso
 
 div.sphinxsidebar
 {
-  font-size: {{ sidebarfontsize }};
+  font-size: {{ theme_sidebarfontsize }};
   line-height: 180%;
   {%- if theme_stickysidebar|tobool %}
   height: 100%;
@@ -303,9 +303,4 @@ tt
   background-color: {{ theme_bgcolor }};
   font-size: 1em;
   padding: 0 1px 0 1px;
-}
-
-em
-{
-  font-style: bold !important;
 }
