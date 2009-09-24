@@ -40,4 +40,4 @@ def setup(app):
 
     # Don't add the directive header to classes.
     from sphinx.ext.autodoc import ClassDocumenter
-    ClassDocumenter.add_directive_header = lambda: None
+    ClassDocumenter.add_directive_header = lambda *args: None
