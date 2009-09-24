@@ -28,7 +28,7 @@ def monkey_patch(obj, name):
     originally exist. The attribute in question must be able to correctly
     handle a :func:`copy.deepcopy` operation.
 
-    Typical use would be unit testing code under legitimally unachievable
+    Typical use would be unit testing code under legitimately unachievable
     conditions, e.g. pseudo-testing behaviour on Windows, while not actually
     using Windows::
 
