@@ -40,7 +40,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
                "vlink_color_label",)
 
     def __init__(self, parent):
-        """Initialize a PreferencesDialog instance."""
+        """Initialize a :class:`PreferencesDialog` instance."""
         path = os.path.join(nfoview.DATA_DIR, "preferences-dialog.ui")
         nfoview.BuilderDialog.__init__(self, path)
         self._init_scheme_combo()

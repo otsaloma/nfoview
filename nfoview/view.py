@@ -29,7 +29,7 @@ class TextView(gtk.TextView):
     """Text view widget for NFO text with support for clickable hyperlinks."""
 
     def __init__(self):
-        """Initialize a TextView instance."""
+        """Initialize a :class:`TextView` instance."""
         gtk.TextView.__init__(self)
         self._init_properties()
         self._link_tags = []
@@ -52,7 +52,7 @@ class TextView(gtk.TextView):
         nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
-        """Insert URL into the text view as a hyperlink."""
+        """Insert `url` into the text view as a hyperlink."""
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
         tag.props.underline = pango.UNDERLINE_SINGLE
@@ -63,7 +63,7 @@ class TextView(gtk.TextView):
         self._link_tags.append(tag)
 
     def _insert_word(self, word, *tags):
-        """Insert word into the text view with tags."""
+        """Insert `word` into the text view with `tags`."""
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
         text_buffer.insert_with_tags_by_name(itr, word, *tags)

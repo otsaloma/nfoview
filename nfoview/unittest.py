@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2008 Osmo Salomaa
+# Copyright (C) 2005-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -25,7 +25,12 @@ __all__ = ("TestCase",)
 
 class TestCase(object):
 
-    """Base class for unit test cases."""
+    """Base class for unit test cases.
+
+    Unit tests are designed to be run with ``py.test``, ``nose`` or something
+    compatible. Tests should use plain ``assert`` statements to allow multiple
+    different tools to be used to run the tests.
+    """
 
     def new_temp_nfo_file(self):
         """Return path to a new temporary NFO file."""
@@ -38,7 +43,7 @@ class TestCase(object):
         return path
 
     def raises(self, exception, function, *args, **kwargs):
-        """Assert that calling function raises exception."""
+        """Assert that calling `function` raises `exception`."""
         try:
             function(*args, **kwargs)
         except exception:
@@ -47,17 +52,17 @@ class TestCase(object):
                              % (repr(function), repr(exception)))
 
     def setUp(self):
-        """Compatibility alias for 'setup_method'."""
+        """Compatibility alias for :meth:`setup_method`."""
         self.setup_method(None)
 
     def setup_method(self, method):
-        """Set state for executing tests in method."""
+        """Set state for executing tests in `method`."""
         pass
 
     def tearDown(self):
-        """Compatibility alias for 'teardown_method'."""
+        """Compatibility alias for :meth:`teardown_method`."""
         self.teardown_method(None)
 
     def teardown_method(self, method):
-        """Remove state set for executing tests in method."""
+        """Remove state set for executing tests in `method`."""
         pass

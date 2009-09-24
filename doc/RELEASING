@@ -21,6 +21,9 @@ Releasing a New Version
 
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
+ * Generate API documentation
+   doc/sphinx$ make clean && ./autogen.py nfoview && make html
+
  * Send announcements and update web sites
    - http://home.gna.org/nfoview
    - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview

@@ -21,9 +21,21 @@ import functools
 
 
 def monkey_patch(obj, name):
-    """Decorator for functions that temporarily change obj's name attribute.
+    """Decorator for functions that change `obj`'s `name` attribute.
 
-    Attribute in question must be able to handle copy.deepcopy.
+    Any changes done will be reverted after the function is run, i.e. `name`
+    attribute is either restored to its original value or deleted, if it didn't
+    originally exist. The attribute in question must be able to correctly
+    handle a :func:`copy.deepcopy` operation.
+
+    Typical use would be unit testing code under legitimally unachievable
+    conditions, e.g. pseudo-testing behaviour on Windows, while not actually
+    using Windows::
+
+        @nfoview.deco.monkey_patch(sys, "platform")
+        def test_do_something():
+            sys.platform = "win32"
+            do_something()
     """
     def outer_wrapper(function):
         @functools.wraps(function)

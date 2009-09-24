@@ -24,7 +24,22 @@ __all__ = ("ConfigurationStore",)
 
 class ConfigurationStore(object):
 
-    """Reading, writing and storing configurations."""
+    """Reading, writing and storing configurations.
+
+    :cvar path: Path to user's local configuration file
+
+    :ivar background_color: Background color as a hexadecimal string
+    :ivar color_scheme: Name of the color cheme used
+    :ivar font: Font string in :class:`pango.FontDescription` format
+    :ivar foreground_color: Foreground color as a hexadecimal string
+    :ivar link_color: Link color as a hexadecimal string
+    :ivar pixels_above_lines: Extra line-spacing above each line
+    :ivar pixels_below_lines: Extra line-spacing below each line
+    :ivar text_view_max_chars: Maximum amount of character to show
+    :ivar text_view_max_lines: Maximum amount of lines to show
+    :ivar version: Version number, same as :data:`nfoview.__version__`
+    :ivar visited_link_color: Visited link color as a hexadecimal string
+    """
 
     DEFAULT, DECODE, ENCODE = range(3)
 

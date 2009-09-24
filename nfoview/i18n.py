@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -14,7 +14,12 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Internationalization functions."""
+"""Internationalization functions.
+
+Functions defined in this module are convenience aliases for functions of the
+:mod:`gettext` module. More important than the aliases is that importing this
+module will set proper locale and domain values.
+"""
 
 import gettext
 import locale
@@ -29,6 +34,15 @@ locale.textdomain("nfoview")
 gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
 gettext.textdomain("nfoview")
 
-_ = gettext.gettext
-dgettext = gettext.dgettext
-ngettext = gettext.ngettext
+
+def _(message):
+    """Return the localized translation of `message`."""
+    return gettext.gettext(message)
+
+def dgettext(domain, message):
+    """Return the localized translation of `message` from `domain`."""
+    return gettext.dgettext(domain, message)
+
+def ngettext(singular, plural, n):
+    """Return the localized translation of `singular` or `plural`."""
+    return gettext.ngettext(singular, plural, n)

@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -14,7 +14,14 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer for NFO files."""
+"""Viewer for NFO files.
+
+:var __version__: Version number as string in format ``MAJOR.MINOR[.PATCH]``
+:var CONFIG_HOME_DIR: Path to user's local configuration directory
+:var DATA_DIR: Path to the global data directory
+:var LOCALE_DIR: Path to the global locale directory
+:var conf: Instance of ConfigurationStore used
+"""
 
 __version__ = "1.6"
 
@@ -24,7 +31,7 @@ from nfoview.paths import *
 from nfoview import i18n
 from nfoview import deco
 from nfoview import util
-from nfoview.conf import *
+from nfoview.config import *
 
 conf = ConfigurationStore()
 conf.read_from_file()

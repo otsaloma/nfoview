@@ -28,10 +28,15 @@ __all__ = ("Window",)
 
 class Window(gtk.Window):
 
-    """Viewer window and user interface controller for NFO files."""
+    """Viewer window and user interface controller for NFO files.
+
+    :ivar clipboard: Instance of :class:`gtk.Clipboard` used
+    :ivar path: Path to the NFO file being shown
+    :ivar view: Instance of :class:`nfoview.TextView` contained
+    """
 
     def __init__(self, path=None):
-        """Initialize a Window instance and open NFO file at path."""
+        """Initialize a :class:`Window` instance and open file at `path`."""
         gtk.Window.__init__(self)
         self._about_dialog = None
         self._actions = []
@@ -43,7 +48,7 @@ class Window(gtk.Window):
         self._init_window()
 
     def _get_action(self, name):
-        """Return action from the UI manager by name."""
+        """Return action from the UI manager by `name`."""
         for action_group in self._uim.get_action_groups():
             action = action_group.get_action(name)
             if action is not None: return action
@@ -230,7 +235,7 @@ class Window(gtk.Window):
             action.update_sensitivity(self)
 
     def open_file(self, path):
-        """Read the file and show its text in the view."""
+        """Read the file at `path` and show its text in the view."""
         self.path = os.path.abspath(path)
         self.set_title(os.path.basename(path))
         text = self._read_file(path)

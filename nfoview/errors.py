@@ -1,4 +1,4 @@
-# Copyright (C) 2008 Osmo Salomaa
+# Copyright (C) 2008-2009 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -14,26 +14,27 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""All error classes."""
+"""All :mod:`nfoview` error classes."""
 
 __all__ = ("Error", "AffirmationError",)
 
 
 class Error(Exception):
 
-    """Base class for all NFO Viewer errors."""
+    """Base class for all :mod:`nfoview` errors."""
 
     pass
 
 
 class AffirmationError(Error):
 
-    """Something expected to be True was False.
+    """Something expected to be ``True`` was ``False``.
 
-    AffirmationError is by nature similar to the built-in AssertionError, but
-    without the special reliance on __debug__ and given optimization options.
-    AffirmationError is used to provide essential checks of boolean values
-    instead of optional debug checks.
+    :exc:`AffirmationError` is by nature similar to the built-in
+    :exc:`AssertionError`, but without the special reliance on
+    :const:`__debug__` and given optimization options. :exc:`AffirmationError`
+    is used to provide essential checks of boolean values instead of optional
+    debug checks.
     """
 
     pass

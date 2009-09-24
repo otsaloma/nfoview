@@ -38,19 +38,21 @@ class Action(gtk.Action):
 
     """Base class for UI manager actions.
 
-    Instance variable 'accelerator' defines a string string in the format
-    understood by the gtk.accelerator_parse(), None to use the stock
-    accelerator or leave undefined to use a blank string as a fallback.
+    :ivar accelerator: Accelerator string for :func:`gtk.accelerator_parse`
+
+    Instance variable :attr:`accelerator` defines a string string in the format
+    understood by :func:`gtk.accelerator_parse`, ``None`` to use the stock
+    accelerator or leave undefined to use blank string as a fallback.
     """
 
     accelerator = ""
 
     def __init__(self, name):
-        """Initialize an Action instance."""
+        """Initialize an :class:`Action` instance."""
         gtk.Action.__init__(self, name, None, None, None)
 
     def _affirm_doable(self, window):
-        """Raise AffirmationError if action cannot be done."""
+        """Raise :exc:`AffirmationError` if action cannot be done."""
         pass
 
     def update_sensitivity(self, window):
@@ -74,7 +76,7 @@ class CloseDocumentAction(Action):
     """Close document."""
 
     def __init__(self):
-        """Initialize a CloseDocumentAction instance."""
+        """Initialize a :class:`CloseDocumentAction` instance."""
         Action.__init__(self, "close_document")
         self.props.label = _("_Close")
         self.props.stock_id = gtk.STOCK_CLOSE
@@ -87,7 +89,7 @@ class CopyTextAction(Action):
     """Copy the selected text to the clipboard."""
 
     def __init__(self):
-        """Initialize a CopyTextAction instance."""
+        """Initialize a :class:`CopyTextAction` instance."""
         Action.__init__(self, "copy_text")
         self.props.is_important = True
         self.props.label = _("_Copy")
@@ -97,7 +99,7 @@ class CopyTextAction(Action):
         self.accelerator = "<Control>C"
 
     def _affirm_doable(self, window):
-        """Raise AffirmationError if action cannot be done."""
+        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.props.sensitive)
         text_buffer = window.view.get_buffer()
@@ -109,7 +111,7 @@ class EditPreferencesAction(Action):
     """Edit NFO Viewer preferences."""
 
     def __init__(self):
-        """Initialize an EditPreferencesAction instance."""
+        """Initialize an :class:`EditPreferencesAction` instance."""
         Action.__init__(self, "edit_preferences")
         self.props.label = _("_Preferences")
         self.props.stock_id = gtk.STOCK_PREFERENCES
@@ -121,7 +123,7 @@ class OpenFileAction(Action):
     """Open file."""
 
     def __init__(self):
-        """Initialize an OpenFileAction instance."""
+        """Initialize an :class:`OpenFileAction` instance."""
         Action.__init__(self, "open_file")
         self.props.is_important = True
         self.props.label = _("_Open...")
@@ -136,7 +138,7 @@ class QuitAction(Action):
     """Close all documents and quit NFO Viewer."""
 
     def __init__(self):
-        """Initialize a QuitAction instance."""
+        """Initialize a :class:`QuitAction` instance."""
         Action.__init__(self, "quit")
         self.props.label = _("_Quit")
         self.props.stock_id = gtk.STOCK_QUIT
@@ -149,7 +151,7 @@ class SelectAllTextAction(Action):
     """Select all text in the document."""
 
     def __init__(self):
-        """Initialize a SelectAllTextAction instance."""
+        """Initialize a :class:`SelectAllTextAction` instance."""
         Action.__init__(self, "select_all_text")
         self.props.label = _("_Select All")
         self.props.stock_id = gtk.STOCK_SELECT_ALL
@@ -157,7 +159,7 @@ class SelectAllTextAction(Action):
         self.accelerator = "<Control>A"
 
     def _affirm_doable(self, window):
-        """Raise AffirmationError if action cannot be done."""
+        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.props.sensitive)
 
@@ -167,7 +169,7 @@ class ShowAboutDialogAction(Action):
     """Show information about NFO Viewer."""
 
     def __init__(self):
-        """Initialize a ShowAboutDialogAction instance."""
+        """Initialize a :class:`ShowAboutDialogAction` instance."""
         Action.__init__(self, "show_about_dialog")
         self.props.label = _("_About")
         self.props.stock_id = gtk.STOCK_ABOUT
@@ -179,7 +181,7 @@ class ShowEditMenuAction(Action):
     """Show the edit menu."""
 
     def __init__(self):
-        """Initialize a ShowEditMenuAction instance."""
+        """Initialize a :class:`ShowEditMenuAction` instance."""
         Action.__init__(self, "show_edit_menu")
         self.props.label = _("_Edit")
 
@@ -189,7 +191,7 @@ class ShowFileMenuAction(Action):
     """Show the file menu."""
 
     def __init__(self):
-        """Initialize a ShowFileMenuAction instance."""
+        """Initialize a :class:`ShowFileMenuAction` instance."""
         Action.__init__(self, "show_file_menu")
         self.props.label = _("_File")
 
@@ -199,7 +201,7 @@ class ShowHelpMenuAction(Action):
     """Show the help menu."""
 
     def __init__(self):
-        """Initialize a ShowHelpMenuAction instance."""
+        """Initialize a :class:`ShowHelpMenuAction` instance."""
         Action.__init__(self, "show_help_menu")
         self.props.label = _("_Help")
 
@@ -209,7 +211,7 @@ class WrapLinesAction(ToggleAction):
     """Break long lines at word borders."""
 
     def __init__(self):
-        """Initialize a WrapLinesAction instance."""
+        """Initialize a :class:`WrapLinesAction` instance."""
         ToggleAction.__init__(self, "wrap_lines")
         self.props.active = False
         self.props.label = _("_Wrap Lines")
@@ -217,6 +219,6 @@ class WrapLinesAction(ToggleAction):
         self.accelerator = "<Control>R"
 
     def _affirm_doable(self, window):
-        """Raise AffirmationError if action cannot be done."""
+        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.props.sensitive)

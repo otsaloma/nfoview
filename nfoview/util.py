@@ -28,12 +28,12 @@ import webbrowser
 
 
 def affirm(value):
-    """Raise AffirmationError if value evaluates to False."""
+    """Raise :exc:`AffirmationError` if value evaluates to ``False``."""
     if not value:
         raise nfoview.AffirmationError
 
 def browse_url(url, browser=None):
-    """Open URL in web browser."""
+    """Open `url` in web browser."""
     if browser and isinstance(browser, basestring):
         return subprocess.Popen((browser, url))
     if "GNOME_DESKTOP_SESSION_ID" in os.environ:
@@ -49,10 +49,10 @@ def browse_url(url, browser=None):
     return webbrowser.open(url)
 
 def connect(observer, observable, signal, *args):
-    """Connect observable's signal to observer's callback method.
+    """Connect `observable`'s signal to `observer`'s callback method.
 
-    If observable is a string, it should be an attribute of observer. If
-    observable is not a string it should be the same as observer.
+    If `observable` is a string, it should be an attribute of `observer`.
+    If `observable` is not a string it should be the same as `observer`.
     """
     method_name = signal.replace("-", "_").replace("::", "_")
     if observer is not observable:
@@ -88,15 +88,20 @@ def detect_encoding(path):
     return "cp437"
 
 def gdk_color_to_hex(color):
-    """Return 7-character hexadecimal string for GDK color."""
+    """Return 7-character hexadecimal string for GDK `color`.
+
+    >>> color = gtk.gdk.Color(56797, 61166, 65535)
+    >>> nfoview.util.gdk_color_to_hex(color)
+    '#ddeeff'
+    """
     return "#%02x%02x%02x" % (int(color.red   / 256.0),
                               int(color.green / 256.0),
                               int(color.blue  / 256.0))
 
 def get_color_scheme(name):
-    """Get the color scheme with given name.
+    """Return the color scheme with given name.
 
-    Raise ValueError if color scheme not found.
+    Raise :exc:`ValueError` if color scheme not found.
     """
     schemes = map(lambda x: getattr(nfoview.schemes, x),
                   nfoview.schemes.__all__)
@@ -107,7 +112,7 @@ def get_color_scheme(name):
     return schemes[names.index(name)]
 
 def get_color_schemes():
-    """Get a list of all color schemes in proper order."""
+    """Return a list of all color schemes in proper order."""
     schemes = map(lambda x: getattr(nfoview.schemes, x),
                   nfoview.schemes.__all__)
 
@@ -119,20 +124,20 @@ def get_color_schemes():
     return schemes
 
 def get_font_description(fallback="monospace"):
-    """Return font description from conf with fallback added."""
+    """Return font description from conf with `fallback` added."""
     font_desc = pango.FontDescription(nfoview.conf.font)
     family = font_desc.get_family()
     font_desc.set_family(",".join((family, fallback)))
     return font_desc
 
 def is_command(command):
-    """Return True if command exists as a file in $PATH."""
+    """Return ``True`` if `command` exists as a file in ``$PATH``."""
     dirs = os.environ.get("PATH", "").split(os.pathsep)
     paths = [os.path.join(x, command) for x in dirs]
     return any(map(os.path.isfile, paths))
 
 def is_valid_encoding(encoding):
-    """Return True if encoding is a valid and supported encoding."""
+    """Return ``True`` if `encoding` is a valid and supported encoding."""
     try:
         codecs.lookup(encoding)
         return True
@@ -140,7 +145,7 @@ def is_valid_encoding(encoding):
         return False
 
 def uri_to_path(uri):
-    """Convert URI to local filepath."""
+    """Convert `uri` to local filepath."""
     uri = urllib.unquote(uri)
     if sys.platform == "win32":
         path = urlparse.urlsplit(uri)[2]

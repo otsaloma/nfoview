@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Classes and functions for defining and accessing color schemes."""
+"""Classes for color scheme definitions."""
 
 import gtk
 import nfoview
@@ -29,7 +29,27 @@ __all__ = ("BlackOnWhiteScheme",
            "WhiteOnBlackScheme",)
 
 
-class BlackOnWhiteScheme(object):
+class ColorScheme(object):
+
+    """Baseclass for color scheme definitions.
+
+    :cvar name: Name used to identify and save color scheme
+    :cvar label: User-visible localized name for color scheme
+    :cvar foreground: Foreground color as a :class:`gtk.gdk.Color`
+    :cvar background: Background color as a :class:`gtk.gdk.Color`
+    :cvar link: Link color as a :class:`gtk.gdk.Color`
+    :cvar visited_link: Visited link color as a :class:`gtk.gdk.Color`
+    """
+
+    name = "custom"
+    label = _("Custom")
+    foreground = gtk.gdk.color_parse(nfoview.conf.foreground_color)
+    background = gtk.gdk.color_parse(nfoview.conf.background_color)
+    link = gtk.gdk.color_parse(nfoview.conf.link_color)
+    visited_link = gtk.gdk.color_parse(nfoview.conf.visited_link_color)
+
+
+class BlackOnWhiteScheme(ColorScheme):
 
     """Color scheme with black text on white background."""
 
@@ -41,7 +61,7 @@ class BlackOnWhiteScheme(object):
     visited_link = gtk.gdk.color_parse("#ff00ff")
 
 
-class CustomScheme(object):
+class CustomScheme(ColorScheme):
 
     """Color scheme with custom, user-chosen colors."""
 
@@ -53,7 +73,7 @@ class CustomScheme(object):
     visited_link = gtk.gdk.color_parse(nfoview.conf.visited_link_color)
 
 
-class DarkGreyOnLightGrayScheme(object):
+class DarkGreyOnLightGrayScheme(ColorScheme):
 
     """Color scheme with dark grey text on light grey background."""
 
@@ -65,7 +85,7 @@ class DarkGreyOnLightGrayScheme(object):
     visited_link = gtk.gdk.color_parse("#ff55ff")
 
 
-class DefaultScheme(object):
+class DefaultScheme(ColorScheme):
 
     """Color scheme with default fore- and background colors."""
 
@@ -78,7 +98,7 @@ class DefaultScheme(object):
     visited_link = gtk.gdk.color_parse("#ff55ff")
 
 
-class GreyOnBlackScheme(object):
+class GreyOnBlackScheme(ColorScheme):
 
     """Color scheme with grey text on black background."""
 
@@ -90,7 +110,7 @@ class GreyOnBlackScheme(object):
     visited_link = gtk.gdk.color_parse("#ffaaff")
 
 
-class LightGreyOnDarkGrayScheme(object):
+class LightGreyOnDarkGrayScheme(ColorScheme):
 
     """Color scheme with light grey text on dark grey background."""
 
@@ -102,7 +122,7 @@ class LightGreyOnDarkGrayScheme(object):
     visited_link = gtk.gdk.color_parse("#ffaaff")
 
 
-class WhiteOnBlackScheme(object):
+class WhiteOnBlackScheme(ColorScheme):
 
     """Color scheme with white text on black background."""
 

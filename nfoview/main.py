@@ -14,7 +14,10 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Spawning, managing and killing viewer windows."""
+"""Spawning, managing and killing viewer windows.
+
+:var windows: List of existing :class:`nfoview.Window` instances
+"""
 
 import gtk
 import nfoview
@@ -24,7 +27,7 @@ windows = []
 
 
 def _on_window_delete_event(window, event):
-    """Exit the GTK+ main loop if the last window was closed."""
+    """Exit the ``GTK+`` main loop if the last window was closed."""
     window.destroy()
     windows.remove(window)
     if windows: return
