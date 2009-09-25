@@ -20,7 +20,7 @@
 :var CONFIG_HOME_DIR: Path to user's local configuration directory
 :var DATA_DIR: Path to the global data directory
 :var LOCALE_DIR: Path to the global locale directory
-:var conf: Instance of ConfigurationStore used
+:var conf: Instance of :class:`ConfigurationStore` used
 """
 
 __version__ = "1.6"
