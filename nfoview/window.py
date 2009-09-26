@@ -245,7 +245,7 @@ class Window(gtk.Window):
         self._update_action_sensitivities()
 
     def resize_to_text(self):
-        """Set the default window size based on the text in the view."""
+        """Resize window to fit the text in the view."""
         # Get the pixel size of the text to be displayed. If the width exceeds
         # 'text_view_max_chars', switch to line wrapping and use 80 characters
         # for the window width. Limit the height of the window to
