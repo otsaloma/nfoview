@@ -23,7 +23,7 @@
 :var conf: Instance of :class:`ConfigurationStore` used
 """
 
-__version__ = "1.6"
+__version__ = "1.7"
 
 from nfoview.errors import *
 from nfoview.unittest import *

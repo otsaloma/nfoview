@@ -1,3 +1,14 @@
+NFO Viewer 1.7
+==============
+
+ * Add menu item to toggle line-wrapping
+ * Automatically switch to wrapping lines if a line longer than 160
+   characters is found in the file (the threshold is customizable in
+   the configuration file)
+ * Fall back to 'monospace' if preferred font is not found
+ * Fix URL-detection to be less strict
+ * Add Italian translation (Alessio Treglia)
+
 NFO Viewer 1.6
 ================
 
