@@ -1,6 +1,10 @@
 include bin/*
 include data/*
 include doc/*
+recursive-include doc/sphinx *.py
+recursive-include doc/sphinx/_templates *
+recursive-include doc/sphinx/_themes *
+include doc/sphinx/Makefile
 recursive-include nfoview *.py
 include tools/*
 include po/*
