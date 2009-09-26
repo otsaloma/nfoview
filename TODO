@@ -3,7 +3,8 @@ NFO Viewer 1.7
 
  [D] Add menu item to toggle line-wrapping
  [D] Automatically switch to wrapping lines if a line longer than
-     160 characters is found in the file
+     160 characters is found in the file (the threshold is
+     customizable in the configuration file)
  [D] Fix URL-detection to be less strict
  [D] Fall back to 'monospace' if preferred font is not found
  [D] Add Italian translation (Alessio Treglia)
@@ -11,6 +12,6 @@ NFO Viewer 1.7
 NFO Viewer 3000
 ===============
 
- * Application icon, preferrably following Tango style guidelines
+ * Add a proper application icon, following Tango style guidelines
  * Use sensible defaults for link and visited link colors
  * Make hyperlinks activatable by keyboard

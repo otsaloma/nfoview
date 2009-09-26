@@ -22,7 +22,7 @@ Releasing a New Version
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
  * Generate API documentation
-   doc/sphinx$ make clean && ./autogen.py nfoview && make html
+   ./setup.py clean doc --formats html
 
  * Send announcements and update web sites
    - http://home.gna.org/nfoview

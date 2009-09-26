@@ -17,6 +17,12 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
     specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
 """
 
+import distutils
+import distutils.command.clean
+import distutils.command.install
+import distutils.command.install_data
+import distutils.command.install_lib
+import distutils.command.sdist
 import glob
 import itertools
 import os
@@ -26,13 +32,7 @@ import subprocess
 import tarfile
 import tempfile
 
-from distutils import log
-from distutils.command.clean import clean
-from distutils.command.install import install
-from distutils.command.install_data import install_data
-from distutils.command.install_lib import install_lib
-from distutils.command.sdist import sdist
-from distutils.core import setup
+log = distutils.log
 
 os.chdir(os.path.dirname(__file__) or ".")
 
@@ -44,8 +44,13 @@ def get_version_number():
     text = open(os.path.join("nfoview", "__init__.py"), "r").read()
     return re.search(r"__version__ *= *['\"](.*?)['\"]", text).group(1)
 
+def run_command_or_exit(command):
+    """Run command in shell and raise SystemExit if it fails."""
+    if os.system(command) != 0:
+        raise SystemExit("Error: Command %s failed." % repr(command))
 
-class Clean(clean):
+
+class Clean(distutils.command.clean.clean):
 
     """Command to remove files and directories created."""
 
@@ -65,8 +70,7 @@ class Clean(clean):
 
     def run(self):
         """Remove files and directories listed in self.__glob_targets."""
-        clean.run(self)
-
+        distutils.command.clean.clean.run(self)
         targets = map(glob.glob, self.__glob_targets)
         iterator = itertools.chain(*targets)
         for target in filter(os.path.isdir, iterator):
@@ -80,27 +84,52 @@ class Clean(clean):
                 os.remove(target)
 
 
-class Install(install):
+class Documentation(distutils.cmd.Command):
+
+    """Command to build documentation from source code."""
+
+    description = "build documentation from source code"
+    user_options = [("format=", "f",
+                     "type of documentation to create (try 'html')")]
+
+    def initialize_options (self):
+        """Initialize default values for options."""
+        self.format = None
+
+    def finalize_options (self):
+        """Ensure that format has some valid value."""
+        if self.format is None:
+            log.warn("format not specified, using 'html'")
+            self.format = "html"
+
+    def run(self):
+        """Build documentation from source code."""
+        os.chdir(os.path.join("doc", "sphinx"))
+        if not self.dry_run:
+            run_command_or_exit("make clean")
+            run_command_or_exit("python autogen.py nfoview")
+            run_command_or_exit("make %s" % self.format)
+
+
+class Install(distutils.command.install.install):
 
     """Command to install everything."""
 
     def run(self):
         """Install everything and update the desktop file database."""
-        install.run(self)
-
+        distutils.command.install.install.run(self)
         get_command_obj = self.distribution.get_command_obj
         root = get_command_obj("install").root
         data_dir = get_command_obj("install_data").install_dir
         # Assume we're actually installing if --root was not given.
         if (root is not None) or (data_dir is None): return
-
         directory = os.path.join(data_dir, "share", "applications")
         log.info("updating desktop database in '%s'" % directory)
         try: subprocess.call(("update-desktop-database", directory))
         except OSError: log.info("...failed")
 
 
-class InstallData(install_data):
+class InstallData(distutils.command.install_data.install_data):
 
     """Command to install data files."""
 
@@ -130,10 +159,10 @@ class InstallData(install_data):
         for po_file in glob.glob("po/*.po"):
             self.data_files.append(self.__get_mo_file(po_file))
         self.data_files.append(self.__get_desktop_file())
-        install_data.run(self)
+        distutils.command.install_data.install_data.run(self)
 
 
-class InstallLib(install_lib):
+class InstallLib(distutils.command.install_lib.install_lib):
 
     """Command to install library files."""
 
@@ -142,13 +171,11 @@ class InstallLib(install_lib):
         # Allow --root to be used as a destination directory.
         root = self.distribution.get_command_obj("install").root
         prefix = self.distribution.get_command_obj("install").install_data
-        if root is not None:
-            root = os.path.abspath(root)
+        if not None in (root, prefix):
             prefix = os.path.abspath(prefix)
-            prefix = prefix.replace(root, "")
+            prefix = prefix.replace(os.path.abspath(root), "")
         data_dir = os.path.join(prefix, "share", "nfoview")
         locale_dir = os.path.join(prefix, "share", "locale")
-
         # Write changes to the nfoview.paths module.
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r").read()
@@ -161,11 +188,10 @@ class InstallLib(install_lib):
         text = text.replace(patt, repl)
         assert text.count(repr(locale_dir)) > 0
         open(path, "w").write(text)
+        return distutils.command.install_lib.install_lib.install(self)
 
-        return install_lib.install(self)
 
-
-class SDistGna(sdist):
+class SDistGna(distutils.command.sdist.sdist):
 
     """Command to create a source distribution for gna.org."""
 
@@ -175,7 +201,7 @@ class SDistGna(sdist):
     def finalize_options(self):
         """Set the distribution directory to 'dist/X.Y'."""
         # pylint: disable-msg=W0201
-        sdist.finalize_options(self)
+        distutils.command.sdist.sdist.finalize_options(self)
         branch = ".".join(self.__version.split(".")[:2])
         self.dist_dir = os.path.join(self.dist_dir, branch)
 
@@ -185,11 +211,11 @@ class SDistGna(sdist):
             os.remove("ChangeLog")
         os.system("tools/generate-change-log > ChangeLog")
         assert os.path.isfile("ChangeLog")
-        sdist.run(self)
+        assert open("ChangeLog", "r").read().strip()
+        distutils.command.sdist.sdist.run(self)
         basename = "nfoview-%s" % self.__version
         tarballs = os.listdir(self.dist_dir)
         os.chdir(self.dist_dir)
-
         # Compare tarball contents with working copy.
         temp_dir = tempfile.gettempdir()
         test_dir = os.path.join(temp_dir, basename)
@@ -202,7 +228,6 @@ class SDistGna(sdist):
         if response.lower() == "n":
             raise SystemExit("Must edit MANIFEST.in.")
         shutil.rmtree(test_dir)
-
         # Create extra distribution files.
         log.info("calculating md5sums")
         os.system("md5sum * > %s.md5sum" % basename)
@@ -217,13 +242,7 @@ class SDistGna(sdist):
             os.system("gpg --detach %s" % tarball)
 
 
-def run_command_or_exit(command):
-    """Run command in shell and raise SystemExit if it fails."""
-    if os.system(command) != 0:
-        raise SystemExit("Error: Command '%s' failed." % command)
-
-
-setup(
+distutils.core.setup(
     name="nfoview",
     version=get_version_number(),
     requires=("gtk (>=2.12.0)",),
@@ -241,6 +260,7 @@ setup(
         ("share/nfoview", ("data/ui.xml",)),],
     cmdclass={
         "clean": Clean,
+        "doc": Documentation,
         "install": Install,
         "install_data": InstallData,
         "install_lib": InstallLib,
