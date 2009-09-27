@@ -1,6 +1,13 @@
+NFO Viewer 1.7.1
+================
+
+ [D] Add French translation (elgeneralmidi)
+
 NFO Viewer 3000
 ===============
 
+ * Bump GTK+ dependency to 2.16
+    - Use attributes instead of markup in preferences-dialog.ui
  * Add a proper application icon, following Tango style guidelines
  * Use sensible defaults for link and visited link colors
  * Make hyperlinks activatable by keyboard
