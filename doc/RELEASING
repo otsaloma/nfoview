@@ -26,6 +26,7 @@ Releasing a New Version
    ./setup.py clean doc --formats html
 
  * Send announcements and update web sites
+   - http://users.tkk.fi/~otsaloma/nfoview/doc/index.html
    - http://home.gna.org/nfoview
    - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview
    - nfoview-announcements@gna.org

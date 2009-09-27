@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-26 19:58+0300\n"
+"POT-Creation-Date: 2009-09-27 22:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:48
+#. Translators: The application name 'NFO Viewer' has been intentionally
+#. marked as translatable. If you manage to translate the name in a
+#. fluent manner, without changing the meaning, you may use that
+#. translation at your discretion.
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr ""
 
@@ -76,11 +80,11 @@ msgstr ""
 msgid "About NFO Viewer"
 msgstr ""
 
-#: ../nfoview/about.py:51
+#: ../nfoview/about.py:55
 msgid "Viewer for NFO files"
 msgstr ""
 
-#: ../nfoview/about.py:55
+#: ../nfoview/about.py:59
 msgid "NFO Viewer Website"
 msgstr ""
 
@@ -90,7 +94,7 @@ msgstr ""
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:65
+#: ../nfoview/about.py:69
 msgid "translator-credits"
 msgstr ""
 

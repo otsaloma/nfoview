@@ -45,6 +45,10 @@ class AboutDialog(gtk.AboutDialog):
         gtk.about_dialog_set_url_hook(self._on_url_clicked)
         self.set_transient_for(parent)
         self.set_title(_("About NFO Viewer"))
+        # Translators: The application name 'NFO Viewer' has been intentionally
+        # marked as translatable. If you manage to translate the name in a
+        # fluent manner, without changing the meaning, you may use that
+        # translation at your discretion.
         self.set_program_name(_("NFO Viewer"))
         self.set_version(nfoview.__version__)
         self.set_copyright(u"Copyright \xa9 2005-2009 Osmo Salomaa")
