@@ -102,8 +102,8 @@ class Window(gtk.Window):
     def _init_properties(self):
         """Set window properties."""
         self.set_position(gtk.WIN_POS_CENTER)
-        self.set_icon_name("gtk-dialog-info")
-        gtk.window_set_default_icon_name("gtk-dialog-info")
+        self.set_icon_name("nfoview")
+        gtk.window_set_default_icon_name("nfoview")
         self.drag_dest_set(gtk.DEST_DEFAULT_ALL,
                            [("text/uri-list", 0, 0)],
                            gtk.gdk.ACTION_COPY)

@@ -213,13 +213,13 @@ class TestModule(nfoview.TestCase):
     @nfoview.deco.monkey_patch(sys, "platform")
     def test_uri_to_path__unix(self):
         sys.platform = "linux2"
-        uri = "file:///home/tester/a%20file.ext"
+        uri = "file:///home/nfoview/a%20file.nfo"
         path = nfoview.util.uri_to_path(uri)
-        assert path == "/home/tester/a file.ext"
+        assert path == "/home/nfoview/a file.nfo"
 
     @nfoview.deco.monkey_patch(sys, "platform")
     def test_uri_to_path__windows(self):
         sys.platform = "win32"
-        uri = "file:///c:/tester/a%20file.ext"
+        uri = "file:///c:/nfoview/a%20file.nfo"
         path = nfoview.util.uri_to_path(uri)
-        assert path == "c:\\tester\\a file.ext"
+        assert path == "c:\\nfoview\\a file.nfo"

@@ -1,5 +1,5 @@
 include bin/*
-include data/*
+recursive-include data/*
 include doc/*
 recursive-include doc/sphinx *.py
 recursive-include doc/sphinx/_templates *

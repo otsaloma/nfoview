@@ -1,6 +1,12 @@
-NFO Viewer 1.7.1
-================
+NFO Viewer 1.8
+==============
 
+ [D] Add application icon (a butchered copy of logviewer icon from
+     gnome-icon-theme)
+ [ ] Use gtk.accel_map_load and gtk.accel_map_save
+ [ ] Adapt to GNOME Goal: Correct Desktop Files
+ [ ] Adapt to new GTK+/GNOME anti-icon policy for buttons
+ [?] Use transifex.net (or something) for translations
  [D] Add French translation (elgeneralmidi)
 
 NFO Viewer 3000
@@ -8,6 +14,5 @@ NFO Viewer 3000
 
  * Bump GTK+ dependency to 2.16
     - Use attributes instead of markup in preferences-dialog.ui
- * Add a proper application icon, following Tango style guidelines
  * Use sensible defaults for link and visited link colors
  * Make hyperlinks activatable by keyboard

@@ -58,7 +58,7 @@ class AboutDialog(gtk.AboutDialog):
         self.set_website("http://home.gna.org/nfoview/")
         self.set_website_label(_("NFO Viewer Website"))
         self.set_authors(("Osmo Salomaa <otsaloma@cc.hut.fi>",))
-        self.set_logo_icon_name("gtk-dialog-info")
+        self.set_logo_icon_name("nfoview")
 
         # Translators: This is a special message that shouldn't be translated
         # literally. It is used in the about dialog to give credits to the
