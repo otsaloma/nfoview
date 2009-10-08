@@ -3,7 +3,8 @@ NFO Viewer 1.8
 
  [D] Add application icon (a butchered copy of logviewer icon from
      gnome-icon-theme)
- [ ] Use gtk.accel_map_load and gtk.accel_map_save
+ [D] Save menu item keybindings to a GtkAccelMap rc-file in the user's
+     configuration directory
  [ ] Adapt to GNOME Goal: Correct Desktop Files
  [ ] Adapt to new GTK+/GNOME anti-icon policy for buttons
  [?] Use transifex.net (or something) for translations

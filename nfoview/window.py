@@ -16,6 +16,7 @@
 
 """Viewer window and user interface controller for NFO files."""
 
+import atexit
 import codecs
 import gtk
 import nfoview
@@ -76,6 +77,10 @@ class Window(gtk.Window):
         self._uim.insert_action_group(action_group, 0)
         self._uim.add_ui_from_file(os.path.join(nfoview.DATA_DIR, "ui.xml"))
         self.add_accel_group(self._uim.get_accel_group())
+        path = os.path.join(nfoview.CONFIG_HOME_DIR, "accels.conf")
+        if os.path.isfile(path):
+            gtk.accel_map_load(path)
+        atexit.register(gtk.accel_map_save, path)
         self._uim.ensure_update()
 
     def _init_contents(self):
