@@ -5,8 +5,6 @@ NFO Viewer 1.8
      gnome-icon-theme)
  [D] Save menu item keybindings to a GtkAccelMap rc-file in the user's
      configuration directory
- [ ] Adapt to GNOME Goal: Correct Desktop Files
- [ ] Adapt to new GTK+/GNOME anti-icon policy for buttons
  [?] Use transifex.net (or something) for translations
  [D] Add French translation (elgeneralmidi)
 

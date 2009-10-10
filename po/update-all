@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Update the PO template file and all existing PO-files with new strings.
+# Requires intltool-update.
+
+DIRNAME=$(dirname "$0")
+cd "$DIRNAME" || exit 1
+
+echo "Checking for missing source files..."
+intltool-update -m &> /dev/null
+[ -f missing ] && exit 1
+
+echo "Updating nfoview.pot..."
+intltool-update -p -g nfoview
+
+for FNAME in *.po; do
+    echo "Updating $FNAME..."
+    LANG=$(echo $FNAME | sed "s/\.po$//")
+    intltool-update -d $LANG -g nfoview &> /dev/null
+done
