@@ -5,13 +5,13 @@ NFO Viewer 1.8
      gnome-icon-theme)
  [D] Save menu item keybindings to a GtkAccelMap rc-file in the user's
      configuration directory
- [?] Use transifex.net (or something) for translations
+ [ ] http://www.transifex.net/projects/p/nfoview/
  [D] Add French translation (elgeneralmidi)
 
 NFO Viewer 3000
 ===============
 
  * Bump GTK+ dependency to 2.16
-    - Use attributes instead of markup in preferences-dialog.ui
- * Use sensible defaults for link and visited link colors
+   - Use attributes instead of markup in preferences-dialog.ui
+ * Get link and visited link colors from GTK+ theme
  * Make hyperlinks activatable by keyboard

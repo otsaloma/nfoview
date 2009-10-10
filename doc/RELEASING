@@ -7,7 +7,7 @@ Releasing a New Version
 
  * Make final edits to files, commit and tag
    $ $EDITOR nfoview/__init__.py
-   po$ ./update-all
+   $ tools/update-translations
    $ $EDITOR NEWS TODO
    $ git commit -a -m "RELEASE X.Y.Z"
    $ git tag -s X.Y.Z

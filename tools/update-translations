@@ -4,7 +4,7 @@
 # Requires intltool-update.
 
 DIRNAME=$(dirname "$0")
-cd "$DIRNAME" || exit 1
+cd "$DIRNAME/../po" || exit 1
 
 echo "Checking for missing source files..."
 intltool-update -m &> /dev/null
