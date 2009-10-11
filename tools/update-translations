@@ -15,6 +15,5 @@ intltool-update -p -g nfoview
 
 for FNAME in *.po; do
     echo "Updating $FNAME..."
-    LANG=$(echo $FNAME | sed "s/\.po$//")
-    intltool-update -d $LANG -g nfoview &> /dev/null
+    msgmerge -U -N -v "$FNAME" nfoview.pot
 done

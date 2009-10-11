@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-27 11:02+0200\n"
+"POT-Creation-Date: 2009-10-11 17:24+0300\n"
 "PO-Revision-Date: 2009-09-27 21:13+0300\n"
 "Last-Translator: elgeneralmidi <ubuntufromscratch@gmail.com>\n"
 "Language-Team: French <>\n"
@@ -16,7 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:48
+#. Translators: The application name 'NFO Viewer' has been intentionally
+#. marked as translatable. If you manage to translate the name in a
+#. fluent manner, without changing the meaning, you may use that
+#. translation at your discretion.
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -76,11 +80,11 @@ msgstr "_Lien visité"
 msgid "About NFO Viewer"
 msgstr "A propos de NFO Viewer"
 
-#: ../nfoview/about.py:51
+#: ../nfoview/about.py:55
 msgid "Viewer for NFO files"
 msgstr "Visualiseur de fichiers NFO"
 
-#: ../nfoview/about.py:55
+#: ../nfoview/about.py:59
 msgid "NFO Viewer Website"
 msgstr "Site web de NFO Viewer"
 
@@ -90,7 +94,7 @@ msgstr "Site web de NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:65
+#: ../nfoview/about.py:69
 msgid "translator-credits"
 msgstr "elgeneralmidi <ubuntufromscratch@gmail.com>"
 
