@@ -103,7 +103,7 @@ add_function_parentheses = False
 private_members = False
 
 # Always include or exclude objects these names.
-include_members = ['__init__']
+include_members = ['__init__', '_']
 exclude_members = []
 
 # Path to the project root directory, relative to this directory.

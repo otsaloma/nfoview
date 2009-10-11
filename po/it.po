@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:26+0300\n"
+"Report-Msgid-Bugs-To: Alessio Treglia <quadrispro@ubuntu.com>\n"
+"POT-Creation-Date: 2009-08-16 15:30+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alessio Treglia <quadrispro@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -16,11 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Translators: The application name 'NFO Viewer' has been intentionally
-#. marked as translatable. If you manage to translate the name in a
-#. fluent manner, without changing the meaning, you may use that
-#. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:49
 msgid "NFO Viewer"
 msgstr "Visualizzatore NFO"
 
@@ -76,15 +72,15 @@ msgstr "Col_legamento:"
 msgid "_Visited link:"
 msgstr "Collegamento _visitato:"
 
-#: ../nfoview/about.py:47
+#: ../nfoview/about.py:48
 msgid "About NFO Viewer"
 msgstr "Informazioni su NFO Viewer"
 
-#: ../nfoview/about.py:55
+#: ../nfoview/about.py:52
 msgid "Viewer for NFO files"
 msgstr "Visualizzatore per file NFO"
 
-#: ../nfoview/about.py:59
+#: ../nfoview/about.py:56
 msgid "NFO Viewer Website"
 msgstr "Sito web di NFO Viewer"
 
@@ -94,126 +90,118 @@ msgstr "Sito web di NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:69
+#: ../nfoview/about.py:66
 msgid "translator-credits"
 msgstr "Alessio Treglia <quadrispro@ubuntu.com>"
 
-#: ../nfoview/actions.py:81
+#: ../nfoview/actions.py:75
 msgid "_Close"
 msgstr "_Chiudi"
 
-#: ../nfoview/actions.py:83
+#: ../nfoview/actions.py:77
 msgid "Close document"
 msgstr "Chiudi documento"
 
-#: ../nfoview/actions.py:95
+#: ../nfoview/actions.py:90
 msgid "_Copy"
 msgstr "_Copia"
 
-#: ../nfoview/actions.py:96
+#: ../nfoview/actions.py:91
 msgid "Copy"
 msgstr "Copia"
 
-#: ../nfoview/actions.py:98
+#: ../nfoview/actions.py:93
 msgid "Copy the selected text to the clipboard"
 msgstr "Copia il testo selezionato negli appunti"
 
-#: ../nfoview/actions.py:116
+#: ../nfoview/actions.py:113
 msgid "_Preferences"
 msgstr "_Preferenze"
 
-#: ../nfoview/actions.py:118
+#: ../nfoview/actions.py:115
 msgid "Edit NFO Viewer preferences"
 msgstr "Modifica le preferenze di NFO Viewer"
 
-#: ../nfoview/actions.py:129
+#: ../nfoview/actions.py:127
 msgid "_Open..."
 msgstr "_Apri"
 
-#: ../nfoview/actions.py:130 ../nfoview/open.py:33
+#: ../nfoview/actions.py:128 ../nfoview/open.py:34
 msgid "Open"
 msgstr "Apri"
 
-#: ../nfoview/actions.py:132
+#: ../nfoview/actions.py:130
 msgid "Open file"
 msgstr "Apri file"
 
-#: ../nfoview/actions.py:143
+#: ../nfoview/actions.py:142
 msgid "_Quit"
 msgstr "_Esci"
 
-#: ../nfoview/actions.py:145
+#: ../nfoview/actions.py:144
 msgid "Quit NFO Viewer"
 msgstr "Esci da NFO Viewer"
 
 #: ../nfoview/actions.py:156
-msgid "_Select All"
-msgstr "_Seleziona tutto"
-
-#: ../nfoview/actions.py:158
-msgid "Select all text in the document"
-msgstr "Seleziona tutto il testo nel documento"
-
-#: ../nfoview/actions.py:174
 msgid "_About"
 msgstr "_Informazioni"
 
-#: ../nfoview/actions.py:176
+#: ../nfoview/actions.py:158
 msgid "Show information about NFO Viewer"
 msgstr "Mostra le informazioni su NFO Viewer"
 
-#: ../nfoview/actions.py:186
+#: ../nfoview/actions.py:169
+msgid "_Select All"
+msgstr "_Seleziona tutto"
+
+#: ../nfoview/actions.py:172
+msgid "Select all text in the document"
+msgstr "Seleziona tutto il testo nel documento"
+
+#: ../nfoview/actions.py:190
 msgid "_Edit"
 msgstr "_Modifica"
 
-#: ../nfoview/actions.py:196
+#: ../nfoview/actions.py:201
 msgid "_File"
 msgstr "_File"
 
-#: ../nfoview/actions.py:206
+#: ../nfoview/actions.py:212
 msgid "_Help"
 msgstr "A_iuto"
 
-#: ../nfoview/actions.py:217
-msgid "_Wrap Lines"
-msgstr ""
-
-#: ../nfoview/actions.py:218
-msgid "Break long lines at word borders"
-msgstr ""
-
-#: ../nfoview/open.py:41
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "Tutti i file"
 
-#: ../nfoview/open.py:46
+#: ../nfoview/open.py:47
 msgid "NFO files (*.nfo)"
 msgstr "File NFO (*.nfo)"
 
-#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
-msgid "Custom"
-msgstr "Personalizzato"
-
-#: ../nfoview/schemes.py:57
+#: ../nfoview/schemes.py:29
 msgid "Black on white"
 msgstr "Nero su bianco"
 
-#: ../nfoview/schemes.py:81
+#: ../nfoview/schemes.py:41
+msgid "Custom"
+msgstr "Personalizzato"
+
+#: ../nfoview/schemes.py:53
 msgid "Dark grey on light grey"
 msgstr "Grigio scuro su grigio chiaro"
 
-#: ../nfoview/schemes.py:93
+#: ../nfoview/schemes.py:65
 msgid "System theme"
 msgstr "Tema di sistema"
 
-#: ../nfoview/schemes.py:106
+#: ../nfoview/schemes.py:78
 msgid "Grey on black"
 msgstr "Grigio su nero"
 
-#: ../nfoview/schemes.py:118
+#: ../nfoview/schemes.py:90
 msgid "Light grey on dark grey"
 msgstr "Grigio chiaro su grigio scuro"
 
-#: ../nfoview/schemes.py:130
+#: ../nfoview/schemes.py:102
 msgid "White on black"
 msgstr "Bianco su nero"
