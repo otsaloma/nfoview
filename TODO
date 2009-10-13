@@ -6,7 +6,10 @@ NFO Viewer 1.8
  [D] Save menu item keybindings to a GtkAccelMap rc-file in the user's
      configuration directory
  [ ] http://www.transifex.net/projects/p/nfoview/
+     - Update website
+     - Update po/README
  [D] Add French translation (elgeneralmidi)
+ [D] Add Polish translation (Piotr Drąg)
 
 NFO Viewer 3000
 ===============
