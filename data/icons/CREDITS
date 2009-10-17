@@ -1,6 +1,6 @@
-Application icon is a copy (with minor modifications) of logviewer
-icon from gnome-icon-theme [1]. gnome-icon-theme is released under the
-GNU General Public License (GPL). See COPYING [2] and AUTHORS [3].
+nfoview application icon is based on logviewer icon from
+gnome-icon-theme [1]. gnome-icon-theme is released under the GNU
+General Public License (GPL). See COPYING [2] and AUTHORS [3].
 
  [1] http://git.gnome.org/cgit/gnome-icon-theme/
  [2] http://git.gnome.org/cgit/gnome-icon-theme/plain/COPYING

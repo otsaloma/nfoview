@@ -103,8 +103,9 @@ add_function_parentheses = False
 private_members = False
 
 # Always include or exclude objects these names.
-include_members = ['__init__', '_']
+include_members = ['__init__']
 exclude_members = []
+exclude_members_endswith = []
 
 # Path to the project root directory, relative to this directory.
 project_root = os.path.join('..', '..')
