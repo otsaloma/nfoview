@@ -1,3 +1,13 @@
+NFO Viewer 1.8
+==============
+
+ * Add application icon (based on logviewer icon from
+   gnome-icon-theme)
+ * Save menu item keybindings to a GtkAccelMap rc-file in the user's
+   configuration directory
+ * Add French translation (elgeneralmidi)
+ * Add Polish translation (Piotr Drąg)
+
 NFO Viewer 1.7
 ==============
 
