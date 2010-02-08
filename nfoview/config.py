@@ -75,7 +75,7 @@ class ConfigurationStore(object):
         self.restore_defaults()
 
     def read_from_file(self):
-        """Read values of configuration fields from file."""
+        """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
         entries = open(self.path, "r").readlines()
         entries = map(lambda x: x.strip(), entries)
@@ -87,13 +87,13 @@ class ConfigurationStore(object):
         self.version = nfoview.__version__
 
     def restore_defaults(self):
-        """Set all configuration fields to their default values."""
+        """Set all configuration options to their default values."""
         for name in self._fields:
             setattr(self, name, self._fields[name][self.DEFAULT])
         self.version = nfoview.__version__
 
     def write_to_file(self):
-        """Write values of configuration fields to file."""
+        """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
         if not os.path.isdir(directory):
             try: os.makedirs(directory)

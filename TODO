@@ -1,7 +1,10 @@
 NFO Viewer 3000
 ===============
 
- * Bump GTK+ dependency to 2.16
+ * Bump PyGTK dependency to 2.16
    - Use attributes instead of markup in preferences-dialog.ui
+ * Bump PyGobject dependency to 2.14
+   - gobject.set_application_name(_("NFO Viewer"))
+   - gobject.set_prgname("nfoview")
  * Get link and visited link colors from GTK+ theme
  * Make hyperlinks activatable by keyboard
