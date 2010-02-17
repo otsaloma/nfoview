@@ -19,6 +19,7 @@ To uninstall, remove files and directories
     .../bin/nfoview
     .../lib/pythonX.Y/site-packages/nfoview*
     .../share/applications/nfoview.desktop
+    .../share/icons/hicolor/*/apps/nfoview.*
     .../share/locale/*/LC_MESSAGES/nfoview.mo
     .../share/nfoview/
     .../share/man/man1/nfoview.1
