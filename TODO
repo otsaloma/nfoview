@@ -3,6 +3,7 @@ NFO Viewer 3000
 
  * Bump PyGTK dependency to 2.16
    - Use attributes instead of markup in preferences-dialog.ui
+   - Use gtk.show_uri instead of nfoview.util.browse_url
  * Bump PyGobject dependency to 2.14
    - gobject.set_application_name(_("NFO Viewer"))
    - gobject.set_prgname("nfoview")
