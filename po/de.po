@@ -2,15 +2,15 @@
 # Copyright (C) 2007 THE NFOVIEW'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the nfoview package.
 # Bernd Mueller <ragnar76@googlemail.com>, 2007.
-# Christoph Wickert <christoph.wickert@googlemail.de>, 2009.
+# Christoph Wickert <cwickert@fedoraproject.org>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-11 17:24+0300\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Christoph Wickert <christoph.wickert@googlemail.de>\n"
+"POT-Creation-Date: 2009-10-17 18:20+0300\n"
+"PO-Revision-Date: 2010-03-08 02:36+0100\n"
+"Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,8 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1
+#: ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "NFO-Betrachter"
 
@@ -135,7 +136,8 @@ msgstr "Einstellungen des NFO-Betrachters bearbeiten"
 msgid "_Open..."
 msgstr "Ö_ffnen..."
 
-#: ../nfoview/actions.py:130 ../nfoview/open.py:33
+#: ../nfoview/actions.py:130
+#: ../nfoview/open.py:33
 msgid "Open"
 msgstr "Öffnen"
 
@@ -145,11 +147,11 @@ msgstr "Datei öffnen"
 
 #: ../nfoview/actions.py:143
 msgid "_Quit"
-msgstr ""
+msgstr "_Beenden"
 
 #: ../nfoview/actions.py:145
 msgid "Quit NFO Viewer"
-msgstr ""
+msgstr "NFO-Betrachter beenden"
 
 #: ../nfoview/actions.py:156
 msgid "_Select All"
@@ -181,11 +183,11 @@ msgstr "_Hilfe"
 
 #: ../nfoview/actions.py:217
 msgid "_Wrap Lines"
-msgstr ""
+msgstr "_Zeilenumbruch"
 
 #: ../nfoview/actions.py:218
 msgid "Break long lines at word borders"
-msgstr ""
+msgstr "Lange Zeilen an Wortenden umbrechen"
 
 #: ../nfoview/open.py:41
 msgid "All files"
@@ -195,7 +197,8 @@ msgstr "Alle Dateien"
 msgid "NFO files (*.nfo)"
 msgstr "NFO-Dokumente (*.nfo)"
 
-#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45
+#: ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
@@ -222,3 +225,4 @@ msgstr "Hellgrau auf Dunkelgrau"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "Weiß auf Schwarz"
+
