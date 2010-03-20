@@ -1,15 +1,15 @@
 NFO Viewer 1.9
 ==============
 
- [D] Make the 16x16 px icon paper two pixels wider
+ [W] Make the 16x16 px icon paper two pixels wider
+ [D] Use gtk.show_uri to open hyperlinks
+ [W] Raise PyGTK Dependency to 2.16
+     - Use attributes instead of markup in preferences-dialog.ui
  [D] Update German translation (Christoph Wickert)
 
 NFO Viewer 3000
 ===============
 
- * Bump PyGTK dependency to 2.16
-   - Use attributes instead of markup in preferences-dialog.ui
-   - Use gtk.show_uri instead of nfoview.util.browse_url
  * Bump PyGobject dependency to 2.14
    - gobject.set_application_name(_("NFO Viewer"))
    - gobject.set_prgname("nfoview")

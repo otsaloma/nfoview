@@ -17,19 +17,10 @@
 import codecs
 import gtk
 import nfoview
-import os
 import sys
 
 
 class TestModule(nfoview.TestCase):
-
-    url = "http://home.gna.org/nfoview"
-
-    def browse_url_silent(self, url):
-        try:
-            return nfoview.util.browse_url(url)
-        except OSError:
-            return None
 
     def test_affirm__false(self):
         self.raises(nfoview.AffirmationError,
@@ -38,60 +29,6 @@ class TestModule(nfoview.TestCase):
 
     def test_affirm__true(self):
         nfoview.util.affirm(0 == 0)
-
-    def test_browse_url__command(self):
-        if nfoview.util.is_command("echo"):
-            nfoview.util.browse_url(self.url, "echo")
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    def test_browse_url__gnome(self):
-        os.environ.clear()
-        os.environ["GNOME_DESKTOP_SESSION_ID"] = "1"
-        sys.platform = "linux2"
-        self.browse_url_silent(self.url)
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    def test_browse_url__kde(self):
-        os.environ.clear()
-        os.environ["KDE_FULL_SESSION"] = "1"
-        sys.platform = "linux2"
-        self.browse_url_silent(self.url)
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    def test_browse_url__mac_os_x(self):
-        os.environ.clear()
-        sys.platform = "darwin"
-        self.browse_url_silent(self.url)
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    @nfoview.deco.monkey_patch(nfoview.util, "is_command")
-    def test_browse_url__webbrowser(self):
-        os.environ.clear()
-        sys.platform = "commodore_64"
-        nfoview.util.is_command = lambda x: False
-        self.browse_url_silent(self.url)
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    @nfoview.deco.monkey_patch(nfoview.util, "is_command")
-    def test_browse_url__xdg(self):
-        os.environ.clear()
-        sys.platform = "linux2"
-        nfoview.util.is_command = lambda x: (x == "xdg-open")
-        self.browse_url_silent(self.url)
-
-    @nfoview.deco.monkey_patch(os, "environ")
-    @nfoview.deco.monkey_patch(sys, "platform")
-    @nfoview.deco.monkey_patch(nfoview.util, "is_command")
-    def test_browse_url__xfce(self):
-        os.environ.clear()
-        sys.platform = "linux2"
-        nfoview.util.is_command = lambda x: (x == "exo-open")
-        self.browse_url_silent(self.url)
 
     def test_connect__private(self):
         # pylint: disable-msg=W0201
@@ -195,13 +132,6 @@ class TestModule(nfoview.TestCase):
         assert schemes[0] is nfoview.DefaultScheme
         assert schemes[-1] is nfoview.CustomScheme
 
-    def test_is_command__false(self):
-        assert not nfoview.util.is_command("+?")
-
-    def test_is_command__true(self):
-        assert nfoview.util.is_command("echo")
-        assert nfoview.util.is_command("rmdir")
-
     def test_is_valid_encoding__false(self):
         assert not nfoview.util.is_valid_encoding("xxx")
 
@@ -209,6 +139,9 @@ class TestModule(nfoview.TestCase):
         assert nfoview.util.is_valid_encoding("ascii")
         assert nfoview.util.is_valid_encoding("cp437")
         assert nfoview.util.is_valid_encoding("utf_8")
+
+    def test_show_uri(self):
+        nfoview.util.show_uri("http://home.gna.org/nfoview/")
 
     @nfoview.deco.monkey_patch(sys, "platform")
     def test_uri_to_path__unix(self):

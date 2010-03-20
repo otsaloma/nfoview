@@ -73,7 +73,7 @@ class TextView(gtk.TextView):
         if event.type != gtk.gdk.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
-        nfoview.util.browse_url(tag.get_data("url"))
+        nfoview.util.show_uri(tag.get_data("url"))
         if tag in self._link_tags:
             self._link_tags.remove(tag)
             self._visited_link_tags.append(tag)

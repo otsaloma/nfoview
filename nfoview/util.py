@@ -17,36 +17,18 @@
 """Miscellaneous functions."""
 
 import codecs
+import gtk
 import nfoview
-import os
 import pango
-import subprocess
 import sys
 import urllib
 import urlparse
-import webbrowser
 
 
 def affirm(value):
     """Raise :exc:`AffirmationError` if value evaluates to ``False``."""
     if not value:
         raise nfoview.AffirmationError
-
-def browse_url(url, browser=None):
-    """Open `url` in web browser."""
-    if browser and isinstance(browser, basestring):
-        return subprocess.Popen((browser, url))
-    if "GNOME_DESKTOP_SESSION_ID" in os.environ:
-        return subprocess.Popen(("gnome-open", url))
-    if "KDE_FULL_SESSION" in os.environ:
-        return subprocess.Popen(("kfmclient", "exec", url))
-    if sys.platform == "darwin":
-        return subprocess.Popen(("open", url))
-    if is_command("xdg-open"):
-        return subprocess.Popen(("xdg-open", url))
-    if is_command("exo-open"):
-        return subprocess.Popen(("exo-open", url))
-    return webbrowser.open(url)
 
 def connect(observer, observable, signal, *args):
     """Connect `observable`'s signal to `observer`'s callback method.
@@ -130,12 +112,6 @@ def get_font_description(fallback="monospace"):
     font_desc.set_family(",".join((family, fallback)))
     return font_desc
 
-def is_command(command):
-    """Return ``True`` if `command` exists as a file in ``$PATH``."""
-    dirs = os.environ.get("PATH", "").split(os.pathsep)
-    paths = [os.path.join(x, command) for x in dirs]
-    return any(map(os.path.isfile, paths))
-
 def is_valid_encoding(encoding):
     """Return ``True`` if `encoding` is a valid and supported encoding."""
     try:
@@ -143,6 +119,10 @@ def is_valid_encoding(encoding):
         return True
     except LookupError:
         return False
+
+def show_uri(uri):
+    """Open `uri` in default application."""
+    return gtk.show_uri(None, uri, gtk.gdk.CURRENT_TIME)
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""

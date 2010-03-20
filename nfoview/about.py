@@ -70,4 +70,4 @@ class AboutDialog(gtk.AboutDialog):
 
     def _on_url_clicked(self, dialog, url):
         """Open website in a web browser."""
-        nfoview.util.browse_url(url)
+        nfoview.util.show_uri(url)
