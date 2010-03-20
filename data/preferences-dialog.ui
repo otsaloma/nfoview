@@ -99,7 +99,7 @@
                           <object class="GtkLabel" id="label4">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">Line-_spacing:</property>
+                            <property name="label" translatable="yes">Li_ne-spacing:</property>
                             <property name="use_underline">True</property>
                             <property name="mnemonic_widget">line_spacing_spin</property>
                           </object>
@@ -353,7 +353,7 @@
                           <object class="GtkLabel" id="label5">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">_Built-in schemes:</property>
+                            <property name="label" translatable="yes">_Schemes:</property>
                             <property name="use_underline">True</property>
                             <property name="mnemonic_widget">scheme_combo</property>
                           </object>
