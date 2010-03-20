@@ -9,8 +9,5 @@ NFO Viewer 1.9
 NFO Viewer 3000
 ===============
 
- * Bump PyGobject dependency to 2.14
-   - gobject.set_application_name(_("NFO Viewer"))
-   - gobject.set_prgname("nfoview")
  * Get link and visited link colors from GTK+ theme
  * Make hyperlinks activatable by keyboard
