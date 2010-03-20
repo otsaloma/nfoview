@@ -29,11 +29,11 @@ msgid "View NFO files"
 msgstr "Visualizza file NFO"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "<b>Colors</b>"
+msgid "Colors"
 msgstr "Colori"
 
 #: ../data/preferences-dialog.ui.h:2
-msgid "<b>Text</b>"
+msgid "Text"
 msgstr "Testo"
 
 #: ../data/preferences-dialog.ui.h:3

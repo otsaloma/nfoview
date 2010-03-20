@@ -32,12 +32,12 @@ msgid "View NFO files"
 msgstr "NFO-Dokumente anzeigen"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "<b>Colors</b>"
-msgstr "<b>Farben</b>"
+msgid "Colors"
+msgstr "Farben"
 
 #: ../data/preferences-dialog.ui.h:2
-msgid "<b>Text</b>"
-msgstr "<b>Text</b>"
+msgid "Text"
+msgstr "Text"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"

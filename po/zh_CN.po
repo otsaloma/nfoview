@@ -30,12 +30,12 @@ msgid "View NFO files"
 msgstr "浏览 NFO 文件"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "<b>Colors</b>"
-msgstr "<b>颜色</b>"
+msgid "Colors"
+msgstr "颜色"
 
 #: ../data/preferences-dialog.ui.h:2
-msgid "<b>Text</b>"
-msgstr "<b>文本</b>"
+msgid "Text"
+msgstr "文本"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"

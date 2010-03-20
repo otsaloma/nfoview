@@ -31,12 +31,12 @@ msgid "View NFO files"
 msgstr "Преглеждане на NFO файлове"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "<b>Colors</b>"
-msgstr "<b>Цветове</b>"
+msgid "Colors"
+msgstr "Цветове"
 
 #: ../data/preferences-dialog.ui.h:2
-msgid "<b>Text</b>"
-msgstr "<b>Текст</b>"
+msgid "Text"
+msgstr "Текст"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
