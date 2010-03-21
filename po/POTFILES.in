@@ -3,5 +3,6 @@ data/nfoview.desktop.in
 [type: gettext/glade]data/preferences-dialog.ui
 nfoview/about.py
 nfoview/actions.py
+nfoview/main.py
 nfoview/open.py
 nfoview/schemes.py

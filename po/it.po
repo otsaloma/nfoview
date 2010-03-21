@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-11 17:24+0300\n"
+"POT-Creation-Date: 2010-03-21 18:48+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alessio Treglia <quadrispro@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52 ../nfoview/main.py:52
 msgid "NFO Viewer"
 msgstr "Visualizzatore NFO"
 
@@ -29,48 +29,48 @@ msgid "View NFO files"
 msgstr "Visualizza file NFO"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Colors"
-msgstr "Colori"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "Text"
-msgstr "Testo"
-
-#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr "S_fondo:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:2
+msgid "Colors"
+msgstr "Colori"
+
+#: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
 msgstr "P_rimo piano:"
 
-#: ../data/preferences-dialog.ui.h:5
-msgid "Line-_spacing:"
-msgstr "Inte_rlinea:"
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr ""
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Select Color"
 msgstr "Selezionare il colore"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Font"
 msgstr "Selezionare il tipo di carattere"
 
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Built-in schemes:"
-msgstr "Schemi _incorporati:"
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
+msgstr "Testo"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
 msgstr "_Tipo di carattere:"
 
-#: ../data/preferences-dialog.ui.h:11
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
 msgstr "Col_legamento:"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
+msgstr ""
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
@@ -217,3 +217,9 @@ msgstr "Grigio chiaro su grigio scuro"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "Bianco su nero"
+
+#~ msgid "Line-_spacing:"
+#~ msgstr "Inte_rlinea:"
+
+#~ msgid "_Built-in schemes:"
+#~ msgstr "Schemi _incorporati:"

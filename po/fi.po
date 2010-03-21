@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-27 22:00+0300\n"
-"PO-Revision-Date: 2009-08-23 02:20+0300\n"
+"POT-Creation-Date: 2010-03-21 18:48+0200\n"
+"PO-Revision-Date: 2010-03-21 18:50+0200\n"
 "Last-Translator: Osmo Salomaa <otsaloma@cc.hut.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52 ../nfoview/main.py:52
 msgid "NFO Viewer"
 msgstr "NFO-katselin"
 
@@ -29,48 +29,48 @@ msgid "View NFO files"
 msgstr "Katsele NFO tiedostoja"
 
 #: ../data/preferences-dialog.ui.h:1
+msgid "Bac_kground:"
+msgstr "T_austa:"
+
+#: ../data/preferences-dialog.ui.h:2
 msgid "Colors"
 msgstr "Värit"
 
-#: ../data/preferences-dialog.ui.h:2
-msgid "Text"
-msgstr "Teksti"
-
 #: ../data/preferences-dialog.ui.h:3
-msgid "Bac_kground:"
-msgstr "_Tausta:"
-
-#: ../data/preferences-dialog.ui.h:4
 msgid "Fo_reground:"
 msgstr "_Edusta:"
 
-#: ../data/preferences-dialog.ui.h:5
-msgid "Line-_spacing:"
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
 msgstr "_Riviväli:"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Select Color"
 msgstr "Valitse väri"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Font"
 msgstr "Valitse kirjasin"
 
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Built-in schemes:"
-msgstr "Sisää_nrakennetut teemat:"
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
+msgstr "Teksti"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
 msgstr "_Kirjasin:"
 
-#: ../data/preferences-dialog.ui.h:11
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
 msgstr "_Linkki:"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
+msgstr "_Teemat:"
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"

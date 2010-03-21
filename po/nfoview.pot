@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-17 18:20+0300\n"
+"POT-Creation-Date: 2010-03-21 18:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52 ../nfoview/main.py:52
 msgid "NFO Viewer"
 msgstr ""
 
@@ -29,47 +29,47 @@ msgid "View NFO files"
 msgstr ""
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "<b>Colors</b>"
-msgstr ""
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "<b>Text</b>"
-msgstr ""
-
-#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:2
+msgid "Colors"
+msgstr ""
+
+#: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:5
-msgid "Line-_spacing:"
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Select Color"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Font"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Built-in schemes:"
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:11
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
+msgstr ""
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
 msgstr ""
 
 #: ../data/preferences-dialog.ui.h:12

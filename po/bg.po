@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-11 17:24+0300\n"
+"POT-Creation-Date: 2010-03-21 18:48+0200\n"
 "PO-Revision-Date: 2009-05-07 00:05+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52 ../nfoview/main.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -31,48 +31,48 @@ msgid "View NFO files"
 msgstr "Преглеждане на NFO файлове"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Colors"
-msgstr "Цветове"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "Text"
-msgstr "Текст"
-
-#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr "Фонов цвят:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:2
+msgid "Colors"
+msgstr "Цветове"
+
+#: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
 msgstr "Цвят на _текста:"
 
-#: ../data/preferences-dialog.ui.h:5
-msgid "Line-_spacing:"
-msgstr "_Междуредие:"
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr ""
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
 msgstr "Предпочитания"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Select Color"
 msgstr "Изберете цвят"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Font"
 msgstr "Изберете шрифт"
 
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Built-in schemes:"
-msgstr "_Включени схеми:"
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
+msgstr "Текст"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
 msgstr "_Шрифт:"
 
-#: ../data/preferences-dialog.ui.h:11
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
 msgstr "_Връзка:"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
+msgstr ""
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
@@ -219,3 +219,9 @@ msgstr "Светло сиво на тъмно сиво"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "Бяло на черно"
+
+#~ msgid "Line-_spacing:"
+#~ msgstr "_Междуредие:"
+
+#~ msgid "_Built-in schemes:"
+#~ msgstr "_Включени схеми:"

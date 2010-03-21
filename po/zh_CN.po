@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-11 17:24+0300\n"
+"POT-Creation-Date: 2010-03-21 18:48+0200\n"
 "PO-Revision-Date: 2009-06-10 16:50+0800\n"
 "Last-Translator: Jonathan Ye <hyqianli@gmail.com>\n"
 "Language-Team: Simplified Chinese\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52 ../nfoview/main.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -30,48 +30,48 @@ msgid "View NFO files"
 msgstr "浏览 NFO 文件"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Colors"
-msgstr "颜色"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "Text"
-msgstr "文本"
-
-#: ../data/preferences-dialog.ui.h:3
 msgid "Bac_kground:"
 msgstr "背景(_K)"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:2
+msgid "Colors"
+msgstr "颜色"
+
+#: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
 msgstr "前景(_R)"
 
-#: ../data/preferences-dialog.ui.h:5
-msgid "Line-_spacing:"
-msgstr "行距(_S)"
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr ""
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
 msgstr "设置"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Select Color"
 msgstr "选择颜色"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Select Font"
 msgstr "选择字体"
 
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Built-in schemes:"
-msgstr "内置方案(_B)"
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
+msgstr "文本"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
 msgstr "字体(_F)"
 
-#: ../data/preferences-dialog.ui.h:11
+#: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
 msgstr "链接(_L)"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
+msgstr ""
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
@@ -218,3 +218,9 @@ msgstr "深灰背景浅灰字体颜色"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "黑底白字"
+
+#~ msgid "Line-_spacing:"
+#~ msgstr "行距(_S)"
+
+#~ msgid "_Built-in schemes:"
+#~ msgstr "内置方案(_B)"
