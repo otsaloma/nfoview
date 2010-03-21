@@ -5,6 +5,7 @@ NFO Viewer 1.9
  [D] Use gtk.show_uri to open hyperlinks
  [D] Raise PyGTK Dependency to 2.16
  [D] Update German translation (Christoph Wickert)
+ [D] Update Polish translation (Piotr Drąg)
 
 NFO Viewer 3000
 ===============
