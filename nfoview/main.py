@@ -19,11 +19,9 @@
 :var windows: List of existing :class:`nfoview.Window` instances
 """
 
-import glib
 import gtk
 import nfoview
 import os
-from nfoview.i18n import _
 
 windows = []
 
@@ -49,8 +47,6 @@ def open_window(path=None):
 
 def main(args):
     """Start viewer windows for files given as arguments."""
-    glib.set_application_name(_("NFO Viewer"))
-    glib.set_prgname("nfoview")
     for path in sorted(filter(os.path.isfile, args)):
         open_window(path)
     if not windows:
