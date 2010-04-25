@@ -1,3 +1,12 @@
+NFO Viewer 1.9
+==============
+
+ * Make the 16x16 px icon paper two pixels wider
+ * Use gtk.show_uri to open hyperlinks
+ * Raise PyGTK Dependency to 2.16
+ * Update German translation (Christoph Wickert)
+ * Update Polish translation (Piotr Drąg)
+
 NFO Viewer 1.8
 ==============
 
