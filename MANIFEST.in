@@ -18,3 +18,4 @@ include NEWS
 include README
 include setup.py
 include TODO
+global-exclude *~ .hidden

@@ -66,6 +66,7 @@ class Clean(distutils.command.clean.clean):
                       "locale",
                       "MANIFEST",
                       "nfoview/*.py[co]",
+                      "po/*~",
                       )
 
     def run(self):
@@ -245,7 +246,7 @@ class SDistGna(distutils.command.sdist.sdist):
 distutils.core.setup(
     name="nfoview",
     version=get_version_number(),
-    requires=("gtk (>=2.12.0)",),
+    requires=("gtk",),
     platforms=("Platform Independent",),
     author="Osmo Salomaa",
     author_email="otsaloma@cc.hut.fi",
