@@ -8,3 +8,4 @@ NFO Viewer 3000
 
  * Get link and visited link colors from GTK+ theme
  * Make hyperlinks activatable by keyboard
+ * Use Unicode ellipses (\342\200\246) for menu items?
