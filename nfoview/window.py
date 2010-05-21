@@ -226,7 +226,7 @@ class Window(gtk.Window):
             return self._read_file(path, encoding)
         lines = codecs.open(path, "r", encoding).readlines()
         lines = [x.rstrip() for x in lines]
-        while not lines[-1]:
+        while lines and not lines[-1]:
             lines.pop()
         lines0 = [lines[i] for i in range(0, len(lines), 2)]
         lines1 = [lines[i] for i in range(1, len(lines), 2)]

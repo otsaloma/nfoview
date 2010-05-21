@@ -1,8 +1,9 @@
 NFO Viewer 1.9.1
 ================
 
- * Add Hebrew translation (Yaron Shahrabani)
- * Add Hungarian translation (L. Csordas)
+ [D] Fix opening blank files (fixes #619289)
+ [D] Add Hebrew translation (Yaron Shahrabani)
+ [D] Add Hungarian translation (L. Csordas)
 
 NFO Viewer 3000
 ===============
