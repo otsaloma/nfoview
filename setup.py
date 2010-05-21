@@ -49,13 +49,13 @@ def get_version():
 
 def run_command_or_exit(command):
     """Run command in shell and raise SystemExit if it fails."""
-    if subprocess.call(command) != 0:
+    if os.system(command) != 0:
         log.error("command %s failed" % repr(command))
         raise SystemExit(1)
 
 def run_command_or_warn(command):
     """Run command in shell and raise SystemExit if it fails."""
-    if subprocess.call(command) != 0:
+    if os.system(command) != 0:
         log.warn("command %s failed" % repr(command))
 
 
@@ -135,7 +135,7 @@ class Install(install):
         if (root is not None) or (data_dir is None): return
         directory = os.path.join(data_dir, "share", "applications")
         log.info("updating desktop database in '%s'" % directory)
-        run_command_or_warn(("update-desktop-database", directory))
+        run_command_or_warn('update-desktop-database "%s"' % directory)
 
 
 class InstallData(install_data):
