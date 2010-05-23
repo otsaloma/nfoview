@@ -1,13 +1,10 @@
 include bin/*
-recursive-include data *
 include doc/*
-recursive-include doc/sphinx *.py
-recursive-include doc/sphinx/_templates *
-recursive-include doc/sphinx/_themes *
-include doc/sphinx/Makefile
-recursive-include nfoview *.py
-include tools/*
 include po/*
+include tools/*
+recursive-include data *
+recursive-include doc *
+recursive-include nfoview *.py
 include AUTHORS
 include ChangeLog
 include COPYING
@@ -18,4 +15,6 @@ include NEWS
 include README
 include setup.py
 include TODO
-global-exclude *~ .hidden
+global-exclude *~
+global-exclude .hidden
+global-exclude TAGS
