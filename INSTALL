@@ -10,7 +10,6 @@ To install, run command
 
     ./setup.py clean install [--prefix=...]
 
-
 Uninstallation
 ==============
 
