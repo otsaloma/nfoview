@@ -21,7 +21,7 @@ Releasing a New Version
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
  * Generate API documentation
-   ./setup.py clean doc --format html
+   $ ./setup.py clean doc --format html
 
  * Send announcements and update web sites
    - http://users.tkk.fi/~otsaloma/nfoview/doc

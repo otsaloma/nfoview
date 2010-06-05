@@ -23,6 +23,7 @@ import pango
 import sys
 import urllib
 import urlparse
+import webbrowser
 
 
 def affirm(value):
@@ -122,6 +123,11 @@ def is_valid_encoding(encoding):
 
 def show_uri(uri):
     """Open `uri` in default application."""
+    if sys.platform == "win32":
+        if uri.startswith(("http://", "https://")):
+            # gtk.show_uri (GTK+ 2.20) fails on Windows.
+            # GError: No application is registered as handling this file
+            return webbrowser.open(uri)
     return gtk.show_uri(None, uri, gtk.gdk.CURRENT_TIME)
 
 def uri_to_path(uri):
