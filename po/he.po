@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 04:30+0300\n"
+"POT-Creation-Date: 2010-06-26 19:23+0300\n"
 "PO-Revision-Date: 2010-04-26 10:40+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (Yaron Shahrabani) <sh.yaron@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,8 +24,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1
-#: ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "מציג NFO"
 
@@ -134,8 +134,7 @@ msgstr "עריכת העדפות מציג ה־NFO"
 msgid "_Open..."
 msgstr "_פתיחה..."
 
-#: ../nfoview/actions.py:130
-#: ../nfoview/open.py:33
+#: ../nfoview/actions.py:130 ../nfoview/open.py:33
 msgid "Open"
 msgstr "פתיחה"
 
@@ -195,8 +194,7 @@ msgstr "כל הקבצים"
 msgid "NFO files (*.nfo)"
 msgstr "קובצי NFO‏ (*.nfo)"
 
-#: ../nfoview/schemes.py:45
-#: ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "מותאם אישית"
 
@@ -223,4 +221,3 @@ msgstr "אפור בהיר על אפור כהה"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "לבן על שחור"
-
