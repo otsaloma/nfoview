@@ -2,10 +2,12 @@ NFO Viewer 1.9.2
 ================
 
  [D] Update Polish translation (Piotr Drąg)
+ [D] Add Russian translation (Алекс)
 
 NFO Viewer 3000
 ===============
 
+ * Set up a separate branch for translations
  * Get link and visited link colors from GTK+ theme
  * Make hyperlinks activatable by keyboard
  * Use Unicode ellipses (\342\200\246) for menu items?

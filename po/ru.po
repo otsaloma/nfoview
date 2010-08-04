@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nfoview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-26 19:23+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Алекс <davian818@gmail.com>\n"
+"Language-Team: none <->\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: The application name 'NFO Viewer' has been intentionally
+#. marked as translatable. If you manage to translate the name in a
+#. fluent manner, without changing the meaning, you may use that
+#. translation at your discretion.
+#: ../data/nfoview.desktop.in.h:1
+#: ../nfoview/about.py:52
+msgid "NFO Viewer"
+msgstr "Просмотр NFO"
+
+#: ../data/nfoview.desktop.in.h:2
+msgid "View NFO files"
+msgstr "Просмотр файлов NFO"
+
+#: ../data/preferences-dialog.ui.h:1
+msgid "Bac_kground:"
+msgstr "_Фон:"
+
+#: ../data/preferences-dialog.ui.h:2
+msgid "Colors"
+msgstr "Цвета"
+
+#: ../data/preferences-dialog.ui.h:3
+msgid "Fo_reground:"
+msgstr "_Текст:"
+
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr "Между ст_рок:"
+
+#: ../data/preferences-dialog.ui.h:5
+msgid "Preferences"
+msgstr "Настройки"
+
+#: ../data/preferences-dialog.ui.h:6
+msgid "Select Color"
+msgstr "Выберите цвет"
+
+#: ../data/preferences-dialog.ui.h:7
+msgid "Select Font"
+msgstr "Выберите шрифт"
+
+#: ../data/preferences-dialog.ui.h:8
+msgid "Text"
+msgstr "Текст"
+
+#: ../data/preferences-dialog.ui.h:9
+msgid "_Font:"
+msgstr "_Шрифт:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "_Link:"
+msgstr "_Ссылки:"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Schemes:"
+msgstr "С_хема:"
+
+#: ../data/preferences-dialog.ui.h:12
+msgid "_Visited link:"
+msgstr "П_осещенные ссылки:"
+
+#: ../nfoview/about.py:47
+msgid "About NFO Viewer"
+msgstr "О программе"
+
+#: ../nfoview/about.py:55
+msgid "Viewer for NFO files"
+msgstr "Программа просмотра файлов NFO"
+
+#: ../nfoview/about.py:59
+msgid "NFO Viewer Website"
+msgstr "Сайт NFO Viewer"
+
+#. Translators: This is a special message that shouldn't be translated
+#. literally. It is used in the about dialog to give credits to the
+#. translators. Thus, you should translate it to your name and email
+#. address. You can also include other translators who have contributed
+#. to this translation; in that case, please write them on separate
+#. lines seperated by newlines (\n).
+#: ../nfoview/about.py:69
+msgid "translator-credits"
+msgstr "Alex P. <davian818@gmail.com>, 2010"
+
+#: ../nfoview/actions.py:81
+msgid "_Close"
+msgstr "_Закрыть"
+
+#: ../nfoview/actions.py:83
+msgid "Close document"
+msgstr "Закрыть документ"
+
+#: ../nfoview/actions.py:95
+msgid "_Copy"
+msgstr "_Копировать"
+
+#: ../nfoview/actions.py:96
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../nfoview/actions.py:98
+msgid "Copy the selected text to the clipboard"
+msgstr "Копирует выделенный текст в буфер обмена"
+
+#: ../nfoview/actions.py:116
+msgid "_Preferences"
+msgstr "_Настройки"
+
+#: ../nfoview/actions.py:118
+msgid "Edit NFO Viewer preferences"
+msgstr "Изменение настроек программы"
+
+#: ../nfoview/actions.py:129
+msgid "_Open..."
+msgstr "_Открыть..."
+
+#: ../nfoview/actions.py:130
+#: ../nfoview/open.py:33
+msgid "Open"
+msgstr "Открыть"
+
+#: ../nfoview/actions.py:132
+msgid "Open file"
+msgstr "Открыть файл"
+
+#: ../nfoview/actions.py:143
+msgid "_Quit"
+msgstr "В_ыход"
+
+#: ../nfoview/actions.py:145
+msgid "Quit NFO Viewer"
+msgstr "Выход из программы"
+
+#: ../nfoview/actions.py:156
+msgid "_Select All"
+msgstr "Выделить _все"
+
+#: ../nfoview/actions.py:158
+msgid "Select all text in the document"
+msgstr "Выделить весь текст документа"
+
+#: ../nfoview/actions.py:174
+msgid "_About"
+msgstr "_О программе"
+
+#: ../nfoview/actions.py:176
+msgid "Show information about NFO Viewer"
+msgstr "Сведения о программе просмотра NFO"
+
+#: ../nfoview/actions.py:186
+msgid "_Edit"
+msgstr "_Правка"
+
+#: ../nfoview/actions.py:196
+msgid "_File"
+msgstr "_Файл"
+
+#: ../nfoview/actions.py:206
+msgid "_Help"
+msgstr "_Справка"
+
+#: ../nfoview/actions.py:217
+msgid "_Wrap Lines"
+msgstr "П_еренос строк"
+
+#: ../nfoview/actions.py:218
+msgid "Break long lines at word borders"
+msgstr "Переносить длинные строки по границам слов"
+
+#: ../nfoview/open.py:41
+msgid "All files"
+msgstr "Все файлы"
+
+#: ../nfoview/open.py:46
+msgid "NFO files (*.nfo)"
+msgstr "Файлы NFO (*.nfo)"
+
+#: ../nfoview/schemes.py:45
+#: ../nfoview/schemes.py:69
+msgid "Custom"
+msgstr "Другая"
+
+#: ../nfoview/schemes.py:57
+msgid "Black on white"
+msgstr "Черный на белом"
+
+#: ../nfoview/schemes.py:81
+msgid "Dark grey on light grey"
+msgstr "Темно-серый на светло-сером"
+
+#: ../nfoview/schemes.py:93
+msgid "System theme"
+msgstr "Системная"
+
+#: ../nfoview/schemes.py:106
+msgid "Grey on black"
+msgstr "Серый на черном"
+
+#: ../nfoview/schemes.py:118
+msgid "Light grey on dark grey"
+msgstr "Светло-серый на темно-сером"
+
+#: ../nfoview/schemes.py:130
+msgid "White on black"
+msgstr "Белый на черном"
+
