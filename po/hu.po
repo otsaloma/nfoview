@@ -32,7 +32,7 @@ msgstr "NFO fájl nézése"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Bac_kground:"
-msgstr "_Háttér: "
+msgstr "_Háttér:"
 
 #: ../data/preferences-dialog.ui.h:2
 msgid "Colors"
@@ -40,11 +40,11 @@ msgstr "Színek"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
-msgstr "_Előtér: "
+msgstr "_Előtér:"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Li_ne-spacing:"
-msgstr "_Sortávolság: "
+msgstr "_Sortávolság:"
 
 #: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
@@ -64,19 +64,19 @@ msgstr "Szöveg"
 
 #: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
-msgstr "_Betűtípus: "
+msgstr "_Betűtípus:"
 
 #: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
-msgstr "_Kapcsolat: "
+msgstr "_Kapcsolat:"
 
 #: ../data/preferences-dialog.ui.h:11
 msgid "_Schemes:"
-msgstr "_Elrendezés: "
+msgstr "_Elrendezés:"
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
-msgstr "_Látogatott link: "
+msgstr "_Látogatott link:"
 
 #: ../nfoview/about.py:47
 msgid "About NFO Viewer"

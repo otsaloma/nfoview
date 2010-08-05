@@ -129,7 +129,7 @@ msgstr "Modifica le preferenze di NFO Viewer"
 
 #: ../nfoview/actions.py:129
 msgid "_Open..."
-msgstr "_Apri"
+msgstr "_Apri..."
 
 #: ../nfoview/actions.py:130 ../nfoview/open.py:33
 msgid "Open"

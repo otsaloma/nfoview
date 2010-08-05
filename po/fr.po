@@ -31,7 +31,7 @@ msgstr "Visionner des fichiers NFO"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Bac_kground:"
-msgstr "Arrièr_e-plan"
+msgstr "Arrièr_e-plan:"
 
 #: ../data/preferences-dialog.ui.h:2
 msgid "Colors"
@@ -39,7 +39,7 @@ msgstr "Couleurs"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
-msgstr "Avan_t-plan"
+msgstr "Avan_t-plan:"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Li_ne-spacing:"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
-msgstr "_Lien visité"
+msgstr "_Lien visité:"
 
 #: ../nfoview/about.py:47
 msgid "About NFO Viewer"
