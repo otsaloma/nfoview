@@ -4,6 +4,12 @@ NFO Viewer 1.9.2
  [D] Update Polish translation (Piotr Drąg)
  [D] Add Russian translation (Алекс)
 
+NFO Viewer 1.10
+===============
+
+ * GNOME Goal: Port your PyGTK to the new introspection-based bindings
+   http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
+
 NFO Viewer 3000
 ===============
 
