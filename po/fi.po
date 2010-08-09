@@ -23,7 +23,7 @@ msgstr ""
 #. translation at your discretion.
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
-msgstr "NFO-katselinn"
+msgstr "NFO-katselin"
 
 #: ../data/nfoview.desktop.in.h:2
 msgid "View NFO files"
