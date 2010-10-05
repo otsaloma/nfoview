@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-26 19:23+0300\n"
+"POT-Creation-Date: 2010-10-05 20:58+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Алекс <davian818@gmail.com>\n"
 "Language-Team: none <->\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,8 +15,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1
-#: ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "Просмотр NFO"
 
@@ -125,8 +125,7 @@ msgstr "Изменение настроек программы"
 msgid "_Open..."
 msgstr "_Открыть..."
 
-#: ../nfoview/actions.py:130
-#: ../nfoview/open.py:33
+#: ../nfoview/actions.py:130 ../nfoview/open.py:33
 msgid "Open"
 msgstr "Открыть"
 
@@ -186,8 +185,7 @@ msgstr "Все файлы"
 msgid "NFO files (*.nfo)"
 msgstr "Файлы NFO (*.nfo)"
 
-#: ../nfoview/schemes.py:45
-#: ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "Другая"
 
@@ -214,4 +212,3 @@ msgstr "Светло-серый на темно-сером"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "Белый на черном"
-
