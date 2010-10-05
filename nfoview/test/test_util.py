@@ -31,13 +31,13 @@ class TestModule(nfoview.TestCase):
         nfoview.util.affirm(0 == 0)
 
     def test_connect__private(self):
-        # pylint: disable-msg=W0201
+        # pylint: disable=W0201
         self._on_window_delete_event = lambda *args: None
         self.window = gtk.Window()
         nfoview.util.connect(self, "window", "delete-event")
 
     def test_connect__public(self):
-        # pylint: disable-msg=W0201
+        # pylint: disable=W0201
         self.on_window_delete_event = lambda *args: None
         self.window = gtk.Window()
         nfoview.util.connect(self, "window", "delete-event")

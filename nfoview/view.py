@@ -89,10 +89,10 @@ class TextView(gtk.TextView):
         for tag in self.get_iter_at_location(x, y).get_tags():
             if tag.get_data("url") is not None:
                 window.set_cursor(gtk.gdk.Cursor(gtk.gdk.HAND2))
-                # pylint: disable-msg=E1101
+                # pylint: disable=E1101
                 return self.window.get_pointer()
         window.set_cursor(gtk.gdk.Cursor(gtk.gdk.XTERM))
-        # pylint: disable-msg=E1101
+        # pylint: disable=E1101
         self.window.get_pointer()
 
     def get_text(self):
