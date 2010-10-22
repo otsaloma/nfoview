@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 19:23+0300\n"
-"PO-Revision-Date: 2009-09-27 21:13+0300\n"
-"Last-Translator: elgeneralmidi <ubuntufromscratch@gmail.com>\n"
+"PO-Revision-Date: 2010-10-21 18:00+0100\n"
+"Last-Translator: \n"
 "Language-Team: French <>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,8 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1
+#: ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -31,7 +32,7 @@ msgstr "Visionner des fichiers NFO"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Bac_kground:"
-msgstr "Arrièr_e-plan:"
+msgstr "Arrièr_e-plan :"
 
 #: ../data/preferences-dialog.ui.h:2
 msgid "Colors"
@@ -39,11 +40,11 @@ msgstr "Couleurs"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Fo_reground:"
-msgstr "Avan_t-plan:"
+msgstr "Avan_t-plan :"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Li_ne-spacing:"
-msgstr ""
+msgstr "_Interligne :"
 
 #: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
@@ -63,23 +64,23 @@ msgstr "Texte"
 
 #: ../data/preferences-dialog.ui.h:9
 msgid "_Font:"
-msgstr "_Police:"
+msgstr "_Police :"
 
 #: ../data/preferences-dialog.ui.h:10
 msgid "_Link:"
-msgstr "_Lien:"
+msgstr "_Lien :"
 
 #: ../data/preferences-dialog.ui.h:11
 msgid "_Schemes:"
-msgstr ""
+msgstr "_Schémas :"
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
-msgstr "_Lien visité:"
+msgstr "Lien _visité :"
 
 #: ../nfoview/about.py:47
 msgid "About NFO Viewer"
-msgstr "A propos de NFO Viewer"
+msgstr "À propos de NFO Viewer"
 
 #: ../nfoview/about.py:55
 msgid "Viewer for NFO files"
@@ -97,7 +98,9 @@ msgstr "Site web de NFO Viewer"
 #. lines seperated by newlines (\n).
 #: ../nfoview/about.py:69
 msgid "translator-credits"
-msgstr "elgeneralmidi <ubuntufromscratch@gmail.com>"
+msgstr ""
+"elgeneralmidi <ubuntufromscratch@gmail.com>\n"
+"Mise à jour mineure anonyme"
 
 #: ../nfoview/actions.py:81
 msgid "_Close"
@@ -105,7 +108,7 @@ msgstr "_Fermer"
 
 #: ../nfoview/actions.py:83
 msgid "Close document"
-msgstr "Fermer document"
+msgstr "Fermer le document"
 
 #: ../nfoview/actions.py:95
 msgid "_Copy"
@@ -117,7 +120,7 @@ msgstr "Copier"
 
 #: ../nfoview/actions.py:98
 msgid "Copy the selected text to the clipboard"
-msgstr "Copiez le texte sélectionné dans le presse-papiers"
+msgstr "Copier le texte sélectionné dans le presse-papiers"
 
 #: ../nfoview/actions.py:116
 msgid "_Preferences"
@@ -131,7 +134,8 @@ msgstr "Modifier les préférences de NFO Viewer"
 msgid "_Open..."
 msgstr "_Ouvrir..."
 
-#: ../nfoview/actions.py:130 ../nfoview/open.py:33
+#: ../nfoview/actions.py:130
+#: ../nfoview/open.py:33
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -157,7 +161,7 @@ msgstr "Sélectionner tout le texte dans le document"
 
 #: ../nfoview/actions.py:174
 msgid "_About"
-msgstr "_A propos"
+msgstr "À _propos"
 
 #: ../nfoview/actions.py:176
 msgid "Show information about NFO Viewer"
@@ -165,7 +169,7 @@ msgstr "Montrer les informations à propos de NFO Viewer"
 
 #: ../nfoview/actions.py:186
 msgid "_Edit"
-msgstr "_Editer"
+msgstr "Éditio_n"
 
 #: ../nfoview/actions.py:196
 msgid "_File"
@@ -177,7 +181,7 @@ msgstr "_Aide"
 
 #: ../nfoview/actions.py:217
 msgid "_Wrap Lines"
-msgstr "_Cacher les lignes"
+msgstr "_Limiter la longueur des lignes"
 
 #: ../nfoview/actions.py:218
 msgid "Break long lines at word borders"
@@ -191,7 +195,8 @@ msgstr "Tous les fichiers"
 msgid "NFO files (*.nfo)"
 msgstr "Fichiers NFO (*.nfo)"
 
-#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45
+#: ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "Personnaliser"
 
@@ -221,6 +226,6 @@ msgstr "Blanc sur noir"
 
 #~ msgid "Line-_spacing:"
 #~ msgstr "Ligne d'e_spacement:"
-
 #~ msgid "_Built-in schemes:"
 #~ msgstr "_Construit dans les schémas:"
+
