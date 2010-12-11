@@ -2,11 +2,13 @@ NFO Viewer 1.9.3
 ================
 
  [D] Add Turkish translation (Anonymous)
+ [D] Add Serbian translation (Goran Velemirov)
  [D] Update French translation (Anonymous)
 
 NFO Viewer 3000
 ===============
 
+ * Switch from Gitorious to Github?
  * GNOME Goal: Port your PyGTK to the new introspection-based bindings
    http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
  * Get link and visited link colors from GTK+ theme
