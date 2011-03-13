@@ -257,7 +257,7 @@ distutils.core.setup(
     requires=("gtk",),
     platforms=("Platform Independent",),
     author="Osmo Salomaa",
-    author_email="otsaloma@cc.hut.fi",
+    author_email="otsaloma@iki.fi",
     url="http://home.gna.org/nfoview/",
     description="Viewer for NFO files",
     license="GPL",
