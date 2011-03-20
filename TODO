@@ -1,6 +1,7 @@
 NFO Viewer 1.9.3
 ================
 
+ [?] Switch from Gitorious to Github
  [D] Update author email address
  [D] Add Turkish translation (Anonymous)
  [D] Add Serbian translation (Goran Velemirov)
@@ -9,7 +10,6 @@ NFO Viewer 1.9.3
 NFO Viewer 3000
 ===============
 
- * Switch from Gitorious to Github?
  * Adapt to new versions of Python and PyGTK
    - Port your PyGTK to the new introspection-based bindings
      http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
