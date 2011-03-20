@@ -1,4 +1,4 @@
-# Copyright (C) 2008-2009 Osmo Salomaa
+# Copyright (C) 2008-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -18,6 +18,7 @@
 
 import nfoview
 import os
+import re
 
 __all__ = ("ConfigurationStore",)
 
@@ -80,7 +81,7 @@ class ConfigurationStore(object):
         entries = open(self.path, "r").readlines()
         entries = map(lambda x: x.strip(), entries)
         entries = filter(lambda x: not x.startswith("#"), entries)
-        entries = dict(x.split("=", 1) for x in entries)
+        entries = dict(re.split(" *= *", x, 1) for x in entries)
         for name in (set(self._fields) & set(entries)):
             decode = self._fields[name][self.DECODE]
             setattr(self, name, decode(entries[name]))
@@ -102,7 +103,7 @@ class ConfigurationStore(object):
         for name in sorted(self._fields):
             value = getattr(self, name)
             encode = self._fields[name][self.ENCODE]
-            text = "%s=%s" % (name, encode(value))
+            text = "%s = %s" % (name, encode(value))
             if value == self._fields[name][self.DEFAULT]:
                 # Comment out fields with default values.
                 text = "# %s" % text

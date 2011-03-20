@@ -4,11 +4,6 @@ import gtk
 import os
 import sys
 
-def get_running_from_source():
-    parent = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(parent, "..", "data", "nfoview.desktop.in")
-    return os.path.isfile(path)
-
 def prepare_paths():
     # Add source root directory to sys.path.
     parent = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +14,12 @@ def prepare_paths():
     path = os.path.join(parent, "..", "data", "icons")
     icon_theme.append_search_path(os.path.abspath(path))
 
-if get_running_from_source():
+def running_from_source():
+    parent = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(parent, "..", "data", "nfoview.desktop.in")
+    return os.path.isfile(path)
+
+if running_from_source():
     prepare_paths()
 
 import nfoview
