@@ -4,7 +4,7 @@ Translating NFO Viewer
 To avoid doing redundant work, first check the latest list of existing
 translations at the head of the master branch.
 
-    http://gitorious.org/projects/nfoview/repos/mainline/trees/master/po
+    https://github.com/otsaloma/nfoview/tree/master/po
 
 To try your translation in the source directory, you can compile it
 to the "locale" directory (which does not exist by default).

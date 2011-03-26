@@ -1,8 +1,10 @@
 NFO Viewer 1.9.3
 ================
 
- [?] Switch from Gitorious to Github
  [D] Update author email address
+ [D] Move development repository from Gitorious to GitHub
+     (https://github.com/otsaloma/nfoview)
+ [D] Abandon use of Transifex for translations
  [D] Add Turkish translation (Anonymous)
  [D] Add Serbian translation (Goran Velemirov)
  [D] Update French translation (Anonymous)
