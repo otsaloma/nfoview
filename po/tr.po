@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-05 20:58+0300\n"
+"POT-Creation-Date: 2011-03-27 02:45+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,8 +21,7 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1
-#: ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -131,8 +131,7 @@ msgstr "NFO Viewer tercihlerini düzenle"
 msgid "_Open..."
 msgstr "A_ç..."
 
-#: ../nfoview/actions.py:130
-#: ../nfoview/open.py:33
+#: ../nfoview/actions.py:130 ../nfoview/open.py:33
 msgid "Open"
 msgstr "Aç"
 
@@ -192,8 +191,7 @@ msgstr "Tüm dosyalar"
 msgid "NFO files (*.nfo)"
 msgstr "NFO dosyaları (*.nfo)"
 
-#: ../nfoview/schemes.py:45
-#: ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "Kişisel"
 
@@ -220,4 +218,3 @@ msgstr "Koyu gri üzerinde açık gri"
 #: ../nfoview/schemes.py:130
 msgid "White on black"
 msgstr "Siyah üzerinde beyaz"
-

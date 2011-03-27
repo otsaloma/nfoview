@@ -1,14 +1,3 @@
-NFO Viewer 1.9.3
-================
-
- [D] Update author email address
- [D] Move development repository from Gitorious to GitHub
-     (https://github.com/otsaloma/nfoview)
- [D] Abandon use of Transifex for translations
- [D] Add Turkish translation (Anonymous)
- [D] Add Serbian translation (Goran Velemirov)
- [D] Update French translation (Anonymous)
-
 NFO Viewer 3000
 ===============
 
@@ -17,6 +6,6 @@ NFO Viewer 3000
      http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
    - Use GtkApplication?
    - Use GSettings?
- * Get link and visited link colors from GTK+ theme
+ * Get link and visited link colors from GTK+ theme?
  * Make hyperlinks activatable by keyboard
  * Use Unicode ellipses (\342\200\246) for menu items?
