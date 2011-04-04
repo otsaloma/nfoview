@@ -1,4 +1,4 @@
-# Copyright (C) 2005-2009 Osmo Salomaa
+# Copyright (C) 2005-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -64,11 +64,13 @@ class Action(gtk.Action):
         return self.set_sensitive(True)
 
 
-class ToggleAction(Action, gtk.ToggleAction):
+class ToggleAction(gtk.ToggleAction, Action):
 
     """Base class for UI manager toggle actions."""
 
-    pass
+    def __init__(self, name):
+        """Initialize an :class:`ToggleAction` object."""
+        gtk.ToggleAction.__init__(self, name, None, None, None)
 
 
 class CloseDocumentAction(Action):
