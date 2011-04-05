@@ -1,9 +1,3 @@
-NFO Viewer 1.9.3
-================
-
- [D] Fix broken inheritance of action classes, which caused
-     NFO Viewer to fail to start with recent versions of (Py)GTK
-
 NFO Viewer 3000
 ===============
 

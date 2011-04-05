@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-26 19:23+0300\n"
+"POT-Creation-Date: 2011-04-05 21:03+0300\n"
 "PO-Revision-Date: 2009-05-07 00:05+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
@@ -101,87 +101,87 @@ msgstr "Уеб сайт на NFO Viewer"
 msgid "translator-credits"
 msgstr "Светослав Стефанов lfu.project@gmail.com"
 
-#: ../nfoview/actions.py:81
+#: ../nfoview/actions.py:83
 msgid "_Close"
 msgstr "_Затваряне"
 
-#: ../nfoview/actions.py:83
+#: ../nfoview/actions.py:85
 msgid "Close document"
 msgstr "Затваряне на документ"
 
-#: ../nfoview/actions.py:95
+#: ../nfoview/actions.py:97
 msgid "_Copy"
 msgstr "_Копиране"
 
-#: ../nfoview/actions.py:96
+#: ../nfoview/actions.py:98
 msgid "Copy"
 msgstr "Копиране"
 
-#: ../nfoview/actions.py:98
+#: ../nfoview/actions.py:100
 msgid "Copy the selected text to the clipboard"
 msgstr "Копиране на избрания текст в буфера"
 
-#: ../nfoview/actions.py:116
+#: ../nfoview/actions.py:118
 msgid "_Preferences"
 msgstr "_Предпочитания"
 
-#: ../nfoview/actions.py:118
+#: ../nfoview/actions.py:120
 msgid "Edit NFO Viewer preferences"
 msgstr "Редактиране настройките на NFO Viewer"
 
-#: ../nfoview/actions.py:129
+#: ../nfoview/actions.py:131
 msgid "_Open..."
 msgstr "_Отваряне..."
 
-#: ../nfoview/actions.py:130 ../nfoview/open.py:33
+#: ../nfoview/actions.py:132 ../nfoview/open.py:33
 msgid "Open"
 msgstr "Отваряне"
 
-#: ../nfoview/actions.py:132
+#: ../nfoview/actions.py:134
 msgid "Open file"
 msgstr "Отваряне на файл"
 
-#: ../nfoview/actions.py:143
+#: ../nfoview/actions.py:145
 msgid "_Quit"
 msgstr "_Изход"
 
-#: ../nfoview/actions.py:145
+#: ../nfoview/actions.py:147
 msgid "Quit NFO Viewer"
 msgstr "Изход от NFO Viewer"
 
-#: ../nfoview/actions.py:156
+#: ../nfoview/actions.py:158
 msgid "_Select All"
 msgstr "_Избиране на всичко"
 
-#: ../nfoview/actions.py:158
+#: ../nfoview/actions.py:160
 msgid "Select all text in the document"
 msgstr "Избиране на всичкия текст в документа"
 
-#: ../nfoview/actions.py:174
+#: ../nfoview/actions.py:176
 msgid "_About"
 msgstr "_Относно"
 
-#: ../nfoview/actions.py:176
+#: ../nfoview/actions.py:178
 msgid "Show information about NFO Viewer"
 msgstr "Показване на информация относно NFO Viewer"
 
-#: ../nfoview/actions.py:186
+#: ../nfoview/actions.py:188
 msgid "_Edit"
 msgstr "_Редактиране"
 
-#: ../nfoview/actions.py:196
+#: ../nfoview/actions.py:198
 msgid "_File"
 msgstr "_Файл"
 
-#: ../nfoview/actions.py:206
+#: ../nfoview/actions.py:208
 msgid "_Help"
 msgstr "_Помощ"
 
-#: ../nfoview/actions.py:217
+#: ../nfoview/actions.py:219
 msgid "_Wrap Lines"
 msgstr ""
 
-#: ../nfoview/actions.py:218
+#: ../nfoview/actions.py:220
 msgid "Break long lines at word borders"
 msgstr ""
 
