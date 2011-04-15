@@ -13,4 +13,10 @@ to the "locale" directory (which does not exist by default).
     msgfmt -cv po/XX.po -o locale/XX/LC_MESSAGES/nfoview.mo
     bin/nfoview
 
+A script has been written to check translation files for some common
+potential errors. You can use it to check your translation using the
+following command.
+
+    tools/check-translations [XX...]
+
 When done, send your translation by email to <otsaloma@iki.fi>.
