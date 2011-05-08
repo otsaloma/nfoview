@@ -118,7 +118,6 @@ class Window(gtk.Window):
 
     def _init_text_view_and_buffer(self):
         """Set text view and text buffer properties."""
-        self.view.set_sensitive(False)
         self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
             self._update_action_sensitivities()
@@ -245,7 +244,6 @@ class Window(gtk.Window):
         self.set_title(os.path.basename(path))
         text = self._read_file(path)
         self.view.set_text(text)
-        self.view.set_sensitive(True)
         self.view.grab_focus()
         self._update_action_sensitivities()
 
