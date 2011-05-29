@@ -6,18 +6,20 @@ Releasing a New Version
    $ pylint nfoview/
    $ py.test --tb=no nfoview
 
- * Make final edits to files, commit and tag
+ * Make final edits to files
    $ $EDITOR nfoview/__init__.py
    $ tools/update-translations
    $ $EDITOR NEWS TODO
-   $ git commit -a -m "RELEASE X.Y.Z"
-   $ git tag -s nfoview-X.Y.Z
-   $ git push
-   $ git push --tags
 
  * Build tarballs and edit related files
    $ ./setup.py clean sdist_gna --formats bztar,gztar
    $ $EDITOR dist/*/*.news dist/*/*.changes
+
+ * Commit changes
+   $ git commit -a -m "RELEASE X.Y.Z"
+   $ git tag -s nfoview-X.Y.Z
+   $ git push
+   $ git push --tags
 
  * Upload tarballs to download.gna.org:/upload/nfoview/
 
