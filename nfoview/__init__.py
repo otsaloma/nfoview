@@ -23,7 +23,7 @@
 :var conf: Instance of :class:`ConfigurationStore` used
 """
 
-__version__ = "1.9.4"
+__version__ = "1.9.5"
 
 from nfoview.paths import *
 from nfoview import deco

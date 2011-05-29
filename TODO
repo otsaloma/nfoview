@@ -1,16 +1,14 @@
-NFO Viewer 1.9.5
-================
-
- [X] Fix opening files by drag and drop
-
 NFO Viewer 3000
 ===============
 
- * Adapt to new versions of Python and PyGTK
-   - Port your PyGTK to the new introspection-based bindings
-     http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
-   - Use GtkApplication?
-   - Use GSettings?
+ * GNOME Goal: Port your PyGTK to the new introspection-based bindings
+   http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
+ * Bump Python dependency to something
+   - http://docs.python.org/dev/whatsnew/2.7.html
+   - http://docs.python.org/dev/whatsnew/3.0.html
+   - http://docs.python.org/dev/whatsnew/3.1.html
+   - http://docs.python.org/dev/whatsnew/3.2.html
+   - http://diveintopython3.org/whats-new.html
  * Get link and visited link colors from GTK+ theme?
  * Make hyperlinks activatable by keyboard
- * Use Unicode ellipses (\342\200\246) for menu items?
+ * Use Unicode ellipses (\342\200\246) for menu items
