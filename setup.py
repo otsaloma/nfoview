@@ -17,11 +17,7 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
     specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
 """
 
-import distutils.command.clean
-import distutils.command.install
-import distutils.command.install_data
-import distutils.command.install_lib
-import distutils.command.sdist
+import distutils.command
 import glob
 import os
 import re
@@ -46,16 +42,16 @@ def get_version():
     text = open(os.path.join("nfoview", "__init__.py"), "r").read()
     return re.search(r"__version__ *= *['\"](.*?)['\"]", text).group(1)
 
-def run_command_or_exit(command):
+def run_command_or_exit(cmd):
     """Run command in shell and raise SystemExit if it fails."""
-    if os.system(command) != 0:
-        log.error("command %s failed" % repr(command))
+    if os.system(cmd) != 0:
+        log.error("command %s failed" % repr(cmd))
         raise SystemExit(1)
 
-def run_command_or_warn(command):
+def run_command_or_warn(cmd):
     """Run command in shell and raise SystemExit if it fails."""
-    if os.system(command) != 0:
-        log.warn("command %s failed" % repr(command))
+    if os.system(cmd) != 0:
+        log.warn("command %s failed" % repr(cmd))
 
 
 class Clean(clean):
@@ -144,8 +140,8 @@ class InstallData(install_data):
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
-        command = "intltool-merge -d po %s.in %s" % (path, path)
-        run_command_or_exit(command)
+        cmd = "intltool-merge -d po %s.in %s" % (path, path)
+        run_command_or_exit(cmd)
         return ("share/applications", (path,))
 
     def __get_mo_file(self, po_file):
@@ -158,8 +154,8 @@ class InstallData(install_data):
         mo_file = os.path.join(mo_dir, "nfoview.mo")
         dest_dir = os.path.join("share", mo_dir)
         log.info("compiling '%s'" % mo_file)
-        command = "msgfmt %s -o %s" % (po_file, mo_file)
-        run_command_or_exit(command)
+        cmd = "msgfmt %s -o %s" % (po_file, mo_file)
+        run_command_or_exit(cmd)
         return (dest_dir, (mo_file,))
 
     def run(self):
