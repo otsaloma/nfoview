@@ -25,12 +25,11 @@
 
 __version__ = "1.9.4"
 
-from nfoview.errors import *
-from nfoview.unittest import *
 from nfoview.paths import *
-from nfoview import i18n
 from nfoview import deco
+from nfoview import i18n
 from nfoview import util
+from nfoview.errors import *
 from nfoview.config import *
 
 conf = ConfigurationStore()
@@ -45,3 +44,4 @@ from nfoview.view import *
 from nfoview import actions
 from nfoview.window import *
 from nfoview import main
+from nfoview.unittest import *

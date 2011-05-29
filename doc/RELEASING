@@ -2,7 +2,8 @@ Releasing a New Version
 =======================
 
  * Do final quality checks
-   $ pylint bin/nfoview nfoview setup.py
+   $ pylint bin/nfoview setup.py
+   $ pylint nfoview/
    $ py.test --tb=no nfoview
 
  * Make final edits to files, commit and tag
