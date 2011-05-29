@@ -17,7 +17,12 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
     specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
 """
 
-import distutils.command
+# pylint: disable=W0404
+import distutils.command.clean
+import distutils.command.install
+import distutils.command.install_data
+import distutils.command.install_lib
+import distutils.command.sdist
 import glob
 import os
 import re
