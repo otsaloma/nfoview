@@ -9,11 +9,16 @@ Releasing a New Version
  * Make final edits to files
    $ $EDITOR nfoview/__init__.py
    $ tools/update-translations
+   $ gtranslator po/fi.po
    $ $EDITOR NEWS TODO
 
  * Build tarballs and edit related files
    $ ./setup.py clean sdist_gna --formats bztar,gztar
    $ $EDITOR dist/*/*.news dist/*/*.changes
+
+ * Extract tarball somwehere and install
+   $ sudo ./setup.py clean install --prefix=/usr/local
+   $ sudo ./setup.py clean
 
  * Commit changes
    $ git commit -a -m "RELEASE X.Y.Z"
