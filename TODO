@@ -1,8 +1,14 @@
+NFO Viewer 1.9.6
+================
+
+ [X] Update Bulgarian translation (Svetoslav Stefanov)
+
 NFO Viewer 3000
 ===============
 
  * GNOME Goal: Port your PyGTK to the new introspection-based bindings
-   http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
+   - http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
+   - http://developer.gnome.org/Gnome3PortingGuide/
  * Bump Python dependency to something
    - http://docs.python.org/dev/whatsnew/2.7.html
    - http://docs.python.org/dev/whatsnew/3.0.html

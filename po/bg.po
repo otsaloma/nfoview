@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nfoview-1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-05 21:03+0300\n"
-"PO-Revision-Date: 2009-05-07 00:05+0200\n"
+"PO-Revision-Date: 2011-07-06 14:00+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language: \n"
@@ -23,7 +23,8 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:52
+#: ../data/nfoview.desktop.in.h:1
+#: ../nfoview/about.py:52
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -45,7 +46,7 @@ msgstr "Цвят на _текста:"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Li_ne-spacing:"
-msgstr ""
+msgstr "_Разстояние между редовете:"
 
 #: ../data/preferences-dialog.ui.h:5
 msgid "Preferences"
@@ -73,7 +74,7 @@ msgstr "_Връзка:"
 
 #: ../data/preferences-dialog.ui.h:11
 msgid "_Schemes:"
-msgstr ""
+msgstr "_Схеми:"
 
 #: ../data/preferences-dialog.ui.h:12
 msgid "_Visited link:"
@@ -133,7 +134,8 @@ msgstr "Редактиране настройките на NFO Viewer"
 msgid "_Open..."
 msgstr "_Отваряне..."
 
-#: ../nfoview/actions.py:132 ../nfoview/open.py:33
+#: ../nfoview/actions.py:132
+#: ../nfoview/open.py:33
 msgid "Open"
 msgstr "Отваряне"
 
@@ -179,11 +181,11 @@ msgstr "_Помощ"
 
 #: ../nfoview/actions.py:219
 msgid "_Wrap Lines"
-msgstr ""
+msgstr "_Пренасяне на редове"
 
 #: ../nfoview/actions.py:220
 msgid "Break long lines at word borders"
-msgstr ""
+msgstr "Прекъсване на дългите редове на границите на думите"
 
 #: ../nfoview/open.py:41
 msgid "All files"
@@ -193,7 +195,8 @@ msgstr "Всички файлове"
 msgid "NFO files (*.nfo)"
 msgstr "NFO файлове (*.nfo)"
 
-#: ../nfoview/schemes.py:45 ../nfoview/schemes.py:69
+#: ../nfoview/schemes.py:45
+#: ../nfoview/schemes.py:69
 msgid "Custom"
 msgstr "Потребителска"
 
