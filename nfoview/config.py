@@ -42,7 +42,7 @@ class ConfigurationStore(object):
     :ivar visited_link_color: Visited link color as a hexadecimal string
     """
 
-    DEFAULT, DECODE, ENCODE = range(3)
+    DEFAULT, DECODE, ENCODE = list(range(3))
 
     _fields = {"background_color": ("#ffffff", str, str),
                "color_scheme": ("default", str, str),
@@ -79,8 +79,8 @@ class ConfigurationStore(object):
         """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
         entries = open(self.path, "r").readlines()
-        entries = map(lambda x: x.strip(), entries)
-        entries = filter(lambda x: not x.startswith("#"), entries)
+        entries = [x.strip() for x in entries]
+        entries = [x for x in entries if not x.startswith("#")]
         entries = dict(re.split(" *= *", x, 1) for x in entries)
         for name in (set(self._fields) & set(entries)):
             decode = self._fields[name][self.DECODE]

@@ -39,7 +39,7 @@ class TestConfigurationStore(nfoview.TestCase):
         conf_dir = os.path.join(self.temp_dir, "test")
         nfoview.conf.restore_defaults()
         nfoview.conf.path = os.path.join(conf_dir, "conf")
-        for name, value in self.fields.items():
+        for name, value in list(self.fields.items()):
             setattr(nfoview.conf, name, value)
 
     def teardown_method(self, method):
@@ -49,12 +49,12 @@ class TestConfigurationStore(nfoview.TestCase):
         nfoview.conf.write_to_file()
         nfoview.conf.restore_defaults()
         nfoview.conf.read_from_file()
-        for name, value in self.fields.items():
+        for name, value in list(self.fields.items()):
             assert getattr(nfoview.conf, name) == value
 
     def test_restore_defaults(self):
         nfoview.conf.restore_defaults()
-        for name, attrs in nfoview.conf._fields.items():
+        for name, attrs in list(nfoview.conf._fields.items()):
             value = getattr(nfoview.conf, name)
             if name == "version":
                 assert value == nfoview.__version__
@@ -65,10 +65,10 @@ class TestConfigurationStore(nfoview.TestCase):
         nfoview.conf.write_to_file()
         nfoview.conf.restore_defaults()
         nfoview.conf.read_from_file()
-        for name, value in self.fields.items():
+        for name, value in list(self.fields.items()):
             assert getattr(nfoview.conf, name) == value
 
     def test_write_to_file__os_error(self):
         os.chmod(self.temp_dir, 0000)
         nfoview.conf.write_to_file()
-        os.chmod(self.temp_dir, 0777)
+        os.chmod(self.temp_dir, 0o777)

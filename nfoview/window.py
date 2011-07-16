@@ -147,7 +147,7 @@ class Window(gtk.Window):
 
     def _on_drag_data_received(self, widget, context, x, y, sdata, info, time):
         """Open files dragged from a file browser."""
-        paths = map(nfoview.util.uri_to_path, sdata.get_uris())
+        paths = list(map(nfoview.util.uri_to_path, sdata.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
         for path in paths:

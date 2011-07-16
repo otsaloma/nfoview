@@ -21,8 +21,8 @@ import gtk
 import nfoview
 import pango
 import sys
-import urllib
-import urlparse
+import urllib.request, urllib.parse, urllib.error
+import urllib.parse
 import webbrowser
 
 
@@ -86,8 +86,7 @@ def get_color_scheme(name):
 
     Raise :exc:`ValueError` if color scheme not found.
     """
-    schemes = map(lambda x: getattr(nfoview.schemes, x),
-                  nfoview.schemes.__all__)
+    schemes = [getattr(nfoview.schemes, x) for x in nfoview.schemes.__all__]
 
     names = [x.name for x in schemes]
     if not name in names:
@@ -96,8 +95,7 @@ def get_color_scheme(name):
 
 def get_color_schemes():
     """Return a list of all color schemes in proper order."""
-    schemes = map(lambda x: getattr(nfoview.schemes, x),
-                  nfoview.schemes.__all__)
+    schemes = [getattr(nfoview.schemes, x) for x in nfoview.schemes.__all__]
 
     schemes.remove(nfoview.DefaultScheme)
     schemes.remove(nfoview.CustomScheme)
@@ -132,10 +130,10 @@ def show_uri(uri):
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""
-    uri = urllib.unquote(uri)
+    uri = urllib.parse.unquote(uri)
     if sys.platform == "win32":
-        path = urlparse.urlsplit(uri)[2]
+        path = urllib.parse.urlsplit(uri)[2]
         while path.startswith("/"):
             path = path[1:]
         return path.replace("/", "\\")
-    return urlparse.urlsplit(uri)[2]
+    return urllib.parse.urlsplit(uri)[2]

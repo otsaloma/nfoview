@@ -233,7 +233,7 @@ class SDistGna(sdist):
             tobj.extract(member, temp_dir)
         log.info("comparing tarball (tmp) with working copy (../..)")
         os.system('diff -qr -x ".*" -x "*.pyc" ../.. %s' % test_dir)
-        response = raw_input("Are all files in the tarball [Y/n]? ")
+        response = input("Are all files in the tarball [Y/n]? ")
         if response.lower() == "n":
             raise SystemExit("Must edit MANIFEST.in.")
         shutil.rmtree(test_dir)
