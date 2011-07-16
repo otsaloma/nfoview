@@ -16,7 +16,7 @@
 
 """Dialog for displaying credits and information."""
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 _ = nfoview.i18n._
 
@@ -35,14 +35,14 @@ _license = (
     "with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.")
 
 
-class AboutDialog(gtk.AboutDialog):
+class AboutDialog(Gtk.AboutDialog):
 
     """Dialog for displaying credits and information."""
 
     def __init__(self, parent):
         """Initialize an :class:`AboutDialog` instance."""
-        gtk.AboutDialog.__init__(self)
-        gtk.about_dialog_set_url_hook(self._on_url_clicked)
+        GObject.GObject.__init__(self)
+        Gtk.about_dialog_set_url_hook(self._on_url_clicked)
         self.set_transient_for(parent)
         self.set_title(_("About NFO Viewer"))
         # Translators: The application name 'NFO Viewer' has been intentionally

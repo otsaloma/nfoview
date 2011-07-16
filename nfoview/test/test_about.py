@@ -14,11 +14,11 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 
 
 class TestAboutDialog(nfoview.TestCase):
 
     def setup_method(self, method):
-        self.dialog = nfoview.AboutDialog(gtk.Window())
+        self.dialog = nfoview.AboutDialog(Gtk.Window())

@@ -17,9 +17,9 @@
 """Miscellaneous functions."""
 
 import codecs
-import gtk
+from gi.repository import Gtk
 import nfoview
-import pango
+from gi.repository import Pango
 import sys
 import urllib.request, urllib.parse, urllib.error
 import urllib.parse
@@ -73,7 +73,7 @@ def detect_encoding(path):
 def gdk_color_to_hex(color):
     """Return 7-character hexadecimal string for GDK `color`.
 
-    >>> color = gtk.gdk.Color(56797, 61166, 65535)
+    >>> color = Gdk.Color(56797, 61166, 65535)
     >>> nfoview.util.gdk_color_to_hex(color)
     '#ddeeff'
     """
@@ -106,7 +106,7 @@ def get_color_schemes():
 
 def get_font_description(fallback="monospace"):
     """Return font description from conf with `fallback` added."""
-    font_desc = pango.FontDescription(nfoview.conf.font)
+    font_desc = Pango.FontDescription(nfoview.conf.font)
     family = font_desc.get_family()
     font_desc.set_family(",".join((family, fallback)))
     return font_desc
@@ -123,10 +123,10 @@ def show_uri(uri):
     """Open `uri` in default application."""
     if sys.platform == "win32":
         if uri.startswith(("http://", "https://")):
-            # gtk.show_uri (GTK+ 2.20) fails on Windows.
+            # Gtk.show_uri (GTK+ 2.20) fails on Windows.
             # GError: No application is registered as handling this file
             return webbrowser.open(uri)
-    return gtk.show_uri(None, uri, gtk.gdk.CURRENT_TIME)
+    return Gtk.show_uri(None, uri, Gdk.CURRENT_TIME)
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""

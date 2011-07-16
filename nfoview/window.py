@@ -18,32 +18,32 @@
 
 import atexit
 import codecs
-import gtk
+from gi.repository import Gtk
 import nfoview
 import os
-import pango
+from gi.repository import Pango
 import textwrap
 
 __all__ = ("Window",)
 
 
-class Window(gtk.Window):
+class Window(Gtk.Window):
 
     """Viewer window and user interface controller for NFO files.
 
-    :ivar clipboard: Instance of :class:`gtk.Clipboard` used
+    :ivar clipboard: Instance of :class:`Gtk.Clipboard` used
     :ivar path: Path to the NFO file being shown
     :ivar view: Instance of :class:`nfoview.TextView` contained
     """
 
     def __init__(self, path=None):
         """Initialize a :class:`Window` instance and open file at `path`."""
-        gtk.Window.__init__(self)
+        GObject.GObject.__init__(self)
         self._about_dialog = None
         self._actions = []
         self._preferences_dialog = None
-        self._uim = gtk.UIManager()
-        self.clipboard = gtk.Clipboard()
+        self._uim = Gtk.UIManager()
+        self.clipboard = Gtk.Clipboard()
         self.path = path
         self.view = nfoview.TextView()
         self._init_window()
@@ -57,16 +57,16 @@ class Window(gtk.Window):
 
     def _get_size_test_label(self):
         """Return a label to use for text size calculations."""
-        label = gtk.Label()
-        attrs = pango.AttrList()
+        label = Gtk.Label()
+        attrs = Pango.AttrList()
         font_desc = nfoview.util.get_font_description()
-        attrs.insert(pango.AttrFontDesc(font_desc, 0, -1))
+        attrs.insert(Pango.AttrFontDesc(font_desc, 0, -1))
         label.set_attributes(attrs)
         return label
 
     def _init_action_groups_and_uim(self):
         """Initialize action groups and UI manager actions."""
-        action_group = gtk.ActionGroup("main")
+        action_group = Gtk.ActionGroup("main")
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             callback = "_on_%s_activate" % action.get_name()
@@ -79,18 +79,18 @@ class Window(gtk.Window):
         self.add_accel_group(self._uim.get_accel_group())
         path = os.path.join(nfoview.CONFIG_HOME_DIR, "accels.conf")
         if os.path.isfile(path):
-            gtk.accel_map_load(path)
-        atexit.register(gtk.accel_map_save, path)
+            Gtk.AccelMap.load(path)
+        atexit.register(Gtk.AccelMap.save, path)
         self._uim.ensure_update()
 
     def _init_contents(self):
         """Initialize child containers and pack contents."""
-        main_vbox = gtk.VBox()
+        main_vbox = Gtk.VBox()
         menubar = self._uim.get_widget("/ui/menubar")
         main_vbox.pack_start(menubar, False, False, 0)
-        scroller = gtk.ScrolledWindow()
-        scroller.set_policy(*((gtk.POLICY_AUTOMATIC,) * 2))
-        scroller.set_shadow_type(gtk.SHADOW_ETCHED_IN)
+        scroller = Gtk.ScrolledWindow()
+        scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,) * 2))
+        scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         scroller.add(self.view)
         main_vbox.pack_start(scroller, True, True, 0)
         main_vbox.show_all()
@@ -98,20 +98,20 @@ class Window(gtk.Window):
 
     def _init_keys(self):
         """Set keybindings not handled by UI manager."""
-        accel_group = gtk.AccelGroup()
-        key = gtk.keysyms.Escape
+        accel_group = Gtk.AccelGroup()
+        key = Gdk.KEY_Escape
         callback = self._on_escape_pressed
-        accel_group.connect_group(key, 0, gtk.ACCEL_MASK, callback)
+        accel_group.connect_group(key, 0, Gtk.ACCEL_MASK, callback)
         self.add_accel_group(accel_group)
 
     def _init_properties(self):
         """Set window properties."""
-        self.set_position(gtk.WIN_POS_CENTER)
+        self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("nfoview")
-        gtk.window_set_default_icon_name("nfoview")
-        self.drag_dest_set(gtk.DEST_DEFAULT_ALL,
+        Gtk.Window.set_default_icon_name("nfoview")
+        Gtk.drag_dest_set(self, Gtk.DEST_DEFAULT_ALL,
                            [("text/uri-list", 0, 0)],
-                           gtk.gdk.ACTION_COPY)
+                           Gdk.DragAction.COPY)
 
         self.connect("drag-data-received",
                      self._on_drag_data_received)
@@ -138,7 +138,7 @@ class Window(gtk.Window):
 
     def _on_close_document_activate(self, *args):
         """Delete the window to close the document."""
-        self.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
+        self.emit("delete-event", Gdk.Event(Gdk.DELETE))
 
     def _on_copy_text_activate(self, *args):
         """Copy the selected text to the clipboard."""
@@ -166,7 +166,7 @@ class Window(gtk.Window):
 
     def _on_escape_pressed(self, *args):
         """Delete the window to close the document."""
-        self.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
+        self.emit("delete-event", Gdk.Event(Gdk.DELETE))
 
     def _on_open_file_activate(self, *args):
         """Show the open file dialog and open the chosen file."""
@@ -177,7 +177,7 @@ class Window(gtk.Window):
         response = dialog.run()
         paths = dialog.get_filenames()
         dialog.destroy()
-        if response != gtk.RESPONSE_OK: return
+        if response != Gtk.ResponseType.OK: return
         if not paths: return
         if self.path is None:
             self.open_file(paths.pop(0))
@@ -187,7 +187,7 @@ class Window(gtk.Window):
     def _on_quit_activate(self, *args):
         """Delete all windows to quit NFO Viewer."""
         for window in nfoview.main.windows[:]:
-            window.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
+            window.emit("delete-event", Gdk.Event(Gdk.DELETE))
 
     def _on_select_all_text_activate(self, *args):
         """Select all text in the document."""
@@ -210,9 +210,9 @@ class Window(gtk.Window):
     def _on_wrap_lines_activate(self, action, *args):
         """Break long lines at word borders."""
         if action.props.active:
-            self.view.set_wrap_mode(gtk.WRAP_WORD)
+            self.view.set_wrap_mode(Gtk.WrapMode.WORD)
         else: # not action.props.active
-            self.view.set_wrap_mode(gtk.WRAP_NONE)
+            self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def _read_file(self, path, encoding=None):
         """Read and return the text of the NFO file.
@@ -283,6 +283,6 @@ class Window(gtk.Window):
         # and 12 pixels total for text view left and right margins.
         size[0] = max(200, size[0] + 12 + 32)
         size[1] = max(100, size[1] + 24 + 32)
-        size[0] = min(size[0], int(0.8 * gtk.gdk.screen_width()))
-        size[1] = min(size[1], int(0.8 * gtk.gdk.screen_height()))
+        size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
+        size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
         self.resize(size[0], size[1])

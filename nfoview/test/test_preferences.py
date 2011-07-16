@@ -14,20 +14,20 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 
 
 class TestPreferencesDialog(nfoview.TestCase):
 
-    color = gtk.gdk.Color(122, 123, 124)
+    color = Gdk.Color(122, 123, 124)
 
     def setup_method(self, method):
         window1 = nfoview.Window(self.new_temp_nfo_file())
         window2 = nfoview.Window(self.new_temp_nfo_file())
         nfoview.main.windows.append(window1)
         nfoview.main.windows.append(window2)
-        self.dialog = nfoview.PreferencesDialog(gtk.Window())
+        self.dialog = nfoview.PreferencesDialog(Gtk.Window())
 
     def teardown_method(self, method):
         nfoview.main.windows = []

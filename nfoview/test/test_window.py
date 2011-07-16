@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 
 
@@ -36,12 +36,12 @@ class TestWindow(nfoview.TestCase):
     def test__on_edit_preferences_activate(self):
         self.window._get_action("edit_preferences").activate()
         self.window._get_action("edit_preferences").activate()
-        self.window._preferences_dialog.response(gtk.RESPONSE_CLOSE)
+        self.window._preferences_dialog.response(Gtk.ResponseType.CLOSE)
         self.window._get_action("edit_preferences").activate()
 
     @nfoview.deco.monkey_patch(nfoview, "OpenDialog")
     def test__on_open_file_activate__cancel(self):
-        nfoview.OpenDialog.run = lambda *args: gtk.RESPONSE_CANCEL
+        nfoview.OpenDialog.run = lambda *args: Gtk.ResponseType.CANCEL
         self.window._get_action("open_file").activate()
 
     def test__on_quit_activate(self):
@@ -54,7 +54,7 @@ class TestWindow(nfoview.TestCase):
     def test__on_show_about_dialog_activate(self):
         self.window._get_action("show_about_dialog").activate()
         self.window._get_action("show_about_dialog").activate()
-        self.window._about_dialog.response(gtk.RESPONSE_CLOSE)
+        self.window._about_dialog.response(Gtk.ResponseType.CLOSE)
         self.window._get_action("show_about_dialog").activate()
 
     def test__on_wrap_lines_activate(self):

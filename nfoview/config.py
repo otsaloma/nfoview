@@ -31,7 +31,7 @@ class ConfigurationStore(object):
 
     :ivar background_color: Background color as a hexadecimal string
     :ivar color_scheme: Name of the color cheme used
-    :ivar font: Font string in :class:`pango.FontDescription` format
+    :ivar font: Font string in :class:`Pango.FontDescription` format
     :ivar foreground_color: Foreground color as a hexadecimal string
     :ivar link_color: Link color as a hexadecimal string
     :ivar pixels_above_lines: Extra line-spacing above each line

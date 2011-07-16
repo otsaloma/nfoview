@@ -16,33 +16,33 @@
 
 """Dialog for selecting NFO files to open."""
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 _ = nfoview.i18n._
 
 __all__ = ("OpenDialog",)
 
 
-class OpenDialog(gtk.FileChooserDialog):
+class OpenDialog(Gtk.FileChooserDialog):
 
     """Dialog for selecting NFO files to open."""
 
     def __init__(self, parent):
         """Initialize an OpenDialog instance."""
-        gtk.FileChooserDialog.__init__(self, parent=parent)
+        GObject.GObject.__init__(self, parent=parent)
         self.set_title(_("Open"))
         self.set_transient_for(parent)
-        self.set_action(gtk.FILE_CHOOSER_ACTION_OPEN)
-        self.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
-        self.add_button(gtk.STOCK_OPEN, gtk.RESPONSE_OK)
+        self.set_action(Gtk.FileChooserAction.OPEN)
+        self.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)
+        self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.OK)
         self.set_select_multiple(True)
 
-        file_filter = gtk.FileFilter()
+        file_filter = Gtk.FileFilter()
         file_filter.set_name(_("All files"))
         file_filter.add_pattern("*")
         self.add_filter(file_filter)
 
-        file_filter = gtk.FileFilter()
+        file_filter = Gtk.FileFilter()
         file_filter.set_name(_("NFO files (*.nfo)"))
         file_filter.add_pattern("*.[Nn][Ff][Oo]")
         self.add_filter(file_filter)

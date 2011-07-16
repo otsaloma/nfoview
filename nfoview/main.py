@@ -19,7 +19,7 @@
 :var windows: List of existing :class:`nfoview.Window` instances
 """
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 import os
 
@@ -32,7 +32,7 @@ def _on_window_delete_event(window, event):
     windows.remove(window)
     if windows: return
     nfoview.conf.write_to_file()
-    try: gtk.main_quit()
+    try: Gtk.main_quit()
     except RuntimeError:
         raise SystemExit(1)
 
@@ -53,4 +53,4 @@ def main(args):
         # If no arguments were given, or none of them exist,
         # open one blank window.
         open_window()
-    gtk.main()
+    Gtk.main()

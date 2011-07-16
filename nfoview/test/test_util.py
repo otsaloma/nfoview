@@ -15,7 +15,7 @@
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
 import codecs
-import gtk
+from gi.repository import Gtk
 import nfoview
 import sys
 
@@ -33,13 +33,13 @@ class TestModule(nfoview.TestCase):
     def test_connect__private(self):
         # pylint: disable=W0201
         self._on_window_delete_event = lambda *args: None
-        self.window = gtk.Window()
+        self.window = Gtk.Window()
         nfoview.util.connect(self, "window", "delete-event")
 
     def test_connect__public(self):
         # pylint: disable=W0201
         self.on_window_delete_event = lambda *args: None
-        self.window = gtk.Window()
+        self.window = Gtk.Window()
         nfoview.util.connect(self, "window", "delete-event")
 
     def test_detect_encoding__cp437(self):
@@ -93,22 +93,22 @@ class TestModule(nfoview.TestCase):
         assert encoding == "utf_8_sig"
 
     def test_gdk_color_to_hex__black(self):
-        color = gtk.gdk.Color(0, 0, 0)
+        color = Gdk.Color(0, 0, 0)
         color = nfoview.util.gdk_color_to_hex(color)
         assert color == "#000000"
 
     def test_gdk_color_to_hex__violet(self):
-        color = gtk.gdk.Color(65535, 0, 65535)
+        color = Gdk.Color(65535, 0, 65535)
         color = nfoview.util.gdk_color_to_hex(color)
         assert color == "#ff00ff"
 
     def test_gdk_color_to_hex__white(self):
-        color = gtk.gdk.Color(65535, 65535, 65535)
+        color = Gdk.Color(65535, 65535, 65535)
         color = nfoview.util.gdk_color_to_hex(color)
         assert color == "#ffffff"
 
     def test_gdk_color_to_hex__yellow(self):
-        color = gtk.gdk.Color(65535, 65535, 0)
+        color = Gdk.Color(65535, 65535, 0)
         color = nfoview.util.gdk_color_to_hex(color)
         assert color == "#ffff00"
 

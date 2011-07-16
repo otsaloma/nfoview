@@ -16,7 +16,7 @@
 
 """Dialog for editing preferences."""
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 import os
 
@@ -51,9 +51,9 @@ class PreferencesDialog(nfoview.BuilderDialog):
     def _init_scheme_combo(self):
         """Initialize a model and populate the scheme combo box."""
         self._scheme_combo.clear()
-        store = gtk.ListStore(object, str)
+        store = Gtk.ListStore(object, str)
         self._scheme_combo.set_model(store)
-        renderer = gtk.CellRendererText()
+        renderer = Gtk.CellRendererText()
         self._scheme_combo.pack_start(renderer, True)
         self._scheme_combo.add_attribute(renderer, "text", 1)
         for scheme in nfoview.util.get_color_schemes():
@@ -61,7 +61,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _init_sizes(self):
         """Set a reasonable default size for dialog."""
-        label = gtk.Label("Some Long Name Font Family  12")
+        label = Gtk.Label(label="Some Long Name Font Family  12")
         width = label.size_request()[0]
         self._font_button.set_size_request(width, -1)
 

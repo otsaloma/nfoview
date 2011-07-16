@@ -16,21 +16,21 @@
 
 """Text view widget for NFO text with support for clickable hyperlinks."""
 
-import gtk
+from gi.repository import Gtk
 import nfoview
-import pango
+from gi.repository import Pango
 import re
 
 __all__ = ("TextView",)
 
 
-class TextView(gtk.TextView):
+class TextView(Gtk.TextView):
 
     """Text view widget for NFO text with support for clickable hyperlinks."""
 
     def __init__(self):
         """Initialize a :class:`TextView` instance."""
-        gtk.TextView.__init__(self)
+        GObject.GObject.__init__(self)
         self._init_properties()
         self._link_tags = []
         self._visited_link_tags = []
@@ -43,7 +43,7 @@ class TextView(gtk.TextView):
         font_desc = nfoview.util.get_font_description()
         self.set_cursor_visible(False)
         self.set_editable(False)
-        self.set_wrap_mode(gtk.WRAP_NONE)
+        self.set_wrap_mode(Gtk.WrapMode.NONE)
         self.set_pixels_above_lines(pixels_above)
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
@@ -55,7 +55,7 @@ class TextView(gtk.TextView):
         """Insert `url` into the text view as a hyperlink."""
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
-        tag.props.underline = pango.UNDERLINE_SINGLE
+        tag.props.underline = Pango.Underline.SINGLE
         tag.connect("event", self._on_link_tag_event)
         tag.set_data("url", url)
         itr = text_buffer.get_end_iter()
@@ -70,7 +70,7 @@ class TextView(gtk.TextView):
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
         """Open clicked hyperlink in web browser."""
-        if event.type != gtk.gdk.BUTTON_RELEASE: return
+        if event.type != Gdk.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
         nfoview.util.show_uri(tag.get_data("url"))
@@ -83,15 +83,15 @@ class TextView(gtk.TextView):
         """Change the mouse pointer when hovering over a hyperlink."""
         x = int(event.x)
         y = int(event.y)
-        window = gtk.TEXT_WINDOW_WIDGET
+        window = Gtk.TextWindowType.WIDGET
         x, y = self.window_to_buffer_coords(window, x, y)
-        window = self.get_window(gtk.TEXT_WINDOW_TEXT)
+        window = self.get_window(Gtk.TextWindowType.TEXT)
         for tag in self.get_iter_at_location(x, y).get_tags():
             if tag.get_data("url") is not None:
-                window.set_cursor(gtk.gdk.Cursor(gtk.gdk.HAND2))
+                window.set_cursor(Gdk.Cursor.new(Gdk.HAND2))
                 # pylint: disable=E1101
                 return self.window.get_pointer()
-        window.set_cursor(gtk.gdk.Cursor(gtk.gdk.XTERM))
+        window.set_cursor(Gdk.Cursor.new(Gdk.XTERM))
         # pylint: disable=E1101
         self.window.get_pointer()
 
@@ -134,8 +134,8 @@ class TextView(gtk.TextView):
         except ValueError:
             scheme = nfoview.util.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
-        self.modify_text(gtk.STATE_NORMAL, scheme.foreground)
-        self.modify_base(gtk.STATE_NORMAL, scheme.background)
+        self.modify_text(Gtk.StateType.NORMAL, scheme.foreground)
+        self.modify_base(Gtk.StateType.NORMAL, scheme.background)
         for tag in self._link_tags:
             tag.props.foreground_gdk = scheme.link
         for tag in self._visited_link_tags:

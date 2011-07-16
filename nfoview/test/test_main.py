@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along with
 # NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-import gtk
+from gi.repository import Gtk
 import nfoview
 
 
@@ -27,7 +27,7 @@ class TestModule(nfoview.TestCase):
         nfoview.main.open_window(self.new_temp_nfo_file())
         nfoview.main.open_window(self.new_temp_nfo_file())
         for window in nfoview.main.windows:
-            window.emit("delete-event", gtk.gdk.Event(gtk.gdk.DELETE))
+            window.emit("delete-event", Gdk.Event(Gdk.DELETE))
 
     def test_open_window__empty(self):
         nfoview.main.open_window()
@@ -37,13 +37,13 @@ class TestModule(nfoview.TestCase):
 
     @nfoview.deco.monkey_patch(gtk, "main")
     def test_main__empty(self):
-        gtk.main = lambda *args: None
+        Gtk.main = lambda *args: None
         nfoview.main.main(())
         assert len(nfoview.main.windows) == 1
 
     @nfoview.deco.monkey_patch(gtk, "main")
     def test_main__files(self):
-        gtk.main = lambda *args: None
+        Gtk.main = lambda *args: None
         paths = (self.new_temp_nfo_file(),
                  self.new_temp_nfo_file(),
                  self.new_temp_nfo_file(),)
@@ -53,7 +53,7 @@ class TestModule(nfoview.TestCase):
 
     @nfoview.deco.monkey_patch(gtk, "main")
     def test_main__non_files(self):
-        gtk.main = lambda *args: None
+        Gtk.main = lambda *args: None
         path = "%s.xxx" % self.new_temp_nfo_file()
         nfoview.main.main((path,))
         assert len(nfoview.main.windows) == 1
