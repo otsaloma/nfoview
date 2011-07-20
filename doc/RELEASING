@@ -1,24 +1,26 @@
 Releasing a New Version
 =======================
 
+ * Update translations
+   $ tools/update-translations
+   $ gtranslator po/fi.po
+   $ git commit -a -m "Update translations for X.Y.Z."
+
  * Do final quality checks
-   $ pylint bin/nfoview setup.py
-   $ pylint nfoview/
-   $ py.test --tb=no nfoview
+   $ pyflakes3 bin/nfoview setup.py nfoview
+   $ py.test3 --tb=no nfoview
 
  * Make final edits to files
    $ $EDITOR nfoview/__init__.py
-   $ tools/update-translations
-   $ gtranslator po/fi.po
    $ $EDITOR NEWS TODO
 
- * Build tarballs and edit related files
-   $ ./setup.py clean sdist_gna --formats bztar,gztar
-   $ $EDITOR dist/*/*.news dist/*/*.changes
+ * Check that tarballs can be built
+   $ python3 setup.py clean sdist_gna --formats bztar,gztar
 
- * Extract tarball somwehere and install
-   $ sudo ./setup.py clean install --prefix=/usr/local
-   $ sudo ./setup.py clean
+ * Check that installation of above tarball works
+   $ sudo python3 setup.py clean install --prefix=/usr/local
+   $ sudo python3 setup.py clean
+   $ /usr/local/bin/nfoview
 
  * Commit changes
    $ git commit -a -m "RELEASE X.Y.Z"
@@ -26,11 +28,14 @@ Releasing a New Version
    $ git push
    $ git push --tags
 
- * Generate API documentation
-   $ ./setup.py clean doc --format html
+ * Build final tarballs, edit related files and upload
+   $ python3 setup.py clean sdist_gna --formats bztar,gztar
+   $ $EDITOR dist/*/*.news dist/*/*.changes
+   - download.gna.org:/upload/nfoview/
 
- * Upload tarballs and API documentation to
-   download.gna.org:/upload/nfoview/
+ * Generate API documentation and upload
+   $ python3 setup.py clean doc --format html
+   - download.gna.org:/upload/nfoview/
 
  * Send announcements and update web sites
    - http://home.gna.org/nfoview
