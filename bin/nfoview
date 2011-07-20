@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk
 import os
 import sys
+
+from gi.repository import Gtk
 
 def prepare_paths():
     # Add source root directory to sys.path.
@@ -21,6 +22,5 @@ def running_from_source():
 
 if running_from_source():
     prepare_paths()
-
 import nfoview
 nfoview.main.main(sys.argv[1:])
