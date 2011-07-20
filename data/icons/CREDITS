@@ -1,7 +1,5 @@
-nfoview application icon is based on logviewer icon from
-gnome-icon-theme [1]. gnome-icon-theme is released under the GNU
-General Public License (GPL). See COPYING [2] and AUTHORS [3].
+nfoview application icon is based on logviewer icon from earlier days of
+gnome-icon-theme [1]. It was licensed under the GNU General Public
+License (GPL).
 
  [1] http://git.gnome.org/cgit/gnome-icon-theme/
- [2] http://git.gnome.org/cgit/gnome-icon-theme/plain/COPYING
- [3] http://git.gnome.org/cgit/gnome-icon-theme/plain/AUTHORS
