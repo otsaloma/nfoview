@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Update the PO template file and all existing PO-files with new strings.
+# Update the pot-file and all existing po-files with new strings.
 # Requires gettext and intltool.
 
 DIRNAME=$(dirname "$0")
@@ -8,7 +8,7 @@ cd "$DIRNAME/../po" || exit 1
 
 echo "Checking for missing source files..."
 intltool-update -m &> /dev/null
-[ -f missing ] && exit 1
+[ -f missing ] && echo "Check po/missing!" && exit 1
 
 echo "Updating nfoview.pot..."
 intltool-update -p -g nfoview
