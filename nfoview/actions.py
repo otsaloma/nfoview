@@ -2,23 +2,26 @@
 #
 # This file is part of NFO Viewer.
 #
-# NFO Viewer is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# NFO Viewer is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
 #
-# NFO Viewer is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# NFO Viewer is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with
-# NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
 """UI manager actions."""
 
-from gi.repository import Gtk
 import nfoview
 _ = nfoview.i18n._
+
+from gi.repository import GObject
+from gi.repository import Gtk
 
 __all__ = ("CloseDocumentAction",
            "CopyTextAction",
@@ -45,11 +48,10 @@ class Action(Gtk.Action):
     accelerator or leave undefined to use blank string as a fallback.
     """
 
-    accelerator = ""
-
     def __init__(self, name):
         """Initialize an :class:`Action` instance."""
-        GObject.GObject.__init__(self, name, None, None, None)
+        GObject.GObject.__init__(self, name=name)
+        self.accelerator = ""
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
@@ -70,7 +72,7 @@ class ToggleAction(Gtk.ToggleAction, Action):
 
     def __init__(self, name):
         """Initialize an :class:`ToggleAction` object."""
-        GObject.GObject.__init__(self, name, None, None, None)
+        GObject.GObject.__init__(self, name=name)
 
 
 class CloseDocumentAction(Action):
@@ -128,7 +130,7 @@ class OpenFileAction(Action):
         """Initialize an :class:`OpenFileAction` instance."""
         Action.__init__(self, "open_file")
         self.props.is_important = True
-        self.props.label = _("_Open...")
+        self.props.label = _("_Open…")
         self.props.short_label = _("Open")
         self.props.stock_id = Gtk.STOCK_OPEN
         self.props.tooltip = _("Open file")

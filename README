@@ -2,9 +2,9 @@ General Information
 ===================
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
-the CP437 codepage. The advantages of using NFO Viewer instead of a
-text editor are preset font and encoding settings, automatic window
-size and clickable hyperlinks.
+the CP437 codepage. The advantages of using NFO Viewer instead of a text
+editor are preset font and encoding settings, automatic window size and
+clickable hyperlinks.
 
 NFO Viewer is free software released under the GNU General Public
 License (GPL), see the file "COPYING" for details.
@@ -14,24 +14,23 @@ Dependencies
 
 NFO Viewer requires Python [1] 2.5 or greater and PyGTK [2] 2.12 or
 greater. Terminus font [3] is recommended and used by default. For
-dependencies required only during installation, see the file
-"INSTALL".
+dependencies required only during installation, see the file "INSTALL".
 
  [1] http://www.python.org/
  [2] http://www.pygtk.org/
  [3] http://terminus-font.sourceforge.net/
 
 Terminus font is used by default because it draws drawing characters
-taller than text characters. You can use any other fixed width font
-that has support for the necessary CP437 drawing characters (e.g.
-DejaVu Sans Mono), but with them you need to decrease the line-spacing
-(to a negative value that depends on the font and font size) in order
-to remove blank space between adjacent lines of drawing characters.
+taller than text characters. You can use any other fixed width font that
+has support for the necessary CP437 drawing characters (e.g. DejaVu Sans
+Mono), but with them you need to decrease the line-spacing (to a
+negative value that depends on the font and font size) in order to
+remove blank space between adjacent lines of drawing characters.
 
 Running
 =======
 
 To try NFO Viewer from the source directory without installation, use
-command "bin/nfoview". Installation is, however, necessary for
-mimetype integration, application menu entry and user interface
-translations. For installing NFO Viewer, see the file "INSTALL".
+command "bin/nfoview". Installation is, however, necessary for mimetype
+integration, application menu entry and user interface translations. For
+installing NFO Viewer, see the file "INSTALL".

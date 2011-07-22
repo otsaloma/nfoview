@@ -1,20 +1,14 @@
-NFO Viewer 1.9.6
-================
+NFO Viewer 1.10
+===============
 
+ [ ] Migrate to Python 3, GTK+ 3, GNOME 3 and PyGI
+     - Bump Python dependency to 3.2 or greater
+     - Replace PyGTK dependency with PyGobject 2.28 or greater
+     - Add 48x48 and 256x256 pixel PNG icons and remove SVG icon
  [X] Update Bulgarian translation (Svetoslav Stefanov)
 
 NFO Viewer 3000
 ===============
 
- * GNOME Goal: Port your PyGTK to the new introspection-based bindings
-   - http://live.gnome.org/GnomeGoals/PythonIntrospectionPorting
-   - http://developer.gnome.org/Gnome3PortingGuide/
- * Bump Python dependency to something
-   - http://docs.python.org/dev/whatsnew/2.7.html
-   - http://docs.python.org/dev/whatsnew/3.0.html
-   - http://docs.python.org/dev/whatsnew/3.1.html
-   - http://docs.python.org/dev/whatsnew/3.2.html
-   - http://diveintopython3.org/whats-new.html
- * Get link and visited link colors from GTK+ theme?
+ * Use GtkGrid for the preferences dialog instead of GtkTable
  * Make hyperlinks activatable by keyboard
- * Use Unicode ellipses (\342\200\246) for menu items

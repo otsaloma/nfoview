@@ -1,29 +1,31 @@
-# Copyright (C) 2005-2009 Osmo Salomaa
+# Copyright (C) 2005-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
-# NFO Viewer is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# NFO Viewer is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
 #
-# NFO Viewer is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# NFO Viewer is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with
-# NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
 """Miscellaneous functions."""
 
 import codecs
-from gi.repository import Gtk
 import nfoview
-from gi.repository import Pango
 import sys
-import urllib.request, urllib.parse, urllib.error
 import urllib.parse
 import webbrowser
+
+from gi.repository import Gdk
+from gi.repository import Gtk
+from gi.repository import Pango
 
 
 def affirm(value):
@@ -39,8 +41,8 @@ def connect(observer, observable, signal, *args):
     """
     method_name = signal.replace("-", "_").replace("::", "_")
     if observer is not observable:
-        method_name = "%s_%s" % (observable, method_name)
-    method_name = ("_on_%s" % method_name).replace("__", "_")
+        method_name = "_".join((observable, method_name))
+    method_name = ("_on_{0}".format(method_name)).replace("__", "_")
     if not hasattr(observer, method_name):
         method_name = method_name[1:]
     method = getattr(observer, method_name)
@@ -50,7 +52,7 @@ def connect(observer, observable, signal, *args):
 
 def detect_encoding(path):
     """Detect and return NFO file encoding."""
-    line = open(path, "r").readline()
+    line = open(path, "rb").readline()
     if (line.startswith(codecs.BOM_UTF32_BE) and
         is_valid_encoding("utf_32_be")):
         return "utf_32_be"
@@ -70,36 +72,29 @@ def detect_encoding(path):
     # return the de facto standard encoding for NFO files, CP437.
     return "cp437"
 
-def gdk_color_to_hex(color):
-    """Return 7-character hexadecimal string for GDK `color`.
-
-    >>> color = Gdk.Color(56797, 61166, 65535)
-    >>> nfoview.util.gdk_color_to_hex(color)
-    '#ddeeff'
-    """
-    return "#%02x%02x%02x" % (int(color.red   / 256.0),
-                              int(color.green / 256.0),
-                              int(color.blue  / 256.0))
-
 def get_color_scheme(name):
     """Return the color scheme with given name.
 
     Raise :exc:`ValueError` if color scheme not found.
     """
-    schemes = [getattr(nfoview.schemes, x) for x in nfoview.schemes.__all__]
+    schemes = [getattr(nfoview.schemes, x)
+               for x in nfoview.schemes.__all__]
 
     names = [x.name for x in schemes]
     if not name in names:
-        raise ValueError("No color scheme named %s" % repr(name))
+        raise ValueError("No color scheme named {0}"
+                         .format(repr(name)))
+
     return schemes[names.index(name)]
 
 def get_color_schemes():
     """Return a list of all color schemes in proper order."""
-    schemes = [getattr(nfoview.schemes, x) for x in nfoview.schemes.__all__]
+    schemes = [getattr(nfoview.schemes, x)
+               for x in nfoview.schemes.__all__]
 
     schemes.remove(nfoview.DefaultScheme)
     schemes.remove(nfoview.CustomScheme)
-    schemes.sort(lambda x, y: cmp(x.label, y.label))
+    schemes.sort(key=lambda x: x.label)
     schemes.insert(0, nfoview.DefaultScheme)
     schemes.append(nfoview.CustomScheme)
     return schemes
@@ -111,21 +106,61 @@ def get_font_description(fallback="monospace"):
     font_desc.set_family(",".join((family, fallback)))
     return font_desc
 
+def hex_to_rgba(string):
+    """Return a :class:`Gdk.RGBA` for hexadecimal `string`.
+
+    Raise :exc:`ValueError` if parsing `string` fails.
+    """
+    rgba = Gdk.RGBA()
+    success = rgba.parse(string)
+    if not success:
+        raise ValueError("Parsing string {0} failed"
+                         .format(repr(string)))
+
+    return rgba
+
 def is_valid_encoding(encoding):
-    """Return ``True`` if `encoding` is a valid and supported encoding."""
+    """Return ``True`` if `encoding` is a supported encoding."""
     try:
         codecs.lookup(encoding)
         return True
     except LookupError:
         return False
 
+def lookup_color(name, fallback=None):
+    """Return color from GTK+ theme.
+
+    `fallback` can be either a :class:`Gdk.RGBA` object or
+    a string that can be parsed by :func:`Gdk.RGBA.parse`.
+    Raise :exc:`TypeError` if `fallback` is of bad type.
+    Raise :exc:`ValueError` if parsing fallback fails.
+    """
+    style = Gtk.TextView().get_style_context()
+    found, rgba = style.lookup_color(name)
+    if found: return rgba
+    if isinstance(fallback, Gdk.RGBA):
+        return fallback
+    if isinstance(fallback, str):
+        return hex_to_rgba(fallback)
+    raise TypeError("Unexpected type for fallback: {0}"
+                    .format(repr(type(fallback))))
+
+def rgba_to_color(rgba):
+    """Return :class:`Gdk.Color` for :class:`Gdk.RGBA` `rgba`."""
+    return Gdk.color_parse(rgba_to_hex(rgba))[1]
+
+def rgba_to_hex(color):
+    """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
+    return "#{0:02x}{1:02x}{2:02x}".format(int(color.red   * 255),
+                                           int(color.green * 255),
+                                           int(color.blue  * 255))
+
 def show_uri(uri):
     """Open `uri` in default application."""
-    if sys.platform == "win32":
-        if uri.startswith(("http://", "https://")):
-            # Gtk.show_uri (GTK+ 2.20) fails on Windows.
-            # GError: No application is registered as handling this file
-            return webbrowser.open(uri)
+    if sys.platform == "win32" and uri.startswith(("http://", "https://")):
+        # Gtk.show_uri (GTK+ 2.20) fails on Windows.
+        # GError: No application is registered as handling this file
+        return webbrowser.open(uri)
     return Gtk.show_uri(None, uri, Gdk.CURRENT_TIME)
 
 def uri_to_path(uri):

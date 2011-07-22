@@ -1,25 +1,29 @@
-# Copyright (C) 2005-2009 Osmo Salomaa
+# Copyright (C) 2005-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
-# NFO Viewer is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# NFO Viewer is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
 #
-# NFO Viewer is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# NFO Viewer is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with
-# NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
 """Text view widget for NFO text with support for clickable hyperlinks."""
 
-from gi.repository import Gtk
 import nfoview
-from gi.repository import Pango
 import re
+
+from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import Gtk
+from gi.repository import Pango
 
 __all__ = ("TextView",)
 
@@ -37,7 +41,7 @@ class TextView(Gtk.TextView):
         self.update_colors()
 
     def _init_properties(self):
-        """Initliaze the text view widget properties."""
+        """Initliaze text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         font_desc = nfoview.util.get_font_description()
@@ -62,15 +66,15 @@ class TextView(Gtk.TextView):
         text_buffer.insert_with_tags(itr, url, tag)
         self._link_tags.append(tag)
 
-    def _insert_word(self, word, *tags):
-        """Insert `word` into the text view with `tags`."""
+    def _insert_word(self, word):
+        """Insert `word` into the text view."""
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
-        text_buffer.insert_with_tags_by_name(itr, word, *tags)
+        text_buffer.insert(itr, word)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
         """Open clicked hyperlink in web browser."""
-        if event.type != Gdk.BUTTON_RELEASE: return
+        if event.type != Gdk.EventType.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
         nfoview.util.show_uri(tag.get_data("url"))
@@ -88,18 +92,16 @@ class TextView(Gtk.TextView):
         window = self.get_window(Gtk.TextWindowType.TEXT)
         for tag in self.get_iter_at_location(x, y).get_tags():
             if tag.get_data("url") is not None:
-                window.set_cursor(Gdk.Cursor.new(Gdk.HAND2))
-                # pylint: disable=E1101
-                return self.window.get_pointer()
-        window.set_cursor(Gdk.Cursor.new(Gdk.XTERM))
-        # pylint: disable=E1101
-        self.window.get_pointer()
+                window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.HAND2))
+                return True
+        window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.XTERM))
+        return False
 
     def get_text(self):
         """Return the text in the text view."""
         text_buffer = self.get_buffer()
-        bounds = text_buffer.get_bounds()
-        return text_buffer.get_text(*bounds)
+        start, end = text_buffer.get_bounds()
+        return text_buffer.get_text(start, end, False)
 
     def set_text(self, text):
         """Set the text displayed in the text view."""
@@ -121,10 +123,12 @@ class TextView(Gtk.TextView):
                     self._insert_word(word[z:])
                 else: # Normal text.
                     self._insert_word(word)
-                if j < (len(words) - 1):
-                    self._insert_word(" ")
-            if i < (len(lines) - 1):
-                self._insert_word("\n")
+                self._insert_word(" ")
+            itr = text_buffer.get_end_iter()
+            text_buffer.backspace(itr, False, True)
+            self._insert_word("\n")
+        itr = text_buffer.get_end_iter()
+        text_buffer.backspace(itr, False, True)
         self.update_colors()
 
     def update_colors(self):
@@ -134,9 +138,10 @@ class TextView(Gtk.TextView):
         except ValueError:
             scheme = nfoview.util.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
-        self.modify_text(Gtk.StateType.NORMAL, scheme.foreground)
-        self.modify_base(Gtk.StateType.NORMAL, scheme.background)
+        self.override_color(Gtk.StateType.NORMAL, scheme.foreground)
+        self.override_background_color(Gtk.StateType.NORMAL, scheme.background)
+        convert = nfoview.util.rgba_to_color
         for tag in self._link_tags:
-            tag.props.foreground_gdk = scheme.link
+            tag.props.foreground_gdk = convert(scheme.link)
         for tag in self._visited_link_tags:
-            tag.props.foreground_gdk = scheme.visited_link
+            tag.props.foreground_gdk = convert(scheme.visited_link)

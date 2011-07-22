@@ -1,27 +1,34 @@
-# Copyright (C) 2005-2009 Osmo Salomaa
+# Copyright (C) 2005-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
-# NFO Viewer is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# NFO Viewer is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
 #
-# NFO Viewer is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# NFO Viewer is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with
-# NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+
+import nfoview
 
 from gi.repository import Gtk
-import nfoview
 
 
 class TestWindow(nfoview.TestCase):
 
+    def run_window(self):
+        self.window.show()
+        self.window.connect("delete-event", Gtk.main_quit)
+        Gtk.main()
+
     def setup_method(self, method):
-        self.window = nfoview.Window(self.new_temp_nfo_file())
+        self.window = nfoview.Window(self.new_nfo_file())
 
     def test___init____no_file(self):
         nfoview.Window()
@@ -39,8 +46,11 @@ class TestWindow(nfoview.TestCase):
         self.window._preferences_dialog.response(Gtk.ResponseType.CLOSE)
         self.window._get_action("edit_preferences").activate()
 
+    def test__on_escape_pressed(self):
+        self.window._on_escape_pressed()
+
     @nfoview.deco.monkey_patch(nfoview, "OpenDialog")
-    def test__on_open_file_activate__cancel(self):
+    def test__on_open_file_activate(self):
         nfoview.OpenDialog.run = lambda *args: Gtk.ResponseType.CANCEL
         self.window._get_action("open_file").activate()
 
@@ -63,21 +73,21 @@ class TestWindow(nfoview.TestCase):
         self.window._get_action("wrap_lines").activate()
 
     def test_open_file__blank_lines(self):
-        path = self.new_temp_nfo_file()
+        path = self.new_nfo_file()
         fobj = open(path, "a")
         fobj.write("\n\n\n")
         fobj.close()
         self.window.open_file(path)
 
     def test_open_file__even_lines(self):
-        path = self.new_temp_nfo_file()
+        path = self.new_nfo_file()
         fobj = open(path, "a")
         fobj.write("\na\n\na\n\n")
         fobj.close()
         self.window.open_file(path)
 
     def test_open_file__odd_lines(self):
-        path = self.new_temp_nfo_file()
+        path = self.new_nfo_file()
         fobj = open(path, "w")
         fobj.write("a\n\na\n\n")
         fobj.close()
@@ -88,7 +98,7 @@ class TestWindow(nfoview.TestCase):
         self.window.resize_to_text()
 
     def test_resize_to_text__long_file(self):
-        path = self.new_temp_nfo_file()
+        path = self.new_nfo_file()
         fobj = open(path, "w")
         fobj.write("aaa\n" * 100)
         fobj.close()
@@ -96,7 +106,7 @@ class TestWindow(nfoview.TestCase):
         self.window.resize_to_text()
 
     def test_resize_to_text__long_lines(self):
-        path = self.new_temp_nfo_file()
+        path = self.new_nfo_file()
         fobj = open(path, "w")
         fobj.write("aaa " * 100)
         fobj.close()

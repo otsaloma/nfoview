@@ -73,7 +73,9 @@ class Clean(clean):
                       "doc/sphinx/index.rst",
                       "locale",
                       "MANIFEST",
+                      # XXX: Add __pycache__
                       "nfoview/*.py[co]",
+                      "nfoview/test/*.py[co]",
                       "po/*~",
                       )
 

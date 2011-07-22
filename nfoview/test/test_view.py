@@ -1,23 +1,35 @@
-# Copyright (C) 2005-2009 Osmo Salomaa
+# Copyright (C) 2005-2009,2011 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
-# NFO Viewer is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# NFO Viewer is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
 #
-# NFO Viewer is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# NFO Viewer is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with
-# NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
 
+from gi.repository import Gtk
+
 
 class TestTextView(nfoview.TestCase):
+
+    def run_window(self):
+        window = Gtk.Window()
+        window.connect("delete-event", Gtk.main_quit)
+        window.set_position(Gtk.WindowPosition.CENTER)
+        window.set_default_size(500, 500)
+        window.add(self.view)
+        window.show_all()
+        Gtk.main()
 
     def setup_method(self, method):
         self.view = nfoview.TextView()
@@ -30,9 +42,9 @@ class TestTextView(nfoview.TestCase):
         assert text == "test\ntest"
 
     def test_set_text(self):
-        path = self.new_temp_nfo_file()
-        text = open(path, "r").read()
-        self.view.set_text(text)
+        self.view.set_text("test\ntest")
+        text = self.view.get_text()
+        assert text == "test\ntest"
 
     def test_update_colors(self):
         self.view.update_colors()
