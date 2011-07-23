@@ -70,6 +70,7 @@ class TextView(Gtk.TextView):
         """Insert `word` into the text view."""
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
+        # XXX: assertion `g_utf8_validate (text, len, NULL)' failed
         text_buffer.insert(itr, word)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
@@ -138,10 +139,18 @@ class TextView(Gtk.TextView):
         except ValueError:
             scheme = nfoview.util.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
-        self.override_color(Gtk.StateType.NORMAL, scheme.foreground)
-        self.override_background_color(Gtk.StateType.NORMAL, scheme.background)
-        convert = nfoview.util.rgba_to_color
+        for state in (Gtk.StateFlags.NORMAL,):
+            self.override_color(state, scheme.foreground)
+            self.override_background_color(state, scheme.background)
+        for state in (Gtk.StateFlags.SELECTED,):
+            context = Gtk.TextView().get_style_context()
+            foreground = context.get_color(state)
+            background = context.get_background_color(state)
+            self.override_color(state, foreground)
+            self.override_background_color(state, background)
         for tag in self._link_tags:
-            tag.props.foreground_gdk = convert(scheme.link)
+            color = nfoview.util.rgba_to_color(scheme.link)
+            tag.set_property("foreground_gdk", color)
         for tag in self._visited_link_tags:
-            tag.props.foreground_gdk = convert(scheme.visited_link)
+            color = nfoview.util.rgba_to_color(scheme.visited_link)
+            tag.set_property("foreground_gdk", color)
