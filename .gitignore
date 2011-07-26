@@ -1,12 +1,13 @@
-*.py[co]
-*~
-.hidden
 build/
-ChangeLog
 data/nfoview.desktop
 dist/
 doc/sphinx/_build
 doc/sphinx/api
 doc/sphinx/index.rst
 locale/
+ChangeLog
 MANIFEST
+__pycache__
+*.py[co]
+*~
+.hidden
