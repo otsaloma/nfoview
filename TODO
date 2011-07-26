@@ -6,7 +6,7 @@ NFO Viewer 1.10
      - Replace PyGTK dependency with PyGobject 2.28 or greater
      - Add 48x48 and 256x256 pixel PNG icons and remove SVG icon
      - Remaining problems
-       * Gtk.TextBuffer.set_text and UTF-8?
+       * Gtk.TextBuffer.insert_* and UTF-8?
        * Gtk.Widget.drag_dest_set doesn't work?
  [X] Update Bulgarian translation (Svetoslav Stefanov)
 
