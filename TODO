@@ -3,7 +3,7 @@ NFO Viewer 1.10
 
  [ ] Migrate to Python 3, GTK+ 3, GNOME 3 and PyGI
      * Gtk.TextBuffer.insert_* fails with non-ASCII text
-     * Gtk.Widget.drag_dest_set fails silently
+       https://bugzilla.gnome.org/show_bug.cgi?id=655649
  [X] Bump Python dependency to 3.2 or greater
  [X] Replace PyGTK dependency with PyGobject 2.28 or greater
  [X] Add 48x48 and 256x256 pixel PNG icons and remove SVG icon

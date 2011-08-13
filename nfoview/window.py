@@ -111,14 +111,11 @@ class Window(Gtk.Window):
 
     def _init_properties(self):
         """Initialize window properties."""
-        # XXX: Doesn't work.
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("nfoview")
         Gtk.Window.set_default_icon_name("nfoview")
-        self.drag_dest_set(Gtk.DestDefaults.ALL,
-                           [Gtk.TargetEntry.new("text/uri-list", 0, 0)],
-                           Gdk.DragAction.COPY)
-
+        self.drag_dest_set(Gtk.DestDefaults.ALL, None, Gdk.DragAction.COPY)
+        self.drag_dest_add_uri_targets()
         self.connect("drag-data-received",
                      self._on_drag_data_received)
 
@@ -280,7 +277,7 @@ class Window(Gtk.Window):
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         nlines = text.count("\n") + 1
-        size[1] += ((pixels_above + pixels_below) * nlines)
+        size[1] = size[1] + ((pixels_above + pixels_below) * nlines)
         # Assume 32 pixels for scrollbars, 24 for menubar height
         # and 12 pixels total for text view left and right margins.
         size[0] = max(400, size[0] + 12 + 32)
