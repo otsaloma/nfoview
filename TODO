@@ -7,6 +7,7 @@ NFO Viewer 1.10
  [X] Bump Python dependency to 3.2 or greater
  [X] Replace PyGTK dependency with PyGobject 2.28 or greater
  [X] Add 48x48 and 256x256 pixel PNG icons and remove SVG icon
+ [X] Speed up text parsing and display when opening files
  [X] Update Bulgarian translation (Svetoslav Stefanov)
 
 NFO Viewer 3000

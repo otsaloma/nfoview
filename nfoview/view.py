@@ -113,23 +113,30 @@ class TextView(Gtk.TextView):
         bounds = text_buffer.get_bounds()
         text_buffer.delete(*bounds)
         lines = text.split("\n")
+        # Scan text word-by-word for possible URLs,
+        # but insert words in larger chunks to avoid
+        # doing too many slow text view updates.
+        word_queue = []
         for i, line in enumerate(lines):
             words = line.split(" ")
             for j, word in enumerate(words):
                 match = re_url.search(word)
                 if match is not None:
                     a, z = match.span()
-                    self._insert_word(word[:a])
+                    word_queue.append(word[:a])
+                    self._insert_word("".join(word_queue))
+                    word_queue = []
                     self._insert_url(word[a:z])
-                    self._insert_word(word[z:])
+                    word_queue.append(word[z:])
                 else: # Normal text.
-                    self._insert_word(word)
-                self._insert_word(" ")
-            itr = text_buffer.get_end_iter()
-            text_buffer.backspace(itr, False, True)
-            self._insert_word("\n")
-        itr = text_buffer.get_end_iter()
-        text_buffer.backspace(itr, False, True)
+                    word_queue.append(word)
+                word_queue.append(" ")
+            word_queue.pop(-1)
+            word_queue.append("\n")
+            if len(word_queue) > 100:
+                self._insert_word("".join(word_queue))
+                word_queue = []
+        self._insert_word("".join(word_queue))
         self.update_colors()
 
     def update_colors(self):
