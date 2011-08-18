@@ -103,7 +103,7 @@ def get_font_description(fallback="monospace"):
     """Return font description from conf with `fallback` added."""
     font_desc = Pango.FontDescription(nfoview.conf.font)
     family = font_desc.get_family()
-    font_desc.set_family(",".join((family, fallback)))
+    font_desc.set_family(",".join((family, fallback, "")))
     return font_desc
 
 def hex_to_rgba(string):
