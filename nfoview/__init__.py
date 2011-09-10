@@ -15,7 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer for NFO files.
+"""
+Viewer for NFO files.
 
 :var __version__: Version number as string in format ``MAJOR.MINOR[.PATCH]``
 :var CONFIG_HOME_DIR: Path to user's local configuration directory

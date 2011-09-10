@@ -34,7 +34,8 @@ def affirm(value):
         raise nfoview.AffirmationError
 
 def connect(observer, observable, signal, *args):
-    """Connect `observable`'s signal to `observer`'s callback method.
+    """
+    Connect `observable`'s signal to `observer`'s callback method.
 
     If `observable` is a string, it should be an attribute of `observer`.
     If `observable` is not a string it should be the same as `observer`.
@@ -73,7 +74,8 @@ def detect_encoding(path):
     return "cp437"
 
 def get_color_scheme(name):
-    """Return the color scheme with given name.
+    """
+    Return the color scheme with given name.
 
     Raise :exc:`ValueError` if color scheme not found.
     """
@@ -107,7 +109,8 @@ def get_font_description(fallback="monospace"):
     return font_desc
 
 def hex_to_rgba(string):
-    """Return a :class:`Gdk.RGBA` for hexadecimal `string`.
+    """
+    Return a :class:`Gdk.RGBA` for hexadecimal `string`.
 
     Raise :exc:`ValueError` if parsing `string` fails.
     """
@@ -128,7 +131,8 @@ def is_valid_encoding(encoding):
         return False
 
 def lookup_color(name, fallback=None):
-    """Return color from GTK+ theme.
+    """
+    Return color from GTK+ theme.
 
     `fallback` can be either a :class:`Gdk.RGBA` object or
     a string that can be parsed by :func:`Gdk.RGBA.parse`.

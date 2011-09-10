@@ -26,7 +26,8 @@ __all__ = ("ConfigurationStore",)
 
 class ConfigurationStore(object):
 
-    """Reading, writing and storing configurations.
+    """
+    Reading, writing and storing configurations.
 
     :cvar path: Path to user's local configuration file
 

@@ -28,7 +28,8 @@ def _hasattr_def(obj, name):
     return hasattr(obj, name)
 
 def monkey_patch(obj, name):
-    """Decorator for functions that change `obj`'s `name` attribute.
+    """
+    Decorator for functions that change `obj`'s `name` attribute.
 
     Any changes done will be reverted after the function is run, i.e. `name`
     attribute is either restored to its original value or deleted, if it didn't

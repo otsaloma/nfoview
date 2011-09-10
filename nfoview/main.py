@@ -15,7 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with NFO Viewer. If not, see <http://www.gnu.org/licenses/>.
 
-"""Spawning, managing and killing viewer windows.
+"""
+Spawning, managing and killing viewer windows.
 
 :var windows: List of existing :class:`nfoview.Window` instances
 """

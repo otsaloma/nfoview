@@ -31,7 +31,8 @@ __all__ = ("Window",)
 
 class Window(Gtk.Window):
 
-    """Viewer window and user interface controller for NFO files.
+    """
+    Viewer window and user interface controller for NFO files.
 
     :ivar clipboard: Instance of :class:`Gtk.Clipboard` used
     :ivar path: Path to the NFO file being shown
@@ -225,7 +226,8 @@ class Window(Gtk.Window):
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def _read_file(self, path):
-        """Read and return the text of the NFO file.
+        """
+        Read and return the text of the NFO file.
 
         Discard trailing space, trailing blank lines and all odd or
         even line if they do not contain non-space characters.

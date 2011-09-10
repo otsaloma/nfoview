@@ -39,7 +39,8 @@ __all__ = ("CloseDocumentAction",
 
 class Action(Gtk.Action):
 
-    """Base class for UI manager actions.
+    """
+    Base class for UI manager actions.
 
     :ivar accelerator: Accelerator string for :func:`Gtk.accelerator_parse`
 

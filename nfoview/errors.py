@@ -29,7 +29,8 @@ class Error(Exception):
 
 class AffirmationError(Error):
 
-    """Something expected to be ``True`` was ``False``.
+    """
+    Something expected to be ``True`` was ``False``.
 
     :exc:`AffirmationError` is by nature similar to the built-in
     :exc:`AssertionError`, but without the special reliance on

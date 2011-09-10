@@ -32,7 +32,8 @@ __all__ = ("BlackOnWhiteScheme",
 
 class ColorScheme(object):
 
-    """Baseclass for color scheme definitions.
+    """
+    Baseclass for color scheme definitions.
 
     :cvar name: Name used to identify and save color scheme
     :cvar label: User-visible localized name for color scheme
