@@ -15,5 +15,5 @@ NFO Viewer 3000
 ===============
 
  * Use GtkGrid for preferences dialog instead of GtkTable
-   - Still requires better support in Glade and/or GTK+
+   - GtkGrid spacing should be fixed in GTK+ 3.1.18
  * Make hyperlinks activatable by keyboard
