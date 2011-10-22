@@ -70,7 +70,6 @@ class TextView(Gtk.TextView):
         """Insert `word` into the text view."""
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
-        # XXX: assertion `g_utf8_validate (text, len, NULL)' failed
         text_buffer.insert(itr, word)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
