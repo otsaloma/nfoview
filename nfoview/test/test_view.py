@@ -39,12 +39,14 @@ class TestTextView(nfoview.TestCase):
     def test_get_text(self):
         self.view.set_text("test\ntest")
         text = self.view.get_text()
-        assert text == "test\ntest"
+        # set_text adds a final newline.
+        assert text == "test\ntest\n"
 
     def test_set_text(self):
         self.view.set_text("test\ntest")
         text = self.view.get_text()
-        assert text == "test\ntest"
+        # set_text adds a final newline.
+        assert text == "test\ntest\n"
 
     def test_update_colors(self):
         self.view.update_colors()

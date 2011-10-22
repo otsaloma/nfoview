@@ -114,7 +114,7 @@ class TestModule(nfoview.TestCase):
     def test_get_font_description(self):
         nfoview.conf.font = "Foo"
         font_desc = nfoview.util.get_font_description()
-        assert font_desc.get_family() == "Foo,monospace"
+        assert font_desc.get_family() == "Foo,monospace,"
 
     def test_hex_to_rgba(self):
         color = nfoview.util.hex_to_rgba("#ff0000")
