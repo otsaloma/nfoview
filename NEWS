@@ -1,3 +1,13 @@
+NFO Viewer 1.10
+===============
+
+ * Migrate to Python 3, GTK+ 3, GNOME 3 and PyGI
+ * Bump Python dependency to 3.2 or greater
+ * Replace PyGTK dependency with PyGobject 3.0.0 or greater
+ * Add 48x48 and 256x256 pixel PNG icons and remove SVG icon
+ * Speed up text parsing and display when opening files
+ * Update Bulgarian translation (Svetoslav Stefanov)
+
 NFO Viewer 1.9.5
 ================
 
