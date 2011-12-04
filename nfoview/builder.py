@@ -60,7 +60,7 @@ class BuilderDialog(object):
         """Assign all names in `widgets` as attributes of `self`."""
         for name in widgets:
             widget = self._builder.get_object(name)
-            setattr(self, "_{0}".format(name), widget)
+            setattr(self, "_{}".format(name), widget)
 
     def run(self):
         """Show the dialog, run it and return response."""

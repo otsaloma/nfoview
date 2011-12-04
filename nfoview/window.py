@@ -63,7 +63,7 @@ class Window(Gtk.Window):
         for action_group in self._uim.get_action_groups():
             action = action_group.get_action(name)
             if action is not None: return action
-        raise ValueError("Action group {0} not found"
+        raise ValueError("Action group {} not found"
                          .format(repr(name)))
 
     def _get_max_view_size(self):
@@ -133,7 +133,7 @@ class Window(Gtk.Window):
         action_group = Gtk.ActionGroup("main")
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
-            callback = "_on_{0}_activate".format(action.get_name())
+            callback = "_on_{}_activate".format(action.get_name())
             if hasattr(self, callback):
                 action.connect("activate", getattr(self, callback))
             action_group.add_action_with_accel(action, action.accelerator)

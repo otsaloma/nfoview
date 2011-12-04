@@ -95,7 +95,7 @@ class ConfigurationStore(object):
             text = " = ".join((name, encode(value)))
             if value == self._fields[name][self.DEFAULT]:
                 # Comment out fields with default values.
-                text = "# {0}".format(text)
+                text = "# {}".format(text)
             fobj.write(text)
             fobj.write(os.linesep)
         fobj.close()

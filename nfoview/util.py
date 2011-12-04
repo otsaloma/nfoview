@@ -43,7 +43,7 @@ def connect(observer, observable, signal, *args):
     method_name = signal.replace("-", "_").replace("::", "_")
     if observer is not observable:
         method_name = "_".join((observable, method_name))
-    method_name = ("_on_{0}".format(method_name)).replace("__", "_")
+    method_name = ("_on_{}".format(method_name)).replace("__", "_")
     if not hasattr(observer, method_name):
         method_name = method_name[1:]
     method = getattr(observer, method_name)
@@ -84,7 +84,7 @@ def get_color_scheme(name):
 
     names = [x.name for x in schemes]
     if not name in names:
-        raise ValueError("No color scheme named {0}"
+        raise ValueError("No color scheme named {}"
                          .format(repr(name)))
 
     return schemes[names.index(name)]
@@ -117,7 +117,7 @@ def hex_to_rgba(string):
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
     if not success:
-        raise ValueError("Parsing string {0} failed"
+        raise ValueError("Parsing string {} failed"
                          .format(repr(string)))
 
     return rgba
@@ -146,7 +146,7 @@ def lookup_color(name, fallback=None):
         return fallback
     if isinstance(fallback, str):
         return hex_to_rgba(fallback)
-    raise TypeError("Unexpected type for fallback: {0}"
+    raise TypeError("Unexpected type for fallback: {}"
                     .format(repr(type(fallback))))
 
 def rgba_to_color(rgba):
@@ -155,9 +155,9 @@ def rgba_to_color(rgba):
 
 def rgba_to_hex(color):
     """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
-    return "#{0:02x}{1:02x}{2:02x}".format(int(color.red   * 255),
-                                           int(color.green * 255),
-                                           int(color.blue  * 255))
+    return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),
+                                        int(color.green * 255),
+                                        int(color.blue  * 255))
 
 def show_uri(uri):
     """Open `uri` in default application."""

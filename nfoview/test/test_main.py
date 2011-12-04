@@ -57,6 +57,6 @@ class TestModule(nfoview.TestCase):
     @nfoview.deco.monkey_patch(Gtk, "main")
     def test_main__non_files(self):
         Gtk.main = lambda *args: None
-        path = "{0}.xxx".format(self.new_nfo_file())
+        path = "{}.xxx".format(self.new_nfo_file())
         nfoview.main.main((path,))
         assert len(nfoview.main.windows) == 1

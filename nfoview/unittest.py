@@ -40,7 +40,7 @@ class TestCase(object):
             function(*args, **kwargs)
         except exception:
             return
-        raise AssertionError("{0} failed to raise {1}"
+        raise AssertionError("{} failed to raise {}"
                              .format(repr(function),
                                      repr(exception)))
 

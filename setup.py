@@ -48,13 +48,13 @@ def get_version():
 def run_command_or_exit(cmd):
     """Run command in shell and raise SystemExit if it fails."""
     if os.system(cmd) != 0:
-        log.error("command {0} failed".format(repr(cmd)))
+        log.error("command {} failed".format(repr(cmd)))
         raise SystemExit(1)
 
 def run_command_or_warn(cmd):
     """Run command in shell and warn if it fails."""
     if os.system(cmd) != 0:
-        log.warn("command {0} failed".format(repr(cmd)))
+        log.warn("command {} failed".format(repr(cmd)))
 
 
 class Clean(clean):
@@ -86,11 +86,11 @@ class Clean(clean):
         clean.run(self)
         for targets in map(glob.glob, self.__glob_targets):
             for target in filter(os.path.isdir, targets):
-                log.info("removing '{0}'".format(target))
+                log.info("removing '{}'".format(target))
                 if not self.dry_run:
                     shutil.rmtree(target)
             for target in filter(os.path.isfile, targets):
-                log.info("removing '{0}'".format(target))
+                log.info("removing '{}'".format(target))
                 if not self.dry_run:
                     os.remove(target)
 
@@ -118,10 +118,10 @@ class Documentation(command):
         os.chdir(os.path.join("doc", "sphinx"))
         if not self.dry_run:
             run_command_or_exit("make clean")
-            run_command_or_exit("python{0:d}.{1:d} autogen.py nfoview"
+            run_command_or_exit("python{:d}.{:d} autogen.py nfoview"
                                 .format(*sys.version_info[:2]))
 
-            run_command_or_exit("make {0}".format(self.format))
+            run_command_or_exit("make {}".format(self.format))
 
 
 class Install(install):
@@ -137,8 +137,8 @@ class Install(install):
         # Assume we're actually installing if --root was not given.
         if (root is not None) or (data_dir is None): return
         directory = os.path.join(data_dir, "share", "applications")
-        log.info("updating desktop database in '{0}'".format(directory))
-        run_command_or_warn('update-desktop-database "{0}"'.format(directory))
+        log.info("updating desktop database in '{}'".format(directory))
+        run_command_or_warn('update-desktop-database "{}"'.format(directory))
 
 
 class InstallData(install_data):
@@ -148,7 +148,7 @@ class InstallData(install_data):
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
-        cmd = "intltool-merge -d po {0}.in {1}".format(path, path)
+        cmd = "intltool-merge -d po {}.in {}".format(path, path)
         run_command_or_exit(cmd)
         return ("share/applications", (path,))
 
@@ -157,12 +157,12 @@ class InstallData(install_data):
         locale = os.path.basename(po_file[:-3])
         mo_dir = os.path.join("locale", locale, "LC_MESSAGES")
         if not os.path.isdir(mo_dir):
-            log.info("creating {0}".format(mo_dir))
+            log.info("creating {}".format(mo_dir))
             os.makedirs(mo_dir)
         mo_file = os.path.join(mo_dir, "nfoview.mo")
         dest_dir = os.path.join("share", mo_dir)
-        log.info("compiling '{0}'".format(mo_file))
-        cmd = "msgfmt {0} -o {1}".format(po_file, mo_file)
+        log.info("compiling '{}'".format(mo_file))
+        cmd = "msgfmt {} -o {}".format(po_file, mo_file)
         run_command_or_exit(cmd)
         return (dest_dir, (mo_file,))
 
@@ -193,11 +193,11 @@ class InstallLib(install_lib):
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r", encoding="utf_8").read()
         patt = 'DATA_DIR = get_data_directory_source()'
-        repl = "DATA_DIR = {0}".format(repr(data_dir))
+        repl = "DATA_DIR = {}".format(repr(data_dir))
         text = text.replace(patt, repl)
         assert text.count(repr(data_dir)) > 0
         patt = 'LOCALE_DIR = get_locale_directory_source()'
-        repl = "LOCALE_DIR = {0}".format(repr(locale_dir))
+        repl = "LOCALE_DIR = {}".format(repr(locale_dir))
         text = text.replace(patt, repl)
         assert text.count(repr(locale_dir)) > 0
         open(path, "w", encoding="utf_8").write(text)
@@ -226,7 +226,7 @@ class SDistGna(sdist):
         assert os.path.isfile("ChangeLog")
         assert open("ChangeLog", "r").read().strip()
         sdist.run(self)
-        basename = "nfoview-{0}".format(version)
+        basename = "nfoview-{}".format(version)
         tarballs = os.listdir(self.dist_dir)
         os.chdir(self.dist_dir)
         # Compare tarball contents with working copy.
@@ -236,23 +236,23 @@ class SDistGna(sdist):
         for member in tobj.getmembers():
             tobj.extract(member, temp_dir)
         log.info("comparing tarball (tmp) with working copy (../..)")
-        os.system('diff -qr -x ".*" -x "*.pyc" ../.. {0}'.format(test_dir))
+        os.system('diff -qr -x ".*" -x "*.pyc" ../.. {}'.format(test_dir))
         response = input("Are all files in the tarball [Y/n]? ")
         if response.lower() == "n":
             raise SystemExit("Must edit MANIFEST.in.")
         shutil.rmtree(test_dir)
         # Create extra distribution files.
         log.info("calculating md5sums")
-        run_command_or_exit("md5sum * > {0}.md5sum".format(basename))
-        log.info("creating '{0}.changes'".format(basename))
+        run_command_or_exit("md5sum * > {}.md5sum".format(basename))
+        log.info("creating '{}.changes'".format(basename))
         source = os.path.join("..", "..", "ChangeLog")
-        shutil.copyfile(source, "{0}.changes".format(basename))
-        log.info("creating '{0}.news'".format(basename))
+        shutil.copyfile(source, "{}.changes".format(basename))
+        log.info("creating '{}.news'".format(basename))
         source = os.path.join("..", "..", "NEWS")
-        shutil.copyfile(source, "{0}.news".format(basename))
+        shutil.copyfile(source, "{}.news".format(basename))
         for tarball in tarballs:
-            log.info("signing '{0}'".format(tarball))
-            run_command_or_exit("gpg --detach {0}".format(tarball))
+            log.info("signing '{}'".format(tarball))
+            run_command_or_exit("gpg --detach {}".format(tarball))
 
 
 os.chdir(os.path.dirname(__file__) or ".")

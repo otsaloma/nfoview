@@ -90,7 +90,7 @@ def document_module(names, module):
 def document_source(names, module):
     """Write RST-file with `module` source code."""
     names_out = list(names)
-    names_out[-1] = "{0}_source".format(names_out[-1])
+    names_out[-1] = "{}_source".format(names_out[-1])
     write_template("source",
                    names_out,
                    module=".".join(names),
@@ -114,7 +114,7 @@ def get_anchestors(cls):
     if not cls.__bases__:
         return []
     base = cls.__bases__[0]
-    name = "{0}.{1}".format(base.__module__, base.__name__)
+    name = "{}.{}".format(base.__module__, base.__name__)
     name = name.replace("__builtin__.", "")
     return [name] + get_anchestors(base)
 
@@ -175,7 +175,7 @@ def get_source_doc(obj):
         dotted_name = obj.__module__
     if dotted_name is None:
         return None
-    return "/{0}/{1}_source".format(conf.autogen_output_path, dotted_name)
+    return "/{}/{}_source".format(conf.autogen_output_path, dotted_name)
 
 def get_source_fname(obj):
     """Return `obj` filename relative to project root or ``None``."""
@@ -195,7 +195,7 @@ def get_source_include(obj):
     fname = get_source_fname(obj)
     if fname is None:
         return None
-    return "/{0}".format(os.path.join(conf.project_root, fname))
+    return "/{}".format(os.path.join(conf.project_root, fname))
 
 def get_source_path(obj):
     """Return absolute path to file `obj` is defined in or ``None``."""
@@ -223,7 +223,7 @@ def main(modules):
 def write_template(name_in, names_out, **kwargs):
     """Write RST-template to file based in values in `kwargs`."""
     directory = os.path.dirname(__file__)
-    basename = "{0}.rst.in".format(name_in)
+    basename = "{}.rst.in".format(name_in)
     for template_dir in conf.templates_path:
         template_dir = os.path.join(directory, template_dir)
         template_file = os.path.join(template_dir, basename)
@@ -232,9 +232,9 @@ def write_template(name_in, names_out, **kwargs):
     text = open(template_file, "r", encoding=encoding).read()
     template = jinja2.Template(text)
     for key, value in list(kwargs.items()):
-        underline = "{0}_double_underline".format(key)
+        underline = "{}_double_underline".format(key)
         kwargs[underline] = "=" * len(str(value))
-        underline = "{0}_single_underline".format(key)
+        underline = "{}_single_underline".format(key)
         kwargs[underline] = "-" * len(str(value))
     text = template.render(**kwargs)
     if not text.endswith(("\n", "\r")):
@@ -243,7 +243,7 @@ def write_template(name_in, names_out, **kwargs):
         encoding = conf.source_encoding
         return open("index.rst", "w", encoding=encoding).write(text)
     names_out = list(names_out)
-    names_out[-1] = "{0}.rst".format(names_out[-1])
+    names_out[-1] = "{}.rst".format(names_out[-1])
     path = os.path.join(directory,
                         conf.autogen_output_path,
                         ".".join(names_out))
