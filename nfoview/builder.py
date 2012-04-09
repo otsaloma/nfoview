@@ -54,8 +54,8 @@ class BuilderDialog(object):
         self._builder = Gtk.Builder()
         self._builder.set_translation_domain("nfoview")
         self._builder.add_from_file(ui_file_path)
-        self._builder.connect_signals(self)
         self._dialog = self._builder.get_object("dialog")
+        self._builder.connect_signals(self)
         self._set_attributes(self._widgets)
 
     def _set_attributes(self, widgets):
