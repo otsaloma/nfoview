@@ -93,12 +93,20 @@ class Window(Gtk.Window):
         """Initialize child containers and pack contents."""
         main_vbox = Gtk.VBox()
         menubar = self._uim.get_widget("/ui/menubar")
-        main_vbox.pack_start(menubar, False, False, 0)
+        main_vbox.pack_start(menubar, 
+                             expand=False, 
+                             fill=False, 
+                             padding=0)
+
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,) * 2))
         scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         scroller.add(self.view)
-        main_vbox.pack_start(scroller, True, True, 0)
+        main_vbox.pack_start(scroller, 
+                             expand=True, 
+                             fill=True, 
+                             padding=0)
+
         main_vbox.show_all()
         self.add(main_vbox)
 
@@ -117,7 +125,10 @@ class Window(Gtk.Window):
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("nfoview")
         Gtk.Window.set_default_icon_name("nfoview")
-        self.drag_dest_set(Gtk.DestDefaults.ALL, None, Gdk.DragAction.COPY)
+        self.drag_dest_set(flags=Gtk.DestDefaults.ALL,
+                           targets=None,
+                           actions=Gdk.DragAction.COPY)
+
         self.drag_dest_add_uri_targets()
         self.connect("drag-data-received",
                      self._on_drag_data_received)

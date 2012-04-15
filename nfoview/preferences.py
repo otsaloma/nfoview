@@ -56,7 +56,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
         store = Gtk.ListStore(object, str)
         self._scheme_combo.set_model(store)
         renderer = Gtk.CellRendererText()
-        self._scheme_combo.pack_start(renderer, True)
+        self._scheme_combo.pack_start(renderer, expand=True)
         self._scheme_combo.add_attribute(renderer, "text", 1)
         for scheme in nfoview.util.get_color_schemes():
             store.append((scheme, scheme.label))
