@@ -91,20 +91,20 @@ class Window(Gtk.Window):
 
     def _init_contents(self):
         """Initialize child containers and pack contents."""
-        main_vbox = Gtk.VBox()
+        main_vbox = Gtk.Box.new(Gtk.Orientation.VERTICAL, spacing=0)
         menubar = self._uim.get_widget("/ui/menubar")
-        main_vbox.pack_start(menubar, 
-                             expand=False, 
-                             fill=False, 
+        main_vbox.pack_start(menubar,
+                             expand=False,
+                             fill=False,
                              padding=0)
 
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,) * 2))
         scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         scroller.add(self.view)
-        main_vbox.pack_start(scroller, 
-                             expand=True, 
-                             fill=True, 
+        main_vbox.pack_start(scroller,
+                             expand=True,
+                             fill=True,
                              padding=0)
 
         main_vbox.show_all()
