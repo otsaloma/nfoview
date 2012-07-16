@@ -1,9 +1,12 @@
+NFO Viewer 1.11
+===============
+
+ * Use Gtk.Grid for preferences dialog instead of Gtk.Table
+
 NFO Viewer 3000
 ===============
 
  * https://live.gnome.org/GnomeGoals/PortToGMenu?
  * https://live.gnome.org/GnomeGoals/PortToGtkApplication?
  * https://live.gnome.org/GnomeGoals/RemoveMarkupInMessages?
- * Use GtkGrid for preferences dialog instead of GtkTable
-   - GtkGrid spacing should be fixed in GTK+ 3.1.18
  * Make hyperlinks activatable by keyboard
