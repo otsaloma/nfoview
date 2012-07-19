@@ -31,6 +31,6 @@ Running
 =======
 
 To try NFO Viewer from the source directory without installation, use
-command "bin/nfoview". Installation is, however, necessary for mimetype
-integration, application menu entry and user interface translations. For
-installing NFO Viewer, see the file "INSTALL".
+command "python3 bin/nfoview". Installation is, however, necessary for
+mimetype integration, application menu entry and user interface
+translations. For installing NFO Viewer, see the file "INSTALL".

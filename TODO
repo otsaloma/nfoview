@@ -1,7 +1,7 @@
 NFO Viewer 1.11
 ===============
 
- * Use Gtk.Grid for preferences dialog instead of Gtk.Table
+ [X] Use Gtk.Grid for preferences dialog instead of Gtk.Table
 
 NFO Viewer 3000
 ===============
