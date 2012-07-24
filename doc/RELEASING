@@ -8,7 +8,7 @@ Releasing a New Version
 
  * Do final quality checks
    $ pyflakes3 bin/nfoview setup.py nfoview
-   $ py.test3 --tb=no nfoview
+   $ py.test-3 --tb=no nfoview
 
  * Make final edits to files
    $ $EDITOR nfoview/__init__.py

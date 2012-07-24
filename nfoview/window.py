@@ -91,7 +91,7 @@ class Window(Gtk.Window):
 
     def _init_contents(self):
         """Initialize child containers and pack contents."""
-        main_vbox = Gtk.Box.new(Gtk.Orientation.VERTICAL, spacing=0)
+        main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         menubar = self._uim.get_widget("/ui/menubar")
         main_vbox.pack_start(menubar,
                              expand=False,

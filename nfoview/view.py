@@ -94,9 +94,9 @@ class TextView(Gtk.TextView):
         window = self.get_window(Gtk.TextWindowType.TEXT)
         for tag in self.get_iter_at_location(x, y).get_tags():
             if tag.get_data("url") is not None:
-                window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.HAND2))
+                window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
                 return True
-        window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.XTERM))
+        window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
         return False
 
     def get_text(self):

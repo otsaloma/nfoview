@@ -2,8 +2,6 @@ NFO Viewer 1.11
 ===============
 
  [X] Use Gtk.Grid for preferences dialog instead of Gtk.Table
- [?] Migrate from Gtk.HBox and Gtk.VBox to Gtk.Box
- [?] Fix PyGObject constructors (usually no 'new')
 
 NFO Viewer 3000
 ===============
