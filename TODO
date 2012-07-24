@@ -6,7 +6,6 @@ NFO Viewer 1.11
 NFO Viewer 3000
 ===============
 
- * https://live.gnome.org/GnomeGoals/PortToGMenu?
- * https://live.gnome.org/GnomeGoals/PortToGtkApplication?
- * https://live.gnome.org/GnomeGoals/RemoveMarkupInMessages?
+ * https://live.gnome.org/GnomeGoals/PortToGtkApplication
+ * https://live.gnome.org/GnomeGoals/PortToGMenu
  * Make hyperlinks activatable by keyboard
