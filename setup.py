@@ -256,8 +256,7 @@ class SDistGna(sdist):
             run_command_or_exit("gpg --detach {}".format(tarball))
 
 
-os.chdir(os.path.dirname(__file__) or ".")
-distutils.core.setup(
+setup_kwargs = dict(
     name="nfoview",
     version=get_version(),
     platforms=("Platform Independent",),
@@ -293,3 +292,7 @@ distutils.core.setup(
               "install_data": InstallData,
               "install_lib": InstallLib,
               "sdist_gna": SDistGna,},)
+
+if __name__ == "__main__":
+    os.chdir(os.path.dirname(__file__) or ".")
+    distutils.core.setup(**setup_kwargs)
