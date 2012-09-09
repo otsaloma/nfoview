@@ -2,6 +2,8 @@ NFO Viewer 1.11
 ===============
 
  [X] Use Gtk.Grid for preferences dialog instead of Gtk.Table
+ [X] Release source tarballs only compressed as tar.xz (instead
+     of the previous tar.gz and tar.bz2)
 
 NFO Viewer 3000
 ===============

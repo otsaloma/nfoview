@@ -148,8 +148,9 @@ class InstallData(install_data):
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
-        cmd = "intltool-merge -d po {}.in {}".format(path, path)
-        run_command_or_exit(cmd)
+        run_command_or_exit("intltool-merge -d po {}.in {}"
+                            .format(path, path))
+
         return ("share/applications", (path,))
 
     def __get_mo_file(self, po_file):
@@ -162,8 +163,9 @@ class InstallData(install_data):
         mo_file = os.path.join(mo_dir, "nfoview.mo")
         dest_dir = os.path.join("share", mo_dir)
         log.info("compiling '{}'".format(mo_file))
-        cmd = "msgfmt {} -o {}".format(po_file, mo_file)
-        run_command_or_exit(cmd)
+        run_command_or_exit("msgfmt {} -o {}"
+                            .format(po_file, mo_file))
+
         return (dest_dir, (mo_file,))
 
     def run(self):
@@ -242,6 +244,7 @@ class SDistGna(sdist):
             raise SystemExit("Must edit MANIFEST.in.")
         shutil.rmtree(test_dir)
         # Create extra distribution files.
+        os.system("xz {}.tar".format(basename))
         log.info("calculating md5sums")
         run_command_or_exit("md5sum * > {}.md5sum".format(basename))
         log.info("creating '{}.changes'".format(basename))
@@ -250,9 +253,8 @@ class SDistGna(sdist):
         log.info("creating '{}.news'".format(basename))
         source = os.path.join("..", "..", "NEWS")
         shutil.copyfile(source, "{}.news".format(basename))
-        for tarball in tarballs:
-            log.info("signing '{}'".format(tarball))
-            run_command_or_exit("gpg --detach {}".format(tarball))
+        log.info("signing '{}.tar.xz'".format(basename))
+        run_command_or_exit("gpg --detach {}.tar.xz".format(basename))
 
 
 setup_kwargs = dict(
@@ -283,14 +285,16 @@ setup_kwargs = dict(
          ("doc/nfoview.1",)),
         ("share/nfoview",
          ("data/preferences-dialog.ui",
-          "data/ui.xml")),],
+          "data/ui.xml")),
+        ],
 
     cmdclass={"clean": Clean,
               "doc": Documentation,
               "install": Install,
               "install_data": InstallData,
               "install_lib": InstallLib,
-              "sdist_gna": SDistGna,},)
+              "sdist_gna": SDistGna,
+              })
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__) or ".")
