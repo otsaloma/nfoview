@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8-unix -*-
+# -*- coding: utf-8 -*-
 
 """
 There are two relevant customizations to the standard distutils installation
