@@ -110,7 +110,7 @@ pygments_style = 'sphinx'
 private_members = False
 
 # Always include or exclude objects these names.
-include_members = ['__init__', '_']
+include_members = ['__init__']
 exclude_members = []
 exclude_members_endswith = []
 
