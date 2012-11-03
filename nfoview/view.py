@@ -63,7 +63,7 @@ class TextView(Gtk.TextView):
         tag = text_buffer.create_tag(None)
         tag.props.underline = Pango.Underline.SINGLE
         tag.connect("event", self._on_link_tag_event)
-        tag.set_data("url", url)
+        tag.nfoview_url = url
         itr = text_buffer.get_end_iter()
         text_buffer.insert_with_tags(itr, url, tag)
         self._link_tags.append(tag)
@@ -79,7 +79,7 @@ class TextView(Gtk.TextView):
         if event.type != Gdk.EventType.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
-        nfoview.util.show_uri(tag.get_data("url"))
+        nfoview.util.show_uri(tag.nfoview_url)
         if tag in self._link_tags:
             self._link_tags.remove(tag)
             self._visited_link_tags.append(tag)
@@ -93,7 +93,7 @@ class TextView(Gtk.TextView):
         x, y = self.window_to_buffer_coords(window, x, y)
         window = self.get_window(Gtk.TextWindowType.TEXT)
         for tag in self.get_iter_at_location(x, y).get_tags():
-            if tag.get_data("url") is not None:
+            if hasattr(tag, "nfoview_url"):
                 window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
                 return True
         window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
@@ -151,7 +151,9 @@ class TextView(Gtk.TextView):
             self.override_color(state, scheme.foreground)
             self.override_background_color(state, scheme.background)
         for state in (Gtk.StateFlags.SELECTED,):
-            context = Gtk.TextView().get_style_context()
+            text_view = Gtk.TextView()
+            text_view.show()
+            context = text_view.get_style_context()
             foreground = context.get_color(state)
             background = context.get_background_color(state)
             self.override_color(state, foreground)

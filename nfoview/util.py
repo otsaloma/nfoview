@@ -141,7 +141,9 @@ def lookup_color(name, fallback=None):
     Raise :exc:`TypeError` if `fallback` is of bad type.
     Raise :exc:`ValueError` if parsing fallback fails.
     """
-    style = Gtk.TextView().get_style_context()
+    text_view = Gtk.TextView()
+    text_view.show()
+    style = text_view.get_style_context()
     found, rgba = style.lookup_color(name)
     if found: return rgba
     if isinstance(fallback, Gdk.RGBA):

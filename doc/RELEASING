@@ -3,7 +3,7 @@ Releasing a New Version
 
  * Update translations
    $ tools/update-translations
-   $ gtranslator po/fi.po
+   $ emacs po/fi.po
    $ git commit -a -m "Update translations for X.Y.Z."
 
  * Do final quality checks
