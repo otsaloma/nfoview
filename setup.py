@@ -70,6 +70,7 @@ class Clean(clean):
                       "*/*/*/*.py[co]",
                       "*/*/*/*/__pycache__",
                       "*/*/*/*/*.py[co]",
+                      "build",
                       "data/nfoview.desktop",
                       "dist",
                       "doc/sphinx/api",
