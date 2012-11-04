@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview-1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-13 17:59+0200\n"
+"POT-Creation-Date: 2012-11-04 17:56+0200\n"
 "PO-Revision-Date: 2011-07-06 14:00+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
@@ -19,11 +19,59 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#: ../data/preferences-dialog.ui.h:1
+msgid "Preferences"
+msgstr "Предпочитания"
+
+#: ../data/preferences-dialog.ui.h:2
+msgid "Text"
+msgstr "Текст"
+
+#: ../data/preferences-dialog.ui.h:3
+msgid "_Font:"
+msgstr "_Шрифт:"
+
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr "_Разстояние между редовете:"
+
+#: ../data/preferences-dialog.ui.h:5
+msgid "Select Font"
+msgstr "Изберете шрифт"
+
+#: ../data/preferences-dialog.ui.h:6
+msgid "Colors"
+msgstr "Цветове"
+
+#: ../data/preferences-dialog.ui.h:7
+msgid "_Schemes:"
+msgstr "_Схеми:"
+
+#: ../data/preferences-dialog.ui.h:8
+msgid "Fo_reground:"
+msgstr "Цвят на _текста:"
+
+#: ../data/preferences-dialog.ui.h:9
+msgid "Bac_kground:"
+msgstr "Фонов цвят:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "_Link:"
+msgstr "_Връзка:"
+
+#: ../data/preferences-dialog.ui.h:11
+msgid "_Visited link:"
+msgstr "_Посетена връзка:"
+
+#: ../data/preferences-dialog.ui.h:12
+msgid "Select Color"
+msgstr "Изберете цвят"
+
 #. Translators: The application name 'NFO Viewer' has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:58
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:60
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -31,63 +79,15 @@ msgstr "NFO Viewer"
 msgid "View NFO files"
 msgstr "Преглеждане на NFO файлове"
 
-#: ../data/preferences-dialog.ui.h:1
-msgid "Bac_kground:"
-msgstr "Фонов цвят:"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "Colors"
-msgstr "Цветове"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Fo_reground:"
-msgstr "Цвят на _текста:"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "Li_ne-spacing:"
-msgstr "_Разстояние между редовете:"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "Preferences"
-msgstr "Предпочитания"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Select Color"
-msgstr "Изберете цвят"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "Select Font"
-msgstr "Изберете шрифт"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "Text"
-msgstr "Текст"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Font:"
-msgstr "_Шрифт:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "_Link:"
-msgstr "_Връзка:"
-
-#: ../data/preferences-dialog.ui.h:11
-msgid "_Schemes:"
-msgstr "_Схеми:"
-
-#: ../data/preferences-dialog.ui.h:12
-msgid "_Visited link:"
-msgstr "_Посетена връзка:"
-
-#: ../nfoview/about.py:53
+#: ../nfoview/about.py:55
 msgid "About NFO Viewer"
 msgstr "Относно NFO Viewer"
 
-#: ../nfoview/about.py:61
+#: ../nfoview/about.py:63
 msgid "Viewer for NFO files"
 msgstr "Програма за преглед на NFO файлове"
 
-#: ../nfoview/about.py:65
+#: ../nfoview/about.py:67
 msgid "NFO Viewer Website"
 msgstr "Уеб сайт на NFO Viewer"
 
@@ -97,127 +97,127 @@ msgstr "Уеб сайт на NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:74
+#: ../nfoview/about.py:76
 msgid "translator-credits"
 msgstr "Светослав Стефанов lfu.project@gmail.com"
 
-#: ../nfoview/actions.py:86
+#: ../nfoview/actions.py:88
 msgid "_Close"
 msgstr "_Затваряне"
 
-#: ../nfoview/actions.py:88
+#: ../nfoview/actions.py:90
 msgid "Close document"
 msgstr "Затваряне на документ"
 
-#: ../nfoview/actions.py:100
+#: ../nfoview/actions.py:102
 msgid "_Copy"
 msgstr "_Копиране"
 
-#: ../nfoview/actions.py:101
+#: ../nfoview/actions.py:103
 msgid "Copy"
 msgstr "Копиране"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:105
 msgid "Copy the selected text to the clipboard"
 msgstr "Копиране на избрания текст в буфера"
 
-#: ../nfoview/actions.py:121
+#: ../nfoview/actions.py:123
 msgid "_Preferences"
 msgstr "_Предпочитания"
 
-#: ../nfoview/actions.py:123
+#: ../nfoview/actions.py:125
 msgid "Edit NFO Viewer preferences"
 msgstr "Редактиране настройките на NFO Viewer"
 
-#: ../nfoview/actions.py:134
+#: ../nfoview/actions.py:136
 msgid "_Open…"
 msgstr "_Отваряне…"
 
-#: ../nfoview/actions.py:135 ../nfoview/open.py:36
+#: ../nfoview/actions.py:137 ../nfoview/open.py:38
 msgid "Open"
 msgstr "Отваряне"
 
-#: ../nfoview/actions.py:137
+#: ../nfoview/actions.py:139
 msgid "Open file"
 msgstr "Отваряне на файл"
 
-#: ../nfoview/actions.py:148
+#: ../nfoview/actions.py:150
 msgid "_Quit"
 msgstr "_Изход"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:152
 msgid "Quit NFO Viewer"
 msgstr "Изход от NFO Viewer"
 
-#: ../nfoview/actions.py:161
+#: ../nfoview/actions.py:163
 msgid "_Select All"
 msgstr "_Избиране на всичко"
 
-#: ../nfoview/actions.py:163
+#: ../nfoview/actions.py:165
 msgid "Select all text in the document"
 msgstr "Избиране на всичкия текст в документа"
 
-#: ../nfoview/actions.py:179
+#: ../nfoview/actions.py:181
 msgid "_About"
 msgstr "_Относно"
 
-#: ../nfoview/actions.py:181
+#: ../nfoview/actions.py:183
 msgid "Show information about NFO Viewer"
 msgstr "Показване на информация относно NFO Viewer"
 
-#: ../nfoview/actions.py:191
+#: ../nfoview/actions.py:193
 msgid "_Edit"
 msgstr "_Редактиране"
 
-#: ../nfoview/actions.py:201
+#: ../nfoview/actions.py:203
 msgid "_File"
 msgstr "_Файл"
 
-#: ../nfoview/actions.py:211
+#: ../nfoview/actions.py:213
 msgid "_Help"
 msgstr "_Помощ"
 
-#: ../nfoview/actions.py:222
+#: ../nfoview/actions.py:224
 msgid "_Wrap Lines"
 msgstr "_Пренасяне на редове"
 
-#: ../nfoview/actions.py:223
+#: ../nfoview/actions.py:225
 msgid "Break long lines at word borders"
 msgstr "Прекъсване на дългите редове на границите на думите"
 
-#: ../nfoview/open.py:43
+#: ../nfoview/open.py:45
 msgid "All files"
 msgstr "Всички файлове"
 
-#: ../nfoview/open.py:47
+#: ../nfoview/open.py:49
 msgid "NFO files (*.nfo)"
 msgstr "NFO файлове (*.nfo)"
 
-#: ../nfoview/schemes.py:59
+#: ../nfoview/schemes.py:61
 msgid "Black on white"
 msgstr "Черно на бяло"
 
-#: ../nfoview/schemes.py:71
+#: ../nfoview/schemes.py:73
 msgid "Custom"
 msgstr "Потребителска"
 
-#: ../nfoview/schemes.py:83
+#: ../nfoview/schemes.py:85
 msgid "Dark grey on light grey"
 msgstr "Тъмно сиво на светло сиво"
 
-#: ../nfoview/schemes.py:95
+#: ../nfoview/schemes.py:97
 msgid "System theme"
 msgstr "Системна тема"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:109
 msgid "Grey on black"
 msgstr "Сиво на черно"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:121
 msgid "Light grey on dark grey"
 msgstr "Светло сиво на тъмно сиво"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:133
 msgid "White on black"
 msgstr "Бяло на черно"
 
