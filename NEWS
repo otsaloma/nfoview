@@ -1,3 +1,13 @@
+NFO Viewer 1.11
+===============
+
+ * Fix immediate crash resulting from bad use of Gtk.StyleContext on
+   newer versions of PyGObject and/or GTK+ (#687513)
+ * Remove deprecated 'get_data' and 'set_data' calls
+ * Use Gtk.Grid for preferences dialog instead of Gtk.Table
+ * Release source tarballs only compressed as tar.xz (instead
+   of the previous tar.gz and tar.bz2)
+
 NFO Viewer 1.10
 ===============
 
