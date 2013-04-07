@@ -24,6 +24,7 @@ import sys
 from gi.repository import Gdk
 from gi.repository import Gtk
 
+
 class TestModule(nfoview.TestCase):
 
     def test_affirm__false(self):
@@ -146,6 +147,8 @@ class TestModule(nfoview.TestCase):
 
     def test_lookup_color__found(self):
         color = nfoview.util.lookup_color("base_color")
+        assert isinstance(color, Gdk.RGBA)
+        color = nfoview.util.lookup_color("theme_base_color")
         assert isinstance(color, Gdk.RGBA)
 
     def test_lookup_color__type_error(self):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005-2009,2011 Osmo Salomaa
+# Copyright (C) 2005-2009,2011,2013 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -144,8 +144,15 @@ def lookup_color(name, fallback=None):
     text_view = Gtk.TextView()
     text_view.show()
     style = text_view.get_style_context()
-    found, rgba = style.lookup_color(name)
-    if found: return rgba
+    # At some point a 'theme_' prefix was added,
+    # e.g. 'base_color' became 'theme_base_color'.
+    names = set((name,
+                 "theme_{}".format(name),
+                 name.replace("theme_", "")))
+
+    for name in names:
+        found, rgba = style.lookup_color(name)
+        if found: return rgba
     if isinstance(fallback, Gdk.RGBA):
         return fallback
     if isinstance(fallback, str):
