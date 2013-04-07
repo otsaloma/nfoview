@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005-2009,2011 Osmo Salomaa
+# Copyright (C) 2005-2009,2011,2013 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -159,8 +159,16 @@ class TextView(Gtk.TextView):
             self.override_color(state, foreground)
             self.override_background_color(state, background)
         for tag in self._link_tags:
-            color = nfoview.util.rgba_to_color(scheme.link)
-            tag.set_property("foreground_gdk", color)
+            try:
+                # 'foreground_rgba' available since GTK+ 3.2.
+                tag.props.foreground_rgba = scheme.link
+            except AttributeError:
+                color = nfoview.util.rgba_to_color(scheme.link)
+                tag.props.foreground_gdk = color
         for tag in self._visited_link_tags:
-            color = nfoview.util.rgba_to_color(scheme.visited_link)
-            tag.set_property("foreground_gdk", color)
+            try:
+                # 'foreground_rgba' available since GTK+ 3.2.
+                tag.props.foreground_rgba = scheme.visited_link
+            except AttributeError:
+                color = nfoview.util.rgba_to_color(scheme.visited_link)
+                tag.props.foreground_gdk = color
