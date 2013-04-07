@@ -77,6 +77,7 @@ class Window(Gtk.Window):
         max_lines = nfoview.conf.text_view_max_lines
         max_text = "\n".join(("x" * max_chars,) * max_lines)
         label.set_text(max_text)
+        label.show()
         return (label.get_preferred_width()[1],
                 label.get_preferred_height()[1])
 
@@ -86,6 +87,7 @@ class Window(Gtk.Window):
         font_desc = nfoview.util.get_font_description()
         label.override_font(font_desc)
         label.set_text(text)
+        label.show()
         return (label.get_preferred_width()[1],
                 label.get_preferred_height()[1])
 
