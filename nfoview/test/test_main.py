@@ -28,6 +28,9 @@ class TestModule(nfoview.TestCase):
     def setup_method(self, method):
         nfoview.main.windows = []
 
+    def test__init_gettext(self):
+        nfoview.main._init_gettext()
+
     def test__on_window_delete_event(self):
         nfoview.main.open_window(self.new_nfo_file())
         nfoview.main.open_window(self.new_nfo_file())

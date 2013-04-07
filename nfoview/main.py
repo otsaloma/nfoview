@@ -23,13 +23,35 @@ Spawning, managing and killing viewer windows.
 :var windows: List of existing :class:`nfoview.Window` instances
 """
 
+import gettext
+import locale
 import nfoview
 import os
+import sys
 
 from gi.repository import Gtk
 
 windows = []
 
+
+def _init_gettext():
+    """Initialize translation settings."""
+    try:
+        # Might fail with misconfigured locales.
+        locale.setlocale(locale.LC_ALL, "")
+    except Exception:
+        print("Failed to set default locale.", file=sys.stderr)
+        print("Please check your locale settings.", file=sys.stderr)
+        print("Falling back to the 'C' locale.", file=sys.stderr)
+        locale.setlocale(locale.LC_ALL, "C")
+    try:
+        # Not available on all platforms.
+        locale.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
+        locale.textdomain("nfoview")
+    except AttributeError:
+        pass
+    gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
+    gettext.textdomain("nfoview")
 
 def _on_window_delete_event(window, event):
     """Exit the ``GTK+`` main loop if the last window was closed."""
@@ -52,6 +74,7 @@ def open_window(path=None):
 
 def main(args):
     """Start viewer windows for files given as arguments."""
+    _init_gettext()
     for path in sorted(filter(os.path.isfile, args)):
         open_window(path)
     if not windows:

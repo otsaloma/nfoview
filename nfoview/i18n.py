@@ -21,26 +21,22 @@
 Internationalization functions.
 
 Functions defined in this module are convenience aliases for functions of the
-:mod:`gettext` module. More important than the aliases is that importing this
-module will set proper locale and domain values.
+:mod:`gettext` module with proper initialization and character encodings.
 """
 
 import gettext
-import locale
 import nfoview
 
 __all__ = ("_", "dgettext", "ngettext")
 
-locale.setlocale(locale.LC_ALL, "")
-locale.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
-locale.textdomain("nfoview")
-gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
-gettext.textdomain("nfoview")
+_translation = gettext.translation("nfoview",
+                                   nfoview.LOCALE_DIR,
+                                   fallback=True)
 
 
 def _(message):
     """Return the localized translation of `message`."""
-    return gettext.gettext(message)
+    return _translation.gettext(message)
 
 def dgettext(domain, message):
     """Return the localized translation of `message` from `domain`."""
@@ -48,4 +44,4 @@ def dgettext(domain, message):
 
 def ngettext(singular, plural, n):
     """Return the localized translation of `singular` or `plural`."""
-    return gettext.ngettext(singular, plural, n)
+    return _translation.ngettext(singular, plural, n)

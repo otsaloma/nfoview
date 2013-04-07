@@ -59,7 +59,7 @@ class AboutDialog(Gtk.AboutDialog):
         # translation at your discretion.
         self.set_program_name(_("NFO Viewer"))
         self.set_version(nfoview.__version__)
-        self.set_copyright("Copyright © 2005–2011 Osmo Salomaa")
+        self.set_copyright("Copyright © 2005–2013 Osmo Salomaa")
         self.set_comments(_("Viewer for NFO files"))
         self.set_license(_license)
         self.set_wrap_license(True)
