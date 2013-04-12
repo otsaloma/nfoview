@@ -21,6 +21,7 @@
 
 import nfoview
 
+from gi.repository import Gdk
 from gi.repository import Gtk
 
 __all__ = ("PreferencesDialog",)
@@ -50,6 +51,17 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self._init_values()
         self.set_transient_for(parent)
 
+    def _get_rgba(self, color_button):
+        """Get RGBA color from `color_button`."""
+        try:
+            return color_button.get_rgba()
+        except TypeError:
+            # Gdk.RGBA.get_rgba introspection is broken in some
+            # older version and we need to call C-style?
+            rgba = Gdk.RGBA()
+            color_button.get_rgba(rgba)
+            return rgba
+
     def _init_scheme_combo(self):
         """Initialize a model and populate the scheme combo box."""
         self._scheme_combo.clear()
@@ -75,7 +87,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_bg_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
+        rgba = self._get_rgba(color_button)
         string = nfoview.util.rgba_to_hex(rgba)
         nfoview.conf.background_color = string
         scheme = nfoview.util.get_color_scheme("custom")
@@ -85,7 +97,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_fg_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
+        rgba = self._get_rgba(color_button)
         string = nfoview.util.rgba_to_hex(rgba)
         nfoview.conf.foreground_color = string
         scheme = nfoview.util.get_color_scheme("custom")
@@ -109,7 +121,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_link_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
+        rgba = self._get_rgba(color_button)
         string = nfoview.util.rgba_to_hex(rgba)
         nfoview.conf.link_color = string
         scheme = nfoview.util.get_color_scheme("custom")
@@ -130,7 +142,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_vlink_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
+        rgba = self._get_rgba(color_button)
         string = nfoview.util.rgba_to_hex(rgba)
         nfoview.conf.visited_link_color = string
         scheme = nfoview.util.get_color_scheme("custom")
