@@ -57,7 +57,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
             return color_button.get_rgba()
         except TypeError:
             # Gtk.ColorButton.get_rgba introspection is broken
-            # in some older version and we need to call C-style?
+            # in some older version and we need to call C-style.
             rgba = Gdk.RGBA()
             color_button.get_rgba(rgba)
             return rgba

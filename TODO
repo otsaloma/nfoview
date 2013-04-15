@@ -1,9 +1,3 @@
-NFO Viewer 1.12.1
-=================
-
- [X] Fix error setting colors in the preferences dialog:
-     TypeError: get_rgba() takes exactly 2 arguments (1 given)
-
 NFO Viewer 3000
 ===============
 
