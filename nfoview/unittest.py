@@ -71,3 +71,7 @@ class TestCase(object):
     def teardown_method(self, method):
         """Remove state set for executing tests in `method`."""
         pass
+
+    def test___init__(self):
+        """Make sure that :meth:`setup_method` is always run."""
+        pass

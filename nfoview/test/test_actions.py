@@ -53,6 +53,12 @@ class TestEditPreferencesAction(_TestAction):
         self.action = nfoview.actions.EditPreferencesAction()
 
 
+class TestExportAsImageFileAction(_TestAction):
+
+    def setup_method(self, method):
+        self.action = nfoview.actions.ExportAsImageFileAction()
+
+
 class TestOpenFileAction(_TestAction):
 
     def setup_method(self, method):

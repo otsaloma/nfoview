@@ -195,6 +195,31 @@ class Window(Gtk.Window):
         """Delete the window to close the document."""
         self.emit("delete-event", Gdk.Event(Gdk.EventType.DELETE))
 
+    def _on_export_as_image_activate(self, *args):
+        """Export document as an image file."""
+        dialog = nfoview.ExportImageDialog(self)
+        directory = os.path.dirname(self.path)
+        dialog.set_current_folder(directory)
+        basename = os.path.basename(self.path)
+        dialog.set_current_name("{}.png".format(basename))
+        response = dialog.run()
+        path = dialog.get_filename()
+        dialog.destroy()
+        if response != Gtk.ResponseType.OK: return
+        if not path: return
+        view = nfoview.TextView()
+        view.set_text(self.view.get_text())
+        window = Gtk.OffscreenWindow()
+        window.nfoview_path = path
+        window.add(view)
+        def on_damage_event(window, *args):
+            pixbuf = window.get_pixbuf()
+            pixbuf.savev(window.nfoview_path, "png", [], [])
+        window.connect("damage-event", on_damage_event)
+        window.show_all()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
+
     def _on_open_file_activate(self, *args):
         """Show the open file dialog and open the chosen file."""
         dialog = nfoview.OpenDialog(self)

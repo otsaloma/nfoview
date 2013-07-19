@@ -2,6 +2,7 @@
   <menubar name="menubar">
     <menu name="file" action="show_file_menu">
       <menuitem name="open" action="open_file"/>
+      <menuitem name="export_as_image" action="export_as_image"/>
       <menuitem name="close" action="close_document"/>
       <menuitem name="quit" action="quit"/>
     </menu>
