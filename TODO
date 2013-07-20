@@ -3,11 +3,13 @@ NFO Viewer 1.13
 
  [X] Add action to export document as an image file (#622078)
      - Ensure png extension?
+ [X] Apply GNOME Goal: Add keywords to application desktop files
+     - https://wiki.gnome.org/GnomeGoals/DesktopFileKeywords
 
 NFO Viewer 3000
 ===============
 
- * https://live.gnome.org/GnomeGoals/DesktopFileKeywords
- * https://live.gnome.org/GnomeGoals/PortToGMenu
- * https://live.gnome.org/GnomeGoals/PortToGtkApplication
- * Make hyperlinks activatable by keyboard
+ * https://wiki.gnome.org/GnomeGoals/UnicodeUsage
+ * https://wiki.gnome.org/GnomeGoals/PortToGMenu
+ * https://wiki.gnome.org/GnomeGoals/PortToGtkApplication
+ * Make hyperlinks activatable by keyboard?
