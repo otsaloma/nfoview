@@ -29,6 +29,3 @@ class TestAboutDialog(nfoview.TestCase):
 
     def setup_method(self, method):
         self.dialog = nfoview.AboutDialog(Gtk.Window())
-
-    def test___init__(self):
-        pass

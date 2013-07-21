@@ -1,38 +1,32 @@
 @import url("basic.css");
 
-a
-{
+a {
   color: {{ theme_linkcolor }};
   text-decoration: none;
 }
 
-a.headerlink
-{
+a.headerlink {
   color: {{ theme_headlinkcolor }};
   font-size: 0.8em;
   padding: 0 4px 0 4px;
   text-decoration: none;
 }
 
-a.headerlink:hover
-{
+a.headerlink:hover {
   background-color: {{ theme_headlinkcolor }};
   color: white;
 }
 
-a:hover
-{
+a:hover {
   text-decoration: underline;
 }
 
-a:visited
-{
+a:visited {
   color: {{ theme_visitedlinkcolor }};
   text-decoration: none;
 }
 
-body
-{
+body {
   background-color: {{ theme_footerbgcolor }};
   color: {{ theme_textcolor }};
   font-family: {{ theme_bodyfont }};
@@ -41,20 +35,17 @@ body
   padding: 0;
 }
 
-dd
-{
+dd {
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 3px;
 }
 
-div.admonition p.admonition-title + p
-{
+div.admonition p.admonition-title + p {
   display: inline;
 }
 
-div.body
-{
+div.body {
   background-color: {{ theme_bgcolor }};
   color: {{ theme_textcolor }};
   padding: 0 20px 30px 20px;
@@ -65,8 +56,7 @@ div.body h2,
 div.body h3,
 div.body h4,
 div.body h5,
-div.body h6
-{
+div.body h6 {
   background-color: {{ theme_headbgcolor }};
   border-bottom: 1px solid #888888;
   color: {{ theme_headtextcolor }};
@@ -76,52 +66,43 @@ div.body h6
   padding: 3px 0 3px 10px;
 }
 
-div.body h1
-{
+div.body h1 {
   font-size: 200%;
   margin-top: 0;
 }
 
-div.body h2
-{
+div.body h2 {
   font-size: 160%;
 }
 
-div.body h3
-{
+div.body h3 {
   font-size: 140%;
 }
 
-div.body h4
-{
+div.body h4 {
   font-size: 120%;
 }
 
-div.body h5
-{
+div.body h5 {
   font-size: 110%;
 }
 
-div.body h6
-{
+div.body h6 {
   font-size: 100%;
 }
 
-div.body p, div.body dd, div.body li
-{
+div.body p, div.body dd, div.body li {
   line-height: 160%;
   max-width: 50em;
   text-align: left;
 }
 
-div.body p, div.body dd, div.body li
-{
+div.body p, div.body dd, div.body li {
   line-height: 160%;
   text-align: left;
 }
 
-div.bodywrapper
-{
+div.bodywrapper {
   {%- if theme_rightsidebar|tobool %}
   margin: 0 230px 0 0;
   {%- else %}
@@ -129,19 +110,16 @@ div.bodywrapper
   {%- endif %}
 }
 
-div.document
-{
+div.document {
   background: {{ theme_bgcolor }} url("sidebar.png") repeat-y;
 }
 
-div.documentwrapper
-{
+div.documentwrapper {
   float: left;
   width: 100%;
 }
 
-div.footer
-{
+div.footer {
   color: {{ theme_footertextcolor }};
   font-size: {{ theme_footerfontsize }};
   padding: 9px 0 9px 0;
@@ -149,43 +127,36 @@ div.footer
   width: 100%;
 }
 
-div.footer a
-{
+div.footer a {
   color: {{ theme_footertextcolor }};
   text-decoration: underline;
 }
 
-div.highlight
-{
+div.highlight {
   background-color: {{ theme_bgcolor }};
 }
 
-div.note
-{
+div.note {
   background-color: #eeeeff;
   border: 1px solid #aaaaee;
 }
 
-div.related
-{
+div.related {
   background-color: {{ theme_relbarbgcolor }};
   color: {{ theme_relbartextcolor }};
   line-height: 30px;
 }
 
-div.related a
-{
+div.related a {
   color: {{ theme_relbarlinkcolor }};
 }
 
-div.seealso
-{
+div.seealso {
   background-color: #ffffcc;
   border: 1px solid #cccc88;
 }
 
-div.sphinxsidebar
-{
+div.sphinxsidebar {
   font-size: {{ theme_sidebarfontsize }};
   line-height: 180%;
   {%- if theme_stickysidebar|tobool %}
@@ -203,13 +174,11 @@ div.sphinxsidebar
   {%- endif %}
 }
 
-div.sphinxsidebar a
-{
+div.sphinxsidebar a {
   color: {{ theme_sidebarlinkcolor }};
 }
 
-div.sphinxsidebar h3
-{
+div.sphinxsidebar h3 {
   color: {{ theme_sidebartextcolor }};
   font-family: {{ theme_headfont }};
   font-size: 1.4em;
@@ -218,13 +187,11 @@ div.sphinxsidebar h3
   padding: 0;
 }
 
-div.sphinxsidebar h3 a
-{
+div.sphinxsidebar h3 a {
   color: {{ theme_sidebartextcolor }};
 }
 
-div.sphinxsidebar h4
-{
+div.sphinxsidebar h4 {
   color: {{ theme_sidebartextcolor }};
   font-family: {{ theme_headfont }};
   font-size: 1.3em;
@@ -233,63 +200,52 @@ div.sphinxsidebar h4
   padding: 0;
 }
 
-div.sphinxsidebar input
-{
+div.sphinxsidebar input {
   border: 1px solid {{ theme_sidebarlinkcolor }};
   font-family: sans-serif;
   font-size: 1em;
 }
 
-div.sphinxsidebar p
-{
+div.sphinxsidebar p {
   color: {{ theme_sidebartextcolor }};
 }
 
-div.sphinxsidebar p.topless
-{
+div.sphinxsidebar p.topless {
   margin: 5px 10px 10px 10px;
 }
 
-div.sphinxsidebar ul
-{
+div.sphinxsidebar ul {
   color: {{ theme_sidebartextcolor }};
   margin: 10px;
   padding: 0;
 }
 
-div.topic
-{
+div.topic {
   background-color: #eeeeee;
 }
 
-div.warning
-{
+div.warning {
   background-color: #ffeeee;
   border: 1px solid #eeaaaa;
 }
 
-dt:target
-{
+dt:target {
   background-color: #fff5aa;
 }
 
-ol, ul
-{
+ol, ul {
   padding-left: 20px;
 }
 
-p.admonition-title
-{
+p.admonition-title {
   display: inline;
 }
 
-p.admonition-title:after
-{
+p.admonition-title:after {
   content: ":";
 }
 
-pre
-{
+pre {
   background-color: {{ theme_codebgcolor }};
   border: 1px solid #cccccc;
   color: {{ theme_codetextcolor }};
@@ -299,19 +255,16 @@ pre
   padding: 1em;
 }
 
-table.highlighttable
-{
+table.highlighttable {
   margin-right: 2em;
 }
 
-table.highlighttable pre
-{
+table.highlighttable pre {
   background-color: {{ theme_bgcolor }};
   border: none;
 }
 
-tt
-{
+tt {
   background-color: {{ theme_codebgcolor }};
   font-size: 1em;
   padding: 0 1px 0 1px;

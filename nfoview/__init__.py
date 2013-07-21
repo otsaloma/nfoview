@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2008-2009 Osmo Salomaa
+# Copyright (C) 2008-2009,2013 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
@@ -29,7 +29,15 @@ Viewer for NFO files.
 
 __version__ = "1.12.1"
 
+import os
+
 from nfoview.paths import *
+
+from gi.repository import Gtk
+icon_theme = Gtk.IconTheme.get_default()
+path = os.path.join(DATA_DIR, "icons")
+icon_theme.append_search_path(os.path.abspath(path))
+
 from nfoview import deco
 from nfoview import i18n
 from nfoview import util
