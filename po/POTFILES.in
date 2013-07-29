@@ -2,6 +2,7 @@
 data/nfoview.desktop.in
 nfoview/about.py
 nfoview/actions.py
+nfoview/export.py
 nfoview/main.py
 nfoview/open.py
 nfoview/schemes.py

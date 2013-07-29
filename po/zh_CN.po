@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-04 17:56+0200\n"
+"POT-Creation-Date: 2013-07-29 03:34+0300\n"
 "PO-Revision-Date: 2009-06-10 16:50+0800\n"
 "Last-Translator: Jonathan Ye <hyqianli@gmail.com>\n"
 "Language-Team: Simplified Chinese\n"
@@ -78,6 +78,11 @@ msgstr "NFO Viewer"
 msgid "View NFO files"
 msgstr "浏览 NFO 文件"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/nfoview.desktop.in.h:4
+msgid "information;"
+msgstr ""
+
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
 msgstr "关于 NFO Viewer"
@@ -100,88 +105,100 @@ msgstr "NFO Viewer 网站"
 msgid "translator-credits"
 msgstr "Jonathan Ye <hyqianli@gmail.com>"
 
-#: ../nfoview/actions.py:88
+#: ../nfoview/actions.py:89
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../nfoview/actions.py:90
+#: ../nfoview/actions.py:91
 msgid "Close document"
 msgstr "关闭当前文件"
 
-#: ../nfoview/actions.py:102
+#: ../nfoview/actions.py:103
 msgid "_Copy"
 msgstr "复制(_C)"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:104
 msgid "Copy"
 msgstr "复制"
 
-#: ../nfoview/actions.py:105
+#: ../nfoview/actions.py:106
 msgid "Copy the selected text to the clipboard"
 msgstr "将选中的文本复制到剪贴板"
 
-#: ../nfoview/actions.py:123
+#: ../nfoview/actions.py:124
 msgid "_Preferences"
 msgstr "设置(_P)"
 
-#: ../nfoview/actions.py:125
+#: ../nfoview/actions.py:126
 msgid "Edit NFO Viewer preferences"
 msgstr "更改本程序设置参数"
 
 #: ../nfoview/actions.py:136
+msgid "_Export Image…"
+msgstr ""
+
+#: ../nfoview/actions.py:137
+msgid "Export document as an image file"
+msgstr ""
+
+#: ../nfoview/actions.py:155
 msgid "_Open…"
 msgstr "打开(_O)…"
 
-#: ../nfoview/actions.py:137 ../nfoview/open.py:38
+#: ../nfoview/actions.py:156 ../nfoview/open.py:38
 msgid "Open"
 msgstr "打开"
 
-#: ../nfoview/actions.py:139
+#: ../nfoview/actions.py:158
 msgid "Open file"
 msgstr "打开文件"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:169
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../nfoview/actions.py:152
+#: ../nfoview/actions.py:171
 msgid "Quit NFO Viewer"
 msgstr "退出 NFO Viewer"
 
-#: ../nfoview/actions.py:163
+#: ../nfoview/actions.py:182
 msgid "_Select All"
 msgstr "全部选中(_S)"
 
-#: ../nfoview/actions.py:165
+#: ../nfoview/actions.py:184
 msgid "Select all text in the document"
 msgstr "选中文档中的所有文本"
 
-#: ../nfoview/actions.py:181
+#: ../nfoview/actions.py:200
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../nfoview/actions.py:183
+#: ../nfoview/actions.py:202
 msgid "Show information about NFO Viewer"
 msgstr "关于本程序"
 
-#: ../nfoview/actions.py:193
+#: ../nfoview/actions.py:212
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../nfoview/actions.py:203
+#: ../nfoview/actions.py:222
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../nfoview/actions.py:213
+#: ../nfoview/actions.py:232
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../nfoview/actions.py:224
+#: ../nfoview/actions.py:243
 msgid "_Wrap Lines"
 msgstr ""
 
-#: ../nfoview/actions.py:225
+#: ../nfoview/actions.py:244
 msgid "Break long lines at word borders"
+msgstr ""
+
+#: ../nfoview/export.py:38
+msgid "Export Image"
 msgstr ""
 
 #: ../nfoview/open.py:45

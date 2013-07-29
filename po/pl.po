@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-04 17:56+0200\n"
+"POT-Creation-Date: 2013-07-29 03:34+0300\n"
 "PO-Revision-Date: 2010-06-27 18:47+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
@@ -73,6 +73,11 @@ msgstr "Przeglądarka NFO"
 msgid "View NFO files"
 msgstr "Wyświetlanie plików NFO"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/nfoview.desktop.in.h:4
+msgid "information;"
+msgstr ""
+
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
 msgstr "O przeglądarce NFO"
@@ -95,89 +100,101 @@ msgstr "Strona WW przeglądarki plików NFO"
 msgid "translator-credits"
 msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009"
 
-#: ../nfoview/actions.py:88
+#: ../nfoview/actions.py:89
 msgid "_Close"
 msgstr "Za_mknij"
 
-#: ../nfoview/actions.py:90
+#: ../nfoview/actions.py:91
 msgid "Close document"
 msgstr "Zamyka dokument"
 
-#: ../nfoview/actions.py:102
+#: ../nfoview/actions.py:103
 msgid "_Copy"
 msgstr "S_kopiuj"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:104
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: ../nfoview/actions.py:105
+#: ../nfoview/actions.py:106
 msgid "Copy the selected text to the clipboard"
 msgstr "Kopiuje zaznaczony tekst do schowka"
 
-#: ../nfoview/actions.py:123
+#: ../nfoview/actions.py:124
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: ../nfoview/actions.py:125
+#: ../nfoview/actions.py:126
 msgid "Edit NFO Viewer preferences"
 msgstr "Modyfikuje preferencje przeglądarki plików NFO"
 
 #: ../nfoview/actions.py:136
+msgid "_Export Image…"
+msgstr ""
+
+#: ../nfoview/actions.py:137
+msgid "Export document as an image file"
+msgstr ""
+
+#: ../nfoview/actions.py:155
 msgid "_Open…"
 msgstr "_Otwórz…"
 
-#: ../nfoview/actions.py:137 ../nfoview/open.py:38
+#: ../nfoview/actions.py:156 ../nfoview/open.py:38
 msgid "Open"
 msgstr "Otwórz"
 
-#: ../nfoview/actions.py:139
+#: ../nfoview/actions.py:158
 msgid "Open file"
 msgstr "Otwiera plik"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:169
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: ../nfoview/actions.py:152
+#: ../nfoview/actions.py:171
 msgid "Quit NFO Viewer"
 msgstr "Kończy działanie przeglądarki plików NFO"
 
-#: ../nfoview/actions.py:163
+#: ../nfoview/actions.py:182
 msgid "_Select All"
 msgstr "Z_aznacz wszystko"
 
-#: ../nfoview/actions.py:165
+#: ../nfoview/actions.py:184
 msgid "Select all text in the document"
 msgstr "Zaznacza cały tekst dokumentu"
 
-#: ../nfoview/actions.py:181
+#: ../nfoview/actions.py:200
 msgid "_About"
 msgstr "_O programie"
 
-#: ../nfoview/actions.py:183
+#: ../nfoview/actions.py:202
 msgid "Show information about NFO Viewer"
 msgstr "Wyświetla informacje o przeglądarce plików NFO"
 
-#: ../nfoview/actions.py:193
+#: ../nfoview/actions.py:212
 msgid "_Edit"
 msgstr "_Edycja"
 
-#: ../nfoview/actions.py:203
+#: ../nfoview/actions.py:222
 msgid "_File"
 msgstr "_Plik"
 
-#: ../nfoview/actions.py:213
+#: ../nfoview/actions.py:232
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../nfoview/actions.py:224
+#: ../nfoview/actions.py:243
 msgid "_Wrap Lines"
 msgstr "Za_wijanie wierszy"
 
-#: ../nfoview/actions.py:225
+#: ../nfoview/actions.py:244
 msgid "Break long lines at word borders"
 msgstr "Rozdziela długie wiersze na granicach wyrazów"
+
+#: ../nfoview/export.py:38
+msgid "Export Image"
+msgstr ""
 
 #: ../nfoview/open.py:45
 msgid "All files"

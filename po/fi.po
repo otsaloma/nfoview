@@ -1,14 +1,14 @@
 # Finnish translations for nfoview package.
-# Copyright (C) 2008-2010 Osmo Salomaa
+# Copyright (C) 2008-2013 Osmo Salomaa
 # This file is distributed under the same license as the nfoview package.
-# Osmo Salomaa <otsaloma@iki.fi>, 2008-2010.
+# Osmo Salomaa <otsaloma@iki.fi>, 2008-2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nfoview 1.9.2\n"
+"Project-Id-Version: nfoview 1.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-04 17:56+0200\n"
-"PO-Revision-Date: 2010-03-21 18:50+0200\n"
+"POT-Creation-Date: 2013-07-29 03:29+0300\n"
+"PO-Revision-Date: 2013-07-29 03:32+0300\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Finnish\n"
 "Language: Finnish\n"
@@ -77,6 +77,11 @@ msgstr "NFO-katselin"
 msgid "View NFO files"
 msgstr "Katsele NFO tiedostoja"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/nfoview.desktop.in.h:4
+msgid "information;"
+msgstr "tietoja;informaatio;"
+
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
 msgstr "Tietoja NFO-katselimesta"
@@ -99,89 +104,101 @@ msgstr "NFO-katselimen www-sivut"
 msgid "translator-credits"
 msgstr "Osmo Salomaa <otsaloma@iki.fi>"
 
-#: ../nfoview/actions.py:88
+#: ../nfoview/actions.py:89
 msgid "_Close"
 msgstr "_Sulje"
 
-#: ../nfoview/actions.py:90
+#: ../nfoview/actions.py:91
 msgid "Close document"
 msgstr "Sulje asiakirja"
 
-#: ../nfoview/actions.py:102
+#: ../nfoview/actions.py:103
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:104
 msgid "Copy"
 msgstr "Kopioi"
 
-#: ../nfoview/actions.py:105
+#: ../nfoview/actions.py:106
 msgid "Copy the selected text to the clipboard"
 msgstr "Kopioi valittu teksti leikepöydälle"
 
-#: ../nfoview/actions.py:123
+#: ../nfoview/actions.py:124
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: ../nfoview/actions.py:125
+#: ../nfoview/actions.py:126
 msgid "Edit NFO Viewer preferences"
 msgstr "Muokkaa NFO-katselimen asetuksia"
 
 #: ../nfoview/actions.py:136
+msgid "_Export Image…"
+msgstr "_Vie kuva…"
+
+#: ../nfoview/actions.py:137
+msgid "Export document as an image file"
+msgstr "Vie asiakirja kuvatiedoston muodossa"
+
+#: ../nfoview/actions.py:155
 msgid "_Open…"
 msgstr "_Avaa…"
 
-#: ../nfoview/actions.py:137 ../nfoview/open.py:38
+#: ../nfoview/actions.py:156 ../nfoview/open.py:38
 msgid "Open"
 msgstr "Avaa"
 
-#: ../nfoview/actions.py:139
+#: ../nfoview/actions.py:158
 msgid "Open file"
 msgstr "Avaa tiedosto"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:169
 msgid "_Quit"
 msgstr "_Lopeta"
 
-#: ../nfoview/actions.py:152
+#: ../nfoview/actions.py:171
 msgid "Quit NFO Viewer"
 msgstr "Lopeta NFO-katselin"
 
-#: ../nfoview/actions.py:163
+#: ../nfoview/actions.py:182
 msgid "_Select All"
 msgstr "_Valitse kaikki"
 
-#: ../nfoview/actions.py:165
+#: ../nfoview/actions.py:184
 msgid "Select all text in the document"
 msgstr "Valitse kaikki teksti asiakirjassa"
 
-#: ../nfoview/actions.py:181
+#: ../nfoview/actions.py:200
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../nfoview/actions.py:183
+#: ../nfoview/actions.py:202
 msgid "Show information about NFO Viewer"
 msgstr "Näytä tietoja NFO-katselimesta"
 
-#: ../nfoview/actions.py:193
+#: ../nfoview/actions.py:212
 msgid "_Edit"
 msgstr "_Muokkaa"
 
-#: ../nfoview/actions.py:203
+#: ../nfoview/actions.py:222
 msgid "_File"
 msgstr "_Tiedosto"
 
-#: ../nfoview/actions.py:213
+#: ../nfoview/actions.py:232
 msgid "_Help"
 msgstr "O_hje"
 
-#: ../nfoview/actions.py:224
+#: ../nfoview/actions.py:243
 msgid "_Wrap Lines"
 msgstr "_Rivitä"
 
-#: ../nfoview/actions.py:225
+#: ../nfoview/actions.py:244
 msgid "Break long lines at word borders"
 msgstr "Katkaise pitkät rivit sanojen välistä"
+
+#: ../nfoview/export.py:38
+msgid "Export Image"
+msgstr "Vie kuva"
 
 #: ../nfoview/open.py:45
 msgid "All files"

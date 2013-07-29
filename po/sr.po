@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-04 17:56+0200\n"
+"POT-Creation-Date: 2013-07-29 03:34+0300\n"
 "PO-Revision-Date: 2010-12-08 03:41+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian <None>\n"
@@ -78,6 +78,11 @@ msgstr "НФО Прегледач"
 msgid "View NFO files"
 msgstr "Прегледај НФО датотеке"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/nfoview.desktop.in.h:4
+msgid "information;"
+msgstr ""
+
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
 msgstr "О програму"
@@ -100,89 +105,101 @@ msgstr "Сајт НФО прегледача"
 msgid "translator-credits"
 msgstr "Goran Velemirov <psickloop@gmail.com>, 2010"
 
-#: ../nfoview/actions.py:88
+#: ../nfoview/actions.py:89
 msgid "_Close"
 msgstr "_Затвори"
 
-#: ../nfoview/actions.py:90
+#: ../nfoview/actions.py:91
 msgid "Close document"
 msgstr "Затвори датотеку"
 
-#: ../nfoview/actions.py:102
+#: ../nfoview/actions.py:103
 msgid "_Copy"
 msgstr "_Умножи"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:104
 msgid "Copy"
 msgstr "Умножи"
 
-#: ../nfoview/actions.py:105
+#: ../nfoview/actions.py:106
 msgid "Copy the selected text to the clipboard"
 msgstr "Умножи одабран текст у меморију"
 
-#: ../nfoview/actions.py:123
+#: ../nfoview/actions.py:124
 msgid "_Preferences"
 msgstr "_Подешавања"
 
-#: ../nfoview/actions.py:125
+#: ../nfoview/actions.py:126
 msgid "Edit NFO Viewer preferences"
 msgstr "Измени подешавања програма"
 
 #: ../nfoview/actions.py:136
+msgid "_Export Image…"
+msgstr ""
+
+#: ../nfoview/actions.py:137
+msgid "Export document as an image file"
+msgstr ""
+
+#: ../nfoview/actions.py:155
 msgid "_Open…"
 msgstr "_Отвори…"
 
-#: ../nfoview/actions.py:137 ../nfoview/open.py:38
+#: ../nfoview/actions.py:156 ../nfoview/open.py:38
 msgid "Open"
 msgstr "Отвори"
 
-#: ../nfoview/actions.py:139
+#: ../nfoview/actions.py:158
 msgid "Open file"
 msgstr "Отвори датотеку"
 
-#: ../nfoview/actions.py:150
+#: ../nfoview/actions.py:169
 msgid "_Quit"
 msgstr "_Изађи"
 
-#: ../nfoview/actions.py:152
+#: ../nfoview/actions.py:171
 msgid "Quit NFO Viewer"
 msgstr "Изађи из програма"
 
-#: ../nfoview/actions.py:163
+#: ../nfoview/actions.py:182
 msgid "_Select All"
 msgstr "Одабери _све"
 
-#: ../nfoview/actions.py:165
+#: ../nfoview/actions.py:184
 msgid "Select all text in the document"
 msgstr "Одабери сав текст датотеке"
 
-#: ../nfoview/actions.py:181
+#: ../nfoview/actions.py:200
 msgid "_About"
 msgstr "_О програму"
 
-#: ../nfoview/actions.py:183
+#: ../nfoview/actions.py:202
 msgid "Show information about NFO Viewer"
 msgstr "Прикажи информације о програму"
 
-#: ../nfoview/actions.py:193
+#: ../nfoview/actions.py:212
 msgid "_Edit"
 msgstr "_Уреди"
 
-#: ../nfoview/actions.py:203
+#: ../nfoview/actions.py:222
 msgid "_File"
 msgstr "_Датотека"
 
-#: ../nfoview/actions.py:213
+#: ../nfoview/actions.py:232
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../nfoview/actions.py:224
+#: ../nfoview/actions.py:243
 msgid "_Wrap Lines"
 msgstr "О_бмотај линије"
 
-#: ../nfoview/actions.py:225
+#: ../nfoview/actions.py:244
 msgid "Break long lines at word borders"
 msgstr "Преломи дугачке линије на границама слова"
+
+#: ../nfoview/export.py:38
+msgid "Export Image"
+msgstr ""
 
 #: ../nfoview/open.py:45
 msgid "All files"
