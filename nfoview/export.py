@@ -35,7 +35,7 @@ class ExportImageDialog(Gtk.FileChooserDialog):
     def __init__(self, parent):
         """Initialize an :class:`ExportImageDialog` instance."""
         GObject.GObject.__init__(self)
-        self.set_title(_("Export As Image"))
+        self.set_title(_("Export Image"))
         self.set_transient_for(parent)
         self.set_action(Gtk.FileChooserAction.SAVE)
         self.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)

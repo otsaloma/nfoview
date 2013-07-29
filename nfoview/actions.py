@@ -133,12 +133,13 @@ class ExportAsImageFileAction(Action):
     def __init__(self):
         """Initialize an :class:`ExportAsImageFileAction` instance."""
         Action.__init__(self, "export_as_image")
-        self.props.label = _("_Export As Image…")
+        self.props.label = _("_Export Image…")
         self.props.tooltip = _("Export document as an image file")
         self.accelerator = "<Control>E"
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
+        nfoview.util.affirm(window.path is not None)
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.props.sensitive)
 

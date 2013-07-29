@@ -17,7 +17,7 @@ greater. Terminus font [3] is recommended and used by default. For
 dependencies required only during installation, see the file "INSTALL".
 
  [1] http://www.python.org/
- [2] http://live.gnome.org/PyGObject/
+ [2] http://wiki.gnome.org/PyGObject/
  [3] http://terminus-font.sourceforge.net/
 
 Terminus font is used by default because it draws drawing characters
