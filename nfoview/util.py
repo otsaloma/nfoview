@@ -135,13 +135,11 @@ def is_valid_encoding(encoding):
 
 def lookup_color(name, fallback):
     """
-    Return editable text field color from GTK+ theme.
+    Return defined color `name` from GTK+ theme.
 
     `fallback` should be a hexadecimal string of form '#RRGGBB'.
     Raise :exc:`ValueError` if parsing `fallback` fails.
     """
-    # For some reason, a text view fails here,
-    # but an entry should (probably) have the same colors.
     # GTK+ defines 'fg_color' etc. [1] and themes used to as well,
     # but at least Adwaita uses 'theme_fg_color' etc. [2]
     # Let's try name with and without the 'theme_' prefix.
