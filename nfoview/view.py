@@ -153,9 +153,9 @@ class TextView(Gtk.TextView):
         for state in (Gtk.StateFlags.SELECTED,):
             text_view = Gtk.TextView()
             text_view.show()
-            context = text_view.get_style_context()
-            foreground = context.get_color(state)
-            background = context.get_background_color(state)
+            style = text_view.get_style_context()
+            foreground = style.get_color(state)
+            background = style.get_background_color(state)
             self.override_color(state, foreground)
             self.override_background_color(state, background)
         for tag in self._link_tags:

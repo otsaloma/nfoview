@@ -21,6 +21,7 @@
 
 import codecs
 import nfoview
+import re
 import sys
 import urllib.parse
 import webbrowser
@@ -132,33 +133,28 @@ def is_valid_encoding(encoding):
     except LookupError:
         return False
 
-def lookup_color(name, fallback=None):
+def lookup_color(name, fallback):
     """
-    Return color from GTK+ theme.
+    Return editable text field color from GTK+ theme.
 
-    `fallback` can be either a :class:`Gdk.RGBA` object or
-    a string that can be parsed by :func:`Gdk.RGBA.parse`.
-    Raise :exc:`TypeError` if `fallback` is of bad type.
-    Raise :exc:`ValueError` if parsing fallback fails.
+    `fallback` should be a hexadecimal string of form '#RRGGBB'.
+    Raise :exc:`ValueError` if parsing `fallback` fails.
     """
-    text_view = Gtk.TextView()
-    text_view.show()
-    style = text_view.get_style_context()
-    # At some point a 'theme_' prefix was added,
-    # e.g. 'base_color' became 'theme_base_color'.
-    names = set((name,
-                 "theme_{}".format(name),
-                 name.replace("theme_", "")))
-
-    for name in names:
+    # For some reason, a text view fails here,
+    # but an entry should (probably) have the same colors.
+    # GTK+ defines 'fg_color' etc. [1] and themes used to as well,
+    # but at least Adwaita uses 'theme_fg_color' etc. [2]
+    # Let's try name with and without the 'theme_' prefix.
+    # [1] https://git.gnome.org/browse/gtk+/tree/gtk/gtk-default.css
+    # [2] https://git.gnome.org/browse/gnome-themes-standard/tree/themes/Adwaita/gtk-3.0/gtk-main.css
+    entry = Gtk.Entry()
+    entry.show()
+    style = entry.get_style_context()
+    name = re.sub("^theme_", "", name)
+    for name in ("theme_{}".format(name), name):
         found, rgba = style.lookup_color(name)
         if found: return rgba
-    if isinstance(fallback, Gdk.RGBA):
-        return fallback
-    if isinstance(fallback, str):
-        return hex_to_rgba(fallback)
-    raise TypeError("Unexpected type for fallback: {}"
-                    .format(repr(type(fallback))))
+    return hex_to_rgba(fallback)
 
 def rgba_to_color(rgba):
     """Return :class:`Gdk.Color` for :class:`Gdk.RGBA` `rgba`."""

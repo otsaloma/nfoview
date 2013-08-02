@@ -136,26 +136,17 @@ class TestModule(nfoview.TestCase):
         assert nfoview.util.is_valid_encoding("cp437")
         assert nfoview.util.is_valid_encoding("utf_8")
 
-    def test_lookup_color__fallback_rgba(self):
-        fallback = Gdk.RGBA(red=1, green=0, blue=0)
-        color = nfoview.util.lookup_color("xxx", fallback)
-        assert color is fallback
-
-    def test_lookup_color__fallback_string(self):
+    def test_lookup_color__fallback(self):
         color = nfoview.util.lookup_color("xxx", "#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
-    def test_lookup_color__found(self):
-        color = nfoview.util.lookup_color("base_color")
-        assert isinstance(color, Gdk.RGBA)
-        color = nfoview.util.lookup_color("theme_base_color")
+    def test_lookup_color__found_base_color(self):
+        color = nfoview.util.lookup_color("base_color", "#ffffff")
         assert isinstance(color, Gdk.RGBA)
 
-    def test_lookup_color__type_error(self):
-        self.assert_raises(TypeError,
-                           nfoview.util.lookup_color,
-                           "xxx",
-                           None)
+    def test_lookup_color__found_theme_base_color(self):
+        color = nfoview.util.lookup_color("theme_base_color", "#ffffff")
+        assert isinstance(color, Gdk.RGBA)
 
     def test_lookup_color__value_error(self):
         self.assert_raises(ValueError,

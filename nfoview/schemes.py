@@ -95,10 +95,10 @@ class DefaultScheme(ColorScheme):
 
     name         = "default"
     label        = _("System theme")
-    foreground   = nfoview.util.lookup_color("text_color", "#000000")
+    foreground   = nfoview.util.lookup_color("text_color", "#2e3436")
     background   = nfoview.util.lookup_color("base_color", "#ffffff")
-    link         = nfoview.util.lookup_color("link_color", "#0000ff")
-    visited_link = nfoview.util.lookup_color("link_color", "#ff00ff")
+    link         = nfoview.util.lookup_color("link_color", "#4a90d9")
+    visited_link = nfoview.util.lookup_color("link_color", "#4a90d9")
 
 
 class GreyOnBlackScheme(ColorScheme):
