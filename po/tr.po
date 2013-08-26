@@ -79,7 +79,7 @@ msgstr "NFO dosyalarını görüntüle"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/nfoview.desktop.in.h:4
 msgid "information;"
-msgstr ""
+msgstr "belge;göster;"
 
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
@@ -133,11 +133,11 @@ msgstr "NFO Viewer tercihlerini düzenle"
 
 #: ../nfoview/actions.py:136
 msgid "_Export Image…"
-msgstr ""
+msgstr "Resmi dı_şa aktar…"
 
 #: ../nfoview/actions.py:137
 msgid "Export document as an image file"
-msgstr ""
+msgstr "Belgeyi resim dosyası olarak dışa aktar"
 
 #: ../nfoview/actions.py:155
 msgid "_Open…"
@@ -197,7 +197,7 @@ msgstr "Uzun satırları böl "
 
 #: ../nfoview/export.py:38
 msgid "Export Image"
-msgstr ""
+msgstr "Resmi dışa aktar"
 
 #: ../nfoview/open.py:45
 msgid "All files"

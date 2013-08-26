@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-29 03:34+0300\n"
-"PO-Revision-Date: 2010-10-21 18:00+0100\n"
+"PO-Revision-Date: 2013-08-26 11:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <>\n"
 "Language: fr\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Preferences"
@@ -80,7 +81,7 @@ msgstr "Visionner des fichiers NFO"
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/nfoview.desktop.in.h:4
 msgid "information;"
-msgstr ""
+msgstr "information;visualiseur;"
 
 #: ../nfoview/about.py:55
 msgid "About NFO Viewer"
@@ -136,11 +137,11 @@ msgstr "Modifier les préférences de NFO Viewer"
 
 #: ../nfoview/actions.py:136
 msgid "_Export Image…"
-msgstr ""
+msgstr "_Exporter l'image…"
 
 #: ../nfoview/actions.py:137
 msgid "Export document as an image file"
-msgstr ""
+msgstr "Exporter le document en tant que fichier image"
 
 #: ../nfoview/actions.py:155
 msgid "_Open…"
@@ -200,7 +201,7 @@ msgstr "Scinder les lignes trop longues"
 
 #: ../nfoview/export.py:38
 msgid "Export Image"
-msgstr ""
+msgstr "Exporter l'image"
 
 #: ../nfoview/open.py:45
 msgid "All files"
