@@ -8,6 +8,8 @@ NFO Viewer 1.13.1
 NFO Viewer 3000
 ===============
 
+ * Add AppData XML file?
+   - http://people.freedesktop.org/~hughsient/appdata/
  * https://wiki.gnome.org/GnomeGoals/UnicodeUsage
  * https://wiki.gnome.org/GnomeGoals/PortToGMenu
  * https://wiki.gnome.org/GnomeGoals/PortToGtkApplication
