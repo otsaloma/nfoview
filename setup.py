@@ -270,6 +270,8 @@ setup_kwargs = dict(
     packages=("nfoview",),
     scripts=("bin/nfoview",),
     data_files=[
+        ("share/appdata",
+         ("data/nfoview.appdata.xml",)),
         ("share/icons/hicolor/16x16/apps",
          ("data/icons/hicolor/16x16/apps/nfoview.png",)),
         ("share/icons/hicolor/22x22/apps",
