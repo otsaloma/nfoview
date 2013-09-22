@@ -1,3 +1,12 @@
+NFO Viewer 1.13.1
+=================
+
+ * Possibly fix default colors with some GTK+ themes
+ * Add an AppData XML file
+   - http://people.freedesktop.org/~hughsient/appdata/
+ * Update French translation
+ * Update Turkish translation
+
 NFO Viewer 1.13
 ===============
 

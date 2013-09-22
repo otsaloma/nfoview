@@ -1,16 +1,7 @@
-NFO Viewer 1.13.1
-=================
-
- [X] Possibly fix default colors with some GTK+ themes
- [X] Add an AppData XML file
-     - http://people.freedesktop.org/~hughsient/appdata/
- [X] Update French translation
- [X] Update Turkish translation
-
 NFO Viewer 3000
 ===============
 
  * https://wiki.gnome.org/GnomeGoals/UnicodeUsage
- * https://wiki.gnome.org/GnomeGoals/PortToGMenu
  * https://wiki.gnome.org/GnomeGoals/PortToGtkApplication
+ * https://wiki.gnome.org/GnomeGoals/PortToGMenu
  * Make hyperlinks activatable by keyboard?
