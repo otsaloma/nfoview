@@ -14,8 +14,9 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
     file gets correctly written.
 
 (2) During installation, the .po files are compiled into .mo files and the
-    desktop file is translated. This requires gettext and intltool, more
-    specifically, executables 'msgfmt' and 'intltool-merge' in $PATH.
+    appdata and desktop files are translated. This requires gettext and
+    intltool, more specifically, executables 'msgfmt' and 'intltool-merge'
+    in $PATH.
 """
 
 import distutils.command.clean
@@ -71,6 +72,7 @@ class Clean(clean):
                       "*/*/*/*/__pycache__",
                       "*/*/*/*/*.py[co]",
                       "build",
+                      "data/nfoview.appdata.xml",
                       "data/nfoview.desktop",
                       "dist",
                       "doc/sphinx/api",
@@ -146,6 +148,14 @@ class InstallData(install_data):
 
     """Command to install data files."""
 
+    def __get_appdata_file(self):
+        """Return a tuple for the translated appdata file."""
+        path = os.path.join("data", "nfoview.appdata.xml")
+        run_command_or_exit("intltool-merge -x po {}.in {}"
+                            .format(path, path))
+
+        return ("share/appdata", (path,))
+
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
@@ -173,6 +183,7 @@ class InstallData(install_data):
         """Install data files after translating them."""
         for po_file in glob.glob("po/*.po"):
             self.data_files.append(self.__get_mo_file(po_file))
+        self.data_files.append(self.__get_appdata_file())
         self.data_files.append(self.__get_desktop_file())
         install_data.run(self)
 
@@ -270,8 +281,6 @@ setup_kwargs = dict(
     packages=("nfoview",),
     scripts=("bin/nfoview",),
     data_files=[
-        ("share/appdata",
-         ("data/nfoview.appdata.xml",)),
         ("share/icons/hicolor/16x16/apps",
          ("data/icons/hicolor/16x16/apps/nfoview.png",)),
         ("share/icons/hicolor/22x22/apps",
