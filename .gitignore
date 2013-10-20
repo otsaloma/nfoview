@@ -5,6 +5,7 @@
 __pycache__
 build/
 ChangeLog
+data/nfoview.appdata.xml
 data/nfoview.desktop
 dist/
 doc/sphinx/_build
