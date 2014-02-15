@@ -1,14 +1,17 @@
 NFO Viewer 1.13.2
 =================
 
- * Make AppData file translatable
+ [X] Make AppData file translatable
 
 NFO Viewer 3000
 ===============
 
  * Check AppData screenshots
    - http://blogs.gnome.org/hughsie/2013/10/08/how-to-take-169-screenshots/
- * https://wiki.gnome.org/GnomeGoals/UnicodeUsage
- * https://wiki.gnome.org/GnomeGoals/PortToGtkApplication
- * https://wiki.gnome.org/GnomeGoals/PortToGMenu
+ * Apply new GNOME goals?
+   - https://wiki.gnome.org/GnomeGoals/UnicodeUsage
+   - https://wiki.gnome.org/GnomeGoals/PortToGtkApplication
+   - https://wiki.gnome.org/GnomeGoals/PortToGMenu
  * Make hyperlinks activatable by keyboard?
+ * Migrate away from Gtk.Action, Gtk.UIManager, stock icons, etc.
+   - https://mail.gnome.org/archives/gtk-devel-list/2013-July/msg00016.html
