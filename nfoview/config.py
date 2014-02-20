@@ -26,7 +26,7 @@ import re
 __all__ = ("ConfigurationStore",)
 
 
-class ConfigurationStore(object):
+class ConfigurationStore:
 
     """
     Reading, writing and storing configurations.

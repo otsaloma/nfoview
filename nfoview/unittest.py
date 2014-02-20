@@ -26,7 +26,7 @@ import tempfile
 __all__ = ("TestCase",)
 
 
-class TestCase(object):
+class TestCase:
 
     """
     Base class for unit test cases.

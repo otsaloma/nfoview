@@ -32,7 +32,7 @@ __all__ = ("BlackOnWhiteScheme",
            )
 
 
-class ColorScheme(object):
+class ColorScheme:
 
     """
     Baseclass for color scheme definitions.
