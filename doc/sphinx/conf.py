@@ -41,7 +41,6 @@ import nfoview
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
     'autoclean',
 ]
 
