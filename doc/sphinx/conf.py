@@ -61,7 +61,7 @@ master_doc = 'index'
 # General information about the project.
 project = 'nfoview'
 project_url = 'http://home.gna.org/nfoview/'
-copyright = '2005–2011, Osmo Salomaa'
+copyright = '2005–2014, Osmo Salomaa'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -261,7 +261,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'nfoview', 'nfoview Documentation', 'Osmo Salomaa',
-   'nfoview', 'One line description of project.', 'Miscellaneous'),
+   'nfoview', 'Viewer for NFO files.', 'Viewers'),
 ]
 
 # Documents to append as an appendix to all manuals.

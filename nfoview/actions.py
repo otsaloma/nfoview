@@ -47,7 +47,7 @@ class Action(Gtk.Action):
 
     :ivar accelerator: Accelerator string for :func:`Gtk.accelerator_parse`
 
-    Instance variable :attr:`accelerator` defines a string string in the format
+    Instance variable :attr:`accelerator` defines a string in the format
     understood by :func:`Gtk.accelerator_parse`, ``None`` to use the stock
     accelerator or leave undefined to use blank string as a fallback.
     """

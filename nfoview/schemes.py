@@ -39,10 +39,10 @@ class ColorScheme(object):
 
     :cvar name: Name used to identify and save color scheme
     :cvar label: User-visible localized name for color scheme
-    :cvar foreground: Foreground color as a :class:`Gdk.Color`
-    :cvar background: Background color as a :class:`Gdk.Color`
-    :cvar link: Link color as a :class:`Gdk.Color`
-    :cvar visited_link: Visited link color as a :class:`Gdk.Color`
+    :cvar foreground: Foreground color as a :class:`Gdk.RGBA`
+    :cvar background: Background color as a :class:`Gdk.RGBA`
+    :cvar link: Link color as a :class:`Gdk.RGBA`
+    :cvar visited_link: Visited link color as a :class:`Gdk.RGBA`
     """
 
     name         = NotImplementedError

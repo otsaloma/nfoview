@@ -54,13 +54,15 @@ def monkey_patch(obj, name):
             if _hasattr_def(obj, name):
                 attr = getattr(obj, name)
                 setattr(obj, name, copy.deepcopy(attr))
-                try: return function(*args, **kwargs)
+                try:
+                    return function(*args, **kwargs)
                 finally:
                     setattr(obj, name, attr)
                     assert getattr(obj, name) == attr
                     assert getattr(obj, name) is attr
             else: # Attribute not defined.
-                try: return function(*args, **kwargs)
+                try:
+                    return function(*args, **kwargs)
                 finally:
                     delattr(obj, name)
                     assert not _hasattr_def(obj, name)

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-# Check translation files for common errors.
-# Usage: check-translations [XX[_YY[@ZZ]]...]
-
-import glob
-import os
-import sys
-
+"""
+Check translation files for common errors.
+Usage: check-translations [XX[_YY[@ZZ]]...]
+"""
+import glob, os, sys
 args = tuple(sys.argv[1:])
 args = tuple("{}.po".format(x) for x in args)
+for arg in args:
+    if not arg in os.listdir("po"):
+        print("'po/{}' not found".format(arg), file=sys.stderr)
 os.chdir(os.path.join(os.path.dirname(__file__), "..", "po"))
 for name in sorted(glob.glob("*.po")):
     if args and not name in args:
@@ -87,6 +87,19 @@ for name in sorted(glob.glob("*.po")):
                 print('"{}"'.format(msgid))
                 print('"{}"'.format(msgstr))
                 print("")
+
+        # Check that string formatting fields exists as-is in
+        # the translation (order may vary, but not the field).
+        for i in range(len(msgid)):
+            if msgid[i] == "{":
+                j = msgid.index("}", i+1)
+                field = msgid[i:(j+1)]
+                if not field in msgstr:
+                    nbad += 1
+                    print("{}:{:d}: formatting mismatch in".format(*pos))
+                    print('"{}"'.format(msgid))
+                    print('"{}"'.format(msgstr))
+                    print("")
 
     print("{}: {:d} bad, {:d} good messages"
           .format(name, nbad, ntotal - nbad))

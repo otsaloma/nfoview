@@ -30,3 +30,4 @@ class TestModule(nfoview.TestCase):
 
     def test_ngettext(self):
         nfoview.i18n.ngettext("singular", "plural", 1)
+        nfoview.i18n.ngettext("singular", "plural", 2)

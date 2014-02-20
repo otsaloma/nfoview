@@ -143,21 +143,22 @@ class TextView(Gtk.TextView):
     def update_colors(self):
         """Update colors to match the current color scheme."""
         name = nfoview.conf.color_scheme
-        try: scheme = nfoview.util.get_color_scheme(name)
+        try:
+            scheme = nfoview.util.get_color_scheme(name)
         except ValueError:
             scheme = nfoview.util.get_color_scheme("default")
             nfoview.conf.color_scheme = "default"
-        for state in (Gtk.StateFlags.NORMAL,):
-            self.override_color(state, scheme.foreground)
-            self.override_background_color(state, scheme.background)
-        for state in (Gtk.StateFlags.SELECTED,):
-            text_view = Gtk.TextView()
-            text_view.show()
-            style = text_view.get_style_context()
-            foreground = style.get_color(state)
-            background = style.get_background_color(state)
-            self.override_color(state, foreground)
-            self.override_background_color(state, background)
+        state = Gtk.StateFlags.NORMAL
+        self.override_color(state, scheme.foreground)
+        self.override_background_color(state, scheme.background)
+        text_view = Gtk.TextView()
+        text_view.show()
+        style = text_view.get_style_context()
+        state = Gtk.StateFlags.SELECTED
+        foreground = style.get_color(state)
+        background = style.get_background_color(state)
+        self.override_color(state, foreground)
+        self.override_background_color(state, background)
         for tag in self._link_tags:
             try:
                 # 'foreground_rgba' available since GTK+ 3.2.

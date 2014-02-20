@@ -41,13 +41,13 @@ class TestPreferencesDialog(nfoview.TestCase):
 
     def test__on_bg_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store) - 1)
+        self.dialog._scheme_combo.set_active(len(store)-1)
         self.dialog._bg_color_button.set_rgba(self.rgba)
         self.dialog._bg_color_button.emit("color-set")
 
     def test__on_fg_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store) - 1)
+        self.dialog._scheme_combo.set_active(len(store)-1)
         self.dialog._fg_color_button.set_rgba(self.rgba)
         self.dialog._fg_color_button.emit("color-set")
 
@@ -57,11 +57,11 @@ class TestPreferencesDialog(nfoview.TestCase):
 
     def test__on_line_spacing_spin_value_changed(self):
         self.dialog._line_spacing_spin.set_value(-3)
-        self.dialog._line_spacing_spin.set_value( 3)
+        self.dialog._line_spacing_spin.set_value(3)
 
     def test__on_link_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store) - 1)
+        self.dialog._scheme_combo.set_active(len(store)-1)
         self.dialog._link_color_button.set_rgba(self.rgba)
         self.dialog._link_color_button.emit("color-set")
 
@@ -72,6 +72,6 @@ class TestPreferencesDialog(nfoview.TestCase):
 
     def test__on_vlink_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store) - 1)
+        self.dialog._scheme_combo.set_active(len(store)-1)
         self.dialog._vlink_color_button.set_rgba(self.rgba)
         self.dialog._vlink_color_button.emit("color-set")

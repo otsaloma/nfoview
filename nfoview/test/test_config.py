@@ -25,16 +25,16 @@ import tempfile
 
 class TestConfigurationStore(nfoview.TestCase):
 
-    fields = {"background_color"   :      "#ff0000",
-              "color_scheme"       :      "default",
-              "font"               : "monospace 12",
-              "foreground_color"   :      "#00ff00",
-              "link_color"         :      "#0000ff",
-              "pixels_above_lines" :              1,
-              "pixels_below_lines" :             -1,
-              "text_view_max_chars":            160,
-              "text_view_max_lines":             45,
-              "visited_link_color" :      "#ffff00",
+    fields = {"background_color": "#ff0000",
+              "color_scheme": "default",
+              "font": "monospace 12",
+              "foreground_color": "#00ff00",
+              "link_color": "#0000ff",
+              "pixels_above_lines": 1,
+              "pixels_below_lines": -1,
+              "text_view_max_chars": 160,
+              "text_view_max_lines": 45,
+              "visited_link_color": "#ffff00",
               }
 
     def setup_method(self, method):
@@ -57,12 +57,12 @@ class TestConfigurationStore(nfoview.TestCase):
 
     def test_restore_defaults(self):
         nfoview.conf.restore_defaults()
-        for name, attrs in nfoview.conf._fields.items():
+        for name, default in nfoview.conf._defaults.items():
             value = getattr(nfoview.conf, name)
             if name == "version":
                 assert value == nfoview.__version__
             else: # Normal option
-                assert value == attrs[0]
+                assert value == default
 
     def test_write_to_file(self):
         nfoview.conf.write_to_file()

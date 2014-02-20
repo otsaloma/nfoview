@@ -197,7 +197,7 @@ class InstallLib(install_lib):
         get_command_obj = self.distribution.get_command_obj
         root = get_command_obj("install").root
         prefix = get_command_obj("install").install_data
-        # Allow --root to be used like $DESTDIR.
+        # Allow --root to be used like DESTDIR.
         if root is not None:
             prefix = os.path.abspath(prefix)
             prefix = prefix.replace(os.path.abspath(root), "")

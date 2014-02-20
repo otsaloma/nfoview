@@ -59,7 +59,8 @@ def _on_window_delete_event(window, event):
     windows.remove(window)
     if windows: return
     nfoview.conf.write_to_file()
-    try: Gtk.main_quit()
+    try:
+        Gtk.main_quit()
     except RuntimeError:
         raise SystemExit(1)
 

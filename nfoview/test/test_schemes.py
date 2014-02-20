@@ -19,28 +19,16 @@
 
 import nfoview
 
-from gi.repository import Gdk
-
 
 class  _TestScheme(nfoview.TestCase):
 
-    def test_name(self):
-        assert isinstance(self.scheme.name, str)
-
-    def test_label(self):
-        assert isinstance(self.scheme.label, str)
-
-    def test_foreground(self):
-        assert isinstance(self.scheme.foreground, Gdk.RGBA)
-
-    def test_background(self):
-        assert isinstance(self.scheme.background, Gdk.RGBA)
-
-    def test_link(self):
-        assert isinstance(self.scheme.link, Gdk.RGBA)
-
-    def test_visited_link(self):
-        assert isinstance(self.scheme.visited_link, Gdk.RGBA)
+    def test_attributes(self):
+        assert hasattr(self.scheme, "name")
+        assert hasattr(self.scheme, "label")
+        assert hasattr(self.scheme, "foreground")
+        assert hasattr(self.scheme, "background")
+        assert hasattr(self.scheme, "link")
+        assert hasattr(self.scheme, "visited_link")
 
 
 class TestBlackOnWhiteScheme(_TestScheme):
