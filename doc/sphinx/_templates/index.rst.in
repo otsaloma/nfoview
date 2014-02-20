@@ -1,5 +1,5 @@
-``{{ project }}`` Documentation
-=================={{ project_double_underline }}
+{{ project }} Documentation
+=============={{ project_double_underline }}
 
 This is documentation for `{{ project }} <{{ project_url }}>`_ that
 has been automatically generated from documentation strings in the

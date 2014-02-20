@@ -119,12 +119,10 @@ class Documentation(command):
     def run(self):
         """Build documentation from source code."""
         os.chdir(os.path.join("doc", "sphinx"))
-        if not self.dry_run:
-            run_command_or_exit("make clean")
-            run_command_or_exit("python{:d}.{:d} autogen.py nfoview"
-                                .format(*sys.version_info[:2]))
-
-            run_command_or_exit("make {}".format(self.format))
+        if self.dry_run: return
+        run_command_or_exit("python3 autogen.py nfoview")
+        run_command_or_exit("sphinx-build -b {} . _build/{}"
+                            .format(self.format, self.format))
 
 
 class Install(install):
