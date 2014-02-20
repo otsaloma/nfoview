@@ -33,7 +33,7 @@ class OpenDialog(Gtk.FileChooserDialog):
     """Dialog for selecting NFO files to open."""
 
     def __init__(self, parent):
-        """Initialize an OpenDialog instance."""
+        """Initialize an :class:`OpenDialog` instance."""
         GObject.GObject.__init__(self)
         self.set_title(_("Open"))
         self.set_transient_for(parent)

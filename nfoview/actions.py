@@ -75,7 +75,7 @@ class ToggleAction(Gtk.ToggleAction, Action):
     """Base class for UI manager toggle actions."""
 
     def __init__(self, name):
-        """Initialize an :class:`ToggleAction` object."""
+        """Initialize an :class:`ToggleAction` instance."""
         GObject.GObject.__init__(self, name=name)
 
 

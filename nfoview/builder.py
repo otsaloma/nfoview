@@ -48,7 +48,7 @@ class BuilderDialog:
         return getattr(self._dialog, name)
 
     def __init__(self, ui_file_path):
-        """Initialize a :class:`BuilderDialog` object from `ui_file_path`."""
+        """Initialize a :class:`BuilderDialog` instance from `ui_file_path`."""
         if not os.path.isabs(ui_file_path):
             ui_file_path = os.path.join(nfoview.DATA_DIR, ui_file_path)
         self._builder = Gtk.Builder()
