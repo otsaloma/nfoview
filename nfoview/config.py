@@ -87,8 +87,10 @@ class ConfigurationStore:
         """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
         if not os.path.isdir(directory):
-            try: os.makedirs(directory)
-            except OSError: return
+            try:
+                os.makedirs(directory)
+            except OSError:
+                return
         fobj = open(self.path, "w")
         for name in sorted(self._defaults):
             value = getattr(self, name)
