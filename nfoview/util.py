@@ -189,10 +189,6 @@ def monkey_patch(obj, name):
         return inner_wrapper
     return outer_wrapper
 
-def rgba_to_color(rgba):
-    """Return :class:`Gdk.Color` for :class:`Gdk.RGBA` `rgba`."""
-    return Gdk.color_parse(rgba_to_hex(rgba))
-
 def rgba_to_hex(color):
     """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
     return "#{:02X}{:02X}{:02X}".format(int(color.red   * 255),

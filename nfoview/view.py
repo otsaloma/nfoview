@@ -155,16 +155,6 @@ class TextView(Gtk.TextView):
         self.override_color(state, foreground)
         self.override_background_color(state, background)
         for tag in self._link_tags:
-            try:
-                # 'foreground_rgba' available since GTK+ 3.2.
-                tag.props.foreground_rgba = scheme.link
-            except AttributeError:
-                color = nfoview.util.rgba_to_color(scheme.link)
-                tag.props.foreground_gdk = color
+            tag.props.foreground_rgba = scheme.link
         for tag in self._visited_link_tags:
-            try:
-                # 'foreground_rgba' available since GTK+ 3.2.
-                tag.props.foreground_rgba = scheme.visited_link
-            except AttributeError:
-                color = nfoview.util.rgba_to_color(scheme.visited_link)
-                tag.props.foreground_gdk = color
+            tag.props.foreground_rgba = scheme.visited_link

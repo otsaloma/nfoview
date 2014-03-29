@@ -145,11 +145,6 @@ class TestModule(nfoview.TestCase):
         modify_platform()
         assert sys.platform == platform
 
-    def test_rgba_to_color(self):
-        rgba = Gdk.RGBA(red=1, green=0, blue=0, alpha=1)
-        color = nfoview.util.rgba_to_color(rgba)
-        assert color.equal(Gdk.Color(red=65535, green=0, blue=0))
-
     def test_rgba_to_hex(self):
         rgba = Gdk.RGBA(red=1, green=0, blue=1)
         color = nfoview.util.rgba_to_hex(rgba)
