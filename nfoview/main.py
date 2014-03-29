@@ -52,6 +52,23 @@ def _init_gettext():
     gettext.bindtextdomain("nfoview", nfoview.LOCALE_DIR)
     gettext.textdomain("nfoview")
 
+def main(args):
+    """Start viewer windows for files given as arguments."""
+    _init_gettext()
+    for path in sorted(args):
+        try:
+            open_window(path)
+        except Exception as error:
+            print("Failed to open '{}': {}"
+                  .format(path, str(error)),
+                  file=sys.stderr)
+
+    if not windows:
+        # If no arguments were given, or none of them exist,
+        # open one blank window.
+        open_window()
+    Gtk.main()
+
 def _on_window_delete_event(window, event):
     """Exit the ``Gtk`` main loop if the last window was closed."""
     window.destroy()
@@ -71,20 +88,3 @@ def open_window(path=None):
 
     windows.append(window)
     window.present()
-
-def main(args):
-    """Start viewer windows for files given as arguments."""
-    _init_gettext()
-    for path in sorted(args):
-        try:
-            open_window(path)
-        except Exception as error:
-            print("Failed to open '{}': {}"
-                  .format(path, str(error)),
-                  file=sys.stderr)
-
-    if not windows:
-        # If no arguments were given, or none of them exist,
-        # open one blank window.
-        open_window()
-    Gtk.main()

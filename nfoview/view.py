@@ -42,6 +42,12 @@ class TextView(Gtk.TextView):
         self._visited_link_tags = []
         self.update_colors()
 
+    def get_text(self):
+        """Return the text in the text view."""
+        text_buffer = self.get_buffer()
+        start, end = text_buffer.get_bounds()
+        return text_buffer.get_text(start, end, False)
+
     def _init_properties(self):
         """Initliaze text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
@@ -97,12 +103,6 @@ class TextView(Gtk.TextView):
                 window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
                 return True # to not call the default handler.
         window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
-
-    def get_text(self):
-        """Return the text in the text view."""
-        text_buffer = self.get_buffer()
-        start, end = text_buffer.get_bounds()
-        return text_buffer.get_text(start, end, False)
 
     def set_text(self, text):
         """Set the text displayed in the text view."""

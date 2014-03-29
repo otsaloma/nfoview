@@ -43,10 +43,6 @@ class BuilderDialog:
 
     _widgets = ()
 
-    def __getattr__(self, name):
-        """Return attribute from :attr:`_dialog`."""
-        return getattr(self._dialog, name)
-
     def __init__(self, ui_file_path):
         """Initialize a :class:`BuilderDialog` instance from `ui_file_path`."""
         if not os.path.isabs(ui_file_path):
@@ -58,13 +54,17 @@ class BuilderDialog:
         self._builder.connect_signals(self)
         self._set_attributes(self._widgets)
 
-    def _set_attributes(self, widgets):
-        """Assign all names in `widgets` as attributes of `self`."""
-        for name in widgets:
-            widget = self._builder.get_object(name)
-            setattr(self, "_{}".format(name), widget)
+    def __getattr__(self, name):
+        """Return attribute from :attr:`_dialog`."""
+        return getattr(self._dialog, name)
 
     def run(self):
         """Show the dialog, run it and return response."""
         self._dialog.show()
         return self._dialog.run()
+
+    def _set_attributes(self, widgets):
+        """Assign all names in `widgets` as attributes of `self`."""
+        for name in widgets:
+            widget = self._builder.get_object(name)
+            setattr(self, "_{}".format(name), widget)

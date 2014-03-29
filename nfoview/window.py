@@ -257,6 +257,15 @@ class Window(Gtk.Window):
             return self.view.set_wrap_mode(Gtk.WrapMode.WORD)
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
+    def open_file(self, path):
+        """Read the file at `path` and show its text in the view."""
+        self.path = os.path.abspath(path)
+        self.set_title(os.path.basename(path))
+        text = self._read_file(path)
+        self.view.set_text(text)
+        self.view.grab_focus()
+        self._update_action_sensitivities()
+
     def _read_file(self, path):
         """
         Read and return the text of the NFO file.
@@ -273,20 +282,6 @@ class Window(Gtk.Window):
         if not sum(map(len, lines0)): lines = lines1
         if not sum(map(len, lines1)): lines = lines0
         return "\n".join(lines)
-
-    def _update_action_sensitivities(self):
-        """Update the sensitivities of all UI manager actions."""
-        for action in self._actions:
-            action.update_sensitivity(self)
-
-    def open_file(self, path):
-        """Read the file at `path` and show its text in the view."""
-        self.path = os.path.abspath(path)
-        self.set_title(os.path.basename(path))
-        text = self._read_file(path)
-        self.view.set_text(text)
-        self.view.grab_focus()
-        self._update_action_sensitivities()
 
     def resize_to_text(self):
         """Resize window to fit the text in the view."""
@@ -319,3 +314,8 @@ class Window(Gtk.Window):
         size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
         size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
         self.resize(*size)
+
+    def _update_action_sensitivities(self):
+        """Update the sensitivities of all UI manager actions."""
+        for action in self._actions:
+            action.update_sensitivity(self)

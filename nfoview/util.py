@@ -32,12 +32,6 @@ from gi.repository import Gtk
 from gi.repository import Pango
 
 
-def _hasattr_def(obj, name):
-    """Return ``True`` if `obj` has attribute `name` defined."""
-    if hasattr(obj, "__dict__"):
-        return name in obj.__dict__
-    return hasattr(obj, name)
-
 def affirm(value):
     """Raise :exc:`AffirmationError` if value evaluates to ``False``."""
     if not value:
@@ -116,6 +110,12 @@ def get_font_description(fallback="monospace"):
     family = font_desc.get_family()
     font_desc.set_family(",".join((family, fallback, "")))
     return font_desc
+
+def _hasattr_def(obj, name):
+    """Return ``True`` if `obj` has attribute `name` defined."""
+    if hasattr(obj, "__dict__"):
+        return name in obj.__dict__
+    return hasattr(obj, name)
 
 def hex_to_rgba(string):
     """
