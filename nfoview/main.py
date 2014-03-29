@@ -26,7 +26,6 @@ Spawning, managing and killing viewer windows.
 import gettext
 import locale
 import nfoview
-import os
 import sys
 
 from gi.repository import Gtk
@@ -54,7 +53,7 @@ def _init_gettext():
     gettext.textdomain("nfoview")
 
 def _on_window_delete_event(window, event):
-    """Exit the ``GTK+`` main loop if the last window was closed."""
+    """Exit the ``Gtk`` main loop if the last window was closed."""
     window.destroy()
     windows.remove(window)
     if windows: return
@@ -76,8 +75,14 @@ def open_window(path=None):
 def main(args):
     """Start viewer windows for files given as arguments."""
     _init_gettext()
-    for path in sorted(filter(os.path.isfile, args)):
-        open_window(path)
+    for path in sorted(args):
+        try:
+            open_window(path)
+        except Exception as error:
+            print("Failed to open '{}': {}"
+                  .format(path, str(error)),
+                  file=sys.stderr)
+
     if not windows:
         # If no arguments were given, or none of them exist,
         # open one blank window.

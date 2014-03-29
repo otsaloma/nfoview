@@ -19,6 +19,7 @@
 
 import codecs
 import nfoview
+import os
 import sys
 
 from gi.repository import Gdk
@@ -30,19 +31,19 @@ class TestModule(nfoview.TestCase):
     def test_affirm__false(self):
         self.assert_raises(nfoview.AffirmationError,
                            nfoview.util.affirm,
-                           1 == 0)
+                           False)
 
     def test_affirm__true(self):
-        nfoview.util.affirm(0 == 0)
+        nfoview.util.affirm(True)
 
     def test_connect__private(self):
-        self._on_window_delete_event = lambda *args: None
         self.window = Gtk.Window()
+        self._on_window_delete_event = lambda *args: None
         nfoview.util.connect(self, "window", "delete-event")
 
     def test_connect__public(self):
-        self.on_window_delete_event = lambda *args: None
         self.window = Gtk.Window()
+        self.on_window_delete_event = lambda *args: None
         nfoview.util.connect(self, "window", "delete-event")
 
     def test_detect_encoding__cp437(self):
@@ -50,7 +51,7 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "cp437"
 
-    @nfoview.deco.monkey_patch(nfoview.util, "is_valid_encoding")
+    @nfoview.util.monkey_patch(nfoview.util, "is_valid_encoding")
     def test_detect_encoding__utf_16_be(self):
         nfoview.util.is_valid_encoding = lambda x: True
         path = self.new_nfo_file()
@@ -59,7 +60,7 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_16_be"
 
-    @nfoview.deco.monkey_patch(nfoview.util, "is_valid_encoding")
+    @nfoview.util.monkey_patch(nfoview.util, "is_valid_encoding")
     def test_detect_encoding__utf_16_le(self):
         nfoview.util.is_valid_encoding = lambda x: True
         path = self.new_nfo_file()
@@ -68,7 +69,7 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_16_le"
 
-    @nfoview.deco.monkey_patch(nfoview.util, "is_valid_encoding")
+    @nfoview.util.monkey_patch(nfoview.util, "is_valid_encoding")
     def test_detect_encoding__utf_32_be(self):
         nfoview.util.is_valid_encoding = lambda x: True
         path = self.new_nfo_file()
@@ -77,7 +78,7 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_32_be"
 
-    @nfoview.deco.monkey_patch(nfoview.util, "is_valid_encoding")
+    @nfoview.util.monkey_patch(nfoview.util, "is_valid_encoding")
     def test_detect_encoding__utf_32_le(self):
         nfoview.util.is_valid_encoding = lambda x: True
         path = self.new_nfo_file()
@@ -86,7 +87,7 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_32_le"
 
-    @nfoview.deco.monkey_patch(nfoview.util, "is_valid_encoding")
+    @nfoview.util.monkey_patch(nfoview.util, "is_valid_encoding")
     def test_detect_encoding__utf_8_sig(self):
         nfoview.util.is_valid_encoding = lambda x: True
         path = self.new_nfo_file()
@@ -103,90 +104,75 @@ class TestModule(nfoview.TestCase):
         scheme = nfoview.util.get_color_scheme("default")
         assert scheme is nfoview.DefaultScheme
 
-    def test_get_color_scheme__value_error(self):
-        self.assert_raises(ValueError,
-                           nfoview.util.get_color_scheme,
-                           "xxx")
-
     def test_get_color_schemes(self):
         schemes = nfoview.util.get_color_schemes()
         assert schemes[ 0] is nfoview.DefaultScheme
         assert schemes[-1] is nfoview.CustomScheme
 
-    @nfoview.deco.monkey_patch(nfoview.conf, "font")
+    @nfoview.util.monkey_patch(nfoview.conf, "font")
     def test_get_font_description(self):
         nfoview.conf.font = "Foo"
         font_desc = nfoview.util.get_font_description()
         assert font_desc.get_family() == "Foo,monospace,"
 
     def test_hex_to_rgba(self):
-        color = nfoview.util.hex_to_rgba("#ff0000")
+        color = nfoview.util.hex_to_rgba("#FF0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
-    def test_hex_to_rgba__value_error(self):
-        self.assert_raises(ValueError,
-                           nfoview.util.hex_to_rgba,
-                           "xxx")
-
-    def test_is_valid_encoding__false(self):
-        assert not nfoview.util.is_valid_encoding("xxx")
-
-    def test_is_valid_encoding__true(self):
-        assert nfoview.util.is_valid_encoding("ascii")
-        assert nfoview.util.is_valid_encoding("cp437")
-        assert nfoview.util.is_valid_encoding("utf_8")
-
-    def test_lookup_color__fallback(self):
-        color = nfoview.util.lookup_color("xxx", "#ff0000")
+    def test_lookup_color(self):
+        color = nfoview.util.lookup_color("xxx", "#FF0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
-    def test_lookup_color__found_base_color(self):
-        color = nfoview.util.lookup_color("base_color", "#ffffff")
-        assert isinstance(color, Gdk.RGBA)
+    def test_monkey_patch__no_attribute(self):
+        @nfoview.util.monkey_patch(sys, "nfoview")
+        def modify_nfoview():
+            sys.nfoview = True
+        modify_nfoview()
+        assert not hasattr(sys, "nfoview")
 
-    def test_lookup_color__found_theme_base_color(self):
-        color = nfoview.util.lookup_color("theme_base_color", "#ffffff")
-        assert isinstance(color, Gdk.RGBA)
+    def test_monkey_patch__os_environ(self):
+        @nfoview.util.monkey_patch(os, "environ")
+        def modify_environment():
+            os.environ["NFOVIEW_TEST"] = "1"
+        modify_environment()
+        assert not "NFOVIEW_TEST" in os.environ
 
-    def test_lookup_color__value_error(self):
-        self.assert_raises(ValueError,
-                           nfoview.util.lookup_color,
-                           "xxx",
-                           "xxx")
+    def test_monkey_patch__sys_platform(self):
+        platform = sys.platform
+        @nfoview.util.monkey_patch(sys, "platform")
+        def modify_platform():
+            sys.platform = "commodore_64"
+        modify_platform()
+        assert sys.platform == platform
 
     def test_rgba_to_color(self):
         rgba = Gdk.RGBA(red=1, green=0, blue=0, alpha=1)
         color = nfoview.util.rgba_to_color(rgba)
         assert color.equal(Gdk.Color(red=65535, green=0, blue=0))
 
-    def test_rgba_to_hex__black(self):
-        rgba = Gdk.RGBA(red=0, green=0, blue=0)
-        color = nfoview.util.rgba_to_hex(rgba)
-        assert color == "#000000"
-
-    def test_rgba_to_hex__violet(self):
+    def test_rgba_to_hex(self):
         rgba = Gdk.RGBA(red=1, green=0, blue=1)
         color = nfoview.util.rgba_to_hex(rgba)
-        assert color == "#ff00ff"
+        assert color == "#FF00FF"
 
-    @nfoview.deco.monkey_patch(sys, "platform")
+    @nfoview.util.monkey_patch(sys, "platform")
     def test_show_uri__unix(self):
         sys.platform = "linux2"
         nfoview.util.show_uri("http://home.gna.org/nfoview/")
 
-    @nfoview.deco.monkey_patch(sys, "platform")
+    @nfoview.util.monkey_patch(sys, "platform")
     def test_show_uri__windows(self):
         sys.platform = "win32"
         nfoview.util.show_uri("http://home.gna.org/nfoview/")
 
-    @nfoview.deco.monkey_patch(sys, "platform")
+    @nfoview.util.monkey_patch(sys, "platform")
     def test_uri_to_path__unix(self):
         sys.platform = "linux2"
         uri = "file:///home/nfoview/a%20file.nfo"
         path = nfoview.util.uri_to_path(uri)
         assert path == "/home/nfoview/a file.nfo"
 
-    @nfoview.deco.monkey_patch(sys, "platform")
+    @nfoview.util.monkey_patch(sys, "platform")
     def test_uri_to_path__windows(self):
         sys.platform = "win32"
         uri = "file:///c:/nfoview/a%20file.nfo"

@@ -57,7 +57,7 @@ class TestPreferencesDialog(nfoview.TestCase):
 
     def test__on_line_spacing_spin_value_changed(self):
         self.dialog._line_spacing_spin.set_value(-3)
-        self.dialog._line_spacing_spin.set_value(3)
+        self.dialog._line_spacing_spin.set_value(+3)
 
     def test__on_link_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()

@@ -60,9 +60,9 @@ class BlackOnWhiteScheme(ColorScheme):
     name         = "black-on-white"
     label        = _("Black on white")
     foreground   = nfoview.util.hex_to_rgba("#000000")
-    background   = nfoview.util.hex_to_rgba("#ffffff")
-    link         = nfoview.util.hex_to_rgba("#0000ff")
-    visited_link = nfoview.util.hex_to_rgba("#ff00ff")
+    background   = nfoview.util.hex_to_rgba("#FFFFFF")
+    link         = nfoview.util.hex_to_rgba("#0000FF")
+    visited_link = nfoview.util.hex_to_rgba("#FF00FF")
 
 
 class CustomScheme(ColorScheme):
@@ -84,9 +84,9 @@ class DarkGreyOnLightGrayScheme(ColorScheme):
     name         = "dark-grey-on-light-grey"
     label        = _("Dark grey on light grey")
     foreground   = nfoview.util.hex_to_rgba("#666666")
-    background   = nfoview.util.hex_to_rgba("#f2f2f2")
-    link         = nfoview.util.hex_to_rgba("#5555ff")
-    visited_link = nfoview.util.hex_to_rgba("#ff55ff")
+    background   = nfoview.util.hex_to_rgba("#F2F2F2")
+    link         = nfoview.util.hex_to_rgba("#5555FF")
+    visited_link = nfoview.util.hex_to_rgba("#FF55FF")
 
 
 class DefaultScheme(ColorScheme):
@@ -95,10 +95,10 @@ class DefaultScheme(ColorScheme):
 
     name         = "default"
     label        = _("System theme")
-    foreground   = nfoview.util.lookup_color("text_color", "#2e3436")
-    background   = nfoview.util.lookup_color("base_color", "#ffffff")
-    link         = nfoview.util.lookup_color("link_color", "#4a90d9")
-    visited_link = nfoview.util.lookup_color("link_color", "#4a90d9")
+    foreground   = nfoview.util.lookup_color("text_color", "#2E3436")
+    background   = nfoview.util.lookup_color("base_color", "#FFFFFF")
+    link         = nfoview.util.lookup_color("link_color", "#4A90D9")
+    visited_link = nfoview.util.lookup_color("link_color", "#4A90D9")
 
 
 class GreyOnBlackScheme(ColorScheme):
@@ -107,10 +107,10 @@ class GreyOnBlackScheme(ColorScheme):
 
     name         = "grey-on-black"
     label        = _("Grey on black")
-    foreground   = nfoview.util.hex_to_rgba("#aaaaaa")
+    foreground   = nfoview.util.hex_to_rgba("#AAAAAA")
     background   = nfoview.util.hex_to_rgba("#000000")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    link         = nfoview.util.hex_to_rgba("#AAAAFF")
+    visited_link = nfoview.util.hex_to_rgba("#FFAAFF")
 
 
 class LightGreyOnDarkGrayScheme(ColorScheme):
@@ -119,10 +119,10 @@ class LightGreyOnDarkGrayScheme(ColorScheme):
 
     name         = "light-grey-on-dark-grey"
     label        = _("Light grey on dark grey")
-    foreground   = nfoview.util.hex_to_rgba("#f2f2f2")
+    foreground   = nfoview.util.hex_to_rgba("#F2F2F2")
     background   = nfoview.util.hex_to_rgba("#666666")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    link         = nfoview.util.hex_to_rgba("#AAAAFF")
+    visited_link = nfoview.util.hex_to_rgba("#FFAAFF")
 
 
 class WhiteOnBlackScheme(ColorScheme):
@@ -131,7 +131,7 @@ class WhiteOnBlackScheme(ColorScheme):
 
     name         = "white-on-black"
     label        = _("White on black")
-    foreground   = nfoview.util.hex_to_rgba("#ffffff")
+    foreground   = nfoview.util.hex_to_rgba("#FFFFFF")
     background   = nfoview.util.hex_to_rgba("#000000")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    link         = nfoview.util.hex_to_rgba("#AAAAFF")
+    visited_link = nfoview.util.hex_to_rgba("#FFAAFF")

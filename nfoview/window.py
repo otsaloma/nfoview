@@ -93,22 +93,14 @@ class Window(Gtk.Window):
 
     def _init_contents(self):
         """Initialize child containers and pack contents."""
-        main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         menubar = self._uim.get_widget("/ui/menubar")
-        main_vbox.pack_start(menubar,
-                             expand=False,
-                             fill=False,
-                             padding=0)
-
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,) * 2))
         scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         scroller.add(self.view)
-        main_vbox.pack_start(scroller,
-                             expand=True,
-                             fill=True,
-                             padding=0)
-
+        main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        main_vbox.pack_start(menubar, expand=False, fill=False, padding=0)
+        main_vbox.pack_start(scroller, expand=True, fill=True, padding=0)
         main_vbox.show_all()
         self.add(main_vbox)
 
@@ -172,9 +164,9 @@ class Window(Gtk.Window):
         clipboard = Gtk.Clipboard.get(Gdk.atom_intern("CLIPBOARD", False))
         text_buffer.copy_clipboard(clipboard)
 
-    def _on_drag_data_received(self, widget, context, x, y, sdata, info, time):
+    def _on_drag_data_received(self, widget, context, x, y, data, info, time):
         """Open files dragged from a file browser."""
-        paths = list(map(nfoview.util.uri_to_path, sdata.get_uris()))
+        paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
         for path in paths:

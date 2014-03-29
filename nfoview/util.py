@@ -20,8 +20,9 @@
 """Miscellaneous functions."""
 
 import codecs
+import copy
+import functools
 import nfoview
-import re
 import sys
 import urllib.parse
 import webbrowser
@@ -30,6 +31,12 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
 
+
+def _hasattr_def(obj, name):
+    """Return ``True`` if `obj` has attribute `name` defined."""
+    if hasattr(obj, "__dict__"):
+        return name in obj.__dict__
+    return hasattr(obj, name)
 
 def affirm(value):
     """Raise :exc:`AffirmationError` if value evaluates to ``False``."""
@@ -76,21 +83,20 @@ def detect_encoding(path):
     # return the de facto standard encoding for NFO files, CP437.
     return "cp437"
 
-def get_color_scheme(name):
+def get_color_scheme(name, fallback=None):
     """
     Return the color scheme with given name.
 
     Raise :exc:`ValueError` if color scheme not found.
     """
-    schemes = [getattr(nfoview.schemes, x)
-               for x in nfoview.schemes.__all__]
-
-    names = [x.name for x in schemes]
-    if not name in names:
-        raise ValueError("No color scheme named {}"
-                         .format(repr(name)))
-
-    return schemes[names.index(name)]
+    for class_name in nfoview.schemes.__all__:
+        scheme = getattr(nfoview.schemes, class_name)
+        if scheme.name == name:
+            return scheme
+    if fallback is not None:
+        return get_color_scheme(fallback)
+    raise ValueError("No color scheme named {}"
+                     .format(repr(name)))
 
 def get_color_schemes():
     """Return a list of all color schemes in proper order."""
@@ -119,11 +125,10 @@ def hex_to_rgba(string):
     """
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
-    if not success:
-        raise ValueError("Parsing string {} failed"
-                         .format(repr(string)))
-
-    return rgba
+    if success:
+        return rgba
+    raise ValueError("Parsing string {} failed"
+                     .format(repr(string)))
 
 def is_valid_encoding(encoding):
     """Return ``True`` if `encoding` is a supported encoding."""
@@ -140,19 +145,49 @@ def lookup_color(name, fallback):
     `fallback` should be a hexadecimal string of form '#RRGGBB'.
     Raise :exc:`ValueError` if parsing `fallback` fails.
     """
-    # GTK+ defines 'fg_color' etc. [1] and themes used to as well,
-    # but at least Adwaita uses 'theme_fg_color' etc. [2]
-    # Let's try name with and without the 'theme_' prefix.
-    # [1] https://git.gnome.org/browse/gtk+/tree/gtk/gtk-default.css
-    # [2] https://git.gnome.org/browse/gnome-themes-standard/tree/themes/Adwaita/gtk-3.0/gtk-main.css
-    entry = Gtk.Entry()
-    entry.show()
-    style = entry.get_style_context()
-    name = re.sub("^theme_", "", name)
-    for name in ("theme_{}".format(name), name):
-        found, rgba = style.lookup_color(name)
-        if found: return rgba
+    # XXX: Gtk.StyleContext.lookup_color doesn't seem useful anymore.
+    # We need to figure out another way to find default colors.
     return hex_to_rgba(fallback)
+
+def monkey_patch(obj, name):
+    """
+    Decorator for functions that change `obj`'s `name` attribute.
+
+    Any changes done will be reverted after the function is run, i.e. `name`
+    attribute is either restored to its original value or deleted, if it didn't
+    originally exist. The attribute in question must be able to correctly
+    handle a :func:`copy.deepcopy` operation.
+
+    Typical use would be unit testing code under legitimately unachievable
+    conditions, e.g. pseudo-testing behaviour on Windows, while not actually
+    using Windows::
+
+        @nfoview.util.monkey_patch(sys, "platform")
+        def test_do_something():
+            sys.platform = "win32"
+            do_something()
+
+    """
+    def outer_wrapper(function):
+        @functools.wraps(function)
+        def inner_wrapper(*args, **kwargs):
+            if _hasattr_def(obj, name):
+                attr = getattr(obj, name)
+                setattr(obj, name, copy.deepcopy(attr))
+                try:
+                    return function(*args, **kwargs)
+                finally:
+                    setattr(obj, name, attr)
+                    assert getattr(obj, name) == attr
+                    assert getattr(obj, name) is attr
+            else: # Attribute not defined.
+                try:
+                    return function(*args, **kwargs)
+                finally:
+                    delattr(obj, name)
+                    assert not _hasattr_def(obj, name)
+        return inner_wrapper
+    return outer_wrapper
 
 def rgba_to_color(rgba):
     """Return :class:`Gdk.Color` for :class:`Gdk.RGBA` `rgba`."""
@@ -160,7 +195,7 @@ def rgba_to_color(rgba):
 
 def rgba_to_hex(color):
     """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
-    return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),
+    return "#{:02X}{:02X}{:02X}".format(int(color.red   * 255),
                                         int(color.green * 255),
                                         int(color.blue  * 255))
 

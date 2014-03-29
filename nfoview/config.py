@@ -25,6 +25,19 @@ import re
 
 __all__ = ("ConfigurationStore",)
 
+_DEFAULTS = {"background_color": "#FFFFFF",
+             "color_scheme": "default",
+             "font": "Terminus 12",
+             "foreground_color": "#2E3436",
+             "link_color": "#4A90D9",
+             "pixels_above_lines": 0,
+             "pixels_below_lines": 0,
+             "text_view_max_chars": 160,
+             "text_view_max_lines": 45,
+             "version": "",
+             "visited_link_color": "#AC4AD9",
+             }
+
 
 class ConfigurationStore:
 
@@ -46,19 +59,6 @@ class ConfigurationStore:
     :ivar visited_link_color: Custom visited link color
     """
 
-    _defaults = {"background_color": "#ffffff",
-                 "color_scheme": "default",
-                 "font": "Terminus 12",
-                 "foreground_color": "#2e3436",
-                 "link_color": "#4a90d9",
-                 "pixels_above_lines": 0,
-                 "pixels_below_lines": 0,
-                 "text_view_max_chars": 160,
-                 "text_view_max_lines": 45,
-                 "version": "",
-                 "visited_link_color": "#d94ad9",
-                 }
-
     path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
 
     def __init__(self):
@@ -72,15 +72,15 @@ class ConfigurationStore:
         entries = [x.strip() for x in entries]
         entries = [x for x in entries if not x.startswith("#")]
         entries = dict(re.split(" *= *", x, 1) for x in entries)
-        for name in (set(self._defaults) & set(entries)):
-            decode = type(self._defaults[name])
+        for name in (set(_DEFAULTS) & set(entries)):
+            decode = type(_DEFAULTS[name])
             setattr(self, name, decode(entries[name]))
         self.version = nfoview.__version__
 
     def restore_defaults(self):
         """Set all configuration options to their default values."""
-        for name in self._defaults:
-            setattr(self, name, self._defaults[name])
+        for name in _DEFAULTS:
+            setattr(self, name, _DEFAULTS[name])
         self.version = nfoview.__version__
 
     def write_to_file(self):
@@ -92,10 +92,10 @@ class ConfigurationStore:
             except OSError:
                 return
         fobj = open(self.path, "w")
-        for name in sorted(self._defaults):
+        for name in sorted(_DEFAULTS):
             value = getattr(self, name)
             text = " = ".join((name, str(value)))
-            if value == self._defaults[name]:
+            if value == _DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)
             fobj.write(text + "\n")

@@ -25,26 +25,23 @@ import sys
 
 class TestModule(nfoview.TestCase):
 
-    @nfoview.deco.monkey_patch(sys, "platform")
+    @nfoview.util.monkey_patch(sys, "platform")
     def test_config_home_dir__win32(self):
         sys.platform = "win32"
         imp.reload(nfoview.paths)
-        assert hasattr(nfoview, "CONFIG_HOME_DIR")
+        assert "CONFIG_HOME_DIR"
 
-    @nfoview.deco.monkey_patch(os, "environ")
+    @nfoview.util.monkey_patch(os, "environ")
     def test_config_home_dir__xdg_default(self):
         os.environ.clear()
         imp.reload(nfoview.paths)
-        assert hasattr(nfoview, "CONFIG_HOME_DIR")
+        assert "CONFIG_HOME_DIR"
 
-    @nfoview.deco.monkey_patch(os, "environ")
+    @nfoview.util.monkey_patch(os, "environ")
     def test_config_home_dir__xdg_environment(self):
         os.environ["XDG_CONFIG_HOME"] = "xdg"
         imp.reload(nfoview.paths)
-        assert hasattr(nfoview, "CONFIG_HOME_DIR")
+        assert "CONFIG_HOME_DIR"
 
     def test_data_dir__source(self):
         assert os.path.isdir(nfoview.DATA_DIR)
-
-    def test_locale_dir__source(self):
-        assert hasattr(nfoview, "LOCALE_DIR")

@@ -32,9 +32,6 @@ class TestWindow(nfoview.TestCase):
     def setup_method(self, method):
         self.window = nfoview.Window(self.new_nfo_file())
 
-    def test___init____no_file(self):
-        nfoview.Window()
-
     def test__on_close_document_activate(self):
         self.window._get_action("close_document").activate()
 
@@ -51,7 +48,7 @@ class TestWindow(nfoview.TestCase):
     def test__on_escape_pressed(self):
         self.window._on_escape_pressed()
 
-    @nfoview.deco.monkey_patch(nfoview, "OpenDialog")
+    @nfoview.util.monkey_patch(nfoview, "OpenDialog")
     def test__on_open_file_activate(self):
         nfoview.OpenDialog.run = lambda *args: Gtk.ResponseType.CANCEL
         self.window._get_action("open_file").activate()

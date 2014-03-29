@@ -21,7 +21,7 @@
 Internationalization functions.
 
 Functions defined in this module are convenience aliases for functions of the
-:mod:`gettext` module with proper initialization and character encodings.
+:mod:`gettext` module with proper initialization ensured done.
 """
 
 import gettext

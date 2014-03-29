@@ -22,27 +22,29 @@ import os
 import shutil
 import tempfile
 
+FIELDS = {"background_color": "#FF0000",
+          "color_scheme": "default",
+          "font": "monospace 12",
+          "foreground_color": "#00FF00",
+          "link_color": "#0000FF",
+          "pixels_above_lines": 1,
+          "pixels_below_lines": 0,
+          "text_view_max_chars": 160,
+          "text_view_max_lines": 45,
+          "visited_link_color": "#FFFF00",
+          }
+
 
 class TestConfigurationStore(nfoview.TestCase):
 
-    fields = {"background_color": "#ff0000",
-              "color_scheme": "default",
-              "font": "monospace 12",
-              "foreground_color": "#00ff00",
-              "link_color": "#0000ff",
-              "pixels_above_lines": 1,
-              "pixels_below_lines": -1,
-              "text_view_max_chars": 160,
-              "text_view_max_lines": 45,
-              "visited_link_color": "#ffff00",
-              }
-
     def setup_method(self, method):
         self.temp_dir = tempfile.mkdtemp()
-        conf_dir = os.path.join(self.temp_dir, "test")
-        nfoview.conf.path = os.path.join(conf_dir, "conf")
+        nfoview.conf.path = os.path.join(self.temp_dir,
+                                         "nfoview",
+                                         "nfoview.conf")
+
         nfoview.conf.restore_defaults()
-        for name, value in list(self.fields.items()):
+        for name, value in list(FIELDS.items()):
             setattr(nfoview.conf, name, value)
 
     def teardown_method(self, method):
@@ -52,26 +54,19 @@ class TestConfigurationStore(nfoview.TestCase):
         nfoview.conf.write_to_file()
         nfoview.conf.restore_defaults()
         nfoview.conf.read_from_file()
-        for name, value in self.fields.items():
+        for name, value in FIELDS.items():
             assert getattr(nfoview.conf, name) == value
 
     def test_restore_defaults(self):
         nfoview.conf.restore_defaults()
-        for name, default in nfoview.conf._defaults.items():
-            value = getattr(nfoview.conf, name)
-            if name == "version":
-                assert value == nfoview.__version__
-            else: # Normal option
-                assert value == default
+        ndiff = sum(getattr(nfoview.conf, k) != v
+                    for k, v in FIELDS.items())
+
+        assert 0 < ndiff < len(FIELDS)
 
     def test_write_to_file(self):
         nfoview.conf.write_to_file()
         nfoview.conf.restore_defaults()
         nfoview.conf.read_from_file()
-        for name, value in self.fields.items():
+        for name, value in FIELDS.items():
             assert getattr(nfoview.conf, name) == value
-
-    def test_write_to_file__os_error(self):
-        os.chmod(self.temp_dir, 0o000)
-        nfoview.conf.write_to_file()
-        os.chmod(self.temp_dir, 0o777)

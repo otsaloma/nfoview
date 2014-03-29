@@ -56,7 +56,3 @@ class TestTextView(nfoview.TestCase):
         self.view._link_tags = []
         self.view._visited_link_tags = tags
         self.view.update_colors()
-
-    def test_update_colors__value_error(self):
-        nfoview.conf.color_scheme = "xxx"
-        self.view.update_colors()

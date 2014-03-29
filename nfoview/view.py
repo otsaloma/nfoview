@@ -95,9 +95,8 @@ class TextView(Gtk.TextView):
         for tag in self.get_iter_at_location(x, y).get_tags():
             if hasattr(tag, "nfoview_url"):
                 window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
-                return True
+                return True # to not call the default handler.
         window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
-        return False
 
     def get_text(self):
         """Return the text in the text view."""
@@ -143,11 +142,7 @@ class TextView(Gtk.TextView):
     def update_colors(self):
         """Update colors to match the current color scheme."""
         name = nfoview.conf.color_scheme
-        try:
-            scheme = nfoview.util.get_color_scheme(name)
-        except ValueError:
-            scheme = nfoview.util.get_color_scheme("default")
-            nfoview.conf.color_scheme = "default"
+        scheme = nfoview.util.get_color_scheme(name, "default")
         state = Gtk.StateFlags.NORMAL
         self.override_color(state, scheme.foreground)
         self.override_background_color(state, scheme.background)

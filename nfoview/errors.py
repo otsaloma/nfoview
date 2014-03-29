@@ -19,17 +19,10 @@
 
 """All :mod:`nfoview` error classes."""
 
-__all__ = ("Error", "AffirmationError",)
+__all__ = ("AffirmationError",)
 
 
-class Error(Exception):
-
-    """Base class for all :mod:`nfoview` errors."""
-
-    pass
-
-
-class AffirmationError(Error):
+class AffirmationError(Exception):
 
     """
     Something expected to be ``True`` was ``False``.

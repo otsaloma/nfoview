@@ -27,7 +27,7 @@ from gi.repository import Gtk
 
 __all__ = ("AboutDialog",)
 
-_license = """
+_LICENSE = """
 NFO Viewer is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or (at your
@@ -61,7 +61,7 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_version(nfoview.__version__)
         self.set_copyright("Copyright © 2005–2014 Osmo Salomaa")
         self.set_comments(_("Viewer for NFO files"))
-        self.set_license(_license)
+        self.set_license(_LICENSE)
         self.set_wrap_license(True)
         self.set_website("http://home.gna.org/nfoview/")
         self.set_website_label(_("NFO Viewer Website"))
