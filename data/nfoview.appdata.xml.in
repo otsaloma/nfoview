@@ -10,7 +10,7 @@
     automatic window size and clickable hyperlinks.</_p>
   </description>
   <screenshots>
-    <screenshot type="default">http://home.gna.org/nfoview/screenshot-appdata.png</screenshot>
+    <screenshot type="default" width="678" height="379">http://home.gna.org/nfoview/screenshot-appdata.png</screenshot>
   </screenshots>
   <url type="homepage">http://home.gna.org/nfoview/</url>
   <updatecontact>nfoview-list@gna.org</updatecontact>
