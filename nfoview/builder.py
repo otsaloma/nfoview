@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2006-2009,2011 Osmo Salomaa
+# Copyright (C) 2006 Osmo Salomaa
 #
 # This file is part of NFO Viewer.
 #
