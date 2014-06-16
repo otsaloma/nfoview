@@ -143,8 +143,9 @@ def lookup_color(name, fallback):
     `fallback` should be a hexadecimal string of form '#RRGGBB'.
     Raise :exc:`ValueError` if parsing `fallback` fails.
     """
-    # XXX: Gtk.StyleContext.lookup_color doesn't seem useful anymore.
-    # We need to figure out another way to find default colors.
+    # XXX: It would be nice to get colors from the user's GTK+ theme,
+    # but any possible code used here seems destined to break with
+    # every new release of GTK+ and/or whichever GTK+ theme.
     return hex_to_rgba(fallback)
 
 def monkey_patch(obj, name):
@@ -153,18 +154,7 @@ def monkey_patch(obj, name):
 
     Any changes done will be reverted after the function is run, i.e. `name`
     attribute is either restored to its original value or deleted, if it didn't
-    originally exist. The attribute in question must be able to correctly
-    handle a :func:`copy.deepcopy` operation.
-
-    Typical use would be unit testing code under legitimately unachievable
-    conditions, e.g. pseudo-testing behaviour on Windows, while not actually
-    using Windows::
-
-        @nfoview.util.monkey_patch(sys, "platform")
-        def test_do_something():
-            sys.platform = "win32"
-            do_something()
-
+    originally exist.
     """
     def outer_wrapper(function):
         @functools.wraps(function)

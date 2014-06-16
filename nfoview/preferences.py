@@ -48,6 +48,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self._init_scheme_combo()
         self._init_values()
         self.set_transient_for(parent)
+        self.set_default_response(Gtk.ResponseType.CLOSE)
 
     def _get_rgba(self, color_button):
         """Get RGBA color from `color_button`."""

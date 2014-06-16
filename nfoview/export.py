@@ -40,3 +40,4 @@ class ExportImageDialog(Gtk.FileChooserDialog):
         self.add_button(Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
         self.set_do_overwrite_confirmation(True)
         self.set_select_multiple(False)
+        self.set_default_response(Gtk.ResponseType.OK)

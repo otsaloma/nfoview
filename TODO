@@ -1,6 +1,7 @@
 NFO Viewer 1.14
 ===============
 
+ [X] Fix default response buttons for dialogs
  [X] Make AppData file translatable
  [X] Add GTK+ to list of dependencies in the README file (GTK+ has
      always been a dependency, its explicit mention was just forgotten
@@ -16,4 +17,3 @@ NFO Viewer 2.0
    - http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGtkApplication
    - http://mail.gnome.org/archives/gtk-devel-list/2013-July/msg00016.html
  * Make hyperlinks activatable by keyboard?
- * Fix the default color scheme to actually use default colors

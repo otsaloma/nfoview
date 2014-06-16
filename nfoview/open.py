@@ -39,6 +39,7 @@ class OpenDialog(Gtk.FileChooserDialog):
         self.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)
         self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.OK)
         self.set_select_multiple(True)
+        self.set_default_response(Gtk.ResponseType.OK)
         file_filter = Gtk.FileFilter()
         file_filter.set_name(_("All files"))
         file_filter.add_pattern("*")
