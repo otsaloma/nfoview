@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-29 03:34+0300\n"
+"POT-Creation-Date: 2014-06-21 16:37+0300\n"
 "PO-Revision-Date: 2009-06-10 16:50+0800\n"
 "Last-Translator: Jonathan Ye <hyqianli@gmail.com>\n"
 "Language-Team: Simplified Chinese\n"
@@ -66,11 +66,19 @@ msgstr "已访问链接(_V)"
 msgid "Select Color"
 msgstr "选择颜色"
 
+#: ../data/nfoview.appdata.xml.in.h:1
+msgid ""
+"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
+"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
+"are preset font and encoding settings, automatic window size and clickable "
+"hyperlinks."
+msgstr ""
+
 #. Translators: The application name 'NFO Viewer' has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:60
+#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:58
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -83,15 +91,15 @@ msgstr "浏览 NFO 文件"
 msgid "information;"
 msgstr ""
 
-#: ../nfoview/about.py:55
+#: ../nfoview/about.py:53
 msgid "About NFO Viewer"
 msgstr "关于 NFO Viewer"
 
-#: ../nfoview/about.py:63
+#: ../nfoview/about.py:61
 msgid "Viewer for NFO files"
 msgstr "NFO 浏览器"
 
-#: ../nfoview/about.py:67
+#: ../nfoview/about.py:65
 msgid "NFO Viewer Website"
 msgstr "NFO Viewer 网站"
 
@@ -101,139 +109,139 @@ msgstr "NFO Viewer 网站"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:76
+#: ../nfoview/about.py:74
 msgid "translator-credits"
 msgstr "Jonathan Ye <hyqianli@gmail.com>"
 
-#: ../nfoview/actions.py:89
+#: ../nfoview/actions.py:87
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../nfoview/actions.py:91
+#: ../nfoview/actions.py:89
 msgid "Close document"
 msgstr "关闭当前文件"
 
-#: ../nfoview/actions.py:103
+#: ../nfoview/actions.py:101
 msgid "_Copy"
 msgstr "复制(_C)"
 
-#: ../nfoview/actions.py:104
+#: ../nfoview/actions.py:102
 msgid "Copy"
 msgstr "复制"
 
-#: ../nfoview/actions.py:106
+#: ../nfoview/actions.py:104
 msgid "Copy the selected text to the clipboard"
 msgstr "将选中的文本复制到剪贴板"
 
-#: ../nfoview/actions.py:124
+#: ../nfoview/actions.py:122
 msgid "_Preferences"
 msgstr "设置(_P)"
 
-#: ../nfoview/actions.py:126
+#: ../nfoview/actions.py:124
 msgid "Edit NFO Viewer preferences"
 msgstr "更改本程序设置参数"
 
-#: ../nfoview/actions.py:136
+#: ../nfoview/actions.py:134
 msgid "_Export Image…"
 msgstr ""
 
-#: ../nfoview/actions.py:137
+#: ../nfoview/actions.py:135
 msgid "Export document as an image file"
 msgstr ""
 
-#: ../nfoview/actions.py:155
+#: ../nfoview/actions.py:153
 msgid "_Open…"
 msgstr "打开(_O)…"
 
-#: ../nfoview/actions.py:156 ../nfoview/open.py:38
+#: ../nfoview/actions.py:154 ../nfoview/open.py:36
 msgid "Open"
 msgstr "打开"
 
-#: ../nfoview/actions.py:158
+#: ../nfoview/actions.py:156
 msgid "Open file"
 msgstr "打开文件"
 
-#: ../nfoview/actions.py:169
+#: ../nfoview/actions.py:167
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: ../nfoview/actions.py:171
+#: ../nfoview/actions.py:169
 msgid "Quit NFO Viewer"
 msgstr "退出 NFO Viewer"
 
-#: ../nfoview/actions.py:182
+#: ../nfoview/actions.py:180
 msgid "_Select All"
 msgstr "全部选中(_S)"
 
-#: ../nfoview/actions.py:184
+#: ../nfoview/actions.py:182
 msgid "Select all text in the document"
 msgstr "选中文档中的所有文本"
 
-#: ../nfoview/actions.py:200
+#: ../nfoview/actions.py:198
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../nfoview/actions.py:202
+#: ../nfoview/actions.py:200
 msgid "Show information about NFO Viewer"
 msgstr "关于本程序"
 
-#: ../nfoview/actions.py:212
+#: ../nfoview/actions.py:210
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../nfoview/actions.py:222
+#: ../nfoview/actions.py:220
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../nfoview/actions.py:232
+#: ../nfoview/actions.py:230
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../nfoview/actions.py:243
+#: ../nfoview/actions.py:241
 msgid "_Wrap Lines"
 msgstr ""
 
-#: ../nfoview/actions.py:244
+#: ../nfoview/actions.py:242
 msgid "Break long lines at word borders"
 msgstr ""
 
-#: ../nfoview/export.py:38
+#: ../nfoview/export.py:36
 msgid "Export Image"
 msgstr ""
 
-#: ../nfoview/open.py:45
+#: ../nfoview/open.py:44
 msgid "All files"
 msgstr "所有文件"
 
-#: ../nfoview/open.py:49
+#: ../nfoview/open.py:48
 msgid "NFO files (*.nfo)"
 msgstr "NFO 文件 (*.nfo)"
 
-#: ../nfoview/schemes.py:61
+#: ../nfoview/schemes.py:59
 msgid "Black on white"
 msgstr "白底黑字"
 
-#: ../nfoview/schemes.py:73
+#: ../nfoview/schemes.py:71
 msgid "Custom"
 msgstr "自定义"
 
-#: ../nfoview/schemes.py:85
+#: ../nfoview/schemes.py:83
 msgid "Dark grey on light grey"
 msgstr "浅灰背景深灰字体颜色"
 
-#: ../nfoview/schemes.py:97
+#: ../nfoview/schemes.py:95
 msgid "System theme"
 msgstr "系统主题"
 
-#: ../nfoview/schemes.py:109
+#: ../nfoview/schemes.py:107
 msgid "Grey on black"
 msgstr "黑底灰字"
 
-#: ../nfoview/schemes.py:121
+#: ../nfoview/schemes.py:119
 msgid "Light grey on dark grey"
 msgstr "深灰背景浅灰字体颜色"
 
-#: ../nfoview/schemes.py:133
+#: ../nfoview/schemes.py:131
 msgid "White on black"
 msgstr "黑底白字"
 
