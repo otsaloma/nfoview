@@ -7,7 +7,7 @@ Releasing a New Version
    $ git commit -a -m "Update translations for X.Y.Z."
 
  * Do final quality checks
-   $ pyflakes3 bin/nfoview setup.py nfoview
+   $ pyflakes3 bin/nfoview nfoview setup.py
    $ py.test-3 --tb=no nfoview
 
  * Make final edits to files
