@@ -71,6 +71,10 @@ msgid ""
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
 msgstr ""
+"NFO Viewer, kod sayfası 437 ile yapılmış \"ASCII\" sanatı olan NFO dosyaları "
+"için sade bir görüntüleyicidir. Bir metin düzenleyicisi yerine NFO Viewer'ı "
+"kullanmanın avantajları, önayarlı yazıtipi ile kodlama, otomatik pencere "
+"boyutlanması ve tıklanabilir bağlantılardır."
 
 #. Translators: The application name 'NFO Viewer' has been intentionally
 #. marked as translatable. If you manage to translate the name in a
