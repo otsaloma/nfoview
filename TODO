@@ -1,6 +1,7 @@
-NFO Viewer 1.14.1
-=================
+NFO Viewer 1.15
+===============
 
+ [ ] Fix any issues with GTK+ 3.14
  [X] Update French translation
  [X] Update Turkish translation
 
