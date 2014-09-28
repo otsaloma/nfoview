@@ -154,7 +154,7 @@ class Window(Gtk.Window):
 
     def _on_close_document_activate(self, *args):
         """Delete the window to close document."""
-        self.emit("delete-event", Gdk.Event(Gdk.EventType.DELETE))
+        self.emit("delete-event", Gdk.Event.new(Gdk.EventType.DELETE))
 
     def _on_copy_text_activate(self, *args):
         """Copy the selected text to the clipboard."""
@@ -183,7 +183,7 @@ class Window(Gtk.Window):
 
     def _on_escape_pressed(self, *args):
         """Delete the window to close the document."""
-        self.emit("delete-event", Gdk.Event(Gdk.EventType.DELETE))
+        self.emit("delete-event", Gdk.Event.new(Gdk.EventType.DELETE))
 
     def _on_export_as_image_activate(self, *args):
         """Export document as an image file."""
@@ -229,7 +229,7 @@ class Window(Gtk.Window):
     def _on_quit_activate(self, *args):
         """Delete all windows to quit NFO Viewer."""
         for window in list(nfoview.main.windows):
-            window.emit("delete-event", Gdk.Event(Gdk.EventType.DELETE))
+            window.emit("delete-event", Gdk.Event.new(Gdk.EventType.DELETE))
 
     def _on_select_all_text_activate(self, *args):
         """Select all text in the document."""

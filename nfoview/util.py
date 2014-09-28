@@ -193,7 +193,7 @@ def show_uri(uri):
         # Gtk.show_uri: Operation not supported
         if uri.startswith(("http://", "https://")):
             return webbrowser.open(uri)
-        raise # whatever error encountered.
+        raise # Exception
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""

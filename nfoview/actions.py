@@ -85,7 +85,6 @@ class CloseDocumentAction(Action):
         """Initialize a :class:`CloseDocumentAction` instance."""
         Action.__init__(self, "close_document")
         self.props.label = _("_Close")
-        self.props.stock_id = Gtk.STOCK_CLOSE
         self.props.tooltip = _("Close document")
         self.accelerator = "<Control>W"
 
@@ -97,10 +96,7 @@ class CopyTextAction(Action):
     def __init__(self):
         """Initialize a :class:`CopyTextAction` instance."""
         Action.__init__(self, "copy_text")
-        self.props.is_important = True
         self.props.label = _("_Copy")
-        self.props.short_label = _("Copy")
-        self.props.stock_id = Gtk.STOCK_COPY
         self.props.tooltip = _("Copy the selected text to the clipboard")
         self.accelerator = "<Control>C"
 
@@ -120,7 +116,6 @@ class EditPreferencesAction(Action):
         """Initialize an :class:`EditPreferencesAction` instance."""
         Action.__init__(self, "edit_preferences")
         self.props.label = _("_Preferences")
-        self.props.stock_id = Gtk.STOCK_PREFERENCES
         self.props.tooltip = _("Edit NFO Viewer preferences")
 
 
@@ -149,10 +144,7 @@ class OpenFileAction(Action):
     def __init__(self):
         """Initialize an :class:`OpenFileAction` instance."""
         Action.__init__(self, "open_file")
-        self.props.is_important = True
         self.props.label = _("_Open…")
-        self.props.short_label = _("Open")
-        self.props.stock_id = Gtk.STOCK_OPEN
         self.props.tooltip = _("Open file")
         self.accelerator = "<Control>O"
 
@@ -165,7 +157,6 @@ class QuitAction(Action):
         """Initialize a :class:`QuitAction` instance."""
         Action.__init__(self, "quit")
         self.props.label = _("_Quit")
-        self.props.stock_id = Gtk.STOCK_QUIT
         self.props.tooltip = _("Quit NFO Viewer")
         self.accelerator = "<Control>Q"
 
@@ -178,7 +169,6 @@ class SelectAllTextAction(Action):
         """Initialize a :class:`SelectAllTextAction` instance."""
         Action.__init__(self, "select_all_text")
         self.props.label = _("_Select All")
-        self.props.stock_id = Gtk.STOCK_SELECT_ALL
         self.props.tooltip = _("Select all text in the document")
         self.accelerator = "<Control>A"
 
@@ -196,7 +186,6 @@ class ShowAboutDialogAction(Action):
         """Initialize a :class:`ShowAboutDialogAction` instance."""
         Action.__init__(self, "show_about_dialog")
         self.props.label = _("_About")
-        self.props.stock_id = Gtk.STOCK_ABOUT
         self.props.tooltip = _("Show information about NFO Viewer")
 
 

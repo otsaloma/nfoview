@@ -144,9 +144,9 @@ class TextView(Gtk.TextView):
         state = Gtk.StateFlags.NORMAL
         self.override_color(state, scheme.foreground)
         self.override_background_color(state, scheme.background)
-        text_view = Gtk.TextView()
-        text_view.show()
-        style = text_view.get_style_context()
+        entry = Gtk.Entry()
+        entry.show()
+        style = entry.get_style_context()
         state = Gtk.StateFlags.SELECTED
         foreground = style.get_color(state)
         background = style.get_background_color(state)

@@ -1,7 +1,11 @@
 NFO Viewer 1.15
 ===============
 
- [ ] Fix any issues with GTK+ 3.14
+ [X] Fix preferences dialog padding with GTK+ 3.14
+ [X] Fix selection background color with GTK+ 3.14
+ [X] Remove use of deprecated stock items
+ [X] Remove use of deprecated GtkAlignment
+ [X] Remove use of deprecated gi.types.Boxed.__init__
  [X] Update French translation
  [X] Update Turkish translation
 

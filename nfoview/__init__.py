@@ -30,6 +30,7 @@ __version__ = "1.14"
 import os
 
 from nfoview.paths import *
+
 from gi.repository import Gtk
 icon_theme = Gtk.IconTheme.get_default()
 path = os.path.join(DATA_DIR, "icons")
