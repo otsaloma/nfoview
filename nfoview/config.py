@@ -20,21 +20,24 @@
 import nfoview
 import os
 import re
+import sys
+import traceback
 
 __all__ = ("ConfigurationStore",)
 
-_DEFAULTS = {"background_color": "#FFFFFF",
-             "color_scheme": "default",
-             "font": "Terminus 12",
-             "foreground_color": "#2E3436",
-             "link_color": "#4A90D9",
-             "pixels_above_lines": 0,
-             "pixels_below_lines": 0,
-             "text_view_max_chars": 160,
-             "text_view_max_lines": 45,
-             "version": "",
-             "visited_link_color": "#AC4AD9",
-             }
+_DEFAULTS = dict(
+    background_color="#ffffff",
+    color_scheme="default",
+    font="Terminus 12",
+    foreground_color="#2e3436",
+    link_color="#4a90d9",
+    pixels_above_lines=0,
+    pixels_below_lines=0,
+    text_view_max_chars=160,
+    text_view_max_lines=45,
+    version="",
+    visited_link_color="#ac4ad9",
+)
 
 
 class ConfigurationStore:
@@ -42,13 +45,12 @@ class ConfigurationStore:
     """
     Reading, writing and storing configurations.
 
-    :cvar path: Path to user's local configuration file
-
     :ivar background_color: Custom background color
     :ivar color_scheme: Name of the color scheme used
     :ivar font: Font string in :class:`Pango.FontDescription` format
     :ivar foreground_color: Custom foreground color
     :ivar link_color: Custom link color
+    :ivar path: Path to user's local configuration file
     :ivar pixels_above_lines: Extra line-spacing above each line
     :ivar pixels_below_lines: Extra line-spacing below each line
     :ivar text_view_max_chars: Maximum width for text view in characters
@@ -67,10 +69,11 @@ class ConfigurationStore:
         """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
         entries = open(self.path, "r").readlines()
-        entries = [x.strip() for x in entries]
-        entries = [x for x in entries if not x.startswith("#")]
-        entries = dict(re.split(" *= *", x, 1) for x in entries)
-        for name in (set(_DEFAULTS) & set(entries)):
+        entries = dict(re.split(" *= *", x.strip(), 1)
+                       for x in entries if
+                       not x.startswith("#") and "=" in x)
+
+        for name in set(_DEFAULTS) & set(entries):
             decode = type(_DEFAULTS[name])
             setattr(self, name, decode(entries[name]))
         self.version = nfoview.__version__
@@ -88,11 +91,13 @@ class ConfigurationStore:
             try:
                 os.makedirs(directory)
             except OSError:
+                print("Failed to create directory:", file=sys.stderr)
+                traceback.print_exc()
                 return
         fobj = open(self.path, "w")
         for name in sorted(_DEFAULTS):
             value = getattr(self, name)
-            text = " = ".join((name, str(value)))
+            text = "{} = {}".format(name, str(value))
             if value == _DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)

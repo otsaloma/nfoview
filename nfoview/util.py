@@ -179,7 +179,7 @@ def monkey_patch(obj, name):
 
 def rgba_to_hex(color):
     """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
-    return "#{:02X}{:02X}{:02X}".format(int(color.red   * 255),
+    return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),
                                         int(color.green * 255),
                                         int(color.blue  * 255))
 

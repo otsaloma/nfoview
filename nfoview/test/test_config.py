@@ -20,27 +20,26 @@ import os
 import shutil
 import tempfile
 
-FIELDS = {"background_color": "#FF0000",
-          "color_scheme": "default",
-          "font": "monospace 12",
-          "foreground_color": "#00FF00",
-          "link_color": "#0000FF",
-          "pixels_above_lines": 1,
-          "pixels_below_lines": 0,
-          "text_view_max_chars": 160,
-          "text_view_max_lines": 45,
-          "visited_link_color": "#FFFF00",
-          }
+FIELDS = dict(
+    background_color="#ff0000",
+    color_scheme="default",
+    font="monospace 12",
+    foreground_color="#00ff00",
+    link_color="#0000ff",
+    pixels_above_lines=1,
+    pixels_below_lines=0,
+    text_view_max_chars=160,
+    text_view_max_lines=45,
+    visited_link_color="#ffff00",
+)
 
 
 class TestConfigurationStore(nfoview.TestCase):
 
     def setup_method(self, method):
         self.temp_dir = tempfile.mkdtemp()
-        nfoview.conf.path = os.path.join(self.temp_dir,
-                                         "nfoview",
-                                         "nfoview.conf")
-
+        nfoview.conf.path = os.path.join(
+            self.temp_dir, "nfoview", "nfoview.conf")
         nfoview.conf.restore_defaults()
         for name, value in list(FIELDS.items()):
             setattr(nfoview.conf, name, value)
@@ -57,10 +56,10 @@ class TestConfigurationStore(nfoview.TestCase):
 
     def test_restore_defaults(self):
         nfoview.conf.restore_defaults()
-        ndiff = sum(getattr(nfoview.conf, k) != v
-                    for k, v in FIELDS.items())
-
-        assert 0 < ndiff < len(FIELDS)
+        defaults = dict(nfoview.config._DEFAULTS)
+        defaults["version"] = nfoview.__version__
+        for name, value in defaults.items():
+            assert getattr(nfoview.conf, name) == value
 
     def test_write_to_file(self):
         nfoview.conf.write_to_file()
