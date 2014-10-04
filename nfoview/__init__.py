@@ -32,9 +32,8 @@ import os
 from nfoview.paths import *
 
 from gi.repository import Gtk
-icon_theme = Gtk.IconTheme.get_default()
-path = os.path.join(DATA_DIR, "icons")
-icon_theme.append_search_path(os.path.abspath(path))
+Gtk.IconTheme.get_default().append_search_path(
+    os.path.abspath(os.path.join(DATA_DIR, "icons")))
 
 from nfoview import i18n
 from nfoview import util
