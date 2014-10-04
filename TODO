@@ -3,17 +3,16 @@ NFO Viewer 1.15
 
  [X] Fix preferences dialog padding with GTK+ 3.14
  [X] Fix selection background color with GTK+ 3.14
- [X] Remove use of deprecated stock items
- [X] Remove use of deprecated GtkAlignment
- [X] Remove use of deprecated gi.types.Boxed.__init__
+ [X] Remove use of deprecated stock items, GtkAlignment
+     and gi.types.Boxed.__init__
  [X] Update French translation
  [X] Update Turkish translation
 
 NFO Viewer 2.0
 ==============
 
- * Use Gtk.Widget's margin-start instead of margin-left when we can bump
-   the GTK+ dependency to 3.12
+ * Bump GTK+ dependency to 3.14
+   - Use Gtk.Widget's margin-start instead of margin-left
  * Apply new GNOME goals?
    - http://wiki.gnome.org/Initiatives/GnomeGoals/HeaderBars
    - http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGMenu

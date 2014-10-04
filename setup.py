@@ -297,13 +297,12 @@ setup_kwargs = dict(
           "data/ui.xml")),
         ],
 
-    cmdclass={"clean": Clean,
-              "doc": Documentation,
-              "install": Install,
-              "install_data": InstallData,
-              "install_lib": InstallLib,
-              "sdist_gna": SDistGna,
-              })
+    cmdclass=dict(clean=Clean,
+                  doc=Documentation,
+                  install=Install,
+                  install_data=InstallData,
+                  install_lib=InstallLib,
+                  sdist_gna=SDistGna)
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__) or ".")
