@@ -46,8 +46,8 @@ class Action(Gtk.Action):
     :ivar accelerator: Accelerator string for :func:`Gtk.accelerator_parse`
 
     Instance variable :attr:`accelerator` defines a string in the format
-    understood by :func:`Gtk.accelerator_parse`, ``None`` to use the stock
-    accelerator or leave undefined to use blank string as a fallback.
+    understood by :func:`Gtk.accelerator_parse`, leave undefined to fall back
+    on a blank string, i.e. no accelerator.
     """
 
     def __init__(self, name):
@@ -84,8 +84,8 @@ class CloseDocumentAction(Action):
     def __init__(self):
         """Initialize a :class:`CloseDocumentAction` instance."""
         Action.__init__(self, "close_document")
-        self.props.label = _("_Close")
-        self.props.tooltip = _("Close document")
+        self.set_label(_("_Close"))
+        self.set_tooltip(_("Close document"))
         self.accelerator = "<Control>W"
 
 
@@ -96,14 +96,14 @@ class CopyTextAction(Action):
     def __init__(self):
         """Initialize a :class:`CopyTextAction` instance."""
         Action.__init__(self, "copy_text")
-        self.props.label = _("_Copy")
-        self.props.tooltip = _("Copy the selected text to the clipboard")
+        self.set_label(_("_Copy"))
+        self.set_tooltip(_("Copy the selected text to the clipboard"))
         self.accelerator = "<Control>C"
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.props.sensitive)
+        nfoview.util.affirm(window.view.get_sensitive())
         text_buffer = window.view.get_buffer()
         nfoview.util.affirm(text_buffer.get_has_selection())
 
@@ -115,8 +115,8 @@ class EditPreferencesAction(Action):
     def __init__(self):
         """Initialize an :class:`EditPreferencesAction` instance."""
         Action.__init__(self, "edit_preferences")
-        self.props.label = _("_Preferences")
-        self.props.tooltip = _("Edit NFO Viewer preferences")
+        self.set_label(_("_Preferences"))
+        self.set_tooltip(_("Edit NFO Viewer preferences"))
 
 
 class ExportAsImageFileAction(Action):
@@ -126,15 +126,15 @@ class ExportAsImageFileAction(Action):
     def __init__(self):
         """Initialize an :class:`ExportAsImageFileAction` instance."""
         Action.__init__(self, "export_as_image")
-        self.props.label = _("_Export Image…")
-        self.props.tooltip = _("Export document as an image file")
+        self.set_label(_("_Export Image…"))
+        self.set_tooltip(_("Export document as an image file"))
         self.accelerator = "<Control>E"
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.path is not None)
         nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.props.sensitive)
+        nfoview.util.affirm(window.view.get_sensitive())
 
 
 class OpenFileAction(Action):
@@ -144,8 +144,8 @@ class OpenFileAction(Action):
     def __init__(self):
         """Initialize an :class:`OpenFileAction` instance."""
         Action.__init__(self, "open_file")
-        self.props.label = _("_Open…")
-        self.props.tooltip = _("Open file")
+        self.set_label(_("_Open…"))
+        self.set_tooltip(_("Open file"))
         self.accelerator = "<Control>O"
 
 
@@ -156,8 +156,8 @@ class QuitAction(Action):
     def __init__(self):
         """Initialize a :class:`QuitAction` instance."""
         Action.__init__(self, "quit")
-        self.props.label = _("_Quit")
-        self.props.tooltip = _("Quit NFO Viewer")
+        self.set_label(_("_Quit"))
+        self.set_tooltip(_("Quit NFO Viewer"))
         self.accelerator = "<Control>Q"
 
 
@@ -168,14 +168,14 @@ class SelectAllTextAction(Action):
     def __init__(self):
         """Initialize a :class:`SelectAllTextAction` instance."""
         Action.__init__(self, "select_all_text")
-        self.props.label = _("_Select All")
-        self.props.tooltip = _("Select all text in the document")
+        self.set_label(_("_Select All"))
+        self.set_tooltip(_("Select all text in the document"))
         self.accelerator = "<Control>A"
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.props.sensitive)
+        nfoview.util.affirm(window.view.get_sensitive())
 
 
 class ShowAboutDialogAction(Action):
@@ -185,8 +185,8 @@ class ShowAboutDialogAction(Action):
     def __init__(self):
         """Initialize a :class:`ShowAboutDialogAction` instance."""
         Action.__init__(self, "show_about_dialog")
-        self.props.label = _("_About")
-        self.props.tooltip = _("Show information about NFO Viewer")
+        self.set_label(_("_About"))
+        self.set_tooltip(_("Show information about NFO Viewer"))
 
 
 class ShowEditMenuAction(Action):
@@ -196,7 +196,7 @@ class ShowEditMenuAction(Action):
     def __init__(self):
         """Initialize a :class:`ShowEditMenuAction` instance."""
         Action.__init__(self, "show_edit_menu")
-        self.props.label = _("_Edit")
+        self.set_label(_("_Edit"))
 
 
 class ShowFileMenuAction(Action):
@@ -206,7 +206,7 @@ class ShowFileMenuAction(Action):
     def __init__(self):
         """Initialize a :class:`ShowFileMenuAction` instance."""
         Action.__init__(self, "show_file_menu")
-        self.props.label = _("_File")
+        self.set_label(_("_File"))
 
 
 class ShowHelpMenuAction(Action):
@@ -216,7 +216,7 @@ class ShowHelpMenuAction(Action):
     def __init__(self):
         """Initialize a :class:`ShowHelpMenuAction` instance."""
         Action.__init__(self, "show_help_menu")
-        self.props.label = _("_Help")
+        self.set_label(_("_Help"))
 
 
 class WrapLinesAction(ToggleAction):
@@ -226,12 +226,12 @@ class WrapLinesAction(ToggleAction):
     def __init__(self):
         """Initialize a :class:`WrapLinesAction` instance."""
         ToggleAction.__init__(self, "wrap_lines")
-        self.props.active = False
-        self.props.label = _("_Wrap Lines")
-        self.props.tooltip = _("Break long lines at word borders")
+        self.set_active(False)
+        self.set_label(_("_Wrap Lines"))
+        self.set_tooltip(_("Break long lines at word borders"))
         self.accelerator = "<Control>R"
 
     def _affirm_doable(self, window):
         """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.props.sensitive)
+        nfoview.util.affirm(window.view.get_sensitive())

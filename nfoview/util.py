@@ -45,7 +45,7 @@ def connect(observer, observable, signal, *args):
     method_name = signal.replace("-", "_").replace("::", "_")
     if observer is not observable:
         method_name = "_".join((observable, method_name))
-    method_name = ("_on_{}".format(method_name)).replace("__", "_")
+    method_name = "_on_{}".format(method_name).replace("__", "_")
     if not hasattr(observer, method_name):
         method_name = method_name[1:]
     method = getattr(observer, method_name)
@@ -76,11 +76,7 @@ def detect_encoding(path):
     return "cp437"
 
 def get_color_scheme(name, fallback=None):
-    """
-    Return the color scheme with given name.
-
-    Raise :exc:`ValueError` if color scheme not found.
-    """
+    """Return the color scheme with given name."""
     for class_name in nfoview.schemes.__all__:
         scheme = getattr(nfoview.schemes, class_name)
         if scheme.name == name:
@@ -116,11 +112,7 @@ def _hasattr_def(obj, name):
     return hasattr(obj, name)
 
 def hex_to_rgba(string):
-    """
-    Return a :class:`Gdk.RGBA` for hexadecimal `string`.
-
-    Raise :exc:`ValueError` if parsing `string` fails.
-    """
+    """Return a :class:`Gdk.RGBA` for hexadecimal `string`."""
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
     if success:
@@ -137,12 +129,7 @@ def is_valid_encoding(encoding):
         return False
 
 def lookup_color(name, fallback):
-    """
-    Return defined color `name` from GTK+ theme.
-
-    `fallback` should be a hexadecimal string of form '#RRGGBB'.
-    Raise :exc:`ValueError` if parsing `fallback` fails.
-    """
+    """Return defined color `name` from GTK+ theme."""
     # XXX: It would be nice to get colors from the user's GTK+ theme,
     # but any possible code used here seems destined to break with
     # every new release of GTK+ and/or whichever GTK+ theme.
@@ -152,26 +139,23 @@ def monkey_patch(obj, name):
     """
     Decorator for functions that change `obj`'s `name` attribute.
 
-    Any changes done will be reverted after the function is run, i.e. `name`
-    attribute is either restored to its original value or deleted, if it didn't
-    originally exist.
+    Any changes done will be reverted after the function is run,
+    i.e. `name` attribute is either restored to its original value
+    or deleted, if it didn't originally exist.
     """
     def outer_wrapper(function):
         @functools.wraps(function)
         def inner_wrapper(*args, **kwargs):
-            if _hasattr_def(obj, name):
-                attr = getattr(obj, name)
-                setattr(obj, name, copy.deepcopy(attr))
-                try:
-                    return function(*args, **kwargs)
-                finally:
-                    setattr(obj, name, attr)
-                    assert getattr(obj, name) == attr
-                    assert getattr(obj, name) is attr
-            else: # Attribute not defined.
-                try:
-                    return function(*args, **kwargs)
-                finally:
+            exists = _hasattr_def(obj, name)
+            value = getattr(obj, name) if exists else None
+            setattr(obj, name, copy.deepcopy(value))
+            try:
+                return function(*args, **kwargs)
+            finally:
+                setattr(obj, name, value)
+                assert getattr(obj, name) == value
+                assert getattr(obj, name) is value
+                if not exists:
                     delattr(obj, name)
                     assert not _hasattr_def(obj, name)
         return inner_wrapper

@@ -21,7 +21,6 @@ import os
 import sys
 
 from gi.repository import Gdk
-from gi.repository import Gtk
 
 
 class TestModule(nfoview.TestCase):
@@ -33,16 +32,6 @@ class TestModule(nfoview.TestCase):
 
     def test_affirm__true(self):
         nfoview.util.affirm(True)
-
-    def test_connect__private(self):
-        self.window = Gtk.Window()
-        self._on_window_delete_event = lambda *args: None
-        nfoview.util.connect(self, "window", "delete-event")
-
-    def test_connect__public(self):
-        self.window = Gtk.Window()
-        self.on_window_delete_event = lambda *args: None
-        nfoview.util.connect(self, "window", "delete-event")
 
     def test_detect_encoding__cp437(self):
         path = self.new_nfo_file()
@@ -94,19 +83,6 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_8_sig"
 
-    def test_get_color_scheme__custom(self):
-        scheme = nfoview.util.get_color_scheme("custom")
-        assert scheme is nfoview.CustomScheme
-
-    def test_get_color_scheme__default(self):
-        scheme = nfoview.util.get_color_scheme("default")
-        assert scheme is nfoview.DefaultScheme
-
-    def test_get_color_schemes(self):
-        schemes = nfoview.util.get_color_schemes()
-        assert schemes[ 0] is nfoview.DefaultScheme
-        assert schemes[-1] is nfoview.CustomScheme
-
     @nfoview.util.monkey_patch(nfoview.conf, "font")
     def test_get_font_description(self):
         nfoview.conf.font = "Foo"
@@ -114,11 +90,11 @@ class TestModule(nfoview.TestCase):
         assert font_desc.get_family() == "Foo,monospace,"
 
     def test_hex_to_rgba(self):
-        color = nfoview.util.hex_to_rgba("#FF0000")
+        color = nfoview.util.hex_to_rgba("#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
     def test_lookup_color(self):
-        color = nfoview.util.lookup_color("xxx", "#FF0000")
+        color = nfoview.util.lookup_color("xxx", "#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
     def test_monkey_patch__no_attribute(self):
@@ -146,7 +122,7 @@ class TestModule(nfoview.TestCase):
     def test_rgba_to_hex(self):
         rgba = Gdk.RGBA(red=1, green=0, blue=1)
         color = nfoview.util.rgba_to_hex(rgba)
-        assert color == "#FF00FF"
+        assert color == "#ff00ff"
 
     @nfoview.util.monkey_patch(sys, "platform")
     def test_show_uri__unix(self):

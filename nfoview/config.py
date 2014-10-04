@@ -94,12 +94,12 @@ class ConfigurationStore:
                 print("Failed to create directory:", file=sys.stderr)
                 traceback.print_exc()
                 return
-        fobj = open(self.path, "w")
+        f = open(self.path, "w")
         for name in sorted(_DEFAULTS):
             value = getattr(self, name)
             text = "{} = {}".format(name, str(value))
             if value == _DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)
-            fobj.write(text + "\n")
-        fobj.close()
+            f.write(text + "\n")
+        f.close()

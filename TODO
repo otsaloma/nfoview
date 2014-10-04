@@ -11,7 +11,7 @@ NFO Viewer 1.15
 NFO Viewer 2.0
 ==============
 
- * Bump GTK+ dependency to 3.14
+ * Bump GTK+ dependency to 3.12
    - Use Gtk.Widget's margin-start instead of margin-left
  * Apply new GNOME goals?
    - http://wiki.gnome.org/Initiatives/GnomeGoals/HeaderBars

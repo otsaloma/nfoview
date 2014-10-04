@@ -35,9 +35,9 @@ class TextView(Gtk.TextView):
     def __init__(self):
         """Initialize a :class:`TextView` instance."""
         GObject.GObject.__init__(self)
-        self._init_properties()
         self._link_tags = []
         self._visited_link_tags = []
+        self._init_properties()
         self.update_colors()
 
     def get_text(self):
@@ -91,10 +91,8 @@ class TextView(Gtk.TextView):
 
     def _on_motion_notify_event(self, text_view, event):
         """Change the mouse pointer when hovering over a hyperlink."""
-        x = int(event.x)
-        y = int(event.y)
         window = Gtk.TextWindowType.WIDGET
-        x, y = self.window_to_buffer_coords(window, x, y)
+        x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
         for tag in self.get_iter_at_location(x, y).get_tags():
             if hasattr(tag, "nfoview_url"):

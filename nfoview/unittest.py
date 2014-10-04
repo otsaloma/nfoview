@@ -47,10 +47,10 @@ class TestCase:
     def new_nfo_file(self):
         """Return path to a new temporary NFO file."""
         handle, path = tempfile.mkstemp()
-        fobj = os.fdopen(handle, "w")
-        fobj.write("qwertyuiop asdfghjkl zxcvbnm\n")
-        fobj.write("http://home.gna.org/nfoview\n")
-        fobj.close()
+        f = os.fdopen(handle, "w")
+        f.write("qwertyuiop asdfghjkl zxcvbnm\n")
+        f.write("http://home.gna.org/nfoview\n")
+        f.close()
         atexit.register(os.remove, path)
         return path
 

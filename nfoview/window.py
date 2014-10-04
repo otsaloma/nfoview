@@ -44,15 +44,15 @@ class Window(Gtk.Window):
         GObject.GObject.__init__(self)
         self._about_dialog = None
         self._actions = []
+        self.path = path
         self._preferences_dialog = None
         self._uim = Gtk.UIManager()
-        self.path = path
         self.view = nfoview.TextView()
         self._init_uim()
         self._init_properties()
         self._init_keys()
         self._init_contents()
-        self._init_text_view()
+        self._init_view()
         if self.path is not None:
             self.open_file(self.path)
         self.resize_to_text()
@@ -63,7 +63,7 @@ class Window(Gtk.Window):
         for action_group in self._uim.get_action_groups():
             action = action_group.get_action(name)
             if action is not None: return action
-        raise ValueError("Action group {} not found"
+        raise ValueError("Action {} not found"
                          .format(repr(name)))
 
     def _get_max_view_size(self):
@@ -93,7 +93,7 @@ class Window(Gtk.Window):
         """Initialize child containers and pack contents."""
         menubar = self._uim.get_widget("/ui/menubar")
         scroller = Gtk.ScrolledWindow()
-        scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,) * 2))
+        scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,)*2))
         scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         scroller.add(self.view)
         main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
@@ -105,10 +105,10 @@ class Window(Gtk.Window):
     def _init_keys(self):
         """Initialize additional keybindings."""
         accel_group = Gtk.AccelGroup()
-        accel_group.connect(Gdk.KEY_Escape,
-                            0,
-                            Gtk.AccelFlags.MASK,
-                            self._on_escape_pressed)
+        accel_group.connect(accel_key=Gdk.KEY_Escape,
+                            accel_mods=0,
+                            accel_flags=Gtk.AccelFlags.MASK,
+                            closure=self._on_escape_pressed)
 
         self.add_accel_group(accel_group)
 
@@ -125,7 +125,7 @@ class Window(Gtk.Window):
         self.connect("drag-data-received",
                      self._on_drag_data_received)
 
-    def _init_text_view(self):
+    def _init_view(self):
         """Initialize text view and associated buffer."""
         self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
@@ -251,7 +251,7 @@ class Window(Gtk.Window):
 
     def _on_wrap_lines_activate(self, action, *args):
         """Break long lines at word borders."""
-        if action.props.active:
+        if action.get_active():
             return self.view.set_wrap_mode(Gtk.WrapMode.WORD)
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
@@ -266,7 +266,7 @@ class Window(Gtk.Window):
 
     def _read_file(self, path):
         """
-        Read and return the text of the NFO file.
+        Read and return the text of the NFO file at `path`.
 
         Discard trailing space, trailing blank lines and all odd or
         even line if they do not contain non-space characters.

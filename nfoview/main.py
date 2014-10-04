@@ -54,13 +54,7 @@ def main(args):
     """Start viewer windows for files given as arguments."""
     _init_gettext()
     for path in sorted(args):
-        try:
-            open_window(path)
-        except Exception as error:
-            print("Failed to open '{}': {}"
-                  .format(path, str(error)),
-                  file=sys.stderr)
-
+        open_window(path)
     if not windows:
         # If no arguments were given, or none of them exist,
         # open one blank window.
@@ -68,7 +62,7 @@ def main(args):
     Gtk.main()
 
 def _on_window_delete_event(window, event):
-    """Exit the ``Gtk`` main loop if the last window was closed."""
+    """Exit the ``Gtk`` main loop if `window` is last remaining."""
     window.destroy()
     windows.remove(window)
     if windows: return
@@ -80,9 +74,13 @@ def _on_window_delete_event(window, event):
 
 def open_window(path=None):
     """Open file in a new window and present that window."""
-    window = nfoview.Window(path)
-    window.connect("delete-event",
-                   _on_window_delete_event)
-
+    try:
+        window = nfoview.Window(path)
+    except Exception as error:
+        print("Failed to open {}: {}"
+              .format(repr(path), str(error)),
+              file=sys.stderr)
+        return
+    window.connect("delete-event", _on_window_delete_event)
     windows.append(window)
     window.present()
