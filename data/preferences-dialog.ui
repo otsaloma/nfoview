@@ -30,7 +30,6 @@
             <child>
               <object class="GtkButton" id="close_button">
                 <property name="label" translatable="yes">_Close</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -116,7 +115,6 @@
                     </child>
                     <child>
                       <object class="GtkFontButton" id="font_button">
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -272,7 +270,6 @@
                     </child>
                     <child>
                       <object class="GtkColorButton" id="fg_color_button">
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -286,7 +283,6 @@
                     </child>
                     <child>
                       <object class="GtkColorButton" id="bg_color_button">
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -300,7 +296,6 @@
                     </child>
                     <child>
                       <object class="GtkColorButton" id="link_color_button">
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -314,7 +309,6 @@
                     </child>
                     <child>
                       <object class="GtkColorButton" id="vlink_color_button">
-                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
