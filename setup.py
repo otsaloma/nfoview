@@ -302,7 +302,7 @@ setup_kwargs = dict(
                   install=Install,
                   install_data=InstallData,
                   install_lib=InstallLib,
-                  sdist_gna=SDistGna)
+                  sdist_gna=SDistGna))
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__) or ".")
