@@ -3,9 +3,10 @@ NFO Viewer 2.0
 
  * Bump GTK+ dependency to 3.12
    - Use Gtk.Widget's margin-start instead of margin-left
- * Apply new GNOME goals?
+ * Apply new GNOME goals
    - http://wiki.gnome.org/Initiatives/GnomeGoals/HeaderBars
    - http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGMenu
    - http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGtkApplication
    - http://mail.gnome.org/archives/gtk-devel-list/2013-July/msg00016.html
+   - http://wiki.gnome.org/HowDoI/
  * Make hyperlinks activatable by keyboard?
