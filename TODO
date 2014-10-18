@@ -8,7 +8,6 @@ NFO Viewer 2.0
 
  * Bump GTK+ dependency to 3.12
    - Use Gtk.Widget's margin-start instead of margin-left
- * Bump GTK+ dependency to 3.14
  * Apply new GNOME goals
    - http://wiki.gnome.org/Initiatives/GnomeGoals/HeaderBars
    - http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGMenu
