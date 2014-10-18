@@ -130,9 +130,12 @@ def is_valid_encoding(encoding):
 
 def lookup_color(name, fallback):
     """Return defined color `name` from GTK+ theme."""
-    # XXX: It would be nice to get colors from the user's GTK+ theme,
-    # but any possible code used here seems destined to break with
-    # every new release of GTK+ and/or whichever GTK+ theme.
+    entry = Gtk.Entry()
+    entry.show()
+    style = entry.get_style_context()
+    found, color = style.lookup_color(name)
+    if found:
+        return color
     return hex_to_rgba(fallback)
 
 def monkey_patch(obj, name):

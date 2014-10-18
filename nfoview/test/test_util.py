@@ -94,6 +94,10 @@ class TestModule(nfoview.TestCase):
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
     def test_lookup_color(self):
+        color = nfoview.util.lookup_color("theme_fg_color", "#ff0000")
+        assert not color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
+
+    def test_lookup_color_fallback(self):
         color = nfoview.util.lookup_color("xxx", "#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
