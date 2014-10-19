@@ -6,8 +6,8 @@ DIRNAME=$(dirname "$0")
 cd "$DIRNAME/../po" || exit 1
 
 echo "Checking for missing source files..."
-intltool-update -m &> /dev/null
-[ -f missing ] && echo "Check po/missing!" && exit 1
+intltool-update -m || exit 1
+sleep 3 && [ -f missing ] && exit 1
 
 echo "Updating nfoview.pot..."
 intltool-update -p -g nfoview -x || exit 1
