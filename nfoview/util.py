@@ -55,7 +55,8 @@ def connect(observer, observable, signal, *args):
 
 def detect_encoding(path):
     """Detect and return NFO file encoding."""
-    line = open(path, "rb").readline()
+    with open(path, "rb") as f:
+        line = f.readline()
     if (line.startswith(codecs.BOM_UTF32_BE) and
         is_valid_encoding("utf_32_be")):
         return "utf_32_be"

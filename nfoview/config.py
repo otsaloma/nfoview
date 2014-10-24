@@ -68,7 +68,8 @@ class ConfigurationStore:
     def read_from_file(self):
         """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
-        entries = open(self.path, "r").readlines()
+        with open(self.path, "r") as f:
+            entries = f.readlines()
         entries = dict(re.split(" *= *", x.strip(), 1)
                        for x in entries if
                        not x.startswith("#") and "=" in x)

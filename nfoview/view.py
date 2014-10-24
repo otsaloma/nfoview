@@ -58,7 +58,7 @@ class TextView(Gtk.TextView):
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
         self.set_right_margin(6)
-        self.modify_font(font_desc)
+        self.override_font(font_desc)
         nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):

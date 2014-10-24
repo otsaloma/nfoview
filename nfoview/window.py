@@ -135,7 +135,7 @@ class Window(Gtk.Window):
 
     def _init_uim(self):
         """Initialize UI manager actions."""
-        action_group = Gtk.ActionGroup("main")
+        action_group = Gtk.ActionGroup(name="main")
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             callback = "_on_{}_activate".format(action.get_name())
@@ -272,7 +272,8 @@ class Window(Gtk.Window):
         even line if they do not contain non-space characters.
         """
         encoding = nfoview.util.detect_encoding(path)
-        lines = open(path, "r", encoding=encoding).readlines()
+        with open(path, "r", encoding=encoding) as f:
+            lines = f.readlines()
         lines = [x.rstrip() for x in lines]
         while lines and not lines[-1]: lines.pop()
         lines0 = [lines[i] for i in range(0, len(lines), 2)]
