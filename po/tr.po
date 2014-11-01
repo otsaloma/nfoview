@@ -197,11 +197,11 @@ msgstr "Resmi dışa aktar"
 
 #: ../nfoview/export.py:39 ../nfoview/open.py:39
 msgid "_Cancel"
-msgstr ""
+msgstr "_İptal"
 
 #: ../nfoview/export.py:40
 msgid "_Save"
-msgstr ""
+msgstr "_Kaydet"
 
 #: ../nfoview/open.py:36
 msgid "Open"
@@ -209,7 +209,7 @@ msgstr "Aç"
 
 #: ../nfoview/open.py:40
 msgid "_Open"
-msgstr ""
+msgstr "_Aç"
 
 #: ../nfoview/open.py:44
 msgid "All files"

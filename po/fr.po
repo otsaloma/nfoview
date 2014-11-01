@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nfoview 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-05 03:12+0300\n"
-"PO-Revision-Date: 2014-07-13 22:13+0100\n"
+"PO-Revision-Date: 2014-11-01 18:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <>\n"
 "Language: fr\n"
@@ -202,11 +202,11 @@ msgstr "Exporter l'image"
 
 #: ../nfoview/export.py:39 ../nfoview/open.py:39
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuler"
 
 #: ../nfoview/export.py:40
 msgid "_Save"
-msgstr ""
+msgstr "_Enregistrer"
 
 #: ../nfoview/open.py:36
 msgid "Open"
@@ -214,7 +214,7 @@ msgstr "Ouvrir"
 
 #: ../nfoview/open.py:40
 msgid "_Open"
-msgstr ""
+msgstr "_Ouvrir"
 
 #: ../nfoview/open.py:44
 msgid "All files"
