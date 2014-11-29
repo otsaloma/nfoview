@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alessio Treglia <quadrispro@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -232,15 +232,15 @@ msgstr "Grigio scuro su grigio chiaro"
 msgid "System theme"
 msgstr "Tema di sistema"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "Grigio su nero"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "Grigio chiaro su grigio scuro"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "Bianco su nero"
 

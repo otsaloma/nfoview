@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
 "PO-Revision-Date: 2009-06-10 16:50+0800\n"
 "Last-Translator: Jonathan Ye <hyqianli@gmail.com>\n"
 "Language-Team: Simplified Chinese\n"
@@ -233,15 +233,15 @@ msgstr "浅灰背景深灰字体颜色"
 msgid "System theme"
 msgstr "系统主题"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "黑底灰字"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "深灰背景浅灰字体颜色"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "黑底白字"
 

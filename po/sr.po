@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
 "PO-Revision-Date: 2010-12-08 03:41+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian <None>\n"
@@ -233,15 +233,15 @@ msgstr "Тамно-сиво на светло-сивом"
 msgid "System theme"
 msgstr "Тема система"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "Сиво на црном"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "Светло-сиво на тамно-сивом"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "Бело на црном"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
 "PO-Revision-Date: 2010-03-08 02:36+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
@@ -237,15 +237,15 @@ msgstr "Dunkelgrau auf Hellgrau"
 msgid "System theme"
 msgstr "Systemthema"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "Grau auf Schwarz"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "Hellgrau auf Dunkelgrau"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "Weiß auf Schwarz"
 

@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nfoview 1.15\n"
+"Project-Id-Version: nfoview 1.15.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
-"PO-Revision-Date: 2014-10-05 03:15+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
+"PO-Revision-Date: 2014-11-30 00:58+0200\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Finnish\n"
 "Language: Finnish\n"
@@ -237,14 +237,14 @@ msgstr "Tumman harmaa vaalean harmaalla"
 msgid "System theme"
 msgstr "Järjestelmän teema"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "Harmaa mustalla"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "Vaalean harmaa tumman harmaalla"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "Valkoinen mustalla"

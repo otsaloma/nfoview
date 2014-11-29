@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 03:12+0300\n"
+"POT-Creation-Date: 2014-11-30 00:58+0200\n"
 "PO-Revision-Date: 2010-05-14 12:30+0100\n"
 "Last-Translator: csola48 <csola48@gmail.com>\n"
 "Language-Team: csola48 <csola48@gmail.com>\n"
@@ -233,15 +233,15 @@ msgstr "Sötét szürke a világos szürkén"
 msgid "System theme"
 msgstr "Rendszer téma"
 
-#: ../nfoview/schemes.py:107
+#: ../nfoview/schemes.py:113
 msgid "Grey on black"
 msgstr "Szürke a feketén"
 
-#: ../nfoview/schemes.py:119
+#: ../nfoview/schemes.py:125
 msgid "Light grey on dark grey"
 msgstr "Világos szürke a sötét szürkén"
 
-#: ../nfoview/schemes.py:131
+#: ../nfoview/schemes.py:137
 msgid "White on black"
 msgstr "Fehér a feketén"
 
