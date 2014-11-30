@@ -10,8 +10,8 @@ include COPYING
 include CREDITS
 include INSTALL
 include MANIFEST.in
-include NEWS
-include README
+include NEWS.md
+include README.md
 include setup.py
 include TODO
 global-exclude *~

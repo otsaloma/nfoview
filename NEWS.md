@@ -10,8 +10,8 @@ NFO Viewer 1.15
 
  * Fix preferences dialog padding with GTK+ 3.14
  * Fix selection background color with GTK+ 3.14
- * Remove use of deprecated stock items, GtkAlignment
-   and gi.types.Boxed.__init__
+ * Remove use of deprecated stock items, `GtkAlignment`
+   and `gi.types.Boxed.__init__`
  * Update French translation
  * Update Turkish translation
 
@@ -20,7 +20,7 @@ NFO Viewer 1.14
 
  * Fix default response buttons for dialogs
  * Make AppData file translatable
- * Add GTK+ to list of dependencies in the README file (GTK+ has
+ * Add GTK+ to list of dependencies in the README.md file (GTK+ has
    always been a dependency, its explicit mention was just forgotten
    when migrating from PyGTK to PyGObject)
  * Bump GTK+ dependency to 3.2 or greater
@@ -46,7 +46,7 @@ NFO Viewer 1.12.1
 =================
 
  * Fix error setting colors in the preferences dialog
-   TypeError: get_rgba() takes exactly 2 arguments (1 given)
+   `TypeError: get_rgba() takes exactly 2 arguments (1 given)`
 
 NFO Viewer 1.12
 ===============
@@ -58,10 +58,10 @@ NFO Viewer 1.12
 NFO Viewer 1.11
 ===============
 
- * Fix immediate crash resulting from bad use of Gtk.StyleContext on
+ * Fix immediate crash resulting from bad use of `Gtk.StyleContext` on
    newer versions of PyGObject and/or GTK+ (#687513)
- * Remove deprecated 'get_data' and 'set_data' calls
- * Use Gtk.Grid for preferences dialog instead of Gtk.Table
+ * Remove deprecated `get_data` and `set_data` calls
+ * Use `Gtk.Grid` for preferences dialog instead of `Gtk.Table`
  * Release source tarballs only compressed as tar.xz (instead
    of the previous tar.gz and tar.bz2)
 
@@ -114,7 +114,7 @@ NFO Viewer 1.9
 ==============
 
  * Make the 16x16 px icon paper two pixels wider
- * Use gtk.show_uri to open hyperlinks
+ * Use `gtk.show_uri` to open hyperlinks
  * Raise PyGTK Dependency to 2.16
  * Update German translation (Christoph Wickert)
  * Update Polish translation (Piotr Drąg)
@@ -136,14 +136,14 @@ NFO Viewer 1.7
  * Automatically switch to wrapping lines if a line longer than 160
    characters is found in the file (the threshold is customizable in
    the configuration file)
- * Fall back to 'monospace' if preferred font is not found
+ * Fall back to "monospace" if preferred font is not found
  * Fix URL-detection to be less strict
  * Add Italian translation (Alessio Treglia)
 
 NFO Viewer 1.6
 ================
 
- * Add configuration file option 'text_view_max_lines' to set the
+ * Add configuration file option `text_view_max_lines` to set the
    maximum window height to an amount of lines and raise its default
    value from 40 to 45 lines
  * Fix URL-detection to be more strict
@@ -175,8 +175,8 @@ NFO Viewer 1.3
  * Add two grey low-contrast color schemes
  * Remove deprecated Encoding field from the desktop file
  * Use six-character hexadecimal color codes in the configuration file
- * Fix GtkWarning: GtkSpinButton: setting an adjustment with
-   non-zero page size is deprecated
+ * Fix `GtkWarning: GtkSpinButton: setting an adjustment with
+   non-zero page size is deprecated`
  * Fix open dialog file filter to list files with upper- and mixed
    case extensions as well (Simon Morgan, #572877)
  * Migrate from Libglade to GtkBuilder
@@ -195,15 +195,15 @@ NFO Viewer 1.2.1
 NFO Viewer 1.2
 ==============
 
- * Remove mimetype installation files and use the new 'text/x-nfo'
+ * Remove mimetype installation files and use the new "text/x-nfo"
    mimetype added with freedesktop.org's shared-mime-info 0.30
 
 NFO Viewer 1.1.2
 ================
 
  * Fix setup.py to allow building and installing outside X
- * Fix setup.py to run 'update-desktop-database' in addition to
-   'update-mime-database' if installing and --root not given
+ * Fix setup.py to run `update-desktop-database` in addition to
+   `update-mime-database` if installing and --root not given
 
 NFO Viewer 1.1.1
 ================
@@ -221,6 +221,6 @@ NFO Viewer 1.1
  * Improve detection of the default web browser
  * Add an applications menu entry in the desktop file
  * Change configuration file style and save the configuration file to
-   $XDG_CONFIG_HOME/nfoview (usually $HOME/.config/nfoview) as per
+   `$XDG_CONFIG_HOME/nfoview` (usually `$HOME/.config/nfoview`) as per
    freedesktop.org's XDG Base Directory Specification
  * Refactor code and reorganize source directory structure
