@@ -1,0 +1,44 @@
+Releasing a New Version
+=======================
+
+ * Update translations
+   - `tools/update-translations`
+   - `emacs po/fi.po`
+   - `git commit -a -m "Update translations for X.Y.Z."`
+
+ * Do final quality checks
+   - `python3 -Wd bin/nfoview`
+   - `pyflakes3 bin/nfoview nfoview setup.py`
+   - `py.test-3 --tb=no nfoview`
+
+ * Make final edits to files
+   - `$EDITOR nfoview/__init__.py`
+   - `$EDITOR NEWS.md TODO`
+
+ * Check that tarballs can be built
+   - `python3 setup.py clean sdist_gna --formats tar`
+
+ * Check that installation of above tarball works
+   - `sudo python3 setup.py clean install --prefix=/usr/local`
+   - `sudo python3 setup.py clean`
+   - `/usr/local/bin/nfoview`
+
+ * Commit changes
+   - `git commit -a -m "RELEASE X.Y.Z"`
+   - `git tag -s nfoview-X.Y.Z`
+   - `git push`
+   - `git push --tags`
+
+ * Build final tarballs, edit related files and upload
+   - `python3 setup.py clean sdist_gna --formats tar`
+   - `$EDITOR dist/*/*.news dist/*/*.changes`
+   - download.gna.org:/upload/nfoview/
+
+ * Generate API documentation and upload
+   - `python3 setup.py clean doc --format html`
+   - download.gna.org:/upload/nfoview/
+
+ * Send announcements and update web sites
+   - http://home.gna.org/nfoview
+   - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview
+   - nfoview-announcements@gna.org

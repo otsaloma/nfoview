@@ -4,16 +4,15 @@ recursive-include doc *
 recursive-include nfoview *.py
 recursive-include po *
 recursive-include tools *
-include AUTHORS
+include AUTHORS.md
 include ChangeLog
 include COPYING
-include CREDITS
-include INSTALL
+include INSTALL.md
 include MANIFEST.in
 include NEWS.md
 include README.md
 include setup.py
-include TODO
+include TODO.md
 global-exclude *~
 global-exclude .hidden
 global-exclude __pycache__
