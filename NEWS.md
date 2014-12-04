@@ -20,7 +20,7 @@ NFO Viewer 1.14
 
  * Fix default response buttons for dialogs
  * Make AppData file translatable
- * Add GTK+ to list of dependencies in the README.md file (GTK+ has
+ * Add GTK+ to list of dependencies in the `README.md` file (GTK+ has
    always been a dependency, its explicit mention was just forgotten
    when migrating from PyGTK to PyGObject)
  * Bump GTK+ dependency to 3.2 or greater
@@ -62,8 +62,8 @@ NFO Viewer 1.11
    newer versions of PyGObject and/or GTK+ (#687513)
  * Remove deprecated `get_data` and `set_data` calls
  * Use `Gtk.Grid` for preferences dialog instead of `Gtk.Table`
- * Release source tarballs only compressed as tar.xz (instead
-   of the previous tar.gz and tar.bz2)
+ * Release source tarballs only compressed as `tar.xz` (instead
+   of the previous `tar.gz` and `tar.bz2`)
 
 NFO Viewer 1.10
 ===============
@@ -188,7 +188,7 @@ NFO Viewer 1.2.1
 
  * Remove misuse of assertions that broke menu item sensitivity
    updates when used with Python's optimization (`-O` switch)
- * Fix AssertionError when installing multiple times (#12388)
+ * Fix `AssertionError` when installing multiple times (#12388)
  * Add Simplified Chinese translation (Jonathan Ye)
  * Switch version-control from svn to git
 
@@ -201,8 +201,8 @@ NFO Viewer 1.2
 NFO Viewer 1.1.2
 ================
 
- * Fix setup.py to allow building and installing outside X
- * Fix setup.py to run `update-desktop-database` in addition to
+ * Fix `setup.py` to allow building and installing outside X
+ * Fix `setup.py` to run `update-desktop-database` in addition to
    `update-mime-database` if installing and `--root` not given
 
 NFO Viewer 1.1.1

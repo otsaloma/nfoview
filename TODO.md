@@ -1,7 +1,7 @@
 NFO Viewer 1.15.2
 =================
 
- * [X] Use markdown for documentation files (README etc.)
+ * [X] Use markdown for documentation files (`README` etc.)
 
 NFO Viewer 2.0
 ==============
