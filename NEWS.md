@@ -20,7 +20,7 @@ NFO Viewer 1.14
 
  * Fix default response buttons for dialogs
  * Make AppData file translatable
- * Add GTK+ to list of dependencies in the `README.md` file (GTK+ has
+ * Add GTK+ to list of dependencies in the `README` file (GTK+ has
    always been a dependency, its explicit mention was just forgotten
    when migrating from PyGTK to PyGObject)
  * Bump GTK+ dependency to 3.2 or greater
