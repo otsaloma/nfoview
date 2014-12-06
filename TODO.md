@@ -2,6 +2,7 @@ NFO Viewer 1.15.2
 =================
 
  * [X] Use markdown for documentation files (`README` etc.)
+ * [X] Update Polish translation (Piotr Drąg)
 
 NFO Viewer 2.0
 ==============
