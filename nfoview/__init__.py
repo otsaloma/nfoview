@@ -25,7 +25,7 @@ Viewer for NFO files.
 :var conf: Instance of :class:`ConfigurationStore` used
 """
 
-__version__ = "1.15.1"
+__version__ = "1.15.99"
 
 import os
 
