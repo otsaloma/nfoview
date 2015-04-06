@@ -1,6 +1,5 @@
 recursive-include bin *
 recursive-include data *
-recursive-include doc *
 recursive-include nfoview *.py
 recursive-include po *
 recursive-include tools *
@@ -11,6 +10,7 @@ include INSTALL.md
 include MANIFEST.in
 include NEWS.md
 include README.md
+include RELEASING.md
 include setup.py
 include TODO.md
 global-exclude *~

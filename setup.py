@@ -32,7 +32,6 @@ import tarfile
 import tempfile
 
 clean = distutils.command.clean.clean
-command = distutils.cmd.Command
 install = distutils.command.install.install
 install_data = distutils.command.install_data.install_data
 install_lib = distutils.command.install_lib.install_lib
@@ -74,9 +73,6 @@ class Clean(clean):
                       "data/nfoview.appdata.xml",
                       "data/nfoview.desktop",
                       "dist",
-                      "doc/sphinx/api",
-                      "doc/sphinx/_build",
-                      "doc/sphinx/index.rst",
                       "locale",
                       "po/*~",
                       "ChangeLog",
@@ -95,33 +91,6 @@ class Clean(clean):
                 log.info("removing '{}'".format(target))
                 if not self.dry_run:
                     os.remove(target)
-
-
-class Documentation(command):
-
-    """Command to build documentation from source code."""
-
-    description = "build documentation from source code"
-    user_options = [("format=", "f",
-                     "type of documentation to create (try 'html')")]
-
-    def initialize_options(self):
-        """Initialize default values for options."""
-        self.format = None
-
-    def finalize_options(self):
-        """Ensure that format has some valid value."""
-        if self.format is None:
-            log.warn("format not specified, using 'html'")
-            self.format = "html"
-
-    def run(self):
-        """Build documentation from source code."""
-        os.chdir(os.path.join("doc", "sphinx"))
-        if self.dry_run: return
-        run_command_or_exit("python3 autogen.py nfoview")
-        run_command_or_exit("sphinx-build -b {} . _build/{}"
-                            .format(self.format, self.format))
 
 
 class Install(install):
@@ -291,14 +260,13 @@ setup_kwargs = dict(
         ("share/icons/hicolor/256x256/apps",
          ("data/icons/256x256/nfoview.png",)),
         ("share/man/man1",
-         ("doc/nfoview.1",)),
+         ("data/nfoview.1",)),
         ("share/nfoview",
          ("data/preferences-dialog.ui",
           "data/ui.xml")),
         ],
 
     cmdclass=dict(clean=Clean,
-                  doc=Documentation,
                   install=Install,
                   install_data=InstallData,
                   install_lib=InstallLib,

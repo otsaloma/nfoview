@@ -27,9 +27,6 @@ Releasing a New Version
    - `python3 setup.py clean sdist_gna --formats tar`
    - `$EDITOR dist/*/*.news dist/*/*.changes`
    - `download.gna.org:/upload/nfoview/`
- * Generate API documentation and upload
-   - `python3 setup.py clean doc --format html`
-   - `download.gna.org:/upload/nfoview/`
  * Send announcements and update web sites
    - http://github.com/otsaloma/nfoview/releases
    - http://home.gna.org/nfoview
