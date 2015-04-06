@@ -20,7 +20,7 @@ Releasing a New Version
    - `/usr/local/bin/nfoview`
  * Commit changes
    - `git commit -a -m "RELEASE X.Y.Z"`
-   - `git tag -s nfoview-X.Y.Z`
+   - `git tag -s X.Y.Z`
    - `git push`
    - `git push --tags`
  * Build final tarballs, edit related files and upload
@@ -31,6 +31,7 @@ Releasing a New Version
    - `python3 setup.py clean doc --format html`
    - `download.gna.org:/upload/nfoview/`
  * Send announcements and update web sites
+   - http://github.com/otsaloma/nfoview/releases
    - http://home.gna.org/nfoview
    - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview
    - nfoview-announcements@gna.org
