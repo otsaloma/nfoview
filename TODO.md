@@ -1,6 +1,7 @@
-NFO Viewer 1.15.2
-=================
+NFO Viewer 1.16
+===============
 
+ * [X] New application icon
  * [X] Use markdown for documentation files (`README` etc.)
  * [X] Update Polish translation (Piotr Drąg)
 

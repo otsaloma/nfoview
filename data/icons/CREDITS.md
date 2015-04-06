@@ -1,5 +1,0 @@
-nfoview application icon is based on logviewer icon from earlier days
-of [gnome-icon-theme][1]. It was licensed under the GNU General Public
-License (GPL).
-
- [1]: http://git.gnome.org/cgit/gnome-icon-theme/
