@@ -4,7 +4,6 @@ recursive-include nfoview *.py
 recursive-include po *
 recursive-include tools *
 include AUTHORS.md
-include ChangeLog
 include COPYING
 include INSTALL.md
 include MANIFEST.in
