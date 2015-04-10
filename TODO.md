@@ -4,6 +4,7 @@ NFO Viewer 1.16
  * [X] New application icon
  * [X] Use markdown for documentation files (`README` etc.)
  * [X] Use Transifex to manage translations (see updated `po/README.md`)
+ * [X] Add European Portuguese translation (Pedro Albuquerque)
  * [X] Update Polish translation (Piotr Drąg)
 
  * [ ] Apply new GNOME goals and migrate away from deprecated widgets
