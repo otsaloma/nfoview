@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 
 [nfoview.nfoviewpot]
-file_filter = <lang>.po
-source_file = nfoview.pot
+file_filter = po/<lang>.po
+source_file = po/nfoview.pot
 source_lang = en
 type = PO
