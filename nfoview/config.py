@@ -88,18 +88,17 @@ class ConfigurationStore:
     def write_to_file(self):
         """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
-        if not os.path.isdir(directory):
-            try:
+        try:
+            if not os.path.isdir(directory):
                 os.makedirs(directory)
-            except OSError:
-                print("Failed to create directory:", file=sys.stderr)
-                traceback.print_exc()
-                return
+        except OSError:
+            print("Failed to create directory:", file=sys.stderr)
+            traceback.print_exc()
+            return
         f = open(self.path, "w")
         for name in sorted(_DEFAULTS):
-            value = getattr(self, name)
-            text = "{} = {}".format(name, str(value))
-            if value == _DEFAULTS[name]:
+            text = "{} = {}".format(name, str(getattr(self, name)))
+            if getattr(self, name) == _DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)
             f.write(text + "\n")

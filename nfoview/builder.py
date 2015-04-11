@@ -50,7 +50,9 @@ class BuilderDialog:
         self._builder.add_from_file(ui_file_path)
         self._dialog = self._builder.get_object("dialog")
         self._builder.connect_signals(self)
-        self._set_attributes(self._widgets)
+        for name in self._widgets:
+            widget = self._builder.get_object(name)
+            setattr(self, "_{}".format(name), widget)
 
     def __getattr__(self, name):
         """Return attribute from :attr:`_dialog`."""
@@ -60,9 +62,3 @@ class BuilderDialog:
         """Show the dialog, run it and return response."""
         self._dialog.show()
         return self._dialog.run()
-
-    def _set_attributes(self, widgets):
-        """Assign all names in `widgets` as attributes of `self`."""
-        for name in widgets:
-            widget = self._builder.get_object(name)
-            setattr(self, "_{}".format(name), widget)

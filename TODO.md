@@ -2,6 +2,7 @@ NFO Viewer 1.16
 ===============
 
  * [X] New application icon
+ * [X] Use a header bar for the preferences dialog
  * [X] Use markdown for documentation files (`README` etc.)
  * [ ] Move web pages from [gna.org][1.16a] to [github.io][1.16b]
  * [ ] Move releases from [gna.org][1.16c] to [github.com][1.16d]
@@ -12,6 +13,7 @@ NFO Viewer 1.16
        [RSS][1.16i] instead (see also <http://sibbell.com/>)
  * [X] Add European Portuguese translation (Pedro Albuquerque)
  * [X] Update Polish translation (Piotr Drąg)
+ * [X] Bump GTK+ depedency to version 3.12
 
 Apply new GNOME goals and migrate away from deprecated widgets
 
