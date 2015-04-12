@@ -47,7 +47,7 @@ class TextView(Gtk.TextView):
         return text_buffer.get_text(start, end, False)
 
     def _init_properties(self):
-        """Initliaze text view widget properties."""
+        """Initialize text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         font_desc = nfoview.util.get_font_description()
@@ -58,6 +58,7 @@ class TextView(Gtk.TextView):
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
         self.set_right_margin(6)
+        # XXX: override_font has been deprecated since version 3.16.
         self.override_font(font_desc)
         nfoview.util.connect(self, self, "motion-notify-event")
 
@@ -137,6 +138,7 @@ class TextView(Gtk.TextView):
 
     def update_colors(self):
         """Update colors to match the current color scheme."""
+        # XXX: override_color etc. has been deprecated since version 3.16.
         name = nfoview.conf.color_scheme
         scheme = nfoview.util.get_color_scheme(name, "default")
         state = Gtk.StateFlags.NORMAL

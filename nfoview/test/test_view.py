@@ -33,7 +33,7 @@ class TestTextView(nfoview.TestCase):
 
     def setup_method(self, method):
         self.view = nfoview.TextView()
-        text = "testing...\nhttp://home.gna.org/nfoview"
+        text = "testing...\nhttp://github.com/otsaloma/nfoview"
         self.view.set_text(text)
 
     def test_get_text(self):
