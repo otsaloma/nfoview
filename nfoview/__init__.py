@@ -15,15 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""
-Viewer for NFO files.
-
-:var __version__: Version number as string in format ``MAJOR.MINOR[.PATCH]``
-:var CONFIG_HOME_DIR: Path to user's local configuration directory
-:var DATA_DIR: Path to the global data directory
-:var LOCALE_DIR: Path to the global locale directory
-:var conf: Instance of :class:`ConfigurationStore` used
-"""
+"""Viewer for NFO files."""
 
 __version__ = "1.15.99"
 

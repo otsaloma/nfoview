@@ -15,13 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""
-Paths to files and directories used.
-
-:var CONFIG_HOME_DIR: Path to user's local configuration directory
-:var DATA_DIR: Path to the global data directory
-:var LOCALE_DIR: Path to the global locale directory
-"""
+"""Paths to files and directories used."""
 
 import os
 import sys

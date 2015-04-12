@@ -26,13 +26,7 @@ __all__ = ("TestCase",)
 
 class TestCase:
 
-    """
-    Base class for unit test cases.
-
-    Unit tests are designed to be run with ``py.test``, ``nose`` or something
-    compatible. Tests should use plain ``assert`` statements to allow multiple
-    different tools to be used to run the tests.
-    """
+    """Base class for unit test cases."""
 
     def assert_raises(self, exception, function, *args, **kwargs):
         """Assert that calling `function` raises `exception`."""

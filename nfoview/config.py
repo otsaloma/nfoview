@@ -42,22 +42,7 @@ _DEFAULTS = dict(
 
 class ConfigurationStore:
 
-    """
-    Reading, writing and storing configurations.
-
-    :ivar background_color: Custom background color
-    :ivar color_scheme: Name of the color scheme used
-    :ivar font: Font string in :class:`Pango.FontDescription` format
-    :ivar foreground_color: Custom foreground color
-    :ivar link_color: Custom link color
-    :ivar path: Path to user's local configuration file
-    :ivar pixels_above_lines: Extra line-spacing above each line
-    :ivar pixels_below_lines: Extra line-spacing below each line
-    :ivar text_view_max_chars: Maximum width for text view in characters
-    :ivar text_view_max_lines: Maximum height for text view in lines
-    :ivar version: Version number, same as :data:`nfoview.__version__`
-    :ivar visited_link_color: Custom visited link color
-    """
+    """Reading, writing and storing configurations."""
 
     path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
 

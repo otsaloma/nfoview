@@ -32,16 +32,7 @@ __all__ = ("BlackOnWhiteScheme",
 
 class ColorScheme:
 
-    """
-    Baseclass for color scheme definitions.
-
-    :cvar name: Name used to identify and save color scheme
-    :cvar label: User-visible localized name for color scheme
-    :cvar foreground: Foreground color as a :class:`Gdk.RGBA`
-    :cvar background: Background color as a :class:`Gdk.RGBA`
-    :cvar link: Link color as a :class:`Gdk.RGBA`
-    :cvar visited_link: Visited link color as a :class:`Gdk.RGBA`
-    """
+    """Baseclass for color scheme definitions."""
 
     name         = NotImplementedError
     label        = NotImplementedError
