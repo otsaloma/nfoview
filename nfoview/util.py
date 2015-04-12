@@ -76,29 +76,6 @@ def detect_encoding(path):
     # return the de facto standard encoding for NFO files, CP437.
     return "cp437"
 
-def get_color_scheme(name, fallback=None):
-    """Return the color scheme with given name."""
-    for class_name in nfoview.schemes.__all__:
-        scheme = getattr(nfoview.schemes, class_name)
-        if scheme.name == name:
-            return scheme
-    if fallback is not None:
-        return get_color_scheme(fallback)
-    raise ValueError("No color scheme named {}"
-                     .format(repr(name)))
-
-def get_color_schemes():
-    """Return a list of all color schemes in proper order."""
-    schemes = [getattr(nfoview.schemes, x)
-               for x in nfoview.schemes.__all__]
-
-    schemes.remove(nfoview.DefaultScheme)
-    schemes.remove(nfoview.CustomScheme)
-    schemes.sort(key=lambda x: x.label)
-    schemes.insert(0, nfoview.DefaultScheme)
-    schemes.append(nfoview.CustomScheme)
-    return schemes
-
 def get_font_description(fallback="monospace"):
     """Return font description from conf with `fallback` added."""
     font_desc = Pango.FontDescription(nfoview.conf.font)

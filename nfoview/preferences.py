@@ -57,7 +57,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
         renderer = Gtk.CellRendererText()
         self._scheme_combo.pack_start(renderer, expand=True)
         self._scheme_combo.add_attribute(renderer, "text", 1)
-        for scheme in nfoview.util.get_color_schemes():
+        for scheme in nfoview.schemes.get_all():
             store.append((scheme, scheme.label))
 
     def _init_values(self):
@@ -132,7 +132,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
         rgba = color_button.get_rgba()
         string = nfoview.util.rgba_to_hex(rgba)
         nfoview.conf.visited_link_color = string
-        scheme = nfoview.util.get_color_scheme("custom")
+        scheme = nfoview.schemes.get("custom")
         scheme.vlink = rgba
         for window in nfoview.main.windows:
             window.view.update_colors()

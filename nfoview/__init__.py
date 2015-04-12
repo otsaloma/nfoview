@@ -25,7 +25,7 @@ from nfoview import util
 from nfoview.errors import *
 from nfoview.config import *
 conf = ConfigurationStore()
-from nfoview.schemes import *
+from nfoview import schemes
 from nfoview.builder import *
 from nfoview.about import *
 from nfoview.open import *

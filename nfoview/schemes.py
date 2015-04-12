@@ -20,13 +20,13 @@
 import nfoview
 _ = nfoview.i18n._
 
-__all__ = ("BlackOnWhiteScheme",
-           "CustomScheme",
-           "DarkGreyOnLightGrayScheme",
-           "DefaultScheme",
-           "GreyOnBlackScheme",
-           "LightGreyOnDarkGrayScheme",
-           "WhiteOnBlackScheme",
+__all__ = ("BlackOnWhite",
+           "Custom",
+           "DarkGreyOnLightGray",
+           "Default",
+           "GreyOnBlack",
+           "LightGreyOnDarkGray",
+           "WhiteOnBlack",
            )
 
 
@@ -42,7 +42,7 @@ class ColorScheme:
     visited_link = NotImplementedError
 
 
-class BlackOnWhiteScheme(ColorScheme):
+class BlackOnWhite(ColorScheme):
 
     """Color scheme with black text on white background."""
 
@@ -54,7 +54,7 @@ class BlackOnWhiteScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba("#ff00ff")
 
 
-class CustomScheme(ColorScheme):
+class Custom(ColorScheme):
 
     """Color scheme with custom, user-chosen colors."""
 
@@ -66,7 +66,7 @@ class CustomScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba(nfoview.conf.visited_link_color)
 
 
-class DarkGreyOnLightGrayScheme(ColorScheme):
+class DarkGreyOnLightGray(ColorScheme):
 
     """Color scheme with dark grey text on light grey background."""
 
@@ -78,7 +78,7 @@ class DarkGreyOnLightGrayScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba("#ff55ff")
 
 
-class DefaultScheme(ColorScheme):
+class Default(ColorScheme):
 
     """Color scheme with default fore- and background colors."""
 
@@ -93,7 +93,7 @@ class DefaultScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba("#215d9c")
 
 
-class GreyOnBlackScheme(ColorScheme):
+class GreyOnBlack(ColorScheme):
 
     """Color scheme with grey text on black background."""
 
@@ -105,7 +105,7 @@ class GreyOnBlackScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba("#ffaaff")
 
 
-class LightGreyOnDarkGrayScheme(ColorScheme):
+class LightGreyOnDarkGray(ColorScheme):
 
     """Color scheme with light grey text on dark grey background."""
 
@@ -117,7 +117,7 @@ class LightGreyOnDarkGrayScheme(ColorScheme):
     visited_link = nfoview.util.hex_to_rgba("#ffaaff")
 
 
-class WhiteOnBlackScheme(ColorScheme):
+class WhiteOnBlack(ColorScheme):
 
     """Color scheme with white text on black background."""
 
@@ -127,3 +127,25 @@ class WhiteOnBlackScheme(ColorScheme):
     background   = nfoview.util.hex_to_rgba("#000000")
     link         = nfoview.util.hex_to_rgba("#aaaaff")
     visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+
+
+def get(name, fallback=None):
+    """Return the color scheme with given name."""
+    for class_name in __all__:
+        scheme = globals()[class_name]
+        if scheme.name == name:
+            return scheme
+    if fallback is not None:
+        return get(fallback)
+    raise ValueError("No color scheme named {}"
+                     .format(repr(name)))
+
+def get_all():
+    """Return a list of all color schemes in proper order."""
+    schemes = [globals()[x] for x in __all__]
+    schemes.remove(Default)
+    schemes.remove(Custom)
+    schemes.sort(key=lambda x: x.label)
+    schemes.insert(0, Default)
+    schemes.append(Custom)
+    return schemes

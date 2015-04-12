@@ -140,7 +140,7 @@ class TextView(Gtk.TextView):
         """Update colors to match the current color scheme."""
         # XXX: override_color etc. has been deprecated since version 3.16.
         name = nfoview.conf.color_scheme
-        scheme = nfoview.util.get_color_scheme(name, "default")
+        scheme = nfoview.schemes.get(name, "default")
         state = Gtk.StateFlags.NORMAL
         self.override_color(state, scheme.foreground)
         self.override_background_color(state, scheme.background)
