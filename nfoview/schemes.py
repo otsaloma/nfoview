@@ -91,16 +91,13 @@ class DefaultScheme(ColorScheme):
 
     """Color scheme with default fore- and background colors."""
 
+    # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/_colors-public.scss
+    # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/gtk-contained.css
+
     name         = "default"
     label        = _("System theme")
-
-    # Named public colors, available since GTK+ 3.14.
-    # http://git.gnome.org/browse/gtk+/tree/gtk/resources/theme/Adwaita/_colors-public.scss
     foreground   = nfoview.util.lookup_color("theme_text_color", "#2e3436")
     background   = nfoview.util.lookup_color("theme_base_color", "#ffffff")
-
-    # Not among named public colors, but found in Adwaita.
-    # http://git.gnome.org/browse/gtk+/tree/gtk/resources/theme/Adwaita/gtk-contained.css
     link         = nfoview.util.hex_to_rgba("#2a76c6")
     visited_link = nfoview.util.hex_to_rgba("#215d9c")
 
