@@ -27,22 +27,12 @@ Viewer for NFO files.
 
 __version__ = "1.15.99"
 
-import os
-
 from nfoview.paths import *
-
-from gi.repository import Gtk
-Gtk.IconTheme.get_default().append_search_path(
-    os.path.abspath(os.path.join(DATA_DIR, "icons")))
-
 from nfoview import i18n
 from nfoview import util
 from nfoview.errors import *
 from nfoview.config import *
-
 conf = ConfigurationStore()
-conf.read_from_file()
-
 from nfoview.schemes import *
 from nfoview.builder import *
 from nfoview.about import *

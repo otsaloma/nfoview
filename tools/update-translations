@@ -1,18 +1,9 @@
 #!/bin/sh
-# Update the pot-file and all existing po-files with new strings.
-# Requires gettext and intltool.
-
-DIRNAME=$(dirname "$0")
-cd "$DIRNAME/../po" || exit 1
-
-echo "Checking for missing source files..."
+# Update the translations with new strings.
+cd "$(dirname "$0")/../po" || exit 1
 intltool-update -m || exit 1
 sleep 3 && [ -f missing ] && exit 1
-
-echo "Updating nfoview.pot..."
 intltool-update -p -g nfoview -x || exit 1
-
 for FNAME in *.po; do
-    echo "Updating $FNAME..."
-    msgmerge -U -N -v "$FNAME" nfoview.pot
+    msgmerge -UNv "$FNAME" nfoview.pot
 done

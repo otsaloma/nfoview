@@ -53,6 +53,7 @@ def _init_gettext():
 def main(args):
     """Start viewer windows for files given as arguments."""
     _init_gettext()
+    nfoview.conf.read_from_file()
     for path in sorted(args):
         open_window(path)
     if not windows:

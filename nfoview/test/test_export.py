@@ -24,8 +24,6 @@ class TestExportImageDialog(nfoview.TestCase):
 
     def run_dialog(self):
         self.dialog.run()
-        self.dialog.destroy()
 
     def setup_method(self, method):
         self.dialog = nfoview.ExportImageDialog(Gtk.Window())
-        self.dialog.show()
