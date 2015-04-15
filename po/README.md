@@ -9,9 +9,9 @@ If you want to try your translation, get the nfoview source code from
 `po` directory and compile that translation to the `locale` directory
 (which does not exist by default).
 
-    mkdir -p locale/XX/LC_MESSAGES
-    msgfmt -cv po/XX.po -o locale/XX/LC_MESSAGES/nfoview.mo
-    python3 bin/nfoview
+    mkdir -p locale/xx/LC_MESSAGES
+    msgfmt -cv po/xx.po -o locale/xx/LC_MESSAGES/nfoview.mo
+    LANG=xx python3 bin/nfoview
 
  [1]: http://www.transifex.com/projects/p/nfoview/
  [2]: http://github.com/otsaloma/nfoview

@@ -18,7 +18,7 @@
 """Classes for color scheme definitions."""
 
 import nfoview
-_ = nfoview.i18n._
+_ = nfoview.i18n.gettext
 
 __all__ = ("BlackOnWhite",
            "Custom",
@@ -80,7 +80,7 @@ class DarkGreyOnLightGray(ColorScheme):
 
 class Default(ColorScheme):
 
-    """Color scheme with default fore- and background colors."""
+    """Color scheme with system default colors."""
 
     # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/_colors-public.scss
     # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/gtk-contained.css
@@ -142,7 +142,7 @@ def get(name, fallback=None):
 
 def get_all():
     """Return a list of all color schemes in proper order."""
-    schemes = [globals()[x] for x in __all__]
+    schemes = list(map(globals().get, __all__))
     schemes.remove(Default)
     schemes.remove(Custom)
     schemes.sort(key=lambda x: x.label)

@@ -50,7 +50,7 @@ class ConfigurationStore:
         """Initialize a :class:`ConfigurationStore` instance."""
         self.restore_defaults()
 
-    def read_from_file(self):
+    def read(self):
         """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
         with open(self.path, "r") as f:
@@ -70,7 +70,7 @@ class ConfigurationStore:
             setattr(self, name, _DEFAULTS[name])
         self.version = nfoview.__version__
 
-    def write_to_file(self):
+    def write(self):
         """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
         try:

@@ -18,7 +18,7 @@
 """Dialog for selecting an image file to export to."""
 
 import nfoview
-_ = nfoview.i18n._
+_ = nfoview.i18n.gettext
 
 from gi.repository import GObject
 from gi.repository import Gtk

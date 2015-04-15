@@ -58,7 +58,6 @@ class TextView(Gtk.TextView):
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
         self.set_right_margin(6)
-        # XXX: override_font has been deprecated since version 3.16.
         self.override_font(font_desc)
         nfoview.util.connect(self, self, "motion-notify-event")
 
@@ -138,7 +137,6 @@ class TextView(Gtk.TextView):
 
     def update_colors(self):
         """Update colors to match the current color scheme."""
-        # XXX: override_color etc. has been deprecated since version 3.16.
         name = nfoview.conf.color_scheme
         scheme = nfoview.schemes.get(name, "default")
         state = Gtk.StateFlags.NORMAL

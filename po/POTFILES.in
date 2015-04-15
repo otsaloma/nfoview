@@ -1,6 +1,6 @@
-[type: gettext/glade]data/preferences-dialog.ui
 data/nfoview.appdata.xml.in
 data/nfoview.desktop.in
+[type: gettext/glade]data/preferences-dialog.ui
 nfoview/about.py
 nfoview/actions.py
 nfoview/export.py

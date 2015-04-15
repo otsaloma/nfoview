@@ -34,5 +34,12 @@ from nfoview.export import *
 from nfoview.view import *
 from nfoview import actions
 from nfoview.window import *
-from nfoview import main
+from nfoview.application import *
 from nfoview.unittest import *
+
+def main(paths):
+    """Initialize application."""
+    conf.read()
+    global app
+    app = Application()
+    raise SystemExit(app.run(paths))

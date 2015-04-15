@@ -15,30 +15,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""
-Internationalization functions.
-
-Functions defined in this module are convenience aliases for functions
-of the :mod:`gettext` module with proper initialization ensured done.
-"""
+"""Internationalization functions."""
 
 import gettext
 import nfoview
 
-__all__ = ("_", "dgettext", "ngettext")
+_translation = gettext.translation(
+    "nfoview", nfoview.LOCALE_DIR, fallback=True)
 
-_translation = gettext.translation("nfoview",
-                                   nfoview.LOCALE_DIR,
-                                   fallback=True)
-
-
-def _(message):
-    """Return the localized translation of `message`."""
-    return _translation.gettext(message)
 
 def dgettext(domain, message):
     """Return the localized translation of `message` from `domain`."""
     return gettext.dgettext(domain, message)
+
+def gettext(message):
+    """Return the localized translation of `message`."""
+    return _translation.gettext(message)
 
 def ngettext(singular, plural, n):
     """Return the localized translation of `singular` or `plural`."""

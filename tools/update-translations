@@ -1,5 +1,5 @@
 #!/bin/sh
-# Update the translations with new strings.
+# Update all translations with new strings.
 cd "$(dirname "$0")/../po" || exit 1
 intltool-update -m || exit 1
 sleep 3 && [ -f missing ] && exit 1

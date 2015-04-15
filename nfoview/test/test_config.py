@@ -47,10 +47,10 @@ class TestConfigurationStore(nfoview.TestCase):
     def teardown_method(self, method):
         shutil.rmtree(self.temp_dir)
 
-    def test_read_from_file(self):
-        nfoview.conf.write_to_file()
+    def test_read(self):
+        nfoview.conf.write()
         nfoview.conf.restore_defaults()
-        nfoview.conf.read_from_file()
+        nfoview.conf.read()
         for name, value in FIELDS.items():
             assert getattr(nfoview.conf, name) == value
 
@@ -61,9 +61,9 @@ class TestConfigurationStore(nfoview.TestCase):
         for name, value in defaults.items():
             assert getattr(nfoview.conf, name) == value
 
-    def test_write_to_file(self):
-        nfoview.conf.write_to_file()
+    def test_write(self):
+        nfoview.conf.write()
         nfoview.conf.restore_defaults()
-        nfoview.conf.read_from_file()
+        nfoview.conf.read()
         for name, value in FIELDS.items():
             assert getattr(nfoview.conf, name) == value

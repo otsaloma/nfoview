@@ -18,7 +18,7 @@
 """Dialog for displaying credits and information."""
 
 import nfoview
-_ = nfoview.i18n._
+_ = nfoview.i18n.gettext
 
 from gi.repository import GObject
 from gi.repository import Gtk
@@ -40,7 +40,7 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_copyright("Copyright © 2005–2015 Osmo Salomaa")
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_logo_icon_name("nfoview")
-        # Translators: The application name 'NFO Viewer' has been intentionally
+        # Translators: The application name "NFO Viewer" has been intentionally
         # marked as translatable. If you manage to translate the name in a
         # fluent manner, without changing the meaning, you may use that
         # translation at your discretion.
