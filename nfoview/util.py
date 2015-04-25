@@ -18,6 +18,7 @@
 """Miscellaneous functions."""
 
 import codecs
+import contextlib
 import copy
 import functools
 import nfoview
@@ -82,6 +83,22 @@ def get_font_description(fallback="monospace"):
     family = font_desc.get_family()
     font_desc.set_family(",".join((family, fallback, "")))
     return font_desc
+
+def get_max_text_view_size():
+    """Return maximum allowed size for text view."""
+    max_chars = nfoview.conf.text_view_max_chars
+    max_lines = nfoview.conf.text_view_max_lines
+    max_text = "\n".join(("x" * max_chars,) * max_lines)
+    return get_text_view_size(max_text)
+
+def get_text_view_size(text):
+    """Return size for text view required to hold `text`."""
+    label = Gtk.Label()
+    label.override_font(get_font_description())
+    label.set_text(text)
+    label.show()
+    return (label.get_preferred_width()[1],
+            label.get_preferred_height()[1])
 
 def _hasattr_def(obj, name):
     """Return ``True`` if `obj` has attribute `name` defined."""
@@ -159,6 +176,14 @@ def show_uri(uri):
         if uri.startswith(("http://", "https://")):
             return webbrowser.open(uri)
         raise # Exception
+
+@contextlib.contextmanager
+def silent(*exceptions):
+    """Try to execute body, ignoring `exceptions`."""
+    try:
+        yield
+    except exceptions:
+        pass
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""

@@ -25,7 +25,7 @@ import traceback
 
 __all__ = ("ConfigurationStore",)
 
-_DEFAULTS = dict(
+DEFAULTS = dict(
     background_color="#ffffff",
     color_scheme="default",
     font="Terminus 12",
@@ -59,15 +59,15 @@ class ConfigurationStore:
                        for x in entries if
                        not x.startswith("#") and "=" in x)
 
-        for name in set(_DEFAULTS) & set(entries):
-            decode = type(_DEFAULTS[name])
+        for name in set(DEFAULTS) & set(entries):
+            decode = type(DEFAULTS[name])
             setattr(self, name, decode(entries[name]))
         self.version = nfoview.__version__
 
     def restore_defaults(self):
         """Set all configuration options to their default values."""
-        for name in _DEFAULTS:
-            setattr(self, name, _DEFAULTS[name])
+        for name in DEFAULTS:
+            setattr(self, name, DEFAULTS[name])
         self.version = nfoview.__version__
 
     def write(self):
@@ -81,9 +81,9 @@ class ConfigurationStore:
             traceback.print_exc()
             return
         f = open(self.path, "w")
-        for name in sorted(_DEFAULTS):
+        for name in sorted(DEFAULTS):
             text = "{} = {}".format(name, str(getattr(self, name)))
-            if getattr(self, name) == _DEFAULTS[name]:
+            if getattr(self, name) == DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)
             f.write(text + "\n")

@@ -27,15 +27,8 @@ class TestPreferencesDialog(nfoview.TestCase):
         self.dialog.run()
 
     def setup_method(self, method):
-        window1 = nfoview.Window(self.new_nfo_file())
-        window2 = nfoview.Window(self.new_nfo_file())
-        nfoview.main.windows.append(window1)
-        nfoview.main.windows.append(window2)
         self.dialog = nfoview.PreferencesDialog(Gtk.Window())
         self.rgba = Gdk.RGBA(red=1, green=0, blue=1)
-
-    def teardown_method(self, method):
-        nfoview.main.windows = []
 
     def test__on_bg_color_button_color_set(self):
         store = self.dialog._scheme_combo.get_model()

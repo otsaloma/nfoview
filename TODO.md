@@ -14,14 +14,17 @@ NFO Viewer 1.16
  * [X] Add European Portuguese translation (Pedro Albuquerque)
  * [X] Update Polish translation (Piotr Drąg)
  * [X] Bump GTK+ depedency to version 3.12
+ 
+ * Check XXX:
 
 Apply new GNOME goals and migrate away from deprecated widgets
 
- * <http://wiki.gnome.org/Initiatives/GnomeGoals/HeaderBars>
- * <http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGMenu>
- * <http://wiki.gnome.org/Initiatives/GnomeGoals/PortToGtkApplication>
- * <http://mail.gnome.org/archives/gtk-devel-list/2013-July/msg00016.html>
- * <http://wiki.gnome.org/HowDoI/>
+ * https://wiki.gnome.org/HowDoI/GtkApplication
+ * https://developer.gnome.org/gtk3/stable/GtkApplication.html
+ * https://developer.gnome.org/gtk3/stable/gtk-migrating-unique-GtkApplication.html
+ * https://wiki.gnome.org/HowDoI/GMenu
+ * https://wiki.gnome.org/Initiatives/GnomeGoals/GearIcons
+ * https://wiki.gnome.org/HowDoI/GAction
 
  [1.16a]: http://home.gna.org/nfoview/
  [1.16b]: http://otsaloma.github.io/nfoview
@@ -36,4 +39,5 @@ Apply new GNOME goals and migrate away from deprecated widgets
 NFO Viewer 2.0
 ==============
 
+ * Gtk.Widget.override_* deprecated since 3.16
  * Make hyperlinks activatable by keyboard?

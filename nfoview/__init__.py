@@ -41,5 +41,5 @@ def main(paths):
     """Initialize application."""
     conf.read()
     global app
-    app = Application()
-    raise SystemExit(app.run(paths))
+    app = Application(paths)
+    raise SystemExit(app.run())

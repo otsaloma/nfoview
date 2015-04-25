@@ -89,6 +89,15 @@ class TestModule(nfoview.TestCase):
         font_desc = nfoview.util.get_font_description()
         assert font_desc.get_family() == "Foo,monospace,"
 
+    def test_get_max_text_view_size(self):
+        width, height = nfoview.util.get_max_text_view_size()
+        assert width > 100 and height > 100
+
+    def test_get_text_view_size(self):
+        text = 25 * "qwertyuiop asdfghjkl zxcvbnm\n"
+        width, height = nfoview.util.get_text_view_size(text)
+        assert width > 100 and height > 100
+
     def test_hex_to_rgba(self):
         color = nfoview.util.hex_to_rgba("#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))

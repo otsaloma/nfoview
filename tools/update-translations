@@ -4,6 +4,4 @@ cd "$(dirname "$0")/../po" || exit 1
 intltool-update -m || exit 1
 sleep 3 && [ -f missing ] && exit 1
 intltool-update -p -g nfoview -x || exit 1
-for FNAME in *.po; do
-    msgmerge -UNv "$FNAME" nfoview.pot
-done
+for X in *.po; do msgmerge -UNv "$X" nfoview.pot; done

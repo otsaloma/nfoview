@@ -40,12 +40,12 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_copyright("Copyright © 2005–2015 Osmo Salomaa")
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_logo_icon_name("nfoview")
-        # Translators: The application name "NFO Viewer" has been intentionally
+        # TRANSLATORS: The application name "NFO Viewer" has been intentionally
         # marked as translatable. If you manage to translate the name in a
         # fluent manner, without changing the meaning, you may use that
         # translation at your discretion.
         self.set_program_name(_("NFO Viewer"))
-        # Translators: This is a special message that shouldn't be translated
+        # TRANSLATORS: This is a special message that shouldn't be translated
         # literally. It is used in the about dialog to give credits to the
         # translators. Thus, you should translate it to your name and email
         # address. You can also include other translators who have contributed

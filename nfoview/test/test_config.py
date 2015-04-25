@@ -56,7 +56,7 @@ class TestConfigurationStore(nfoview.TestCase):
 
     def test_restore_defaults(self):
         nfoview.conf.restore_defaults()
-        defaults = dict(nfoview.config._DEFAULTS)
+        defaults = dict(nfoview.config.DEFAULTS)
         defaults["version"] = nfoview.__version__
         for name, value in defaults.items():
             assert getattr(nfoview.conf, name) == value

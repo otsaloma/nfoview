@@ -20,14 +20,15 @@
 import nfoview
 _ = nfoview.i18n.gettext
 
-__all__ = ("BlackOnWhite",
-           "Custom",
-           "DarkGreyOnLightGray",
-           "Default",
-           "GreyOnBlack",
-           "LightGreyOnDarkGray",
-           "WhiteOnBlack",
-           )
+__all__ = (
+    "BlackOnWhite",
+    "Custom",
+    "DarkGreyOnLightGray",
+    "Default",
+    "GreyOnBlack",
+    "LightGreyOnDarkGray",
+    "WhiteOnBlack",
+)
 
 
 class ColorScheme:
