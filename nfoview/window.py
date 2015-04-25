@@ -88,9 +88,9 @@ class Window(Gtk.ApplicationWindow):
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
-        for path in paths:
-            if hasattr(nfoview, "app"):
-                nfoview.app.open_window(path)
+        print(paths)
+        if self.props.application is not None:
+            list(map(self.props.application.open_window, paths))
 
     def open_file(self, path):
         """Read the file at `path` and show its text in the view."""

@@ -1,9 +1,13 @@
 NFO Viewer 1.16
 ===============
 
- * [X] New application icon
+ * [ ] Use a header bar and a menu button in application windows
  * [X] Use a header bar for the preferences dialog
+ * [X] New application icon
  * [X] Use markdown for documentation files (`README` etc.)
+ * [X] Bump GTK+ depedency to version 3.12
+ * [X] Add European Portuguese translation (Pedro Albuquerque)
+ * [X] Update Polish translation (Piotr Drąg)
  * [ ] Move web pages from [gna.org][1.16a] to [github.io][1.16b]
  * [ ] Move releases from [gna.org][1.16c] to [github.com][1.16d]
  * [X] Use [Transifex][1.16e] to manage translations
@@ -11,20 +15,6 @@ NFO Viewer 1.16
        [gitter.im][1.16g] instead
  * [ ] Close [nfoview-announcements][1.16h] mailing list, use
        [RSS][1.16i] instead (see also <http://sibbell.com/>)
- * [X] Add European Portuguese translation (Pedro Albuquerque)
- * [X] Update Polish translation (Piotr Drąg)
- * [X] Bump GTK+ depedency to version 3.12
- 
- * Check XXX:
-
-Apply new GNOME goals and migrate away from deprecated widgets
-
- * https://wiki.gnome.org/HowDoI/GtkApplication
- * https://developer.gnome.org/gtk3/stable/GtkApplication.html
- * https://developer.gnome.org/gtk3/stable/gtk-migrating-unique-GtkApplication.html
- * https://wiki.gnome.org/HowDoI/GMenu
- * https://wiki.gnome.org/Initiatives/GnomeGoals/GearIcons
- * https://wiki.gnome.org/HowDoI/GAction
 
  [1.16a]: http://home.gna.org/nfoview/
  [1.16b]: http://otsaloma.github.io/nfoview
@@ -39,5 +29,5 @@ Apply new GNOME goals and migrate away from deprecated widgets
 NFO Viewer 2.0
 ==============
 
- * Gtk.Widget.override_* deprecated since 3.16
+ * `Gtk.Widget.override_*` deprecated since 3.16
  * Make hyperlinks activatable by keyboard?
