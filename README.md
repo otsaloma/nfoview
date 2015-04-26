@@ -33,5 +33,5 @@ Running
 =======
 
 To try NFO Viewer from the source directory without installation, use
-command `python3 bin/nfoview`. For installing NFO Viewer, see the file
+command `bin/nfoview`. For installing NFO Viewer, see the file
 `INSTALL.md`.
