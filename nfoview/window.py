@@ -62,6 +62,9 @@ class Window(Gtk.ApplicationWindow):
         header = Gtk.HeaderBar()
         header.set_title(_("NFO Viewer"))
         header.set_show_close_button(True)
+        menu_button = Gtk.MenuButton()
+        menu_button.set_direction(Gtk.ArrowType.NONE)
+        header.pack_start(menu_button)
         header.show_all()
         self.set_titlebar(header)
         self.set_position(Gtk.WindowPosition.CENTER)
@@ -88,7 +91,6 @@ class Window(Gtk.ApplicationWindow):
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
-        print(paths)
         if self.props.application is not None:
             list(map(self.props.application.open_window, paths))
 
