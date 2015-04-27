@@ -32,6 +32,7 @@ from nfoview.open import *
 from nfoview.preferences import *
 from nfoview.export import *
 from nfoview.view import *
+from nfoview.action import *
 from nfoview import actions
 from nfoview.window import *
 from nfoview.application import *

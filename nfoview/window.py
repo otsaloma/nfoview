@@ -23,6 +23,7 @@ import textwrap
 _ = nfoview.i18n.gettext
 
 from gi.repository import Gdk
+from gi.repository import Gio
 from gi.repository import GObject
 from gi.repository import Gtk
 
@@ -39,12 +40,22 @@ class Window(Gtk.ApplicationWindow):
         self.path = path
         self.view = nfoview.TextView()
         self._init_properties()
+        self._init_titlebar()
         self._init_contents()
         self._init_view()
+        self._init_actions()
         if self.path is not None:
             self.open_file(self.path)
         self.resize_to_text()
-        self._update_action_sensitivities()
+        self._update_actions_enabled()
+
+    def _init_actions(self):
+        """Initialize user-activatable actions."""
+        for name in nfoview.actions.__all__:
+            action = getattr(nfoview.actions, name)()
+            # TODO: Add accelerators
+            # TODO: Connect signal handlers
+            self.add_action(action)
 
     def _init_contents(self):
         """Initialize child containers and pack contents."""
@@ -59,14 +70,6 @@ class Window(Gtk.ApplicationWindow):
 
     def _init_properties(self):
         """Initialize window properties."""
-        header = Gtk.HeaderBar()
-        header.set_title(_("NFO Viewer"))
-        header.set_show_close_button(True)
-        menu_button = Gtk.MenuButton()
-        menu_button.set_direction(Gtk.ArrowType.NONE)
-        header.pack_start(menu_button)
-        header.show_all()
-        self.set_titlebar(header)
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("nfoview")
         Gtk.Window.set_default_icon_name("nfoview")
@@ -78,11 +81,26 @@ class Window(Gtk.ApplicationWindow):
         self.connect("drag-data-received",
                      self._on_drag_data_received)
 
+    def _init_titlebar(self):
+        """Initialize window titlebar."""
+        header = Gtk.HeaderBar()
+        header.set_title(_("NFO Viewer"))
+        header.set_show_close_button(True)
+        menu_button = Gtk.MenuButton()
+        menu_button.set_direction(Gtk.ArrowType.NONE)
+        path = os.path.join(nfoview.DATA_DIR, "menu.ui")
+        builder = Gtk.Builder.new_from_file(path)
+        menu = builder.get_object("menu")
+        menu_button.set_menu_model(menu)
+        header.pack_start(menu_button)
+        header.show_all()
+        self.set_titlebar(header)
+
     def _init_view(self):
         """Initialize text view and associated buffer."""
         self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
-            self._update_action_sensitivities()
+            self._update_actions_enabled()
         text_buffer = self.view.get_buffer()
         text_buffer.connect("notify::has-selection", update, self)
 
@@ -101,7 +119,7 @@ class Window(Gtk.ApplicationWindow):
         text = self._read_file(path)
         self.view.set_text(text)
         self.view.grab_focus()
-        self._update_action_sensitivities()
+        self._update_actions_enabled()
 
     def _read_file(self, path):
         """Read and return the text of NFO file at `path`."""
@@ -128,8 +146,7 @@ class Window(Gtk.ApplicationWindow):
         size = list(nfoview.util.get_text_view_size(text))
         max_size = nfoview.util.get_max_text_view_size()
         if size[0] > max_size[0]:
-            # XXX:
-            # self._get_action("wrap_lines").activate()
+            self.activate_action("wrap-lines", None)
             text = "\n".join(map(
                 lambda x: textwrap.fill(x, 80),
                 text.split("\n")))
@@ -148,7 +165,8 @@ class Window(Gtk.ApplicationWindow):
         size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
         self.resize(*size)
 
-    def _update_action_sensitivities(self):
-        """Update the sensitivities of all UI manager actions."""
-        # XXX:
-        pass
+    def _update_actions_enabled(self):
+        """Update the enabled state of all actions."""
+        for name in self.list_actions():
+            action = self.lookup_action(name)
+            action.update_enabled(self)

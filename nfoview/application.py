@@ -21,6 +21,7 @@ import gettext
 import locale
 import nfoview
 import sys
+import traceback
 
 from gi.repository import Gio
 from gi.repository import GObject
@@ -77,3 +78,4 @@ class Application(Gtk.Application):
             print("Failed to open {}: {}"
                   .format(repr(path), str(error)),
                   file=sys.stderr)
+            traceback.print_exc()

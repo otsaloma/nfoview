@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005 Osmo Salomaa
+# Copyright (C) 2015 Osmo Salomaa
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,223 +15,87 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""UI manager actions."""
+"""User-activatable actions."""
 
 import nfoview
-_ = nfoview.i18n.gettext
 
-from gi.repository import GObject
-from gi.repository import Gtk
+from gi.repository import Gio
+from gi.repository import GLib
 
-__all__ = ("CloseDocumentAction",
-           "CopyTextAction",
-           "EditPreferencesAction",
-           "ExportAsImageFileAction",
-           "OpenFileAction",
-           "QuitAction",
-           "SelectAllTextAction",
-           "ShowAboutDialogAction",
-           "ShowEditMenuAction",
-           "ShowFileMenuAction",
-           "ShowHelpMenuAction",
-           "WrapLinesAction",
-           )
+__all__ = (
+    "AboutAction",
+    "CloseAction",
+    "CopyAction",
+    "ExportImageAction",
+    "OpenAction",
+    "PreferencesAction",
+    "QuitAction",
+    "SelectAllAction",
+    "WrapLinesAction",
+)
 
-
-class Action(Gtk.Action):
-
-    """
-    Base class for UI manager actions.
-
-    :ivar accelerator: Accelerator string for :func:`Gtk.accelerator_parse`
-
-    Instance variable :attr:`accelerator` defines a string in the format
-    understood by :func:`Gtk.accelerator_parse`, leave undefined to fall back
-    on a blank string, i.e. no accelerator.
-    """
-
-    def __init__(self, name):
-        """Initialize an :class:`Action` instance."""
-        GObject.GObject.__init__(self, name=name)
-        self.accelerator = ""
-
-    def _affirm_doable(self, window):
-        """Raise :exc:`AffirmationError` if action cannot be done."""
-        pass
-
-    def update_sensitivity(self, window):
-        """Update the sensitivity of action."""
-        try:
-            self._affirm_doable(window)
-        except nfoview.AffirmationError:
-            return self.set_sensitive(False)
-        return self.set_sensitive(True)
-
-
-class ToggleAction(Gtk.ToggleAction, Action):
-
-    """Base class for UI manager toggle actions."""
-
-    def __init__(self, name):
-        """Initialize an :class:`ToggleAction` instance."""
-        GObject.GObject.__init__(self, name=name)
-
-
-class CloseDocumentAction(Action):
-
-    """Close document."""
-
+class AboutAction(nfoview.Action):
     def __init__(self):
-        """Initialize a :class:`CloseDocumentAction` instance."""
-        Action.__init__(self, "close_document")
-        self.set_label(_("_Close"))
-        self.set_tooltip(_("Close document"))
-        self.accelerator = "<Control>W"
+        nfoview.Action.__init__(self, "about")
 
-
-class CopyTextAction(Action):
-
-    """Copy the selected text to the clipboard."""
-
+class CloseAction(nfoview.Action):
     def __init__(self):
-        """Initialize a :class:`CopyTextAction` instance."""
-        Action.__init__(self, "copy_text")
-        self.set_label(_("_Copy"))
-        self.set_tooltip(_("Copy the selected text to the clipboard"))
-        self.accelerator = "<Control>C"
+        nfoview.Action.__init__(self, "close")
+        self.accelerators = ["<Control>W", "Escape"]
 
+class CopyAction(nfoview.Action):
+    def __init__(self):
+        nfoview.Action.__init__(self, "copy")
+        self.accelerators = ["<Control>C"]
     def _affirm_doable(self, window):
-        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
         text_buffer = window.view.get_buffer()
         nfoview.util.affirm(text_buffer.get_has_selection())
 
-
-class EditPreferencesAction(Action):
-
-    """Edit NFO Viewer preferences."""
-
+class ExportImageAction(nfoview.Action):
     def __init__(self):
-        """Initialize an :class:`EditPreferencesAction` instance."""
-        Action.__init__(self, "edit_preferences")
-        self.set_label(_("_Preferences"))
-        self.set_tooltip(_("Edit NFO Viewer preferences"))
-
-
-class ExportAsImageFileAction(Action):
-
-    """Export document as an image file."""
-
-    def __init__(self):
-        """Initialize an :class:`ExportAsImageFileAction` instance."""
-        Action.__init__(self, "export_as_image")
-        self.set_label(_("_Export Image…"))
-        self.set_tooltip(_("Export document as an image file"))
-        self.accelerator = "<Control>E"
-
+        nfoview.Action.__init__(self, "export-image")
+        self.accelerators = ["<Control>E"]
     def _affirm_doable(self, window):
-        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.path is not None)
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
 
-
-class OpenFileAction(Action):
-
-    """Open file."""
-
+class OpenAction(nfoview.Action):
     def __init__(self):
-        """Initialize an :class:`OpenFileAction` instance."""
-        Action.__init__(self, "open_file")
-        self.set_label(_("_Open…"))
-        self.set_tooltip(_("Open file"))
-        self.accelerator = "<Control>O"
+        nfoview.Action.__init__(self, "open")
+        self.accelerators = ["<Control>O"]
 
-
-class QuitAction(Action):
-
-    """Close all documents and quit NFO Viewer."""
-
+class PreferencesAction(nfoview.Action):
     def __init__(self):
-        """Initialize a :class:`QuitAction` instance."""
-        Action.__init__(self, "quit")
-        self.set_label(_("_Quit"))
-        self.set_tooltip(_("Quit NFO Viewer"))
-        self.accelerator = "<Control>Q"
+        nfoview.Action.__init__(self, "preferences")
 
-
-class SelectAllTextAction(Action):
-
-    """Select all text in the document."""
-
+class QuitAction(nfoview.Action):
     def __init__(self):
-        """Initialize a :class:`SelectAllTextAction` instance."""
-        Action.__init__(self, "select_all_text")
-        self.set_label(_("_Select All"))
-        self.set_tooltip(_("Select all text in the document"))
-        self.accelerator = "<Control>A"
+        nfoview.Action.__init__(self, "quit")
+        self.accelerators = ["<Control>Q"]
 
+class SelectAllAction(nfoview.Action):
+    def __init__(self):
+        nfoview.Action.__init__(self, "select-all")
+        self.accelerators = ["<Control>A"]
     def _affirm_doable(self, window):
-        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
+        nfoview.util.affirm(window.view.get_text())
 
-
-class ShowAboutDialogAction(Action):
-
-    """Show information about NFO Viewer."""
-
+class WrapLinesAction(nfoview.Action):
+    def __new__(cls):
+        # XXX: Gio makes using toggle actions in Python difficult.
+        action = Gio.SimpleAction.new_stateful(
+            "wrap-lines", None, GLib.Variant("b", False))
+        action.__class__ = cls
+        return action
     def __init__(self):
-        """Initialize a :class:`ShowAboutDialogAction` instance."""
-        Action.__init__(self, "show_about_dialog")
-        self.set_label(_("_About"))
-        self.set_tooltip(_("Show information about NFO Viewer"))
-
-
-class ShowEditMenuAction(Action):
-
-    """Show the edit menu."""
-
-    def __init__(self):
-        """Initialize a :class:`ShowEditMenuAction` instance."""
-        Action.__init__(self, "show_edit_menu")
-        self.set_label(_("_Edit"))
-
-
-class ShowFileMenuAction(Action):
-
-    """Show the file menu."""
-
-    def __init__(self):
-        """Initialize a :class:`ShowFileMenuAction` instance."""
-        Action.__init__(self, "show_file_menu")
-        self.set_label(_("_File"))
-
-
-class ShowHelpMenuAction(Action):
-
-    """Show the help menu."""
-
-    def __init__(self):
-        """Initialize a :class:`ShowHelpMenuAction` instance."""
-        Action.__init__(self, "show_help_menu")
-        self.set_label(_("_Help"))
-
-
-class WrapLinesAction(ToggleAction):
-
-    """Break long lines at word borders."""
-
-    def __init__(self):
-        """Initialize a :class:`WrapLinesAction` instance."""
-        ToggleAction.__init__(self, "wrap_lines")
-        self.set_active(False)
-        self.set_label(_("_Wrap Lines"))
-        self.set_tooltip(_("Break long lines at word borders"))
-        self.accelerator = "<Control>R"
-
+        nfoview.Action.__init__(self, "wrap-lines")
+        self.accelerators = ["<Control>R"]
     def _affirm_doable(self, window):
-        """Raise :exc:`AffirmationError` if action cannot be done."""
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
+        nfoview.util.affirm(window.view.get_text())
