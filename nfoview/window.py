@@ -53,7 +53,10 @@ class Window(Gtk.ApplicationWindow):
         """Initialize user-activatable actions."""
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
-            # TODO: Add accelerators
+            if hasattr(nfoview, "app"):
+                name = "win.{}".format(action.props.name)
+                nfoview.app.set_accels_for_action(
+                    name, action.accelerators)
             # TODO: Connect signal handlers
             self.add_action(action)
 
@@ -88,6 +91,7 @@ class Window(Gtk.ApplicationWindow):
         header.set_show_close_button(True)
         menu_button = Gtk.MenuButton()
         menu_button.set_direction(Gtk.ArrowType.NONE)
+        menu_button.set_use_popover(False)
         path = os.path.join(nfoview.DATA_DIR, "menu.ui")
         builder = Gtk.Builder.new_from_file(path)
         menu = builder.get_object("menu")
@@ -109,8 +113,8 @@ class Window(Gtk.ApplicationWindow):
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
-        if self.props.application is not None:
-            list(map(self.props.application.open_window, paths))
+        if hasattr(nfoview, "app"):
+            list(map(nfoview.app.open_window, paths))
 
     def open_file(self, path):
         """Read the file at `path` and show its text in the view."""
