@@ -23,7 +23,6 @@ import textwrap
 _ = nfoview.i18n.gettext
 
 from gi.repository import Gdk
-from gi.repository import Gio
 from gi.repository import GObject
 from gi.repository import Gtk
 
@@ -37,6 +36,8 @@ class Window(Gtk.ApplicationWindow):
     def __init__(self, path=None):
         """Initialize a :class:`Window` instance and open file at `path`."""
         GObject.GObject.__init__(self)
+        self._about_dialog = None
+        self._preferences_dialog = None
         self.path = path
         self.view = nfoview.TextView()
         self._init_properties()
@@ -57,7 +58,9 @@ class Window(Gtk.ApplicationWindow):
                 name = "win.{}".format(action.props.name)
                 nfoview.app.set_accels_for_action(
                     name, action.accelerators)
-            # TODO: Connect signal handlers
+            callback = "_on_{}_activate".format(
+                action.props.name.replace("-", "_"))
+            action.connect("activate", getattr(self, callback))
             self.add_action(action)
 
     def _init_contents(self):
@@ -108,6 +111,28 @@ class Window(Gtk.ApplicationWindow):
         text_buffer = self.view.get_buffer()
         text_buffer.connect("notify::has-selection", update, self)
 
+    def _on_about_activate(self, *args):
+        """Show the about dialog."""
+        if self._about_dialog is not None:
+            return self._about_dialog.present()
+        self._about_dialog = nfoview.AboutDialog(self)
+        def destroy(dialog, response, self):
+            self._about_dialog.destroy()
+            self._about_dialog = None
+        self._about_dialog.connect("response", destroy, self)
+        self._about_dialog.show()
+
+    def _on_close_activate(self, *args):
+        """Remove the window and possibly terminate application."""
+        if hasattr(nfoview, "app"):
+            nfoview.app.remove_window(self)
+
+    def _on_copy_activate(self, *args):
+        """Copy the selected text to the clipboard."""
+        text_buffer = self.view.get_buffer()
+        clipboard = Gtk.Clipboard.get(Gdk.atom_intern("CLIPBOARD", False))
+        text_buffer.copy_clipboard(clipboard)
+
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
         """Open files dragged from a file browser."""
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
@@ -115,6 +140,77 @@ class Window(Gtk.ApplicationWindow):
             self.open_file(paths.pop(0))
         if hasattr(nfoview, "app"):
             list(map(nfoview.app.open_window, paths))
+
+    def _on_export_image_activate(self, *args):
+        """Export document as an image file."""
+        dialog = nfoview.ExportImageDialog(self)
+        directory = os.path.dirname(self.path)
+        dialog.set_current_folder(directory)
+        basename = os.path.basename(self.path)
+        dialog.set_current_name("{}.png".format(basename))
+        response = dialog.run()
+        path = dialog.get_filename()
+        dialog.destroy()
+        if response != Gtk.ResponseType.OK: return
+        if not path: return
+        view = nfoview.TextView()
+        view.set_text(self.view.get_text())
+        window = Gtk.OffscreenWindow()
+        window.nfoview_path = path
+        window.add(view)
+        def on_damage_event(window, *args):
+            pixbuf = window.get_pixbuf()
+            pixbuf.savev(window.nfoview_path, "png", [], [])
+        window.connect("damage-event", on_damage_event)
+        window.show_all()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
+
+    def _on_open_activate(self, *args):
+        """Show the open file dialog and open the chosen file."""
+        dialog = nfoview.OpenDialog(self)
+        if self.path is not None:
+            directory = os.path.dirname(self.path)
+            dialog.set_current_folder(directory)
+        response = dialog.run()
+        paths = dialog.get_filenames()
+        dialog.destroy()
+        if response != Gtk.ResponseType.OK: return
+        if not paths: return
+        if self.path is None:
+            self.open_file(paths.pop(0))
+        if hasattr(nfoview, "app"):
+            list(map(nfoview.app.open_window, paths))
+
+    def _on_preferences_activate(self, *args):
+        """Show the preferences dialog."""
+        if self._preferences_dialog is not None:
+            return self._preferences_dialog.present()
+        self._preferences_dialog = nfoview.PreferencesDialog(self)
+        def destroy(dialog, response, self):
+            self._preferences_dialog.destroy()
+            self._preferences_dialog = None
+        self._preferences_dialog.connect("response", destroy, self)
+        self._preferences_dialog.show()
+
+    def _on_quit_activate(self, *args):
+        """Terminate application immediately."""
+        if hasattr(nfoview, "app"):
+            nfoview.app.quit()
+
+    def _on_select_all_activate(self, *args):
+        """Select all text in the document."""
+        text_buffer = self.view.get_buffer()
+        bounds = text_buffer.get_bounds()
+        text_buffer.select_range(*bounds)
+        self._update_actions_enabled()
+
+    def _on_wrap_lines_activate(self, action, *args):
+        """Break long lines at word borders."""
+        action.set_state(not action.get_state())
+        if action.get_state():
+            return self.view.set_wrap_mode(Gtk.WrapMode.WORD)
+        return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def open_file(self, path):
         """Read the file at `path` and show its text in the view."""

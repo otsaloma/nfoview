@@ -85,7 +85,7 @@ class SelectAllAction(nfoview.Action):
         nfoview.util.affirm(window.view.get_sensitive())
         nfoview.util.affirm(window.view.get_text())
 
-class WrapLinesAction(nfoview.Action):
+class WrapLinesAction(nfoview.ToggleAction):
     def __new__(cls):
         # XXX: Gio makes using toggle actions in Python difficult.
         action = Gio.SimpleAction.new_stateful(

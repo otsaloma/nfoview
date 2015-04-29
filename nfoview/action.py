@@ -20,9 +20,10 @@
 import nfoview
 
 from gi.repository import Gio
+from gi.repository import GLib
 from gi.repository import GObject
 
-__all__ = ("Action",)
+__all__ = ("Action", "ToggleAction")
 
 
 class Action(Gio.SimpleAction):
@@ -45,3 +46,16 @@ class Action(Gio.SimpleAction):
             self.set_enabled(True)
         except nfoview.AffirmationError:
             self.set_enabled(False)
+
+
+class ToggleAction(Action):
+
+    """Baseclass for user-activatable toggle actions."""
+
+    def get_state(self):
+        """Return the current boolean state."""
+        return Action.get_state(self).get_boolean()
+
+    def set_state(self, value):
+        """Set a new boolean state."""
+        Action.set_state(self, GLib.Variant("b", value))
