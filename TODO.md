@@ -3,6 +3,8 @@ NFO Viewer 1.16
 
  * [X] Use a header bar and a menu button in application windows
  * [X] Use a header bar for the preferences dialog
+ * [X] Migrate from deprecated `Gtk.UIManager`, `Gtk.Action` etc.
+       to `Gtk.Application`, `Gio.Action` etc.
  * [X] New application icon
  * [X] Use markdown for documentation files (`README` etc.)
  * [X] Bump GTK+ depedency to version 3.12
