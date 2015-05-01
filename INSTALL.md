@@ -3,7 +3,7 @@ Installation
 
 To install, run command
 
-    python3 setup.py clean install [--prefix=...]
+    python3 setup.py install [--prefix=...]
 
 You'll need Python, gettext and intltool.
 

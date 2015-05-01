@@ -16,7 +16,7 @@ Releasing a New Version
    - `nfoview/__init__.py`
  * Update `NEWS.md` and `TODO.md`
  * Check that installation works
-   - `sudo python3 setup.py clean install --prefix=/usr/local`
+   - `sudo python3 setup.py install --prefix=/usr/local`
    - `sudo python3 setup.py clean`
    - `/usr/local/bin/nfoview`
  * Commit changes

@@ -15,8 +15,7 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
 
 (2) During installation, the .po files are compiled into .mo files and the
     appdata and desktop files are translated. This requires gettext and
-    intltool, more specifically, executables 'msgfmt' and 'intltool-merge'
-    in $PATH.
+    intltool, more specifically, commands 'msgfmt' and 'intltool-merge'.
 """
 
 import distutils.command.clean
@@ -27,8 +26,6 @@ import glob
 import os
 import re
 import shutil
-import tarfile
-import tempfile
 
 clean = distutils.command.clean.clean
 install = distutils.command.install.install
@@ -43,13 +40,13 @@ def get_version():
     text = open(path, "r", encoding="utf_8").read()
     return re.search(r"__version__ *= *['\"](.*?)['\"]", text).group(1)
 
-def run_command_or_exit(cmd):
+def run_or_exit(cmd):
     """Run command in shell and raise SystemExit if it fails."""
     if os.system(cmd) != 0:
         log.error("command {} failed".format(repr(cmd)))
         raise SystemExit(1)
 
-def run_command_or_warn(cmd):
+def run_or_warn(cmd):
     """Run command in shell and warn if it fails."""
     if os.system(cmd) != 0:
         log.warn("command {} failed".format(repr(cmd)))
@@ -59,21 +56,17 @@ class Clean(clean):
 
     """Command to remove files and directories created."""
 
-    __glob_targets = ("*/__pycache__",
-                      "*/*.py[co]",
-                      "*/*/__pycache__",
-                      "*/*/*.py[co]",
-                      "*/*/*/__pycache__",
-                      "*/*/*/*.py[co]",
-                      "*/*/*/*/__pycache__",
-                      "*/*/*/*/*.py[co]",
-                      "build",
-                      "data/nfoview.appdata.xml",
-                      "data/nfoview.desktop",
-                      "dist",
-                      "locale",
-                      "po/*~",
-                      )
+    __glob_targets = (
+        "*/__pycache__",
+        "*/*/__pycache__",
+        "*/*/*/__pycache__",
+        "build",
+        "data/nfoview.appdata.xml",
+        "data/nfoview.desktop",
+        "dist",
+        "locale",
+        "po/*~",
+    )
 
     def run(self):
         """Remove files and directories listed in self.__glob_targets."""
@@ -103,7 +96,7 @@ class Install(install):
         if (root is not None) or (data_dir is None): return
         directory = os.path.join(data_dir, "share", "applications")
         log.info("updating desktop database in '{}'".format(directory))
-        run_command_or_warn('update-desktop-database "{}"'.format(directory))
+        run_or_warn('update-desktop-database "{}"'.format(directory))
 
 
 class InstallData(install_data):
@@ -113,17 +106,13 @@ class InstallData(install_data):
     def __get_appdata_file(self):
         """Return a tuple for the translated appdata file."""
         path = os.path.join("data", "nfoview.appdata.xml")
-        run_command_or_exit("intltool-merge -x po {}.in {}"
-                            .format(path, path))
-
+        run_or_exit("intltool-merge -x po {}.in {}".format(path, path))
         return ("share/appdata", (path,))
 
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
-        run_command_or_exit("intltool-merge -d po {}.in {}"
-                            .format(path, path))
-
+        run_or_exit("intltool-merge -d po {}.in {}".format(path, path))
         return ("share/applications", (path,))
 
     def __get_mo_file(self, po_file):
@@ -136,9 +125,7 @@ class InstallData(install_data):
         mo_file = os.path.join(mo_dir, "nfoview.mo")
         dest_dir = os.path.join("share", mo_dir)
         log.info("compiling '{}'".format(mo_file))
-        run_command_or_exit("msgfmt {} -o {}"
-                            .format(po_file, mo_file))
-
+        run_or_exit("msgfmt {} -o {}".format(po_file, mo_file))
         return (dest_dir, (mo_file,))
 
     def run(self):
@@ -168,14 +155,14 @@ class InstallLib(install_lib):
         # Write changes to the nfoview.paths module.
         path = os.path.join(self.build_dir, "nfoview", "paths.py")
         text = open(path, "r", encoding="utf_8").read()
-        patt = 'DATA_DIR = get_data_directory_source()'
+        patt = r"^DATA_DIR = .*$"
         repl = "DATA_DIR = {}".format(repr(data_dir))
-        text = text.replace(patt, repl)
-        assert text.count(repr(data_dir)) > 0
-        patt = 'LOCALE_DIR = get_locale_directory_source()'
+        text = re.sub(patt, repl, text, flags=re.MULTILINE)
+        assert text.count(repl) == 1
+        patt = r"^LOCALE_DIR = .*$"
         repl = "LOCALE_DIR = {}".format(repr(locale_dir))
-        text = text.replace(patt, repl)
-        assert text.count(repr(locale_dir)) > 0
+        text = re.sub(patt, repl, text, flags=re.MULTILINE)
+        assert text.count(repl) == 1
         open(path, "w", encoding="utf_8").write(text)
         return install_lib.install(self)
 
@@ -192,29 +179,20 @@ setup_kwargs = dict(
     packages=("nfoview",),
     scripts=("bin/nfoview",),
     data_files=[
-        ("share/icons/hicolor/16x16/apps",
-         ("data/icons/16x16/nfoview.png",)),
-        ("share/icons/hicolor/22x22/apps",
-         ("data/icons/22x22/nfoview.png",)),
-        ("share/icons/hicolor/24x24/apps",
-         ("data/icons/24x24/nfoview.png",)),
-        ("share/icons/hicolor/32x32/apps",
-         ("data/icons/32x32/nfoview.png",)),
-        ("share/icons/hicolor/48x48/apps",
-         ("data/icons/48x48/nfoview.png",)),
-        ("share/icons/hicolor/256x256/apps",
-         ("data/icons/256x256/nfoview.png",)),
-        ("share/man/man1",
-         ("data/nfoview.1",)),
-        ("share/nfoview",
-         ("data/preferences-dialog.ui",
-          "data/ui.xml")),
+        ("share/icons/hicolor/16x16/apps", ("data/icons/16x16/nfoview.png",)),
+        ("share/icons/hicolor/22x22/apps", ("data/icons/22x22/nfoview.png",)),
+        ("share/icons/hicolor/24x24/apps", ("data/icons/24x24/nfoview.png",)),
+        ("share/icons/hicolor/32x32/apps", ("data/icons/32x32/nfoview.png",)),
+        ("share/icons/hicolor/48x48/apps", ("data/icons/48x48/nfoview.png",)),
+        ("share/icons/hicolor/256x256/apps", ("data/icons/256x256/nfoview.png",)),
+        ("share/man/man1", ("data/nfoview.1",)),
+        ("share/nfoview", glob.glob("data/*.ui")),
         ],
-
-    cmdclass=dict(clean=Clean,
-                  install=Install,
-                  install_data=InstallData,
-                  install_lib=InstallLib))
+    cmdclass=dict(
+        clean=Clean,
+        install=Install,
+        install_data=InstallData,
+        install_lib=InstallLib))
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__) or ".")
