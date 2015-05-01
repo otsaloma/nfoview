@@ -2,19 +2,20 @@ Releasing a New Version
 =======================
 
  * Update translations
+   - `tx pull`
    - `tools/update-translations`
-   - `emacs po/fi.po`
+   - `virtaal po/fi.po`
+   - `tools/check-translations`
+   - `tx push -stf`
    - `git commit -a -m "Update translations for X.Y.Z."`
  * Do final quality checks
    - `python3 -Wd bin/nfoview`
    - `pyflakes3 bin/nfoview nfoview setup.py`
    - `py.test-3 --tb=no nfoview`
- * Make final edits to files
+ * Bump version numbers
    - `$EDITOR nfoview/__init__.py`
-   - `$EDITOR NEWS.md TODO`
- * Check that tarballs can be built
-   - `python3 setup.py clean sdist_gna --formats tar`
- * Check that installation of above tarball works
+   - `$EDITOR NEWS.md TODO.md`
+ * Check that installation works
    - `sudo python3 setup.py clean install --prefix=/usr/local`
    - `sudo python3 setup.py clean`
    - `/usr/local/bin/nfoview`
@@ -23,12 +24,7 @@ Releasing a New Version
    - `git tag -s X.Y.Z`
    - `git push`
    - `git push --tags`
- * Build final tarballs, edit related files and upload
-   - `python3 setup.py clean sdist_gna --formats tar`
-   - `$EDITOR dist/*/*.news dist/*/*.changes`
-   - `download.gna.org:/upload/nfoview/`
  * Send announcements and update web sites
-   - http://github.com/otsaloma/nfoview/releases
-   - http://home.gna.org/nfoview
-   - http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview
-   - nfoview-announcements@gna.org
+   - <http://github.com/otsaloma/nfoview/releases>
+   - <http://otsaloma.github.io/nfoview>
+   - <http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview>

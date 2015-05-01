@@ -1,5 +1,5 @@
-General Information
-===================
+NFO Viewer
+==========
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
 the CP437 codepage. The advantages of using NFO Viewer instead of a text
@@ -13,9 +13,8 @@ Dependencies
 ============
 
 NFO Viewer requires [Python][1] 3.2 or greater, [PyGObject][2] 3.0.0 or
-greater and [GTK+][3] 3.2 or greater. [Terminus font][4] is recommended
-and used by default. For dependencies required only during installation,
-see the file `INSTALL.md`.
+greater and [GTK+][3] 3.12 or greater. [Terminus font][4] is recommended
+and used by default.
 
  [1]: http://www.python.org/
  [2]: http://wiki.gnome.org/Projects/PyGObject

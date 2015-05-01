@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-30 00:58+0200\n"
+"POT-Creation-Date: 2015-05-01 05:06+0300\n"
 "PO-Revision-Date: 2010-12-08 03:41+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian <None>\n"
@@ -18,50 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Подешавања"
-
-#: ../data/preferences-dialog.ui.h:2 ../nfoview/actions.py:87
-msgid "_Close"
-msgstr "_Затвори"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Text"
-msgstr "Текст"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "_Font:"
-msgstr "_Фонт:"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "Li_ne-spacing:"
-msgstr "_Међупростор:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Colors"
-msgstr "Боје"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "_Schemes:"
-msgstr "_Шеме:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "Fo_reground:"
-msgstr "_Текст:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "Bac_kground:"
-msgstr "_Позадина:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "_Link:"
-msgstr "_Веза:"
-
-#: ../data/preferences-dialog.ui.h:11
-msgid "_Visited link:"
-msgstr "П_осећена веза:"
-
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
 "NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
@@ -70,11 +26,12 @@ msgid ""
 "hyperlinks."
 msgstr ""
 
-#. Translators: The application name 'NFO Viewer' has been intentionally
+#. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
+#: ../nfoview/window.py:93
 msgid "NFO Viewer"
 msgstr "НФО Прегледач"
 
@@ -87,6 +44,82 @@ msgstr "Прегледај НФО датотеке"
 msgid "information;"
 msgstr ""
 
+#: ../data/menu.ui.h:1
+msgid "_Open…"
+msgstr "_Отвори…"
+
+#: ../data/menu.ui.h:2
+msgid "_Export Image…"
+msgstr ""
+
+#: ../data/menu.ui.h:3
+msgid "C_opy"
+msgstr ""
+
+#: ../data/menu.ui.h:4
+msgid "_Select All"
+msgstr "Одабери _све"
+
+#: ../data/menu.ui.h:5
+msgid "_Wrap Lines"
+msgstr "О_бмотај линије"
+
+#: ../data/menu.ui.h:6
+msgid "_Preferences"
+msgstr "_Подешавања"
+
+#: ../data/menu.ui.h:7
+msgid "_About"
+msgstr "_О програму"
+
+#: ../data/menu.ui.h:8
+msgid "_Close"
+msgstr "_Затвори"
+
+#: ../data/menu.ui.h:9
+msgid "_Quit"
+msgstr "_Изађи"
+
+#: ../data/preferences-dialog.ui.h:1
+msgid "Preferences"
+msgstr "Подешавања"
+
+#: ../data/preferences-dialog.ui.h:2
+msgid "Text"
+msgstr "Текст"
+
+#: ../data/preferences-dialog.ui.h:3
+msgid "_Font:"
+msgstr "_Фонт:"
+
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr "_Међупростор:"
+
+#: ../data/preferences-dialog.ui.h:5
+msgid "Colors"
+msgstr "Боје"
+
+#: ../data/preferences-dialog.ui.h:6
+msgid "_Schemes:"
+msgstr "_Шеме:"
+
+#: ../data/preferences-dialog.ui.h:7
+msgid "Fo_reground:"
+msgstr "_Текст:"
+
+#: ../data/preferences-dialog.ui.h:8
+msgid "Bac_kground:"
+msgstr "_Позадина:"
+
+#: ../data/preferences-dialog.ui.h:9
+msgid "_Link:"
+msgstr "_Веза:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "_Visited link:"
+msgstr "П_осећена веза:"
+
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
 msgstr "О програму"
@@ -95,7 +128,7 @@ msgstr "О програму"
 msgid "Viewer for NFO files"
 msgstr "Прегледач НФО датотека"
 
-#. Translators: This is a special message that shouldn't be translated
+#. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
 #. translators. Thus, you should translate it to your name and email
 #. address. You can also include other translators who have contributed
@@ -108,86 +141,6 @@ msgstr "Goran Velemirov <psickloop@gmail.com>, 2010"
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "Сајт НФО прегледача"
-
-#: ../nfoview/actions.py:88
-msgid "Close document"
-msgstr "Затвори датотеку"
-
-#: ../nfoview/actions.py:99
-msgid "_Copy"
-msgstr "_Умножи"
-
-#: ../nfoview/actions.py:100
-msgid "Copy the selected text to the clipboard"
-msgstr "Умножи одабран текст у меморију"
-
-#: ../nfoview/actions.py:118
-msgid "_Preferences"
-msgstr "_Подешавања"
-
-#: ../nfoview/actions.py:119
-msgid "Edit NFO Viewer preferences"
-msgstr "Измени подешавања програма"
-
-#: ../nfoview/actions.py:129
-msgid "_Export Image…"
-msgstr ""
-
-#: ../nfoview/actions.py:130
-msgid "Export document as an image file"
-msgstr ""
-
-#: ../nfoview/actions.py:147
-msgid "_Open…"
-msgstr "_Отвори…"
-
-#: ../nfoview/actions.py:148
-msgid "Open file"
-msgstr "Отвори датотеку"
-
-#: ../nfoview/actions.py:159
-msgid "_Quit"
-msgstr "_Изађи"
-
-#: ../nfoview/actions.py:160
-msgid "Quit NFO Viewer"
-msgstr "Изађи из програма"
-
-#: ../nfoview/actions.py:171
-msgid "_Select All"
-msgstr "Одабери _све"
-
-#: ../nfoview/actions.py:172
-msgid "Select all text in the document"
-msgstr "Одабери сав текст датотеке"
-
-#: ../nfoview/actions.py:188
-msgid "_About"
-msgstr "_О програму"
-
-#: ../nfoview/actions.py:189
-msgid "Show information about NFO Viewer"
-msgstr "Прикажи информације о програму"
-
-#: ../nfoview/actions.py:199
-msgid "_Edit"
-msgstr "_Уреди"
-
-#: ../nfoview/actions.py:209
-msgid "_File"
-msgstr "_Датотека"
-
-#: ../nfoview/actions.py:219
-msgid "_Help"
-msgstr "_Помоћ"
-
-#: ../nfoview/actions.py:230
-msgid "_Wrap Lines"
-msgstr "О_бмотај линије"
-
-#: ../nfoview/actions.py:231
-msgid "Break long lines at word borders"
-msgstr "Преломи дугачке линије на границама слова"
 
 #: ../nfoview/export.py:36
 msgid "Export Image"
@@ -217,33 +170,69 @@ msgstr "Све датотеке"
 msgid "NFO files (*.nfo)"
 msgstr "НФО датотеке (*.nfo)"
 
-#: ../nfoview/schemes.py:59
+#: ../nfoview/schemes.py:51
 msgid "Black on white"
 msgstr "Црно на белом"
 
-#: ../nfoview/schemes.py:71
+#: ../nfoview/schemes.py:63
 msgid "Custom"
 msgstr "Прилагођено"
 
-#: ../nfoview/schemes.py:83
+#: ../nfoview/schemes.py:75
 msgid "Dark grey on light grey"
 msgstr "Тамно-сиво на светло-сивом"
 
-#: ../nfoview/schemes.py:95
+#: ../nfoview/schemes.py:90
 msgid "System theme"
 msgstr "Тема система"
 
-#: ../nfoview/schemes.py:113
+#: ../nfoview/schemes.py:102
 msgid "Grey on black"
 msgstr "Сиво на црном"
 
-#: ../nfoview/schemes.py:125
+#: ../nfoview/schemes.py:114
 msgid "Light grey on dark grey"
 msgstr "Светло-сиво на тамно-сивом"
 
-#: ../nfoview/schemes.py:137
+#: ../nfoview/schemes.py:126
 msgid "White on black"
 msgstr "Бело на црном"
+
+#~ msgid "Close document"
+#~ msgstr "Затвори датотеку"
+
+#~ msgid "_Copy"
+#~ msgstr "_Умножи"
+
+#~ msgid "Copy the selected text to the clipboard"
+#~ msgstr "Умножи одабран текст у меморију"
+
+#~ msgid "Edit NFO Viewer preferences"
+#~ msgstr "Измени подешавања програма"
+
+#~ msgid "Open file"
+#~ msgstr "Отвори датотеку"
+
+#~ msgid "Quit NFO Viewer"
+#~ msgstr "Изађи из програма"
+
+#~ msgid "Select all text in the document"
+#~ msgstr "Одабери сав текст датотеке"
+
+#~ msgid "Show information about NFO Viewer"
+#~ msgstr "Прикажи информације о програму"
+
+#~ msgid "_Edit"
+#~ msgstr "_Уреди"
+
+#~ msgid "_File"
+#~ msgstr "_Датотека"
+
+#~ msgid "_Help"
+#~ msgstr "_Помоћ"
+
+#~ msgid "Break long lines at word borders"
+#~ msgstr "Преломи дугачке линије на границама слова"
 
 #~ msgid "Select Font"
 #~ msgstr "Одабери фонт"

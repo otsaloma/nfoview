@@ -1,7 +1,12 @@
 #!/bin/sh
 # Update all translations with new strings.
 cd "$(dirname "$0")/../po" || exit 1
-intltool-update -m || exit 1
-sleep 3 && [ -f missing ] && exit 1
-intltool-update -p -g nfoview -x || exit 1
-for X in *.po; do msgmerge -UNv "$X" nfoview.pot; done
+echo "Searching for missing files..."
+intltool-update -m
+sleep 3 && [ -f missing ] && echo "Files missing." && exit 1
+echo "Updating nfoview.pot..."
+intltool-update -p -g nfoview
+for X in *.po; do
+    echo "Updating $X..."
+    msgmerge -UNq "$X" nfoview.pot
+done

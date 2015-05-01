@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-30 00:58+0200\n"
+"POT-Creation-Date: 2015-05-01 05:06+0300\n"
 "PO-Revision-Date: 2010-05-14 12:30+0100\n"
 "Last-Translator: csola48 <csola48@gmail.com>\n"
 "Language-Team: csola48 <csola48@gmail.com>\n"
@@ -18,50 +18,6 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: ../data/preferences-dialog.ui.h:2 ../nfoview/actions.py:87
-msgid "_Close"
-msgstr "_Bezárás"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Text"
-msgstr "Szöveg"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "_Font:"
-msgstr "_Betűtípus:"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "Li_ne-spacing:"
-msgstr "_Sortávolság:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Colors"
-msgstr "Színek"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "_Schemes:"
-msgstr "_Elrendezés:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "Fo_reground:"
-msgstr "_Előtér:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "Bac_kground:"
-msgstr "_Háttér:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "_Link:"
-msgstr "_Kapcsolat:"
-
-#: ../data/preferences-dialog.ui.h:11
-msgid "_Visited link:"
-msgstr "_Látogatott link:"
-
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
 "NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
@@ -70,11 +26,12 @@ msgid ""
 "hyperlinks."
 msgstr ""
 
-#. Translators: The application name 'NFO Viewer' has been intentionally
+#. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
+#: ../nfoview/window.py:93
 msgid "NFO Viewer"
 msgstr "NFO-fájlnéző"
 
@@ -87,6 +44,82 @@ msgstr "NFO fájl nézése"
 msgid "information;"
 msgstr ""
 
+#: ../data/menu.ui.h:1
+msgid "_Open…"
+msgstr "_Megnyitás…"
+
+#: ../data/menu.ui.h:2
+msgid "_Export Image…"
+msgstr ""
+
+#: ../data/menu.ui.h:3
+msgid "C_opy"
+msgstr ""
+
+#: ../data/menu.ui.h:4
+msgid "_Select All"
+msgstr "_Minden kijelölése"
+
+#: ../data/menu.ui.h:5
+msgid "_Wrap Lines"
+msgstr "_Sortörés"
+
+#: ../data/menu.ui.h:6
+msgid "_Preferences"
+msgstr "_Beállítások"
+
+#: ../data/menu.ui.h:7
+msgid "_About"
+msgstr "_Névjegy"
+
+#: ../data/menu.ui.h:8
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: ../data/menu.ui.h:9
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: ../data/preferences-dialog.ui.h:1
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../data/preferences-dialog.ui.h:2
+msgid "Text"
+msgstr "Szöveg"
+
+#: ../data/preferences-dialog.ui.h:3
+msgid "_Font:"
+msgstr "_Betűtípus:"
+
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr "_Sortávolság:"
+
+#: ../data/preferences-dialog.ui.h:5
+msgid "Colors"
+msgstr "Színek"
+
+#: ../data/preferences-dialog.ui.h:6
+msgid "_Schemes:"
+msgstr "_Elrendezés:"
+
+#: ../data/preferences-dialog.ui.h:7
+msgid "Fo_reground:"
+msgstr "_Előtér:"
+
+#: ../data/preferences-dialog.ui.h:8
+msgid "Bac_kground:"
+msgstr "_Háttér:"
+
+#: ../data/preferences-dialog.ui.h:9
+msgid "_Link:"
+msgstr "_Kapcsolat:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "_Visited link:"
+msgstr "_Látogatott link:"
+
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
 msgstr "Névjegy"
@@ -95,7 +128,7 @@ msgstr "Névjegy"
 msgid "Viewer for NFO files"
 msgstr "Néző NFO fájlokhoz"
 
-#. Translators: This is a special message that shouldn't be translated
+#. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
 #. translators. Thus, you should translate it to your name and email
 #. address. You can also include other translators who have contributed
@@ -108,86 +141,6 @@ msgstr "L. Csordas <csola48@gmail.com>"
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "Az NFO néző weboldala"
-
-#: ../nfoview/actions.py:88
-msgid "Close document"
-msgstr "Dokumentum bezárása"
-
-#: ../nfoview/actions.py:99
-msgid "_Copy"
-msgstr "_Másolás"
-
-#: ../nfoview/actions.py:100
-msgid "Copy the selected text to the clipboard"
-msgstr "A kiválasztott szöveg vágólapra másolása"
-
-#: ../nfoview/actions.py:118
-msgid "_Preferences"
-msgstr "_Beállítások"
-
-#: ../nfoview/actions.py:119
-msgid "Edit NFO Viewer preferences"
-msgstr "A beállítások szerkesztése"
-
-#: ../nfoview/actions.py:129
-msgid "_Export Image…"
-msgstr ""
-
-#: ../nfoview/actions.py:130
-msgid "Export document as an image file"
-msgstr ""
-
-#: ../nfoview/actions.py:147
-msgid "_Open…"
-msgstr "_Megnyitás…"
-
-#: ../nfoview/actions.py:148
-msgid "Open file"
-msgstr "Fájl megnyitása"
-
-#: ../nfoview/actions.py:159
-msgid "_Quit"
-msgstr "_Kilépés"
-
-#: ../nfoview/actions.py:160
-msgid "Quit NFO Viewer"
-msgstr "Kilépés az NFO-fájlnézőből"
-
-#: ../nfoview/actions.py:171
-msgid "_Select All"
-msgstr "_Minden kijelölése"
-
-#: ../nfoview/actions.py:172
-msgid "Select all text in the document"
-msgstr "Minden szöveg kijelölése a dokumentumban"
-
-#: ../nfoview/actions.py:188
-msgid "_About"
-msgstr "_Névjegy"
-
-#: ../nfoview/actions.py:189
-msgid "Show information about NFO Viewer"
-msgstr "Információ az NFO-fájlnézőről"
-
-#: ../nfoview/actions.py:199
-msgid "_Edit"
-msgstr "Sz_erkesztés"
-
-#: ../nfoview/actions.py:209
-msgid "_File"
-msgstr "_Fájl"
-
-#: ../nfoview/actions.py:219
-msgid "_Help"
-msgstr "_Súgó"
-
-#: ../nfoview/actions.py:230
-msgid "_Wrap Lines"
-msgstr "_Sortörés"
-
-#: ../nfoview/actions.py:231
-msgid "Break long lines at word borders"
-msgstr "Hosszú sorok szóhatáron való törése"
 
 #: ../nfoview/export.py:36
 msgid "Export Image"
@@ -217,33 +170,69 @@ msgstr "Minden fájl"
 msgid "NFO files (*.nfo)"
 msgstr "NFO fájl (*.nfo)"
 
-#: ../nfoview/schemes.py:59
+#: ../nfoview/schemes.py:51
 msgid "Black on white"
 msgstr "Fekete a fehéren"
 
-#: ../nfoview/schemes.py:71
+#: ../nfoview/schemes.py:63
 msgid "Custom"
 msgstr "Szokásos"
 
-#: ../nfoview/schemes.py:83
+#: ../nfoview/schemes.py:75
 msgid "Dark grey on light grey"
 msgstr "Sötét szürke a világos szürkén"
 
-#: ../nfoview/schemes.py:95
+#: ../nfoview/schemes.py:90
 msgid "System theme"
 msgstr "Rendszer téma"
 
-#: ../nfoview/schemes.py:113
+#: ../nfoview/schemes.py:102
 msgid "Grey on black"
 msgstr "Szürke a feketén"
 
-#: ../nfoview/schemes.py:125
+#: ../nfoview/schemes.py:114
 msgid "Light grey on dark grey"
 msgstr "Világos szürke a sötét szürkén"
 
-#: ../nfoview/schemes.py:137
+#: ../nfoview/schemes.py:126
 msgid "White on black"
 msgstr "Fehér a feketén"
+
+#~ msgid "Close document"
+#~ msgstr "Dokumentum bezárása"
+
+#~ msgid "_Copy"
+#~ msgstr "_Másolás"
+
+#~ msgid "Copy the selected text to the clipboard"
+#~ msgstr "A kiválasztott szöveg vágólapra másolása"
+
+#~ msgid "Edit NFO Viewer preferences"
+#~ msgstr "A beállítások szerkesztése"
+
+#~ msgid "Open file"
+#~ msgstr "Fájl megnyitása"
+
+#~ msgid "Quit NFO Viewer"
+#~ msgstr "Kilépés az NFO-fájlnézőből"
+
+#~ msgid "Select all text in the document"
+#~ msgstr "Minden szöveg kijelölése a dokumentumban"
+
+#~ msgid "Show information about NFO Viewer"
+#~ msgstr "Információ az NFO-fájlnézőről"
+
+#~ msgid "_Edit"
+#~ msgstr "Sz_erkesztés"
+
+#~ msgid "_File"
+#~ msgstr "_Fájl"
+
+#~ msgid "_Help"
+#~ msgstr "_Súgó"
+
+#~ msgid "Break long lines at word borders"
+#~ msgstr "Hosszú sorok szóhatáron való törése"
 
 #~ msgid "Select Font"
 #~ msgstr "Betűtípus választása"

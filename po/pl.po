@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 19:43+0100\n"
+"POT-Creation-Date: 2015-05-01 05:06+0300\n"
 "PO-Revision-Date: 2014-12-06 19:44+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
@@ -14,50 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-
-#: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Preferencje"
-
-#: ../data/preferences-dialog.ui.h:2 ../nfoview/actions.py:87
-msgid "_Close"
-msgstr "Za_mknij"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Text"
-msgstr "Tekst"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "_Font:"
-msgstr "_Czcionka:"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "Li_ne-spacing:"
-msgstr "_Odstęp między wierszami:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Colors"
-msgstr "Kolory"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "_Schemes:"
-msgstr "_Schematy:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "Fo_reground:"
-msgstr "Te_kst:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "Bac_kground:"
-msgstr "_Tło:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "_Link:"
-msgstr "_Odnośnik:"
-
-#: ../data/preferences-dialog.ui.h:11
-msgid "_Visited link:"
-msgstr "O_dwiedzony odnośnik:"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -71,11 +27,12 @@ msgstr ""
 "plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, "
 "automatyczny rozmiar okna i klikalne odnośniki."
 
-#. Translators: The application name 'NFO Viewer' has been intentionally
+#. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
+#: ../nfoview/window.py:93
 msgid "NFO Viewer"
 msgstr "Przeglądarka NFO"
 
@@ -88,6 +45,82 @@ msgstr "Wyświetlanie plików NFO"
 msgid "information;"
 msgstr "informacje;"
 
+#: ../data/menu.ui.h:1
+msgid "_Open…"
+msgstr "_Otwórz…"
+
+#: ../data/menu.ui.h:2
+msgid "_Export Image…"
+msgstr "Wy_eksportuj obraz…"
+
+#: ../data/menu.ui.h:3
+msgid "C_opy"
+msgstr ""
+
+#: ../data/menu.ui.h:4
+msgid "_Select All"
+msgstr "Z_aznacz wszystko"
+
+#: ../data/menu.ui.h:5
+msgid "_Wrap Lines"
+msgstr "Za_wijanie wierszy"
+
+#: ../data/menu.ui.h:6
+msgid "_Preferences"
+msgstr "_Preferencje"
+
+#: ../data/menu.ui.h:7
+msgid "_About"
+msgstr "_O programie"
+
+#: ../data/menu.ui.h:8
+msgid "_Close"
+msgstr "Za_mknij"
+
+#: ../data/menu.ui.h:9
+msgid "_Quit"
+msgstr "Za_kończ"
+
+#: ../data/preferences-dialog.ui.h:1
+msgid "Preferences"
+msgstr "Preferencje"
+
+#: ../data/preferences-dialog.ui.h:2
+msgid "Text"
+msgstr "Tekst"
+
+#: ../data/preferences-dialog.ui.h:3
+msgid "_Font:"
+msgstr "_Czcionka:"
+
+#: ../data/preferences-dialog.ui.h:4
+msgid "Li_ne-spacing:"
+msgstr "_Odstęp między wierszami:"
+
+#: ../data/preferences-dialog.ui.h:5
+msgid "Colors"
+msgstr "Kolory"
+
+#: ../data/preferences-dialog.ui.h:6
+msgid "_Schemes:"
+msgstr "_Schematy:"
+
+#: ../data/preferences-dialog.ui.h:7
+msgid "Fo_reground:"
+msgstr "Te_kst:"
+
+#: ../data/preferences-dialog.ui.h:8
+msgid "Bac_kground:"
+msgstr "_Tło:"
+
+#: ../data/preferences-dialog.ui.h:9
+msgid "_Link:"
+msgstr "_Odnośnik:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "_Visited link:"
+msgstr "O_dwiedzony odnośnik:"
+
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
 msgstr "O przeglądarce plików NFO"
@@ -96,7 +129,7 @@ msgstr "O przeglądarce plików NFO"
 msgid "Viewer for NFO files"
 msgstr "Przeglądarka plików NFO"
 
-#. Translators: This is a special message that shouldn't be translated
+#. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
 #. translators. Thus, you should translate it to your name and email
 #. address. You can also include other translators who have contributed
@@ -109,86 +142,6 @@ msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014"
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "Witryna przeglądarki plików NFO"
-
-#: ../nfoview/actions.py:88
-msgid "Close document"
-msgstr "Zamyka dokument"
-
-#: ../nfoview/actions.py:99
-msgid "_Copy"
-msgstr "S_kopiuj"
-
-#: ../nfoview/actions.py:100
-msgid "Copy the selected text to the clipboard"
-msgstr "Kopiuje zaznaczony tekst do schowka"
-
-#: ../nfoview/actions.py:118
-msgid "_Preferences"
-msgstr "_Preferencje"
-
-#: ../nfoview/actions.py:119
-msgid "Edit NFO Viewer preferences"
-msgstr "Modyfikuje preferencje przeglądarki plików NFO"
-
-#: ../nfoview/actions.py:129
-msgid "_Export Image…"
-msgstr "Wy_eksportuj obraz…"
-
-#: ../nfoview/actions.py:130
-msgid "Export document as an image file"
-msgstr "Eksportuje dokument jako plik obrazu"
-
-#: ../nfoview/actions.py:147
-msgid "_Open…"
-msgstr "_Otwórz…"
-
-#: ../nfoview/actions.py:148
-msgid "Open file"
-msgstr "Otwiera plik"
-
-#: ../nfoview/actions.py:159
-msgid "_Quit"
-msgstr "Za_kończ"
-
-#: ../nfoview/actions.py:160
-msgid "Quit NFO Viewer"
-msgstr "Kończy działanie przeglądarki plików NFO"
-
-#: ../nfoview/actions.py:171
-msgid "_Select All"
-msgstr "Z_aznacz wszystko"
-
-#: ../nfoview/actions.py:172
-msgid "Select all text in the document"
-msgstr "Zaznacza cały tekst dokumentu"
-
-#: ../nfoview/actions.py:188
-msgid "_About"
-msgstr "_O programie"
-
-#: ../nfoview/actions.py:189
-msgid "Show information about NFO Viewer"
-msgstr "Wyświetla informacje o przeglądarce plików NFO"
-
-#: ../nfoview/actions.py:199
-msgid "_Edit"
-msgstr "_Edycja"
-
-#: ../nfoview/actions.py:209
-msgid "_File"
-msgstr "_Plik"
-
-#: ../nfoview/actions.py:219
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: ../nfoview/actions.py:230
-msgid "_Wrap Lines"
-msgstr "Za_wijanie wierszy"
-
-#: ../nfoview/actions.py:231
-msgid "Break long lines at word borders"
-msgstr "Rozdziela długie wiersze na granicach wyrazów"
 
 #: ../nfoview/export.py:36
 msgid "Export Image"
@@ -218,30 +171,69 @@ msgstr "Wszystkie pliki"
 msgid "NFO files (*.nfo)"
 msgstr "Pliki NFO (*.nfo)"
 
-#: ../nfoview/schemes.py:59
+#: ../nfoview/schemes.py:51
 msgid "Black on white"
 msgstr "Czarne na białym"
 
-#: ../nfoview/schemes.py:71
+#: ../nfoview/schemes.py:63
 msgid "Custom"
 msgstr "Własny"
 
-#: ../nfoview/schemes.py:83
+#: ../nfoview/schemes.py:75
 msgid "Dark grey on light grey"
 msgstr "Ciemne szare na jaśniejszym szarym"
 
-#: ../nfoview/schemes.py:95
+#: ../nfoview/schemes.py:90
 msgid "System theme"
 msgstr "Motyw systemu"
 
-#: ../nfoview/schemes.py:113
+#: ../nfoview/schemes.py:102
 msgid "Grey on black"
 msgstr "Szare na czarnym"
 
-#: ../nfoview/schemes.py:125
+#: ../nfoview/schemes.py:114
 msgid "Light grey on dark grey"
 msgstr "Jaśniejsze szare na ciemniejszym szarym"
 
-#: ../nfoview/schemes.py:137
+#: ../nfoview/schemes.py:126
 msgid "White on black"
 msgstr "Białe na czarnym"
+
+#~ msgid "Close document"
+#~ msgstr "Zamyka dokument"
+
+#~ msgid "_Copy"
+#~ msgstr "S_kopiuj"
+
+#~ msgid "Copy the selected text to the clipboard"
+#~ msgstr "Kopiuje zaznaczony tekst do schowka"
+
+#~ msgid "Edit NFO Viewer preferences"
+#~ msgstr "Modyfikuje preferencje przeglądarki plików NFO"
+
+#~ msgid "Export document as an image file"
+#~ msgstr "Eksportuje dokument jako plik obrazu"
+
+#~ msgid "Open file"
+#~ msgstr "Otwiera plik"
+
+#~ msgid "Quit NFO Viewer"
+#~ msgstr "Kończy działanie przeglądarki plików NFO"
+
+#~ msgid "Select all text in the document"
+#~ msgstr "Zaznacza cały tekst dokumentu"
+
+#~ msgid "Show information about NFO Viewer"
+#~ msgstr "Wyświetla informacje o przeglądarce plików NFO"
+
+#~ msgid "_Edit"
+#~ msgstr "_Edycja"
+
+#~ msgid "_File"
+#~ msgstr "_Plik"
+
+#~ msgid "_Help"
+#~ msgstr "Pomo_c"
+
+#~ msgid "Break long lines at word borders"
+#~ msgstr "Rozdziela długie wiersze na granicach wyrazów"

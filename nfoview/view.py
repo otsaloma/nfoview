@@ -129,7 +129,7 @@ class TextView(Gtk.TextView):
                 word_queue.append(" ")
             word_queue.pop(-1)
             word_queue.append("\n")
-            if len(word_queue) > 100:
+            if len(word_queue) > 1000:
                 self._insert_word("".join(word_queue))
                 word_queue = []
         self._insert_word("".join(word_queue))

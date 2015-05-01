@@ -37,8 +37,8 @@ class Window(Gtk.ApplicationWindow):
         """Initialize a :class:`Window` instance and open file at `path`."""
         GObject.GObject.__init__(self)
         self._about_dialog = None
-        self._preferences_dialog = None
         self.path = path
+        self._preferences_dialog = None
         self.view = nfoview.TextView()
         self._init_properties()
         self._init_titlebar()
@@ -94,6 +94,7 @@ class Window(Gtk.ApplicationWindow):
         header.set_show_close_button(True)
         menu_button = Gtk.MenuButton()
         menu_button.set_direction(Gtk.ArrowType.NONE)
+        # Popover doesn't show keyboard shortcuts.
         menu_button.set_use_popover(False)
         path = os.path.join(nfoview.DATA_DIR, "menu.ui")
         builder = Gtk.Builder.new_from_file(path)
@@ -123,7 +124,7 @@ class Window(Gtk.ApplicationWindow):
         self._about_dialog.show()
 
     def _on_close_activate(self, *args):
-        """Remove the window and possibly terminate application."""
+        """Remove window and possibly terminate application."""
         if hasattr(nfoview, "app"):
             nfoview.app.remove_window(self)
 
@@ -213,7 +214,7 @@ class Window(Gtk.ApplicationWindow):
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def open_file(self, path):
-        """Read the file at `path` and show its text in the view."""
+        """Read file at `path` and show its text in the view."""
         self.path = os.path.abspath(path)
         self.set_title(os.path.basename(path))
         text = self._read_file(path)
