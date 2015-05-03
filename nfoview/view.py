@@ -102,7 +102,7 @@ class TextView(Gtk.TextView):
 
     def set_text(self, text):
         """Set the text displayed in the text view."""
-        re_url = re.compile(r"(([0-9a-zA-Z]+://\S+?\.\S+)|(www\.\S+?\.\S+))")
+        re_url = re.compile(r"(\w+://(\S+\.)?\S+|www\.\S+)\.[^\s>]+")
         self._link_tags = []
         self._visited_link_tags = []
         text_buffer = self.get_buffer()
