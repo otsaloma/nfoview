@@ -140,12 +140,12 @@ class TestModule(nfoview.TestCase):
     @nfoview.util.monkey_patch(sys, "platform")
     def test_show_uri__unix(self):
         sys.platform = "linux2"
-        nfoview.util.show_uri("http://github.com/otsaloma/nfoview")
+        nfoview.util.show_uri("http://otsaloma.github.io/nfoview/")
 
     @nfoview.util.monkey_patch(sys, "platform")
     def test_show_uri__windows(self):
         sys.platform = "win32"
-        nfoview.util.show_uri("http://github.com/otsaloma/nfoview")
+        nfoview.util.show_uri("http://otsaloma.github.io/nfoview/")
 
     @nfoview.util.monkey_patch(sys, "platform")
     def test_uri_to_path__unix(self):
