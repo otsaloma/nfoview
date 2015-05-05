@@ -10,14 +10,14 @@ NFO Viewer 1.16
  * [X] Bump GTK+ depedency to version 3.12
  * [X] Add European Portuguese translation (Pedro Albuquerque)
  * [X] Update Polish translation (Piotr Drąg)
- * [ ] Move web pages from [gna.org][1.16a] to [github.io][1.16b]
+ * [X] Move web pages from [gna.org][1.16a] to [github.io][1.16b]
  * [X] Move releases from [gna.org][1.16c] to [github.com][1.16d]
  * [X] Use [Transifex][1.16e] to manage translations
- * [ ] Close [nfoview-list][1.16f] mailing list, use
+ * [X] Close [nfoview-list][1.16f] mailing list, use
        [gitter.im][1.16g] instead to reach developers
- * [ ] Close [nfoview-announcements][1.16h] mailing list, use
+ * [X] Close [nfoview-announcements][1.16h] mailing list, use
        [RSS][1.16i] instead to be informed about new releases
-       (see also [sibbell.com][1.16j])
+       (see also e.g. [sibbell.com][1.16j])
 
  [1.16a]: http://home.gna.org/nfoview/
  [1.16b]: http://otsaloma.github.io/nfoview
