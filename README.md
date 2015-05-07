@@ -35,4 +35,4 @@ To try NFO Viewer from the source directory without installation, use
 command `bin/nfoview`. For installing NFO Viewer, see the file
 `INSTALL.md`.
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
+<br>[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
