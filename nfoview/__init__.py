@@ -17,7 +17,7 @@
 
 """Viewer for NFO files."""
 
-__version__ = "1.15.99"
+__version__ = "1.16"
 
 from nfoview.paths import *
 from nfoview import i18n
