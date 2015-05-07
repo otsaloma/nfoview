@@ -1,13 +1,18 @@
-# Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
+# Translators:
+# Piotr Drąg <piotrdrag@gmail.com>, 2009,2014-2015
 msgid ""
 msgstr ""
-"Project-Id-Version: pl\n"
+"Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 05:06+0300\n"
-"PO-Revision-Date: 2014-12-06 19:44+0100\n"
+"POT-Creation-Date: 2015-05-08 00:03+0300\n"
+"PO-Revision-Date: 2015-05-02 19:03+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <trans-pl@lists.fedoraproject.org>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/nfoview/language/"
+"pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +60,7 @@ msgstr "Wy_eksportuj obraz…"
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr ""
+msgstr "S_kopiuj"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
@@ -137,7 +142,7 @@ msgstr "Przeglądarka plików NFO"
 #. lines seperated by newlines (\n).
 #: ../nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014"
+msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014-2015"
 
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
@@ -198,42 +203,3 @@ msgstr "Jaśniejsze szare na ciemniejszym szarym"
 #: ../nfoview/schemes.py:126
 msgid "White on black"
 msgstr "Białe na czarnym"
-
-#~ msgid "Close document"
-#~ msgstr "Zamyka dokument"
-
-#~ msgid "_Copy"
-#~ msgstr "S_kopiuj"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Kopiuje zaznaczony tekst do schowka"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Modyfikuje preferencje przeglądarki plików NFO"
-
-#~ msgid "Export document as an image file"
-#~ msgstr "Eksportuje dokument jako plik obrazu"
-
-#~ msgid "Open file"
-#~ msgstr "Otwiera plik"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "Kończy działanie przeglądarki plików NFO"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Zaznacza cały tekst dokumentu"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Wyświetla informacje o przeglądarce plików NFO"
-
-#~ msgid "_Edit"
-#~ msgstr "_Edycja"
-
-#~ msgid "_File"
-#~ msgstr "_Plik"
-
-#~ msgid "_Help"
-#~ msgstr "Pomo_c"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Rozdziela długie wiersze na granicach wyrazów"

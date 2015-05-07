@@ -20,7 +20,7 @@ NFO Viewer 1.16
        (see also e.g. [sibbell.com][1.16j])
 
  [1.16a]: http://home.gna.org/nfoview/
- [1.16b]: http://otsaloma.github.io/nfoview
+ [1.16b]: http://otsaloma.github.io/nfoview/
  [1.16c]: http://download.gna.org/nfoview/
  [1.16d]: http://github.com/otsaloma/nfoview/releases
  [1.16e]: http://www.transifex.com/projects/p/nfoview/
