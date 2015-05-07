@@ -19,9 +19,6 @@
 
 import nfoview
 
-from gi.repository import Gio
-from gi.repository import GLib
-
 __all__ = (
     "AboutAction",
     "CloseAction",
