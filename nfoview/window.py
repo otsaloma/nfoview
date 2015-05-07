@@ -240,8 +240,8 @@ class Window(Gtk.ApplicationWindow):
         """Resize window to fit the text in the view."""
         # If the width of text exceeds 'text_view_max_chars',
         # switch to line wrapping and use 80 characters width.
-        # Limit height to 'text_view_max_lines'. Finally width
-        # and height to to 80 % of the screen.
+        # Limit height to 'text_view_max_lines'. Finally limit
+        # width and height to to 80 % of the screen.
         text = self.view.get_text()
         text = text or "\n".join(["x" * 80] * 40)
         size = list(nfoview.util.get_text_view_size(text))

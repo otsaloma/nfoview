@@ -46,9 +46,10 @@ class ConfigurationStore:
 
     path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
 
-    def __init__(self):
+    def __init__(self, read=False):
         """Initialize a :class:`ConfigurationStore` instance."""
         self.restore_defaults()
+        if read: self.read()
 
     def read(self):
         """Read values of configuration options from file."""

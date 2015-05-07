@@ -24,7 +24,7 @@ from nfoview import i18n
 from nfoview import util
 from nfoview.errors import *
 from nfoview.config import *
-conf = ConfigurationStore()
+conf = ConfigurationStore(read=True)
 from nfoview import schemes
 from nfoview.builder import *
 from nfoview.about import *
@@ -40,7 +40,6 @@ from nfoview.unittest import *
 
 def main(paths):
     """Initialize application."""
-    conf.read()
     global app
     app = Application(paths)
     raise SystemExit(app.run())
