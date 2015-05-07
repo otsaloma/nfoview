@@ -52,6 +52,17 @@ class ToggleAction(Action):
 
     """Baseclass for user-activatable toggle actions."""
 
+    # Gio's abstraction makes toggle action instantiation and
+    # management of boolean state values look really stupid
+    # in Python. For proper instantiation, subclasses need to
+    # define __new__, call new and assign to __class__.
+
+    @staticmethod
+    def new(name, parameter_type=None):
+        """Return a new toggle action."""
+        return Gio.SimpleAction.new_stateful(
+            name, parameter_type, GLib.Variant("b", False))
+
     def get_state(self):
         """Return the current boolean state."""
         return Action.get_state(self).get_boolean()

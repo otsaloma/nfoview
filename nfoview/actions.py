@@ -87,9 +87,7 @@ class SelectAllAction(nfoview.Action):
 
 class WrapLinesAction(nfoview.ToggleAction):
     def __new__(cls):
-        # XXX: Gio makes using toggle actions in Python difficult.
-        action = Gio.SimpleAction.new_stateful(
-            "wrap-lines", None, GLib.Variant("b", False))
+        action = nfoview.ToggleAction.new("wrap-lines")
         action.__class__ = cls
         return action
     def __init__(self):
