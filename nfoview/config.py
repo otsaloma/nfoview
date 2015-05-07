@@ -30,13 +30,13 @@ DEFAULTS = dict(
     color_scheme="default",
     font="Terminus 12",
     foreground_color="#2e3436",
-    link_color="#4a90d9",
+    link_color="#2a76c6",
     pixels_above_lines=0,
     pixels_below_lines=0,
     text_view_max_chars=160,
     text_view_max_lines=45,
     version="",
-    visited_link_color="#ac4ad9",
+    visited_link_color="#215d9c",
 )
 
 
