@@ -1,3 +1,10 @@
+NFO Viewer 1.16.2
+=================
+
+ * [X] Improve URL detection ([#667102][])
+
+ [#667102]: http://bugzilla.gnome.org/show_bug.cgi?id=667102
+
 NFO Viewer 2.0
 ==============
 
