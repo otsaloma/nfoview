@@ -1,4 +1,4 @@
-NFO Viewer 1.16.2
+NFO Viewer 1.16.1
 =================
 
  * [X] Improve URL detection ([#667102][])
