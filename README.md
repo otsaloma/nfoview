@@ -16,10 +16,10 @@ NFO Viewer requires [Python][1] 3.2 or greater, [PyGObject][2] 3.0.0 or
 greater and [GTK+][3] 3.12 or greater. [Terminus font][4] is recommended
 and used by default.
 
- [1]: http://www.python.org/
- [2]: http://wiki.gnome.org/Projects/PyGObject
- [3]: http://www.gtk.org/
- [4]: http://terminus-font.sourceforge.net/
+[1]: http://www.python.org/
+[2]: http://wiki.gnome.org/Projects/PyGObject
+[3]: http://www.gtk.org/
+[4]: http://terminus-font.sourceforge.net/
 
 Terminus font is used by default because it renders drawing characters
 taller than text characters. You can use any other fixed width font that
