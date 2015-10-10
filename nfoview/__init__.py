@@ -19,6 +19,10 @@
 
 __version__ = "1.16"
 
+import gi
+gi.require_version("Gdk", "3.0")
+gi.require_version("Gtk", "3.0")
+
 from nfoview.paths import *
 from nfoview import i18n
 from nfoview import util
