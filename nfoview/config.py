@@ -20,8 +20,6 @@
 import nfoview
 import os
 import re
-import sys
-import traceback
 
 __all__ = ("ConfigurationStore",)
 
@@ -74,13 +72,9 @@ class ConfigurationStore:
     def write(self):
         """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
-        try:
-            if not os.path.isdir(directory):
-                os.makedirs(directory)
-        except OSError:
-            print("Failed to create directory:", file=sys.stderr)
-            traceback.print_exc()
-            return
+        with nfoview.util.silent(OSError):
+            nfoview.util.makedirs(directory)
+        if not os.path.isdir(directory): return
         f = open(self.path, "w")
         for name in sorted(DEFAULTS):
             text = "{} = {}".format(name, str(getattr(self, name)))

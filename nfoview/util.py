@@ -22,6 +22,7 @@ import contextlib
 import copy
 import functools
 import nfoview
+import os
 import sys
 import urllib.parse
 import webbrowser
@@ -132,6 +133,20 @@ def lookup_color(name, fallback):
     if found:
         return color
     return hex_to_rgba(fallback)
+
+def makedirs(directory):
+    """Create and return `directory` or raise :exc:`OSError`."""
+    directory = os.path.abspath(directory)
+    if os.path.isdir(directory):
+        return directory
+    try:
+        os.makedirs(directory)
+    except OSError as error:
+        print("Failed to create directory {}: {}"
+              .format(repr(directory), str(error)),
+              file=sys.stderr)
+        raise # OSError
+    return directory
 
 def monkey_patch(obj, name):
     """
