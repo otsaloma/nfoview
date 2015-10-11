@@ -1,7 +1,8 @@
-NFO Viewer 1.16.1
-=================
+NFO Viewer 1.17
+===============
 
 * [X] Improve URL detection ([#667102][])
+* [X] Update translations
 
 [#667102]: http://bugzilla.gnome.org/show_bug.cgi?id=667102
 

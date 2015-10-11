@@ -1,22 +1,24 @@
-# French translations for nfoview package.
-# Copyright (C) 2009 THE NFOVIEW'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the nfoview package.
-# elgeneralmidi <ubuntufromscratch@gmail.com>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
+# Translators:
+# elgeneralmidi <ubuntufromscratch@gmail.com>, 2009
+# Okki <okki@gnomelibre.fr>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: nfoview 1\n"
+"Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 05:06+0300\n"
-"PO-Revision-Date: 2014-11-01 18:34+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <>\n"
+"POT-Creation-Date: 2015-10-11 03:05+0300\n"
+"PO-Revision-Date: 2015-05-11 21:58+0000\n"
+"Last-Translator: Okki <okki@gnomelibre.fr>\n"
+"Language-Team: French (http://www.transifex.com/otsaloma/nfoview/language/"
+"fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -59,7 +61,7 @@ msgstr "_Exporter l'image…"
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr ""
+msgstr "Co_pier"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
@@ -71,7 +73,7 @@ msgstr "_Limiter la longueur des lignes"
 
 #: ../data/menu.ui.h:6
 msgid "_Preferences"
-msgstr "_Préférences"
+msgstr "Pré_férences"
 
 #: ../data/menu.ui.h:7
 msgid "_About"
@@ -79,7 +81,7 @@ msgstr "À _propos"
 
 #: ../data/menu.ui.h:8
 msgid "_Close"
-msgstr "_Fermer"
+msgstr "Fe_rmer"
 
 #: ../data/menu.ui.h:9
 msgid "_Quit"
@@ -204,57 +206,3 @@ msgstr "Gris clair sur gris foncé"
 #: ../nfoview/schemes.py:126
 msgid "White on black"
 msgstr "Blanc sur noir"
-
-#~ msgid "Close document"
-#~ msgstr "Fermer le document"
-
-#~ msgid "_Copy"
-#~ msgstr "_Copier"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Copier le texte sélectionné dans le presse-papiers"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Modifier les préférences de NFO Viewer"
-
-#~ msgid "Export document as an image file"
-#~ msgstr "Exporter le document en tant que fichier image"
-
-#~ msgid "Open file"
-#~ msgstr "Ouvrir fichier"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "_Quitter NFO Viewer"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Sélectionner tout le texte dans le document"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Montrer les informations à propos de NFO Viewer"
-
-#~ msgid "_Edit"
-#~ msgstr "Éditio_n"
-
-#~ msgid "_File"
-#~ msgstr "_Fichier"
-
-#~ msgid "_Help"
-#~ msgstr "_Aide"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Scinder les lignes trop longues"
-
-#~ msgid "Select Font"
-#~ msgstr "Sélectionner Police"
-
-#~ msgid "Select Color"
-#~ msgstr "Sélectionner Couleur"
-
-#~ msgid "Copy"
-#~ msgstr "Copier"
-
-#~ msgid "Line-_spacing:"
-#~ msgstr "Ligne d'e_spacement:"
-
-#~ msgid "_Built-in schemes:"
-#~ msgstr "_Construit dans les schémas:"
