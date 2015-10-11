@@ -17,7 +17,7 @@
 
 """Viewer for NFO files."""
 
-__version__ = "1.16"
+__version__ = "1.17"
 
 import gi
 gi.require_version("Gdk", "3.0")
