@@ -10,8 +10,8 @@ Releasing a New Version
     - `git commit -a -m "Update translations for X.Y.Z."`
 * Do final quality checks
     - `python3 -Wd bin/nfoview`
-    - `pyflakes3 bin/nfoview nfoview setup.py`
-    - `py.test-3 --tb=no nfoview`
+    - `pyflakes bin/nfoview nfoview setup.py`
+    - `py.test --tb=no nfoview`
 * Bump version number
     - `nfoview/__init__.py`
 * Update `NEWS.md` and `TODO.md`

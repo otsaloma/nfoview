@@ -1,6 +1,9 @@
 NFO Viewer
 ==========
 
+[![Build Status](https://travis-ci.org/otsaloma/nfoview.svg)](
+https://travis-ci.org/otsaloma/nfoview)
+
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
 the CP437 codepage. The advantages of using NFO Viewer instead of a text
 editor are preset font and encoding settings, automatic window size and
@@ -35,4 +38,5 @@ To try NFO Viewer from the source directory without installation, use
 command `bin/nfoview`. For installing NFO Viewer, see the file
 `INSTALL.md`.
 
-<br>[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
+<br>[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](
+https://gitter.im/otsaloma/nfoview)
