@@ -60,6 +60,7 @@ class Clean(clean):
         "*/__pycache__",
         "*/*/__pycache__",
         "*/*/*/__pycache__",
+        ".cache",
         "build",
         "data/nfoview.appdata.xml",
         "data/nfoview.desktop",

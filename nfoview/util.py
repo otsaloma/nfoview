@@ -117,7 +117,7 @@ def hex_to_rgba(string):
                      .format(repr(string)))
 
 def is_valid_encoding(encoding):
-    """Return ``True`` if `encoding` is a supported encoding."""
+    """Return ``True`` if `encoding` is supported."""
     try:
         codecs.lookup(encoding)
         return True
