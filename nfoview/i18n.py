@@ -18,20 +18,39 @@
 """Internationalization functions."""
 
 import gettext
+import locale
 import nfoview
 
-_translation = gettext.translation(
-    "nfoview", nfoview.LOCALE_DIR, fallback=True)
+_translation = gettext.NullTranslations()
 
 
-def dgettext(domain, message):
-    """Return the localized translation of `message` from `domain`."""
-    return gettext.dgettext(domain, message)
+def bind():
+    """Bind translation domains and initialize gettext."""
+    global _translation
+    d = nfoview.LOCALE_DIR
+    with nfoview.util.silent(Exception):
+        # Might fail with misconfigured locales.
+        locale.setlocale(locale.LC_ALL, "")
+    with nfoview.util.silent(Exception):
+        # Not available on all platforms. Seems to be
+        # needed by GTK+ applications and probably others
+        # with C library dependencies that use gettext.
+        locale.bindtextdomain("nfoview", d)
+        locale.textdomain("nfoview")
+    gettext.bindtextdomain("nfoview", d)
+    gettext.textdomain("nfoview")
+    _translation = gettext.translation("nfoview",
+                                       localedir=d,
+                                       fallback=True)
 
-def gettext(message):
+def _(message):
     """Return the localized translation of `message`."""
     return _translation.gettext(message)
 
-def ngettext(singular, plural, n):
+def d_(domain, message):
+    """Return the localized translation of `message` from `domain`."""
+    return gettext.dgettext(domain, message)
+
+def n_(singular, plural, n):
     """Return the localized translation of `singular` or `plural`."""
     return _translation.ngettext(singular, plural, n)

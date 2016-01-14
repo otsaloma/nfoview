@@ -20,11 +20,11 @@
 import nfoview
 import os
 import textwrap
-_ = nfoview.i18n.gettext
 
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Gtk
+from nfoview.i18n  import _
 
 __all__ = ("Window",)
 

@@ -18,7 +18,8 @@
 """Classes for color scheme definitions."""
 
 import nfoview
-_ = nfoview.i18n.gettext
+
+from nfoview.i18n import _
 
 __all__ = (
     "BlackOnWhite",

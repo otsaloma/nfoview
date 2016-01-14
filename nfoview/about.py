@@ -18,10 +18,10 @@
 """Dialog for displaying credits and information."""
 
 import nfoview
-_ = nfoview.i18n.gettext
 
 from gi.repository import GObject
 from gi.repository import Gtk
+from nfoview.i18n  import _
 
 __all__ = ("AboutDialog",)
 

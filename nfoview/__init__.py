@@ -24,8 +24,8 @@ gi.require_version("Gdk", "3.0")
 gi.require_version("Gtk", "3.0")
 
 from nfoview.paths import *
-from nfoview import i18n
 from nfoview import util
+from nfoview import i18n
 from nfoview.errors import *
 from nfoview.config import *
 conf = ConfigurationStore(read=True)
@@ -45,5 +45,6 @@ from nfoview.unittest import *
 def main(paths):
     """Initialize application."""
     global app
+    i18n.bind()
     app = Application(paths)
     raise SystemExit(app.run())

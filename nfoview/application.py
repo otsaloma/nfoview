@@ -17,8 +17,6 @@
 
 """Initializing and managing NFO Viewer windows."""
 
-import gettext
-import locale
 import nfoview
 import sys
 import traceback
@@ -40,20 +38,6 @@ class Application(Gtk.Application):
         self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
         self.connect("activate", self._on_activate, paths)
         self.connect("shutdown", self._on_shutdown)
-        self._init_gettext()
-
-    def _init_gettext(self):
-        """Initialize translation settings."""
-        with nfoview.util.silent(Exception):
-            # Might fail with misconfigured locales.
-            locale.setlocale(locale.LC_ALL, "")
-        d = nfoview.LOCALE_DIR
-        with nfoview.util.silent(Exception):
-            # Not available on all platforms.
-            locale.bindtextdomain("nfoview", d)
-            locale.textdomain("nfoview")
-        gettext.bindtextdomain("nfoview", d)
-        gettext.textdomain("nfoview")
 
     def _on_activate(self, app, paths):
         """Open windows for files given as arguments."""

@@ -9,11 +9,11 @@ download the translation from Transifex, place it in the `po` directory
 and compile that translation to the `locale` directory (which does not
 exist by default).
 
-```sh
+```bash
 mkdir -p locale/xx/LC_MESSAGES
 msgfmt -cv po/xx.po -o locale/xx/LC_MESSAGES/nfoview.mo
 LANG=xx bin/nfoview
 ```
 
-[1]: http://www.transifex.com/projects/p/nfoview/
+[1]: http://www.transifex.com/otsaloma/nfoview/
 [2]: http://github.com/otsaloma/nfoview
