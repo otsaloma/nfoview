@@ -84,8 +84,8 @@ class Window(Gtk.ApplicationWindow):
                            actions=Gdk.DragAction.COPY)
 
         self.drag_dest_add_uri_targets()
-        self.connect("drag-data-received",
-                     self._on_drag_data_received)
+        self.connect("drag-data-received", self._on_drag_data_received)
+        self.connect("delete-event", self._on_delete_event)
 
     def _init_titlebar(self):
         """Initialize window titlebar."""
@@ -133,6 +133,15 @@ class Window(Gtk.ApplicationWindow):
         text_buffer = self.view.get_buffer()
         clipboard = Gtk.Clipboard.get(Gdk.atom_intern("CLIPBOARD", False))
         text_buffer.copy_clipboard(clipboard)
+
+    def _on_delete_event(self, *args):
+        """Remove window and possibly terminate application."""
+        # Work around a harmless Gtk-WARNING about drag destination by calling
+        # remove_window and preventing any default handlers of delete-event.
+        # https://bugzilla.gnome.org/show_bug.cgi?id=721708
+        if hasattr(nfoview, "app"):
+            nfoview.app.remove_window(self)
+            return True
 
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
         """Open files dragged from a file browser."""
