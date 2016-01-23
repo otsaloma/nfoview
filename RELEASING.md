@@ -7,7 +7,7 @@ Releasing a New Version
     - `virtaal po/fi.po`
     - `tools/check-translations`
     - `tx push -stf`
-    - `git commit -a -m "Update translations for X.Y.Z."`
+    - `git commit -a -m "Update translations for X.Y.Z"`
 * Do final quality checks
     - `python3 -Wd bin/nfoview`
     - `pyflakes bin/nfoview nfoview setup.py`

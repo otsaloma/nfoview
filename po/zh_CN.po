@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 05:06+0300\n"
+"POT-Creation-Date: 2016-01-23 18:17+0200\n"
 "PO-Revision-Date: 2009-06-10 16:50+0800\n"
 "Last-Translator: Jonathan Ye <hyqianli@gmail.com>\n"
 "Language-Team: Simplified Chinese\n"
@@ -142,59 +142,59 @@ msgstr "Jonathan Ye <hyqianli@gmail.com>"
 msgid "NFO Viewer Website"
 msgstr "NFO Viewer 网站"
 
-#: ../nfoview/export.py:36
+#: ../nfoview/export.py:34
 msgid "Export Image"
 msgstr ""
 
-#: ../nfoview/export.py:39 ../nfoview/open.py:39
+#: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
 msgstr ""
 
-#: ../nfoview/export.py:40
+#: ../nfoview/export.py:38
 msgid "_Save"
 msgstr ""
 
-#: ../nfoview/open.py:36
+#: ../nfoview/open.py:34
 msgid "Open"
 msgstr "打开"
 
-#: ../nfoview/open.py:40
+#: ../nfoview/open.py:38
 msgid "_Open"
 msgstr ""
 
-#: ../nfoview/open.py:44
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "所有文件"
 
-#: ../nfoview/open.py:48
+#: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "NFO 文件 (*.nfo)"
 
-#: ../nfoview/schemes.py:51
+#: ../nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "白底黑字"
 
-#: ../nfoview/schemes.py:63
+#: ../nfoview/schemes.py:64
 msgid "Custom"
 msgstr "自定义"
 
-#: ../nfoview/schemes.py:75
+#: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "浅灰背景深灰字体颜色"
 
-#: ../nfoview/schemes.py:90
+#: ../nfoview/schemes.py:91
 msgid "System theme"
 msgstr "系统主题"
 
-#: ../nfoview/schemes.py:102
+#: ../nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "黑底灰字"
 
-#: ../nfoview/schemes.py:114
+#: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "深灰背景浅灰字体颜色"
 
-#: ../nfoview/schemes.py:126
+#: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "黑底白字"
 

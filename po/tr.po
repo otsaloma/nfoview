@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-11 03:05+0300\n"
+"POT-Creation-Date: 2016-01-23 18:17+0200\n"
 "PO-Revision-Date: 2015-06-23 23:11+0000\n"
 "Last-Translator: mauron\n"
 "Language-Team: Turkish (http://www.transifex.com/otsaloma/nfoview/language/"
@@ -147,58 +147,58 @@ msgstr "Anonim"
 msgid "NFO Viewer Website"
 msgstr "NFO Viewer ağ sitesi"
 
-#: ../nfoview/export.py:36
+#: ../nfoview/export.py:34
 msgid "Export Image"
 msgstr "Resmi dışa aktar"
 
-#: ../nfoview/export.py:39 ../nfoview/open.py:39
+#: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
 msgstr "_İptal"
 
-#: ../nfoview/export.py:40
+#: ../nfoview/export.py:38
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: ../nfoview/open.py:36
+#: ../nfoview/open.py:34
 msgid "Open"
 msgstr "Aç"
 
-#: ../nfoview/open.py:40
+#: ../nfoview/open.py:38
 msgid "_Open"
 msgstr "_Aç"
 
-#: ../nfoview/open.py:44
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "Tüm dosyalar"
 
-#: ../nfoview/open.py:48
+#: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "NFO dosyaları (*.nfo)"
 
-#: ../nfoview/schemes.py:51
+#: ../nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Beyaz üzerinde siyah"
 
-#: ../nfoview/schemes.py:63
+#: ../nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Kişisel"
 
-#: ../nfoview/schemes.py:75
+#: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Açık gri üzerinde koyu gri"
 
-#: ../nfoview/schemes.py:90
+#: ../nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Sistem teması"
 
-#: ../nfoview/schemes.py:102
+#: ../nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Siyah üzerinde gri"
 
-#: ../nfoview/schemes.py:114
+#: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Koyu gri üzerinde açık gri"
 
-#: ../nfoview/schemes.py:126
+#: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Siyah üzerinde beyaz"

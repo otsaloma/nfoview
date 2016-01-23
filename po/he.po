@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 05:06+0300\n"
+"POT-Creation-Date: 2016-01-23 18:17+0200\n"
 "PO-Revision-Date: 2010-04-26 10:40+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (Yaron Shahrabani) <sh.yaron@gmail.com>\n"
@@ -144,59 +144,59 @@ msgstr "Yaron Shahrabani <sh.yaron@gmail.com>"
 msgid "NFO Viewer Website"
 msgstr "האתר של מציג ה־NFO"
 
-#: ../nfoview/export.py:36
+#: ../nfoview/export.py:34
 msgid "Export Image"
 msgstr ""
 
-#: ../nfoview/export.py:39 ../nfoview/open.py:39
+#: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
 msgstr ""
 
-#: ../nfoview/export.py:40
+#: ../nfoview/export.py:38
 msgid "_Save"
 msgstr ""
 
-#: ../nfoview/open.py:36
+#: ../nfoview/open.py:34
 msgid "Open"
 msgstr "פתיחה"
 
-#: ../nfoview/open.py:40
+#: ../nfoview/open.py:38
 msgid "_Open"
 msgstr ""
 
-#: ../nfoview/open.py:44
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "כל הקבצים"
 
-#: ../nfoview/open.py:48
+#: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "קובצי NFO‏ (*.nfo)"
 
-#: ../nfoview/schemes.py:51
+#: ../nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "שחור על לבן"
 
-#: ../nfoview/schemes.py:63
+#: ../nfoview/schemes.py:64
 msgid "Custom"
 msgstr "מותאם אישית"
 
-#: ../nfoview/schemes.py:75
+#: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "אפור כהה על אפור בהיר"
 
-#: ../nfoview/schemes.py:90
+#: ../nfoview/schemes.py:91
 msgid "System theme"
 msgstr "ערכת המערכת"
 
-#: ../nfoview/schemes.py:102
+#: ../nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "אפור על שחור"
 
-#: ../nfoview/schemes.py:114
+#: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "אפור בהיר על אפור כהה"
 
-#: ../nfoview/schemes.py:126
+#: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "לבן על שחור"
 

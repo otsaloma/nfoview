@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.15.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 05:06+0300\n"
+"POT-Creation-Date: 2016-01-23 18:17+0200\n"
 "PO-Revision-Date: 2015-05-01 05:11+0300\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: fi\n"
@@ -24,8 +24,8 @@ msgid ""
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
 msgstr ""
-"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \""
-"ASCII\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
+"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII"
+"\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
 "tekstieditoriin nähden ovat esiasetetut kirjasin- ja "
 "merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
 "hyperlinkit."
@@ -146,58 +146,58 @@ msgstr "Osmo Salomaa <otsaloma@iki.fi>"
 msgid "NFO Viewer Website"
 msgstr "NFO-katselimen www-sivut"
 
-#: ../nfoview/export.py:36
+#: ../nfoview/export.py:34
 msgid "Export Image"
 msgstr "Vie kuva"
 
-#: ../nfoview/export.py:39 ../nfoview/open.py:39
+#: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../nfoview/export.py:40
+#: ../nfoview/export.py:38
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: ../nfoview/open.py:36
+#: ../nfoview/open.py:34
 msgid "Open"
 msgstr "Avaa"
 
-#: ../nfoview/open.py:40
+#: ../nfoview/open.py:38
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../nfoview/open.py:44
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "Kaikki tiedostot"
 
-#: ../nfoview/open.py:48
+#: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "NFO-tiedostot (*.nfo)"
 
-#: ../nfoview/schemes.py:51
+#: ../nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Musta valkoisella"
 
-#: ../nfoview/schemes.py:63
+#: ../nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: ../nfoview/schemes.py:75
+#: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Tumman harmaa vaalean harmaalla"
 
-#: ../nfoview/schemes.py:90
+#: ../nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Järjestelmän teema"
 
-#: ../nfoview/schemes.py:102
+#: ../nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Harmaa mustalla"
 
-#: ../nfoview/schemes.py:114
+#: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Vaalean harmaa tumman harmaalla"
 
-#: ../nfoview/schemes.py:126
+#: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Valkoinen mustalla"

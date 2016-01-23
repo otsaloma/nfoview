@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-11 03:05+0300\n"
+"POT-Creation-Date: 2016-01-23 18:17+0200\n"
 "PO-Revision-Date: 2015-05-11 21:58+0000\n"
 "Last-Translator: Okki <okki@gnomelibre.fr>\n"
 "Language-Team: French (http://www.transifex.com/otsaloma/nfoview/language/"
@@ -151,58 +151,58 @@ msgstr ""
 msgid "NFO Viewer Website"
 msgstr "Site web de NFO Viewer"
 
-#: ../nfoview/export.py:36
+#: ../nfoview/export.py:34
 msgid "Export Image"
 msgstr "Exporter l'image"
 
-#: ../nfoview/export.py:39 ../nfoview/open.py:39
+#: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: ../nfoview/export.py:40
+#: ../nfoview/export.py:38
 msgid "_Save"
 msgstr "_Enregistrer"
 
-#: ../nfoview/open.py:36
+#: ../nfoview/open.py:34
 msgid "Open"
 msgstr "Ouvrir"
 
-#: ../nfoview/open.py:40
+#: ../nfoview/open.py:38
 msgid "_Open"
 msgstr "_Ouvrir"
 
-#: ../nfoview/open.py:44
+#: ../nfoview/open.py:42
 msgid "All files"
 msgstr "Tous les fichiers"
 
-#: ../nfoview/open.py:48
+#: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "Fichiers NFO (*.nfo)"
 
-#: ../nfoview/schemes.py:51
+#: ../nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Noir sur blanc"
 
-#: ../nfoview/schemes.py:63
+#: ../nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Personnaliser"
 
-#: ../nfoview/schemes.py:75
+#: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Gris foncé sur gris clair"
 
-#: ../nfoview/schemes.py:90
+#: ../nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Thème système"
 
-#: ../nfoview/schemes.py:102
+#: ../nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Gris sur noir"
 
-#: ../nfoview/schemes.py:114
+#: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Gris clair sur gris foncé"
 
-#: ../nfoview/schemes.py:126
+#: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Blanc sur noir"
