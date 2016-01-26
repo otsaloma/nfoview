@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Osmo Salomaa <otsaloma@iki.fi> -->
-<application>
-  <id type="desktop">nfoview.desktop</id>
-  <metadata_license>CC0</metadata_license>
+<component type="desktop">
+  <id>nfoview.desktop</id>
+  <translation type="gettext">nfoview</translation>
+  <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <description>
     <_p>NFO Viewer is a simple viewer for NFO files, which are "ASCII"
@@ -11,8 +12,13 @@
     automatic window size and clickable hyperlinks.</_p>
   </description>
   <screenshots>
-    <screenshot type="default">https://dl.dropboxusercontent.com/u/39625783/nfoview-appdata.png</screenshot>
+    <screenshot type="default">
+      <image>https://dl.dropboxusercontent.com/u/39625783/nfoview-appdata.png</image>
+      <_caption>Main window</_caption>
+    </screenshot>
   </screenshots>
   <url type="homepage">http://otsaloma.github.io/nfoview/</url>
-  <updatecontact>otsaloma@iki.fi</updatecontact>
-</application>
+  <url type="bugtracker">https://bugzilla.gnome.org/browse.cgi?product=nfoview</url>
+  <update_contact>otsaloma@iki.fi</update_contact>
+  <developer_name>Osmo Salomaa</developer_name>
+</component>
