@@ -26,5 +26,5 @@ Releasing a New Version
     - `git push --tags`
 * Add release notes on GitHub
 * Update web sites
-    - <http://otsaloma.github.io/nfoview/>
+    - <http://otsaloma.io/nfoview/>
     - <http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview>

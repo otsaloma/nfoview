@@ -53,6 +53,6 @@ class AboutDialog(Gtk.AboutDialog):
         # lines seperated by newlines (\n).
         self.set_translator_credits(_("translator-credits"))
         self.set_version(nfoview.__version__)
-        self.set_website("http://otsaloma.github.io/nfoview/")
+        self.set_website("http://otsaloma.io/nfoview/")
         self.set_website_label(_("NFO Viewer Website"))
         self.set_wrap_license(True)

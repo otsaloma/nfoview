@@ -13,11 +13,11 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>https://dl.dropboxusercontent.com/u/39625783/nfoview-appdata.png</image>
+      <image>http://otsaloma.io/nfoview/screenshot-appdata.png</image>
       <_caption>Main window</_caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://otsaloma.github.io/nfoview/</url>
+  <url type="homepage">http://otsaloma.io/nfoview/</url>
   <url type="bugtracker">https://bugzilla.gnome.org/browse.cgi?product=nfoview</url>
   <update_contact>otsaloma@iki.fi</update_contact>
   <developer_name>Osmo Salomaa</developer_name>
