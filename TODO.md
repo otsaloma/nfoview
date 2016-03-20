@@ -1,8 +1,9 @@
 NFO Viewer 1.19
 ===============
 
-* [x] Move web pages <http://otsaloma.io/nfoview/>
+* [x] Move web pages to <http://otsaloma.io/nfoview/>
 * [x] Update AppData file
+* [ ] Update translations
 
 NFO Viewer 2.0
 ==============
