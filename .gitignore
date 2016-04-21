@@ -1,10 +1,8 @@
-*.py[co]
 *~
 .cache
-.hidden
 __pycache__
-build/
+build
 data/nfoview.appdata.xml
 data/nfoview.desktop
-dist/
-locale/
+dist
+locale
