@@ -27,4 +27,3 @@ Releasing a New Version
 * Add release notes on GitHub
 * Update web sites
     - <http://otsaloma.io/nfoview/>
-    - <http://bugzilla.gnome.org/editproducts.cgi?action=edit&product=nfoview>
