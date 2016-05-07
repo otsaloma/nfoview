@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkAdjustment" id="adjustment1">
@@ -11,18 +11,26 @@
   <object class="GtkDialog" id="dialog">
     <property name="can_focus">False</property>
     <property name="border_width">12</property>
-    <property name="title" translatable="yes">Preferences</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">dialog</property>
-    <property name="use_header_bar">1</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="vbox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">12</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
         <child>
           <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
@@ -39,14 +47,14 @@
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Text</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
@@ -55,6 +63,7 @@
                   <object class="GtkGrid" id="grid1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="margin_left">12</property>
                     <property name="margin_start">12</property>
                     <property name="row_spacing">6</property>
                     <property name="column_spacing">12</property>
@@ -62,7 +71,7 @@
                       <object class="GtkLabel" id="label3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">_Font:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">font_button</property>
@@ -76,7 +85,7 @@
                       <object class="GtkLabel" id="label4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">Li_ne-spacing:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">line_spacing_spin</property>
@@ -140,14 +149,14 @@
                   <object class="GtkLabel" id="label2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Colors</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
@@ -163,7 +172,7 @@
                       <object class="GtkLabel" id="label5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">_Schemes:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">scheme_combo</property>
@@ -177,7 +186,7 @@
                       <object class="GtkLabel" id="fg_color_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">Fo_reground:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">fg_color_button</property>
@@ -191,7 +200,7 @@
                       <object class="GtkLabel" id="bg_color_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">Bac_kground:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">bg_color_button</property>
@@ -205,7 +214,7 @@
                       <object class="GtkLabel" id="link_color_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">_Link:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">link_color_button</property>
@@ -219,7 +228,7 @@
                       <object class="GtkLabel" id="vlink_color_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">_Visited link:</property>
                         <property name="use_underline">True</property>
                         <property name="mnemonic_widget">vlink_color_button</property>
@@ -314,6 +323,15 @@
             <property name="position">1</property>
           </packing>
         </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="title" translatable="yes">Preferences</property>
+        <property name="has_subtitle">False</property>
+        <property name="show_close_button">True</property>
       </object>
     </child>
   </object>
