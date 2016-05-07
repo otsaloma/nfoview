@@ -67,7 +67,7 @@ class Window(Gtk.ApplicationWindow):
         """Initialize child containers and pack contents."""
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,)*2))
-        scroller.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
+        scroller.set_shadow_type(Gtk.ShadowType.NONE)
         scroller.add(self.view)
         main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         main_vbox.pack_start(scroller, expand=True, fill=True, padding=0)
