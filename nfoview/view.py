@@ -94,10 +94,17 @@ class TextView(Gtk.TextView):
         window = Gtk.TextWindowType.WIDGET
         x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
-        for tag in self.get_iter_at_location(x, y).get_tags():
-            if hasattr(tag, "nfoview_url"):
-                window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
-                return True # to not call the default handler.
+        tags = []
+        # XXX: Return value changed since GTK+ 3.20!?
+        iter = self.get_iter_at_location(x, y)
+        if (isinstance(iter, tuple) and
+            hasattr(iter, "iter")):
+            iter = iter.iter
+        with nfoview.util.silent(AttributeError):
+            tags = iter.get_tags()
+        for tag in (hasattr(x, "nfoview_url") for x in tags):
+            window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
+            return True # to not call the default handler.
         window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
 
     def set_text(self, text):
