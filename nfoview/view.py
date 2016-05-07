@@ -103,9 +103,11 @@ class TextView(Gtk.TextView):
         with nfoview.util.silent(AttributeError):
             tags = iter.get_tags()
         for tag in (hasattr(x, "nfoview_url") for x in tags):
-            window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.HAND2))
+            window.set_cursor(Gdk.Cursor.new_for_display(
+                Gdk.Display.get_default(), Gdk.CursorType.HAND2))
             return True # to not call the default handler.
-        window.set_cursor(Gdk.Cursor(cursor_type=Gdk.CursorType.XTERM))
+        window.set_cursor(Gdk.Cursor.new_for_display(
+            Gdk.Display.get_default(), Gdk.CursorType.XTERM))
 
     def set_text(self, text):
         """Set the text displayed in the text view."""
