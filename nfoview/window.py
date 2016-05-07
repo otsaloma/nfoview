@@ -267,10 +267,9 @@ class Window(Gtk.ApplicationWindow):
         p2 = nfoview.conf.pixels_below_lines
         size[1] = size[1] + ((p1 + p2) * (text.count("\n")+1))
         # Assume 12 pixels total for text view margins,
-        # 14 pixels for scrollbars, 48 pixels for header bar.
-        # XXX: Why is that not even close to enough?
-        size[0] = max(400, size[0] + 12 + 14 + 100)
-        size[1] = max(248, size[1] + 48 + 14 + 100)
+        # 24 pixels for scrollbars, 48 pixels for header bar.
+        size[0] = max(400, size[0] + 12 + 24)
+        size[1] = max(248, size[1] + 48 + 24)
         size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
         size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
         self.resize(*size)
