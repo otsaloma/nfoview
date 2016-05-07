@@ -1,7 +1,5 @@
 #!/bin/sh
 # Update all translations with new strings.
-# TODO: Once xgettext supports AppData files, we could use that
-# directly and drop the intltool dependency (also in setup.py).
 cd "$(dirname "$0")/../po" || exit 1
 echo "Searching for missing files..."
 intltool-update -m

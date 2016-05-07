@@ -39,9 +39,8 @@ def bind():
         locale.textdomain("nfoview")
     gettext.bindtextdomain("nfoview", d)
     gettext.textdomain("nfoview")
-    _translation = gettext.translation("nfoview",
-                                       localedir=d,
-                                       fallback=True)
+    _translation = gettext.translation(
+        "nfoview", localedir=d, fallback=True)
 
 def _(message):
     """Return the localized translation of `message`."""
