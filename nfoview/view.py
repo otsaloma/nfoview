@@ -102,7 +102,7 @@ class TextView(Gtk.TextView):
             iter = iter.iter
         with nfoview.util.silent(AttributeError):
             tags = iter.get_tags()
-        for tag in (hasattr(x, "nfoview_url") for x in tags):
+        if any(hasattr(x, "nfoview_url") for x in tags):
             window.set_cursor(Gdk.Cursor.new_for_display(
                 Gdk.Display.get_default(), Gdk.CursorType.HAND2))
             return True # to not call the default handler.
