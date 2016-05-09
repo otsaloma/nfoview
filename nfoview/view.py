@@ -58,6 +58,10 @@ class TextView(Gtk.TextView):
         self.set_pixels_below_lines(pixels_below)
         self.set_left_margin(6)
         self.set_right_margin(6)
+        with nfoview.util.silent(AttributeError):
+            # Available since GTK+ 3.18.
+            self.set_top_margin(6)
+            self.set_bottom_margin(6)
         self.override_font(font_desc)
         nfoview.util.connect(self, self, "motion-notify-event")
 
