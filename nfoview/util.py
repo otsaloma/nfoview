@@ -122,12 +122,6 @@ def get_text_view_size(text):
     return (label.get_preferred_width()[1],
             label.get_preferred_height()[1])
 
-def _hasattr_def(obj, name):
-    """Return ``True`` if `obj` has attribute `name` defined."""
-    if hasattr(obj, "__dict__"):
-        return name in obj.__dict__
-    return hasattr(obj, name)
-
 def hex_to_rgba(string):
     """Return a :class:`Gdk.RGBA` for hexadecimal `string`."""
     rgba = Gdk.RGBA()
