@@ -79,30 +79,29 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_bg_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
-        string = nfoview.util.rgba_to_hex(rgba)
-        nfoview.conf.background_color = string
+        color = color_button.get_rgba()
+        color = nfoview.util.rgba_to_hex(color)
+        nfoview.conf.background_color = color
         scheme = nfoview.schemes.get("custom")
-        scheme.background = rgba
+        scheme.background = color
         for window in self._get_windows():
-            window.view.update_colors()
+            window.view.update_style()
 
     def _on_fg_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
-        string = nfoview.util.rgba_to_hex(rgba)
-        nfoview.conf.foreground_color = string
+        color = color_button.get_rgba()
+        color = nfoview.util.rgba_to_hex(color)
+        nfoview.conf.foreground_color = color
         scheme = nfoview.schemes.get("custom")
-        scheme.foreground = rgba
+        scheme.foreground = color
         for window in self._get_windows():
-            window.view.update_colors()
+            window.view.update_style()
 
     def _on_font_button_font_set(self, font_button):
         """Save the new font and update window and its view."""
         nfoview.conf.font = font_button.get_font_name()
-        font_desc = nfoview.util.get_font_description()
         for window in self._get_windows():
-            window.view.modify_font(font_desc)
+            window.view.update_style()
 
     def _on_line_spacing_spin_value_changed(self, spin_button):
         """Save the new line-spacing and update window and its view."""
@@ -113,13 +112,13 @@ class PreferencesDialog(nfoview.BuilderDialog):
 
     def _on_link_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
-        string = nfoview.util.rgba_to_hex(rgba)
-        nfoview.conf.link_color = string
+        color = color_button.get_rgba()
+        color = nfoview.util.rgba_to_hex(color)
+        nfoview.conf.link_color = color
         scheme = nfoview.schemes.get("custom")
-        scheme.link = rgba
+        scheme.link = color
         for window in self._get_windows():
-            window.view.update_colors()
+            window.view.update_style()
 
     def _on_scheme_combo_changed(self, combo_box):
         """Save the new color scheme and update window and its view."""
@@ -129,25 +128,26 @@ class PreferencesDialog(nfoview.BuilderDialog):
         nfoview.conf.color_scheme = scheme.name
         self._update_color_buttons(scheme)
         for window in self._get_windows():
-            window.view.update_colors()
+            window.view.update_style()
         self._update_sensitivities()
 
     def _on_vlink_color_button_color_set(self, color_button):
         """Save the new color and update window and its view."""
-        rgba = color_button.get_rgba()
-        string = nfoview.util.rgba_to_hex(rgba)
-        nfoview.conf.visited_link_color = string
+        color = color_button.get_rgba()
+        color = nfoview.util.rgba_to_hex(color)
+        nfoview.conf.visited_link_color = color
         scheme = nfoview.schemes.get("custom")
-        scheme.vlink = rgba
+        scheme.vlink = color
         for window in self._get_windows():
-            window.view.update_colors()
+            window.view.update_style()
 
     def _update_color_buttons(self, scheme):
         """Set color button colors to match those of scheme."""
-        self._bg_color_button.set_rgba(scheme.background)
-        self._fg_color_button.set_rgba(scheme.foreground)
-        self._link_color_button.set_rgba(scheme.link)
-        self._vlink_color_button.set_rgba(scheme.visited_link)
+        rgba = nfoview.util.hex_to_rgba
+        self._bg_color_button.set_rgba(rgba(scheme.background))
+        self._fg_color_button.set_rgba(rgba(scheme.foreground))
+        self._link_color_button.set_rgba(rgba(scheme.link))
+        self._vlink_color_button.set_rgba(rgba(scheme.visited_link))
 
     def _update_sensitivities(self):
         """Set the sensitivities of color buttons and labels."""

@@ -50,10 +50,10 @@ class BlackOnWhite(ColorScheme):
 
     name         = "black-on-white"
     label        = _("Black on white")
-    foreground   = nfoview.util.hex_to_rgba("#000000")
-    background   = nfoview.util.hex_to_rgba("#ffffff")
-    link         = nfoview.util.hex_to_rgba("#0000ff")
-    visited_link = nfoview.util.hex_to_rgba("#ff00ff")
+    foreground   = "#000000"
+    background   = "#ffffff"
+    link         = "#0000ff"
+    visited_link = "#ff00ff"
 
 
 class Custom(ColorScheme):
@@ -62,10 +62,10 @@ class Custom(ColorScheme):
 
     name         = "custom"
     label        = _("Custom")
-    foreground   = nfoview.util.hex_to_rgba(nfoview.conf.foreground_color)
-    background   = nfoview.util.hex_to_rgba(nfoview.conf.background_color)
-    link         = nfoview.util.hex_to_rgba(nfoview.conf.link_color)
-    visited_link = nfoview.util.hex_to_rgba(nfoview.conf.visited_link_color)
+    foreground   = nfoview.conf.foreground_color
+    background   = nfoview.conf.background_color
+    link         = nfoview.conf.link_color
+    visited_link = nfoview.conf.visited_link_color
 
 
 class DarkGreyOnLightGray(ColorScheme):
@@ -74,10 +74,10 @@ class DarkGreyOnLightGray(ColorScheme):
 
     name         = "dark-grey-on-light-grey"
     label        = _("Dark grey on light grey")
-    foreground   = nfoview.util.hex_to_rgba("#666666")
-    background   = nfoview.util.hex_to_rgba("#f2f2f2")
-    link         = nfoview.util.hex_to_rgba("#5555ff")
-    visited_link = nfoview.util.hex_to_rgba("#ff55ff")
+    foreground   = "#666666"
+    background   = "#f2f2f2"
+    link         = "#5555ff"
+    visited_link = "#ff55ff"
 
 
 class Default(ColorScheme):
@@ -89,10 +89,10 @@ class Default(ColorScheme):
 
     name         = "default"
     label        = _("System theme")
-    foreground   = nfoview.util.lookup_color("theme_text_color", "#2e3436")
+    foreground   = nfoview.util.lookup_color("theme_text_color", "#000000")
     background   = nfoview.util.lookup_color("theme_base_color", "#ffffff")
-    link         = nfoview.util.hex_to_rgba("#2a76c6")
-    visited_link = nfoview.util.hex_to_rgba("#215d9c")
+    link         = "#2a76c6"
+    visited_link = "#215d9c"
 
 
 class GreyOnBlack(ColorScheme):
@@ -101,10 +101,10 @@ class GreyOnBlack(ColorScheme):
 
     name         = "grey-on-black"
     label        = _("Grey on black")
-    foreground   = nfoview.util.hex_to_rgba("#aaaaaa")
-    background   = nfoview.util.hex_to_rgba("#000000")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    foreground   = "#aaaaaa"
+    background   = "#000000"
+    link         = "#aaaaff"
+    visited_link = "#ffaaff"
 
 
 class LightGreyOnDarkGray(ColorScheme):
@@ -113,10 +113,10 @@ class LightGreyOnDarkGray(ColorScheme):
 
     name         = "light-grey-on-dark-grey"
     label        = _("Light grey on dark grey")
-    foreground   = nfoview.util.hex_to_rgba("#f2f2f2")
-    background   = nfoview.util.hex_to_rgba("#666666")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    foreground   = "#f2f2f2"
+    background   = "#666666"
+    link         = "#aaaaff"
+    visited_link = "#ffaaff"
 
 
 class WhiteOnBlack(ColorScheme):
@@ -125,10 +125,10 @@ class WhiteOnBlack(ColorScheme):
 
     name         = "white-on-black"
     label        = _("White on black")
-    foreground   = nfoview.util.hex_to_rgba("#ffffff")
-    background   = nfoview.util.hex_to_rgba("#000000")
-    link         = nfoview.util.hex_to_rgba("#aaaaff")
-    visited_link = nfoview.util.hex_to_rgba("#ffaaff")
+    foreground   = "#ffffff"
+    background   = "#000000"
+    link         = "#aaaaff"
+    visited_link = "#ffaaff"
 
 
 def get(name, fallback=None):

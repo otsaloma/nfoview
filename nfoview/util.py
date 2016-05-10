@@ -37,6 +37,34 @@ def affirm(value):
     if not value:
         raise nfoview.AffirmationError
 
+def apply_style(widget):
+    """Update font and colors to match custom settings."""
+    name = nfoview.conf.color_scheme
+    scheme = nfoview.schemes.get(name, "default")
+    font_desc = Pango.FontDescription(nfoview.conf.font)
+    css = """
+    .nfoview-text-view,
+    .nfoview-text-view text {{
+      background-color: {bg};
+      color: {fg};
+      font-family: {family};
+      font-size: {size}px;
+      font-weight: {weight};
+    }}""".format(bg=scheme.background,
+                 fg=scheme.foreground,
+                 family=font_desc.get_family().split(",")[0],
+                 size=int(round(font_desc.get_size() / Pango.SCALE)),
+                 weight=int(font_desc.get_weight()))
+
+    provider = Gtk.CssProvider.get_default()
+    provider.load_from_data(bytes(css.encode()))
+    style = widget.get_style_context()
+    style.add_class("nfoview-text-view")
+    priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+    style.add_provider_for_screen(Gdk.Screen.get_default(),
+                                  provider,
+                                  priority)
+
 def connect(observer, observable, signal, *args):
     """
     Connect `observable`'s signal to `observer`'s callback method.
@@ -78,13 +106,6 @@ def detect_encoding(path):
     # return the de facto standard encoding for NFO files, CP437.
     return "cp437"
 
-def get_font_description(fallback="monospace"):
-    """Return font description from conf with `fallback` added."""
-    font_desc = Pango.FontDescription(nfoview.conf.font)
-    family = font_desc.get_family()
-    font_desc.set_family(",".join((family, fallback, "")))
-    return font_desc
-
 def get_max_text_view_size():
     """Return maximum allowed size for text view."""
     max_chars = nfoview.conf.text_view_max_chars
@@ -95,7 +116,7 @@ def get_max_text_view_size():
 def get_text_view_size(text):
     """Return size for text view required to hold `text`."""
     label = Gtk.Label()
-    label.override_font(get_font_description())
+    apply_style(label)
     label.set_text(text)
     label.show()
     return (label.get_preferred_width()[1],
@@ -131,8 +152,8 @@ def lookup_color(name, fallback):
     style = entry.get_style_context()
     found, color = style.lookup_color(name)
     if found:
-        return color
-    return hex_to_rgba(fallback)
+        return rgba_to_hex(color)
+    return fallback
 
 def makedirs(directory):
     """Create and return `directory` or raise :exc:`OSError`."""

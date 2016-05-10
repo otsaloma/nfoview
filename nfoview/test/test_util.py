@@ -21,6 +21,7 @@ import os
 import sys
 
 from gi.repository import Gdk
+from gi.repository import Gtk
 
 
 class TestModule(nfoview.TestCase):
@@ -32,6 +33,10 @@ class TestModule(nfoview.TestCase):
 
     def test_affirm__true(self):
         nfoview.util.affirm(True)
+
+    def test_apply_style(self):
+        nfoview.util.apply_style(Gtk.TextView())
+        nfoview.util.apply_style(Gtk.Label())
 
     def test_detect_encoding__cp437(self):
         path = self.new_nfo_file()
@@ -83,12 +88,6 @@ class TestModule(nfoview.TestCase):
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_8_sig"
 
-    @nfoview.util.monkey_patch(nfoview.conf, "font")
-    def test_get_font_description(self):
-        nfoview.conf.font = "Foo"
-        font_desc = nfoview.util.get_font_description()
-        assert font_desc.get_family() == "Foo,monospace,"
-
     def test_get_max_text_view_size(self):
         width, height = nfoview.util.get_max_text_view_size()
         assert width > 100 and height > 100
@@ -104,11 +103,11 @@ class TestModule(nfoview.TestCase):
 
     def test_lookup_color(self):
         color = nfoview.util.lookup_color("theme_fg_color", "#ff0000")
-        assert not color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
+        assert color != "#ff0000"
 
     def test_lookup_color_fallback(self):
         color = nfoview.util.lookup_color("xxx", "#ff0000")
-        assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
+        assert color == "#ff0000"
 
     def test_monkey_patch__no_attribute(self):
         @nfoview.util.monkey_patch(sys, "nfoview")

@@ -38,7 +38,7 @@ class TextView(Gtk.TextView):
         self._link_tags = []
         self._visited_link_tags = []
         self._init_properties()
-        self.update_colors()
+        self.update_style()
 
     def get_text(self):
         """Return the text in the text view."""
@@ -50,7 +50,6 @@ class TextView(Gtk.TextView):
         """Initialize text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
-        font_desc = nfoview.util.get_font_description()
         self.set_cursor_visible(False)
         self.set_editable(False)
         self.set_wrap_mode(Gtk.WrapMode.NONE)
@@ -62,7 +61,6 @@ class TextView(Gtk.TextView):
             # Available since GTK+ 3.18.
             self.set_top_margin(6)
             self.set_bottom_margin(6)
-        self.override_font(font_desc)
         nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
@@ -91,7 +89,7 @@ class TextView(Gtk.TextView):
         if tag in self._link_tags:
             self._link_tags.remove(tag)
             self._visited_link_tags.append(tag)
-            self.update_colors()
+            self.update_style()
 
     def _on_motion_notify_event(self, text_view, event):
         """Change the mouse pointer when hovering over a hyperlink."""
@@ -146,24 +144,16 @@ class TextView(Gtk.TextView):
                 self._insert_word("".join(word_queue))
                 word_queue = []
         self._insert_word("".join(word_queue))
-        self.update_colors()
+        self.update_style()
 
-    def update_colors(self):
+    def update_style(self):
         """Update colors to match the current color scheme."""
+        nfoview.util.apply_style(self)
         name = nfoview.conf.color_scheme
         scheme = nfoview.schemes.get(name, "default")
-        state = Gtk.StateFlags.NORMAL
-        self.override_color(state, scheme.foreground)
-        self.override_background_color(state, scheme.background)
-        entry = Gtk.Entry()
-        entry.show()
-        style = entry.get_style_context()
-        state = Gtk.StateFlags.SELECTED
-        foreground = style.get_color(state)
-        background = style.get_background_color(state)
-        self.override_color(state, foreground)
-        self.override_background_color(state, background)
         for tag in self._link_tags:
-            tag.props.foreground_rgba = scheme.link
+            color = nfoview.util.hex_to_rgba(scheme.link)
+            tag.props.foreground_rgba = color
         for tag in self._visited_link_tags:
-            tag.props.foreground_rgba = scheme.visited_link
+            color = nfoview.util.hex_to_rgba(scheme.visited_link)
+            tag.props.foreground_rgba = color

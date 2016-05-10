@@ -48,9 +48,9 @@ class TestTextView(nfoview.TestCase):
         # set_text adds a final newline.
         assert text == "test\ntest\n"
 
-    def test_update_colors(self):
-        self.view.update_colors()
+    def test_update_style(self):
+        self.view.update_style()
         tags = self.view._link_tags
         self.view._link_tags = []
         self.view._visited_link_tags = tags
-        self.view.update_colors()
+        self.view.update_style()
