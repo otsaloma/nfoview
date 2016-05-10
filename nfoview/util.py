@@ -169,32 +169,6 @@ def makedirs(directory):
         raise # OSError
     return directory
 
-def monkey_patch(obj, name):
-    """
-    Decorator for functions that change `obj`'s `name` attribute.
-
-    Any changes done will be reverted after the function is run,
-    i.e. `name` attribute is either restored to its original value
-    or deleted, if it didn't originally exist.
-    """
-    def outer_wrapper(function):
-        @functools.wraps(function)
-        def inner_wrapper(*args, **kwargs):
-            exists = _hasattr_def(obj, name)
-            value = getattr(obj, name) if exists else None
-            setattr(obj, name, copy.deepcopy(value))
-            try:
-                return function(*args, **kwargs)
-            finally:
-                setattr(obj, name, value)
-                assert getattr(obj, name) == value
-                assert getattr(obj, name) is value
-                if not exists:
-                    delattr(obj, name)
-                    assert not _hasattr_def(obj, name)
-        return inner_wrapper
-    return outer_wrapper
-
 def rgba_to_hex(color):
     """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
     return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),

@@ -269,7 +269,7 @@ class Window(Gtk.ApplicationWindow):
         # Assume 12 pixels total for text view margins,
         # 24 pixels for scrollbars, 48 pixels for header bar.
         size[0] = max(400, size[0] + 12 + 24)
-        size[1] = max(248, size[1] + 12 + 48 + 24)
+        size[1] = max(248, size[1] + 12 + 24 + 48)
         size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
         size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
         self.resize(*size)

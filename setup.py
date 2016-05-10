@@ -188,12 +188,13 @@ setup_kwargs = dict(
         ("share/icons/hicolor/256x256/apps", ("data/icons/256x256/nfoview.png",)),
         ("share/man/man1", ("data/nfoview.1",)),
         ("share/nfoview", glob.glob("data/*.ui")),
-        ],
+    ],
     cmdclass=dict(
         clean=Clean,
         install=Install,
         install_data=InstallData,
-        install_lib=InstallLib))
+        install_lib=InstallLib,
+    ))
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__) or ".")
