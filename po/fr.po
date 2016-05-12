@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:17+0200\n"
+"POT-Creation-Date: 2016-05-12 22:14+0300\n"
 "PO-Revision-Date: 2015-05-11 21:58+0000\n"
 "Last-Translator: Okki <okki@gnomelibre.fr>\n"
 "Language-Team: French (http://www.transifex.com/otsaloma/nfoview/language/"
@@ -32,6 +32,10 @@ msgstr ""
 "l'utilisation de NFO Viewer au lieu d'un éditeur de texte sont l'encodage et "
 "la police prédéfinis, le dimensionnement automatique de la fenêtre ainsi que "
 "des hyperliens cliquables."
+
+#: ../data/nfoview.appdata.xml.in.h:2
+msgid "Main window"
+msgstr ""
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -88,44 +92,44 @@ msgid "_Quit"
 msgstr "_Quitter"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Préférences"
-
-#: ../data/preferences-dialog.ui.h:2
 msgid "Text"
 msgstr "Texte"
 
-#: ../data/preferences-dialog.ui.h:3
+#: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
 msgstr "_Police :"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
 msgstr "_Interligne :"
 
-#: ../data/preferences-dialog.ui.h:5
+#: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
 msgstr "Couleurs"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
 msgstr "_Schémas :"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
 msgstr "Avan_t-plan :"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
 msgstr "Arrièr_e-plan :"
 
-#: ../data/preferences-dialog.ui.h:9
+#: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
 msgstr "_Lien :"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
 msgstr "Lien _visité :"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "Preferences"
+msgstr "Préférences"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"

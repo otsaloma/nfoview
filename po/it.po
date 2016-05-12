@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:17+0200\n"
+"POT-Creation-Date: 2016-05-12 22:14+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alessio Treglia <quadrispro@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -23,6 +23,10 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
+msgstr ""
+
+#: ../data/nfoview.appdata.xml.in.h:2
+msgid "Main window"
 msgstr ""
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
@@ -80,44 +84,44 @@ msgid "_Quit"
 msgstr "_Esci"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Preferenze"
-
-#: ../data/preferences-dialog.ui.h:2
 msgid "Text"
 msgstr "Testo"
 
-#: ../data/preferences-dialog.ui.h:3
+#: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
 msgstr "_Tipo di carattere:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:5
+#: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
 msgstr "Colori"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
 msgstr ""
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
 msgstr "P_rimo piano:"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
 msgstr "S_fondo:"
 
-#: ../data/preferences-dialog.ui.h:9
+#: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
 msgstr "Col_legamento:"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
 msgstr "Collegamento _visitato:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "Preferences"
+msgstr "Preferenze"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"

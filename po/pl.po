@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2009,2014-2015
+# Piotr Drąg <piotrdrag@gmail.com>, 2009,2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:17+0200\n"
-"PO-Revision-Date: 2015-05-02 19:03+0000\n"
+"POT-Creation-Date: 2016-05-12 22:14+0300\n"
+"PO-Revision-Date: 2016-03-14 04:01+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/nfoview/language/"
+"Language-Team: Polish (http://www.transifex.com/otsaloma/nfoview/language/"
 "pl/)\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,13 @@ msgid ""
 "hyperlinks."
 msgstr ""
 "Przeglądarka plików NFO jest prostą przeglądarką plików NFO, które zawierają "
-"obrazy \"ASCII\" w stronie kodowej CP437. Zaletami używania przeglądarki "
+"obrazy „ASCII” w stronie kodowej CP437. Zaletami używania przeglądarki "
 "plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, "
 "automatyczny rozmiar okna i klikalne odnośniki."
+
+#: ../data/nfoview.appdata.xml.in.h:2
+msgid "Main window"
+msgstr ""
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -39,7 +43,7 @@ msgstr ""
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
 #: ../nfoview/window.py:93
 msgid "NFO Viewer"
-msgstr "Przeglądarka NFO"
+msgstr "Pliki NFO"
 
 #: ../data/nfoview.desktop.in.h:2
 msgid "View NFO files"
@@ -87,44 +91,44 @@ msgid "_Quit"
 msgstr "Za_kończ"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Preferencje"
-
-#: ../data/preferences-dialog.ui.h:2
 msgid "Text"
 msgstr "Tekst"
 
-#: ../data/preferences-dialog.ui.h:3
+#: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
 msgstr "_Czcionka:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
 msgstr "_Odstęp między wierszami:"
 
-#: ../data/preferences-dialog.ui.h:5
+#: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
 msgstr "Kolory"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
 msgstr "_Schematy:"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
 msgstr "Te_kst:"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
 msgstr "_Tło:"
 
-#: ../data/preferences-dialog.ui.h:9
+#: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
 msgstr "_Odnośnik:"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
 msgstr "O_dwiedzony odnośnik:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "Preferences"
+msgstr "Preferencje"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
@@ -142,7 +146,7 @@ msgstr "Przeglądarka plików NFO"
 #. lines seperated by newlines (\n).
 #: ../nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014-2015"
+msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014-2016"
 
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"

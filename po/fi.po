@@ -1,13 +1,13 @@
 # Finnish translations for nfoview package.
 # Copyright (C) 2008-2014 Osmo Salomaa
 # This file is distributed under the same license as the nfoview package.
-# Osmo Salomaa <otsaloma@iki.fi>, 2008-2014, 2015.
+# Osmo Salomaa <otsaloma@iki.fi>, 2008-2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.15.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:17+0200\n"
-"PO-Revision-Date: 2015-05-01 05:11+0300\n"
+"POT-Creation-Date: 2016-05-12 22:14+0300\n"
+"PO-Revision-Date: 2016-05-12 22:15+0300\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: fi\n"
 "Language: fi\n"
@@ -24,11 +24,15 @@ msgid ""
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
 msgstr ""
-"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII"
-"\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
+"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \""
+"ASCII\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
 "tekstieditoriin nähden ovat esiasetetut kirjasin- ja "
 "merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
 "hyperlinkit."
+
+#: ../data/nfoview.appdata.xml.in.h:2
+msgid "Main window"
+msgstr "Pääikkuna"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -85,44 +89,44 @@ msgid "_Quit"
 msgstr "_Lopeta"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: ../data/preferences-dialog.ui.h:2
 msgid "Text"
 msgstr "Teksti"
 
-#: ../data/preferences-dialog.ui.h:3
+#: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
 msgstr "_Kirjasin:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
 msgstr "_Riviväli:"
 
-#: ../data/preferences-dialog.ui.h:5
+#: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
 msgstr "Värit"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
 msgstr "_Teemat:"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
 msgstr "_Edusta:"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
 msgstr "T_austa:"
 
-#: ../data/preferences-dialog.ui.h:9
+#: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
 msgstr "_Linkki:"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
 msgstr "_Vierailtu linkki:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "Preferences"
+msgstr "Asetukset"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"

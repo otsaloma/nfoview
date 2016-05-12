@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:17+0200\n"
+"POT-Creation-Date: 2016-05-12 22:14+0300\n"
 "PO-Revision-Date: 2010-05-14 12:30+0100\n"
 "Last-Translator: csola48 <csola48@gmail.com>\n"
 "Language-Team: csola48 <csola48@gmail.com>\n"
@@ -24,6 +24,10 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
+msgstr ""
+
+#: ../data/nfoview.appdata.xml.in.h:2
+msgid "Main window"
 msgstr ""
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
@@ -81,44 +85,44 @@ msgid "_Quit"
 msgstr "_Kilépés"
 
 #: ../data/preferences-dialog.ui.h:1
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: ../data/preferences-dialog.ui.h:2
 msgid "Text"
 msgstr "Szöveg"
 
-#: ../data/preferences-dialog.ui.h:3
+#: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
 msgstr "_Betűtípus:"
 
-#: ../data/preferences-dialog.ui.h:4
+#: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
 msgstr "_Sortávolság:"
 
-#: ../data/preferences-dialog.ui.h:5
+#: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
 msgstr "Színek"
 
-#: ../data/preferences-dialog.ui.h:6
+#: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
 msgstr "_Elrendezés:"
 
-#: ../data/preferences-dialog.ui.h:7
+#: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
 msgstr "_Előtér:"
 
-#: ../data/preferences-dialog.ui.h:8
+#: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
 msgstr "_Háttér:"
 
-#: ../data/preferences-dialog.ui.h:9
+#: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
 msgstr "_Kapcsolat:"
 
-#: ../data/preferences-dialog.ui.h:10
+#: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
 msgstr "_Látogatott link:"
+
+#: ../data/preferences-dialog.ui.h:10
+msgid "Preferences"
+msgstr "Beállítások"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
