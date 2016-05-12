@@ -19,8 +19,6 @@
 
 import codecs
 import contextlib
-import copy
-import functools
 import nfoview
 import os
 import sys

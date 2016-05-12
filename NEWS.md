@@ -1,3 +1,23 @@
+NFO Viewer 1.19
+===============
+
+* Fix mouse cursor and links with GTK+ 3.20
+* Use CSS for setting custom font and colors, fix selection color
+  with GTK+ 3.20 ([#2], [#4])
+* Fix default window size calculations to work better with GTK+ 3.20
+* Don't use deprecated `Gdk.Cursor.new`
+* Update preferences dialog GtkBuilder file with Glade 3.20
+* Remove shadow from around the text view
+* Add top and bottom margins to the text view
+* Move web pages to <http://otsaloma.io/nfoview/>
+* Move bugs from GNOME Bugzilla to [GitHub][1.19a]
+* Update AppData file
+* Update translations
+
+[#2]: https://github.com/otsaloma/nfoview/issues/2
+[#4]: https://github.com/otsaloma/nfoview/issues/4
+[1.19a]: https://github.com/otsaloma/nfoview/issues
+
 NFO Viewer 1.18
 ===============
 
