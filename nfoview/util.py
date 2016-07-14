@@ -54,6 +54,9 @@ def apply_style(widget):
                  size=int(round(font_desc.get_size() / Pango.SCALE)),
                  weight=int(font_desc.get_weight()))
 
+    css = css.replace("font-size: 0px;", "")
+    css = css.replace("font-weight: 0;", "")
+    css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
     provider = Gtk.CssProvider.get_default()
     provider.load_from_data(bytes(css.encode()))
     style = widget.get_style_context()
