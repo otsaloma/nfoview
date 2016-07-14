@@ -136,11 +136,12 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_delete_event(self, *args):
         """Remove window and possibly terminate application."""
-        # Work around a harmless Gtk-WARNING about drag destination by calling
-        # remove_window and preventing any default handlers of delete-event.
+        # Work around a harmless Gtk-WARNING about drag destination
+        # by removing the window and hiding it instead of destroying.
         # https://bugzilla.gnome.org/show_bug.cgi?id=721708
         if hasattr(nfoview, "app"):
             nfoview.app.remove_window(self)
+            self.hide()
             return True
 
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
