@@ -72,7 +72,7 @@ class ConfigurationStore:
     def write(self):
         """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
-        with nfoview.util.silent(OSError):
+        with nfoview.util.silent(OSError, tb=True):
             nfoview.util.makedirs(directory)
         if not os.path.isdir(directory): return
         f = open(self.path, "w")

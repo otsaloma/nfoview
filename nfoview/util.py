@@ -22,6 +22,7 @@ import contextlib
 import nfoview
 import os
 import sys
+import traceback
 import urllib.parse
 import webbrowser
 
@@ -183,12 +184,12 @@ def show_uri(uri):
         raise # Exception
 
 @contextlib.contextmanager
-def silent(*exceptions):
+def silent(*exceptions, tb=False):
     """Try to execute body, ignoring `exceptions`."""
     try:
         yield
     except exceptions:
-        pass
+        if tb: traceback.print_exc()
 
 def uri_to_path(uri):
     """Convert `uri` to local filepath."""
