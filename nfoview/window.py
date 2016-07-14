@@ -140,8 +140,8 @@ class Window(Gtk.ApplicationWindow):
         # by removing the window and hiding it instead of destroying.
         # https://bugzilla.gnome.org/show_bug.cgi?id=721708
         if hasattr(nfoview, "app"):
-            nfoview.app.remove_window(self)
             self.hide()
+            nfoview.app.remove_window(self)
             return True
 
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
