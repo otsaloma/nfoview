@@ -45,6 +45,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
     def __init__(self, parent):
         """Initialize a :class:`PreferencesDialog` instance."""
         nfoview.BuilderDialog.__init__(self, "preferences-dialog.ui")
+        self._init_font_button()
         self._init_scheme_combo()
         self._init_values()
         self.set_transient_for(parent)
@@ -53,6 +54,12 @@ class PreferencesDialog(nfoview.BuilderDialog):
     def _get_windows(self):
         """Return a list of open application windows."""
         return nfoview.app.get_windows() if hasattr(nfoview, "app") else []
+
+    def _init_font_button(self):
+        """Initialize properties of the font chooser dialog."""
+        def monospace(family, *args, **kwargs):
+            return family.is_monospace()
+        self._font_button.set_filter_func(monospace, None)
 
     def _init_scheme_combo(self):
         """Initialize a model and populate the scheme combo box."""
