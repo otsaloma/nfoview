@@ -10,7 +10,7 @@ editor are preset font and encoding settings, automatic window size and
 clickable hyperlinks.
 
 NFO Viewer is free software released under the GNU General Public
-License (GPL), see the file `COPYING` for details.
+License (GPL), see the file [`COPYING`](COPYING) for details.
 
 Dependencies
 ============
@@ -36,4 +36,4 @@ Running
 
 To try NFO Viewer from the source directory without installation, use
 command `bin/nfoview`. For installing NFO Viewer, see the file
-`INSTALL.md`.
+[`INSTALL.md`](INSTALL.md).
