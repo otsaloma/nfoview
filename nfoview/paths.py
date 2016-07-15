@@ -43,11 +43,35 @@ def get_config_home_directory_xdg():
     directory = os.path.join(directory, "nfoview")
     return os.path.abspath(directory)
 
+def get_data_directory():
+    """Return path to the global data directory."""
+    if hasattr(sys, "frozen"):
+        return get_data_directory_frozen()
+    return get_data_directory_source()
+
+def get_data_directory_frozen():
+    """Return path to the global data directory on ``frozen``."""
+    directory = os.path.dirname(sys.argv[0])
+    directory = os.path.join(directory, "share", "nfoview")
+    return os.path.abspath(directory)
+
 def get_data_directory_source():
     """Return path to the global data directory when running from source."""
     directory = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.abspath(os.path.join(directory, ".."))
     directory = os.path.join(directory, "data")
+    return os.path.abspath(directory)
+
+def get_locale_directory():
+    """Return path to the locale directory."""
+    if hasattr(sys, "frozen"):
+        return get_locale_directory_frozen()
+    return get_locale_directory_source()
+
+def get_locale_directory_frozen():
+    """Return path to the locale directory on ``frozen``."""
+    directory = os.path.dirname(sys.argv[0])
+    directory = os.path.join(directory, "share", "locale")
     return os.path.abspath(directory)
 
 def get_locale_directory_source():
@@ -58,5 +82,5 @@ def get_locale_directory_source():
     return os.path.abspath(directory)
 
 CONFIG_HOME_DIR = get_config_home_directory()
-DATA_DIR = get_data_directory_source()
-LOCALE_DIR = get_locale_directory_source()
+DATA_DIR = get_data_directory()
+LOCALE_DIR = get_locale_directory()

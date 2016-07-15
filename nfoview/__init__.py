@@ -19,6 +19,14 @@
 
 __version__ = "1.19"
 
+import sys
+import warnings
+
+if hasattr(sys, "frozen"):
+    # Avoid error trying to write to non-existent stderr.
+    # http://stackoverflow.com/a/35773092
+    warnings.simplefilter("ignore")
+
 import gi
 gi.require_version("Gdk", "3.0")
 gi.require_version("Gtk", "3.0")
