@@ -33,7 +33,7 @@ def get_config_home_directory_windows():
     """Return path to the user's configuration directory on Windows."""
     directory = os.path.expanduser("~")
     directory = os.environ.get("APPDATA", directory)
-    directory = os.path.join(directory, "nfoview")
+    directory = os.path.join(directory, "NFO Viewer")
     return os.path.abspath(directory)
 
 def get_config_home_directory_xdg():
