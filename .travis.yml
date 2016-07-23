@@ -11,3 +11,6 @@ script:
   # - xvfb-run py.test nfoview
   - python setup.py clean
   - python setup.py install --prefix=/tmp/usr
+notifications:
+  on_success: change
+  on_failure: change
