@@ -1,23 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: nfoview-1.4\n"
+"Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2011-07-06 14:00+0200\n"
-"Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
-"Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-12 19:21+0000\n"
+"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/otsaloma/nfoview/language/"
+"bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Bulgarian\n"
-"X-Poedit-Country: BULGARIA\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -202,54 +201,3 @@ msgstr "Светло сиво на тъмно сиво"
 #: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Бяло на черно"
-
-#~ msgid "Close document"
-#~ msgstr "Затваряне на документ"
-
-#~ msgid "_Copy"
-#~ msgstr "_Копиране"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Копиране на избрания текст в буфера"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Редактиране настройките на NFO Viewer"
-
-#~ msgid "Open file"
-#~ msgstr "Отваряне на файл"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "Изход от NFO Viewer"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Избиране на всичкия текст в документа"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Показване на информация относно NFO Viewer"
-
-#~ msgid "_Edit"
-#~ msgstr "_Редактиране"
-
-#~ msgid "_File"
-#~ msgstr "_Файл"
-
-#~ msgid "_Help"
-#~ msgstr "_Помощ"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Прекъсване на дългите редове на границите на думите"
-
-#~ msgid "Select Font"
-#~ msgstr "Изберете шрифт"
-
-#~ msgid "Select Color"
-#~ msgstr "Изберете цвят"
-
-#~ msgid "Copy"
-#~ msgstr "Копиране"
-
-#~ msgid "Line-_spacing:"
-#~ msgstr "_Междуредие:"
-
-#~ msgid "_Built-in schemes:"
-#~ msgstr "_Включени схеми:"

@@ -1,24 +1,23 @@
-# German translations for nfoview package.
-# Copyright (C) 2007 THE NFOVIEW'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the nfoview package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
-# Fabian Affolter <fab@fedoraproject.org>, 2009.
-#
+# Translators:
+# Fabian Affolter <fab@fedoraproject.org>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fabian Affolter <fab@fedoraproject.org>\n"
-"Language-Team: German <fedora-trans-de@redhat.com>\n"
-"Language: de\n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-12 19:21+0000\n"
+"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"Language-Team: German (Switzerland) (http://www.transifex.com/otsaloma/"
+"nfoview/language/de_CH/)\n"
+"Language: de_CH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: SWITZERLAND\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -203,48 +202,3 @@ msgstr "Hellgrau auf Dunkelgrau"
 #: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Weiss auf Schwarz"
-
-#~ msgid "Close document"
-#~ msgstr "Dokument schliessen"
-
-#~ msgid "_Copy"
-#~ msgstr "_Kopieren"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Gewählten Text in die Zwischenablage kopieren"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Einstellungen des NFO-Betrachters bearbeiten"
-
-#~ msgid "Open file"
-#~ msgstr "Datei öffnen"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Gesamten Text im Dokument auswählen"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Informationen über NFO-Betracher anzeigen"
-
-#~ msgid "_Edit"
-#~ msgstr "_Bearbeiten"
-
-#~ msgid "_File"
-#~ msgstr "_Datei"
-
-#~ msgid "_Help"
-#~ msgstr "_Hilfe"
-
-#~ msgid "Select Font"
-#~ msgstr "Schriftart auswählen"
-
-#~ msgid "Select Color"
-#~ msgstr "Farbe auswählen"
-
-#~ msgid "Copy"
-#~ msgstr "Kopieren"
-
-#~ msgid "Line-_spacing:"
-#~ msgstr "Zeilenab_stand:"
-
-#~ msgid "_Built-in schemes:"
-#~ msgstr "Einge_baute Schemata:"

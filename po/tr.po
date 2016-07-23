@@ -4,12 +4,13 @@
 #
 # Translators:
 # mauron, 2015
+# mauron, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2015-06-23 23:11+0000\n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-28 10:12+0000\n"
 "Last-Translator: mauron\n"
 "Language-Team: Turkish (http://www.transifex.com/otsaloma/nfoview/language/"
 "tr/)\n"
@@ -33,7 +34,7 @@ msgstr ""
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Ana pencere"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a

@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: nfoview 1.4\n"
+"Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2010-05-14 12:30+0100\n"
-"Last-Translator: csola48 <csola48@gmail.com>\n"
-"Language-Team: csola48 <csola48@gmail.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-12 19:21+0000\n"
+"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"Language-Team: Hungarian (http://www.transifex.com/otsaloma/nfoview/language/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -201,48 +201,3 @@ msgstr "Világos szürke a sötét szürkén"
 #: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Fehér a feketén"
-
-#~ msgid "Close document"
-#~ msgstr "Dokumentum bezárása"
-
-#~ msgid "_Copy"
-#~ msgstr "_Másolás"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "A kiválasztott szöveg vágólapra másolása"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "A beállítások szerkesztése"
-
-#~ msgid "Open file"
-#~ msgstr "Fájl megnyitása"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "Kilépés az NFO-fájlnézőből"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Minden szöveg kijelölése a dokumentumban"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Információ az NFO-fájlnézőről"
-
-#~ msgid "_Edit"
-#~ msgstr "Sz_erkesztés"
-
-#~ msgid "_File"
-#~ msgstr "_Fájl"
-
-#~ msgid "_Help"
-#~ msgstr "_Súgó"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Hosszú sorok szóhatáron való törése"
-
-#~ msgid "Select Font"
-#~ msgstr "Betűtípus választása"
-
-#~ msgid "Select Color"
-#~ msgstr "Szín választása"
-
-#~ msgid "Copy"
-#~ msgstr "Másolás"

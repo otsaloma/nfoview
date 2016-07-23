@@ -1,15 +1,24 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Алекс <davian818@gmail.com>\n"
-"Language-Team: none <->\n"
-"Language: \n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-12 19:21+0000\n"
+"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"Language-Team: Russian (http://www.transifex.com/otsaloma/nfoview/language/"
+"ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -194,48 +203,3 @@ msgstr "Светло-серый на темно-сером"
 #: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Белый на черном"
-
-#~ msgid "Close document"
-#~ msgstr "Закрыть документ"
-
-#~ msgid "_Copy"
-#~ msgstr "_Копировать"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Копирует выделенный текст в буфер обмена"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Изменение настроек программы"
-
-#~ msgid "Open file"
-#~ msgstr "Открыть файл"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "Выход из программы"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Выделить весь текст документа"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Сведения о программе просмотра NFO"
-
-#~ msgid "_Edit"
-#~ msgstr "_Правка"
-
-#~ msgid "_File"
-#~ msgstr "_Файл"
-
-#~ msgid "_Help"
-#~ msgstr "_Справка"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Переносить длинные строки по границам слов"
-
-#~ msgid "Select Font"
-#~ msgstr "Выберите шрифт"
-
-#~ msgid "Select Color"
-#~ msgstr "Выберите цвет"
-
-#~ msgid "Copy"
-#~ msgstr "Копировать"

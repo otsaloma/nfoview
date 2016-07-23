@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: NFOView\n"
+"Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2015-04-09 21:26+0100\n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-12 21:00+0000\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
-"Language-Team: pt_PT <palbuquerque73@gmail.com>\n"
-"Language: Português Europeu\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/otsaloma/"
+"nfoview/language/pt_PT/)\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -31,7 +33,7 @@ msgstr ""
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Janela principal"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -61,7 +63,7 @@ msgstr "_Exportar imagem…"
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr ""
+msgstr "C_opiar"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
@@ -204,42 +206,3 @@ msgstr "Cinzento claro em cinzento escuro"
 #: ../nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Branco no preto"
-
-#~ msgid "Close document"
-#~ msgstr "Fechar documento"
-
-#~ msgid "_Copy"
-#~ msgstr "_Copiar"
-
-#~ msgid "Copy the selected text to the clipboard"
-#~ msgstr "Copiar o texto selecionado para a área de transferência"
-
-#~ msgid "Edit NFO Viewer preferences"
-#~ msgstr "Editar as preferências do NFO Viewer"
-
-#~ msgid "Export document as an image file"
-#~ msgstr "Exportar documento como ficheiro de imagem"
-
-#~ msgid "Open file"
-#~ msgstr "Abrir ficheiro"
-
-#~ msgid "Quit NFO Viewer"
-#~ msgstr "Sair do NFO Viewer"
-
-#~ msgid "Select all text in the document"
-#~ msgstr "Selecionar todo o texto no documento"
-
-#~ msgid "Show information about NFO Viewer"
-#~ msgstr "Mostrar informação acerca do NFO Viewer"
-
-#~ msgid "_Edit"
-#~ msgstr "_Editar"
-
-#~ msgid "_File"
-#~ msgstr "_Ficheiro"
-
-#~ msgid "_Help"
-#~ msgstr "A_juda"
-
-#~ msgid "Break long lines at word borders"
-#~ msgstr "Quebrar linhas compridas nos limites das palavras"

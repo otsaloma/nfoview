@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2016-03-14 04:01+0000\n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-14 14:02+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/otsaloma/nfoview/language/"
 "pl/)\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Główne okno"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a

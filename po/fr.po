@@ -4,13 +4,13 @@
 #
 # Translators:
 # elgeneralmidi <ubuntufromscratch@gmail.com>, 2009
-# Okki <okki@gnomelibre.fr>, 2015
+# Okki <okki@gnomelibre.fr>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 22:14+0300\n"
-"PO-Revision-Date: 2015-05-11 21:58+0000\n"
+"POT-Creation-Date: 2016-07-23 20:33+0300\n"
+"PO-Revision-Date: 2016-05-22 11:38+0000\n"
 "Last-Translator: Okki <okki@gnomelibre.fr>\n"
 "Language-Team: French (http://www.transifex.com/otsaloma/nfoview/language/"
 "fr/)\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Fenêtre principale"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
