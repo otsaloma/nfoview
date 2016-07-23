@@ -1,3 +1,10 @@
+2016-07-23: NFO Viewer 1.20
+===========================
+
+* Only show monospace fonts in the font chooser dialog
+* Fix windows not closing when having multiple windows open
+* Add support for releasing installers for Windows
+
 NFO Viewer 1.19
 ===============
 
