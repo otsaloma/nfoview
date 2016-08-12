@@ -19,6 +19,7 @@
   </screenshots>
   <url type="homepage">http://otsaloma.io/nfoview/</url>
   <url type="bugtracker">https://github.com/otsaloma/nfoview/issues</url>
+  <url type="translate">http://www.transifex.com/otsaloma/nfoview/</url>
   <update_contact>otsaloma@iki.fi</update_contact>
   <developer_name>Osmo Salomaa</developer_name>
 </component>
