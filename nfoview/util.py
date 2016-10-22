@@ -41,21 +41,24 @@ def apply_style(widget):
     name = nfoview.conf.color_scheme
     scheme = nfoview.schemes.get(name, "default")
     font_desc = Pango.FontDescription(nfoview.conf.font)
+    # They fucking broke theming again with GTK+ 3.22.
+    unit = "pt" if Gtk.check_version(3, 22, 0) is None else "px"
     css = """
     .nfoview-text-view,
     .nfoview-text-view text {{
       background-color: {bg};
       color: {fg};
       font-family: {family};
-      font-size: {size}px;
+      font-size: {size}{unit};
       font-weight: {weight};
     }}""".format(bg=scheme.background,
                  fg=scheme.foreground,
                  family=font_desc.get_family().split(",")[0],
                  size=int(round(font_desc.get_size() / Pango.SCALE)),
+                 unit=unit,
                  weight=int(font_desc.get_weight()))
 
-    css = css.replace("font-size: 0px;", "")
+    css = css.replace("font-size: 0{unit};".format(unit=unit), "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
     provider = Gtk.CssProvider.get_default()
