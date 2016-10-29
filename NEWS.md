@@ -1,3 +1,10 @@
+2016-10-29: NFO Viewer 1.21
+===========================
+
+* Fix size of custom font with GTK+ 3.22 (#7)
+* Update AppData file
+* Update translations
+
 2016-07-23: NFO Viewer 1.20
 ===========================
 
