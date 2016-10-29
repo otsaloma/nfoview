@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 20:33+0300\n"
-"PO-Revision-Date: 2016-05-14 14:02+0000\n"
+"POT-Creation-Date: 2016-10-29 20:47+0300\n"
+"PO-Revision-Date: 2016-08-29 16:51+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/otsaloma/nfoview/language/"
 "pl/)\n"
@@ -28,9 +28,9 @@ msgid ""
 "hyperlinks."
 msgstr ""
 "Przeglądarka plików NFO jest prostą przeglądarką plików NFO, które zawierają "
-"obrazy „ASCII” w stronie kodowej CP437. Zaletami używania przeglądarki "
-"plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, "
-"automatyczny rozmiar okna i klikalne odnośniki."
+"obrazy „ASCII” w stronie kodowej CP437. Zaletami używania przeglądarki "
+"plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, "
+"automatyczny rozmiar okna i klikalne odnośniki."
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
@@ -80,7 +80,7 @@ msgstr "_Preferencje"
 
 #: ../data/menu.ui.h:7
 msgid "_About"
-msgstr "_O programie"
+msgstr "_O programie"
 
 #: ../data/menu.ui.h:8
 msgid "_Close"
@@ -132,7 +132,7 @@ msgstr "Preferencje"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
-msgstr "O przeglądarce plików NFO"
+msgstr "O przeglądarce plików NFO"
 
 #: ../nfoview/about.py:39
 msgid "Viewer for NFO files"
@@ -186,7 +186,7 @@ msgstr "Czarne na białym"
 
 #: ../nfoview/schemes.py:64
 msgid "Custom"
-msgstr "Własny"
+msgstr "Niestandardowy"
 
 #: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
