@@ -264,9 +264,6 @@ class Window(Gtk.ApplicationWindow):
             size = list(nfoview.util.get_text_view_size(text))
         size[0] = min(size[0], max_size[0])
         size[1] = min(size[1], max_size[1])
-        p1 = nfoview.conf.pixels_above_lines
-        p2 = nfoview.conf.pixels_below_lines
-        size[1] = size[1] + ((p1 + p2) * (text.count("\n")+1))
         # Assume 12 pixels total for text view margins,
         # 24 pixels for scrollbars, 48 pixels for header bar.
         size[0] = max(400, size[0] + 12 + 24)
