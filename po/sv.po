@@ -26,9 +26,8 @@ msgid ""
 msgstr ""
 "NFO Viewer är en enkel läsare för NFO-filer, vilket är \"ASCII-art \" i "
 "teckentabell CP437. Fördelen med att använda NFO Viewer, istället för en "
-"vanlig textredigerare, är förinställd teckensnitts- och "
-"teckentabellinställning, automatisk fönsterstorlek och klickbara "
-"hyperlänkar."
+"vanlig textredigerare, är förinställt teckensnitt och teckentabell, "
+"automatisk fönsterstorlek och klickbara hyperlänkar."
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
