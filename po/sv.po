@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-05 05:57+0100\n"
-"PO-Revision-Date: 2017-01-05 10:04+0100\n"
+"PO-Revision-Date: 2017-01-06 17:47+0200\n"
 "Language-Team: Svenska Språkfiler <contactform@svenskasprakfiler.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,15 +53,15 @@ msgstr "information;"
 
 #: ../data/menu.ui.h:1
 msgid "_Open…"
-msgstr "_Öppna..."
+msgstr "_Öppna…"
 
 #: ../data/menu.ui.h:2
 msgid "_Export Image…"
-msgstr "_Exportera bild..."
+msgstr "_Exportera bild…"
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr "&Kopiera"
+msgstr "_Kopiera"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
@@ -113,7 +113,7 @@ msgstr "Fö_rgrund:"
 
 #: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
-msgstr "Ba_kgrund"
+msgstr "Ba_kgrund:"
 
 #: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
