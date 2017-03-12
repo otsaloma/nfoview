@@ -1,23 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Fabian Affolter <fab@fedoraproject.org>, 2009
+# Nicolae Crefelean, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 20:33+0300\n"
-"PO-Revision-Date: 2016-05-12 19:21+0000\n"
-"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: German (Switzerland) (http://www.transifex.com/otsaloma/"
-"nfoview/language/de_CH/)\n"
-"Language: de_CH\n"
+"POT-Creation-Date: 2016-10-29 20:47+0300\n"
+"PO-Revision-Date: 2016-07-23 20:27+0000\n"
+"Last-Translator: Nicolae Crefelean\n"
+"Language-Team: Romanian (http://www.transifex.com/otsaloma/nfoview/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -25,11 +24,11 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr ""
+msgstr "NFO Viewer este un program simplu pentru vizualizarea fișierelor realizate ca artă „ASCII” în pagina de coduri CP437. Avantajele folosirii NFO Viewer în locul unui editor de text sunt setările implicite, precum fontul, codarea, dimensiunea automată a ferestrei și posibilitatea de a apăsa hiperlegăturile."
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Fereastra principală"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -38,52 +37,53 @@ msgstr ""
 #: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
 #: ../nfoview/window.py:93
 msgid "NFO Viewer"
-msgstr "NFO-Betrachter"
+msgstr "NFO Viewer"
 
 #: ../data/nfoview.desktop.in.h:2
 msgid "View NFO files"
-msgstr "NFO-Dokumente anzeigen"
+msgstr "Vizualizare fișiere NFO"
 
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/nfoview.desktop.in.h:4
 msgid "information;"
-msgstr ""
+msgstr "informații;"
 
 #: ../data/menu.ui.h:1
 msgid "_Open…"
-msgstr "Ö_ffnen …"
+msgstr "_Deschide..."
 
 #: ../data/menu.ui.h:2
 msgid "_Export Image…"
-msgstr ""
+msgstr "_Exportă imaginea..."
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr ""
+msgstr "C_opiază"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
-msgstr "Alles au_swählen"
+msgstr "_Selectare integrală"
 
 #: ../data/menu.ui.h:5
 msgid "_Wrap Lines"
-msgstr ""
+msgstr "_Taie liniile"
 
 #: ../data/menu.ui.h:6
 msgid "_Preferences"
-msgstr "_Einstellungen"
+msgstr "_Preferințe"
 
 #: ../data/menu.ui.h:7
 msgid "_About"
-msgstr "_Info"
+msgstr "_Despre"
 
 #: ../data/menu.ui.h:8
 msgid "_Close"
-msgstr "S_chliessen"
+msgstr "În_chide"
 
 #: ../data/menu.ui.h:9
 msgid "_Quit"
-msgstr ""
+msgstr "_Ieșire"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Text"
@@ -91,47 +91,47 @@ msgstr "Text"
 
 #: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
-msgstr "Schri_ftart:"
+msgstr "_Font:"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
-msgstr ""
+msgstr "Spațiere li_nii:"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
-msgstr "Farben"
+msgstr "Culori"
 
 #: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
-msgstr ""
+msgstr "_Scheme:"
 
 #: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
-msgstr "Vo_rdergrund:"
+msgstr "P_rim-plan"
 
 #: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
-msgstr "_Hintergrund:"
+msgstr "F_undal"
 
 #: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
-msgstr "_Link:"
+msgstr "_Legătură:"
 
 #: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
-msgstr "Bes_uchter Link:"
+msgstr "Legătură _vizitată:"
 
 #: ../data/preferences-dialog.ui.h:10
 msgid "Preferences"
-msgstr "Einstellungen"
+msgstr "Preferințe"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
-msgstr "Über NFO-Betrachter"
+msgstr "Despre NFO Viewer"
 
 #: ../nfoview/about.py:39
 msgid "Viewer for NFO files"
-msgstr "Betrachter für NFO-Dokumente"
+msgstr "Vizualizare fișiere NFO"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -141,64 +141,64 @@ msgstr "Betrachter für NFO-Dokumente"
 #. lines seperated by newlines (\n).
 #: ../nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Fabian Affolter <fab@fedoraproject.org>, 2009"
+msgstr "Nicolae Crefelean, Linux Mint România"
 
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
-msgstr "NFO-Betrachter Webseite"
+msgstr "Saitul NFO Viewer"
 
 #: ../nfoview/export.py:34
 msgid "Export Image"
-msgstr ""
+msgstr "Export imagine"
 
 #: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anulează"
 
 #: ../nfoview/export.py:38
 msgid "_Save"
-msgstr ""
+msgstr "_Salvează"
 
 #: ../nfoview/open.py:34
 msgid "Open"
-msgstr "Öffnen"
+msgstr "Deschide"
 
 #: ../nfoview/open.py:38
 msgid "_Open"
-msgstr ""
+msgstr "_Deschide"
 
 #: ../nfoview/open.py:42
 msgid "All files"
-msgstr "Alle Dateien"
+msgstr "Toate fișierele"
 
 #: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
-msgstr "NFO-Dokumente (*.nfo)"
+msgstr "Fișierele NFO (*.nfo)"
 
 #: ../nfoview/schemes.py:52
 msgid "Black on white"
-msgstr "Schwarz auf Weiss"
+msgstr "Negru pe alb"
 
 #: ../nfoview/schemes.py:64
 msgid "Custom"
-msgstr "Benutzerdefiniert"
+msgstr "Personalizat"
 
 #: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
-msgstr "Dunkelgrau auf Hellgrau"
+msgstr "Gri închis pe gri deschis"
 
 #: ../nfoview/schemes.py:91
 msgid "System theme"
-msgstr "Systemthema"
+msgstr "Tematica sistemului"
 
 #: ../nfoview/schemes.py:103
 msgid "Grey on black"
-msgstr "Grau auf Schwarz"
+msgstr "Gri pe negru"
 
 #: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
-msgstr "Hellgrau auf Dunkelgrau"
+msgstr "Gri deschis pe gri închis"
 
 #: ../nfoview/schemes.py:127
 msgid "White on black"
-msgstr "Weiss auf Schwarz"
+msgstr "Alb pe negru"

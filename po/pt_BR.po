@@ -1,23 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Jonathan Ye <hyqianli@gmail.com>, 2008
+# Ricardo Borges Jr. <ricardoborges.jr@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 20:33+0300\n"
-"PO-Revision-Date: 2016-05-12 19:21+0000\n"
-"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/otsaloma/nfoview/"
-"language/zh_CN/)\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2016-10-29 20:47+0300\n"
+"PO-Revision-Date: 2017-03-10 13:23+0000\n"
+"Last-Translator: Ricardo Borges Jr. <ricardoborges.jr@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/otsaloma/nfoview/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../data/nfoview.appdata.xml.in.h:1
 msgid ""
@@ -25,11 +24,11 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr ""
+msgstr "NFO Viewer é um visualizador simples de arquivos NFO, que são arte \"ASCII\" na página de código CP437. As vantagens de usar o NFO Viewer em vez de um editor de texto são definições de letra e codificação, tamanho automático da janela e hiperlinks clicáveis."
 
 #: ../data/nfoview.appdata.xml.in.h:2
 msgid "Main window"
-msgstr ""
+msgstr "Janela principal"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -42,96 +41,97 @@ msgstr "NFO Viewer"
 
 #: ../data/nfoview.desktop.in.h:2
 msgid "View NFO files"
-msgstr "浏览 NFO 文件"
+msgstr "Ver arquivos NFO"
 
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: ../data/nfoview.desktop.in.h:4
 msgid "information;"
-msgstr ""
+msgstr "Informações;"
 
 #: ../data/menu.ui.h:1
 msgid "_Open…"
-msgstr "打开(_O)…"
+msgstr "_Abrir..."
 
 #: ../data/menu.ui.h:2
 msgid "_Export Image…"
-msgstr ""
+msgstr "_Exportar Imagem..."
 
 #: ../data/menu.ui.h:3
 msgid "C_opy"
-msgstr ""
+msgstr "C_opiar"
 
 #: ../data/menu.ui.h:4
 msgid "_Select All"
-msgstr "全部选中(_S)"
+msgstr "_Selecionar Tudo"
 
 #: ../data/menu.ui.h:5
 msgid "_Wrap Lines"
-msgstr ""
+msgstr "_Quebrar Linhas"
 
 #: ../data/menu.ui.h:6
 msgid "_Preferences"
-msgstr "设置(_P)"
+msgstr "_Preferências"
 
 #: ../data/menu.ui.h:7
 msgid "_About"
-msgstr "关于(_A)"
+msgstr "_Sobre"
 
 #: ../data/menu.ui.h:8
 msgid "_Close"
-msgstr "关闭(_C)"
+msgstr "_Fechar"
 
 #: ../data/menu.ui.h:9
 msgid "_Quit"
-msgstr "退出(_Q)"
+msgstr "_Sair"
 
 #: ../data/preferences-dialog.ui.h:1
 msgid "Text"
-msgstr "文本"
+msgstr "Texto"
 
 #: ../data/preferences-dialog.ui.h:2
 msgid "_Font:"
-msgstr "字体(_F)"
+msgstr "_Fonte:"
 
 #: ../data/preferences-dialog.ui.h:3
 msgid "Li_ne-spacing:"
-msgstr ""
+msgstr "Espaço entre _linhas"
 
 #: ../data/preferences-dialog.ui.h:4
 msgid "Colors"
-msgstr "颜色"
+msgstr "Cores"
 
 #: ../data/preferences-dialog.ui.h:5
 msgid "_Schemes:"
-msgstr ""
+msgstr "E_squemas"
 
 #: ../data/preferences-dialog.ui.h:6
 msgid "Fo_reground:"
-msgstr "前景(_R)"
+msgstr "Pr_imeiro Plano"
 
 #: ../data/preferences-dialog.ui.h:7
 msgid "Bac_kground:"
-msgstr "背景(_K)"
+msgstr "Pl_ano de Fundo"
 
 #: ../data/preferences-dialog.ui.h:8
 msgid "_Link:"
-msgstr "链接(_L)"
+msgstr "_Link:"
 
 #: ../data/preferences-dialog.ui.h:9
 msgid "_Visited link:"
-msgstr "已访问链接(_V)"
+msgstr "_Link visitado:"
 
 #: ../data/preferences-dialog.ui.h:10
 msgid "Preferences"
-msgstr "设置"
+msgstr "Preferências"
 
 #: ../nfoview/about.py:36
 msgid "About NFO Viewer"
-msgstr "关于 NFO Viewer"
+msgstr "Sobre o NFO Viewer"
 
 #: ../nfoview/about.py:39
 msgid "Viewer for NFO files"
-msgstr "NFO 浏览器"
+msgstr "Visualizador de arquivos NFO"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -141,64 +141,64 @@ msgstr "NFO 浏览器"
 #. lines seperated by newlines (\n).
 #: ../nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Jonathan Ye <hyqianli@gmail.com>"
+msgstr "Ricardo Borges Jr. (ricardoborges.jr@gmail.com)"
 
 #: ../nfoview/about.py:57
 msgid "NFO Viewer Website"
-msgstr "NFO Viewer 网站"
+msgstr "Página Web do NFO Viewer"
 
 #: ../nfoview/export.py:34
 msgid "Export Image"
-msgstr ""
+msgstr "Expertar Imagem"
 
 #: ../nfoview/export.py:37 ../nfoview/open.py:37
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancelar"
 
 #: ../nfoview/export.py:38
 msgid "_Save"
-msgstr ""
+msgstr "_Salvar"
 
 #: ../nfoview/open.py:34
 msgid "Open"
-msgstr "打开"
+msgstr "Abrir"
 
 #: ../nfoview/open.py:38
 msgid "_Open"
-msgstr ""
+msgstr "_Abrir"
 
 #: ../nfoview/open.py:42
 msgid "All files"
-msgstr "所有文件"
+msgstr "Todos os arquivos"
 
 #: ../nfoview/open.py:46
 msgid "NFO files (*.nfo)"
-msgstr "NFO 文件 (*.nfo)"
+msgstr "Arquivos NFO (*.nfo)"
 
 #: ../nfoview/schemes.py:52
 msgid "Black on white"
-msgstr "白底黑字"
+msgstr "Preto no branco"
 
 #: ../nfoview/schemes.py:64
 msgid "Custom"
-msgstr "自定义"
+msgstr "Personalizado"
 
 #: ../nfoview/schemes.py:76
 msgid "Dark grey on light grey"
-msgstr "浅灰背景深灰字体颜色"
+msgstr "Cinza escuro no cinza claro"
 
 #: ../nfoview/schemes.py:91
 msgid "System theme"
-msgstr "系统主题"
+msgstr "Tema do sistema"
 
 #: ../nfoview/schemes.py:103
 msgid "Grey on black"
-msgstr "黑底灰字"
+msgstr "Cinza no preto"
 
 #: ../nfoview/schemes.py:115
 msgid "Light grey on dark grey"
-msgstr "深灰背景浅灰字体颜色"
+msgstr "Cinza claro no cinza escuro"
 
 #: ../nfoview/schemes.py:127
 msgid "White on black"
-msgstr "黑底白字"
+msgstr "Branco no preto"

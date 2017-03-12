@@ -6,7 +6,3 @@ intltool-update -m
 sleep 3 && [ -f missing ] && echo "Files missing." && exit 1
 echo "Updating nfoview.pot..."
 intltool-update -p -g nfoview
-for X in *.po; do
-    echo "Updating $X..."
-    msgmerge -UNq "$X" nfoview.pot
-done
