@@ -133,6 +133,7 @@ class WhiteOnBlack(ColorScheme):
 
 def get(name, fallback=None):
     """Return the color scheme with given name."""
+    _translate_labels()
     for class_name in __all__:
         scheme = globals()[class_name]
         if scheme.name == name:
@@ -144,6 +145,7 @@ def get(name, fallback=None):
 
 def get_all():
     """Return a list of all color schemes in proper order."""
+    _translate_labels()
     schemes = list(map(globals().get, __all__))
     schemes.remove(Default)
     schemes.remove(Custom)
@@ -151,3 +153,10 @@ def get_all():
     schemes.insert(0, Default)
     schemes.append(Custom)
     return schemes
+
+def _translate_labels():
+    """Translate all color scheme labels."""
+    for scheme in list(map(globals().get, __all__)):
+        if not hasattr(scheme, "untranslated_label"):
+            scheme.untranslated_label = scheme.label
+        scheme.label = _(scheme.untranslated_label)
