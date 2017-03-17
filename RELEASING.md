@@ -29,5 +29,4 @@ Releasing a New Version
     - `git push --tags`
 * Build Windows installer (see [`win32/RELEASING.md`](win32/RELEASING.md))
 * Add release notes and Windows installer on GitHub
-* Update web sites
-    - <http://otsaloma.io/nfoview/>
+* Update [web site](http://otsaloma.io/nfoview/)

@@ -1,3 +1,14 @@
+2017-03-18: NFO Viewer 1.22
+===========================
+
+* Fix window height calculation if line-spacing non-zero
+* Fix color scheme names not translated (#10)
+* Add Brazilian Portuguese translation (Ricardo Borges Jr.)
+* Add Romanian translation (Nicolae Crefelean)
+* Remove severely incomplete Swiss German, Italian and Simplified
+  Chinese translations
+* Update translations
+
 2016-10-29: NFO Viewer 1.21
 ===========================
 
