@@ -15,8 +15,9 @@ Releasing a New Version
     - `python3 -Wd bin/nfoview`
     - `pyflakes bin/nfoview nfoview setup.py`
     - `py.test --tb=no nfoview`
-* Bump version number
+* Bump version numbers
     - `nfoview/__init__.py`
+    - `win32/nfoview.iss`
 * Update `NEWS.md` and `TODO.md`
 * Check that installation works
     - `sudo python3 setup.py install --prefix=/usr/local`
