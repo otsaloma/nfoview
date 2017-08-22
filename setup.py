@@ -121,7 +121,7 @@ class InstallData(install_data):
         """Return a tuple for the translated appdata file."""
         path = os.path.join("data", "nfoview.appdata.xml")
         run_or_exit("intltool-merge -x po {}.in {}".format(path, path))
-        return ("share/appdata", (path,))
+        return ("share/metainfo", (path,))
 
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
