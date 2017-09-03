@@ -110,11 +110,11 @@ class TestModule(nfoview.TestCase):
 
     @patch("sys.platform", "linux2")
     def test_show_uri__unix(self):
-        nfoview.util.show_uri("http://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
 
     @patch("sys.platform", "win32")
     def test_show_uri__windows(self):
-        nfoview.util.show_uri("http://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
 
     @patch("sys.platform", "linux2")
     def test_uri_to_path__unix(self):

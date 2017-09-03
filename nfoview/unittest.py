@@ -43,7 +43,7 @@ class TestCase:
         handle, path = tempfile.mkstemp()
         f = os.fdopen(handle, "w")
         f.write("qwertyuiop asdfghjkl zxcvbnm\n")
-        f.write("http://otsaloma.io/nfoview/\n")
+        f.write("https://otsaloma.io/nfoview/\n")
         f.close()
         atexit.register(os.remove, path)
         return path
