@@ -24,5 +24,5 @@ win32\test-build.bat
 # winsetup.py: s/base="Win32GUI"/base=None/
 ```
 
-* Update version numbers in `win32/nfoview.iss` and compile with Inno Setup
+* Check `win32/nfoview.iss` and compile with Inno Setup
 * Install NFO Viewer and check that it works
