@@ -1,8 +1,36 @@
 #!/bin/sh
-# Update all translations with new strings.
-cd "$(dirname "$0")/../po" || exit 1
-echo "Searching for missing files..."
-intltool-update -m
-sleep 3 && [ -f missing ] && echo "Files missing." && exit 1
-echo "Updating nfoview.pot..."
-intltool-update -p -g nfoview
+cd "$(dirname "$0")/.." || exit 1
+truncate -s0 po/nfoview.pot
+# Python code
+xgettext --output=po/nfoview.pot \
+         --join-existing \
+         --from-code=UTF-8 \
+         --language=Python \
+         --keyword=_:1 \
+         --keyword=d_:2 \
+         --keyword=n_:1,2 \
+         --add-comments=TRANSLATORS: \
+         nfoview/*.py
+
+# GtkBuilder XML files
+xgettext --output=po/nfoview.pot \
+         --join-existing \
+         --from-code=UTF-8 \
+         data/*.ui
+
+# AppData XML file
+xgettext --output=po/nfoview.pot \
+         --join-existing \
+         --from-code=UTF-8 \
+         data/nfoview.appdata.xml.in
+
+# Desktop file
+xgettext --output=po/nfoview.pot \
+         --join-existing \
+         --from-code=UTF-8 \
+         --language=Desktop \
+         --keyword= \
+         --keyword=Name \
+         --keyword=Comment \
+         --keyword=Keywords \
+         data/nfoview.desktop.in

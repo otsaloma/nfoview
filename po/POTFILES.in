@@ -1,9 +1,0 @@
-data/nfoview.appdata.xml.in
-data/nfoview.desktop.in
-[type: gettext/glade]data/menu.ui
-[type: gettext/glade]data/preferences-dialog.ui
-nfoview/about.py
-nfoview/export.py
-nfoview/open.py
-nfoview/schemes.py
-nfoview/window.py

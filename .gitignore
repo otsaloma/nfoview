@@ -6,3 +6,4 @@ data/nfoview.appdata.xml
 data/nfoview.desktop
 dist
 locale
+po/LINGUAS

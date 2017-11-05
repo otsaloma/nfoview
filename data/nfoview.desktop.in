@@ -1,8 +1,8 @@
 [Desktop Entry]
-_Name=NFO Viewer
-_Comment=View NFO files
+Name=NFO Viewer
+Comment=View NFO files
 # TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-_Keywords=information;
+Keywords=information;
 Exec=nfoview %F
 Terminal=false
 StartupNotify=true
