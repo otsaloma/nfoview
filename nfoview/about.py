@@ -56,3 +56,13 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_website("https://otsaloma.io/nfoview/")
         self.set_website_label(_("NFO Viewer Website"))
         self.set_wrap_license(True)
+        with nfoview.util.silent(Exception, tb=True):
+            # Add donate button to the bottom of the dialog.
+            # This can fail if the dialog structure changes.
+            box = self.get_content_area()
+            button = Gtk.LinkButton(label=_("Donate"))
+            button.set_uri("https://www.paypal.me/otsaloma")
+            button.show()
+            box.pack_start(button, expand=False, fill=False, padding=0)
+            switcher = self.get_header_bar().get_children()[0]
+            switcher.get_children()[0].grab_focus()
