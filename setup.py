@@ -123,14 +123,22 @@ class InstallData(install_data):
         """Return a tuple for the translated appdata file."""
         path = os.path.join("data", "nfoview.appdata.xml")
         command = "msgfmt --xml -d po --template {}.in -o {}"
-        run_or_exit(command.format(path, path))
+        run_or_warn(command.format(path, path))
+        if not os.path.isfile(path):
+            # The above can fail with an old version of gettext,
+            # fall back on copying the file without translations.
+            shutil.copy("{}.in".format(path), path)
         return ("share/metainfo", (path,))
 
     def __get_desktop_file(self):
         """Return a tuple for the translated desktop file."""
         path = os.path.join("data", "nfoview.desktop")
         command = "msgfmt --desktop -d po --template {}.in -o {}"
-        run_or_exit(command.format(path, path))
+        run_or_warn(command.format(path, path))
+        if not os.path.isfile(path):
+            # The above can fail with an old version of gettext,
+            # fall back on copying the file without translations.
+            shutil.copy("{}.in".format(path), path)
         return ("share/applications", (path,))
 
     def __get_mo_file(self, po_file):
