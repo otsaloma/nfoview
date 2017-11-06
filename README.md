@@ -3,9 +3,9 @@ NFO Viewer
 
 [![Build Status](https://travis-ci.org/otsaloma/nfoview.svg)](https://travis-ci.org/otsaloma/nfoview)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
+[![Donate](https://img.shields.io/badge/donate-paypal.me-blue.svg)](https://www.paypal.me/otsaloma)
 [![Downloads](https://img.shields.io/github/downloads/otsaloma/nfoview/total.svg)](https://github.com/otsaloma/nfoview/releases)
 [![Downloads](https://img.shields.io/github/downloads/otsaloma/nfoview/latest/total.svg)](https://github.com/otsaloma/nfoview/releases/latest)
-[![Donate](https://img.shields.io/badge/donate-paypal.me-blue.svg)](https://www.paypal.me/otsaloma)
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
 the CP437 codepage. The advantages of using NFO Viewer instead of a text
