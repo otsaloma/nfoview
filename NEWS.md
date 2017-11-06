@@ -1,3 +1,11 @@
+2017-11-06: NFO Viewer 1.23
+===========================
+
+* Install AppData XML file under /usr/share/metainfo (#12)
+* Drop build dependency on intltool (use gettext instead, #3)
+* Add Donate button to about dialog
+* Update translations
+
 2017-03-18: NFO Viewer 1.22
 ===========================
 
