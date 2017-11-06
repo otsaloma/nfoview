@@ -1,142 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Osmo Salomaa <otsaloma@iki.fi>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 20:33+0300\n"
-"PO-Revision-Date: 2017-03-18 00:46+0200\n"
+"POT-Creation-Date: 2017-11-06 23:29+0200\n"
+"PO-Revision-Date: 2017-11-06 21:31+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/"
-"fi/)\n"
-"Language: fi\n"
+"Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/nfoview.appdata.xml.in.h:1
-msgid ""
-"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
-"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
-"are preset font and encoding settings, automatic window size and clickable "
-"hyperlinks."
-msgstr ""
-"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII"
-"\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
-"tekstieditoriin nähden ovat esiasetetut kirjasin- ja "
-"merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
-"hyperlinkit."
+#: nfoview/about.py:36
+msgid "About NFO Viewer"
+msgstr "Tietoja NFO-katselimesta"
 
-#: ../data/nfoview.appdata.xml.in.h:2
-msgid "Main window"
-msgstr "Pääikkuna"
+#: nfoview/about.py:39
+msgid "Viewer for NFO files"
+msgstr "Katselin NFO-tiedostoille"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
-#: ../nfoview/window.py:93
+#: nfoview/about.py:47 nfoview/window.py:93 data/nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "NFO-katselin"
-
-#: ../data/nfoview.desktop.in.h:2
-msgid "View NFO files"
-msgstr "Katsele NFO-tiedostoja"
-
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/nfoview.desktop.in.h:4
-msgid "information;"
-msgstr "tietoja;informaatio;"
-
-#: ../data/menu.ui.h:1
-msgid "_Open…"
-msgstr "_Avaa…"
-
-#: ../data/menu.ui.h:2
-msgid "_Export Image…"
-msgstr "_Vie kuva…"
-
-#: ../data/menu.ui.h:3
-msgid "C_opy"
-msgstr "_Kopioi"
-
-#: ../data/menu.ui.h:4
-msgid "_Select All"
-msgstr "_Valitse kaikki"
-
-#: ../data/menu.ui.h:5
-msgid "_Wrap Lines"
-msgstr "_Rivitä"
-
-#: ../data/menu.ui.h:6
-msgid "_Preferences"
-msgstr "_Asetukset"
-
-#: ../data/menu.ui.h:7
-msgid "_About"
-msgstr "_Tietoja"
-
-#: ../data/menu.ui.h:8
-msgid "_Close"
-msgstr "_Sulje"
-
-#: ../data/menu.ui.h:9
-msgid "_Quit"
-msgstr "_Lopeta"
-
-#: ../data/preferences-dialog.ui.h:1
-msgid "Text"
-msgstr "Teksti"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "_Font:"
-msgstr "_Kirjasin:"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Li_ne-spacing:"
-msgstr "_Riviväli:"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "Colors"
-msgstr "Värit"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "_Schemes:"
-msgstr "_Teemat:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Fo_reground:"
-msgstr "_Edusta:"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "Bac_kground:"
-msgstr "T_austa:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "_Link:"
-msgstr "_Linkki:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Visited link:"
-msgstr "_Vierailtu linkki:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: ../nfoview/about.py:36
-msgid "About NFO Viewer"
-msgstr "Tietoja NFO-katselimesta"
-
-#: ../nfoview/about.py:39
-msgid "Viewer for NFO files"
-msgstr "Katselin NFO-tiedostoille"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -144,66 +40,166 @@ msgstr "Katselin NFO-tiedostoille"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:54
+#: nfoview/about.py:54
 msgid "translator-credits"
 msgstr "Osmo Salomaa <otsaloma@iki.fi>"
 
-#: ../nfoview/about.py:57
+#: nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "NFO-katselimen www-sivut"
 
-#: ../nfoview/export.py:34
+#: nfoview/about.py:63
+msgid "Donate"
+msgstr "Lahjoita"
+
+#: nfoview/export.py:34
 msgid "Export Image"
 msgstr "Vie kuva"
 
-#: ../nfoview/export.py:37 ../nfoview/open.py:37
+#: nfoview/export.py:37 nfoview/open.py:37
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../nfoview/export.py:38
+#: nfoview/export.py:38
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: ../nfoview/open.py:34
+#: nfoview/open.py:34
 msgid "Open"
 msgstr "Avaa"
 
-#: ../nfoview/open.py:38
+#: nfoview/open.py:38
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../nfoview/open.py:42
+#: nfoview/open.py:42
 msgid "All files"
 msgstr "Kaikki tiedostot"
 
-#: ../nfoview/open.py:46
+#: nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "NFO-tiedostot (*.nfo)"
 
-#: ../nfoview/schemes.py:52
+#: nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Musta valkoisella"
 
-#: ../nfoview/schemes.py:64
+#: nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: ../nfoview/schemes.py:76
+#: nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Tumman harmaa vaalean harmaalla"
 
-#: ../nfoview/schemes.py:91
+#: nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Järjestelmän teema"
 
-#: ../nfoview/schemes.py:103
+#: nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Harmaa mustalla"
 
-#: ../nfoview/schemes.py:115
+#: nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Vaalean harmaa tumman harmaalla"
 
-#: ../nfoview/schemes.py:127
+#: nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Valkoinen mustalla"
+
+#: data/menu.ui:6
+msgid "_Open…"
+msgstr "_Avaa…"
+
+#: data/menu.ui:10
+msgid "_Export Image…"
+msgstr "_Vie kuva…"
+
+#: data/menu.ui:16
+msgid "C_opy"
+msgstr "_Kopioi"
+
+#: data/menu.ui:20
+msgid "_Select All"
+msgstr "_Valitse kaikki"
+
+#: data/menu.ui:24
+msgid "_Wrap Lines"
+msgstr "_Rivitä"
+
+#: data/menu.ui:30
+msgid "_Preferences"
+msgstr "_Asetukset"
+
+#: data/menu.ui:34
+msgid "_About"
+msgstr "_Tietoja"
+
+#: data/menu.ui:40
+msgid "_Close"
+msgstr "_Sulje"
+
+#: data/menu.ui:44
+msgid "_Quit"
+msgstr "_Lopeta"
+
+#: data/preferences-dialog.ui:51
+msgid "Text"
+msgstr "Teksti"
+
+#: data/preferences-dialog.ui:75
+msgid "_Font:"
+msgstr "_Kirjasin:"
+
+#: data/preferences-dialog.ui:89
+msgid "Li_ne-spacing:"
+msgstr "_Riviväli:"
+
+#: data/preferences-dialog.ui:153
+msgid "Colors"
+msgstr "Värit"
+
+#: data/preferences-dialog.ui:176
+msgid "_Schemes:"
+msgstr "_Teemat:"
+
+#: data/preferences-dialog.ui:190
+msgid "Fo_reground:"
+msgstr "_Edusta:"
+
+#: data/preferences-dialog.ui:204
+msgid "Bac_kground:"
+msgstr "T_austa:"
+
+#: data/preferences-dialog.ui:218
+msgid "_Link:"
+msgstr "_Linkki:"
+
+#: data/preferences-dialog.ui:232
+msgid "_Visited link:"
+msgstr "_Vierailtu linkki:"
+
+#: data/preferences-dialog.ui:332
+msgid "Preferences"
+msgstr "Asetukset"
+
+#: data/nfoview.appdata.xml.in:9
+msgid ""
+"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
+"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
+"are preset font and encoding settings, automatic window size and clickable "
+"hyperlinks."
+msgstr "NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut tekstieditoriin nähden ovat esiasetetut kirjasin- ja merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat hyperlinkit."
+
+#: data/nfoview.appdata.xml.in:17
+msgid "Main window"
+msgstr "Pääikkuna"
+
+#: data/nfoview.desktop.in:4
+msgid "View NFO files"
+msgstr "Katsele NFO-tiedostoja"
+
+#: data/nfoview.desktop.in:6
+msgid "information;"
+msgstr "tietoja;informaatio;"

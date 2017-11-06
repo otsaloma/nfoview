@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 20:47+0300\n"
-"PO-Revision-Date: 2017-01-06 15:50+0000\n"
+"POT-Creation-Date: 2017-11-06 23:29+0200\n"
+"PO-Revision-Date: 2017-11-06 21:30+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Swedish (http://www.transifex.com/otsaloma/nfoview/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -18,120 +18,21 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/nfoview.appdata.xml.in.h:1
-msgid ""
-"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
-"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
-"are preset font and encoding settings, automatic window size and clickable "
-"hyperlinks."
-msgstr "NFO Viewer är en enkel läsare för NFO-filer, vilket är \"ASCII-art \" i teckentabell CP437. Fördelen med att använda NFO Viewer, istället för en vanlig textredigerare, är förinställt teckensnitt och teckentabell, automatisk fönsterstorlek och klickbara hyperlänkar."
+#: nfoview/about.py:36
+msgid "About NFO Viewer"
+msgstr "Om NFO Viewer"
 
-#: ../data/nfoview.appdata.xml.in.h:2
-msgid "Main window"
-msgstr "Programfönster"
+#: nfoview/about.py:39
+msgid "Viewer for NFO files"
+msgstr "Läsare för NFO-filer"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
-#: ../nfoview/window.py:93
+#: nfoview/about.py:47 nfoview/window.py:93 data/nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
-
-#: ../data/nfoview.desktop.in.h:2
-msgid "View NFO files"
-msgstr "Visa NFO-filer"
-
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/nfoview.desktop.in.h:4
-msgid "information;"
-msgstr "information;"
-
-#: ../data/menu.ui.h:1
-msgid "_Open…"
-msgstr "_Öppna…"
-
-#: ../data/menu.ui.h:2
-msgid "_Export Image…"
-msgstr "_Exportera bild…"
-
-#: ../data/menu.ui.h:3
-msgid "C_opy"
-msgstr "_Kopiera"
-
-#: ../data/menu.ui.h:4
-msgid "_Select All"
-msgstr "_Markera alla"
-
-#: ../data/menu.ui.h:5
-msgid "_Wrap Lines"
-msgstr "_Radbryt"
-
-#: ../data/menu.ui.h:6
-msgid "_Preferences"
-msgstr "_Inställningar"
-
-#: ../data/menu.ui.h:7
-msgid "_About"
-msgstr "_Om"
-
-#: ../data/menu.ui.h:8
-msgid "_Close"
-msgstr "_Stäng"
-
-#: ../data/menu.ui.h:9
-msgid "_Quit"
-msgstr "_Avsluta"
-
-#: ../data/preferences-dialog.ui.h:1
-msgid "Text"
-msgstr "Text"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "_Font:"
-msgstr "_Teckensnitt:"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Li_ne-spacing:"
-msgstr "Radavstå_nd:"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "Colors"
-msgstr "Färger"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "_Schemes:"
-msgstr "_Tema:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Fo_reground:"
-msgstr "Fö_rgrund:"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "Bac_kground:"
-msgstr "Ba_kgrund:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "_Link:"
-msgstr "_Länk:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Visited link:"
-msgstr "_Besökt länk:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "Preferences"
-msgstr "Inställningar"
-
-#: ../nfoview/about.py:36
-msgid "About NFO Viewer"
-msgstr "Om NFO Viewer"
-
-#: ../nfoview/about.py:39
-msgid "Viewer for NFO files"
-msgstr "Läsare för NFO-filer"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -139,66 +40,166 @@ msgstr "Läsare för NFO-filer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:54
+#: nfoview/about.py:54
 msgid "translator-credits"
 msgstr "Åke Engelbrektson"
 
-#: ../nfoview/about.py:57
+#: nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "NFO Viewer Webbsida"
 
-#: ../nfoview/export.py:34
+#: nfoview/about.py:63
+msgid "Donate"
+msgstr ""
+
+#: nfoview/export.py:34
 msgid "Export Image"
 msgstr "Exportera bild"
 
-#: ../nfoview/export.py:37 ../nfoview/open.py:37
+#: nfoview/export.py:37 nfoview/open.py:37
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: ../nfoview/export.py:38
+#: nfoview/export.py:38
 msgid "_Save"
 msgstr "_Spara"
 
-#: ../nfoview/open.py:34
+#: nfoview/open.py:34
 msgid "Open"
 msgstr "Öppna"
 
-#: ../nfoview/open.py:38
+#: nfoview/open.py:38
 msgid "_Open"
 msgstr "_Öppna"
 
-#: ../nfoview/open.py:42
+#: nfoview/open.py:42
 msgid "All files"
 msgstr "Alla filer"
 
-#: ../nfoview/open.py:46
+#: nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "NFO-filer (*.nfo)"
 
-#: ../nfoview/schemes.py:52
+#: nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Svart på vitt"
 
-#: ../nfoview/schemes.py:64
+#: nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Anpassa"
 
-#: ../nfoview/schemes.py:76
+#: nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Mörkgrå på ljusgrå"
 
-#: ../nfoview/schemes.py:91
+#: nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Systemtema"
 
-#: ../nfoview/schemes.py:103
+#: nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Grå på svart"
 
-#: ../nfoview/schemes.py:115
+#: nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Ljusgrå på mörkgrå"
 
-#: ../nfoview/schemes.py:127
+#: nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Vitt på svart"
+
+#: data/menu.ui:6
+msgid "_Open…"
+msgstr "_Öppna…"
+
+#: data/menu.ui:10
+msgid "_Export Image…"
+msgstr "_Exportera bild…"
+
+#: data/menu.ui:16
+msgid "C_opy"
+msgstr "_Kopiera"
+
+#: data/menu.ui:20
+msgid "_Select All"
+msgstr "_Markera alla"
+
+#: data/menu.ui:24
+msgid "_Wrap Lines"
+msgstr "_Radbryt"
+
+#: data/menu.ui:30
+msgid "_Preferences"
+msgstr "_Inställningar"
+
+#: data/menu.ui:34
+msgid "_About"
+msgstr "_Om"
+
+#: data/menu.ui:40
+msgid "_Close"
+msgstr "_Stäng"
+
+#: data/menu.ui:44
+msgid "_Quit"
+msgstr "_Avsluta"
+
+#: data/preferences-dialog.ui:51
+msgid "Text"
+msgstr "Text"
+
+#: data/preferences-dialog.ui:75
+msgid "_Font:"
+msgstr "_Teckensnitt:"
+
+#: data/preferences-dialog.ui:89
+msgid "Li_ne-spacing:"
+msgstr "Radavstå_nd:"
+
+#: data/preferences-dialog.ui:153
+msgid "Colors"
+msgstr "Färger"
+
+#: data/preferences-dialog.ui:176
+msgid "_Schemes:"
+msgstr "_Tema:"
+
+#: data/preferences-dialog.ui:190
+msgid "Fo_reground:"
+msgstr "Fö_rgrund:"
+
+#: data/preferences-dialog.ui:204
+msgid "Bac_kground:"
+msgstr "Ba_kgrund:"
+
+#: data/preferences-dialog.ui:218
+msgid "_Link:"
+msgstr "_Länk:"
+
+#: data/preferences-dialog.ui:232
+msgid "_Visited link:"
+msgstr "_Besökt länk:"
+
+#: data/preferences-dialog.ui:332
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: data/nfoview.appdata.xml.in:9
+msgid ""
+"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
+"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
+"are preset font and encoding settings, automatic window size and clickable "
+"hyperlinks."
+msgstr "NFO Viewer är en enkel läsare för NFO-filer, vilket är \"ASCII-art \" i teckentabell CP437. Fördelen med att använda NFO Viewer, istället för en vanlig textredigerare, är förinställt teckensnitt och teckentabell, automatisk fönsterstorlek och klickbara hyperlänkar."
+
+#: data/nfoview.appdata.xml.in:17
+msgid "Main window"
+msgstr "Programfönster"
+
+#: data/nfoview.desktop.in:4
+msgid "View NFO files"
+msgstr "Visa NFO-filer"
+
+#: data/nfoview.desktop.in:6
+msgid "information;"
+msgstr "information;"

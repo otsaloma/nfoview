@@ -1,137 +1,37 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-23 20:33+0300\n"
-"PO-Revision-Date: 2016-05-12 19:21+0000\n"
+"POT-Creation-Date: 2017-11-06 23:29+0200\n"
+"PO-Revision-Date: 2017-11-06 21:30+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Serbian (http://www.transifex.com/otsaloma/nfoview/language/"
-"sr/)\n"
-"Language: sr\n"
+"Language-Team: Serbian (http://www.transifex.com/otsaloma/nfoview/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../data/nfoview.appdata.xml.in.h:1
-msgid ""
-"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
-"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
-"are preset font and encoding settings, automatic window size and clickable "
-"hyperlinks."
-msgstr ""
+#: nfoview/about.py:36
+msgid "About NFO Viewer"
+msgstr "О програму"
 
-#: ../data/nfoview.appdata.xml.in.h:2
-msgid "Main window"
-msgstr ""
+#: nfoview/about.py:39
+msgid "Viewer for NFO files"
+msgstr "Прегледач НФО датотека"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: ../data/nfoview.desktop.in.h:1 ../nfoview/about.py:47
-#: ../nfoview/window.py:93
+#: nfoview/about.py:47 nfoview/window.py:93 data/nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "НФО Прегледач"
-
-#: ../data/nfoview.desktop.in.h:2
-msgid "View NFO files"
-msgstr "Прегледај НФО датотеке"
-
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: ../data/nfoview.desktop.in.h:4
-msgid "information;"
-msgstr ""
-
-#: ../data/menu.ui.h:1
-msgid "_Open…"
-msgstr "_Отвори…"
-
-#: ../data/menu.ui.h:2
-msgid "_Export Image…"
-msgstr ""
-
-#: ../data/menu.ui.h:3
-msgid "C_opy"
-msgstr ""
-
-#: ../data/menu.ui.h:4
-msgid "_Select All"
-msgstr "Одабери _све"
-
-#: ../data/menu.ui.h:5
-msgid "_Wrap Lines"
-msgstr "О_бмотај линије"
-
-#: ../data/menu.ui.h:6
-msgid "_Preferences"
-msgstr "_Подешавања"
-
-#: ../data/menu.ui.h:7
-msgid "_About"
-msgstr "_О програму"
-
-#: ../data/menu.ui.h:8
-msgid "_Close"
-msgstr "_Затвори"
-
-#: ../data/menu.ui.h:9
-msgid "_Quit"
-msgstr "_Изађи"
-
-#: ../data/preferences-dialog.ui.h:1
-msgid "Text"
-msgstr "Текст"
-
-#: ../data/preferences-dialog.ui.h:2
-msgid "_Font:"
-msgstr "_Фонт:"
-
-#: ../data/preferences-dialog.ui.h:3
-msgid "Li_ne-spacing:"
-msgstr "_Међупростор:"
-
-#: ../data/preferences-dialog.ui.h:4
-msgid "Colors"
-msgstr "Боје"
-
-#: ../data/preferences-dialog.ui.h:5
-msgid "_Schemes:"
-msgstr "_Шеме:"
-
-#: ../data/preferences-dialog.ui.h:6
-msgid "Fo_reground:"
-msgstr "_Текст:"
-
-#: ../data/preferences-dialog.ui.h:7
-msgid "Bac_kground:"
-msgstr "_Позадина:"
-
-#: ../data/preferences-dialog.ui.h:8
-msgid "_Link:"
-msgstr "_Веза:"
-
-#: ../data/preferences-dialog.ui.h:9
-msgid "_Visited link:"
-msgstr "П_осећена веза:"
-
-#: ../data/preferences-dialog.ui.h:10
-msgid "Preferences"
-msgstr "Подешавања"
-
-#: ../nfoview/about.py:36
-msgid "About NFO Viewer"
-msgstr "О програму"
-
-#: ../nfoview/about.py:39
-msgid "Viewer for NFO files"
-msgstr "Прегледач НФО датотека"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -139,66 +39,166 @@ msgstr "Прегледач НФО датотека"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: ../nfoview/about.py:54
+#: nfoview/about.py:54
 msgid "translator-credits"
 msgstr "Goran Velemirov <psickloop@gmail.com>, 2010"
 
-#: ../nfoview/about.py:57
+#: nfoview/about.py:57
 msgid "NFO Viewer Website"
 msgstr "Сајт НФО прегледача"
 
-#: ../nfoview/export.py:34
+#: nfoview/about.py:63
+msgid "Donate"
+msgstr ""
+
+#: nfoview/export.py:34
 msgid "Export Image"
 msgstr ""
 
-#: ../nfoview/export.py:37 ../nfoview/open.py:37
+#: nfoview/export.py:37 nfoview/open.py:37
 msgid "_Cancel"
 msgstr ""
 
-#: ../nfoview/export.py:38
+#: nfoview/export.py:38
 msgid "_Save"
 msgstr ""
 
-#: ../nfoview/open.py:34
+#: nfoview/open.py:34
 msgid "Open"
 msgstr "Отвори"
 
-#: ../nfoview/open.py:38
+#: nfoview/open.py:38
 msgid "_Open"
 msgstr ""
 
-#: ../nfoview/open.py:42
+#: nfoview/open.py:42
 msgid "All files"
 msgstr "Све датотеке"
 
-#: ../nfoview/open.py:46
+#: nfoview/open.py:46
 msgid "NFO files (*.nfo)"
 msgstr "НФО датотеке (*.nfo)"
 
-#: ../nfoview/schemes.py:52
+#: nfoview/schemes.py:52
 msgid "Black on white"
 msgstr "Црно на белом"
 
-#: ../nfoview/schemes.py:64
+#: nfoview/schemes.py:64
 msgid "Custom"
 msgstr "Прилагођено"
 
-#: ../nfoview/schemes.py:76
+#: nfoview/schemes.py:76
 msgid "Dark grey on light grey"
 msgstr "Тамно-сиво на светло-сивом"
 
-#: ../nfoview/schemes.py:91
+#: nfoview/schemes.py:91
 msgid "System theme"
 msgstr "Тема система"
 
-#: ../nfoview/schemes.py:103
+#: nfoview/schemes.py:103
 msgid "Grey on black"
 msgstr "Сиво на црном"
 
-#: ../nfoview/schemes.py:115
+#: nfoview/schemes.py:115
 msgid "Light grey on dark grey"
 msgstr "Светло-сиво на тамно-сивом"
 
-#: ../nfoview/schemes.py:127
+#: nfoview/schemes.py:127
 msgid "White on black"
 msgstr "Бело на црном"
+
+#: data/menu.ui:6
+msgid "_Open…"
+msgstr "_Отвори…"
+
+#: data/menu.ui:10
+msgid "_Export Image…"
+msgstr ""
+
+#: data/menu.ui:16
+msgid "C_opy"
+msgstr ""
+
+#: data/menu.ui:20
+msgid "_Select All"
+msgstr "Одабери _све"
+
+#: data/menu.ui:24
+msgid "_Wrap Lines"
+msgstr "О_бмотај линије"
+
+#: data/menu.ui:30
+msgid "_Preferences"
+msgstr "_Подешавања"
+
+#: data/menu.ui:34
+msgid "_About"
+msgstr "_О програму"
+
+#: data/menu.ui:40
+msgid "_Close"
+msgstr "_Затвори"
+
+#: data/menu.ui:44
+msgid "_Quit"
+msgstr "_Изађи"
+
+#: data/preferences-dialog.ui:51
+msgid "Text"
+msgstr "Текст"
+
+#: data/preferences-dialog.ui:75
+msgid "_Font:"
+msgstr "_Фонт:"
+
+#: data/preferences-dialog.ui:89
+msgid "Li_ne-spacing:"
+msgstr "_Међупростор:"
+
+#: data/preferences-dialog.ui:153
+msgid "Colors"
+msgstr "Боје"
+
+#: data/preferences-dialog.ui:176
+msgid "_Schemes:"
+msgstr "_Шеме:"
+
+#: data/preferences-dialog.ui:190
+msgid "Fo_reground:"
+msgstr "_Текст:"
+
+#: data/preferences-dialog.ui:204
+msgid "Bac_kground:"
+msgstr "_Позадина:"
+
+#: data/preferences-dialog.ui:218
+msgid "_Link:"
+msgstr "_Веза:"
+
+#: data/preferences-dialog.ui:232
+msgid "_Visited link:"
+msgstr "П_осећена веза:"
+
+#: data/preferences-dialog.ui:332
+msgid "Preferences"
+msgstr "Подешавања"
+
+#: data/nfoview.appdata.xml.in:9
+msgid ""
+"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
+"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
+"are preset font and encoding settings, automatic window size and clickable "
+"hyperlinks."
+msgstr ""
+
+#: data/nfoview.appdata.xml.in:17
+msgid "Main window"
+msgstr ""
+
+#: data/nfoview.desktop.in:4
+msgid "View NFO files"
+msgstr "Прегледај НФО датотеке"
+
+#: data/nfoview.desktop.in:6
+msgid "information;"
+msgstr ""
