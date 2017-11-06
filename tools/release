@@ -7,7 +7,7 @@ git status --porcelain
 printf "\nRelease version: $VERSION\n"
 read -p "Press Enter to continue or Ctrl+C to abort: "
 git commit -a -m "RELEASE $VERSION"
-git tag -s $VERSION
+git tag -s -m "RELEASE $VERSION" $VERSION
 git push
 git push --tags
 # Add release notes and possible downloads.
