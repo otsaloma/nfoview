@@ -33,4 +33,5 @@ xgettext --output=po/nfoview.pot \
          --keyword=Name \
          --keyword=Comment \
          --keyword=Keywords \
+         --add-comments=TRANSLATORS: \
          data/nfoview.desktop.in
