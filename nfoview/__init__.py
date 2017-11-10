@@ -59,7 +59,7 @@ def main(paths):
     # use the reverse domain application ID with Gtk.Application.
     # https://wiki.gnome.org/Projects/GnomeShell/ApplicationBased
     # https://github.com/otsaloma/gaupol/issues/62
-    GLib.set_prgname("gaupol")
+    GLib.set_prgname("nfoview")
     i18n.bind()
     app = Application(paths)
     raise SystemExit(app.run())
