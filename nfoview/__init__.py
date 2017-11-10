@@ -31,6 +31,8 @@ import gi
 gi.require_version("Gdk", "3.0")
 gi.require_version("Gtk", "3.0")
 
+from gi.repository import GLib
+
 from nfoview.paths import *
 from nfoview import util
 from nfoview import i18n
@@ -53,6 +55,11 @@ from nfoview.unittest import *
 def main(paths):
     """Initialize application."""
     global app
+    # Needed to see application icon on Wayland, while we don't yet
+    # use the reverse domain application ID with Gtk.Application.
+    # https://wiki.gnome.org/Projects/GnomeShell/ApplicationBased
+    # https://github.com/otsaloma/gaupol/issues/62
+    GLib.set_prgname("gaupol")
     i18n.bind()
     app = Application(paths)
     raise SystemExit(app.run())
