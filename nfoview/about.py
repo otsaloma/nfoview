@@ -37,7 +37,7 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_transient_for(parent)
         self.set_authors(("Osmo Salomaa <otsaloma@iki.fi>",))
         self.set_comments(_("Viewer for NFO files"))
-        self.set_copyright("Copyright © 2005–2017 Osmo Salomaa")
+        self.set_copyright("Copyright © 2005–2018 Osmo Salomaa")
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_logo_icon_name("nfoview")
         # TRANSLATORS: The application name "NFO Viewer" has been intentionally
