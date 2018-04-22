@@ -17,22 +17,19 @@ process: (1) writing the nfoview.paths module and (2) handling translations.
     appdata and desktop files are translated. This requires gettext.
 """
 
-import distutils.command.clean
-import distutils.command.install
-import distutils.command.install_data
-import distutils.command.install_lib
+import distutils
 import glob
 import os
 import re
 import shutil
 
-freezing = "NFOVIEW_FREEZING" in os.environ
+from distutils import log
+from distutils.command.clean import clean
+from distutils.command.install import install
+from distutils.command.install_data import install_data
+from distutils.command.install_lib import install_lib
 
-clean = distutils.command.clean.clean
-install = distutils.command.install.install
-install_data = distutils.command.install_data.install_data
-install_lib = distutils.command.install_lib.install_lib
-log = distutils.log
+freezing = "NFOVIEW_FREEZING" in os.environ
 
 
 def get_version():

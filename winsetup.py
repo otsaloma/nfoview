@@ -8,7 +8,7 @@ import os
 import site
 
 os.environ["NFOVIEW_FREEZING"] = "1"
-from setup import *
+from setup import setup_kwargs
 import cx_Freeze
 
 includes = ["cairo", "nfoview", "gi"]
@@ -37,7 +37,7 @@ setup_kwargs.update(dict(
 ))
 
 def patch_build():
-    # XXX: Enable header bars on builtin GTK+ dialogs?
+    # Enable header bars on builtin GTK+ dialogs.
     path = glob.glob("build/exe.*/etc/gtk-3.0/settings.ini")[0]
     print("patching {}".format(path))
     with open(path, "a", encoding="us_ascii") as f:
