@@ -27,7 +27,7 @@ can install these with the following command.
 
 Then, to install NFO Viewer, run command
 
-    python3 setup.py install --prefix=/usr/local
+    sudo python3 setup.py install --prefix=/usr/local
 
 [packages]: https://repology.org/metapackage/nfoview
 
