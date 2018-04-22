@@ -33,24 +33,48 @@ gi.require_version("Gtk", "3.0")
 
 from gi.repository import GLib
 
-from nfoview.paths import *
+from nfoview.paths import CONFIG_HOME_DIR
+from nfoview.paths import DATA_DIR
+from nfoview.paths import LOCALE_DIR
 from nfoview import util
 from nfoview import i18n
-from nfoview.errors import *
-from nfoview.config import *
+from nfoview.errors import AffirmationError
+from nfoview.config import ConfigurationStore
 conf = ConfigurationStore(read=True)
 from nfoview import schemes
-from nfoview.builder import *
-from nfoview.about import *
-from nfoview.open import *
-from nfoview.preferences import *
-from nfoview.export import *
-from nfoview.view import *
-from nfoview.action import *
+from nfoview.builder import BuilderDialog
+from nfoview.about import AboutDialog
+from nfoview.open import OpenDialog
+from nfoview.preferences import PreferencesDialog
+from nfoview.export import ExportImageDialog
+from nfoview.view import TextView
+from nfoview.action import Action
+from nfoview.action import ToggleAction
 from nfoview import actions
-from nfoview.window import *
-from nfoview.application import *
-from nfoview.unittest import *
+from nfoview.window import Window
+from nfoview.application import Application
+from nfoview.unittest import TestCase
+
+assert AboutDialog
+assert Action
+assert actions
+assert AffirmationError
+assert Application
+assert BuilderDialog
+assert CONFIG_HOME_DIR
+assert ConfigurationStore
+assert DATA_DIR
+assert ExportImageDialog
+assert i18n
+assert LOCALE_DIR
+assert OpenDialog
+assert PreferencesDialog
+assert schemes
+assert TestCase
+assert TextView
+assert ToggleAction
+assert util
+assert Window
 
 def main(paths):
     """Initialize application."""
