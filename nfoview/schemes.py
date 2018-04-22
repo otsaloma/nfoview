@@ -84,8 +84,8 @@ class Default(ColorScheme):
 
     """Color scheme with system default colors."""
 
-    # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/_colors-public.scss
-    # http://git.gnome.org/browse/gtk+/tree/gtk/theme/Adwaita/gtk-contained.css
+    # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/_colors-public.scss
+    # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/gtk-contained.css
 
     name         = "default"
     label        = _("System theme")

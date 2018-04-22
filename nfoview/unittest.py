@@ -34,9 +34,8 @@ class TestCase:
             function(*args, **kwargs)
         except exception:
             return
-        raise AssertionError("{} failed to raise {}"
-                             .format(repr(function),
-                                     repr(exception)))
+        raise AssertionError("{} failed to raise {}".format(
+            repr(function), repr(exception)))
 
     def new_nfo_file(self):
         """Return path to a new temporary NFO file."""
