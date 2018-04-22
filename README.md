@@ -2,42 +2,39 @@ NFO Viewer
 ==========
 
 [![Build Status](https://travis-ci.org/otsaloma/nfoview.svg)](https://travis-ci.org/otsaloma/nfoview)
+[![Packages](https://repology.org/badge/tiny-repos/nfoview.svg)](https://repology.org/metapackage/nfoview)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
 [![Donate](https://img.shields.io/badge/donate-paypal.me-blue.svg)](https://www.paypal.me/otsaloma)
-[![Packages](https://repology.org/badge/tiny-repos/nfoview.svg)](https://repology.org/metapackage/nfoview)
-[![Downloads](https://img.shields.io/github/downloads/otsaloma/nfoview/total.svg)](https://github.com/otsaloma/nfoview/releases)
-[![Downloads](https://img.shields.io/github/downloads/otsaloma/nfoview/latest/total.svg)](https://github.com/otsaloma/nfoview/releases/latest)
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
 the CP437 codepage. The advantages of using NFO Viewer instead of a text
 editor are preset font and encoding settings, automatic window size and
 clickable hyperlinks.
 
-NFO Viewer is free software released under the GNU General Public
-License (GPL), see the file [`COPYING`](COPYING) for details.
+## Installing
 
-Dependencies
-============
+### Linux
 
-NFO Viewer requires [Python][1] 3.2 or greater, [PyGObject][2] 3.0.0 or
-greater and [GTK+][3] 3.12 or greater. [Terminus font][4] is recommended
-and used by default.
+NFO Viewer is packaged for most of the popular [distros][packages], so
+easiest is to install via your distro's package management. If you need
+a newer version than packaged, read on.
 
-[1]: http://www.python.org/
-[2]: http://wiki.gnome.org/Projects/PyGObject
-[3]: http://www.gtk.org/
-[4]: http://terminus-font.sourceforge.net/
+NFO Viewer requires Python ≥ 3.2, PyGObject ≥ 3.0.0 and GTK+ ≥ 3.12.
+Additionally, during installation you need gettext. On Debian/Ubuntu you
+can install these with the following command.
 
-Terminus font is used by default because it renders drawing characters
-taller than text characters. You can use any other fixed width font that
-has support for the necessary CP437 drawing characters (e.g. DejaVu Sans
-Mono), but with them you need to decrease the line-spacing (to a
-negative value that depends on the font and font size) in order to
-remove blank space between adjacent lines of drawing characters.
+    sudo apt install python3 python3-gi gir1.2-gtk-3.0 gettext
 
-Running
-=======
+Then, to install NFO Viewer, run command
 
-To try NFO Viewer from the source directory without installation, use
-command `bin/nfoview`. For installing NFO Viewer, see the file
-[`INSTALL.md`](INSTALL.md).
+    python3 setup.py install --prefix=/usr/local
+
+[packages]: https://repology.org/metapackage/nfoview
+
+### Windows
+
+See the [releases page][releases] for installers. Note that Windows
+packaging will sometimes be a bit behind and might sometimes skip a
+version, so you might need to look further than the latest release.
+
+[releases]: https://github.com/otsaloma/nfoview/releases
