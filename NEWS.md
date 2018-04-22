@@ -1,3 +1,9 @@
+2018-04-22: NFO Viewer 1.24
+===========================
+
+* Fix possibly missing icon in GNOME shell on Wayland
+* Update translations
+
 2017-11-06: NFO Viewer 1.23
 ===========================
 

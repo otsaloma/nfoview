@@ -17,7 +17,7 @@
 
 """Viewer for NFO files."""
 
-__version__ = "1.23"
+__version__ = "1.24"
 
 import sys
 import warnings
