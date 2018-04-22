@@ -3,29 +3,28 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# mauron, 2015
-# mauron, 2015-2017
+# Irriep Nala Novram <allannkorh@yahoo.fr>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-22 19:15+0300\n"
-"PO-Revision-Date: 2017-11-07 17:27+0000\n"
-"Last-Translator: mauron\n"
-"Language-Team: Turkish (http://www.transifex.com/otsaloma/nfoview/language/tr/)\n"
+"PO-Revision-Date: 2017-12-15 16:09+0000\n"
+"Last-Translator: Irriep Nala Novram <allannkorh@yahoo.fr>\n"
+"Language-Team: Breton (http://www.transifex.com/otsaloma/nfoview/language/br/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
+"Language: br\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: nfoview/about.py:36
 msgid "About NFO Viewer"
-msgstr "NFO Viewer hakkında"
+msgstr "Diwar-benn NFO Gweler"
 
 #: nfoview/about.py:39
 msgid "Viewer for NFO files"
-msgstr "NFO dosyaları için görüntüleyici"
+msgstr "Gweler evit ar restroù NFO"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -43,147 +42,147 @@ msgstr "NFO Viewer"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Anonim"
+msgstr "Kreditoù an droerien"
 
 #: nfoview/about.py:57
 msgid "NFO Viewer Website"
-msgstr "NFO Viewer ağ sitesi"
+msgstr "Lec'hienn internet NFO Viewer"
 
 #: nfoview/about.py:63
 msgid "Donate"
-msgstr "Bağış yap"
+msgstr "Reiñ arc'hant"
 
 #: nfoview/export.py:34
 msgid "Export Image"
-msgstr "Resmi dışa aktar"
+msgstr "Ezporzhiañ ar skeudenn"
 
 #: nfoview/export.py:37 nfoview/open.py:37
 msgid "_Cancel"
-msgstr "_İptal"
+msgstr "_Nullañ"
 
 #: nfoview/export.py:38
 msgid "_Save"
-msgstr "_Kaydet"
+msgstr "_Enrollañ"
 
 #: nfoview/open.py:34
 msgid "Open"
-msgstr "Aç"
+msgstr "Digeriñ"
 
 #: nfoview/open.py:38
 msgid "_Open"
-msgstr "_Aç"
+msgstr "_Digeriñ"
 
 #: nfoview/open.py:42
 msgid "All files"
-msgstr "Tüm dosyalar"
+msgstr "An holl restroù"
 
 #: nfoview/open.py:46
 msgid "NFO files (*.nfo)"
-msgstr "NFO dosyaları (*.nfo)"
+msgstr "Restroù NFO (*.nfo)"
 
 #: nfoview/schemes.py:52
 msgid "Black on white"
-msgstr "Beyaz üzerinde siyah"
+msgstr "Du pe wenn"
 
 #: nfoview/schemes.py:64
 msgid "Custom"
-msgstr "Kişisel"
+msgstr "Personelaat"
 
 #: nfoview/schemes.py:76
 msgid "Dark grey on light grey"
-msgstr "Açık gri üzerinde koyu gri"
+msgstr "Gris teñval pe gris sklaer"
 
 #: nfoview/schemes.py:91
 msgid "System theme"
-msgstr "Sistem teması"
+msgstr "Tem ar sistem"
 
 #: nfoview/schemes.py:103
 msgid "Grey on black"
-msgstr "Siyah üzerinde gri"
+msgstr "Gris war du"
 
 #: nfoview/schemes.py:115
 msgid "Light grey on dark grey"
-msgstr "Koyu gri üzerinde açık gri"
+msgstr "Gris sklaer war gris teñval"
 
 #: nfoview/schemes.py:127
 msgid "White on black"
-msgstr "Siyah üzerinde beyaz"
+msgstr "Gwenn war du"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "A_ç…"
+msgstr "_Digeriñ..."
 
 #: data/menu.ui:10
 msgid "_Export Image…"
-msgstr "Resmi dı_şa aktar…"
+msgstr "_Ezporzhiañ ar skeudenn..."
 
 #: data/menu.ui:16
 msgid "C_opy"
-msgstr "K_opyala"
+msgstr "E_ilañ"
 
 #: data/menu.ui:20
 msgid "_Select All"
-msgstr "Tümü_nü seç"
+msgstr "_Diuziñ an holl"
 
 #: data/menu.ui:24
 msgid "_Wrap Lines"
-msgstr "_Satırların uzunluğunu sınırla"
+msgstr " _Bevenniñ hirder al linennoù"
 
 #: data/menu.ui:30
 msgid "_Preferences"
-msgstr "_Tercihler"
+msgstr "_Arventennoù"
 
 #: data/menu.ui:34
 msgid "_About"
-msgstr "NFO Viewer _hakkında"
+msgstr "_Diwar-benn"
 
 #: data/menu.ui:40
 msgid "_Close"
-msgstr "K_apat"
+msgstr "_Serriñ"
 
 #: data/menu.ui:44
 msgid "_Quit"
-msgstr "Çı_k"
+msgstr "_Kuitaat"
 
 #: data/preferences-dialog.ui:51
 msgid "Text"
-msgstr "Metin"
+msgstr "Testenn"
 
 #: data/preferences-dialog.ui:75
 msgid "_Font:"
-msgstr "_Yazıtipi:"
+msgstr "_Font:"
 
 #: data/preferences-dialog.ui:89
 msgid "Li_ne-spacing:"
-msgstr "_Satır aralığı:"
+msgstr "Etrelinenn:"
 
 #: data/preferences-dialog.ui:153
 msgid "Colors"
-msgstr "Renkler"
+msgstr "Livioù"
 
 #: data/preferences-dialog.ui:176
 msgid "_Schemes:"
-msgstr "_Şema:"
+msgstr "_Chemaioù:"
 
 #: data/preferences-dialog.ui:190
 msgid "Fo_reground:"
-msgstr "_Ön plan:"
+msgstr "_Rak-leur:"
 
 #: data/preferences-dialog.ui:204
 msgid "Bac_kground:"
-msgstr "_Zemin:"
+msgstr "Dre_k-leur:"
 
 #: data/preferences-dialog.ui:218
 msgid "_Link:"
-msgstr "_Bağlantı:"
+msgstr "_Liamm:"
 
 #: data/preferences-dialog.ui:232
 msgid "_Visited link:"
-msgstr "Ziyaret edilmiş ba_ğlantı:"
+msgstr "Liamm _gweladennet:"
 
 #: data/preferences-dialog.ui:332
 msgid "Preferences"
-msgstr "Tercihler"
+msgstr "Arventennoù"
 
 #: data/nfoview.appdata.xml.in:9
 msgid ""
@@ -191,18 +190,18 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr "NFO Viewer, kod sayfası 437 ile yapılmış \"ASCII\" sanatı olan NFO dosyaları için sade bir görüntüleyicidir. Bir metin düzenleyicisi yerine NFO Viewer'ı kullanmanın avantajları, önayarlı yazıtipi ile kodlama, otomatik pencere boyutlanması ve tıklanabilir bağlantılardır."
+msgstr "NFO Viewer a zo ur welerezh eeun evit ar restroù NFO hag a zo an arz « ASCII » graet en ur ober gant ar bajenn god 437. Spletustoù NFO Viewer e-lerc'h un embanner testennoù a zo an enkodiñ arventennoù hag ar polisoù skrivañ raktermenet, an em-ventañ prinistri hag al liammoù klikus."
 
 #: data/nfoview.appdata.xml.in:17
 msgid "Main window"
-msgstr "Ana pencere"
+msgstr "Prenestr pennañ"
 
 #: data/nfoview.desktop.in:4
 msgid "View NFO files"
-msgstr "NFO dosyalarını görüntüle"
+msgstr "Gwelet ar restroù NFO"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/nfoview.desktop.in:6
 msgid "information;"
-msgstr "belge;göster;"
+msgstr "titouroù;"

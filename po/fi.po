@@ -1,21 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Osmo Salomaa <otsaloma@iki.fi>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 23:29+0200\n"
-"PO-Revision-Date: 2017-11-06 21:31+0000\n"
+"POT-Creation-Date: 2018-04-22 19:15+0300\n"
+"PO-Revision-Date: 2018-04-22 19:15+0300\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/"
+"fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: nfoview/about.py:36
@@ -190,7 +191,12 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr "NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut tekstieditoriin nähden ovat esiasetetut kirjasin- ja merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat hyperlinkit."
+msgstr ""
+"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII"
+"\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
+"tekstieditoriin nähden ovat esiasetetut kirjasin- ja "
+"merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
+"hyperlinkit."
 
 #: data/nfoview.appdata.xml.in:17
 msgid "Main window"
@@ -200,6 +206,7 @@ msgstr "Pääikkuna"
 msgid "View NFO files"
 msgstr "Katsele NFO-tiedostoja"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/nfoview.desktop.in:6
 msgid "information;"
 msgstr "tietoja;informaatio;"

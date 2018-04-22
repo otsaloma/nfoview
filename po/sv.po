@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 23:29+0200\n"
-"PO-Revision-Date: 2017-11-06 21:30+0000\n"
-"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"POT-Creation-Date: 2018-04-22 19:15+0300\n"
+"PO-Revision-Date: 2017-11-07 04:28+0000\n"
+"Last-Translator: Åke Engelbrektson\n"
 "Language-Team: Swedish (http://www.transifex.com/otsaloma/nfoview/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +50,7 @@ msgstr "NFO Viewer Webbsida"
 
 #: nfoview/about.py:63
 msgid "Donate"
-msgstr ""
+msgstr "Donera"
 
 #: nfoview/export.py:34
 msgid "Export Image"
@@ -200,6 +200,8 @@ msgstr "Programfönster"
 msgid "View NFO files"
 msgstr "Visa NFO-filer"
 
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/nfoview.desktop.in:6
 msgid "information;"
 msgstr "information;"

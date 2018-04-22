@@ -3,29 +3,28 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# mauron, 2015
-# mauron, 2015-2017
+# Xoan Sampaiño <xoansampainho@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-22 19:15+0300\n"
-"PO-Revision-Date: 2017-11-07 17:27+0000\n"
-"Last-Translator: mauron\n"
-"Language-Team: Turkish (http://www.transifex.com/otsaloma/nfoview/language/tr/)\n"
+"PO-Revision-Date: 2018-01-21 16:05+0000\n"
+"Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/otsaloma/nfoview/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: nfoview/about.py:36
 msgid "About NFO Viewer"
-msgstr "NFO Viewer hakkında"
+msgstr "Acerca de NFO Viewer"
 
 #: nfoview/about.py:39
 msgid "Viewer for NFO files"
-msgstr "NFO dosyaları için görüntüleyici"
+msgstr "Visor de archivos NFO"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -43,147 +42,147 @@ msgstr "NFO Viewer"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:54
 msgid "translator-credits"
-msgstr "Anonim"
+msgstr "Xoán Sampaíño <xoansampainho@gmail.com>"
 
 #: nfoview/about.py:57
 msgid "NFO Viewer Website"
-msgstr "NFO Viewer ağ sitesi"
+msgstr "Sitio web"
 
 #: nfoview/about.py:63
 msgid "Donate"
-msgstr "Bağış yap"
+msgstr "Donar"
 
 #: nfoview/export.py:34
 msgid "Export Image"
-msgstr "Resmi dışa aktar"
+msgstr "Exportar imagen"
 
 #: nfoview/export.py:37 nfoview/open.py:37
 msgid "_Cancel"
-msgstr "_İptal"
+msgstr "_Cancelar"
 
 #: nfoview/export.py:38
 msgid "_Save"
-msgstr "_Kaydet"
+msgstr "_Guardar"
 
 #: nfoview/open.py:34
 msgid "Open"
-msgstr "Aç"
+msgstr "Abrir"
 
 #: nfoview/open.py:38
 msgid "_Open"
-msgstr "_Aç"
+msgstr "_Abrir"
 
 #: nfoview/open.py:42
 msgid "All files"
-msgstr "Tüm dosyalar"
+msgstr "Todos los archivos"
 
 #: nfoview/open.py:46
 msgid "NFO files (*.nfo)"
-msgstr "NFO dosyaları (*.nfo)"
+msgstr "Archivos NFO (*.nfo)"
 
 #: nfoview/schemes.py:52
 msgid "Black on white"
-msgstr "Beyaz üzerinde siyah"
+msgstr "Negro sobre blanco"
 
 #: nfoview/schemes.py:64
 msgid "Custom"
-msgstr "Kişisel"
+msgstr "Personalizado"
 
 #: nfoview/schemes.py:76
 msgid "Dark grey on light grey"
-msgstr "Açık gri üzerinde koyu gri"
+msgstr "Gris oscuro sobre gris claro"
 
 #: nfoview/schemes.py:91
 msgid "System theme"
-msgstr "Sistem teması"
+msgstr "Colores del sistema"
 
 #: nfoview/schemes.py:103
 msgid "Grey on black"
-msgstr "Siyah üzerinde gri"
+msgstr "Gris sobre negro"
 
 #: nfoview/schemes.py:115
 msgid "Light grey on dark grey"
-msgstr "Koyu gri üzerinde açık gri"
+msgstr "Gris claro sobre gris oscuro"
 
 #: nfoview/schemes.py:127
 msgid "White on black"
-msgstr "Siyah üzerinde beyaz"
+msgstr "Blanco sobre negro"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "A_ç…"
+msgstr "_Abrir…"
 
 #: data/menu.ui:10
 msgid "_Export Image…"
-msgstr "Resmi dı_şa aktar…"
+msgstr "_Exportar imagen…"
 
 #: data/menu.ui:16
 msgid "C_opy"
-msgstr "K_opyala"
+msgstr "C_opiar"
 
 #: data/menu.ui:20
 msgid "_Select All"
-msgstr "Tümü_nü seç"
+msgstr "_Seleccionar todo"
 
 #: data/menu.ui:24
 msgid "_Wrap Lines"
-msgstr "_Satırların uzunluğunu sınırla"
+msgstr "A_justar líneas"
 
 #: data/menu.ui:30
 msgid "_Preferences"
-msgstr "_Tercihler"
+msgstr "_Preferencias"
 
 #: data/menu.ui:34
 msgid "_About"
-msgstr "NFO Viewer _hakkında"
+msgstr "A_cerca de"
 
 #: data/menu.ui:40
 msgid "_Close"
-msgstr "K_apat"
+msgstr "_Cerrar"
 
 #: data/menu.ui:44
 msgid "_Quit"
-msgstr "Çı_k"
+msgstr "_Salir"
 
 #: data/preferences-dialog.ui:51
 msgid "Text"
-msgstr "Metin"
+msgstr "Texto"
 
 #: data/preferences-dialog.ui:75
 msgid "_Font:"
-msgstr "_Yazıtipi:"
+msgstr "_Tipo de letra:"
 
 #: data/preferences-dialog.ui:89
 msgid "Li_ne-spacing:"
-msgstr "_Satır aralığı:"
+msgstr "Inter_lineado"
 
 #: data/preferences-dialog.ui:153
 msgid "Colors"
-msgstr "Renkler"
+msgstr "Colores"
 
 #: data/preferences-dialog.ui:176
 msgid "_Schemes:"
-msgstr "_Şema:"
+msgstr "_Esquema"
 
 #: data/preferences-dialog.ui:190
 msgid "Fo_reground:"
-msgstr "_Ön plan:"
+msgstr "_Primer plano:"
 
 #: data/preferences-dialog.ui:204
 msgid "Bac_kground:"
-msgstr "_Zemin:"
+msgstr "_Segundo plano:"
 
 #: data/preferences-dialog.ui:218
 msgid "_Link:"
-msgstr "_Bağlantı:"
+msgstr "_Enlace"
 
 #: data/preferences-dialog.ui:232
 msgid "_Visited link:"
-msgstr "Ziyaret edilmiş ba_ğlantı:"
+msgstr "Enlace _visitado:"
 
 #: data/preferences-dialog.ui:332
 msgid "Preferences"
-msgstr "Tercihler"
+msgstr "Preferencias"
 
 #: data/nfoview.appdata.xml.in:9
 msgid ""
@@ -191,18 +190,18 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr "NFO Viewer, kod sayfası 437 ile yapılmış \"ASCII\" sanatı olan NFO dosyaları için sade bir görüntüleyicidir. Bir metin düzenleyicisi yerine NFO Viewer'ı kullanmanın avantajları, önayarlı yazıtipi ile kodlama, otomatik pencere boyutlanması ve tıklanabilir bağlantılardır."
+msgstr "NFO Viewer es un visor sencillo de archivos NFO, que son arte «ASCII» en la página de códigos CP437. Las ventajas de utilizar NFO Viewer en lugar de un editor de texto son la configuración predeterminada de fuente y codificación, el tamaño de ventana automático y los hipervínculos seleccionables."
 
 #: data/nfoview.appdata.xml.in:17
 msgid "Main window"
-msgstr "Ana pencere"
+msgstr "Ventana principal"
 
 #: data/nfoview.desktop.in:4
 msgid "View NFO files"
-msgstr "NFO dosyalarını görüntüle"
+msgstr "Ver archivos NFO"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/nfoview.desktop.in:6
 msgid "information;"
-msgstr "belge;göster;"
+msgstr "información;"
