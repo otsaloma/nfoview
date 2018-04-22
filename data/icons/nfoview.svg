@@ -15,7 +15,7 @@
    inkscape:export-xdpi="90.000000"
    inkscape:export-ydpi="90.000000"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.92+devel (177a8e8, 2017-12-08)"
    sodipodi:docname="nfoview.svg"
    sodipodi:version="0.32"
    style="display:inline;enable-background:new"
@@ -29,7 +29,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <dc:creator>
           <cc:Agent>
             <dc:title />
@@ -72,23 +72,26 @@
      inkscape:window-width="1920"
      inkscape:window-x="0"
      inkscape:window-y="27"
-     inkscape:zoom="3.17"
+     inkscape:zoom="3.05"
      objecttolerance="7"
      pagecolor="#ffffff"
      showgrid="false"
      showguides="true"
      stroke="#ef2929"
      width="400px"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0">
     <inkscape:grid
        empspacing="4"
        enabled="true"
        id="grid5883"
-       spacingx="1px"
-       spacingy="1px"
+       spacingx="1"
+       spacingy="1"
        type="xygrid"
        visible="true"
-       snapvisiblegridlinesonly="true" />
+       snapvisiblegridlinesonly="true"
+       originx="0"
+       originy="0" />
   </sodipodi:namedview>
   <defs
      id="defs3">
@@ -475,26 +478,27 @@
     <text
        id="context"
        inkscape:label="context"
-       style="font-size:18.30070686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Bitstream Vera Sans"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:'Bitstream Vera Sans';display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="20.970737"
        xml:space="preserve"
        y="21.513618"><tspan
          id="tspan2716"
          sodipodi:role="line"
          x="20.970737"
-         y="21.513618">emblems</tspan></text>
+         y="21.513618"
+         style="font-size:18.30070686px;line-height:1.25">emblems</tspan></text>
     <text
        id="icon-name"
        inkscape:label="icon-name"
-       sodipodi:linespacing="125%"
-       style="font-size:18.30070686px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Droid Sans;-inkscape-font-specification:Droid Sans Bold"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="191.97073"
        xml:space="preserve"
        y="21.513618"><tspan
          id="tspan3023"
          sodipodi:role="line"
          x="191.97073"
-         y="21.513618">emblem-system</tspan></text>
+         y="21.513618"
+         style="font-size:18.30070686px;line-height:1.25">emblem-system</tspan></text>
   </g>
   <g
      id="layer2"
@@ -753,48 +757,33 @@
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
        inkscape:export-filename="nfoview32.png" />
-    <text
-       xml:space="preserve"
-       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Fira Mono;-inkscape-font-specification:Fira Mono Bold"
-       x="312.22949"
-       y="150.89352"
-       id="text10223-8"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview32.png"><tspan
-         sodipodi:role="line"
-         id="tspan10225-0"
-         x="312.22949"
-         y="150.89352">i</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Fira Mono;-inkscape-font-specification:Fira Mono Bold"
-       x="309.68799"
-       y="193.66299"
-       id="text10223-6"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png"><tspan
-         sodipodi:role="line"
-         id="tspan10225-8"
-         x="309.68799"
-         y="193.66299">i</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Fira Mono;-inkscape-font-specification:Fira Mono Bold"
-       x="307.612"
-       y="231.44949"
-       id="text10223-1"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview16.png"><tspan
-         sodipodi:role="line"
-         id="tspan10225-3"
-         x="307.612"
-         y="231.44949">i</tspan></text>
+    <g
+       aria-label="i"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
+       id="text10223-8">
+      <path
+         d="m 318.80749,133.09552 c -1.21,0 -2.068,0.858 -2.068,1.958 0,1.122 0.858,1.958 2.068,1.958 1.21,0 2.046,-0.836 2.046,-1.958 0,-1.1 -0.836,-1.958 -2.046,-1.958 z m 2.09,6.116 h -6.666 v 2.376 h 3.19 v 6.93 h -3.3 v 2.376 h 9.768 v -2.376 h -2.992 z"
+         style="font-size:22px;line-height:1.25"
+         id="path113" />
+    </g>
+    <g
+       aria-label="i"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
+       id="text10223-6">
+      <path
+         d="m 313.87399,182.33699 c -0.77,0 -1.316,0.546 -1.316,1.246 0,0.714 0.546,1.246 1.316,1.246 0.77,0 1.302,-0.532 1.302,-1.246 0,-0.7 -0.532,-1.246 -1.302,-1.246 z m 1.33,3.892 h -4.242 v 1.512 h 2.03 v 4.41 h -2.1 v 1.512 h 6.216 v -1.512 h -1.904 z"
+         style="font-size:14px;line-height:1.25"
+         id="path116" />
+    </g>
+    <g
+       aria-label="i"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
+       id="text10223-1">
+      <path
+         d="m 310.901,222.55049 c -0.605,0 -1.034,0.429 -1.034,0.979 0,0.561 0.429,0.979 1.034,0.979 0.605,0 1.023,-0.418 1.023,-0.979 0,-0.55 -0.418,-0.979 -1.023,-0.979 z m 1.045,3.058 h -3.333 v 1.188 h 1.595 v 3.465 h -1.65 v 1.188 h 4.884 v -1.188 h -1.496 z"
+         style="font-size:11px;line-height:1.25"
+         id="path119" />
+    </g>
     <g
        transform="matrix(10.666818,0,0,10.627314,30.665012,42.746215)"
        style="opacity:0.3"
@@ -849,34 +838,24 @@
        inkscape:export-filename="nfoview256.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <text
-       xml:space="preserve"
-       style="font-size:150px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Fira Mono;-inkscape-font-specification:Fira Mono Bold"
-       x="101.80001"
-       y="212.02528"
-       id="text10223-82"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="nfoview256.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"><tspan
-         sodipodi:role="line"
-         id="tspan10225-9"
-         x="101.80001"
-         y="212.02528">i</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Fira Mono;-inkscape-font-specification:Fira Mono Bold"
-       x="311.37601"
-       y="83.326004"
-       id="text10223"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="nfoview48.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"><tspan
-         sodipodi:role="line"
-         id="tspan10225"
-         x="311.37601"
-         y="83.326004">i</tspan></text>
+    <g
+       aria-label="i"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
+       id="text10223-82">
+      <path
+         d="m 146.65001,90.675284 c -8.25,0 -14.1,5.85 -14.1,13.349996 0,7.65 5.85,13.35 14.1,13.35 8.25,0 13.95,-5.7 13.95,-13.35 0,-7.499996 -5.7,-13.349996 -13.95,-13.349996 z m 14.25,41.699996 h -45.45 v 16.2 h 21.75 v 47.25 h -22.5 v 16.2 h 66.6 v -16.2 h -20.4 z"
+         style="font-size:150px;line-height:1.25"
+         id="path107" />
+    </g>
+    <g
+       aria-label="i"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
+       id="text10223">
+      <path
+         d="m 319.74801,60.674004 c -1.54,0 -2.632,1.092 -2.632,2.492 0,1.428 1.092,2.492 2.632,2.492 1.54,0 2.604,-1.064 2.604,-2.492 0,-1.4 -1.064,-2.492 -2.604,-2.492 z m 2.66,7.784 h -8.484 v 3.024 h 4.06 v 8.82 h -4.2 v 3.024 h 12.432 v -3.024 h -3.808 z"
+         style="font-size:28px;line-height:1.25"
+         id="path110" />
+    </g>
   </g>
   <g
      id="layer4"
