@@ -10,7 +10,8 @@ pip3 install cx_Freeze
 pip3 install pypiwin32
 ```
 
-* Install PyGObject all-in-one for Windows (pygi-aio: GTK+ and GIR)
+* Install PyGObject for Windows (pygi-aio)
+    - GTK+ and GIR
 * Install Inno Setup
 * Test, build, test build
 
