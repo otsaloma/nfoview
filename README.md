@@ -34,7 +34,7 @@ Then, to install NFO Viewer, run command
 ### Windows
 
 See the [releases page][releases] for installers. Note that Windows
-packaging will sometimes be a bit behind and might sometimes skip a
-version, so you might need to look further than the latest release.
+packaging is irregular, sometimes skipping a version, sometimes on hold
+completely, so you might need to look further than the latest release.
 
 [releases]: https://github.com/otsaloma/nfoview/releases
