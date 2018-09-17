@@ -55,14 +55,14 @@ class Clean(clean):
     """Command to remove files and directories created."""
 
     __glob_targets = (
-        ".cache",
-        "*/.cache",
-        "*/*/.cache",
-        "*/*/*/.cache",
         "__pycache__",
         "*/__pycache__",
         "*/*/__pycache__",
         "*/*/*/__pycache__",
+        ".pytest_cache",
+        "*/.pytest_cache",
+        "*/*/.pytest_cache",
+        "*/*/*/.pytest_cache",
         "build",
         "data/nfoview.appdata.xml",
         "data/nfoview.desktop",
