@@ -154,7 +154,7 @@ class InstallData(install_data):
     def run(self):
         """Install data files after translating them."""
         self.__generate_linguas()
-        for po_file in glob.glob("po/*.po"):
+        for po_file in sorted(glob.glob("po/*.po")):
             if freezing: continue
             self.data_files.append(self.__get_mo_file(po_file))
         self.data_files.append(self.__get_appdata_file())
