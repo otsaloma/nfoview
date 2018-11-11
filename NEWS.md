@@ -37,8 +37,8 @@
 * Fix windows not closing when having multiple windows open
 * Add support for releasing installers for Windows
 
-NFO Viewer 1.19
-===============
+2016-05-12: NFO Viewer 1.19
+===========================
 
 * Fix mouse cursor and links with GTK+ 3.20
 * Use CSS for setting custom font and colors, fix selection color
@@ -57,23 +57,23 @@ NFO Viewer 1.19
 [#4]: https://github.com/otsaloma/nfoview/issues/4
 [1.19a]: https://github.com/otsaloma/nfoview/issues
 
-NFO Viewer 1.18
-===============
+2016-01-23: NFO Viewer 1.18
+===========================
 
 * Work around a drag destination Gtk-WARNING ([#721708])
 
 [#721708]: https://bugzilla.gnome.org/show_bug.cgi?id=721708
 
-NFO Viewer 1.17
-===============
+2015-10-11: NFO Viewer 1.17
+===========================
 
 * Improve URL detection ([#667102])
 * Update translations
 
 [#667102]: http://bugzilla.gnome.org/show_bug.cgi?id=667102
 
-NFO Viewer 1.16
-===============
+2015-05-08: NFO Viewer 1.16
+===========================
 
 * Use a header bar and a menu button in application windows
 * Use a header bar for the preferences dialog
@@ -104,15 +104,15 @@ NFO Viewer 1.16
 [1.16i]: http://github.com/otsaloma/nfoview/releases.atom
 [1.16j]: http://sibbell.com/
 
-NFO Viewer 1.15.1
-=================
+2014-11-30: NFO Viewer 1.15.1
+=============================
 
 * Fix detection of theme colors of the default color scheme
 * Update French translation
 * Update Turkish translation
 
-NFO Viewer 1.15
-===============
+2014-10-05: NFO Viewer 1.15
+===========================
 
 * Fix preferences dialog padding with GTK+ 3.14
 * Fix selection background color with GTK+ 3.14
@@ -121,8 +121,8 @@ NFO Viewer 1.15
 * Update French translation
 * Update Turkish translation
 
-NFO Viewer 1.14
-===============
+2014-06-21: NFO Viewer 1.14
+===========================
 
 * Fix default response buttons for dialogs
 * Make AppData file translatable
@@ -131,8 +131,8 @@ NFO Viewer 1.14
   when migrating from PyGTK to PyGObject)
 * Bump GTK+ dependency to 3.2 or greater
 
-NFO Viewer 1.13.1
-=================
+2013-09-22: NFO Viewer 1.13.1
+=============================
 
 * Possibly fix default colors with some GTK+ themes
 * Add an AppData XML file
@@ -140,29 +140,29 @@ NFO Viewer 1.13.1
 * Update French translation
 * Update Turkish translation
 
-NFO Viewer 1.13
-===============
+2013-07-29: NFO Viewer 1.13
+===========================
 
 * Add action to export document as an image file (#622078)
 * Apply GNOME Goal: Add keywords to application desktop files
     - <https://wiki.gnome.org/GnomeGoals/DesktopFileKeywords>
 * Update Turkish translation
 
-NFO Viewer 1.12.1
-=================
+2013-04-15: NFO Viewer 1.12.1
+=============================
 
 * Fix error setting colors in the preferences dialog
   `TypeError: get_rgba() takes exactly 2 arguments (1 given)`
 
-NFO Viewer 1.12
-===============
+2013-04-08: NFO Viewer 1.12
+===========================
 
 * Adapt to new GTK+ theme color names, thus fixing the default color
   scheme that follows the GTK+ theme
 * Fix window size calculations
 
-NFO Viewer 1.11
-===============
+2012-11-04: NFO Viewer 1.11
+===========================
 
 * Fix immediate crash resulting from bad use of `Gtk.StyleContext` on
   newer versions of PyGObject and/or GTK+ (#687513)
@@ -171,8 +171,8 @@ NFO Viewer 1.11
 * Release source tarballs only compressed as `tar.xz` (instead
   of the previous `tar.gz` and `tar.bz2`)
 
-NFO Viewer 1.10
-===============
+2011-11-13: NFO Viewer 1.10
+===========================
 
 * Migrate to Python 3, GTK+ 3, GNOME 3 and PyGI
 * Bump Python dependency to 3.2 or greater
@@ -181,19 +181,19 @@ NFO Viewer 1.10
 * Speed up text parsing and display when opening files
 * Update Bulgarian translation (Svetoslav Stefanov)
 
-NFO Viewer 1.9.5
-================
+2011-05-29: NFO Viewer 1.9.5
+============================
 
 * Fix opening files by drag and drop
 
-NFO Viewer 1.9.4
-================
+2011-04-05: NFO Viewer 1.9.4
+============================
 
 * Fix broken inheritance of action classes, which caused
   NFO Viewer to fail to start with recent versions of (Py)GTK
 
-NFO Viewer 1.9.3
-================
+2011-03-27: NFO Viewer 1.9.3
+============================
 
 * Update author email address
 * Move development repository from Gitorious to GitHub
@@ -203,21 +203,21 @@ NFO Viewer 1.9.3
 * Add Serbian translation (Goran Velemirov)
 * Update French translation (Anonymous)
 
-NFO Viewer 1.9.2
-================
+2010-10-05: NFO Viewer 1.9.2
+============================
 
 * Update Polish translation (Piotr Drąg)
 * Add Russian translation (Алекс)
 
-NFO Viewer 1.9.1
-================
+2010-06-26: NFO Viewer 1.9.1
+============================
 
 * Fix opening blank files (fixes #619289)
 * Add Hebrew translation (Yaron Shahrabani)
 * Add Hungarian translation (L. Csordas)
 
-NFO Viewer 1.9
-==============
+2010-04-25: NFO Viewer 1.9
+==========================
 
 * Make the 16x16 px icon paper two pixels wider
 * Use `gtk.show_uri` to open hyperlinks
@@ -225,8 +225,8 @@ NFO Viewer 1.9
 * Update German translation (Christoph Wickert)
 * Update Polish translation (Piotr Drąg)
 
-NFO Viewer 1.8
-==============
+2009-10-17: NFO Viewer 1.8
+==========================
 
 * Add application icon (based on logviewer icon from
   gnome-icon-theme)
@@ -235,8 +235,8 @@ NFO Viewer 1.8
 * Add French translation (elgeneralmidi)
 * Add Polish translation (Piotr Drąg)
 
-NFO Viewer 1.7
-==============
+2009-09-26: NFO Viewer 1.7
+==========================
 
 * Add menu item to toggle line-wrapping
 * Automatically switch to wrapping lines if a line longer than 160
@@ -246,8 +246,8 @@ NFO Viewer 1.7
 * Fix URL-detection to be less strict
 * Add Italian translation (Alessio Treglia)
 
-NFO Viewer 1.6
-================
+2009-08-16: NFO Viewer 1.6
+==========================
 
 * Add configuration file option `text_view_max_lines` to set the
   maximum window height to an amount of lines and raise its default
@@ -255,8 +255,8 @@ NFO Viewer 1.6
 * Fix URL-detection to be more strict
 * Update Simplified Chinese translation (Jonathan Ye)
 
-NFO Viewer 1.5
-==============
+2009-05-11: NFO Viewer 1.5
+==========================
 
 * Add a quit menu item to close all windows (#581091)
 * Allow windows to be closed by pressing Escape (#581091)
@@ -264,19 +264,19 @@ NFO Viewer 1.5
 * Add Swiss German translation (Fabian Affolter)
 * Add Bulgarian translation (Svetoslav Stefanov)
 
-NFO Viewer 1.4
-==============
+2009-04-19: NFO Viewer 1.4
+==========================
 
 * Handle files with UTF8, UTF16 and UTF32 BOMs
 * Abort installation if an `intltool-merge` or `msgfmt` call fails
 
-NFO Viewer 1.3.1
-================
+2009-04-05: NFO Viewer 1.3.1
+============================
 
 * Fix gettext translation system for GtkBuilder files
 
-NFO Viewer 1.3
-==============
+2009-03-15: NFO Viewer 1.3
+==========================
 
 * Add two grey low-contrast color schemes
 * Remove deprecated Encoding field from the desktop file
@@ -289,8 +289,8 @@ NFO Viewer 1.3
 * Raise Python dependency to 2.5 or greater
 * Raise PyGTK dependency to 2.12 or greater
 
-NFO Viewer 1.2.1
-================
+2008-10-05: NFO Viewer 1.2.1
+============================
 
 * Remove misuse of assertions that broke menu item sensitivity
   updates when used with Python's optimization (`-O` switch)
@@ -298,26 +298,26 @@ NFO Viewer 1.2.1
 * Add Simplified Chinese translation (Jonathan Ye)
 * Switch version-control from svn to git
 
-NFO Viewer 1.2
-==============
+2008-05-18: NFO Viewer 1.2
+==========================
 
 * Remove mimetype installation files and use the new "text/x-nfo"
   mimetype added with freedesktop.org's shared-mime-info 0.30
 
-NFO Viewer 1.1.2
-================
+2008-05-10: NFO Viewer 1.1.2
+============================
 
 * Fix `setup.py` to allow building and installing outside X
 * Fix `setup.py` to run `update-desktop-database` in addition to
   `update-mime-database` if installing and `--root` not given
 
-NFO Viewer 1.1.1
-================
+2008-04-30: NFO Viewer 1.1.1
+============================
 
 * Fix unavailable stock icon usage on GTK+ < 2.10 (#11585)
 
-NFO Viewer 1.1
-==============
+2008-01-09: NFO Viewer 1.1
+==========================
 
 * Add a menubar
 * Add open-, preferences- and about dialogs
