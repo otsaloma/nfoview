@@ -15,7 +15,7 @@
    inkscape:export-xdpi="90.000000"
    inkscape:export-ydpi="90.000000"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:version="0.92+devel (177a8e8, 2017-12-08)"
+   inkscape:version="0.92+devel (unknown)"
    sodipodi:docname="nfoview.svg"
    sodipodi:version="0.32"
    style="display:inline;enable-background:new"
@@ -29,7 +29,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
         <dc:creator>
           <cc:Agent>
             <dc:title />
@@ -72,7 +72,7 @@
      inkscape:window-width="1920"
      inkscape:window-x="0"
      inkscape:window-y="27"
-     inkscape:zoom="3.05"
+     inkscape:zoom="3"
      objecttolerance="7"
      pagecolor="#ffffff"
      showgrid="false"
@@ -513,9 +513,9 @@
        x="296.0625"
        y="49.99633"
        inkscape:label="48x48"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview48.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-48.png" />
     <rect
        inkscape:label="24x24"
        y="176"
@@ -524,9 +524,9 @@
        width="24"
        id="rect5028"
        style="fill:#ffffff;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-24.png" />
     <rect
        inkscape:label="16x16"
        y="219"
@@ -535,9 +535,9 @@
        width="16"
        id="rect6833-4"
        style="fill:#eeeeec;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview16.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-16.png" />
     <rect
        style="fill:#eeeeec;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect6749-1"
@@ -546,9 +546,9 @@
        x="303"
        y="177.05884"
        inkscape:label="22x22"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-24.png" />
     <rect
        inkscape:label="256x256"
        y="30"
@@ -557,16 +557,16 @@
        width="256"
        id="rect6282"
        style="fill:#eeeeec;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview256.png" />
+       inkscape:export-xdpi="24"
+       inkscape:export-ydpi="24"
+       inkscape:export-filename="nfoview-64.png" />
     <g
        transform="matrix(1,0,0,0.9,303,180.1)"
        style="opacity:0.3"
        id="g62"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png">
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-24.png">
       <rect
          y="16"
          x="19"
@@ -599,9 +599,9 @@
        rx="2.4748738"
        id="rect70"
        height="19"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-24.png" />
     <rect
        y="179.5"
        x="305.5"
@@ -611,9 +611,9 @@
        rx="1.5072539"
        id="rect72"
        height="17"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview24.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-24.png" />
     <rect
        y="219.5"
        x="303.5"
@@ -623,9 +623,9 @@
        rx="1.953848"
        id="rect77"
        height="15.000003"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview16.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-16.png" />
     <rect
        y="220.5"
        x="304.5"
@@ -635,16 +635,16 @@
        rx="1.1526061"
        id="rect79"
        height="13.000002"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview16.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-16.png" />
     <g
        transform="matrix(2,0,0,1.9925931,298,51.637028)"
        style="opacity:0.3"
        id="g6969"
-       inkscape:export-filename="nfoview48.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       inkscape:export-filename="nfoview-48.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <rect
          y="16"
          x="19"
@@ -677,9 +677,9 @@
        width="36.975742"
        x="301.51212"
        y="53.512127"
-       inkscape:export-filename="nfoview48.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="nfoview-48.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        height="34.000004"
        id="rect6892"
@@ -689,9 +689,9 @@
        width="34"
        x="303"
        y="55"
-       inkscape:export-filename="nfoview48.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="nfoview-48.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        inkscape:label="32x32"
        y="125.99634"
@@ -700,16 +700,16 @@
        width="32"
        id="rect6592-0"
        style="fill:#eeeeec;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview32.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-32.png" />
     <g
        transform="matrix(1.4545455,0,0,1.40625,303,128.48437)"
        style="opacity:0.3"
        id="g47"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview32.png">
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-32.png">
       <rect
          y="16"
          x="19"
@@ -742,9 +742,9 @@
        rx="3.5155001"
        id="rect55"
        height="26.989054"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview32.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-32.png" />
     <rect
        y="129.5"
        x="306.51096"
@@ -754,13 +754,16 @@
        rx="2.2155793"
        id="rect57"
        height="24.989054"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="nfoview32.png" />
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="nfoview-32.png" />
     <g
        aria-label="i"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
-       id="text10223-8">
+       id="text10223-8"
+       inkscape:export-filename="nfoview-32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          d="m 318.80749,133.09552 c -1.21,0 -2.068,0.858 -2.068,1.958 0,1.122 0.858,1.958 2.068,1.958 1.21,0 2.046,-0.836 2.046,-1.958 0,-1.1 -0.836,-1.958 -2.046,-1.958 z m 2.09,6.116 h -6.666 v 2.376 h 3.19 v 6.93 h -3.3 v 2.376 h 9.768 v -2.376 h -2.992 z"
          style="font-size:22px;line-height:1.25"
@@ -769,7 +772,10 @@
     <g
        aria-label="i"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
-       id="text10223-6">
+       id="text10223-6"
+       inkscape:export-filename="nfoview-24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          d="m 313.87399,182.33699 c -0.77,0 -1.316,0.546 -1.316,1.246 0,0.714 0.546,1.246 1.316,1.246 0.77,0 1.302,-0.532 1.302,-1.246 0,-0.7 -0.532,-1.246 -1.302,-1.246 z m 1.33,3.892 h -4.242 v 1.512 h 2.03 v 4.41 h -2.1 v 1.512 h 6.216 v -1.512 h -1.904 z"
          style="font-size:14px;line-height:1.25"
@@ -778,7 +784,10 @@
     <g
        aria-label="i"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new"
-       id="text10223-1">
+       id="text10223-1"
+       inkscape:export-filename="nfoview-16.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          d="m 310.901,222.55049 c -0.605,0 -1.034,0.429 -1.034,0.979 0,0.561 0.429,0.979 1.034,0.979 0.605,0 1.023,-0.418 1.023,-0.979 0,-0.55 -0.418,-0.979 -1.023,-0.979 z m 1.045,3.058 h -3.333 v 1.188 h 1.595 v 3.465 h -1.65 v 1.188 h 4.884 v -1.188 h -1.496 z"
          style="font-size:11px;line-height:1.25"
@@ -788,9 +797,9 @@
        transform="matrix(10.666818,0,0,10.627314,30.665012,42.746215)"
        style="opacity:0.3"
        id="g6969-7"
-       inkscape:export-filename="nfoview256.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       inkscape:export-filename="nfoview-64.png"
+       inkscape:export-xdpi="24"
+       inkscape:export-ydpi="24">
       <rect
          y="16"
          x="19"
@@ -823,9 +832,9 @@
        width="197.20676"
        x="49.396561"
        y="52.746883"
-       inkscape:export-filename="nfoview256.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="nfoview-64.png"
+       inkscape:export-xdpi="24"
+       inkscape:export-ydpi="24" />
     <rect
        height="181.33592"
        id="rect6892-3"
@@ -835,13 +844,16 @@
        width="181.33591"
        x="57.332058"
        y="60.68232"
-       inkscape:export-filename="nfoview256.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="nfoview-64.png"
+       inkscape:export-xdpi="24"
+       inkscape:export-ydpi="24" />
     <g
        aria-label="i"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
-       id="text10223-82">
+       id="text10223-82"
+       inkscape:export-filename="nfoview-64.png"
+       inkscape:export-xdpi="24"
+       inkscape:export-ydpi="24">
       <path
          d="m 146.65001,90.675284 c -8.25,0 -14.1,5.85 -14.1,13.349996 0,7.65 5.85,13.35 14.1,13.35 8.25,0 13.95,-5.7 13.95,-13.35 0,-7.499996 -5.7,-13.349996 -13.95,-13.349996 z m 14.25,41.699996 h -45.45 v 16.2 h 21.75 v 47.25 h -22.5 v 16.2 h 66.6 v -16.2 h -20.4 z"
          style="font-size:150px;line-height:1.25"
@@ -850,7 +862,10 @@
     <g
        aria-label="i"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
-       id="text10223">
+       id="text10223"
+       inkscape:export-filename="nfoview-48.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          d="m 319.74801,60.674004 c -1.54,0 -2.632,1.092 -2.632,2.492 0,1.428 1.092,2.492 2.632,2.492 1.54,0 2.604,-1.064 2.604,-2.492 0,-1.4 -1.064,-2.492 -2.604,-2.492 z m 2.66,7.784 h -8.484 v 3.024 h 4.06 v 8.82 h -4.2 v 3.024 h 12.432 v -3.024 h -3.808 z"
          style="font-size:28px;line-height:1.25"

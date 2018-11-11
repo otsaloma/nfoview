@@ -8,4 +8,4 @@ nfoview application icon is based on emblem-system icon from
 either the GNU LGPL v3 or Creative Commons Attribution-Share Alike 3.0
 United States License.
 
-[1]: http://git.gnome.org/cgit/adwaita-icon-theme/
+[1]: https://gitlab.gnome.org/GNOME/adwaita-icon-theme
