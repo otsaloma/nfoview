@@ -31,7 +31,7 @@ from gi.repository import Pango
 
 def affirm(value):
     if not value:
-        raise nfoview.AffirmationError
+        raise nfoview.AffirmationError("Not True: {!r}".format(value))
 
 def apply_style(widget):
     name = nfoview.conf.color_scheme
@@ -40,20 +40,20 @@ def apply_style(widget):
     # They fucking broke theming again with GTK+ 3.22.
     unit = "pt" if Gtk.check_version(3, 22, 0) is None else "px"
     css = """
-    .nfoview-text-view,
-    .nfoview-text-view text {{
-      background-color: {bg};
-      color: {fg};
-      font-family: {family};
-      font-size: {size}{unit};
-      font-weight: {weight};
-    }}""".format(bg=scheme.background,
-                 fg=scheme.foreground,
-                 family=font_desc.get_family().split(",")[0],
-                 size=int(round(font_desc.get_size() / Pango.SCALE)),
-                 unit=unit,
-                 weight=int(font_desc.get_weight()))
-
+    .nfoview-text-view, .nfoview-text-view text {{
+        background-color: {bg};
+        color: {fg};
+        font-family: {family};
+        font-size: {size}{unit};
+        font-weight: {weight};
+    }}""".format(
+        bg=scheme.background,
+        fg=scheme.foreground,
+        family=font_desc.get_family().split(",")[0],
+        size=int(round(font_desc.get_size() / Pango.SCALE)),
+        unit=unit,
+        weight=int(font_desc.get_weight()),
+    )
     css = css.replace("font-size: 0{unit};".format(unit=unit), "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
@@ -67,12 +67,8 @@ def apply_style(widget):
                                   priority)
 
 def connect(observer, observable, signal, *args):
-    """
-    Connect `observable`'s signal to `observer`'s callback method.
-
-    If `observable` is a string, it should be an attribute of `observer`.
-    If `observable` is not a string it should be the same as `observer`.
-    """
+    # If observable is a string, it should be an attribute of observer.
+    # If observable is not a string it should be the same as observer.
     method_name = signal.replace("-", "_").replace("::", "_")
     if observer is not observable:
         method_name = "_".join((observable, method_name))
@@ -84,7 +80,7 @@ def connect(observer, observable, signal, *args):
         observable = getattr(observer, observable)
     return observable.connect(signal, method, *args)
 
-def detect_encoding(path):
+def detect_encoding(path, default="cp437"):
     with open(path, "rb") as f:
         line = f.readline()
     if (line.startswith(codecs.BOM_UTF32_BE) and
@@ -102,9 +98,7 @@ def detect_encoding(path):
     if (line.startswith(codecs.BOM_UTF16_LE) and
         is_valid_encoding("utf_16_le")):
         return "utf_16_le"
-    # If no encoding was explicitly recognized, as a fallback,
-    # return the de facto standard encoding for NFO files, CP437.
-    return "cp437"
+    return default
 
 def get_max_text_view_size():
     max_chars = nfoview.conf.text_view_max_chars
@@ -117,21 +111,20 @@ def get_text_view_size(text):
     apply_style(label)
     label.set_text(text)
     label.show()
-    return (label.get_preferred_width()[1],
-            label.get_preferred_height()[1])
+    width = label.get_preferred_width()[1]
+    height = label.get_preferred_height()[1]
+    return width, height
 
 def hex_to_rgba(string):
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
     if success:
         return rgba
-    raise ValueError("Parsing string {} failed"
-                     .format(repr(string)))
+    raise ValueError("Parsing {!r} failed".format(string))
 
 def is_valid_encoding(encoding):
     try:
-        codecs.lookup(encoding)
-        return True
+        return codecs.lookup(encoding)
     except LookupError:
         return False
 
@@ -151,16 +144,18 @@ def makedirs(directory):
     try:
         os.makedirs(directory)
     except OSError as error:
-        print("Failed to create directory {}: {}"
-              .format(repr(directory), str(error)),
+        print("Failed to create directory {!r}: {!s}"
+              .format(directory, error),
               file=sys.stderr)
         raise # OSError
     return directory
 
 def rgba_to_hex(color):
-    return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),
-                                        int(color.green * 255),
-                                        int(color.blue  * 255))
+    return "#{:02x}{:02x}{:02x}".format(
+        int(color.red   * 255),
+        int(color.green * 255),
+        int(color.blue  * 255),
+    )
 
 def show_uri(uri):
     try:

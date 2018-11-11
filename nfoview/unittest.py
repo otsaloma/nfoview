@@ -29,8 +29,9 @@ class TestCase:
             function(*args, **kwargs)
         except exception:
             return
-        raise AssertionError("{} failed to raise {}".format(
-            repr(function), repr(exception)))
+        raise AssertionError(
+            "{!r} failed to raise {!r}"
+            .format(function, exception))
 
     def new_nfo_file(self):
         handle, path = tempfile.mkstemp()
@@ -54,5 +55,5 @@ class TestCase:
         pass
 
     def test___init__(self):
-        # Make sure that :meth:`setup_method` is always run.
+        # Make sure that setup_method is always run.
         pass

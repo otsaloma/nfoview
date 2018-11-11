@@ -17,6 +17,9 @@
 
 import codecs
 import nfoview
+import os
+import shutil
+import tempfile
 
 from gi.repository import Gdk
 from gi.repository import Gtk
@@ -33,9 +36,11 @@ class TestModule(nfoview.TestCase):
     def test_affirm__true(self):
         nfoview.util.affirm(True)
 
-    def test_apply_style(self):
-        nfoview.util.apply_style(Gtk.TextView())
+    def test_apply_style__label(self):
         nfoview.util.apply_style(Gtk.Label())
+
+    def test_apply_style__text_view(self):
+        nfoview.util.apply_style(Gtk.TextView())
 
     def test_detect_encoding__cp437(self):
         path = self.new_nfo_file()
@@ -95,13 +100,20 @@ class TestModule(nfoview.TestCase):
         color = nfoview.util.hex_to_rgba("#ff0000")
         assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
 
-    def test_lookup_color(self):
-        color = nfoview.util.lookup_color("theme_fg_color", "#ff0000")
-        assert color != "#ff0000"
+    def test_makedirs__create(self):
+        root = tempfile.mkdtemp()
+        directory = os.path.join(root, "test")
+        assert not os.path.isdir(directory)
+        nfoview.util.makedirs(directory)
+        assert os.path.isdir(directory)
+        shutil.rmtree(root)
 
-    def test_lookup_color_fallback(self):
-        color = nfoview.util.lookup_color("xxx", "#ff0000")
-        assert color == "#ff0000"
+    def test_makedirs__exists(self):
+        directory = tempfile.mkdtemp()
+        assert os.path.isdir(directory)
+        nfoview.util.makedirs(directory)
+        assert os.path.isdir(directory)
+        shutil.rmtree(directory)
 
     def test_rgba_to_hex(self):
         rgba = Gdk.RGBA(red=1, green=0, blue=1)
