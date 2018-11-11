@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer for NFO files."""
-
 __version__ = "1.24"
 
 import sys
@@ -77,7 +75,6 @@ assert util
 assert Window
 
 def main(paths):
-    """Initialize application."""
     global app
     # Needed to see application icon on Wayland, while we don't yet
     # use the reverse domain application ID with Gtk.Application.

@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Baseclass and wrapper for :class:`Gtk.Builder` constructed dialogs."""
-
 import nfoview
 import os
 
@@ -42,7 +40,6 @@ class BuilderDialog:
     _widgets = ()
 
     def __init__(self, ui_file_path):
-        """Initialize a :class:`BuilderDialog` instance from `ui_file_path`."""
         if not os.path.isabs(ui_file_path):
             ui_file_path = os.path.join(nfoview.DATA_DIR, ui_file_path)
         self._builder = Gtk.Builder()
@@ -55,10 +52,8 @@ class BuilderDialog:
             setattr(self, "_{}".format(name), widget)
 
     def __getattr__(self, name):
-        """Return attribute from :attr:`_dialog`."""
         return getattr(self._dialog, name)
 
     def run(self):
-        """Show the dialog, run it and return response."""
         self._dialog.show()
         return self._dialog.run()

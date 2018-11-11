@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Dialog for displaying credits and information."""
-
 import nfoview
 
 from gi.repository import GObject
@@ -28,10 +26,8 @@ __all__ = ("AboutDialog",)
 
 class AboutDialog(Gtk.AboutDialog):
 
-    """Dialog for displaying credits and information."""
 
     def __init__(self, parent):
-        """Initialize an :class:`AboutDialog` instance."""
         GObject.GObject.__init__(self)
         self.set_title(_("About NFO Viewer"))
         self.set_transient_for(parent)

@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Internationalization functions."""
-
 import gettext
 import locale
 import nfoview
@@ -25,7 +23,6 @@ _translation = gettext.NullTranslations()
 
 
 def bind():
-    """Bind translation domains and initialize gettext."""
     global _translation
     d = nfoview.LOCALE_DIR
     with nfoview.util.silent(Exception):
@@ -43,13 +40,10 @@ def bind():
         "nfoview", localedir=d, fallback=True)
 
 def _(message):
-    """Return the localized translation of `message`."""
     return _translation.gettext(message)
 
 def d_(domain, message):
-    """Return the localized translation of `message` from `domain`."""
     return gettext.dgettext(domain, message)
 
 def n_(singular, plural, n):
-    """Return the localized translation of `singular` or `plural`."""
     return _translation.ngettext(singular, plural, n)

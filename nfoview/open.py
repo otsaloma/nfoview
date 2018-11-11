@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Dialog for selecting NFO files to open."""
-
 from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
@@ -26,10 +24,7 @@ __all__ = ("OpenDialog",)
 
 class OpenDialog(Gtk.FileChooserDialog):
 
-    """Dialog for selecting NFO files to open."""
-
     def __init__(self, parent):
-        """Initialize an :class:`OpenDialog` instance."""
         GObject.GObject.__init__(self)
         self.set_title(_("Open"))
         self.set_transient_for(parent)

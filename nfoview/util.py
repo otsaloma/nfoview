@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Miscellaneous functions."""
-
 import codecs
 import contextlib
 import nfoview
@@ -32,12 +30,10 @@ from gi.repository import Pango
 
 
 def affirm(value):
-    """Raise :exc:`AffirmationError` if value evaluates to ``False``."""
     if not value:
         raise nfoview.AffirmationError
 
 def apply_style(widget):
-    """Update font and colors to match custom settings."""
     name = nfoview.conf.color_scheme
     scheme = nfoview.schemes.get(name, "default")
     font_desc = Pango.FontDescription(nfoview.conf.font)
@@ -89,7 +85,6 @@ def connect(observer, observable, signal, *args):
     return observable.connect(signal, method, *args)
 
 def detect_encoding(path):
-    """Detect and return NFO file encoding."""
     with open(path, "rb") as f:
         line = f.readline()
     if (line.startswith(codecs.BOM_UTF32_BE) and
@@ -112,14 +107,12 @@ def detect_encoding(path):
     return "cp437"
 
 def get_max_text_view_size():
-    """Return maximum allowed size for text view."""
     max_chars = nfoview.conf.text_view_max_chars
     max_lines = nfoview.conf.text_view_max_lines
     max_text = "\n".join(("x" * max_chars,) * max_lines)
     return get_text_view_size(max_text)
 
 def get_text_view_size(text):
-    """Return size for text view required to hold `text`."""
     label = Gtk.Label()
     apply_style(label)
     label.set_text(text)
@@ -128,7 +121,6 @@ def get_text_view_size(text):
             label.get_preferred_height()[1])
 
 def hex_to_rgba(string):
-    """Return a :class:`Gdk.RGBA` for hexadecimal `string`."""
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
     if success:
@@ -137,7 +129,6 @@ def hex_to_rgba(string):
                      .format(repr(string)))
 
 def is_valid_encoding(encoding):
-    """Return ``True`` if `encoding` is supported."""
     try:
         codecs.lookup(encoding)
         return True
@@ -145,7 +136,6 @@ def is_valid_encoding(encoding):
         return False
 
 def lookup_color(name, fallback):
-    """Return defined color `name` from GTK+ theme."""
     entry = Gtk.Entry()
     entry.show()
     style = entry.get_style_context()
@@ -155,7 +145,6 @@ def lookup_color(name, fallback):
     return fallback
 
 def makedirs(directory):
-    """Create and return `directory` or raise :exc:`OSError`."""
     directory = os.path.abspath(directory)
     if os.path.isdir(directory):
         return directory
@@ -169,13 +158,11 @@ def makedirs(directory):
     return directory
 
 def rgba_to_hex(color):
-    """Return hexadecimal string for :class:`Gdk.RGBA` `color`."""
     return "#{:02x}{:02x}{:02x}".format(int(color.red   * 255),
                                         int(color.green * 255),
                                         int(color.blue  * 255))
 
 def show_uri(uri):
-    """Open `uri` in default application."""
     try:
         return Gtk.show_uri(None, uri, Gdk.CURRENT_TIME)
     except Exception:
@@ -188,14 +175,12 @@ def show_uri(uri):
 
 @contextlib.contextmanager
 def silent(*exceptions, tb=False):
-    """Try to execute body, ignoring `exceptions`."""
     try:
         yield
     except exceptions:
         if tb: traceback.print_exc()
 
 def uri_to_path(uri):
-    """Convert `uri` to local filepath."""
     uri = urllib.parse.unquote(uri)
     if sys.platform == "win32":
         path = urllib.parse.urlsplit(uri)[2]

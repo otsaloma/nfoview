@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Text view widget for NFO text with support for clickable hyperlinks."""
-
 import nfoview
 import re
 
@@ -30,10 +28,7 @@ __all__ = ("TextView",)
 
 class TextView(Gtk.TextView):
 
-    """Text view widget for NFO text with support for clickable hyperlinks."""
-
     def __init__(self):
-        """Initialize a :class:`TextView` instance."""
         GObject.GObject.__init__(self)
         self._link_tags = []
         self._visited_link_tags = []
@@ -41,13 +36,11 @@ class TextView(Gtk.TextView):
         self.update_style()
 
     def get_text(self):
-        """Return the text in the text view."""
         text_buffer = self.get_buffer()
         start, end = text_buffer.get_bounds()
         return text_buffer.get_text(start, end, False)
 
     def _init_properties(self):
-        """Initialize text view widget properties."""
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         self.set_cursor_visible(False)
@@ -64,7 +57,6 @@ class TextView(Gtk.TextView):
         nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
-        """Insert `url` into the text view as a hyperlink."""
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
         tag.props.underline = Pango.Underline.SINGLE
@@ -75,13 +67,11 @@ class TextView(Gtk.TextView):
         self._link_tags.append(tag)
 
     def _insert_word(self, word):
-        """Insert `word` into the text view."""
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
         text_buffer.insert(itr, word)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
-        """Open clicked hyperlink in web browser."""
         if event.type != Gdk.EventType.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
@@ -92,7 +82,6 @@ class TextView(Gtk.TextView):
             self.update_style()
 
     def _on_motion_notify_event(self, text_view, event):
-        """Change the mouse pointer when hovering over a hyperlink."""
         window = Gtk.TextWindowType.WIDGET
         x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
@@ -112,7 +101,6 @@ class TextView(Gtk.TextView):
             Gdk.Display.get_default(), Gdk.CursorType.XTERM))
 
     def set_text(self, text):
-        """Set the text displayed in the text view."""
         re_url = re.compile(r"(\w+://(\S+\.)?\S+|www\.\S+)\.[\w\-.~:/?#\[\]@!$&'()*+,;=%]+")
         self._link_tags = []
         self._visited_link_tags = []
@@ -147,7 +135,6 @@ class TextView(Gtk.TextView):
         self.update_style()
 
     def update_style(self):
-        """Update colors to match the current color scheme."""
         nfoview.util.apply_style(self)
         name = nfoview.conf.color_scheme
         scheme = nfoview.schemes.get(name, "default")

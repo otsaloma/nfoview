@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Reading, writing and storing configurations."""
-
 import nfoview
 import os
 import re
@@ -41,17 +39,13 @@ DEFAULTS = dict(
 
 class ConfigurationStore:
 
-    """Reading, writing and storing configurations."""
-
     path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
 
     def __init__(self, read=False):
-        """Initialize a :class:`ConfigurationStore` instance."""
         self.restore_defaults()
         if read: self.read()
 
     def read(self):
-        """Read values of configuration options from file."""
         if not os.path.isfile(self.path): return
         with open(self.path, "r") as f:
             entries = f.readlines()
@@ -65,13 +59,11 @@ class ConfigurationStore:
         self.version = nfoview.__version__
 
     def restore_defaults(self):
-        """Set all configuration options to their default values."""
         for name in DEFAULTS:
             setattr(self, name, DEFAULTS[name])
         self.version = nfoview.__version__
 
     def write(self):
-        """Write values of configuration options to file."""
         directory = os.path.dirname(self.path)
         with nfoview.util.silent(OSError, tb=True):
             nfoview.util.makedirs(directory)

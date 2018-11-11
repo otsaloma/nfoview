@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Base class for unit test cases."""
-
 import atexit
 import os
 import tempfile
@@ -26,10 +24,7 @@ __all__ = ("TestCase",)
 
 class TestCase:
 
-    """Base class for unit test cases."""
-
     def assert_raises(self, exception, function, *args, **kwargs):
-        """Assert that calling `function` raises `exception`."""
         try:
             function(*args, **kwargs)
         except exception:
@@ -38,7 +33,6 @@ class TestCase:
             repr(function), repr(exception)))
 
     def new_nfo_file(self):
-        """Return path to a new temporary NFO file."""
         handle, path = tempfile.mkstemp()
         f = os.fdopen(handle, "w")
         f.write("qwertyuiop asdfghjkl zxcvbnm\n")
@@ -48,21 +42,17 @@ class TestCase:
         return path
 
     def setUp(self):
-        """Compatibility alias for :meth:`setup_method`."""
         self.setup_method(None)
 
     def setup_method(self, method):
-        """Set state for executing tests in `method`."""
         pass
 
     def tearDown(self):
-        """Compatibility alias for :meth:`teardown_method`."""
         self.teardown_method(None)
 
     def teardown_method(self, method):
-        """Remove state set for executing tests in `method`."""
         pass
 
     def test___init__(self):
-        """Make sure that :meth:`setup_method` is always run."""
+        # Make sure that :meth:`setup_method` is always run.
         pass

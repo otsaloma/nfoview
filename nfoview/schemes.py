@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Classes for color scheme definitions."""
-
 import nfoview
 
 from nfoview.i18n import _
@@ -34,8 +32,6 @@ __all__ = (
 
 class ColorScheme:
 
-    """Baseclass for color scheme definitions."""
-
     name         = NotImplementedError
     label        = NotImplementedError
     foreground   = NotImplementedError
@@ -45,8 +41,6 @@ class ColorScheme:
 
 
 class BlackOnWhite(ColorScheme):
-
-    """Color scheme with black text on white background."""
 
     name         = "black-on-white"
     label        = _("Black on white")
@@ -58,8 +52,6 @@ class BlackOnWhite(ColorScheme):
 
 class Custom(ColorScheme):
 
-    """Color scheme with custom, user-chosen colors."""
-
     name         = "custom"
     label        = _("Custom")
     foreground   = nfoview.conf.foreground_color
@@ -70,8 +62,6 @@ class Custom(ColorScheme):
 
 class DarkGreyOnLightGray(ColorScheme):
 
-    """Color scheme with dark grey text on light grey background."""
-
     name         = "dark-grey-on-light-grey"
     label        = _("Dark grey on light grey")
     foreground   = "#666666"
@@ -81,8 +71,6 @@ class DarkGreyOnLightGray(ColorScheme):
 
 
 class Default(ColorScheme):
-
-    """Color scheme with system default colors."""
 
     # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/_colors-public.scss
     # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/gtk-contained.css
@@ -97,8 +85,6 @@ class Default(ColorScheme):
 
 class GreyOnBlack(ColorScheme):
 
-    """Color scheme with grey text on black background."""
-
     name         = "grey-on-black"
     label        = _("Grey on black")
     foreground   = "#aaaaaa"
@@ -108,8 +94,6 @@ class GreyOnBlack(ColorScheme):
 
 
 class LightGreyOnDarkGray(ColorScheme):
-
-    """Color scheme with light grey text on dark grey background."""
 
     name         = "light-grey-on-dark-grey"
     label        = _("Light grey on dark grey")
@@ -121,8 +105,6 @@ class LightGreyOnDarkGray(ColorScheme):
 
 class WhiteOnBlack(ColorScheme):
 
-    """Color scheme with white text on black background."""
-
     name         = "white-on-black"
     label        = _("White on black")
     foreground   = "#ffffff"
@@ -132,7 +114,6 @@ class WhiteOnBlack(ColorScheme):
 
 
 def get(name, fallback=None):
-    """Return the color scheme with given name."""
     _translate_labels()
     for class_name in __all__:
         scheme = globals()[class_name]
@@ -144,7 +125,6 @@ def get(name, fallback=None):
                      .format(repr(name)))
 
 def get_all():
-    """Return a list of all color schemes in proper order."""
     _translate_labels()
     schemes = list(map(globals().get, __all__))
     schemes.remove(Default)
@@ -155,7 +135,6 @@ def get_all():
     return schemes
 
 def _translate_labels():
-    """Translate all color scheme labels."""
     for scheme in list(map(globals().get, __all__)):
         if not hasattr(scheme, "untranslated_label"):
             scheme.untranslated_label = scheme.label

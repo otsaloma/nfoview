@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Paths to files and directories used."""
-
 import os
 import sys
 
@@ -24,58 +22,49 @@ __all__ = ("CONFIG_HOME_DIR", "DATA_DIR", "LOCALE_DIR")
 
 
 def get_config_home_directory():
-    """Return path to the user's configuration directory."""
     if sys.platform == "win32":
         return get_config_home_directory_windows()
     return get_config_home_directory_xdg()
 
 def get_config_home_directory_windows():
-    """Return path to the user's configuration directory on Windows."""
     directory = os.path.expanduser("~")
     directory = os.environ.get("APPDATA", directory)
     directory = os.path.join(directory, "NFO Viewer")
     return os.path.abspath(directory)
 
 def get_config_home_directory_xdg():
-    """Return path to the user's XDG configuration directory."""
     directory = os.path.join(os.path.expanduser("~"), ".config")
     directory = os.environ.get("XDG_CONFIG_HOME", directory)
     directory = os.path.join(directory, "nfoview")
     return os.path.abspath(directory)
 
 def get_data_directory():
-    """Return path to the global data directory."""
     if hasattr(sys, "frozen"):
         return get_data_directory_frozen()
     return get_data_directory_source()
 
 def get_data_directory_frozen():
-    """Return path to the global data directory on ``frozen``."""
     directory = os.path.dirname(sys.argv[0])
     directory = os.path.join(directory, "share", "nfoview")
     return os.path.abspath(directory)
 
 def get_data_directory_source():
-    """Return path to the global data directory when running from source."""
     directory = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.abspath(os.path.join(directory, ".."))
     directory = os.path.join(directory, "data")
     return os.path.abspath(directory)
 
 def get_locale_directory():
-    """Return path to the locale directory."""
     if hasattr(sys, "frozen"):
         return get_locale_directory_frozen()
     return get_locale_directory_source()
 
 def get_locale_directory_frozen():
-    """Return path to the locale directory on ``frozen``."""
     directory = os.path.dirname(sys.argv[0])
     directory = os.path.join(directory, "share", "locale")
     return os.path.abspath(directory)
 
 def get_locale_directory_source():
-    """Return path to the locale directory when running from source."""
     directory = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.abspath(os.path.join(directory, ".."))
     directory = os.path.join(directory, "locale")

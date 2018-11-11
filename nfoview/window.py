@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Viewer window and user interface controller for NFO files."""
-
 import nfoview
 import os
 import textwrap
@@ -31,10 +29,7 @@ __all__ = ("Window",)
 
 class Window(Gtk.ApplicationWindow):
 
-    """Viewer window and user interface controller for NFO files."""
-
     def __init__(self, path=None):
-        """Initialize a :class:`Window` instance and open file at `path`."""
         GObject.GObject.__init__(self)
         self._about_dialog = None
         self.path = path
@@ -51,7 +46,6 @@ class Window(Gtk.ApplicationWindow):
         self._update_actions_enabled()
 
     def _init_actions(self):
-        """Initialize user-activatable actions."""
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             if hasattr(nfoview, "app"):
@@ -64,7 +58,6 @@ class Window(Gtk.ApplicationWindow):
             self.add_action(action)
 
     def _init_contents(self):
-        """Initialize child containers and pack contents."""
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,)*2))
         scroller.set_shadow_type(Gtk.ShadowType.NONE)
@@ -75,7 +68,6 @@ class Window(Gtk.ApplicationWindow):
         self.add(main_vbox)
 
     def _init_properties(self):
-        """Initialize window properties."""
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("nfoview")
         Gtk.Window.set_default_icon_name("nfoview")
@@ -88,7 +80,6 @@ class Window(Gtk.ApplicationWindow):
         self.connect("delete-event", self._on_delete_event)
 
     def _init_titlebar(self):
-        """Initialize window titlebar."""
         header = Gtk.HeaderBar()
         header.set_title(_("NFO Viewer"))
         header.set_show_close_button(True)
@@ -105,7 +96,6 @@ class Window(Gtk.ApplicationWindow):
         self.set_titlebar(header)
 
     def _init_view(self):
-        """Initialize text view and associated buffer."""
         self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
             self._update_actions_enabled()
@@ -113,7 +103,6 @@ class Window(Gtk.ApplicationWindow):
         text_buffer.connect("notify::has-selection", update, self)
 
     def _on_about_activate(self, *args):
-        """Show the about dialog."""
         if self._about_dialog is not None:
             return self._about_dialog.present()
         self._about_dialog = nfoview.AboutDialog(self)
@@ -124,18 +113,15 @@ class Window(Gtk.ApplicationWindow):
         self._about_dialog.show()
 
     def _on_close_activate(self, *args):
-        """Remove window and possibly terminate application."""
         if hasattr(nfoview, "app"):
             nfoview.app.remove_window(self)
 
     def _on_copy_activate(self, *args):
-        """Copy the selected text to the clipboard."""
         text_buffer = self.view.get_buffer()
         clipboard = Gtk.Clipboard.get(Gdk.atom_intern("CLIPBOARD", False))
         text_buffer.copy_clipboard(clipboard)
 
     def _on_delete_event(self, *args):
-        """Remove window and possibly terminate application."""
         # Work around a harmless Gtk-WARNING about drag destination
         # by removing the window and hiding it instead of destroying.
         # https://bugzilla.gnome.org/show_bug.cgi?id=721708
@@ -145,7 +131,6 @@ class Window(Gtk.ApplicationWindow):
             return True
 
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
-        """Open files dragged from a file browser."""
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
@@ -153,7 +138,6 @@ class Window(Gtk.ApplicationWindow):
             list(map(nfoview.app.open_window, paths))
 
     def _on_export_image_activate(self, *args):
-        """Export document as an image file."""
         dialog = nfoview.ExportImageDialog(self)
         directory = os.path.dirname(self.path)
         dialog.set_current_folder(directory)
@@ -178,7 +162,6 @@ class Window(Gtk.ApplicationWindow):
             Gtk.main_iteration()
 
     def _on_open_activate(self, *args):
-        """Show the open file dialog and open the chosen file."""
         dialog = nfoview.OpenDialog(self)
         if self.path is not None:
             directory = os.path.dirname(self.path)
@@ -194,7 +177,6 @@ class Window(Gtk.ApplicationWindow):
             list(map(nfoview.app.open_window, paths))
 
     def _on_preferences_activate(self, *args):
-        """Show the preferences dialog."""
         if self._preferences_dialog is not None:
             return self._preferences_dialog.present()
         self._preferences_dialog = nfoview.PreferencesDialog(self)
@@ -205,26 +187,22 @@ class Window(Gtk.ApplicationWindow):
         self._preferences_dialog.show()
 
     def _on_quit_activate(self, *args):
-        """Terminate application immediately."""
         if hasattr(nfoview, "app"):
             nfoview.app.quit()
 
     def _on_select_all_activate(self, *args):
-        """Select all text in the document."""
         text_buffer = self.view.get_buffer()
         bounds = text_buffer.get_bounds()
         text_buffer.select_range(*bounds)
         self._update_actions_enabled()
 
     def _on_wrap_lines_activate(self, action, *args):
-        """Break long lines at word borders."""
         action.set_state(not action.get_state())
         if action.get_state():
             return self.view.set_wrap_mode(Gtk.WrapMode.WORD)
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def open_file(self, path):
-        """Read file at `path` and show its text in the view."""
         self.path = os.path.abspath(path)
         self.set_title(os.path.basename(path))
         text = self._read_file(path)
@@ -233,7 +211,6 @@ class Window(Gtk.ApplicationWindow):
         self._update_actions_enabled()
 
     def _read_file(self, path):
-        """Read and return the text of NFO file at `path`."""
         encoding = nfoview.util.detect_encoding(path)
         with open(path, "r", encoding=encoding) as f:
             lines = f.readlines()
@@ -247,7 +224,6 @@ class Window(Gtk.ApplicationWindow):
         return "\n".join(lines)
 
     def resize_to_text(self):
-        """Resize window to fit the text in the view."""
         # If the width of text exceeds 'text_view_max_chars',
         # switch to line wrapping and use 80 characters width.
         # Limit height to 'text_view_max_lines'. Finally limit
@@ -273,7 +249,6 @@ class Window(Gtk.ApplicationWindow):
         self.resize(*size)
 
     def _update_actions_enabled(self):
-        """Update the enabled state of all actions."""
         for name in self.list_actions():
             action = self.lookup_action(name)
             action.update_enabled(self)

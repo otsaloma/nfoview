@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Initializing and managing NFO Viewer windows."""
-
 import nfoview
 import sys
 import traceback
@@ -30,17 +28,13 @@ __all__ = ("Application",)
 
 class Application(Gtk.Application):
 
-    """Initializing and managing NFO Viewer windows."""
-
     def __init__(self, paths):
-        """Initialize an :class:`Application` instance."""
         GObject.GObject.__init__(self)
         self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
         self.connect("activate", self._on_activate, paths)
         self.connect("shutdown", self._on_shutdown)
 
     def _on_activate(self, app, paths):
-        """Open windows for files given as arguments."""
         for path in sorted(paths):
             self.open_window(path)
         if not self.get_windows():
@@ -49,11 +43,9 @@ class Application(Gtk.Application):
             self.open_window()
 
     def _on_shutdown(self, app):
-        """Terminate application."""
         nfoview.conf.write()
 
     def open_window(self, path=None):
-        """Open `path` in a new window and present that window."""
         try:
             window = nfoview.Window(path)
             self.add_window(window)

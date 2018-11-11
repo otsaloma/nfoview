@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Dialog for selecting an image file to export to."""
-
 from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
@@ -26,10 +24,7 @@ __all__ = ("ExportImageDialog",)
 
 class ExportImageDialog(Gtk.FileChooserDialog):
 
-    """Dialog for selecting an image file to export to."""
-
     def __init__(self, parent):
-        """Initialize an :class:`ExportImageDialog` instance."""
         GObject.GObject.__init__(self)
         self.set_title(_("Export Image"))
         self.set_transient_for(parent)

@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Dialog for editing preferences."""
-
 import nfoview
 
 from gi.repository import Gtk
@@ -25,8 +23,6 @@ __all__ = ("PreferencesDialog",)
 
 
 class PreferencesDialog(nfoview.BuilderDialog):
-
-    """Dialog for editing preferences."""
 
     _widgets = (
         "bg_color_button",
@@ -43,7 +39,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
     )
 
     def __init__(self, parent):
-        """Initialize a :class:`PreferencesDialog` instance."""
         nfoview.BuilderDialog.__init__(self, "preferences-dialog.ui")
         self._init_font_button()
         self._init_scheme_combo()
@@ -52,17 +47,14 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self.set_default_response(Gtk.ResponseType.CLOSE)
 
     def _get_windows(self):
-        """Return a list of open application windows."""
         return nfoview.app.get_windows() if hasattr(nfoview, "app") else []
 
     def _init_font_button(self):
-        """Initialize properties of the font chooser dialog."""
         def monospace(family, *args, **kwargs):
             return family.is_monospace()
         self._font_button.set_filter_func(monospace, None)
 
     def _init_scheme_combo(self):
-        """Initialize a model and populate the scheme combo box."""
         self._scheme_combo.clear()
         store = Gtk.ListStore(object, str)
         self._scheme_combo.set_model(store)
@@ -73,7 +65,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
             store.append((scheme, scheme.label))
 
     def _init_values(self):
-        """Initialize default values for widgets."""
         self._font_button.set_font_name(nfoview.conf.font)
         pixels = nfoview.conf.pixels_above_lines
         self._line_spacing_spin.set_value(pixels)
@@ -85,7 +76,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self._update_sensitivities()
 
     def _on_bg_color_button_color_set(self, color_button):
-        """Save the new color and update window and its view."""
         color = color_button.get_rgba()
         color = nfoview.util.rgba_to_hex(color)
         nfoview.conf.background_color = color
@@ -95,7 +85,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
             window.view.update_style()
 
     def _on_fg_color_button_color_set(self, color_button):
-        """Save the new color and update window and its view."""
         color = color_button.get_rgba()
         color = nfoview.util.rgba_to_hex(color)
         nfoview.conf.foreground_color = color
@@ -105,20 +94,17 @@ class PreferencesDialog(nfoview.BuilderDialog):
             window.view.update_style()
 
     def _on_font_button_font_set(self, font_button):
-        """Save the new font and update window and its view."""
         nfoview.conf.font = font_button.get_font_name()
         for window in self._get_windows():
             window.view.update_style()
 
     def _on_line_spacing_spin_value_changed(self, spin_button):
-        """Save the new line-spacing and update window and its view."""
         pixels = spin_button.get_value_as_int()
         nfoview.conf.pixels_above_lines = pixels
         for window in self._get_windows():
             window.view.set_pixels_above_lines(pixels)
 
     def _on_link_color_button_color_set(self, color_button):
-        """Save the new color and update window and its view."""
         color = color_button.get_rgba()
         color = nfoview.util.rgba_to_hex(color)
         nfoview.conf.link_color = color
@@ -128,7 +114,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
             window.view.update_style()
 
     def _on_scheme_combo_changed(self, combo_box):
-        """Save the new color scheme and update window and its view."""
         store = combo_box.get_model()
         index = combo_box.get_active()
         scheme = store[index][0]
@@ -139,7 +124,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self._update_sensitivities()
 
     def _on_vlink_color_button_color_set(self, color_button):
-        """Save the new color and update window and its view."""
         color = color_button.get_rgba()
         color = nfoview.util.rgba_to_hex(color)
         nfoview.conf.visited_link_color = color
@@ -149,7 +133,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
             window.view.update_style()
 
     def _update_color_buttons(self, scheme):
-        """Set color button colors to match those of scheme."""
         rgba = nfoview.util.hex_to_rgba
         self._bg_color_button.set_rgba(rgba(scheme.background))
         self._fg_color_button.set_rgba(rgba(scheme.foreground))
@@ -157,7 +140,6 @@ class PreferencesDialog(nfoview.BuilderDialog):
         self._vlink_color_button.set_rgba(rgba(scheme.visited_link))
 
     def _update_sensitivities(self):
-        """Set the sensitivities of color buttons and labels."""
         sensitive = (nfoview.conf.color_scheme == "custom")
         self._bg_color_button.set_sensitive(sensitive)
         self._bg_color_label.set_sensitive(sensitive)

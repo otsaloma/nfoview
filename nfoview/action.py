@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Baseclasses for user-activatable actions."""
-
 import nfoview
 
 from gi.repository import Gio
@@ -28,19 +26,15 @@ __all__ = ("Action", "ToggleAction")
 
 class Action(Gio.SimpleAction):
 
-    """Baseclass for user-activatable actions."""
 
     def __init__(self, name):
-        """Initialize an :class:`Action` instance."""
         GObject.GObject.__init__(self, name=name)
         self.accelerators = []
 
     def _affirm_doable(self, window):
-        """Raise :exc:`nfoview.AffirmationError` if action cannot be done."""
         pass
 
     def update_enabled(self, window):
-        """Update the "enabled" property to match `window`."""
         try:
             self._affirm_doable(window)
             self.set_enabled(True)
@@ -50,7 +44,6 @@ class Action(Gio.SimpleAction):
 
 class ToggleAction(Action):
 
-    """Baseclass for user-activatable toggle actions."""
 
     # Gio's abstraction makes toggle action instantiation and
     # management of boolean state values look really stupid
@@ -59,14 +52,11 @@ class ToggleAction(Action):
 
     @staticmethod
     def new(name, parameter_type=None):
-        """Return a new toggle action."""
         return Gio.SimpleAction.new_stateful(
             name, parameter_type, GLib.Variant("b", False))
 
     def get_state(self):
-        """Return the current boolean state."""
         return Action.get_state(self).get_boolean()
 
     def set_state(self, value):
-        """Set a new boolean state."""
         Action.set_state(self, GLib.Variant("b", value))
