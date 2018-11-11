@@ -51,7 +51,7 @@ class Application(Gtk.Application):
             self.add_window(window)
             window.present()
         except Exception as error:
-            print("Failed to open {}: {}"
-                  .format(repr(path), str(error)),
+            print("Failed to open {!r}: {!s}"
+                  .format(path, error),
                   file=sys.stderr)
             traceback.print_exc()

@@ -121,8 +121,8 @@ def get(name, fallback=None):
             return scheme
     if fallback is not None:
         return get(fallback)
-    raise ValueError("No color scheme named {}"
-                     .format(repr(name)))
+    raise ValueError("No color scheme named {!r}"
+                     .format(name))
 
 def get_all():
     _translate_labels()
