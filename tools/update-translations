@@ -1,37 +1,43 @@
 #!/bin/sh
+
 cd "$(dirname "$0")/.." || exit 1
 truncate -s0 po/nfoview.pot
+
 # Python code
-xgettext --output=po/nfoview.pot \
-         --join-existing \
-         --from-code=UTF-8 \
-         --language=Python \
-         --keyword=_:1 \
-         --keyword=d_:2 \
-         --keyword=n_:1,2 \
-         --add-comments=TRANSLATORS: \
-         nfoview/*.py
+xgettext \
+    --output=po/nfoview.pot \
+    --join-existing \
+    --from-code=UTF-8 \
+    --language=Python \
+    --keyword=_:1 \
+    --keyword=d_:2 \
+    --keyword=n_:1,2 \
+    --add-comments=TRANSLATORS: \
+    nfoview/*.py
 
 # GtkBuilder XML files
-xgettext --output=po/nfoview.pot \
-         --join-existing \
-         --from-code=UTF-8 \
-         data/*.ui
+xgettext \
+    --output=po/nfoview.pot \
+    --join-existing \
+    --from-code=UTF-8 \
+    data/*.ui
 
 # AppData XML file
-xgettext --output=po/nfoview.pot \
-         --join-existing \
-         --from-code=UTF-8 \
-         data/nfoview.appdata.xml.in
+xgettext \
+    --output=po/nfoview.pot \
+    --join-existing \
+    --from-code=UTF-8 \
+    data/nfoview.appdata.xml.in
 
 # Desktop file
-xgettext --output=po/nfoview.pot \
-         --join-existing \
-         --from-code=UTF-8 \
-         --language=Desktop \
-         --keyword= \
-         --keyword=Name \
-         --keyword=Comment \
-         --keyword=Keywords \
-         --add-comments=TRANSLATORS: \
-         data/nfoview.desktop.in
+xgettext \
+    --output=po/nfoview.pot \
+    --join-existing \
+    --from-code=UTF-8 \
+    --language=Desktop \
+    --keyword= \
+    --keyword=Name \
+    --keyword=Comment \
+    --keyword=Keywords \
+    --add-comments=TRANSLATORS: \
+    data/nfoview.desktop.in
