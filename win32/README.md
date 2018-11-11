@@ -1,5 +1,5 @@
-Releasing a New Windows Installer
-=================================
+Building the Windows Installer
+==============================
 
 * Install the latest 32-bit Python 3.4.x
 * Install dependencies with PIP
@@ -10,8 +10,7 @@ pip3 install cx_Freeze
 pip3 install pypiwin32
 ```
 
-* Install PyGObject for Windows (pygi-aio)
-    - GTK+ and GIR
+* Install pygi-aio (GTK+ and GIR)
 * Install Inno Setup
 * Test, build, test build
 
@@ -25,4 +24,4 @@ win32\test-build.bat
 ```
 
 * Check `win32/nfoview.iss` and compile with Inno Setup
-* Install NFO Viewer and check that it works
+* Install the result and check that it works
