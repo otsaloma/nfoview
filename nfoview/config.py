@@ -22,19 +22,19 @@ import sys
 
 __all__ = ("ConfigurationStore",)
 
-DEFAULTS = dict(
-    background_color="#ffffff",
-    color_scheme="default",
-    font=("Consolas 10" if sys.platform == "win32" else "Terminus 12"),
-    foreground_color="#2e3436",
-    link_color="#2a76c6",
-    pixels_above_lines=0,
-    pixels_below_lines=0,
-    text_view_max_chars=160,
-    text_view_max_lines=45,
-    version="",
-    visited_link_color="#215d9c",
-)
+DEFAULTS = {
+    "background_color": "#ffffff",
+    "color_scheme": "default",
+    "font": ("Consolas 10" if sys.platform == "win32" else "Terminus 12"),
+    "foreground_color": "#2e3436",
+    "link_color": "#2a76c6",
+    "pixels_above_lines": 0,
+    "pixels_below_lines": 0,
+    "text_view_max_chars": 160,
+    "text_view_max_lines": 45,
+    "version": "",
+    "visited_link_color": "#215d9c",
+}
 
 
 class ConfigurationStore:
@@ -49,10 +49,11 @@ class ConfigurationStore:
         if not os.path.isfile(self.path): return
         with open(self.path, "r") as f:
             entries = f.readlines()
-        entries = dict(re.split(" *= *", x.strip(), 1)
-                       for x in entries if
-                       not x.startswith("#") and "=" in x)
-
+        entries = dict(
+            re.split(" *= *", x.strip(), 1)
+            for x in entries
+            if not x.startswith("#") and "=" in x
+        )
         for name in set(DEFAULTS) & set(entries):
             decode = type(DEFAULTS[name])
             setattr(self, name, decode(entries[name]))
@@ -70,7 +71,7 @@ class ConfigurationStore:
         if not os.path.isdir(directory): return
         f = open(self.path, "w")
         for name in sorted(DEFAULTS):
-            text = "{} = {}".format(name, str(getattr(self, name)))
+            text = "{} = {!s}".format(name, getattr(self, name))
             if getattr(self, name) == DEFAULTS[name]:
                 # Comment out options at default value.
                 text = "# {}".format(text)

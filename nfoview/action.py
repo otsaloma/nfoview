@@ -26,7 +26,6 @@ __all__ = ("Action", "ToggleAction")
 
 class Action(Gio.SimpleAction):
 
-
     def __init__(self, name):
         GObject.GObject.__init__(self, name=name)
         self.accelerators = []
@@ -43,7 +42,6 @@ class Action(Gio.SimpleAction):
 
 
 class ToggleAction(Action):
-
 
     # Gio's abstraction makes toggle action instantiation and
     # management of boolean state values look really stupid

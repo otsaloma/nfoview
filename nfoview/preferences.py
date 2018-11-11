@@ -24,7 +24,7 @@ __all__ = ("PreferencesDialog",)
 
 class PreferencesDialog(nfoview.BuilderDialog):
 
-    _widgets = (
+    _widgets = [
         "bg_color_button",
         "bg_color_label",
         "fg_color_button",
@@ -36,7 +36,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
         "scheme_combo",
         "vlink_color_button",
         "vlink_color_label",
-    )
+    ]
 
     def __init__(self, parent):
         nfoview.BuilderDialog.__init__(self, "preferences-dialog.ui")

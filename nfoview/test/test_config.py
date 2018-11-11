@@ -20,18 +20,18 @@ import os
 import shutil
 import tempfile
 
-FIELDS = dict(
-    background_color="#ff0000",
-    color_scheme="default",
-    font="monospace 12",
-    foreground_color="#00ff00",
-    link_color="#0000ff",
-    pixels_above_lines=1,
-    pixels_below_lines=0,
-    text_view_max_chars=160,
-    text_view_max_lines=45,
-    visited_link_color="#ffff00",
-)
+FIELDS = {
+    "background_color": "#ff0000",
+    "color_scheme": "default",
+    "font": "monospace 12",
+    "foreground_color": "#00ff00",
+    "link_color": "#0000ff",
+    "pixels_above_lines": 1,
+    "pixels_below_lines": 0,
+    "text_view_max_chars": 160,
+    "text_view_max_lines": 45,
+    "visited_link_color": "#ffff00",
+}
 
 
 class TestConfigurationStore(nfoview.TestCase):

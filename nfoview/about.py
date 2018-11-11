@@ -26,7 +26,6 @@ __all__ = ("AboutDialog",)
 
 class AboutDialog(Gtk.AboutDialog):
 
-
     def __init__(self, parent):
         GObject.GObject.__init__(self)
         self.set_title(_("About NFO Viewer"))
@@ -53,7 +52,7 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_website_label(_("NFO Viewer Website"))
         self.set_wrap_license(True)
         with nfoview.util.silent(Exception, tb=True):
-            # Add donate button to the bottom of the dialog.
+            # Add a donate button to the bottom of the dialog.
             # This can fail if the dialog structure changes.
             box = self.get_content_area()
             button = Gtk.LinkButton(label=_("Donate"))

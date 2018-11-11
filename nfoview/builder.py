@@ -28,8 +28,6 @@ class BuilderDialog:
     """
     Baseclass and wrapper for :class:`Gtk.Builder` constructed dialogs.
 
-    :cvar _widgets: List of names of widgets to be assigned as attributes
-
     All widgets defined in :attr:`_widgets` are assigned as instance variables
     with names preceded by a single underscore. All signals defined in the UI
     definition file are connected to ``self``. All :func:`getattr` calls not
@@ -37,7 +35,7 @@ class BuilderDialog:
     to look and act like a :class:`Gtk.Dialog`.
     """
 
-    _widgets = ()
+    _widgets = []
 
     def __init__(self, ui_file_path):
         if not os.path.isabs(ui_file_path):

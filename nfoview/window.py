@@ -50,10 +50,8 @@ class Window(Gtk.ApplicationWindow):
             action = getattr(nfoview.actions, name)()
             if hasattr(nfoview, "app"):
                 name = "win.{}".format(action.props.name)
-                nfoview.app.set_accels_for_action(
-                    name, action.accelerators)
-            callback = "_on_{}_activate".format(
-                action.props.name.replace("-", "_"))
+                nfoview.app.set_accels_for_action(name, action.accelerators)
+            callback = "_on_{}_activate".format(action.props.name.replace("-", "_"))
             action.connect("activate", getattr(self, callback))
             self.add_action(action)
 

@@ -22,22 +22,21 @@ import nfoview
 _translation = gettext.NullTranslations()
 
 
-def bind():
-    global _translation
-    d = nfoview.LOCALE_DIR
+def bind(localedir=nfoview.LOCALE_DIR):
     with nfoview.util.silent(Exception):
-        # Might fail with misconfigured locales.
+        # Set locale to the user's default setting.
+        # Might fail on misconfigured systems.
         locale.setlocale(locale.LC_ALL, "")
-    with nfoview.util.silent(Exception):
-        # Not available on all platforms. Seems to be
-        # needed by GTK+ applications and probably others
-        # with C library dependencies that use gettext.
-        locale.bindtextdomain("nfoview", d)
-        locale.textdomain("nfoview")
-    gettext.bindtextdomain("nfoview", d)
+    # Make translations available to the gettext module.
+    gettext.bindtextdomain("nfoview", localedir)
     gettext.textdomain("nfoview")
-    _translation = gettext.translation(
-        "nfoview", localedir=d, fallback=True)
+    with nfoview.util.silent(Exception):
+        # Make translations available to GTK+ as well.
+        # Not available on all platforms.
+        locale.bindtextdomain("nfoview", localedir)
+        locale.textdomain("nfoview")
+    globals()["_translation"] = gettext.translation(
+        "nfoview", localedir=localedir, fallback=True)
 
 def _(message):
     return _translation.gettext(message)

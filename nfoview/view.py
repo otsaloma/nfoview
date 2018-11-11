@@ -86,10 +86,9 @@ class TextView(Gtk.TextView):
         x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
         tags = []
-        # XXX: Return value changed since GTK+ 3.20!?
+        # Return value changed since GTK+ 3.20!?
         iter = self.get_iter_at_location(x, y)
-        if (isinstance(iter, tuple) and
-            hasattr(iter, "iter")):
+        if isinstance(iter, tuple) and hasattr(iter, "iter"):
             iter = iter.iter
         with nfoview.util.silent(AttributeError):
             tags = iter.get_tags()
@@ -108,9 +107,8 @@ class TextView(Gtk.TextView):
         bounds = text_buffer.get_bounds()
         text_buffer.delete(*bounds)
         lines = text.split("\n")
-        # Scan text word-by-word for possible URLs,
-        # but insert words in larger chunks to avoid
-        # doing too many slow text view updates.
+        # Scan text word-by-word for possible URLs, but insert words in
+        # larger chunks to avoid doing too many slow text view updates.
         word_queue = []
         for i, line in enumerate(lines):
             words = line.split(" ")
