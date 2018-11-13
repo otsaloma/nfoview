@@ -15,9 +15,20 @@ clickable hyperlinks.
 
 ### Linux
 
-NFO Viewer is packaged for most of the popular [distros][packages], so
-easiest is to install via your distro's package management. If you need
-a newer version than packaged, read on.
+#### Packages
+
+NFO Viewer is packaged for most of the popular [distros][], so easiest
+is to install via your distro's package management. If not packaged for
+your distro or you need a newer version than packaged, read below on how
+to install from Flatpak or the source code.
+
+[distros]: https://repology.org/metapackage/nfoview
+
+#### Flatpak
+
+Coming soon!
+
+#### Source
 
 NFO Viewer requires Python ≥ 3.2, PyGObject ≥ 3.0.0 and GTK+ ≥ 3.12.
 Additionally, during installation you need gettext. On Debian/Ubuntu you
@@ -29,12 +40,8 @@ Then, to install NFO Viewer, run command
 
     sudo python3 setup.py install --prefix=/usr/local
 
-[packages]: https://repology.org/metapackage/nfoview
-
 ### Windows
 
-See the [releases page][releases] for installers. Windows installers are
-built irregularly and an installer might not be available for the latest
-version.
+Windows installers are built irregularly, see [releases][].
 
 [releases]: https://github.com/otsaloma/nfoview/releases
