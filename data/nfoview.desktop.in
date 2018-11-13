@@ -1,12 +1,11 @@
 [Desktop Entry]
+Type=Application
 Name=NFO Viewer
 Comment=View NFO files
+Icon=nfoview
+Exec=nfoview %F
+MimeType=text/x-nfo;
+Categories=Utility;Viewer;GTK
 # TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=information;
-Exec=nfoview %F
-Terminal=false
 StartupNotify=true
-Icon=nfoview
-Type=Application
-MimeType=text/x-nfo;
-Categories=GTK;Utility;Viewer;
