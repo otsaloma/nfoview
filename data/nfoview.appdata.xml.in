@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Osmo Salomaa <otsaloma@iki.fi> -->
-<component type="desktop">
+<component type="desktop-application">
   <id>nfoview.desktop</id>
-  <translation type="gettext">nfoview</translation>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0+</project_license>
+  <name>NFO Viewer</name>
+  <summary>Viewer for NFO files</summary>
   <description>
     <p>NFO Viewer is a simple viewer for NFO files, which are "ASCII"
     art in the CP437 codepage. The advantages of using NFO Viewer
     instead of a text editor are preset font and encoding settings,
     automatic window size and clickable hyperlinks.</p>
   </description>
+  <categories>
+    <category>Utility</category>
+    <category>Viewer</category>
+    <category>GTK</category>
+  </categories>
+  <url type="homepage">https://otsaloma.io/nfoview/</url>
+  <url type="bugtracker">https://github.com/otsaloma/nfoview/issues</url>
+  <url type="donation">https://www.paypal.me/otsaloma</url>
+  <url type="translate">https://www.transifex.com/otsaloma/nfoview/</url>
+  <launchable type="desktop-id">nfoview.desktop</launchable>
+  <mimetypes>
+    <mimetype>text/x-nfo</mimetype>
+  </mimetypes>
+  <project_license>GPL-3.0+</project_license>
+  <developer_name>Osmo Salomaa</developer_name>
   <screenshots>
     <screenshot type="default">
       <image>https://otsaloma.io/nfoview/screenshot-appdata.png</image>
       <caption>Main window</caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://otsaloma.io/nfoview/</url>
-  <url type="bugtracker">https://github.com/otsaloma/nfoview/issues</url>
-  <url type="donation">https://www.paypal.me/otsaloma</url>
-  <url type="translate">https://www.transifex.com/otsaloma/nfoview/</url>
   <update_contact>otsaloma@iki.fi</update_contact>
-  <developer_name>Osmo Salomaa</developer_name>
+  <translation type="gettext">nfoview</translation>
+  <content_rating type="oars-1.1"/>
 </component>
