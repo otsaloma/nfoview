@@ -21,6 +21,9 @@
   <url type="donation">https://www.paypal.me/otsaloma</url>
   <url type="translate">https://www.transifex.com/otsaloma/nfoview/</url>
   <launchable type="desktop-id">nfoview.desktop</launchable>
+  <releases>
+    <release version="1.24" date="2018-04-22"/>
+  </releases>
   <mimetypes>
     <mimetype>text/x-nfo</mimetype>
   </mimetypes>
