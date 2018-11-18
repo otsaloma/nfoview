@@ -20,7 +20,7 @@ C:\Python34\python.exe bin\nfoview
 win32\build.bat
 win32\test-build.bat
 # If needed, enable a console window to see output:
-# winsetup.py: s/base="Win32GUI"/base=None/
+# winsetup.py: s/"Win32GUI"/None/
 ```
 
 * Check `win32/nfoview.iss` and compile with Inno Setup

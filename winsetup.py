@@ -1,48 +1,39 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
-"""cx_Freeze installation routines built on top of normal setup.py."""
+"""cx_Freeze installation routines built on top of setup.py."""
 
+import cx_Freeze
 import glob
 import os
 import site
 
-os.environ["NFOVIEW_FREEZING"] = "1"
 from setup import setup_kwargs
-import cx_Freeze
 
-includes = ["cairo", "nfoview", "gi"]
 include_files = [(os.path.join("build", "usr", "share"), "share")]
-site_path = site.getsitepackages()[1]
-
-gnome_path = os.path.join(site_path, "gnome")
-for dll in glob.glob("{}/*.dll".format(gnome_path)):
+gnome_dir = os.path.join(site.getsitepackages()[1], "gnome")
+for dll in sorted(glob.glob("{}/*.dll".format(gnome_dir))):
     include_files.append((dll, os.path.basename(dll)))
-include_files.append((os.path.join(gnome_path, "etc"), "etc"))
-include_files.append((os.path.join(gnome_path, "lib"), "lib"))
-include_files.append((os.path.join(gnome_path, "share"), "share"))
+include_files.append((os.path.join(gnome_dir, "etc"), "etc"))
+include_files.append((os.path.join(gnome_dir, "lib"), "lib"))
+include_files.append((os.path.join(gnome_dir, "share"), "share"))
 
-setup_kwargs.update(dict(
-    options=dict(build_exe=dict(
-        compressed=False,
-        includes=includes,
-        packages=includes,
-        include_files=include_files,
-    )),
-    executables=[cx_Freeze.Executable(
+setup_kwargs.update({
+    "options": {"build_exe": {
+        "compressed": False,
+        "include_files": include_files,
+        "includes": ["cairo", "nfoview", "gi"],
+        "packages": ["cairo", "nfoview", "gi"],
+    }},
+    "executables": [cx_Freeze.Executable(
         script="bin/nfoview",
         base="WIN32GUI",
         icon="data/icons/nfoview.ico",
     )],
-))
-
-def patch_build():
-    # Enable header bars on builtin GTK+ dialogs.
-    path = glob.glob("build/exe.*/etc/gtk-3.0/settings.ini")[0]
-    print("patching {}".format(path))
-    with open(path, "a", encoding="us_ascii") as f:
-        f.write("\ngtk-dialogs-use-header = 1\n")
+})
 
 if __name__ == "__main__":
     cx_Freeze.setup(**setup_kwargs)
-    patch_build()
+    # Enable header bars on builtin GTK+ dialogs.
+    path = glob.glob("build/exe.*/etc/gtk-3.0/settings.ini")[0]
+    with open(path, "a", encoding="us_ascii") as f:
+        f.write("\ngtk-dialogs-use-header = 1\n")
