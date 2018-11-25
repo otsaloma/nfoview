@@ -57,7 +57,7 @@ def apply_style(widget):
     css = css.replace("font-size: 0{unit};".format(unit=unit), "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
-    provider = Gtk.CssProvider.get_default()
+    provider = Gtk.CssProvider()
     provider.load_from_data(bytes(css.encode()))
     style = widget.get_style_context()
     style.add_class("nfoview-text-view")
