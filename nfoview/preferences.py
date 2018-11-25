@@ -65,7 +65,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
             store.append((scheme, scheme.label))
 
     def _init_values(self):
-        self._font_button.set_font_name(nfoview.conf.font)
+        self._font_button.set_font(nfoview.conf.font)
         pixels = nfoview.conf.pixels_above_lines
         self._line_spacing_spin.set_value(pixels)
         store = self._scheme_combo.get_model()
@@ -94,7 +94,7 @@ class PreferencesDialog(nfoview.BuilderDialog):
             window.view.update_style()
 
     def _on_font_button_font_set(self, font_button):
-        nfoview.conf.font = font_button.get_font_name()
+        nfoview.conf.font = font_button.get_font()
         for window in self._get_windows():
             window.view.update_style()
 

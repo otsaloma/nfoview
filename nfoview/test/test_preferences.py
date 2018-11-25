@@ -43,7 +43,7 @@ class TestPreferencesDialog(nfoview.TestCase):
         self.dialog._fg_color_button.emit("color-set")
 
     def test__on_font_button_font_set(self):
-        self.dialog._font_button.set_font_name("monospace 8")
+        self.dialog._font_button.set_font("monospace 8")
         self.dialog._font_button.emit("font-set")
 
     def test__on_line_spacing_spin_value_changed(self):
