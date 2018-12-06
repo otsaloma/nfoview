@@ -58,6 +58,8 @@ class Clean(clean):
         "data/nfoview.appdata.xml",
         "data/nfoview.desktop",
         "dist",
+        "flatpak/.flatpak-builder",
+        "flatpak/build",
         "locale",
         "po/*~",
         "po/LINGUAS",
