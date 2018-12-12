@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-22 19:15+0300\n"
-"PO-Revision-Date: 2018-04-22 19:15+0300\n"
+"POT-Creation-Date: 2018-12-12 22:41+0200\n"
+"PO-Revision-Date: 2018-12-12 22:42+0200\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/"
 "fi/)\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: nfoview/about.py:36
+#: nfoview/about.py:31
 msgid "About NFO Viewer"
 msgstr "Tietoja NFO-katselimesta"
 
-#: nfoview/about.py:39
+#: nfoview/about.py:34 data/nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Katselin NFO-tiedostoille"
 
@@ -31,7 +31,8 @@ msgstr "Katselin NFO-tiedostoille"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:47 nfoview/window.py:93 data/nfoview.desktop.in:3
+#: nfoview/about.py:42 nfoview/window.py:82 data/nfoview.appdata.xml.in:6
+#: data/nfoview.desktop.in:4
 msgid "NFO Viewer"
 msgstr "NFO-katselin"
 
@@ -41,71 +42,67 @@ msgstr "NFO-katselin"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:54
+#: nfoview/about.py:49
 msgid "translator-credits"
 msgstr "Osmo Salomaa <otsaloma@iki.fi>"
 
-#: nfoview/about.py:57
+#: nfoview/about.py:52
 msgid "NFO Viewer Website"
 msgstr "NFO-katselimen www-sivut"
 
-#: nfoview/about.py:63
-msgid "Donate"
-msgstr "Lahjoita"
-
-#: nfoview/export.py:34
+#: nfoview/export.py:29
 msgid "Export Image"
 msgstr "Vie kuva"
 
-#: nfoview/export.py:37 nfoview/open.py:37
+#: nfoview/export.py:32 nfoview/open.py:32
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: nfoview/export.py:38
+#: nfoview/export.py:33
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: nfoview/open.py:34
+#: nfoview/open.py:29
 msgid "Open"
 msgstr "Avaa"
 
-#: nfoview/open.py:38
+#: nfoview/open.py:33
 msgid "_Open"
 msgstr "_Avaa"
 
-#: nfoview/open.py:42
+#: nfoview/open.py:37
 msgid "All files"
 msgstr "Kaikki tiedostot"
 
-#: nfoview/open.py:46
+#: nfoview/open.py:41
 msgid "NFO files (*.nfo)"
 msgstr "NFO-tiedostot (*.nfo)"
 
-#: nfoview/schemes.py:52
+#: nfoview/schemes.py:46
 msgid "Black on white"
 msgstr "Musta valkoisella"
 
-#: nfoview/schemes.py:64
+#: nfoview/schemes.py:56
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: nfoview/schemes.py:76
+#: nfoview/schemes.py:66
 msgid "Dark grey on light grey"
 msgstr "Tumman harmaa vaalean harmaalla"
 
-#: nfoview/schemes.py:91
+#: nfoview/schemes.py:79
 msgid "System theme"
 msgstr "Järjestelmän teema"
 
-#: nfoview/schemes.py:103
+#: nfoview/schemes.py:89
 msgid "Grey on black"
 msgstr "Harmaa mustalla"
 
-#: nfoview/schemes.py:115
+#: nfoview/schemes.py:99
 msgid "Light grey on dark grey"
 msgstr "Vaalean harmaa tumman harmaalla"
 
-#: nfoview/schemes.py:127
+#: nfoview/schemes.py:109
 msgid "White on black"
 msgstr "Valkoinen mustalla"
 
@@ -198,15 +195,15 @@ msgstr ""
 "merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
 "hyperlinkit."
 
-#: data/nfoview.appdata.xml.in:17
+#: data/nfoview.appdata.xml.in:34
 msgid "Main window"
 msgstr "Pääikkuna"
 
-#: data/nfoview.desktop.in:4
+#: data/nfoview.desktop.in:5
 msgid "View NFO files"
 msgstr "Katsele NFO-tiedostoja"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/nfoview.desktop.in:6
+#: data/nfoview.desktop.in:11
 msgid "information;"
 msgstr "tietoja;informaatio;"

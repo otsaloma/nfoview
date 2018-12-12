@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 23:29+0200\n"
-"PO-Revision-Date: 2017-11-06 21:30+0000\n"
+"POT-Creation-Date: 2018-12-12 22:41+0200\n"
+"PO-Revision-Date: 2018-12-12 20:42+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: German (http://www.transifex.com/otsaloma/nfoview/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: nfoview/about.py:36
+#: nfoview/about.py:31
 msgid "About NFO Viewer"
 msgstr "Über NFO-Betrachter"
 
-#: nfoview/about.py:39
+#: nfoview/about.py:34 data/nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Betrachter für NFO-Dokumente"
 
@@ -32,7 +32,8 @@ msgstr "Betrachter für NFO-Dokumente"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:47 nfoview/window.py:93 data/nfoview.desktop.in:3
+#: nfoview/about.py:42 nfoview/window.py:82 data/nfoview.appdata.xml.in:6
+#: data/nfoview.desktop.in:4
 msgid "NFO Viewer"
 msgstr "NFO-Betrachter"
 
@@ -42,71 +43,67 @@ msgstr "NFO-Betrachter"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:54
+#: nfoview/about.py:49
 msgid "translator-credits"
 msgstr "Bernd Mueller <ragnar76@googlemail.com>\nChristoph Wickert <cwickert@fedoraproject.org>"
 
-#: nfoview/about.py:57
+#: nfoview/about.py:52
 msgid "NFO Viewer Website"
 msgstr "NFO-Betrachter Webseite"
 
-#: nfoview/about.py:63
-msgid "Donate"
-msgstr ""
-
-#: nfoview/export.py:34
+#: nfoview/export.py:29
 msgid "Export Image"
 msgstr "Bild exportieren"
 
-#: nfoview/export.py:37 nfoview/open.py:37
+#: nfoview/export.py:32 nfoview/open.py:32
 msgid "_Cancel"
 msgstr "_Abbrechen"
 
-#: nfoview/export.py:38
+#: nfoview/export.py:33
 msgid "_Save"
 msgstr "_Sperichern"
 
-#: nfoview/open.py:34
+#: nfoview/open.py:29
 msgid "Open"
 msgstr "Öffnen"
 
-#: nfoview/open.py:38
+#: nfoview/open.py:33
 msgid "_Open"
 msgstr "_Öffnen"
 
-#: nfoview/open.py:42
+#: nfoview/open.py:37
 msgid "All files"
 msgstr "Alle Dateien"
 
-#: nfoview/open.py:46
+#: nfoview/open.py:41
 msgid "NFO files (*.nfo)"
 msgstr "NFO-Dokumente (*.nfo)"
 
-#: nfoview/schemes.py:52
+#: nfoview/schemes.py:46
 msgid "Black on white"
 msgstr "Schwarz auf Weiß"
 
-#: nfoview/schemes.py:64
+#: nfoview/schemes.py:56
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: nfoview/schemes.py:76
+#: nfoview/schemes.py:66
 msgid "Dark grey on light grey"
 msgstr "Dunkelgrau auf Hellgrau"
 
-#: nfoview/schemes.py:91
+#: nfoview/schemes.py:79
 msgid "System theme"
 msgstr "Systemthema"
 
-#: nfoview/schemes.py:103
+#: nfoview/schemes.py:89
 msgid "Grey on black"
 msgstr "Grau auf Schwarz"
 
-#: nfoview/schemes.py:115
+#: nfoview/schemes.py:99
 msgid "Light grey on dark grey"
 msgstr "Hellgrau auf Dunkelgrau"
 
-#: nfoview/schemes.py:127
+#: nfoview/schemes.py:109
 msgid "White on black"
 msgstr "Weiß auf Schwarz"
 
@@ -194,14 +191,16 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer ist ein einfacher Betrachter für NFO-Dateien, also \"ASCII-Kunst\" aus Zeichen des CP437-Zeichensatzes. Gegenüber einem normalen Texteditor bietet NFO Viewer für diese Dateien voreingestellte Schriftarten und Zeichensatzdekodierungen sowie eine automatisch angepasste Fenstergröße und klickbare Hyperlinks."
 
-#: data/nfoview.appdata.xml.in:17
+#: data/nfoview.appdata.xml.in:34
 msgid "Main window"
 msgstr "Hauptfenster"
 
-#: data/nfoview.desktop.in:4
+#: data/nfoview.desktop.in:5
 msgid "View NFO files"
 msgstr "NFO-Dokumente anzeigen"
 
-#: data/nfoview.desktop.in:6
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/nfoview.desktop.in:11
 msgid "information;"
 msgstr "Information;"
