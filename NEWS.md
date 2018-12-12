@@ -1,3 +1,12 @@
+2018-12-12: NFO Viewer 1.25
+===========================
+
+* Add support for building a Flatpak
+* Add 64x64 and 128x128 icons
+* Update AppData XML file
+* Fix build reproducibility (#15)
+* Update translations
+
 2018-04-22: NFO Viewer 1.24
 ===========================
 

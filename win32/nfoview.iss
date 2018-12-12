@@ -3,14 +3,14 @@
 [Setup]
 AppId=io.otsaloma.nfoview
 AppName=NFO Viewer
-AppVerName=NFO Viewer 1.24
+AppVerName=NFO Viewer 1.25
 AppPublisher=Osmo Salomaa
 AppPublisherURL=https://otsaloma.io/nfoview/
 DefaultDirName={pf}\NFO Viewer
 DefaultGroupName=NFO Viewer
 AllowNoIcons=yes
 OutputDir=".."
-OutputBaseFilename=nfoview-1.24-win32
+OutputBaseFilename=nfoview-1.25-win32
 Compression=lzma
 SolidCompression=yes
 
