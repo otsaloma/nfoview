@@ -21,18 +21,28 @@ from nfoview.i18n  import _
 
 __all__ = ("OpenDialog",)
 
+try:
+    # Available since GTK+ 3.20.
+    Base = Gtk.FileChooserNative
+except AttributeError:
+    Base = Gtk.FileChooserDialog
 
-class OpenDialog(Gtk.FileChooserDialog):
+
+class OpenDialog(Base):
 
     def __init__(self, parent):
         GObject.GObject.__init__(self)
         self.set_title(_("Open"))
         self.set_transient_for(parent)
         self.set_action(Gtk.FileChooserAction.OPEN)
-        self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
-        self.add_button(_("_Open"), Gtk.ResponseType.OK)
+        if Base is Gtk.FileChooserNative:
+            self.set_cancel_label(_("_Cancel"))
+            self.set_accept_label(_("_Open"))
+        if Base is Gtk.FileChooserDialog:
+            self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
+            self.add_button(_("_Open"), Gtk.ResponseType.OK)
+            self.set_default_response(Gtk.ResponseType.OK)
         self.set_select_multiple(True)
-        self.set_default_response(Gtk.ResponseType.OK)
         file_filter = Gtk.FileFilter()
         file_filter.set_name(_("All files"))
         file_filter.add_pattern("*")

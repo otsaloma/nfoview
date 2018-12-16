@@ -144,7 +144,10 @@ class Window(Gtk.ApplicationWindow):
         response = dialog.run()
         path = dialog.get_filename()
         dialog.destroy()
-        if response != Gtk.ResponseType.OK: return
+        if response not in (
+            Gtk.ResponseType.ACCEPT,
+            Gtk.ResponseType.OK,
+        ): return
         if not path: return
         view = nfoview.TextView()
         view.set_text(self.view.get_text())
@@ -167,7 +170,10 @@ class Window(Gtk.ApplicationWindow):
         response = dialog.run()
         paths = dialog.get_filenames()
         dialog.destroy()
-        if response != Gtk.ResponseType.OK: return
+        if response not in (
+            Gtk.ResponseType.ACCEPT,
+            Gtk.ResponseType.OK,
+        ): return
         if not paths: return
         if self.path is None:
             self.open_file(paths.pop(0))
