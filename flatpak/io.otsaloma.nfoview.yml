@@ -8,14 +8,9 @@ rename-desktop-file: nfoview.desktop
 rename-icon: nfoview
 copy-icon: true
 finish-args:
-  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
-  - --filesystem=host
-  - --filesystem=xdg-run/dconf
-  - --filesystem=~/.config/dconf:ro
   - --share=ipc
   - --share=network
   - --socket=x11
-  - --talk-name=ca.desrt.dconf
 modules:
   - name: nfoview
     buildsystem: simple
