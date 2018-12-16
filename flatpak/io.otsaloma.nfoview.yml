@@ -1,6 +1,6 @@
 app-id: io.otsaloma.nfoview
 runtime: org.gnome.Platform
-runtime-version: 3.30
+runtime-version: "3.30"
 sdk: org.gnome.Sdk
 command: nfoview
 rename-appdata-file: nfoview.appdata.xml
