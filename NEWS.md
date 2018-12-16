@@ -1,3 +1,8 @@
+2018-12-16: NFO Viewer 1.26
+===========================
+
+* Use native file dialogs when available
+
 2018-12-12: NFO Viewer 1.25
 ===========================
 

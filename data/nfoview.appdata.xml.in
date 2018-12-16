@@ -22,7 +22,7 @@
   <url type="translate">https://www.transifex.com/otsaloma/nfoview/</url>
   <launchable type="desktop-id">nfoview.desktop</launchable>
   <releases>
-    <release version="1.25" date="2018-12-12"/>
+    <release version="1.26" date="2018-12-16"/>
   </releases>
   <mimetypes>
     <mimetype>text/x-nfo</mimetype>
