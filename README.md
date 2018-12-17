@@ -3,6 +3,7 @@ NFO Viewer
 
 [![Build Status](https://travis-ci.org/otsaloma/nfoview.svg)](https://travis-ci.org/otsaloma/nfoview)
 [![Packages](https://repology.org/badge/tiny-repos/nfoview.svg)](https://repology.org/metapackage/nfoview)
+[![Flathub](https://img.shields.io/badge/download-flathub-blue.svg)](https://flathub.org/apps/details/io.otsaloma.nfoview)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
@@ -25,7 +26,13 @@ to install from Flatpak or the source code.
 
 #### Flatpak
 
-Coming soon!
+Stable releases are available via [Flathub][].
+
+The development version can be installed by running command `make
+install` under the `flatpak` directory. You need make, flatpak-builder
+and gettext to build the Flatpak.
+
+[Flathub]: https://flathub.org/apps/details/io.otsaloma.nfoview
 
 #### Source
 
