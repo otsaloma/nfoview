@@ -24,4 +24,8 @@ emacs NEWS.md TODO.md data/nfoview.appdata.xml.in
 sudo ./setup.py install --prefix=/usr/local clean
 /usr/local/bin/nfoview
 tools/release
+
+# Update Flatpak, website.
+# https://github.com/flathub/io.otsaloma.nfoview
+# https://github.com/otsaloma/nfoview-www
 ```
