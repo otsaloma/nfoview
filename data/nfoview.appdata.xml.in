@@ -27,6 +27,7 @@
     <mimetype>text/x-nfo</mimetype>
   </mimetypes>
   <project_license>GPL-3.0+</project_license>
+  <developer_name>Osmo Salomaa</developer_name>
   <screenshots>
     <screenshot type="default">
       <image>https://otsaloma.io/nfoview/screenshot-appdata.png</image>

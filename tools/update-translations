@@ -41,3 +41,11 @@ xgettext \
     --keyword=Keywords \
     --add-comments=TRANSLATORS: \
     data/nfoview.desktop.in
+
+# Remove AppData entries that shouldn't be translated.
+msggrep \
+    --invert-match \
+    --msgid \
+    --regexp="^Osmo Salomaa$" \
+    --output-file=po/tmp.pot \
+    po/nfoview.pot && mv -f po/tmp.pot po/nfoview.pot
