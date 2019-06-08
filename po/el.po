@@ -1,31 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Osmo Salomaa <otsaloma@iki.fi>, 2015-2016
+# Giorgos Kostopoulos <giorgosk67@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-08 17:59+0300\n"
-"PO-Revision-Date: 2019-06-08 17:59+0300\n"
+"PO-Revision-Date: 2019-05-17 18:25+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/"
-"fi/)\n"
-"Language: fi\n"
+"Language-Team: Greek (http://www.transifex.com/otsaloma/nfoview/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: nfoview/about.py:31
 msgid "About NFO Viewer"
-msgstr "Tietoja NFO-katselimesta"
+msgstr "Σχετικά με τον Προβολέα NFO"
 
 #: nfoview/about.py:34 data/nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
-msgstr "Katselin NFO-tiedostoille"
+msgstr "Προβολέας γι' αρχεία NFO "
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -34,7 +33,7 @@ msgstr "Katselin NFO-tiedostoille"
 #: nfoview/about.py:42 nfoview/window.py:82 data/nfoview.appdata.xml.in:6
 #: data/nfoview.desktop.in:4
 msgid "NFO Viewer"
-msgstr "NFO-katselin"
+msgstr "Προβολέας NFO"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -44,144 +43,144 @@ msgstr "NFO-katselin"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:49
 msgid "translator-credits"
-msgstr "Osmo Salomaa <otsaloma@iki.fi>"
+msgstr "Γιώργος Κωστόπουλος giorgosk67@gmail.com "
 
 #: nfoview/about.py:52
 msgid "NFO Viewer Website"
-msgstr "NFO-katselimen www-sivut"
+msgstr "Ιστοσελίδα Προβολέα NFO"
 
 #: nfoview/export.py:35
 msgid "Export Image"
-msgstr "Vie kuva"
+msgstr "Εξαγωγή Εικόνας"
 
 #: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
 #: nfoview/open.py:42
 msgid "_Cancel"
-msgstr "_Peru"
+msgstr "Ά_κυρο"
 
 #: nfoview/export.py:40 nfoview/export.py:43
 msgid "_Save"
-msgstr "_Tallenna"
+msgstr "_Αποθήκευση"
 
 #: nfoview/open.py:35
 msgid "Open"
-msgstr "Avaa"
+msgstr "Άνοιγμα"
 
 #: nfoview/open.py:40 nfoview/open.py:43
 msgid "_Open"
-msgstr "_Avaa"
+msgstr "Ά_νοιγμα"
 
 #: nfoview/open.py:47
 msgid "All files"
-msgstr "Kaikki tiedostot"
+msgstr "Όλα τ' αρχεία"
 
 #: nfoview/open.py:51
 msgid "NFO files (*.nfo)"
-msgstr "NFO-tiedostot (*.nfo)"
+msgstr "Αρχεία NFO (*.nfo)"
 
 #: nfoview/schemes.py:46
 msgid "Black on white"
-msgstr "Musta valkoisella"
+msgstr "Μαύρο σε λευκό"
 
 #: nfoview/schemes.py:56
 msgid "Custom"
-msgstr "Mukautettu"
+msgstr "Προσαρμογή"
 
 #: nfoview/schemes.py:66
 msgid "Dark grey on light grey"
-msgstr "Tumman harmaa vaalean harmaalla"
+msgstr "Σκοτεινό σε ανοιχτό γκρίζο"
 
 #: nfoview/schemes.py:79
 msgid "System theme"
-msgstr "Järjestelmän teema"
+msgstr "Θέμα συστήματος"
 
 #: nfoview/schemes.py:89
 msgid "Grey on black"
-msgstr "Harmaa mustalla"
+msgstr "Γκρίζο σε μαύρο"
 
 #: nfoview/schemes.py:99
 msgid "Light grey on dark grey"
-msgstr "Vaalean harmaa tumman harmaalla"
+msgstr "Ανοιχτό σε σκοτεινό γκρίζο"
 
 #: nfoview/schemes.py:109
 msgid "White on black"
-msgstr "Valkoinen mustalla"
+msgstr "Λευκό σε μαύρο"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "_Avaa…"
+msgstr "_Άνοιγμα…"
 
 #: data/menu.ui:10
 msgid "_Export Image…"
-msgstr "_Vie kuva…"
+msgstr "_Εξαγωγή Εικόνας…"
 
 #: data/menu.ui:16
 msgid "C_opy"
-msgstr "_Kopioi"
+msgstr "Αν_τιγραφή"
 
 #: data/menu.ui:20
 msgid "_Select All"
-msgstr "_Valitse kaikki"
+msgstr "Ε_πιλογή όλων"
 
 #: data/menu.ui:24
 msgid "_Wrap Lines"
-msgstr "_Rivitä"
+msgstr "Ανα_δίπλωση Λέξεων"
 
 #: data/menu.ui:30
 msgid "_Preferences"
-msgstr "_Asetukset"
+msgstr "Π_ροτιμήσεις"
 
 #: data/menu.ui:34
 msgid "_About"
-msgstr "_Tietoja"
+msgstr "_Σχετικά"
 
 #: data/menu.ui:40
 msgid "_Close"
-msgstr "_Sulje"
+msgstr "Κ_λείσιμο"
 
 #: data/menu.ui:44
 msgid "_Quit"
-msgstr "_Lopeta"
+msgstr "Ε_γκατάλειψη"
 
 #: data/preferences-dialog.ui:51
 msgid "Text"
-msgstr "Teksti"
+msgstr "Κείμενο"
 
 #: data/preferences-dialog.ui:75
 msgid "_Font:"
-msgstr "_Kirjasin:"
+msgstr "Γρα_μματοσειρά:"
 
 #: data/preferences-dialog.ui:89
 msgid "Li_ne-spacing:"
-msgstr "_Riviväli:"
+msgstr "Διάστιχο:"
 
 #: data/preferences-dialog.ui:153
 msgid "Colors"
-msgstr "Värit"
+msgstr "Χρώματα"
 
 #: data/preferences-dialog.ui:176
 msgid "_Schemes:"
-msgstr "_Teemat:"
+msgstr "Σ_χήματα:"
 
 #: data/preferences-dialog.ui:190
 msgid "Fo_reground:"
-msgstr "_Edusta:"
+msgstr "Πρ_οσκήνιο:"
 
 #: data/preferences-dialog.ui:204
 msgid "Bac_kground:"
-msgstr "T_austa:"
+msgstr "Παρασκ_ήνιο:"
 
 #: data/preferences-dialog.ui:218
 msgid "_Link:"
-msgstr "_Linkki:"
+msgstr "Σ_ύνδεσμος:"
 
 #: data/preferences-dialog.ui:232
 msgid "_Visited link:"
-msgstr "_Vierailtu linkki:"
+msgstr "Επ_ισκεφθείς σύνδεσμος:"
 
 #: data/preferences-dialog.ui:332
 msgid "Preferences"
-msgstr "Asetukset"
+msgstr "Προτιμήσεις"
 
 #: data/nfoview.appdata.xml.in:9
 msgid ""
@@ -189,22 +188,18 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr ""
-"NFO-katselin on yksinkertainen katselin NFO-tiedostoille, jotka ovat \"ASCII"
-"\"-taidetta CP437-merkistökoodauksella. NFO-katselimen käytön edut "
-"tekstieditoriin nähden ovat esiasetetut kirjasin- ja "
-"merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
-"hyperlinkit."
+msgstr "Ο Προβολέας NFO, είν' ένας απλός προβολέας, γι αρχεία NFO, τα οποία είναι \"ASCII art\" σε κωδικοποίηση CP437 codepage. Τα πλεονεκτήματα είναι προεπιλεγμένη γραμματοσειρά και ρυθμίσεις κωδικοποίησης, αυτόματο μέγεθος παραθύρου κι ενεργοί υπερσύνδεσμοι."
 
 #: data/nfoview.appdata.xml.in:34
 msgid "Main window"
-msgstr "Pääikkuna"
+msgstr "Κυρίως παράθυρο"
 
 #: data/nfoview.desktop.in:5
 msgid "View NFO files"
-msgstr "Katsele NFO-tiedostoja"
+msgstr "Προβολή αρχείων NFO"
 
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/nfoview.desktop.in:11
 msgid "information;"
-msgstr "tietoja;informaatio;"
+msgstr "Πληροφορία;"

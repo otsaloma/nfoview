@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-12 22:41+0200\n"
+"POT-Creation-Date: 2019-06-08 17:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,31 +48,32 @@ msgstr ""
 msgid "NFO Viewer Website"
 msgstr ""
 
-#: nfoview/export.py:29
+#: nfoview/export.py:35
 msgid "Export Image"
 msgstr ""
 
-#: nfoview/export.py:32 nfoview/open.py:32
+#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
+#: nfoview/open.py:42
 msgid "_Cancel"
 msgstr ""
 
-#: nfoview/export.py:33
+#: nfoview/export.py:40 nfoview/export.py:43
 msgid "_Save"
 msgstr ""
 
-#: nfoview/open.py:29
+#: nfoview/open.py:35
 msgid "Open"
 msgstr ""
 
-#: nfoview/open.py:33
+#: nfoview/open.py:40 nfoview/open.py:43
 msgid "_Open"
 msgstr ""
 
-#: nfoview/open.py:37
+#: nfoview/open.py:47
 msgid "All files"
 msgstr ""
 
-#: nfoview/open.py:41
+#: nfoview/open.py:51
 msgid "NFO files (*.nfo)"
 msgstr ""
 
