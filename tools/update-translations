@@ -27,7 +27,7 @@ xgettext \
     --output=po/nfoview.pot \
     --join-existing \
     --from-code=UTF-8 \
-    data/nfoview.appdata.xml.in
+    data/io.otsaloma.nfoview.appdata.xml.in
 
 # Desktop file
 xgettext \
@@ -40,7 +40,7 @@ xgettext \
     --keyword=Comment \
     --keyword=Keywords \
     --add-comments=TRANSLATORS: \
-    data/nfoview.desktop.in
+    data/io.otsaloma.nfoview.desktop.in
 
 # Remove AppData entries that shouldn't be translated.
 msggrep \

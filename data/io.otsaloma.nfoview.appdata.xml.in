@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Osmo Salomaa <otsaloma@iki.fi> -->
 <component type="desktop-application">
-  <id>nfoview.desktop</id>
+  <id>io.otsaloma.nfoview.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <name>NFO Viewer</name>
   <summary>Viewer for NFO files</summary>
@@ -19,7 +19,7 @@
   <url type="homepage">https://otsaloma.io/nfoview/</url>
   <url type="bugtracker">https://github.com/otsaloma/nfoview/issues</url>
   <url type="translate">https://www.transifex.com/otsaloma/nfoview/</url>
-  <launchable type="desktop-id">nfoview.desktop</launchable>
+  <launchable type="desktop-id">io.otsaloma.nfoview.desktop</launchable>
   <releases>
     <release version="1.26.1" date="2019-06-08"/>
   </releases>

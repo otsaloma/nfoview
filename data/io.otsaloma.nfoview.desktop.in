@@ -2,7 +2,7 @@
 Type=Application
 Name=NFO Viewer
 Comment=View NFO files
-Icon=nfoview
+Icon=io.otsaloma.nfoview
 Exec=nfoview %F
 MimeType=text/x-nfo;
 Categories=Utility;Viewer;GTK;

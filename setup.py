@@ -55,8 +55,8 @@ class Clean(clean):
         "*/.pytest_cache",
         "*/*/.pytest_cache",
         "build",
-        "data/nfoview.appdata.xml",
-        "data/nfoview.desktop",
+        "data/io.otsaloma.nfoview.appdata.xml",
+        "data/io.otsaloma.nfoview.desktop",
         "dist",
         "flatpak/.flatpak-builder",
         "flatpak/build",
@@ -102,7 +102,7 @@ class InstallData(install_data):
             f.write("\n".join(linguas) + "\n")
 
     def __get_appdata_file(self):
-        path = os.path.join("data", "nfoview.appdata.xml")
+        path = os.path.join("data", "io.otsaloma.nfoview.appdata.xml")
         command = "msgfmt --xml -d po --template {}.in -o {}"
         run_or_warn(command.format(path, path))
         if not os.path.isfile(path):
@@ -112,7 +112,7 @@ class InstallData(install_data):
         return ("share/metainfo", (path,))
 
     def __get_desktop_file(self):
-        path = os.path.join("data", "nfoview.desktop")
+        path = os.path.join("data", "io.otsaloma.nfoview.desktop")
         command = "msgfmt --desktop -d po --template {}.in -o {}"
         run_or_warn(command.format(path, path))
         if not os.path.isfile(path):

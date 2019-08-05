@@ -20,7 +20,7 @@ python3 -Wd bin/nfoview
 flake8 bin/nfoview nfoview setup.py
 py.test --tb=no nfoview
 emacs nfoview/__init__.py win32/nfoview.iss
-emacs NEWS.md TODO.md data/nfoview.appdata.xml.in
+emacs NEWS.md TODO.md data/io.otsaloma.nfoview.appdata.xml.in
 sudo ./setup.py install --prefix=/usr/local clean
 /usr/local/bin/nfoview
 tools/release
