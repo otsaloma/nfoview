@@ -45,7 +45,7 @@
 2016-10-29: NFO Viewer 1.21
 ===========================
 
-* Fix size of custom font with GTK+ 3.22 (#7)
+* Fix size of custom font with GTK 3.22 (#7)
 * Update AppData file
 * Update translations
 
@@ -59,10 +59,10 @@
 2016-05-12: NFO Viewer 1.19
 ===========================
 
-* Fix mouse cursor and links with GTK+ 3.20
+* Fix mouse cursor and links with GTK 3.20
 * Use CSS for setting custom font and colors, fix selection color
-  with GTK+ 3.20 ([#2], [#4])
-* Fix default window size calculations to work better with GTK+ 3.20
+  with GTK 3.20 ([#2], [#4])
+* Fix default window size calculations to work better with GTK 3.20
 * Don't use deprecated `Gdk.Cursor.new`
 * Update preferences dialog GtkBuilder file with Glade 3.20
 * Remove shadow from around the text view
@@ -100,7 +100,7 @@
   to `Gtk.Application`, `Gio.Action` etc.
 * New application icon
 * Use markdown for documentation files (`README` etc.)
-* Bump GTK+ depedency to version 3.12
+* Bump GTK depedency to version 3.12
 * Add European Portuguese translation (Pedro Albuquerque)
 * Update Polish translation (Piotr Drąg)
 * Move web pages from [gna.org][1.16a] to [github.io][1.16b]
@@ -133,8 +133,8 @@
 2014-10-05: NFO Viewer 1.15
 ===========================
 
-* Fix preferences dialog padding with GTK+ 3.14
-* Fix selection background color with GTK+ 3.14
+* Fix preferences dialog padding with GTK 3.14
+* Fix selection background color with GTK 3.14
 * Remove use of deprecated stock items, `GtkAlignment`
   and `gi.types.Boxed.__init__`
 * Update French translation
@@ -145,15 +145,15 @@
 
 * Fix default response buttons for dialogs
 * Make AppData file translatable
-* Add GTK+ to list of dependencies in the `README` file (GTK+ has
+* Add GTK to list of dependencies in the `README` file (GTK has
   always been a dependency, its explicit mention was just forgotten
   when migrating from PyGTK to PyGObject)
-* Bump GTK+ dependency to 3.2 or greater
+* Bump GTK dependency to 3.2 or greater
 
 2013-09-22: NFO Viewer 1.13.1
 =============================
 
-* Possibly fix default colors with some GTK+ themes
+* Possibly fix default colors with some GTK themes
 * Add an AppData XML file
     - <http://people.freedesktop.org/~hughsient/appdata/>
 * Update French translation
@@ -176,15 +176,15 @@
 2013-04-08: NFO Viewer 1.12
 ===========================
 
-* Adapt to new GTK+ theme color names, thus fixing the default color
-  scheme that follows the GTK+ theme
+* Adapt to new GTK theme color names, thus fixing the default color
+  scheme that follows the GTK theme
 * Fix window size calculations
 
 2012-11-04: NFO Viewer 1.11
 ===========================
 
 * Fix immediate crash resulting from bad use of `Gtk.StyleContext` on
-  newer versions of PyGObject and/or GTK+ (#687513)
+  newer versions of PyGObject and/or GTK (#687513)
 * Remove deprecated `get_data` and `set_data` calls
 * Use `Gtk.Grid` for preferences dialog instead of `Gtk.Table`
 * Release source tarballs only compressed as `tar.xz` (instead
@@ -193,7 +193,7 @@
 2011-11-13: NFO Viewer 1.10
 ===========================
 
-* Migrate to Python 3, GTK+ 3, GNOME 3 and PyGI
+* Migrate to Python 3, GTK 3, GNOME 3 and PyGI
 * Bump Python dependency to 3.2 or greater
 * Replace PyGTK dependency with PyGobject 3.0.0 or greater
 * Add 48x48 and 256x256 pixel PNG icons and remove SVG icon
@@ -333,7 +333,7 @@
 2008-04-30: NFO Viewer 1.1.1
 ============================
 
-* Fix unavailable stock icon usage on GTK+ < 2.10 (#11585)
+* Fix unavailable stock icon usage on GTK < 2.10 (#11585)
 
 2008-01-09: NFO Viewer 1.1
 ==========================

@@ -10,7 +10,7 @@ pip3 install cx_Freeze
 pip3 install pypiwin32
 ```
 
-* Install pygi-aio (GTK+ and GIR)
+* Install pygi-aio (GTK and GIR)
 * Install Inno Setup
 * Test, build, test build
 

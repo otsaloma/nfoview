@@ -51,7 +51,7 @@ class TextView(Gtk.TextView):
         self.set_left_margin(6)
         self.set_right_margin(6)
         with nfoview.util.silent(AttributeError):
-            # Available since GTK+ 3.18.
+            # Available since GTK 3.18.
             self.set_top_margin(6)
             self.set_bottom_margin(6)
         nfoview.util.connect(self, self, "motion-notify-event")
@@ -86,7 +86,7 @@ class TextView(Gtk.TextView):
         x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
         tags = []
-        # Return value changed since GTK+ 3.20!?
+        # Return value changed since GTK 3.20!?
         iter = self.get_iter_at_location(x, y)
         if isinstance(iter, tuple) and hasattr(iter, "iter"):
             iter = iter.iter

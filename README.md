@@ -36,7 +36,7 @@ and gettext to build the Flatpak.
 
 #### Source
 
-NFO Viewer requires Python ≥ 3.2, PyGObject ≥ 3.0.0 and GTK+ ≥ 3.12.
+NFO Viewer requires Python ≥ 3.2, PyGObject ≥ 3.0.0 and GTK ≥ 3.12.
 Additionally, during installation you need gettext. On Debian/Ubuntu you
 can install these with the following command.
 

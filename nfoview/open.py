@@ -22,7 +22,7 @@ from nfoview.i18n  import _
 __all__ = ("OpenDialog",)
 
 try:
-    # Available since GTK+ 3.20.
+    # Available since GTK 3.20.
     Base = Gtk.FileChooserNative
 except AttributeError:
     Base = Gtk.FileChooserDialog

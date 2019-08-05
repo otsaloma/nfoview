@@ -31,7 +31,7 @@ def bind(localedir=nfoview.LOCALE_DIR):
     gettext.bindtextdomain("nfoview", localedir)
     gettext.textdomain("nfoview")
     with nfoview.util.silent(Exception):
-        # Make translations available to GTK+ as well.
+        # Make translations available to GTK as well.
         # Not available on all platforms.
         locale.bindtextdomain("nfoview", localedir)
         locale.textdomain("nfoview")
