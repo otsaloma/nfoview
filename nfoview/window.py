@@ -67,8 +67,8 @@ class Window(Gtk.ApplicationWindow):
 
     def _init_properties(self):
         self.set_position(Gtk.WindowPosition.CENTER)
-        self.set_icon_name("nfoview")
-        Gtk.Window.set_default_icon_name("nfoview")
+        self.set_icon_name("io.otsaloma.nfoview")
+        Gtk.Window.set_default_icon_name("io.otsaloma.nfoview")
         self.drag_dest_set(flags=Gtk.DestDefaults.ALL,
                            targets=None,
                            actions=Gdk.DragAction.COPY)
