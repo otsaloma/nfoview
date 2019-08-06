@@ -22,65 +22,37 @@ import warnings
 
 if hasattr(sys, "frozen"):
     # Avoid error trying to write to non-existent stderr.
-    # http://stackoverflow.com/a/35773092
+    # https://stackoverflow.com/a/35773092
     warnings.simplefilter("ignore")
 
 import gi
 gi.require_version("Gdk", "3.0")
 gi.require_version("Gtk", "3.0")
 
-from gi.repository import GLib
-
-from nfoview.paths import CONFIG_HOME_DIR
-from nfoview.paths import DATA_DIR
-from nfoview.paths import LOCALE_DIR
-from nfoview import util
-from nfoview import i18n
-from nfoview.errors import AffirmationError
-from nfoview.config import ConfigurationStore
-conf = ConfigurationStore(read=True)
-from nfoview import schemes
-from nfoview.builder import BuilderDialog
-from nfoview.about import AboutDialog
-from nfoview.open import OpenDialog
-from nfoview.preferences import PreferencesDialog
-from nfoview.export import ExportImageDialog
-from nfoview.view import TextView
-from nfoview.action import Action
-from nfoview.action import ToggleAction
-from nfoview import actions
-from nfoview.window import Window
-from nfoview.application import Application
-from nfoview.unittest import TestCase
-
-assert AboutDialog
-assert Action
-assert actions
-assert AffirmationError
-assert Application
-assert BuilderDialog
-assert CONFIG_HOME_DIR
-assert ConfigurationStore
-assert DATA_DIR
-assert ExportImageDialog
-assert i18n
-assert LOCALE_DIR
-assert OpenDialog
-assert PreferencesDialog
-assert schemes
-assert TestCase
-assert TextView
-assert ToggleAction
-assert util
-assert Window
+from nfoview.paths import CONFIG_HOME_DIR # noqa
+from nfoview.paths import DATA_DIR # noqa
+from nfoview.paths import LOCALE_DIR # noqa
+from nfoview import util # noqa
+from nfoview import i18n # noqa
+from nfoview.errors import AffirmationError # noqa
+from nfoview.config import ConfigurationStore # noqa
+conf = ConfigurationStore(read=True) # noqa
+from nfoview import schemes # noqa
+from nfoview.builder import BuilderDialog # noqa
+from nfoview.about import AboutDialog # noqa
+from nfoview.open import OpenDialog # noqa
+from nfoview.preferences import PreferencesDialog # noqa
+from nfoview.export import ExportImageDialog # noqa
+from nfoview.view import TextView # noqa
+from nfoview.action import Action # noqa
+from nfoview.action import ToggleAction # noqa
+from nfoview import actions # noqa
+from nfoview.window import Window # noqa
+from nfoview.application import Application # noqa
+from nfoview.unittest import TestCase # noqa
 
 def main(paths):
     global app
-    # Needed to see application icon on Wayland, while we don't yet
-    # use the reverse domain application ID with Gtk.Application.
-    # https://wiki.gnome.org/Projects/GnomeShell/ApplicationBased
-    # https://github.com/otsaloma/gaupol/issues/62
-    GLib.set_prgname("nfoview")
     i18n.bind()
     app = Application(paths)
     raise SystemExit(app.run())
