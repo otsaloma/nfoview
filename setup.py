@@ -109,7 +109,7 @@ class InstallData(install_data):
             # The above can fail with an old version of gettext,
             # fall back on copying the file without translations.
             shutil.copy("{}.in".format(path), path)
-        return ("share/metainfo", (path,))
+        return ("share/metainfo", [path])
 
     def __get_desktop_file(self):
         path = os.path.join("data", "io.otsaloma.nfoview.desktop")
@@ -119,7 +119,7 @@ class InstallData(install_data):
             # The above can fail with an old version of gettext,
             # fall back on copying the file without translations.
             shutil.copy("{}.in".format(path), path)
-        return ("share/applications", (path,))
+        return ("share/applications", [path])
 
     def __get_mo_file(self, po_file):
         locale = os.path.basename(po_file[:-3])
@@ -129,11 +129,12 @@ class InstallData(install_data):
         os.makedirs(mo_dir, exist_ok=True)
         run_or_exit("msgfmt {} -o {}".format(po_file, mo_file))
         dest_dir = os.path.join("share", mo_dir)
-        return (dest_dir, (mo_file,))
+        return (dest_dir, [mo_file])
 
     def __get_mo_files(self):
         if sys.platform == "win32": return []
-        return [self.__get_mo_file(x) for x in sorted(glob.glob("po/*.po"))]
+        files = sorted(glob.glob("po/*.po"))
+        return [self.__get_mo_file(x) for x in files]
 
     def run(self):
         self.__generate_linguas()
