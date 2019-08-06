@@ -30,6 +30,7 @@ class Application(Gtk.Application):
 
     def __init__(self, paths):
         GObject.GObject.__init__(self)
+        self.set_application_id("io.otsaloma.nfoview")
         self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
         self.connect("activate", self._on_activate, paths)
         self.connect("shutdown", self._on_shutdown)

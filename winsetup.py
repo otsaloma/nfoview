@@ -27,7 +27,7 @@ setup_kwargs.update({
     "executables": [cx_Freeze.Executable(
         script="bin/nfoview",
         base="WIN32GUI",
-        icon="data/icons/nfoview.ico",
+        icon="data/icons/io.otsaloma.nfoview.ico",
     )],
 })
 

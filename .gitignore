@@ -3,8 +3,8 @@
 .pytest_cache
 __pycache__
 build
-data/nfoview.appdata.xml
-data/nfoview.desktop
+data/io.otsaloma.nfoview.appdata.xml
+data/io.otsaloma.nfoview.desktop
 dist
 flatpak/.flatpak-builder
 flatpak/build
