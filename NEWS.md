@@ -1,3 +1,10 @@
+2019-08-09: NFO Viewer 1.27
+===========================
+
+* New app icon, as full-color and symbolic SVGs (#16)
+* Use the reverse domain name "io.otsaloma.nfoview" for desktop file,
+  appdata file and icons
+
 2019-06-08: NFO Viewer 1.26.1
 =============================
 
