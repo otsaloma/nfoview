@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-08 17:59+0300\n"
-"PO-Revision-Date: 2019-06-08 17:59+0300\n"
+"POT-Creation-Date: 2019-08-09 21:47+0300\n"
+"PO-Revision-Date: 2019-08-09 21:47+0300\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Finnish (http://www.transifex.com/otsaloma/nfoview/language/"
 "fi/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "About NFO Viewer"
 msgstr "Tietoja NFO-katselimesta"
 
-#: nfoview/about.py:34 data/nfoview.appdata.xml.in:7
+#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Katselin NFO-tiedostoille"
 
@@ -31,8 +31,9 @@ msgstr "Katselin NFO-tiedostoille"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:42 nfoview/window.py:82 data/nfoview.appdata.xml.in:6
-#: data/nfoview.desktop.in:4
+#: nfoview/about.py:42 nfoview/window.py:82
+#: data/io.otsaloma.nfoview.appdata.xml.in:6
+#: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
 msgstr "NFO-katselin"
 
@@ -183,7 +184,7 @@ msgstr "_Vierailtu linkki:"
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: data/nfoview.appdata.xml.in:9
+#: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
 "NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
@@ -196,15 +197,15 @@ msgstr ""
 "merkistökoodausasetukset, automaattinen ikkunan koko ja napsautettavat "
 "hyperlinkit."
 
-#: data/nfoview.appdata.xml.in:34
+#: data/io.otsaloma.nfoview.appdata.xml.in:34
 msgid "Main window"
 msgstr "Pääikkuna"
 
-#: data/nfoview.desktop.in:5
+#: data/io.otsaloma.nfoview.desktop.in:5
 msgid "View NFO files"
 msgstr "Katsele NFO-tiedostoja"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/nfoview.desktop.in:11
+#: data/io.otsaloma.nfoview.desktop.in:11
 msgid "information;"
 msgstr "tietoja;informaatio;"
