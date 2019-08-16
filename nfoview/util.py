@@ -52,7 +52,9 @@ def apply_style(widget):
         family=font_desc.get_family().split(",")[0],
         size=int(round(font_desc.get_size() / Pango.SCALE)),
         unit=unit,
-        weight=int(font_desc.get_weight()),
+        # Round weight to hundreds to work around CSS errors
+        # with weird weights such as Unscii's 101.
+        weight=round(font_desc.get_weight(), -2),
     )
     css = css.replace("font-size: 0{unit};".format(unit=unit), "")
     css = css.replace("font-weight: 0;", "")
