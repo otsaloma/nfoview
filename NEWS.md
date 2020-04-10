@@ -1,3 +1,8 @@
+2020-04-10: NFO Viewer 1.27.1
+=============================
+
+* Fix CSS error with the abnormal weight of the Unscii font
+
 2019-08-09: NFO Viewer 1.27
 ===========================
 
