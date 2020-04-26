@@ -18,14 +18,13 @@
 import nfoview
 import os
 import re
-import sys
 
 __all__ = ("ConfigurationStore",)
 
 DEFAULTS = {
     "background_color": "#ffffff",
     "color_scheme": "default",
-    "font": "Consolas 10" if sys.platform == "win32" else "Terminus 12",
+    "font": "Cascadia Code 10",
     "foreground_color": "#2e3436",
     "link_color": "#2a76c6",
     "pixels_above_lines": 0,

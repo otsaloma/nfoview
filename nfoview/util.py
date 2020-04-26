@@ -43,7 +43,7 @@ def apply_style(widget):
     .nfoview-text-view, .nfoview-text-view text {{
         background-color: {bg};
         color: {fg};
-        font-family: {family};
+        font-family: {family}, monospace;
         font-size: {size}{unit};
         font-weight: {weight};
     }}""".format(
