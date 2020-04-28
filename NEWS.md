@@ -1,3 +1,12 @@
+2020-04-28: NFO Viewer 1.28
+===========================
+
+* Switch default font from Terminus to Cascadia Code as Terminus is
+  most commonly a bitmap font, which no longer work with Pango 1.44:
+  <https://gitlab.gnome.org/GNOME/pango/issues/386>
+* Always fall back on the platform default monospace font
+* Add Dutch translation (Heimen Stoffels)
+
 2020-04-10: NFO Viewer 1.27.1
 =============================
 
