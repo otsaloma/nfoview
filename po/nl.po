@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Heimen Stoffels <vistausss@outlook.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: nfoview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-10 22:25+0300\n"
+"PO-Revision-Date: 2020-04-11 17:24+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/otsaloma/nfoview/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: nfoview/about.py:31
+msgid "About NFO Viewer"
+msgstr "Over NFO-weergave"
+
+#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
+msgid "Viewer for NFO files"
+msgstr "Bekijk NFO-bestanden"
+
+#. TRANSLATORS: The application name "NFO Viewer" has been intentionally
+#. marked as translatable. If you manage to translate the name in a
+#. fluent manner, without changing the meaning, you may use that
+#. translation at your discretion.
+#: nfoview/about.py:42 nfoview/window.py:82
+#: data/io.otsaloma.nfoview.appdata.xml.in:6
+#: data/io.otsaloma.nfoview.desktop.in:4
+msgid "NFO Viewer"
+msgstr "NFO-weergave"
+
+#. TRANSLATORS: This is a special message that shouldn't be translated
+#. literally. It is used in the about dialog to give credits to the
+#. translators. Thus, you should translate it to your name and email
+#. address. You can also include other translators who have contributed
+#. to this translation; in that case, please write them on separate
+#. lines seperated by newlines (\n).
+#: nfoview/about.py:49
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@outlook.com>"
+
+#: nfoview/about.py:52
+msgid "NFO Viewer Website"
+msgstr "Website"
+
+#: nfoview/export.py:35
+msgid "Export Image"
+msgstr "Afbeelding exporteren"
+
+#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
+#: nfoview/open.py:42
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: nfoview/export.py:40 nfoview/export.py:43
+msgid "_Save"
+msgstr "Op_slaan"
+
+#: nfoview/open.py:35
+msgid "Open"
+msgstr "Openen"
+
+#: nfoview/open.py:40 nfoview/open.py:43
+msgid "_Open"
+msgstr "_Openen"
+
+#: nfoview/open.py:47
+msgid "All files"
+msgstr "Alle bestanden"
+
+#: nfoview/open.py:51
+msgid "NFO files (*.nfo)"
+msgstr "NFO-bestanden (*.nfo)"
+
+#: nfoview/schemes.py:46
+msgid "Black on white"
+msgstr "Zwart op wit"
+
+#: nfoview/schemes.py:56
+msgid "Custom"
+msgstr "Aangepast"
+
+#: nfoview/schemes.py:66
+msgid "Dark grey on light grey"
+msgstr "Donkergrijs op lichtgrijs"
+
+#: nfoview/schemes.py:79
+msgid "System theme"
+msgstr "Systeemthema"
+
+#: nfoview/schemes.py:89
+msgid "Grey on black"
+msgstr "Grijs op zwart"
+
+#: nfoview/schemes.py:99
+msgid "Light grey on dark grey"
+msgstr "Lichtgrijs op donkergrijs"
+
+#: nfoview/schemes.py:109
+msgid "White on black"
+msgstr "Wit op zwart"
+
+#: data/menu.ui:6
+msgid "_Open…"
+msgstr "_Openen..."
+
+#: data/menu.ui:10
+msgid "_Export Image…"
+msgstr "Afbeelding _exporteren..."
+
+#: data/menu.ui:16
+msgid "C_opy"
+msgstr "K_opiëren"
+
+#: data/menu.ui:20
+msgid "_Select All"
+msgstr "Alles _selecteren"
+
+#: data/menu.ui:24
+msgid "_Wrap Lines"
+msgstr "_Regels omslaan"
+
+#: data/menu.ui:30
+msgid "_Preferences"
+msgstr "_Instellingen"
+
+#: data/menu.ui:34
+msgid "_About"
+msgstr "_Over"
+
+#: data/menu.ui:40
+msgid "_Close"
+msgstr "_Sluiten"
+
+#: data/menu.ui:44
+msgid "_Quit"
+msgstr "_Afsluiten"
+
+#: data/preferences-dialog.ui:51
+msgid "Text"
+msgstr "Tekst"
+
+#: data/preferences-dialog.ui:75
+msgid "_Font:"
+msgstr "_Lettertype:"
+
+#: data/preferences-dialog.ui:89
+msgid "Li_ne-spacing:"
+msgstr "Regelafsta_nd:"
+
+#: data/preferences-dialog.ui:153
+msgid "Colors"
+msgstr "Thema"
+
+#: data/preferences-dialog.ui:176
+msgid "_Schemes:"
+msgstr "_Schema's:"
+
+#: data/preferences-dialog.ui:190
+msgid "Fo_reground:"
+msgstr "Voo_rgrond:"
+
+#: data/preferences-dialog.ui:204
+msgid "Bac_kground:"
+msgstr "A_chtergrond:"
+
+#: data/preferences-dialog.ui:218
+msgid "_Link:"
+msgstr "_Link:"
+
+#: data/preferences-dialog.ui:232
+msgid "_Visited link:"
+msgstr "Be_zochte link:"
+
+#: data/preferences-dialog.ui:332
+msgid "Preferences"
+msgstr "Instellingen"
+
+#: data/io.otsaloma.nfoview.appdata.xml.in:9
+msgid ""
+"NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
+"CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
+"are preset font and encoding settings, automatic window size and clickable "
+"hyperlinks."
+msgstr "Met NFO-weergave bekijk je eenvoudig NFO-bestanden, welke zijn opgemaakt in 'ASCII' in de CP437-codepagina. NFO-weergave heeft een aantal voordelen t.o.v. een tekstbewerker: lettertype- en versleutelingsinstellingen, automatische venstergrootte en aanklikbare links."
+
+#: data/io.otsaloma.nfoview.appdata.xml.in:34
+msgid "Main window"
+msgstr "Hoofdvenster"
+
+#: data/io.otsaloma.nfoview.desktop.in:5
+msgid "View NFO files"
+msgstr "Bekijk NFO-bestanden"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.otsaloma.nfoview.desktop.in:11
+msgid "information;"
+msgstr "informatie;"
