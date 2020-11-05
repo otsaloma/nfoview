@@ -31,6 +31,13 @@ except AttributeError:
 class ExportImageDialog(Base):
 
     def __init__(self, parent):
+        """
+        Function creates a gtk. gtk button
+
+        Args:
+            self: (todo): write your description
+            parent: (todo): write your description
+        """
         GObject.GObject.__init__(self)
         self.set_title(_("Export Image"))
         self.set_transient_for(parent)

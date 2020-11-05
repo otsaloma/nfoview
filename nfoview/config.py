@@ -41,10 +41,23 @@ class ConfigurationStore:
     path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
 
     def __init__(self, read=False):
+        """
+        Initialize the configuration.
+
+        Args:
+            self: (todo): write your description
+            read: (todo): write your description
+        """
         self.restore_defaults()
         if read: self.read()
 
     def read(self):
+        """
+        Read the entries file.
+
+        Args:
+            self: (todo): write your description
+        """
         if not os.path.isfile(self.path): return
         with open(self.path, "r") as f:
             entries = f.readlines()
@@ -59,11 +72,23 @@ class ConfigurationStore:
         self.version = nfoview.__version__
 
     def restore_defaults(self):
+        """
+        Restore all default values.
+
+        Args:
+            self: (todo): write your description
+        """
         for name in DEFAULTS:
             setattr(self, name, DEFAULTS[name])
         self.version = nfoview.__version__
 
     def write(self):
+        """
+        Write the text to disk to a file.
+
+        Args:
+            self: (todo): write your description
+        """
         directory = os.path.dirname(self.path)
         with nfoview.util.silent(OSError, tb=True):
             nfoview.util.makedirs(directory)

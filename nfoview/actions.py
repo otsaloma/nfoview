@@ -31,18 +31,43 @@ __all__ = (
 
 class AboutAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "about")
 
 class CloseAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "close")
         self.accelerators = ["<Control>W", "Escape"]
 
 class CopyAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "copy")
         self.accelerators = ["<Control>C"]
     def _affirm_doable(self, window):
+        """
+        Affaffirmable window.
+
+        Args:
+            self: (todo): write your description
+            window: (array): write your description
+        """
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
         text_buffer = window.view.get_buffer()
@@ -50,45 +75,108 @@ class CopyAction(nfoview.Action):
 
 class ExportImageAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "export-image")
         self.accelerators = ["<Control>E"]
     def _affirm_doable(self, window):
+        """
+        Affaffirmable window.
+
+        Args:
+            self: (todo): write your description
+            window: (array): write your description
+        """
         nfoview.util.affirm(window.path is not None)
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
 
 class OpenAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "open")
         self.accelerators = ["<Control>O"]
 
 class PreferencesAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "preferences")
 
 class QuitAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "quit")
         self.accelerators = ["<Control>Q"]
 
 class SelectAllAction(nfoview.Action):
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "select-all")
         self.accelerators = ["<Control>A"]
     def _affirm_doable(self, window):
+        """
+        Affirm the current window.
+
+        Args:
+            self: (todo): write your description
+            window: (array): write your description
+        """
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
         nfoview.util.affirm(window.view.get_text())
 
 class WrapLinesAction(nfoview.ToggleAction):
     def __new__(cls):
+        """
+        Create a new : class : class.
+
+        Args:
+            cls: (todo): write your description
+        """
         action = nfoview.ToggleAction.new("wrap-lines")
         action.__class__ = cls
         return action
     def __init__(self):
+        """
+        Initialize the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.Action.__init__(self, "wrap-lines")
         self.accelerators = ["<Control>R"]
     def _affirm_doable(self, window):
+        """
+        Affirm the current window.
+
+        Args:
+            self: (todo): write your description
+            window: (array): write your description
+        """
         nfoview.util.affirm(window.view is not None)
         nfoview.util.affirm(window.view.get_sensitive())
         nfoview.util.affirm(window.view.get_text())

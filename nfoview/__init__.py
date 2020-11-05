@@ -52,6 +52,12 @@ from nfoview.application import Application # noqa
 from nfoview.unittest import TestCase # noqa
 
 def main(paths):
+    """
+    Main entry point.
+
+    Args:
+        paths: (str): write your description
+    """
     global app
     i18n.bind()
     app = Application(paths)

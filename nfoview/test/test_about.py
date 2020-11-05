@@ -23,7 +23,20 @@ from gi.repository import Gtk
 class TestAboutDialog(nfoview.TestCase):
 
     def run_dialog(self):
+        """
+        Run the dialog.
+
+        Args:
+            self: (todo): write your description
+        """
         self.dialog.run()
 
     def setup_method(self, method):
+        """
+        Setup the method
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         self.dialog = nfoview.AboutDialog(Gtk.Window())

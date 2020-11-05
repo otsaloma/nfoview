@@ -27,13 +27,34 @@ __all__ = ("Action", "ToggleAction")
 class Action(Gio.SimpleAction):
 
     def __init__(self, name):
+        """
+        Initialize a class object.
+
+        Args:
+            self: (todo): write your description
+            name: (str): write your description
+        """
         GObject.GObject.__init__(self, name=name)
         self.accelerators = []
 
     def _affirm_doable(self, window):
+        """
+        _affirmirmirm.
+
+        Args:
+            self: (todo): write your description
+            window: (array): write your description
+        """
         pass
 
     def update_enabled(self, window):
+        """
+        Updates the current window.
+
+        Args:
+            self: (todo): write your description
+            window: (int): write your description
+        """
         try:
             self._affirm_doable(window)
             self.set_enabled(True)
@@ -50,11 +71,31 @@ class ToggleAction(Action):
 
     @staticmethod
     def new(name, parameter_type=None):
+        """
+        Create a new parameter
+
+        Args:
+            name: (str): write your description
+            parameter_type: (str): write your description
+        """
         return Gio.SimpleAction.new_stateful(
             name, parameter_type, GLib.Variant("b", False))
 
     def get_state(self):
+        """
+        : return state
+
+        Args:
+            self: (todo): write your description
+        """
         return Action.get_state(self).get_boolean()
 
     def set_state(self, value):
+        """
+        Sets whether or not this widget is on. : param value | <bool >
+
+        Args:
+            self: (todo): write your description
+            value: (todo): write your description
+        """
         Action.set_state(self, GLib.Variant("b", value))

@@ -31,16 +31,33 @@ from distutils.command.install_lib import install_lib
 
 
 def get_version():
+    """
+    Get version number of the package.
+
+    Args:
+    """
     path = os.path.join("nfoview", "__init__.py")
     text = open(path, "r", encoding="utf_8").read()
     return re.search(r"__version__ *= *['\"](.*?)['\"]", text).group(1)
 
 def run_or_exit(cmd):
+    """
+    Run a command and exit.
+
+    Args:
+        cmd: (str): write your description
+    """
     if os.system(cmd) == 0: return
     log.error("command {!r} failed".format(cmd))
     raise SystemExit(1)
 
 def run_or_warn(cmd):
+    """
+    Run a command on a warning.
+
+    Args:
+        cmd: (str): write your description
+    """
     if os.system(cmd) == 0: return
     log.warn("command {!r} failed".format(cmd))
 
@@ -67,6 +84,12 @@ class Clean(clean):
     ]
 
     def run(self):
+        """
+        Run all files in the directory.
+
+        Args:
+            self: (todo): write your description
+        """
         clean.run(self)
         for targets in map(glob.glob, self.__glob_targets):
             for target in filter(os.path.isdir, targets):
@@ -82,6 +105,12 @@ class Clean(clean):
 class Install(install):
 
     def run(self):
+        """
+        Run command.
+
+        Args:
+            self: (todo): write your description
+        """
         install.run(self)
         get_command_obj = self.distribution.get_command_obj
         root = get_command_obj("install").root
@@ -96,12 +125,24 @@ class Install(install):
 class InstallData(install_data):
 
     def __generate_linguas(self):
+        """
+        Generate the variable.
+
+        Args:
+            self: (todo): write your description
+        """
         linguas = sorted(glob.glob("po/*.po"))
         linguas = [os.path.basename(x)[:-3] for x in linguas]
         with open("po/LINGUAS", "w") as f:
             f.write("\n".join(linguas) + "\n")
 
     def __get_appdata_file(self):
+        """
+        Returns the path to the appdata file.
+
+        Args:
+            self: (str): write your description
+        """
         path = os.path.join("data", "io.otsaloma.nfoview.appdata.xml")
         command = "msgfmt --xml -d po --template {}.in -o {}"
         run_or_warn(command.format(path, path))
@@ -112,6 +153,12 @@ class InstallData(install_data):
         return ("share/metainfo", [path])
 
     def __get_desktop_file(self):
+        """
+        Return the desktop desktop desktop desktop file
+
+        Args:
+            self: (str): write your description
+        """
         path = os.path.join("data", "io.otsaloma.nfoview.desktop")
         command = "msgfmt --desktop -d po --template {}.in -o {}"
         run_or_warn(command.format(path, path))
@@ -122,6 +169,13 @@ class InstallData(install_data):
         return ("share/applications", [path])
 
     def __get_mo_file(self, po_file):
+        """
+        Retrieve po file from polynomial.
+
+        Args:
+            self: (str): write your description
+            po_file: (str): write your description
+        """
         locale = os.path.basename(po_file[:-3])
         mo_dir = os.path.join("locale", locale, "LC_MESSAGES")
         mo_file = os.path.join(mo_dir, "nfoview.mo")
@@ -132,11 +186,23 @@ class InstallData(install_data):
         return (dest_dir, [mo_file])
 
     def __get_mo_files(self):
+        """
+        Return a list of all installed files.
+
+        Args:
+            self: (todo): write your description
+        """
         if sys.platform == "win32": return []
         files = sorted(glob.glob("po/*.po"))
         return [self.__get_mo_file(x) for x in files]
 
     def run(self):
+        """
+        Run this method.
+
+        Args:
+            self: (todo): write your description
+        """
         self.__generate_linguas()
         self.data_files.extend(self.__get_mo_files())
         self.data_files.append(self.__get_appdata_file())
@@ -147,6 +213,12 @@ class InstallData(install_data):
 class InstallLib(install_lib):
 
     def install(self):
+        """
+        Install the install command.
+
+        Args:
+            self: (todo): write your description
+        """
         get_command_obj = self.distribution.get_command_obj
         root = get_command_obj("install").root
         prefix = get_command_obj("install").install_data

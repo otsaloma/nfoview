@@ -31,6 +31,13 @@ except AttributeError:
 class OpenDialog(Base):
 
     def __init__(self, parent):
+        """
+        Function creates gtk engine
+
+        Args:
+            self: (todo): write your description
+            parent: (todo): write your description
+        """
         GObject.GObject.__init__(self)
         self.set_title(_("Open"))
         self.set_transient_for(parent)

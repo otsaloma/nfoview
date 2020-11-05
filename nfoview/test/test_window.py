@@ -23,30 +23,67 @@ from gi.repository import Gtk
 class TestWindow(nfoview.TestCase):
 
     def run_window(self):
+        """
+        Run the main window
+
+        Args:
+            self: (todo): write your description
+        """
         self.window.show()
         self.window.connect("delete-event", Gtk.main_quit)
         Gtk.main()
 
     def setup_method(self, method):
+        """
+        Set up the method for the window
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         self.window = nfoview.Window(self.new_nfo_file())
 
     def test_open_file__blank_lines(self):
+        """
+        Test for blank blank blank with blank lines.
+
+        Args:
+            self: (todo): write your description
+        """
         path = self.new_nfo_file()
         with open(path, "a") as f:
             f.write("\n\n\n")
         self.window.open_file(path)
 
     def test_open_file__odd_lines(self):
+        """
+        Open window lines to the window
+
+        Args:
+            self: (todo): write your description
+        """
         path = self.new_nfo_file()
         with open(path, "w") as f:
             f.write("a\n\na\n\n")
         self.window.open_file(path)
 
     def test_resize_to_text__blank(self):
+        """
+        Resize the window.
+
+        Args:
+            self: (todo): write your description
+        """
         self.window = nfoview.Window()
         self.window.resize_to_text()
 
     def test_resize_to_text__long_file(self):
+        """
+        Resize window to new file.
+
+        Args:
+            self: (todo): write your description
+        """
         path = self.new_nfo_file()
         with open(path, "w") as f:
             f.write("aaa\n" * 100)
@@ -54,6 +91,12 @@ class TestWindow(nfoview.TestCase):
         self.window.resize_to_text()
 
     def test_resize_to_text__long_lines(self):
+        """
+        Resize window to new text file.
+
+        Args:
+            self: (todo): write your description
+        """
         path = self.new_nfo_file()
         with open(path, "w") as f:
             f.write("aaa " * 100)

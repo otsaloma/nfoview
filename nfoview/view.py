@@ -29,6 +29,12 @@ __all__ = ("TextView",)
 class TextView(Gtk.TextView):
 
     def __init__(self):
+        """
+        Initialize all properties
+
+        Args:
+            self: (todo): write your description
+        """
         GObject.GObject.__init__(self)
         self._link_tags = []
         self._visited_link_tags = []
@@ -36,11 +42,23 @@ class TextView(Gtk.TextView):
         self.update_style()
 
     def get_text(self):
+        """
+        Return text ascii text.
+
+        Args:
+            self: (todo): write your description
+        """
         text_buffer = self.get_buffer()
         start, end = text_buffer.get_bounds()
         return text_buffer.get_text(start, end, False)
 
     def _init_properties(self):
+        """
+        Initialize the properties.
+
+        Args:
+            self: (todo): write your description
+        """
         pixels_above = nfoview.conf.pixels_above_lines
         pixels_below = nfoview.conf.pixels_below_lines
         self.set_cursor_visible(False)
@@ -57,6 +75,13 @@ class TextView(Gtk.TextView):
         nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
+        """
+        Insert the url to the buffer.
+
+        Args:
+            self: (todo): write your description
+            url: (str): write your description
+        """
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
         tag.props.underline = Pango.Underline.SINGLE
@@ -67,11 +92,28 @@ class TextView(Gtk.TextView):
         self._link_tags.append(tag)
 
     def _insert_word(self, word):
+        """
+        Inserts text at the end of the buffer.
+
+        Args:
+            self: (todo): write your description
+            word: (str): write your description
+        """
         text_buffer = self.get_buffer()
         itr = text_buffer.get_end_iter()
         text_buffer.insert(itr, word)
 
     def _on_link_tag_event(self, tag, text_view, event, itr):
+        """
+        Function called when a link is clicked.
+
+        Args:
+            self: (todo): write your description
+            tag: (str): write your description
+            text_view: (str): write your description
+            event: (todo): write your description
+            itr: (todo): write your description
+        """
         if event.type != Gdk.EventType.BUTTON_RELEASE: return
         text_buffer = self.get_buffer()
         if text_buffer.get_selection_bounds(): return
@@ -82,6 +124,14 @@ class TextView(Gtk.TextView):
             self.update_style()
 
     def _on_motion_notify_event(self, text_view, event):
+        """
+        Triggered when a window is clicked.
+
+        Args:
+            self: (todo): write your description
+            text_view: (str): write your description
+            event: (todo): write your description
+        """
         window = Gtk.TextWindowType.WIDGET
         x, y = self.window_to_buffer_coords(window, int(event.x), int(event.y))
         window = self.get_window(Gtk.TextWindowType.TEXT)
@@ -100,6 +150,13 @@ class TextView(Gtk.TextView):
             Gdk.Display.get_default(), Gdk.CursorType.XTERM))
 
     def set_text(self, text):
+        """
+        Set the text in the document.
+
+        Args:
+            self: (todo): write your description
+            text: (str): write your description
+        """
         re_url = re.compile(r"(\w+://(\S+\.)?\S+|www\.\S+)\.[\w\-.~:/?#\[\]@!$&'()*+,;=%]+")
         self._link_tags = []
         self._visited_link_tags = []
@@ -133,6 +190,12 @@ class TextView(Gtk.TextView):
         self.update_style()
 
     def update_style(self):
+        """
+        Update the style of the style
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.util.apply_style(self)
         name = nfoview.conf.color_scheme
         scheme = nfoview.schemes.get(name, "default")

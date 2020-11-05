@@ -27,6 +27,13 @@ __all__ = ("AboutDialog",)
 class AboutDialog(Gtk.AboutDialog):
 
     def __init__(self, parent):
+        """
+        Initialize the data
+
+        Args:
+            self: (todo): write your description
+            parent: (todo): write your description
+        """
         GObject.GObject.__init__(self)
         self.set_title(_("About NFO Viewer"))
         self.set_transient_for(parent)

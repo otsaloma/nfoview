@@ -23,6 +23,14 @@ _translation = gettext.NullTranslations()
 
 
 def bind(localedir=nfoview.LOCALE_DIR):
+    """
+    Bind locale to locale.
+
+    Args:
+        localedir: (str): write your description
+        nfoview: (todo): write your description
+        LOCALE_DIR: (str): write your description
+    """
     with nfoview.util.silent(Exception):
         # Set locale to the user's default setting.
         # Might fail on misconfigured systems.
@@ -39,10 +47,31 @@ def bind(localedir=nfoview.LOCALE_DIR):
         "nfoview", localedir=localedir, fallback=True)
 
 def _(message):
+    """
+    Return the translation of a message.
+
+    Args:
+        message: (str): write your description
+    """
     return _translation.gettext(message)
 
 def d_(domain, message):
+    """
+    Return the dgettext for a domain.
+
+    Args:
+        domain: (str): write your description
+        message: (str): write your description
+    """
     return gettext.dgettext(domain, message)
 
 def n_(singular, plural, n):
+    """
+    Return the n - grams object.
+
+    Args:
+        singular: (str): write your description
+        plural: (str): write your description
+        n: (int): write your description
+    """
     return _translation.ngettext(singular, plural, n)

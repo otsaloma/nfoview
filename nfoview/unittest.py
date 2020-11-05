@@ -25,6 +25,14 @@ __all__ = ("TestCase",)
 class TestCase:
 
     def assert_raises(self, exception, function, *args, **kwargs):
+        """
+        Asserts that the given function was raised.
+
+        Args:
+            self: (todo): write your description
+            exception: (todo): write your description
+            function: (todo): write your description
+        """
         try:
             function(*args, **kwargs)
         except exception:
@@ -34,6 +42,12 @@ class TestCase:
             .format(function, exception))
 
     def new_nfo_file(self):
+        """
+        Create a new nfo file
+
+        Args:
+            self: (todo): write your description
+        """
         handle, path = tempfile.mkstemp()
         f = os.fdopen(handle, "w")
         f.write("qwertyuiop asdfghjkl zxcvbnm\n")
@@ -43,17 +57,49 @@ class TestCase:
         return path
 
     def setUp(self):
+        """
+        Sets the setup.
+
+        Args:
+            self: (todo): write your description
+        """
         self.setup_method(None)
 
     def setup_method(self, method):
+        """
+        Setup a method.
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         pass
 
     def tearDown(self):
+        """
+        Tear down the teardown.
+
+        Args:
+            self: (todo): write your description
+        """
         self.teardown_method(None)
 
     def teardown_method(self, method):
+        """
+        Teardown a method.
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         pass
 
     def test___init__(self):
+        """
+        Initialize the test___
+
+        Args:
+            self: (todo): write your description
+        """
         # Make sure that setup_method is always run.
         pass

@@ -23,7 +23,20 @@ from gi.repository import Gtk
 class TestExportImageDialog(nfoview.TestCase):
 
     def run_dialog(self):
+        """
+        Run the dialog.
+
+        Args:
+            self: (todo): write your description
+        """
         self.dialog.run()
 
     def setup_method(self, method):
+        """
+        Set the method to set the method
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         self.dialog = nfoview.ExportImageDialog(Gtk.Window())
