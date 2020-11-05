@@ -23,6 +23,12 @@ from gi.repository import Gtk
 class TestTextView(nfoview.TestCase):
 
     def run_window(self):
+        """
+        Run the gtk window.
+
+        Args:
+            self: (todo): write your description
+        """
         window = Gtk.Window()
         window.connect("delete-event", Gtk.main_quit)
         window.set_position(Gtk.WindowPosition.CENTER)
@@ -32,23 +38,48 @@ class TestTextView(nfoview.TestCase):
         Gtk.main()
 
     def setup_method(self, method):
+        """
+        Setup the view to the given view
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         self.view = nfoview.TextView()
         text = "testing...\nhttps://otsaloma.io/nfoview/"
         self.view.set_text(text)
 
     def test_get_text(self):
+        """
+        The test text
+
+        Args:
+            self: (todo): write your description
+        """
         self.view.set_text("test\ntest")
         text = self.view.get_text()
         # set_text adds a final newline.
         assert text == "test\ntest\n"
 
     def test_set_text(self):
+        """
+        Sets the text to the test text
+
+        Args:
+            self: (todo): write your description
+        """
         self.view.set_text("test\ntest")
         text = self.view.get_text()
         # set_text adds a final newline.
         assert text == "test\ntest\n"
 
     def test_update_style(self):
+        """
+        Update the style of the view
+
+        Args:
+            self: (todo): write your description
+        """
         self.view.update_style()
         tags = self.view._link_tags
         self.view._link_tags = []

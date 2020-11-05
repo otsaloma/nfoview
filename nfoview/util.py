@@ -30,10 +30,22 @@ from gi.repository import Pango
 
 
 def affirm(value):
+    """
+    Validate the affirmation.
+
+    Args:
+        value: (todo): write your description
+    """
     if not value:
         raise nfoview.AffirmationError("Not True: {!r}".format(value))
 
 def apply_style(widget):
+    """
+    Apply a style
+
+    Args:
+        widget: (todo): write your description
+    """
     name = nfoview.conf.color_scheme
     scheme = nfoview.schemes.get(name, "default")
     font_desc = Pango.FontDescription(nfoview.conf.font)
@@ -69,6 +81,14 @@ def apply_style(widget):
                                   priority)
 
 def connect(observer, observable, signal, *args):
+    """
+    Connect an observer to an observer.
+
+    Args:
+        observer: (str): write your description
+        observable: (todo): write your description
+        signal: (str): write your description
+    """
     # If observable is a string, it should be an attribute of observer.
     # If observable is not a string it should be the same as observer.
     method_name = signal.replace("-", "_").replace("::", "_")
@@ -83,6 +103,13 @@ def connect(observer, observable, signal, *args):
     return observable.connect(signal, method, *args)
 
 def detect_encoding(path, default="cp437"):
+    """
+    Detect encoding of a encoding.
+
+    Args:
+        path: (str): write your description
+        default: (str): write your description
+    """
     with open(path, "rb") as f:
         line = f.readline()
     if (line.startswith(codecs.BOM_UTF32_BE) and
@@ -103,12 +130,23 @@ def detect_encoding(path, default="cp437"):
     return default
 
 def get_max_text_view_size():
+    """
+    Calculate width of the text.
+
+    Args:
+    """
     max_chars = nfoview.conf.text_view_max_chars
     max_lines = nfoview.conf.text_view_max_lines
     max_text = "\n".join(("x" * max_chars,) * max_lines)
     return get_text_view_size(max_text)
 
 def get_text_view_size(text):
+    """
+    Return the width height
+
+    Args:
+        text: (str): write your description
+    """
     label = Gtk.Label()
     apply_style(label)
     label.set_text(text)
@@ -118,6 +156,12 @@ def get_text_view_size(text):
     return width, height
 
 def hex_to_rgba(string):
+    """
+    Convert a hex string to a hex string.
+
+    Args:
+        string: (str): write your description
+    """
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
     if success:
@@ -125,12 +169,25 @@ def hex_to_rgba(string):
     raise ValueError("Parsing {!r} failed".format(string))
 
 def is_valid_encoding(encoding):
+    """
+    Returns true if the encoding is valid.
+
+    Args:
+        encoding: (str): write your description
+    """
     try:
         return codecs.lookup(encoding)
     except LookupError:
         return False
 
 def lookup_color(name, fallback):
+    """
+    Lookup an ip address by name.
+
+    Args:
+        name: (str): write your description
+        fallback: (todo): write your description
+    """
     entry = Gtk.Entry()
     entry.show()
     style = entry.get_style_context()
@@ -140,6 +197,12 @@ def lookup_color(name, fallback):
     return fallback
 
 def makedirs(directory):
+    """
+    Create a directory.
+
+    Args:
+        directory: (str): write your description
+    """
     directory = os.path.abspath(directory)
     if os.path.isdir(directory):
         return directory
@@ -153,6 +216,12 @@ def makedirs(directory):
     return directory
 
 def rgba_to_hex(color):
+    """
+    Convert a hex color string to a hex color.
+
+    Args:
+        color: (str): write your description
+    """
     return "#{:02x}{:02x}{:02x}".format(
         int(color.red   * 255),
         int(color.green * 255),
@@ -160,6 +229,12 @@ def rgba_to_hex(color):
     )
 
 def show_uri(uri):
+    """
+    Show gtk. gtk. gtk. uri.
+
+    Args:
+        uri: (str): write your description
+    """
     try:
         return Gtk.show_uri(None, uri, Gdk.CURRENT_TIME)
     except Exception:
@@ -172,12 +247,25 @@ def show_uri(uri):
 
 @contextlib.contextmanager
 def silent(*exceptions, tb=False):
+    """
+    A context manager for the given.
+
+    Args:
+        exceptions: (todo): write your description
+        tb: (array): write your description
+    """
     try:
         yield
     except exceptions:
         if tb: traceback.print_exc()
 
 def uri_to_path(uri):
+    """
+    Convert a uri string.
+
+    Args:
+        uri: (str): write your description
+    """
     uri = urllib.parse.unquote(uri)
     if sys.platform == "win32":
         path = urllib.parse.urlsplit(uri)[2]

@@ -29,6 +29,13 @@ __all__ = ("Application",)
 class Application(Gtk.Application):
 
     def __init__(self, paths):
+        """
+        Initialize the gio connection.
+
+        Args:
+            self: (todo): write your description
+            paths: (str): write your description
+        """
         GObject.GObject.__init__(self)
         self.set_application_id("io.otsaloma.nfoview")
         self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
@@ -36,6 +43,14 @@ class Application(Gtk.Application):
         self.connect("shutdown", self._on_shutdown)
 
     def _on_activate(self, app, paths):
+        """
+        Called when it is open.
+
+        Args:
+            self: (todo): write your description
+            app: (todo): write your description
+            paths: (str): write your description
+        """
         for path in sorted(paths):
             self.open_window(path)
         if not self.get_windows():
@@ -44,9 +59,23 @@ class Application(Gtk.Application):
             self.open_window()
 
     def _on_shutdown(self, app):
+        """
+        Called when the app.
+
+        Args:
+            self: (todo): write your description
+            app: (todo): write your description
+        """
         nfoview.conf.write()
 
     def open_window(self, path=None):
+        """
+        Open a window.
+
+        Args:
+            self: (todo): write your description
+            path: (str): write your description
+        """
         try:
             window = nfoview.Window(path)
             self.add_window(window)

@@ -37,6 +37,13 @@ FIELDS = {
 class TestConfigurationStore(nfoview.TestCase):
 
     def setup_method(self, method):
+        """
+        Sets a new configuration.
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         self.temp_dir = tempfile.mkdtemp()
         nfoview.conf.path = os.path.join(
             self.temp_dir, "nfoview", "nfoview.conf")
@@ -45,9 +52,22 @@ class TestConfigurationStore(nfoview.TestCase):
             setattr(nfoview.conf, name, value)
 
     def teardown_method(self, method):
+        """
+        Teardown a method.
+
+        Args:
+            self: (todo): write your description
+            method: (str): write your description
+        """
         shutil.rmtree(self.temp_dir)
 
     def test_read(self):
+        """
+        Restores the configuration file.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.conf.write()
         nfoview.conf.restore_defaults()
         nfoview.conf.read()
@@ -55,6 +75,12 @@ class TestConfigurationStore(nfoview.TestCase):
             assert getattr(nfoview.conf, name) == value
 
     def test_restore_defaults(self):
+        """
+        Restores all defaults.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.conf.restore_defaults()
         defaults = dict(nfoview.config.DEFAULTS)
         defaults["version"] = nfoview.__version__
@@ -62,6 +88,12 @@ class TestConfigurationStore(nfoview.TestCase):
             assert getattr(nfoview.conf, name) == value
 
     def test_write(self):
+        """
+        Writes the current configuration.
+
+        Args:
+            self: (todo): write your description
+        """
         nfoview.conf.write()
         nfoview.conf.restore_defaults()
         nfoview.conf.read()

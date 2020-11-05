@@ -30,6 +30,13 @@ __all__ = ("Window",)
 class Window(Gtk.ApplicationWindow):
 
     def __init__(self, path=None):
+        """
+        Initialize a widget
+
+        Args:
+            self: (todo): write your description
+            path: (str): write your description
+        """
         GObject.GObject.__init__(self)
         self._about_dialog = None
         self.path = path
@@ -46,6 +53,12 @@ class Window(Gtk.ApplicationWindow):
         self._update_actions_enabled()
 
     def _init_actions(self):
+        """
+        Initialize the actions.
+
+        Args:
+            self: (todo): write your description
+        """
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
             if hasattr(nfoview, "app"):
@@ -56,6 +69,12 @@ class Window(Gtk.ApplicationWindow):
             self.add_action(action)
 
     def _init_contents(self):
+        """
+        Initializes all gtk.
+
+        Args:
+            self: (todo): write your description
+        """
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,)*2))
         scroller.set_shadow_type(Gtk.ShadowType.NONE)
@@ -66,6 +85,12 @@ class Window(Gtk.ApplicationWindow):
         self.add(main_vbox)
 
     def _init_properties(self):
+        """
+        Initialize the spreadsheet properties.
+
+        Args:
+            self: (todo): write your description
+        """
         self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("io.otsaloma.nfoview")
         Gtk.Window.set_default_icon_name("io.otsaloma.nfoview")
@@ -78,6 +103,12 @@ class Window(Gtk.ApplicationWindow):
         self.connect("delete-event", self._on_delete_event)
 
     def _init_titlebar(self):
+        """
+        Initialize the title bar.
+
+        Args:
+            self: (todo): write your description
+        """
         header = Gtk.HeaderBar()
         header.set_title(_("NFO Viewer"))
         header.set_show_close_button(True)
@@ -94,32 +125,78 @@ class Window(Gtk.ApplicationWindow):
         self.set_titlebar(header)
 
     def _init_view(self):
+        """
+        Initialize the view.
+
+        Args:
+            self: (todo): write your description
+        """
         self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
+            """
+            Updates actions.
+
+            Args:
+                text_buffer: (todo): write your description
+                spec: (array): write your description
+                self: (todo): write your description
+            """
             self._update_actions_enabled()
         text_buffer = self.view.get_buffer()
         text_buffer.connect("notify::has-selection", update, self)
 
     def _on_about_activate(self, *args):
+        """
+        Handle a dialog.
+
+        Args:
+            self: (todo): write your description
+        """
         if self._about_dialog is not None:
             return self._about_dialog.present()
         self._about_dialog = nfoview.AboutDialog(self)
         def destroy(dialog, response, self):
+            """
+            Destroy the dialog.
+
+            Args:
+                dialog: (todo): write your description
+                response: (todo): write your description
+                self: (todo): write your description
+            """
             self._about_dialog.destroy()
             self._about_dialog = None
         self._about_dialog.connect("response", destroy, self)
         self._about_dialog.show()
 
     def _on_close_activate(self, *args):
+        """
+        Remove the window
+
+        Args:
+            self: (todo): write your description
+        """
         if hasattr(nfoview, "app"):
             nfoview.app.remove_window(self)
 
     def _on_copy_activate(self, *args):
+        """
+        Copy text clipboard.
+
+        Args:
+            self: (todo): write your description
+        """
         text_buffer = self.view.get_buffer()
         clipboard = Gtk.Clipboard.get(Gdk.atom_intern("CLIPBOARD", False))
         text_buffer.copy_clipboard(clipboard)
 
     def _on_delete_event(self, *args):
+        """
+        Remove window delete event has changed
+
+        Args:
+            self: (todo): write your description
+        """
         # Work around a harmless Gtk-WARNING about drag destination
         # by removing the window and hiding it instead of destroying.
         # https://bugzilla.gnome.org/show_bug.cgi?id=721708
@@ -129,6 +206,19 @@ class Window(Gtk.ApplicationWindow):
             return True
 
     def _on_drag_data_received(self, widget, context, x, y, data, info, time):
+        """
+        Called when the drag button is clicked.
+
+        Args:
+            self: (todo): write your description
+            widget: (todo): write your description
+            context: (todo): write your description
+            x: (todo): write your description
+            y: (todo): write your description
+            data: (todo): write your description
+            info: (todo): write your description
+            time: (int): write your description
+        """
         paths = list(map(nfoview.util.uri_to_path, data.get_uris()))
         if self.path is None:
             self.open_file(paths.pop(0))
@@ -136,6 +226,12 @@ class Window(Gtk.ApplicationWindow):
             list(map(nfoview.app.open_window, paths))
 
     def _on_export_image_activate(self, *args):
+        """
+        Function opens the image dialog
+
+        Args:
+            self: (todo): write your description
+        """
         dialog = nfoview.ExportImageDialog(self)
         directory = os.path.dirname(self.path)
         dialog.set_current_folder(directory)
@@ -155,6 +251,12 @@ class Window(Gtk.ApplicationWindow):
         window.nfoview_path = path
         window.add(view)
         def on_damage_event(window, *args):
+            """
+            Save window on_damage.
+
+            Args:
+                window: (todo): write your description
+            """
             pixbuf = window.get_pixbuf()
             pixbuf.savev(window.nfoview_path, "png", [], [])
         window.connect("damage-event", on_damage_event)
@@ -163,6 +265,12 @@ class Window(Gtk.ApplicationWindow):
             Gtk.main_iteration()
 
     def _on_open_activate(self, *args):
+        """
+        Function opens file dialog
+
+        Args:
+            self: (todo): write your description
+        """
         dialog = nfoview.OpenDialog(self)
         if self.path is not None:
             directory = os.path.dirname(self.path)
@@ -181,32 +289,72 @@ class Window(Gtk.ApplicationWindow):
             list(map(nfoview.app.open_window, paths))
 
     def _on_preferences_activate(self, *args):
+        """
+        Destroy preferences preferences
+
+        Args:
+            self: (todo): write your description
+        """
         if self._preferences_dialog is not None:
             return self._preferences_dialog.present()
         self._preferences_dialog = nfoview.PreferencesDialog(self)
         def destroy(dialog, response, self):
+            """
+            Destroy the dialog.
+
+            Args:
+                dialog: (todo): write your description
+                response: (todo): write your description
+                self: (todo): write your description
+            """
             self._preferences_dialog.destroy()
             self._preferences_dialog = None
         self._preferences_dialog.connect("response", destroy, self)
         self._preferences_dialog.show()
 
     def _on_quit_activate(self, *args):
+        """
+        Called when a command
+
+        Args:
+            self: (todo): write your description
+        """
         if hasattr(nfoview, "app"):
             nfoview.app.quit()
 
     def _on_select_all_activate(self, *args):
+        """
+        Select all text on_buffer
+
+        Args:
+            self: (todo): write your description
+        """
         text_buffer = self.view.get_buffer()
         bounds = text_buffer.get_bounds()
         text_buffer.select_range(*bounds)
         self._update_actions_enabled()
 
     def _on_wrap_lines_activate(self, action, *args):
+        """
+        Function triggered on columns have changed
+
+        Args:
+            self: (todo): write your description
+            action: (todo): write your description
+        """
         action.set_state(not action.get_state())
         if action.get_state():
             return self.view.set_wrap_mode(Gtk.WrapMode.WORD)
         return self.view.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def open_file(self, path):
+        """
+        Open a file
+
+        Args:
+            self: (todo): write your description
+            path: (str): write your description
+        """
         self.path = os.path.abspath(path)
         self.set_title(os.path.basename(path))
         text = self._read_file(path)
@@ -215,6 +363,13 @@ class Window(Gtk.ApplicationWindow):
         self._update_actions_enabled()
 
     def _read_file(self, path):
+        """
+        Read the contents.
+
+        Args:
+            self: (str): write your description
+            path: (str): write your description
+        """
         encoding = nfoview.util.detect_encoding(path)
         with open(path, "r", encoding=encoding) as f:
             lines = f.readlines()
@@ -228,6 +383,12 @@ class Window(Gtk.ApplicationWindow):
         return "\n".join(lines)
 
     def resize_to_text(self):
+        """
+        Resizes text to text.
+
+        Args:
+            self: (todo): write your description
+        """
         # If the width of text exceeds 'text_view_max_chars',
         # switch to line wrapping and use 80 characters width.
         # Limit height to 'text_view_max_lines'. Finally limit
@@ -254,6 +415,12 @@ class Window(Gtk.ApplicationWindow):
         self.resize(*size)
 
     def _update_actions_enabled(self):
+        """
+        Updates all registered actions
+
+        Args:
+            self: (todo): write your description
+        """
         for name in self.list_actions():
             action = self.lookup_action(name)
             action.update_enabled(self)

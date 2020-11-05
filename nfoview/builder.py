@@ -38,6 +38,13 @@ class BuilderDialog:
     _widgets = []
 
     def __init__(self, ui_file_path):
+        """
+        Initialize widget.
+
+        Args:
+            self: (todo): write your description
+            ui_file_path: (str): write your description
+        """
         if not os.path.isabs(ui_file_path):
             ui_file_path = os.path.join(nfoview.DATA_DIR, ui_file_path)
         self._builder = Gtk.Builder()
@@ -50,8 +57,21 @@ class BuilderDialog:
             setattr(self, "_{}".format(name), widget)
 
     def __getattr__(self, name):
+        """
+        Returns the value of a named attribute.
+
+        Args:
+            self: (todo): write your description
+            name: (str): write your description
+        """
         return getattr(self._dialog, name)
 
     def run(self):
+        """
+        Run the dialog
+
+        Args:
+            self: (todo): write your description
+        """
         self._dialog.show()
         return self._dialog.run()
