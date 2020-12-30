@@ -1,7 +1,7 @@
 NFO Viewer
 ==========
 
-[![Build Status](https://travis-ci.org/otsaloma/nfoview.svg)](https://travis-ci.org/otsaloma/nfoview)
+[![Test](https://github.com/otsaloma/nfoview/workflows/Test/badge.svg)](https://github.com/otsaloma/nfoview/actions)
 [![Packages](https://repology.org/badge/tiny-repos/nfoview.svg)](https://repology.org/metapackage/nfoview)
 [![Flathub](https://img.shields.io/badge/download-flathub-blue.svg)](https://flathub.org/apps/details/io.otsaloma.nfoview)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/otsaloma/nfoview)
