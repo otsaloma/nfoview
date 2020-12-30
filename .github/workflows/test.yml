@@ -23,6 +23,7 @@ jobs:
       - name: Run unit tests
         run: xvfb-run py.test-3 nfoview
       - name: Install
-        run: python3 setup.py install --prefix=/tmp/local
-        run: python3 setup.py install --root=/tmp/pkg
-        run: python3 setup.py clean
+        run: |
+          python3 setup.py install --prefix=/tmp/local
+          python3 setup.py install --root=/tmp/pkg
+          python3 setup.py clean
