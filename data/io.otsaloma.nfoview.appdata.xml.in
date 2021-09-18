@@ -23,9 +23,9 @@
   <releases>
     <release version="1.28" date="2020-04-28"/>
   </releases>
-  <mimetypes>
-    <mimetype>text/x-nfo</mimetype>
-  </mimetypes>
+  <provides>
+    <mediatype>text/x-nfo</mediatype>
+  </provides>
   <project_license>GPL-3.0+</project_license>
   <developer_name>Osmo Salomaa</developer_name>
   <screenshots>
