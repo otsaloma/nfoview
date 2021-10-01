@@ -54,6 +54,8 @@ Then, to install NFO Viewer, run command
 
 ### Windows
 
-Windows installers are built irregularly, see [releases][].
+Windows installers are no longer built due to bad tooling, bad results,
+lack of time and lack of motivation. The latest version available for
+Windows is [1.23][].
 
-[releases]: https://github.com/otsaloma/nfoview/releases
+[1.23]: https://github.com/otsaloma/nfoview/releases/tag/1.23
