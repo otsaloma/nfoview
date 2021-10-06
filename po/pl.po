@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-12 22:41+0200\n"
+"POT-Creation-Date: 2021-10-06 22:31+0300\n"
 "PO-Revision-Date: 2018-12-12 20:42+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
 "Language-Team: Polish (http://www.transifex.com/otsaloma/nfoview/language/pl/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "About NFO Viewer"
 msgstr "O przeglądarce plików NFO"
 
-#: nfoview/about.py:34 data/nfoview.appdata.xml.in:7
+#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Przeglądarka plików NFO"
 
@@ -30,8 +30,9 @@ msgstr "Przeglądarka plików NFO"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:42 nfoview/window.py:82 data/nfoview.appdata.xml.in:6
-#: data/nfoview.desktop.in:4
+#: nfoview/about.py:42 nfoview/window.py:82
+#: data/io.otsaloma.nfoview.appdata.xml.in:6
+#: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
 msgstr "Pliki NFO"
 
@@ -49,31 +50,32 @@ msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014-2016, 2018"
 msgid "NFO Viewer Website"
 msgstr "Witryna przeglądarki plików NFO"
 
-#: nfoview/export.py:29
+#: nfoview/export.py:35
 msgid "Export Image"
 msgstr "Eksport obrazu"
 
-#: nfoview/export.py:32 nfoview/open.py:32
+#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
+#: nfoview/open.py:42
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: nfoview/export.py:33
+#: nfoview/export.py:40 nfoview/export.py:43
 msgid "_Save"
 msgstr "_Zapisz"
 
-#: nfoview/open.py:29
+#: nfoview/open.py:35
 msgid "Open"
 msgstr "Otwarcie"
 
-#: nfoview/open.py:33
+#: nfoview/open.py:40 nfoview/open.py:43
 msgid "_Open"
 msgstr "_Otwórz"
 
-#: nfoview/open.py:37
+#: nfoview/open.py:47
 msgid "All files"
 msgstr "Wszystkie pliki"
 
-#: nfoview/open.py:41
+#: nfoview/open.py:51
 msgid "NFO files (*.nfo)"
 msgstr "Pliki NFO (*.nfo)"
 
@@ -181,7 +183,7 @@ msgstr "O_dwiedzony odnośnik:"
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: data/nfoview.appdata.xml.in:9
+#: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
 "NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
@@ -189,16 +191,16 @@ msgid ""
 "hyperlinks."
 msgstr "Przeglądarka plików NFO jest prostą przeglądarką plików NFO, które zawierają obrazy „ASCII” w stronie kodowej CP437. Zaletami używania przeglądarki plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, automatyczny rozmiar okna i klikalne odnośniki."
 
-#: data/nfoview.appdata.xml.in:34
+#: data/io.otsaloma.nfoview.appdata.xml.in:34
 msgid "Main window"
 msgstr "Główne okno"
 
-#: data/nfoview.desktop.in:5
+#: data/io.otsaloma.nfoview.desktop.in:5
 msgid "View NFO files"
 msgstr "Wyświetlanie plików NFO"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/nfoview.desktop.in:11
+#: data/io.otsaloma.nfoview.desktop.in:11
 msgid "information;"
 msgstr "informacje;"

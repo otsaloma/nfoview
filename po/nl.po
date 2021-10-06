@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Heimen Stoffels <vistausss@outlook.com>, 2020
+# Heimen Stoffels <vistausss@fastmail.com>, 2021
+# Heimen Stoffels <vistausss@fastmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-10 22:25+0300\n"
-"PO-Revision-Date: 2020-04-11 17:24+0000\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"POT-Creation-Date: 2021-10-06 22:31+0300\n"
+"PO-Revision-Date: 2021-09-03 16:07+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/otsaloma/nfoview/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr "Over NFO-weergave"
 
 #: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
-msgstr "Bekijk NFO-bestanden"
+msgstr "Bekijk nfo-bestanden"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -44,7 +45,7 @@ msgstr "NFO-weergave"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:49
 msgid "translator-credits"
-msgstr "Heimen Stoffels <vistausss@outlook.com>"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
 #: nfoview/about.py:52
 msgid "NFO Viewer Website"
@@ -109,11 +110,11 @@ msgstr "Wit op zwart"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "_Openen..."
+msgstr "_Openen…"
 
 #: data/menu.ui:10
 msgid "_Export Image…"
-msgstr "Afbeelding _exporteren..."
+msgstr "Afbeelding _exporteren…"
 
 #: data/menu.ui:16
 msgid "C_opy"
@@ -125,11 +126,11 @@ msgstr "Alles _selecteren"
 
 #: data/menu.ui:24
 msgid "_Wrap Lines"
-msgstr "_Regels omslaan"
+msgstr "_Regels afbreken"
 
 #: data/menu.ui:30
 msgid "_Preferences"
-msgstr "_Instellingen"
+msgstr "_Voorkeuren"
 
 #: data/menu.ui:34
 msgid "_About"
@@ -181,7 +182,7 @@ msgstr "Be_zochte link:"
 
 #: data/preferences-dialog.ui:332
 msgid "Preferences"
-msgstr "Instellingen"
+msgstr "Voorkeuren"
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
@@ -189,7 +190,7 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr "Met NFO-weergave bekijk je eenvoudig NFO-bestanden, welke zijn opgemaakt in 'ASCII' in de CP437-codepagina. NFO-weergave heeft een aantal voordelen t.o.v. een tekstbewerker: lettertype- en versleutelingsinstellingen, automatische venstergrootte en aanklikbare links."
+msgstr "Met NFO-weergave bekijk je eenvoudig nfo-bestanden, welke zijn opgemaakt in ‘ASCII’ in de CP437-codepagina. NFO-weergave heeft een aantal voordelen t.o.v. een tekstbewerker: lettertype- en versleutelingsinstellingen, automatische venstergrootte en aanklikbare links."
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:34
 msgid "Main window"
@@ -197,7 +198,7 @@ msgstr "Hoofdvenster"
 
 #: data/io.otsaloma.nfoview.desktop.in:5
 msgid "View NFO files"
-msgstr "Bekijk NFO-bestanden"
+msgstr "Bekijk nfo-bestanden"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!

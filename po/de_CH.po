@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Fabian Affolter <fab@fedoraproject.org>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
@@ -10,20 +11,20 @@ msgstr ""
 "POT-Creation-Date: 2021-10-06 22:31+0300\n"
 "PO-Revision-Date: 2018-12-12 20:42+0000\n"
 "Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
-"Language-Team: Hebrew (http://www.transifex.com/otsaloma/nfoview/language/he/)\n"
+"Language-Team: German (Switzerland) (http://www.transifex.com/otsaloma/nfoview/language/de_CH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Language: de_CH\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: nfoview/about.py:31
 msgid "About NFO Viewer"
-msgstr "על אודות מציג ה־NFO"
+msgstr "Über NFO-Betrachter"
 
 #: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
-msgstr "מציג לקובצי NFO"
+msgstr "Betrachter für NFO-Dokumente"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -33,7 +34,7 @@ msgstr "מציג לקובצי NFO"
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
-msgstr "מציג NFO"
+msgstr "NFO-Betrachter"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -43,11 +44,11 @@ msgstr "מציג NFO"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:49
 msgid "translator-credits"
-msgstr "Yaron Shahrabani <sh.yaron@gmail.com>"
+msgstr "Fabian Affolter <fab@fedoraproject.org>, 2009"
 
 #: nfoview/about.py:52
 msgid "NFO Viewer Website"
-msgstr "האתר של מציג ה־NFO"
+msgstr "NFO-Betrachter Webseite"
 
 #: nfoview/export.py:35
 msgid "Export Image"
@@ -64,7 +65,7 @@ msgstr ""
 
 #: nfoview/open.py:35
 msgid "Open"
-msgstr "פתיחה"
+msgstr "Öffnen"
 
 #: nfoview/open.py:40 nfoview/open.py:43
 msgid "_Open"
@@ -72,43 +73,43 @@ msgstr ""
 
 #: nfoview/open.py:47
 msgid "All files"
-msgstr "כל הקבצים"
+msgstr "Alle Dateien"
 
 #: nfoview/open.py:51
 msgid "NFO files (*.nfo)"
-msgstr "קובצי NFO‏ (*.nfo)"
+msgstr "NFO-Dokumente (*.nfo)"
 
 #: nfoview/schemes.py:46
 msgid "Black on white"
-msgstr "שחור על לבן"
+msgstr "Schwarz auf Weiss"
 
 #: nfoview/schemes.py:56
 msgid "Custom"
-msgstr "מותאם אישית"
+msgstr "Benutzerdefiniert"
 
 #: nfoview/schemes.py:66
 msgid "Dark grey on light grey"
-msgstr "אפור כהה על אפור בהיר"
+msgstr "Dunkelgrau auf Hellgrau"
 
 #: nfoview/schemes.py:79
 msgid "System theme"
-msgstr "ערכת המערכת"
+msgstr "Systemthema"
 
 #: nfoview/schemes.py:89
 msgid "Grey on black"
-msgstr "אפור על שחור"
+msgstr "Grau auf Schwarz"
 
 #: nfoview/schemes.py:99
 msgid "Light grey on dark grey"
-msgstr "אפור בהיר על אפור כהה"
+msgstr "Hellgrau auf Dunkelgrau"
 
 #: nfoview/schemes.py:109
 msgid "White on black"
-msgstr "לבן על שחור"
+msgstr "Weiss auf Schwarz"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "_פתיחה…"
+msgstr "Ö_ffnen …"
 
 #: data/menu.ui:10
 msgid "_Export Image…"
@@ -120,67 +121,67 @@ msgstr ""
 
 #: data/menu.ui:20
 msgid "_Select All"
-msgstr "בחירת ה_כול"
+msgstr "Alles au_swählen"
 
 #: data/menu.ui:24
 msgid "_Wrap Lines"
-msgstr "_גלישת שורות"
+msgstr ""
 
 #: data/menu.ui:30
 msgid "_Preferences"
-msgstr "הע_דפות"
+msgstr "_Einstellungen"
 
 #: data/menu.ui:34
 msgid "_About"
-msgstr "על _אודות"
+msgstr "_Info"
 
 #: data/menu.ui:40
 msgid "_Close"
-msgstr "_סגירה"
+msgstr "S_chliessen"
 
 #: data/menu.ui:44
 msgid "_Quit"
-msgstr "י_ציאה"
+msgstr ""
 
 #: data/preferences-dialog.ui:51
 msgid "Text"
-msgstr "טקסט"
+msgstr "Text"
 
 #: data/preferences-dialog.ui:75
 msgid "_Font:"
-msgstr "_גופן:"
+msgstr "Schri_ftart:"
 
 #: data/preferences-dialog.ui:89
 msgid "Li_ne-spacing:"
-msgstr "ריווח _שורות:"
+msgstr ""
 
 #: data/preferences-dialog.ui:153
 msgid "Colors"
-msgstr "צבעים"
+msgstr "Farben"
 
 #: data/preferences-dialog.ui:176
 msgid "_Schemes:"
-msgstr "_ערכות:"
+msgstr ""
 
 #: data/preferences-dialog.ui:190
 msgid "Fo_reground:"
-msgstr "_קידמה:"
+msgstr "Vo_rdergrund:"
 
 #: data/preferences-dialog.ui:204
 msgid "Bac_kground:"
-msgstr "_רקע:"
+msgstr "_Hintergrund:"
 
 #: data/preferences-dialog.ui:218
 msgid "_Link:"
-msgstr "_קישור:"
+msgstr "_Link:"
 
 #: data/preferences-dialog.ui:232
 msgid "_Visited link:"
-msgstr "_קישור שנפתח:"
+msgstr "Bes_uchter Link:"
 
 #: data/preferences-dialog.ui:332
 msgid "Preferences"
-msgstr "העדפות"
+msgstr "Einstellungen"
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
@@ -196,7 +197,7 @@ msgstr ""
 
 #: data/io.otsaloma.nfoview.desktop.in:5
 msgid "View NFO files"
-msgstr "צפייה בקובצי NFO"
+msgstr "NFO-Dokumente anzeigen"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
