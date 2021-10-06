@@ -1,3 +1,11 @@
+2021-10-06: NFO Viewer 1.28.1
+=============================
+
+* Add Chinese (China) translation
+* Add German (Switzerland) translation
+* Add Italian translation
+* Update existing translations
+
 2020-04-28: NFO Viewer 1.28
 ===========================
 

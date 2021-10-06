@@ -3,7 +3,7 @@
 [Setup]
 AppId=io.otsaloma.nfoview
 AppName=NFO Viewer
-AppVerName=NFO Viewer 1.28
+AppVerName=NFO Viewer 1.28.1
 AppPublisher=Osmo Salomaa
 AppPublisherURL=https://otsaloma.io/nfoview/
 DefaultDirName={pf}\NFO Viewer
