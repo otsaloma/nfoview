@@ -19,7 +19,6 @@ release:
 	$(MAKE) check test clean
 	@echo "BUMP VERSION NUMBERS"
 	$(EDITOR) nfoview/__init__.py
-	$(EDITOR) win32/nfoview.iss
 	@echo "ADD RELEASE NOTES"
 	$(EDITOR) NEWS.md
 	$(EDITOR) data/io.otsaloma.nfoview.appdata.xml.in
