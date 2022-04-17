@@ -19,8 +19,6 @@ import nfoview
 
 from gi.repository import Gtk
 
-__all__ = ("PreferencesDialog",)
-
 
 class PreferencesDialog(nfoview.BuilderDialog):
 

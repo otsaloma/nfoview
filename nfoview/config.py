@@ -19,8 +19,6 @@ import nfoview
 import os
 import re
 
-__all__ = ("ConfigurationStore",)
-
 DEFAULTS = {
     "background_color": "#ffffff",
     "color_scheme": "default",

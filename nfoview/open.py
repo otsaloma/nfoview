@@ -19,8 +19,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-__all__ = ("OpenDialog",)
-
 try:
     # Available since GTK 3.20.
     Base = Gtk.FileChooserNative

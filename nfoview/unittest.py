@@ -19,8 +19,6 @@ import atexit
 import os
 import tempfile
 
-__all__ = ("TestCase",)
-
 
 class TestCase:
 

@@ -21,8 +21,6 @@ from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GObject
 
-__all__ = ("Action", "ToggleAction")
-
 
 class Action(Gio.SimpleAction):
 

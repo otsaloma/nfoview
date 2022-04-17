@@ -24,8 +24,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-__all__ = ("Window",)
-
 
 class Window(Gtk.ApplicationWindow):
 
