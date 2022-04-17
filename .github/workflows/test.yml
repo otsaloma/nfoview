@@ -24,6 +24,5 @@ jobs:
         run: xvfb-run py.test-3 nfoview
       - name: Install
         run: |
-          python3 setup.py install --prefix=/tmp/local
-          python3 setup.py install --root=/tmp/pkg
-          python3 setup.py clean
+          sudo make PREFIX=/usr/local build install clean
+          make DESTDIR=pkg PREFIX=/usr build install clean
