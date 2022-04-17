@@ -36,7 +36,7 @@ and gettext to build the Flatpak.
 
 #### Source
 
-NFO Viewer requires Python ≥ 3.2, PyGObject ≥ 3.0.0 and GTK ≥ 3.12. You
+NFO Viewer requires Python ≥ 3.4, PyGObject ≥ 3.0.0 and GTK ≥ 3.12. You
 also need a font that supports the kinds of glyphs commonly used in NFO
 files: Cascadia Code is a good choice and used by NFO Viewer by default,
 if available. During installation you will also need gettext. On
@@ -50,7 +50,8 @@ Debian/Ubuntu you can install these with the following command.
 
 Then, to install NFO Viewer, run command
 
-    sudo python3 setup.py install --prefix=/usr/local
+    make build
+    sudo make PREFIX=/usr/local install
 
 ### Windows
 

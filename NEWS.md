@@ -1,3 +1,10 @@
+PENDING: NFO Viewer 1.29
+========================
+
+* Use make for installation instead of plain setup.py due to distutils
+  being deprecated and setuptools (like distutils) being difficult for
+  apps, see the README file for the new installation commands
+
 2021-10-06: NFO Viewer 1.28.1
 =============================
 
