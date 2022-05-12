@@ -43,13 +43,13 @@ def apply_style(widget):
     .nfoview-text-view, .nfoview-text-view text {{
         background-color: {bg};
         color: {fg};
-        font-family: {family}, monospace;
+        font-family: "{family}", monospace;
         font-size: {size}{unit};
         font-weight: {weight};
     }}""".format(
         bg=scheme.background,
         fg=scheme.foreground,
-        family=font_desc.get_family().split(",")[0],
+        family=font_desc.get_family().split(",")[0].strip('"'),
         size=int(round(font_desc.get_size() / Pango.SCALE)),
         unit=unit,
         # Round weight to hundreds to work around CSS errors

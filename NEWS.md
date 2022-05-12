@@ -1,6 +1,7 @@
 PENDING: NFO Viewer 1.29
 ========================
 
+* Fix font name quoting in Gtk CSS
 * Use make for installation instead of plain setup.py due to distutils
   being deprecated and setuptools (like distutils) being difficult for
   apps, see the README file for the new installation commands
