@@ -5,6 +5,12 @@ PREFIX    = /usr/local
 DATADIR   = $(DESTDIR)$(PREFIX)/share
 LOCALEDIR = $(DESTDIR)$(PREFIX)/share/locale
 
+# Allow overriding paths fed to setup-partial.py. This is needed at
+# least currently (2022-05-28) on Fedora to avoid '/usr/local/local'.
+# https://bugzilla.redhat.com/show_bug.cgi?id=2026979
+SETUP_ROOT   = $(DESTDIR)
+SETUP_PREFIX = $(PREFIX)
+
 # EDITOR must wait!
 EDITOR = nano
 
@@ -43,7 +49,9 @@ clean:
 install:
 	test -f build/.complete
 	@echo "INSTALLING PYTHON PACKAGE..."
-	./setup-partial.py install $(if $(DESTDIR),--root=$(DESTDIR),) --prefix=$(PREFIX)
+	./setup-partial.py install \
+	$(if $(SETUP_ROOT),--root=$(SETUP_ROOT),) \
+	$(if $(SETUP_PREFIX),--prefix=$(SETUP_PREFIX),)
 	@echo "INSTALLING DATA FILES..."
 	mkdir -p $(DATADIR)/nfoview
 	cp -f data/*.ui $(DATADIR)/nfoview
