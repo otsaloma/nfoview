@@ -53,6 +53,23 @@ Then, to install NFO Viewer, run command
     make build
     sudo make PREFIX=/usr/local install
 
+<details>
+<summary>Using Fedora 36?</summary>
+
+Fedora have [broken][2026979] Python package installation by not
+respecing the supplied prefix. To work around the issue, use the
+following commands – it will install to `/usr/local` (Fedora
+automatically adds `local` to the end of `SETUP_PREFIX`). Only use this
+on Fedora 36 (and maybe later, check the linked bug report for the
+up-to-date status).
+
+    make build
+    sudo make PREFIX=/usr/local SETUP_PREFIX=/usr install
+
+</details>
+
+[2026979]: https://bugzilla.redhat.com/show_bug.cgi?id=2026979
+
 ### Windows
 
 Windows installers are no longer built due to bad tooling, bad results,
