@@ -5,18 +5,24 @@ PREFIX    = /usr/local
 DATADIR   = $(DESTDIR)$(PREFIX)/share
 LOCALEDIR = $(DESTDIR)$(PREFIX)/share/locale
 
-# Allow overriding paths fed to setup-partial.py. This is needed at
-# least currently (2022-05-28) on Fedora to avoid '/usr/local/local'.
-# https://bugzilla.redhat.com/show_bug.cgi?id=2026979
+# Allow overriding setup.py paths. Note that we can't set
+# SETUP_PREFIX=PREFIX as many distros are automatically adding
+# 'local', causing '/usr/local/local' and a broken install.
 SETUP_ROOT   = $(DESTDIR)
-SETUP_PREFIX = $(PREFIX)
+SETUP_PREFIX =
 
 # EDITOR must wait!
 EDITOR = nano
 
+# TODO: Use either 'pip3 install' or 'python3 -m build' + 'python3 -m
+# installer' once either supports a sensible installation both from
+# source (--prefix=/usr/local, whether implicit or explicit) and
+# building a distro package (--destdir=pkg --prefix=/usr). As of 9/2022
+# it seems setup.py is deprecated, but there is no replacement.
+
 build:
 	@echo "BUILDING PYTHON PACKAGE..."
-	./setup-partial.py build
+	NFOVIEW_PREFIX=$(PREFIX) ./setup-partial.py build
 	@echo "BUILDING TRANSLATIONS..."
 	mkdir -p build/mo
 	for LANG in `cat po/LINGUAS`; do \
@@ -49,7 +55,7 @@ clean:
 install:
 	test -f build/.complete
 	@echo "INSTALLING PYTHON PACKAGE..."
-	./setup-partial.py install \
+	NFOVIEW_PREFIX=$(PREFIX) ./setup-partial.py install \
 	$(if $(SETUP_ROOT),--root=$(SETUP_ROOT),) \
 	$(if $(SETUP_PREFIX),--prefix=$(SETUP_PREFIX),)
 	@echo "INSTALLING DATA FILES..."
