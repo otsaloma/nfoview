@@ -64,8 +64,8 @@ install:
 	@echo "INSTALLING ICONS..."
 	mkdir -p $(DATADIR)/icons/hicolor/scalable/apps
 	mkdir -p $(DATADIR)/icons/hicolor/symbolic/apps
-	cp -f data/icons/io.otsaloma.nfoview.svg $(DATADIR)/icons/hicolor/scalable/apps
-	cp -f data/icons/io.otsaloma.nfoview-symbolic.svg $(DATADIR)/icons/hicolor/symbolic/apps
+	cp -f data/io.otsaloma.nfoview.svg $(DATADIR)/icons/hicolor/scalable/apps
+	cp -f data/io.otsaloma.nfoview-symbolic.svg $(DATADIR)/icons/hicolor/symbolic/apps
 	@echo "INSTALLING TRANSLATIONS..."
 	for LANG in `cat po/LINGUAS`; do \
 	echo $$LANG; \
