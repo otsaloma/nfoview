@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 22:31+0300\n"
-"PO-Revision-Date: 2018-12-12 20:42+0000\n"
-"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"POT-Creation-Date: 2022-10-03 23:06+0300\n"
+"PO-Revision-Date: 2015-04-09 18:40+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian (http://www.transifex.com/otsaloma/nfoview/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: nfoview/about.py:31
+#: nfoview/about.py:29
 msgid "About NFO Viewer"
 msgstr "О программе"
 
-#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:32 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Программа просмотра файлов NFO"
 
@@ -29,7 +29,7 @@ msgstr "Программа просмотра файлов NFO"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:42 nfoview/window.py:82
+#: nfoview/about.py:40 nfoview/window.py:80
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -41,40 +41,40 @@ msgstr "Просмотр NFO"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:49
+#: nfoview/about.py:47
 msgid "translator-credits"
 msgstr "Alex P. <davian818@gmail.com>, 2010"
 
-#: nfoview/about.py:52
+#: nfoview/about.py:50
 msgid "NFO Viewer Website"
 msgstr "Сайт NFO Viewer"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:33
 msgid "Export Image"
 msgstr ""
 
-#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
-#: nfoview/open.py:42
+#: nfoview/export.py:37 nfoview/export.py:40 nfoview/open.py:37
+#: nfoview/open.py:40
 msgid "_Cancel"
 msgstr ""
 
-#: nfoview/export.py:40 nfoview/export.py:43
+#: nfoview/export.py:38 nfoview/export.py:41
 msgid "_Save"
 msgstr ""
 
-#: nfoview/open.py:35
+#: nfoview/open.py:33
 msgid "Open"
 msgstr "Открыть"
 
-#: nfoview/open.py:40 nfoview/open.py:43
+#: nfoview/open.py:38 nfoview/open.py:41
 msgid "_Open"
 msgstr ""
 
-#: nfoview/open.py:47
+#: nfoview/open.py:45
 msgid "All files"
 msgstr "Все файлы"
 
-#: nfoview/open.py:51
+#: nfoview/open.py:49
 msgid "NFO files (*.nfo)"
 msgstr "Файлы NFO (*.nfo)"
 
@@ -190,7 +190,7 @@ msgid ""
 "hyperlinks."
 msgstr ""
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:34
+#: data/io.otsaloma.nfoview.appdata.xml.in:35
 msgid "Main window"
 msgstr ""
 

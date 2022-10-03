@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 22:31+0300\n"
-"PO-Revision-Date: 2021-09-03 16:07+0000\n"
-"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"POT-Creation-Date: 2022-10-03 23:06+0300\n"
+"PO-Revision-Date: 2015-04-09 18:40+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>, 2021\n"
 "Language-Team: Dutch (http://www.transifex.com/otsaloma/nfoview/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: nfoview/about.py:31
+#: nfoview/about.py:29
 msgid "About NFO Viewer"
 msgstr "Over NFO-weergave"
 
-#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:32 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Bekijk nfo-bestanden"
 
@@ -31,7 +31,7 @@ msgstr "Bekijk nfo-bestanden"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:42 nfoview/window.py:82
+#: nfoview/about.py:40 nfoview/window.py:80
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -43,40 +43,40 @@ msgstr "NFO-weergave"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:49
+#: nfoview/about.py:47
 msgid "translator-credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
-#: nfoview/about.py:52
+#: nfoview/about.py:50
 msgid "NFO Viewer Website"
 msgstr "Website"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:33
 msgid "Export Image"
 msgstr "Afbeelding exporteren"
 
-#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
-#: nfoview/open.py:42
+#: nfoview/export.py:37 nfoview/export.py:40 nfoview/open.py:37
+#: nfoview/open.py:40
 msgid "_Cancel"
 msgstr "_Annuleren"
 
-#: nfoview/export.py:40 nfoview/export.py:43
+#: nfoview/export.py:38 nfoview/export.py:41
 msgid "_Save"
 msgstr "Op_slaan"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:33
 msgid "Open"
 msgstr "Openen"
 
-#: nfoview/open.py:40 nfoview/open.py:43
+#: nfoview/open.py:38 nfoview/open.py:41
 msgid "_Open"
 msgstr "_Openen"
 
-#: nfoview/open.py:47
+#: nfoview/open.py:45
 msgid "All files"
 msgstr "Alle bestanden"
 
-#: nfoview/open.py:51
+#: nfoview/open.py:49
 msgid "NFO files (*.nfo)"
 msgstr "NFO-bestanden (*.nfo)"
 
@@ -192,7 +192,7 @@ msgid ""
 "hyperlinks."
 msgstr "Met NFO-weergave bekijk je eenvoudig nfo-bestanden, welke zijn opgemaakt in ‘ASCII’ in de CP437-codepagina. NFO-weergave heeft een aantal voordelen t.o.v. een tekstbewerker: lettertype- en versleutelingsinstellingen, automatische venstergrootte en aanklikbare links."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:34
+#: data/io.otsaloma.nfoview.appdata.xml.in:35
 msgid "Main window"
 msgstr "Hoofdvenster"
 

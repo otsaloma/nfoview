@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 22:31+0300\n"
-"PO-Revision-Date: 2018-12-12 20:42+0000\n"
-"Last-Translator: Osmo Salomaa <otsaloma@iki.fi>\n"
+"POT-Creation-Date: 2022-10-03 23:06+0300\n"
+"PO-Revision-Date: 2015-04-09 18:40+0000\n"
+"Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2018\n"
 "Language-Team: Czech (http://www.transifex.com/otsaloma/nfoview/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: nfoview/about.py:31
+#: nfoview/about.py:29
 msgid "About NFO Viewer"
 msgstr "O Prohlížeči NFO"
 
-#: nfoview/about.py:34 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:32 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Prohlížeč NFO souborů"
 
@@ -30,7 +30,7 @@ msgstr "Prohlížeč NFO souborů"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:42 nfoview/window.py:82
+#: nfoview/about.py:40 nfoview/window.py:80
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -42,40 +42,40 @@ msgstr "Prohlížeč NFO"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:49
+#: nfoview/about.py:47
 msgid "translator-credits"
 msgstr "překladatelé"
 
-#: nfoview/about.py:52
+#: nfoview/about.py:50
 msgid "NFO Viewer Website"
 msgstr "Webové stránky Prohlížeče NFO"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:33
 msgid "Export Image"
 msgstr "Exportovat obrázek"
 
-#: nfoview/export.py:39 nfoview/export.py:42 nfoview/open.py:39
-#: nfoview/open.py:42
+#: nfoview/export.py:37 nfoview/export.py:40 nfoview/open.py:37
+#: nfoview/open.py:40
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: nfoview/export.py:40 nfoview/export.py:43
+#: nfoview/export.py:38 nfoview/export.py:41
 msgid "_Save"
 msgstr "_Uložit"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:33
 msgid "Open"
 msgstr "Otevřít"
 
-#: nfoview/open.py:40 nfoview/open.py:43
+#: nfoview/open.py:38 nfoview/open.py:41
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: nfoview/open.py:47
+#: nfoview/open.py:45
 msgid "All files"
 msgstr "Všechny soubory"
 
-#: nfoview/open.py:51
+#: nfoview/open.py:49
 msgid "NFO files (*.nfo)"
 msgstr "Soubory NFO (*.nfo)"
 
@@ -191,7 +191,7 @@ msgid ""
 "hyperlinks."
 msgstr "Prohlížeč NFO je jednoduchý prohlížeč NFO souborů, které jsou \"ASCII\" uměním v kódování CP437. Výhodami použití Prohlížeče NFO namísto textového editoru jsou přítomnost nastavení řezu písma a kódování, automatická změna velikosti okna a klikatelné odkazy."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:34
+#: data/io.otsaloma.nfoview.appdata.xml.in:35
 msgid "Main window"
 msgstr "Hlavní okno"
 
