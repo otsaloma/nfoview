@@ -11,7 +11,8 @@ modules:
   - name: nfoview
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=/app
+      - make build
+      - make PREFIX=/app SETUP_PREFIX=/app install
     sources:
       - type: git
         url: https://github.com/otsaloma/nfoview.git
