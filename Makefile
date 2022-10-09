@@ -8,6 +8,7 @@ LOCALEDIR = $(DESTDIR)$(PREFIX)/share/locale
 # Allow overriding setup.py paths. Note that we can't set
 # SETUP_PREFIX=PREFIX as many distros are automatically adding
 # 'local', causing '/usr/local/local' and a broken install.
+# https://bugzilla.redhat.com/show_bug.cgi?id=2026979
 SETUP_ROOT   = $(DESTDIR)
 SETUP_PREFIX =
 
