@@ -56,43 +56,43 @@ class Window(Gtk.ApplicationWindow):
     def _init_contents(self):
         scroller = Gtk.ScrolledWindow()
         scroller.set_policy(*((Gtk.PolicyType.AUTOMATIC,)*2))
-        scroller.set_shadow_type(Gtk.ShadowType.NONE)
-        scroller.add(self.view)
+        scroller.set_child(self.view)
         main_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
-        main_vbox.pack_start(scroller, expand=True, fill=True, padding=0)
-        main_vbox.show_all()
-        self.add(main_vbox)
+        main_vbox.append(scroller)
+        self.set_child(main_vbox)
 
     def _init_properties(self):
-        self.set_position(Gtk.WindowPosition.CENTER)
         self.set_icon_name("io.otsaloma.nfoview")
         Gtk.Window.set_default_icon_name("io.otsaloma.nfoview")
-        self.drag_dest_set(flags=Gtk.DestDefaults.ALL,
-                           targets=None,
-                           actions=Gdk.DragAction.COPY)
+        # XXX:
+        # self.drag_dest_set(flags=Gtk.DestDefaults.ALL,
+        #                    targets=None,
+        #                    actions=Gdk.DragAction.COPY)
 
-        self.drag_dest_add_uri_targets()
-        self.connect("drag-data-received", self._on_drag_data_received)
-        self.connect("delete-event", self._on_delete_event)
+        # self.drag_dest_add_uri_targets()
+        # self.connect("drag-data-received", self._on_drag_data_received)
+        # self.connect("delete-event", self._on_delete_event)
 
     def _init_titlebar(self):
         header = Gtk.HeaderBar()
-        header.set_title(_("NFO Viewer"))
-        header.set_show_close_button(True)
+        # XXX:
+        # header.set_title(_("NFO Viewer"))
+        # header.set_show_close_button(True)
         menu_button = Gtk.MenuButton()
         menu_button.set_direction(Gtk.ArrowType.NONE)
+        # XXX:
         # Popover doesn't show keyboard shortcuts.
-        menu_button.set_use_popover(False)
+        # menu_button.set_use_popover(False)
         path = os.path.join(nfoview.DATA_DIR, "menu.ui")
         builder = Gtk.Builder.new_from_file(path)
         menu = builder.get_object("menu")
         menu_button.set_menu_model(menu)
         header.pack_start(menu_button)
-        header.show_all()
         self.set_titlebar(header)
 
     def _init_view(self):
-        self.view.drag_dest_unset()
+        # XXX:
+        # self.view.drag_dest_unset()
         def update(text_buffer, spec, self):
             self._update_actions_enabled()
         text_buffer = self.view.get_buffer()
@@ -246,10 +246,11 @@ class Window(Gtk.ApplicationWindow):
         # 24 pixels for scrollbars, 48 pixels for header bar.
         size[0] = max(400, size[0] + 12 + 24)
         size[1] = max(248, size[1] + 12 + 24 + 48)
+        # XXX:
         # TODO: Use per-monitor geometry, requires GTK >= 3.22.
-        size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
-        size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
-        self.resize(*size)
+        # size[0] = min(size[0], int(0.8 * Gdk.Screen.width()))
+        # size[1] = min(size[1], int(0.8 * Gdk.Screen.height()))
+        # self.resize(*size)
 
     def _update_actions_enabled(self):
         for name in self.list_actions():

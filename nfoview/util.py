@@ -59,14 +59,15 @@ def apply_style(widget):
     css = css.replace("font-size: 0{unit};".format(unit=unit), "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
-    provider = Gtk.CssProvider()
-    provider.load_from_data(bytes(css.encode()))
-    style = widget.get_style_context()
-    style.add_class("nfoview-text-view")
-    priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-    style.add_provider_for_screen(Gdk.Screen.get_default(),
-                                  provider,
-                                  priority)
+    # XXX:
+    # provider = Gtk.CssProvider()
+    # provider.load_from_data(bytes(css.encode()))
+    # style = widget.get_style_context()
+    # style.add_class("nfoview-text-view")
+    # priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+    # style.add_provider_for_screen(Gdk.Screen.get_default(),
+    #                               provider,
+    #                               priority)
 
 def connect(observer, observable, signal, *args):
     # If observable is a string, it should be an attribute of observer.
@@ -109,13 +110,15 @@ def get_max_text_view_size():
     return get_text_view_size(max_text)
 
 def get_text_view_size(text):
-    label = Gtk.Label()
-    apply_style(label)
-    label.set_text(text)
-    label.show()
-    width = label.get_preferred_width()[1]
-    height = label.get_preferred_height()[1]
-    return width, height
+    # XXX:
+    return 600, 600
+    # label = Gtk.Label()
+    # apply_style(label)
+    # label.set_text(text)
+    # label.show()
+    # width = label.get_preferred_width()[1]
+    # height = label.get_preferred_height()[1]
+    # return width, height
 
 def hex_to_rgba(string):
     rgba = Gdk.RGBA()

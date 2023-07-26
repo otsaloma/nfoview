@@ -40,5 +40,6 @@ class ExportImageDialog(Base):
             self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
             self.add_button(_("_Save"), Gtk.ResponseType.OK)
             self.set_default_response(Gtk.ResponseType.OK)
-        self.set_do_overwrite_confirmation(True)
+        # XXX:
+        # self.set_do_overwrite_confirmation(True)
         self.set_select_multiple(False)

@@ -52,13 +52,15 @@ class TextView(Gtk.TextView):
             # Available since GTK 3.18.
             self.set_top_margin(6)
             self.set_bottom_margin(6)
-        nfoview.util.connect(self, self, "motion-notify-event")
+        # XXX:
+        # nfoview.util.connect(self, self, "motion-notify-event")
 
     def _insert_url(self, url):
         text_buffer = self.get_buffer()
         tag = text_buffer.create_tag(None)
         tag.props.underline = Pango.Underline.SINGLE
-        tag.connect("event", self._on_link_tag_event)
+        # XXX:
+        # tag.connect("event", self._on_link_tag_event)
         tag.nfoview_url = url
         itr = text_buffer.get_end_iter()
         text_buffer.insert_with_tags(itr, url, tag)
