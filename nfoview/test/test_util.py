@@ -21,7 +21,7 @@ import os
 import shutil
 import tempfile
 
-from gi.repository import Gdk
+from gi.repository import Gdk # noqa
 from gi.repository import Gtk
 from unittest.mock import patch
 

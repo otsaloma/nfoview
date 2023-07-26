@@ -17,8 +17,8 @@
 
 import nfoview
 
-from gi.repository import Gdk
-from gi.repository import Gtk
+from gi.repository import Gdk # noqa
+from gi.repository import Gtk # noqa
 
 
 class TestPreferencesDialog(nfoview.TestCase):

@@ -22,7 +22,7 @@ import textwrap
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Gtk
-from nfoview.i18n  import _
+from nfoview.i18n  import _ # noqa
 
 
 class Window(Gtk.ApplicationWindow):
