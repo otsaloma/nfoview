@@ -1,20 +1,4 @@
 Translating NFO Viewer
 ======================
 
-Translations are available at [Transifex][]. Please use that to add and
-update translations.
-
-To try your translation, get the source code from GitHub, add your
-translation file from Transifex, compile your translation and run.
-
-```bash
-git clone https://github.com/otsaloma/nfoview.git
-cd nfoview
-# Download your translation as po/xx.po.
-# https://www.transifex.com/otsaloma/nfoview/language/xx/
-mkdir -p locale/xx/LC_MESSAGES
-msgfmt -cv po/xx.po -o locale/xx/LC_MESSAGES/nfoview.mo
-LANG=xx bin/nfoview
-```
-
-[Transifex]: https://www.transifex.com/otsaloma/nfoview/
+Please use Transifex: https://app.transifex.com/otsaloma/nfoview/
