@@ -18,7 +18,6 @@
 import codecs
 import contextlib
 import nfoview
-import os
 import sys
 import traceback
 import urllib.parse
@@ -31,43 +30,44 @@ from gi.repository import Pango
 
 def affirm(value):
     if not value:
-        raise nfoview.AffirmationError("Not True: {!r}".format(value))
+        raise nfoview.AffirmationError(f"Not True: {value!r}")
 
 def apply_style(widget):
     name = nfoview.conf.color_scheme
     scheme = nfoview.schemes.get(name, "default")
     font_desc = Pango.FontDescription(nfoview.conf.font)
-    # They fucking broke theming again with GTK 3.22.
-    unit = "pt" if Gtk.check_version(3, 22, 0) is None else "px"
     css = """
     .nfoview-text-view, .nfoview-text-view text {{
         background-color: {bg};
         color: {fg};
         font-family: "{family}", monospace;
-        font-size: {size}{unit};
+        font-size: {size}px;
         font-weight: {weight};
     }}""".format(
         bg=scheme.background,
         fg=scheme.foreground,
         family=font_desc.get_family().split(",")[0].strip('"'),
         size=int(round(font_desc.get_size() / Pango.SCALE)),
-        unit=unit,
         # Round weight to hundreds to work around CSS errors
         # with weird weights such as Unscii's 101.
         weight=round(font_desc.get_weight(), -2),
     )
-    css = css.replace("font-size: 0{unit};".format(unit=unit), "")
+    css = css.replace("font-size: 0px;", "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
-    # XXX:
-    # provider = Gtk.CssProvider()
-    # provider.load_from_data(bytes(css.encode()))
-    # style = widget.get_style_context()
-    # style.add_class("nfoview-text-view")
-    # priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-    # style.add_provider_for_screen(Gdk.Screen.get_default(),
-    #                               provider,
-    #                               priority)
+    provider = Gtk.CssProvider()
+    try:
+        # The call signature of 'load_from_data' seems to have changed
+        # in some GTK version. Also, the whole function is deprecated
+        # and since GTK 4.12 we should use 'load_from_string'.
+        provider.load_from_data(css, -1)
+    except Exception:
+        provider.load_from_data(bytes(css.encode()))
+    style = widget.get_style_context()
+    style.add_class("nfoview-text-view")
+    display = Gdk.Display.get_default()
+    priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+    style.add_provider_for_display(display, provider, priority)
 
 def connect(observer, observable, signal, *args):
     # If observable is a string, it should be an attribute of observer.
@@ -110,22 +110,19 @@ def get_max_text_view_size():
     return get_text_view_size(max_text)
 
 def get_text_view_size(text):
-    # XXX:
-    return 600, 600
-    # label = Gtk.Label()
-    # apply_style(label)
-    # label.set_text(text)
-    # label.show()
-    # width = label.get_preferred_width()[1]
-    # height = label.get_preferred_height()[1]
-    # return width, height
+    label = Gtk.Label()
+    apply_style(label)
+    label.set_text(text)
+    label.show()
+    width = label.measure(Gtk.Orientation.HORIZONTAL, -1)
+    height = label.measure(Gtk.Orientation.VERTICAL, -1)
+    return width.natural, height.natural
 
 def hex_to_rgba(string):
     rgba = Gdk.RGBA()
     success = rgba.parse(string)
-    if success:
-        return rgba
-    raise ValueError("Parsing {!r} failed".format(string))
+    if success: return rgba
+    raise ValueError(f"Parsing {string!r} failed")
 
 def is_valid_encoding(encoding):
     try:
@@ -141,19 +138,6 @@ def lookup_color(name, fallback):
     if found:
         return rgba_to_hex(color)
     return fallback
-
-def makedirs(directory):
-    directory = os.path.abspath(directory)
-    if os.path.isdir(directory):
-        return directory
-    try:
-        os.makedirs(directory)
-    except OSError as error:
-        print("Failed to create directory {!r}: {!s}"
-              .format(directory, error),
-              file=sys.stderr)
-        raise # OSError
-    return directory
 
 def rgba_to_hex(color):
     return "#{:02x}{:02x}{:02x}".format(

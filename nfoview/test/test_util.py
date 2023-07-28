@@ -17,11 +17,8 @@
 
 import codecs
 import nfoview
-import os
-import shutil
-import tempfile
 
-from gi.repository import Gdk # noqa
+from gi.repository import Gdk
 from gi.repository import Gtk
 from unittest.mock import patch
 
@@ -96,39 +93,29 @@ class TestModule(nfoview.TestCase):
         width, height = nfoview.util.get_text_view_size(text)
         assert width > 100 and height > 100
 
-    # XXX:
-    # def test_hex_to_rgba(self):
-    #     color = nfoview.util.hex_to_rgba("#ff0000")
-    #     assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
+    def test_hex_to_rgba(self):
+        color = nfoview.util.hex_to_rgba("#ff0000")
+        assert color.red   == 1.0
+        assert color.green == 0.0
+        assert color.blue  == 0.0
+        assert color.alpha == 1.0
 
-    def test_makedirs__create(self):
-        root = tempfile.mkdtemp()
-        directory = os.path.join(root, "test")
-        assert not os.path.isdir(directory)
-        nfoview.util.makedirs(directory)
-        assert os.path.isdir(directory)
-        shutil.rmtree(root)
-
-    def test_makedirs__exists(self):
-        directory = tempfile.mkdtemp()
-        assert os.path.isdir(directory)
-        nfoview.util.makedirs(directory)
-        assert os.path.isdir(directory)
-        shutil.rmtree(directory)
-
-    # XXX:
-    # def test_rgba_to_hex(self):
-    #     rgba = Gdk.RGBA(red=1, green=0, blue=1)
-    #     color = nfoview.util.rgba_to_hex(rgba)
-    #     assert color == "#ff00ff"
+    def test_rgba_to_hex(self):
+        rgba = Gdk.RGBA()
+        rgba.red   = 1.0
+        rgba.green = 0.0
+        rgba.blue  = 1.0
+        rgba.alpha = 1.0
+        color = nfoview.util.rgba_to_hex(rgba)
+        assert color == "#ff00ff"
 
     @patch("sys.platform", "linux2")
     def test_show_uri__unix(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview")
 
     @patch("sys.platform", "win32")
     def test_show_uri__windows(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview")
 
     @patch("sys.platform", "linux2")
     def test_uri_to_path__unix(self):

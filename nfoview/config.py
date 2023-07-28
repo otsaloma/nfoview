@@ -64,7 +64,7 @@ class ConfigurationStore:
     def write(self):
         directory = os.path.dirname(self.path)
         with nfoview.util.silent(OSError, tb=True):
-            nfoview.util.makedirs(directory)
+            os.makedirs(directory, exist_ok=True)
         if not os.path.isdir(directory): return
         f = open(self.path, "w")
         for name in sorted(DEFAULTS):
