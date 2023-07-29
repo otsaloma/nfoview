@@ -19,28 +19,20 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-try:
-    # Available since GTK 3.20.
-    Base = Gtk.FileChooserNative
-except AttributeError:
-    Base = Gtk.FileChooserDialog
 
-
-class OpenDialog(Base):
+class OpenDialog(Gtk.FileChooserNative):
 
     def __init__(self, parent):
         GObject.GObject.__init__(self)
+        self.set_accept_label(_("_Open"))
+        self.set_action(Gtk.FileChooserAction.OPEN)
+        self.set_cancel_label(_("_Cancel"))
+        self.set_select_multiple(True)
         self.set_title(_("Open"))
         self.set_transient_for(parent)
-        self.set_action(Gtk.FileChooserAction.OPEN)
-        if Base is Gtk.FileChooserNative:
-            self.set_cancel_label(_("_Cancel"))
-            self.set_accept_label(_("_Open"))
-        if Base is Gtk.FileChooserDialog:
-            self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
-            self.add_button(_("_Open"), Gtk.ResponseType.OK)
-            self.set_default_response(Gtk.ResponseType.OK)
-        self.set_select_multiple(True)
+        self._add_filters()
+
+    def _add_filters(self):
         file_filter = Gtk.FileFilter()
         file_filter.set_name(_("All files"))
         file_filter.add_pattern("*")
