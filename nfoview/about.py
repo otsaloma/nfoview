@@ -26,18 +26,23 @@ class AboutDialog(Gtk.AboutDialog):
 
     def __init__(self, parent):
         GObject.GObject.__init__(self)
-        self.set_title(_("About NFO Viewer"))
-        self.set_transient_for(parent)
         self.set_authors(("Osmo Salomaa <otsaloma@iki.fi>",))
         self.set_comments(_("Viewer for NFO files"))
-        self.set_copyright("Copyright © 2005–2022 Osmo Salomaa")
+        self.set_copyright("Copyright © 2005–2023 Osmo Salomaa")
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_logo_icon_name("io.otsaloma.nfoview")
+        self.set_title(_("About NFO Viewer"))
+        self.set_transient_for(parent)
+        self.set_version(nfoview.__version__)
+        self.set_website("https://otsaloma.io/nfoview")
+        self.set_website_label("https://otsaloma.io/nfoview")
+
         # TRANSLATORS: The application name "NFO Viewer" has been intentionally
         # marked as translatable. If you manage to translate the name in a
         # fluent manner, without changing the meaning, you may use that
         # translation at your discretion.
         self.set_program_name(_("NFO Viewer"))
+
         # TRANSLATORS: This is a special message that shouldn't be translated
         # literally. It is used in the about dialog to give credits to the
         # translators. Thus, you should translate it to your name and email
@@ -45,7 +50,3 @@ class AboutDialog(Gtk.AboutDialog):
         # to this translation; in that case, please write them on separate
         # lines seperated by newlines (\n).
         self.set_translator_credits(_("translator-credits"))
-        self.set_version(nfoview.__version__)
-        self.set_website("https://otsaloma.io/nfoview/")
-        self.set_website_label(_("NFO Viewer Website"))
-        self.set_wrap_license(True)

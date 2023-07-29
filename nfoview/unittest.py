@@ -18,6 +18,9 @@
 import atexit
 import os
 import tempfile
+import time
+
+from gi.repository import GLib
 
 
 class TestCase:
@@ -30,6 +33,13 @@ class TestCase:
         raise AssertionError(
             "{!r} failed to raise {!r}"
             .format(function, exception))
+
+    def main_loop(self, dialog):
+        main_context = GLib.MainContext.default()
+        while dialog.get_visible():
+            while main_context.pending():
+                main_context.iteration()
+            time.sleep(0.01)
 
     def new_nfo_file(self):
         handle, path = tempfile.mkstemp()
