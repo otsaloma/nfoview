@@ -22,6 +22,10 @@ import nfoview
 _translation = gettext.NullTranslations()
 
 
+# Wrapper class for marking lazy translations
+class __(str): pass
+
+
 def bind(localedir=nfoview.LOCALE_DIR):
     with nfoview.util.silent(Exception):
         # Set locale to the user's default setting.
