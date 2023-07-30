@@ -38,11 +38,10 @@ from nfoview.errors import AffirmationError # noqa
 from nfoview.config import ConfigurationStore # noqa
 conf = ConfigurationStore(read=True) # noqa
 from nfoview import schemes # noqa
-from nfoview.builder import BuilderDialog # noqa
 from nfoview.about import AboutDialog # noqa
+from nfoview.export import ExportImageDialog # noqa
 from nfoview.open import OpenDialog # noqa
 from nfoview.preferences import PreferencesDialog # noqa
-from nfoview.export import ExportImageDialog # noqa
 from nfoview.view import TextView # noqa
 from nfoview.action import Action # noqa
 from nfoview.action import ToggleAction # noqa
