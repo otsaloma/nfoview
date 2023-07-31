@@ -2,6 +2,7 @@ PENDING: NFO Viewer 2.0
 =======================
 
 * Use GTK 4
+* Bump required Python version to 3.8
 
 2022-10-03: NFO Viewer 1.29
 ===========================
