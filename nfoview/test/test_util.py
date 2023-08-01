@@ -17,6 +17,7 @@
 
 import codecs
 import nfoview
+import pytest
 
 from gi.repository import Gdk
 from gi.repository import Gtk
@@ -26,9 +27,8 @@ from unittest.mock import patch
 class TestModule(nfoview.TestCase):
 
     def test_affirm__false(self):
-        self.assert_raises(nfoview.AffirmationError,
-                           nfoview.util.affirm,
-                           False)
+        with pytest.raises(nfoview.AffirmationError):
+            nfoview.util.affirm(False)
 
     def test_affirm__true(self):
         nfoview.util.affirm(True)
