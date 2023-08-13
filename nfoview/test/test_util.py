@@ -88,6 +88,13 @@ class TestModule(nfoview.TestCase):
         width, height = nfoview.util.get_max_text_view_size()
         assert width > 100 and height > 100
 
+    def test_get_monitor(self):
+        assert nfoview.util.get_monitor()
+
+    def test_get_screen_size(self):
+        width, height = nfoview.util.get_screen_size()
+        assert width and height
+
     def test_get_text_view_size(self):
         text = 25 * "qwertyuiop asdfghjkl zxcvbnm\n"
         width, height = nfoview.util.get_text_view_size(text)

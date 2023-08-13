@@ -109,6 +109,17 @@ def get_max_text_view_size():
     max_text = "\n".join(("x" * max_chars,) * max_lines)
     return get_text_view_size(max_text)
 
+def get_monitor():
+    display = Gdk.Display.get_default()
+    for monitor in display.get_monitors():
+        if monitor is not None:
+            return monitor
+
+def get_screen_size(monitor=None):
+    monitor = monitor or get_monitor()
+    rect = monitor.get_geometry()
+    return rect.width, rect.height
+
 def get_text_view_size(text):
     label = Gtk.Label()
     apply_style(label)

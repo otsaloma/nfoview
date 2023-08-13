@@ -20,16 +20,20 @@ from gi.repository import Gtk
 from nfoview.i18n  import _
 
 
-class OpenDialog(Gtk.FileChooserNative):
+# XXX: Gtk.FileChooserNative fails on GTK 4.10 with
+# "The folder contents could not be displayed"
+# "Operation was cancelled"
+class OpenDialog(Gtk.FileChooserDialog):
 
     def __init__(self, parent):
         GObject.GObject.__init__(self)
-        self.set_accept_label(_("_Open"))
         self.set_action(Gtk.FileChooserAction.OPEN)
-        self.set_cancel_label(_("_Cancel"))
         self.set_select_multiple(True)
         self.set_title(_("Open"))
         self.set_transient_for(parent)
+        self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
+        self.add_button(_("_Open"), Gtk.ResponseType.ACCEPT)
+        self.set_default_response(Gtk.ResponseType.ACCEPT)
         self._add_filters()
 
     def _add_filters(self):
