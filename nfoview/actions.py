@@ -41,7 +41,7 @@ class ExportImageAction(nfoview.Action):
         nfoview.Action.__init__(self, "export-image")
         self.accelerators = ["<Control>E"]
     def _affirm_doable(self, window):
-        # XXX: Disabled for now.
+        # XXX: Disable for now.
         nfoview.util.affirm(False)
         # nfoview.util.affirm(window.path is not None)
         # nfoview.util.affirm(window.view is not None)

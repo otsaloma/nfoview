@@ -5,10 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Check Python version
-        run: python3 -c "import sys; print(sys.version)"
-      - name: Install dependencies
-        run: >
+      - run: python3 -c "import sys; print(sys.version)"
+      - run: >
           sudo apt-get update && sudo apt-get install -y
           flake8
           gettext
@@ -18,11 +16,8 @@ jobs:
           python3-gi
           python3-pytest
           xvfb
-      - name: Run linter
-        run: make check
-      - name: Run unit tests
-        run: xvfb-run py.test-3 .
-      - name: Install
-        run: |
-          sudo make PREFIX=/usr/local build install clean
-          sudo make DESTDIR=pkg PREFIX=/usr build install clean
+
+      - run: make check
+      - run: xvfb-run pytest-3 .
+      - run: sudo make PREFIX=/usr/local build install clean
+      - run: sudo make DESTDIR=pkg PREFIX=/usr build install clean
