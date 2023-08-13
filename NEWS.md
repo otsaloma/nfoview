@@ -1,7 +1,7 @@
 PENDING: NFO Viewer 1.9
 =======================
 
-* Use GTK 4
+* Use GTK 4 (#25)
 * Export to image functionality disabled for now (I don't know how to
   accomplish this in GTK 4)
 * Bump required Python version to 3.8
