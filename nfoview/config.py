@@ -68,9 +68,9 @@ class ConfigurationStore:
         if not os.path.isdir(directory): return
         f = open(self.path, "w")
         for name in sorted(DEFAULTS):
-            text = "{} = {!s}".format(name, getattr(self, name))
+            text = f"{name} = {getattr(self, name)!s}"
             if getattr(self, name) == DEFAULTS[name]:
                 # Comment out options at default value.
-                text = "# {}".format(text)
+                text = f"# {text}"
             f.write(text + "\n")
         f.close()
