@@ -24,21 +24,21 @@ from gi.repository import Gtk
 class TestPreferencesDialog(nfoview.TestCase):
 
     def run_dialog(self):
-        self.dialog.run()
+        self.dialog.show()
+        self.main_loop(self.dialog)
 
     def setup_method(self, method):
         self.dialog = nfoview.PreferencesDialog(Gtk.Window())
-        self.rgba = Gdk.RGBA(red=1, green=0, blue=1)
+        self.rgba = Gdk.RGBA()
+        self.rgba.red = 1.0
 
     def test__on_bg_color_button_color_set(self):
-        store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store)-1)
+        self.dialog._scheme_combo.set_active(3)
         self.dialog._bg_color_button.set_rgba(self.rgba)
         self.dialog._bg_color_button.emit("color-set")
 
     def test__on_fg_color_button_color_set(self):
-        store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store)-1)
+        self.dialog._scheme_combo.set_active(3)
         self.dialog._fg_color_button.set_rgba(self.rgba)
         self.dialog._fg_color_button.emit("color-set")
 
@@ -51,18 +51,15 @@ class TestPreferencesDialog(nfoview.TestCase):
         self.dialog._line_spacing_spin.set_value(+3)
 
     def test__on_link_color_button_color_set(self):
-        store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store)-1)
+        self.dialog._scheme_combo.set_active(3)
         self.dialog._link_color_button.set_rgba(self.rgba)
         self.dialog._link_color_button.emit("color-set")
 
     def test__on_scheme_combo_changed(self):
-        store = self.dialog._scheme_combo.get_model()
-        for i in range(len(store)):
+        for i, scheme in enumerate(nfoview.schemes.get_all()):
             self.dialog._scheme_combo.set_active(i)
 
     def test__on_vlink_color_button_color_set(self):
-        store = self.dialog._scheme_combo.get_model()
-        self.dialog._scheme_combo.set_active(len(store)-1)
+        self.dialog._scheme_combo.set_active(3)
         self.dialog._vlink_color_button.set_rgba(self.rgba)
         self.dialog._vlink_color_button.emit("color-set")

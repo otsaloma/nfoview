@@ -17,15 +17,12 @@
 
 import nfoview
 
-from gi.repository import Gtk
-
 
 class TestWindow(nfoview.TestCase):
 
     def run_window(self):
         self.window.show()
-        self.window.connect("delete-event", Gtk.main_quit)
-        Gtk.main()
+        self.main_loop(self.window)
 
     def setup_method(self, method):
         self.window = nfoview.Window(self.new_nfo_file())

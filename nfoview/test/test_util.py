@@ -17,9 +17,7 @@
 
 import codecs
 import nfoview
-import os
-import shutil
-import tempfile
+import pytest
 
 from gi.repository import Gdk
 from gi.repository import Gtk
@@ -29,9 +27,8 @@ from unittest.mock import patch
 class TestModule(nfoview.TestCase):
 
     def test_affirm__false(self):
-        self.assert_raises(nfoview.AffirmationError,
-                           nfoview.util.affirm,
-                           False)
+        with pytest.raises(nfoview.AffirmationError):
+            nfoview.util.affirm(False)
 
     def test_affirm__true(self):
         nfoview.util.affirm(True)
@@ -91,6 +88,13 @@ class TestModule(nfoview.TestCase):
         width, height = nfoview.util.get_max_text_view_size()
         assert width > 100 and height > 100
 
+    def test_get_monitor(self):
+        assert nfoview.util.get_monitor()
+
+    def test_get_screen_size(self):
+        width, height = nfoview.util.get_screen_size()
+        assert width and height
+
     def test_get_text_view_size(self):
         text = 25 * "qwertyuiop asdfghjkl zxcvbnm\n"
         width, height = nfoview.util.get_text_view_size(text)
@@ -98,35 +102,27 @@ class TestModule(nfoview.TestCase):
 
     def test_hex_to_rgba(self):
         color = nfoview.util.hex_to_rgba("#ff0000")
-        assert color.equal(Gdk.RGBA(red=1, green=0, blue=0, alpha=1))
-
-    def test_makedirs__create(self):
-        root = tempfile.mkdtemp()
-        directory = os.path.join(root, "test")
-        assert not os.path.isdir(directory)
-        nfoview.util.makedirs(directory)
-        assert os.path.isdir(directory)
-        shutil.rmtree(root)
-
-    def test_makedirs__exists(self):
-        directory = tempfile.mkdtemp()
-        assert os.path.isdir(directory)
-        nfoview.util.makedirs(directory)
-        assert os.path.isdir(directory)
-        shutil.rmtree(directory)
+        assert color.red   == 1.0
+        assert color.green == 0.0
+        assert color.blue  == 0.0
+        assert color.alpha == 1.0
 
     def test_rgba_to_hex(self):
-        rgba = Gdk.RGBA(red=1, green=0, blue=1)
+        rgba = Gdk.RGBA()
+        rgba.red   = 1.0
+        rgba.green = 0.0
+        rgba.blue  = 1.0
+        rgba.alpha = 1.0
         color = nfoview.util.rgba_to_hex(rgba)
         assert color == "#ff00ff"
 
     @patch("sys.platform", "linux2")
     def test_show_uri__unix(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview")
 
     @patch("sys.platform", "win32")
     def test_show_uri__windows(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview/")
+        nfoview.util.show_uri("https://otsaloma.io/nfoview")
 
     @patch("sys.platform", "linux2")
     def test_uri_to_path__unix(self):

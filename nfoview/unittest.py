@@ -18,25 +18,25 @@
 import atexit
 import os
 import tempfile
+import time
+
+from gi.repository import GLib
 
 
 class TestCase:
 
-    def assert_raises(self, exception, function, *args, **kwargs):
-        try:
-            function(*args, **kwargs)
-        except exception:
-            return
-        raise AssertionError(
-            "{!r} failed to raise {!r}"
-            .format(function, exception))
+    def main_loop(self, window):
+        main_context = GLib.MainContext.default()
+        while window.get_visible():
+            while main_context.pending():
+                main_context.iteration()
+            time.sleep(0.01)
 
     def new_nfo_file(self):
         handle, path = tempfile.mkstemp()
-        f = os.fdopen(handle, "w")
-        f.write("qwertyuiop asdfghjkl zxcvbnm\n")
-        f.write("https://otsaloma.io/nfoview/\n")
-        f.close()
+        with os.fdopen(handle, "w") as f:
+            f.write("qwertyuiop asdfghjkl zxcvbnm\n")
+            f.write("https://otsaloma.io/nfoview\n")
         atexit.register(os.remove, path)
         return path
 

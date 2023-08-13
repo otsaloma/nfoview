@@ -16,7 +16,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
-import sys
 import traceback
 
 from gi.repository import Gio
@@ -50,7 +49,5 @@ class Application(Gtk.Application):
             self.add_window(window)
             window.present()
         except Exception as error:
-            print("Failed to open {!r}: {!s}"
-                  .format(path, error),
-                  file=sys.stderr)
+            print(f"Failed to open {path!r}: {error!s}")
             traceback.print_exc()

@@ -24,16 +24,14 @@ class TestTextView(nfoview.TestCase):
 
     def run_window(self):
         window = Gtk.Window()
-        window.connect("delete-event", Gtk.main_quit)
-        window.set_position(Gtk.WindowPosition.CENTER)
         window.set_default_size(500, 500)
-        window.add(self.view)
-        window.show_all()
-        Gtk.main()
+        window.set_child(self.view)
+        window.show()
+        self.main_loop(window)
 
     def setup_method(self, method):
         self.view = nfoview.TextView()
-        text = "testing...\nhttps://otsaloma.io/nfoview/"
+        text = "testing...\nhttps://otsaloma.io/nfoview"
         self.view.set_text(text)
 
     def test_get_text(self):

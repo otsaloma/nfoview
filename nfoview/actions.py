@@ -20,12 +20,10 @@ import nfoview
 __all__ = (
     "AboutAction",
     "CloseAction",
-    "CopyAction",
     "ExportImageAction",
     "OpenAction",
     "PreferencesAction",
     "QuitAction",
-    "SelectAllAction",
     "WrapLinesAction",
 )
 
@@ -38,24 +36,16 @@ class CloseAction(nfoview.Action):
         nfoview.Action.__init__(self, "close")
         self.accelerators = ["<Control>W", "Escape"]
 
-class CopyAction(nfoview.Action):
-    def __init__(self):
-        nfoview.Action.__init__(self, "copy")
-        self.accelerators = ["<Control>C"]
-    def _affirm_doable(self, window):
-        nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.get_sensitive())
-        text_buffer = window.view.get_buffer()
-        nfoview.util.affirm(text_buffer.get_has_selection())
-
 class ExportImageAction(nfoview.Action):
     def __init__(self):
         nfoview.Action.__init__(self, "export-image")
         self.accelerators = ["<Control>E"]
     def _affirm_doable(self, window):
-        nfoview.util.affirm(window.path is not None)
-        nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.get_sensitive())
+        # XXX: Disable for now.
+        nfoview.util.affirm(False)
+        # nfoview.util.affirm(window.path is not None)
+        # nfoview.util.affirm(window.view is not None)
+        # nfoview.util.affirm(window.view.get_sensitive())
 
 class OpenAction(nfoview.Action):
     def __init__(self):
@@ -70,15 +60,6 @@ class QuitAction(nfoview.Action):
     def __init__(self):
         nfoview.Action.__init__(self, "quit")
         self.accelerators = ["<Control>Q"]
-
-class SelectAllAction(nfoview.Action):
-    def __init__(self):
-        nfoview.Action.__init__(self, "select-all")
-        self.accelerators = ["<Control>A"]
-    def _affirm_doable(self, window):
-        nfoview.util.affirm(window.view is not None)
-        nfoview.util.affirm(window.view.get_sensitive())
-        nfoview.util.affirm(window.view.get_text())
 
 class WrapLinesAction(nfoview.ToggleAction):
     def __new__(cls):

@@ -1,3 +1,11 @@
+PENDING: NFO Viewer 1.9
+=======================
+
+* Use GTK 4
+* Export to image functionality disabled for now (I don't know how to
+  accomplish this in GTK 4)
+* Bump required Python version to 3.8
+
 2022-10-03: NFO Viewer 1.29
 ===========================
 

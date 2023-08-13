@@ -19,26 +19,18 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-try:
-    # Available since GTK 3.20.
-    Base = Gtk.FileChooserNative
-except AttributeError:
-    Base = Gtk.FileChooserDialog
 
-
-class ExportImageDialog(Base):
+# XXX: Gtk.FileChooserNative fails on GTK 4.10 with
+# "The folder contents could not be displayed"
+# "Operation was cancelled"
+class ExportImageDialog(Gtk.FileChooserDialog):
 
     def __init__(self, parent):
         GObject.GObject.__init__(self)
+        self.set_action(Gtk.FileChooserAction.SAVE)
+        self.set_select_multiple(False)
         self.set_title(_("Export Image"))
         self.set_transient_for(parent)
-        self.set_action(Gtk.FileChooserAction.SAVE)
-        if Base is Gtk.FileChooserNative:
-            self.set_cancel_label(_("_Cancel"))
-            self.set_accept_label(_("_Save"))
-        if Base is Gtk.FileChooserDialog:
-            self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
-            self.add_button(_("_Save"), Gtk.ResponseType.OK)
-            self.set_default_response(Gtk.ResponseType.OK)
-        self.set_do_overwrite_confirmation(True)
-        self.set_select_multiple(False)
+        self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
+        self.add_button(_("_Save"), Gtk.ResponseType.ACCEPT)
+        self.set_default_response(Gtk.ResponseType.ACCEPT)

@@ -18,6 +18,7 @@
 import nfoview
 
 from nfoview.i18n import _
+from nfoview.i18n import __
 
 __all__ = (
     "BlackOnWhite",
@@ -43,7 +44,7 @@ class ColorScheme:
 class BlackOnWhite(ColorScheme):
 
     name         = "black-on-white"
-    label        = _("Black on white")
+    label        = __("Black on white")
     foreground   = "#000000"
     background   = "#ffffff"
     link         = "#0000ff"
@@ -53,7 +54,7 @@ class BlackOnWhite(ColorScheme):
 class Custom(ColorScheme):
 
     name         = "custom"
-    label        = _("Custom")
+    label        = __("Custom")
     foreground   = nfoview.conf.foreground_color
     background   = nfoview.conf.background_color
     link         = nfoview.conf.link_color
@@ -63,7 +64,7 @@ class Custom(ColorScheme):
 class DarkGreyOnLightGray(ColorScheme):
 
     name         = "dark-grey-on-light-grey"
-    label        = _("Dark grey on light grey")
+    label        = __("Dark grey on light grey")
     foreground   = "#666666"
     background   = "#f2f2f2"
     link         = "#5555ff"
@@ -72,11 +73,11 @@ class DarkGreyOnLightGray(ColorScheme):
 
 class Default(ColorScheme):
 
-    # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/_colors-public.scss
-    # https://gitlab.gnome.org/GNOME/gtk/blob/master/gtk/theme/Adwaita/gtk-contained.css
+    # https://github.com/GNOME/gtk/blob/main/gtk/theme/Default/_colors.scss
+    # https://github.com/GNOME/gtk/blob/main/gtk/theme/Default/_colors-public.scss
 
     name         = "default"
-    label        = _("System theme")
+    label        = __("System theme")
     foreground   = nfoview.util.lookup_color("theme_text_color", "#000000")
     background   = nfoview.util.lookup_color("theme_base_color", "#ffffff")
     link         = "#2a76c6"
@@ -86,7 +87,7 @@ class Default(ColorScheme):
 class GreyOnBlack(ColorScheme):
 
     name         = "grey-on-black"
-    label        = _("Grey on black")
+    label        = __("Grey on black")
     foreground   = "#aaaaaa"
     background   = "#000000"
     link         = "#aaaaff"
@@ -96,7 +97,7 @@ class GreyOnBlack(ColorScheme):
 class LightGreyOnDarkGray(ColorScheme):
 
     name         = "light-grey-on-dark-grey"
-    label        = _("Light grey on dark grey")
+    label        = __("Light grey on dark grey")
     foreground   = "#f2f2f2"
     background   = "#666666"
     link         = "#aaaaff"
@@ -106,26 +107,31 @@ class LightGreyOnDarkGray(ColorScheme):
 class WhiteOnBlack(ColorScheme):
 
     name         = "white-on-black"
-    label        = _("White on black")
+    label        = __("White on black")
     foreground   = "#ffffff"
     background   = "#000000"
     link         = "#aaaaff"
     visited_link = "#ffaaff"
 
 
+def _ensure_translated():
+    for class_name in __all__:
+        scheme = globals()[class_name]
+        if isinstance(scheme.label, __):
+            scheme.label = _(scheme.label)
+
 def get(name, fallback=None):
-    _translate_labels()
+    _ensure_translated()
     for class_name in __all__:
         scheme = globals()[class_name]
         if scheme.name == name:
             return scheme
     if fallback is not None:
         return get(fallback)
-    raise ValueError("No color scheme named {!r}"
-                     .format(name))
+    raise ValueError(f"No color scheme named {name!r}")
 
 def get_all():
-    _translate_labels()
+    _ensure_translated()
     schemes = list(map(globals().get, __all__))
     schemes.remove(Default)
     schemes.remove(Custom)
@@ -133,9 +139,3 @@ def get_all():
     schemes.insert(0, Default)
     schemes.append(Custom)
     return schemes
-
-def _translate_labels():
-    for scheme in list(map(globals().get, __all__)):
-        if not hasattr(scheme, "untranslated_label"):
-            scheme.untranslated_label = scheme.label
-        scheme.label = _(scheme.untranslated_label)

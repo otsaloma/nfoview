@@ -23,7 +23,8 @@ from gi.repository import Gtk
 class TestExportImageDialog(nfoview.TestCase):
 
     def run_dialog(self):
-        self.dialog.run()
+        self.dialog.show()
+        self.main_loop(self.dialog)
 
     def setup_method(self, method):
         self.dialog = nfoview.ExportImageDialog(Gtk.Window())
