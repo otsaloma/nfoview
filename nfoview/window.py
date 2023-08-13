@@ -16,7 +16,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
-import os
 import textwrap
 
 from gi.repository import Gdk
@@ -24,13 +23,14 @@ from gi.repository import Gio
 from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
+from pathlib import Path
 
 
 class Window(Gtk.ApplicationWindow):
 
     def __init__(self, path=None):
         GObject.GObject.__init__(self)
-        self.path = path
+        self.path = Path(path) if path else None
         self.view = nfoview.TextView()
         self._init_properties()
         self._init_titlebar()
@@ -70,8 +70,8 @@ class Window(Gtk.ApplicationWindow):
         header = Gtk.HeaderBar()
         menu_button = Gtk.MenuButton()
         menu_button.set_direction(Gtk.ArrowType.NONE)
-        path = os.path.join(nfoview.DATA_DIR, "menu.ui")
-        builder = Gtk.Builder.new_from_file(path)
+        path = nfoview.DATA_DIR / "menu.ui"
+        builder = Gtk.Builder.new_from_file(str(path))
         menu = builder.get_object("menu")
         menu_button.set_menu_model(menu)
         header.pack_start(menu_button)
@@ -92,11 +92,9 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_export_image_activate(self, *args):
         dialog = nfoview.ExportImageDialog(self)
-        directory = os.path.dirname(self.path)
-        directory = Gio.File.new_for_path(directory)
+        directory = Gio.File.new_for_path(str(self.path.parent))
         dialog.set_current_folder(directory)
-        basename = os.path.basename(self.path)
-        dialog.set_current_name(f"{basename}.png")
+        dialog.set_current_name(f"{self.path.name}.png")
         dialog.connect("response", self._on_export_image_activate_response)
         dialog.show()
 
@@ -115,8 +113,7 @@ class Window(Gtk.ApplicationWindow):
     def _on_open_activate(self, *args):
         dialog = nfoview.OpenDialog(self)
         if self.path is not None:
-            directory = os.path.dirname(self.path)
-            directory = Gio.File.new_for_path(directory)
+            directory = Gio.File.new_for_path(str(self.path.parent))
             dialog.set_current_folder(directory)
         dialog.connect("response", self._on_open_activate_response)
         dialog.show()
@@ -149,17 +146,16 @@ class Window(Gtk.ApplicationWindow):
 
     def open_file(self, path):
         if path is None: return
-        self.path = os.path.abspath(path)
-        self.set_title(os.path.basename(path))
-        text = self._read_file(path)
+        self.path = Path(path).resolve()
+        self.set_title(self.path.name)
+        text = self._read_file(self.path)
         self.view.set_text(text)
         self.view.grab_focus()
         self._update_actions_enabled()
 
     def _read_file(self, path):
         encoding = nfoview.util.detect_encoding(path)
-        with open(path, "r", encoding=encoding) as f:
-            lines = f.readlines()
+        lines = Path(path).read_text(encoding).splitlines()
         lines = [x.rstrip() for x in lines]
         while lines and not lines[-1]: lines.pop()
         # Handle erroneous (?) UTF-16 encoded files that use

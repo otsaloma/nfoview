@@ -16,9 +16,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
-import os
 import shutil
 import tempfile
+
+from pathlib import Path
 
 FIELDS = {
     "background_color": "#ff0000",
@@ -38,8 +39,10 @@ class TestConfigurationStore(nfoview.TestCase):
 
     def setup_method(self, method):
         self.temp_dir = tempfile.mkdtemp()
-        nfoview.conf.path = os.path.join(
-            self.temp_dir, "nfoview", "nfoview.conf")
+        nfoview.conf.path = (Path(self.temp_dir) /
+                             "nfoview" /
+                             "nfoview.conf")
+
         nfoview.conf.restore_defaults()
         for name, value in list(FIELDS.items()):
             setattr(nfoview.conf, name, value)

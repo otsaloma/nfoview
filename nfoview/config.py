@@ -16,8 +16,9 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
-import os
 import re
+
+from pathlib import Path
 
 DEFAULTS = {
     "background_color": "#ffffff",
@@ -36,16 +37,15 @@ DEFAULTS = {
 
 class ConfigurationStore:
 
-    path = os.path.join(nfoview.CONFIG_HOME_DIR, "nfoview.conf")
+    path = Path(nfoview.CONFIG_HOME_DIR) / "nfoview.conf"
 
     def __init__(self, read=False):
         self.restore_defaults()
         if read: self.read()
 
     def read(self):
-        if not os.path.isfile(self.path): return
-        with open(self.path, "r") as f:
-            entries = f.readlines()
+        if not self.path.exists(): return
+        entries = self.path.read_text().splitlines()
         entries = dict(
             re.split(" *= *", x.strip(), 1)
             for x in entries
@@ -62,15 +62,11 @@ class ConfigurationStore:
         self.version = nfoview.__version__
 
     def write(self):
-        directory = os.path.dirname(self.path)
-        with nfoview.util.silent(OSError, tb=True):
-            os.makedirs(directory, exist_ok=True)
-        if not os.path.isdir(directory): return
-        f = open(self.path, "w")
-        for name in sorted(DEFAULTS):
-            text = f"{name} = {getattr(self, name)!s}"
-            if getattr(self, name) == DEFAULTS[name]:
-                # Comment out options at default value.
-                text = f"# {text}"
-            f.write(text + "\n")
-        f.close()
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.path, "w") as f:
+            for name in sorted(DEFAULTS):
+                text = f"{name} = {getattr(self, name)!s}"
+                if getattr(self, name) == DEFAULTS[name]:
+                    # Comment out options at default value.
+                    text = f"# {text}"
+                f.write(text + "\n")

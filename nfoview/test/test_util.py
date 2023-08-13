@@ -47,40 +47,40 @@ class TestModule(nfoview.TestCase):
     @patch("nfoview.util.is_valid_encoding", lambda x: True)
     def test_detect_encoding__utf_16_be(self):
         path = self.new_nfo_file()
-        blob = open(path, "rb").read()
-        open(path, "wb").write(codecs.BOM_UTF16_BE + blob)
+        blob = path.read_bytes()
+        path.write_bytes(codecs.BOM_UTF16_BE + blob)
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_16_be"
 
     @patch("nfoview.util.is_valid_encoding", lambda x: True)
     def test_detect_encoding__utf_16_le(self):
         path = self.new_nfo_file()
-        blob = open(path, "rb").read()
-        open(path, "wb").write(codecs.BOM_UTF16_LE + blob)
+        blob = path.read_bytes()
+        path.write_bytes(codecs.BOM_UTF16_LE + blob)
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_16_le"
 
     @patch("nfoview.util.is_valid_encoding", lambda x: True)
     def test_detect_encoding__utf_32_be(self):
         path = self.new_nfo_file()
-        blob = open(path, "rb").read()
-        open(path, "wb").write(codecs.BOM_UTF32_BE + blob)
+        blob = path.read_bytes()
+        path.write_bytes(codecs.BOM_UTF32_BE + blob)
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_32_be"
 
     @patch("nfoview.util.is_valid_encoding", lambda x: True)
     def test_detect_encoding__utf_32_le(self):
         path = self.new_nfo_file()
-        blob = open(path, "rb").read()
-        open(path, "wb").write(codecs.BOM_UTF32_LE + blob)
+        blob = path.read_bytes()
+        path.write_bytes(codecs.BOM_UTF32_LE + blob)
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_32_le"
 
     @patch("nfoview.util.is_valid_encoding", lambda x: True)
     def test_detect_encoding__utf_8_sig(self):
         path = self.new_nfo_file()
-        blob = open(path, "rb").read()
-        open(path, "wb").write(codecs.BOM_UTF8 + blob)
+        blob = path.read_bytes()
+        path.write_bytes(codecs.BOM_UTF8 + blob)
         encoding = nfoview.util.detect_encoding(path)
         assert encoding == "utf_8_sig"
 

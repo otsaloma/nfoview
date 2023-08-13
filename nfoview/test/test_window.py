@@ -29,14 +29,12 @@ class TestWindow(nfoview.TestCase):
 
     def test_open_file__blank_lines(self):
         path = self.new_nfo_file()
-        with open(path, "a") as f:
-            f.write("\n\n\n")
+        path.write_text(self.new_nfo_text() + "\n\n\n")
         self.window.open_file(path)
 
     def test_open_file__odd_lines(self):
         path = self.new_nfo_file()
-        with open(path, "w") as f:
-            f.write("a\n\na\n\n")
+        path.write_text("a\n\na\n\n")
         self.window.open_file(path)
 
     def test_resize_to_text__blank(self):
@@ -45,14 +43,12 @@ class TestWindow(nfoview.TestCase):
 
     def test_resize_to_text__long_file(self):
         path = self.new_nfo_file()
-        with open(path, "w") as f:
-            f.write("aaa\n" * 100)
+        path.write_text("aaa\n" * 100)
         self.window.open_file(path)
         self.window.resize_to_text()
 
     def test_resize_to_text__long_lines(self):
         path = self.new_nfo_file()
-        with open(path, "w") as f:
-            f.write("aaa " * 100)
+        path.write_text("aaa " * 100)
         self.window.open_file(path)
         self.window.resize_to_text()

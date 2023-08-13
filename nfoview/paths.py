@@ -18,6 +18,8 @@
 import os
 import sys
 
+from pathlib import Path
+
 
 def get_config_home_directory():
     if sys.platform == "win32":
@@ -25,16 +27,14 @@ def get_config_home_directory():
     return get_config_home_directory_xdg()
 
 def get_config_home_directory_windows():
-    directory = os.path.expanduser("~")
-    directory = os.environ.get("APPDATA", directory)
-    directory = os.path.join(directory, "NFO Viewer")
-    return os.path.abspath(directory)
+    directory = os.environ.get("APPDATA", Path.home())
+    directory = Path(directory) / "NFO Viewer"
+    return directory.resolve()
 
 def get_config_home_directory_xdg():
-    directory = os.path.join(os.path.expanduser("~"), ".config")
-    directory = os.environ.get("XDG_CONFIG_HOME", directory)
-    directory = os.path.join(directory, "nfoview")
-    return os.path.abspath(directory)
+    directory = os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config")
+    directory = Path(directory) / "nfoview"
+    return directory.resolve()
 
 def get_data_directory():
     if hasattr(sys, "frozen"):
@@ -42,15 +42,12 @@ def get_data_directory():
     return get_data_directory_source()
 
 def get_data_directory_frozen():
-    directory = os.path.dirname(sys.argv[0])
-    directory = os.path.join(directory, "share", "nfoview")
-    return os.path.abspath(directory)
+    directory = Path(sys.argv[0]).parent / "share" / "nfoview"
+    return directory.resolve()
 
 def get_data_directory_source():
-    directory = os.path.dirname(os.path.abspath(__file__))
-    directory = os.path.abspath(os.path.join(directory, ".."))
-    directory = os.path.join(directory, "data")
-    return os.path.abspath(directory)
+    directory = Path(__file__).parent.parent / "data"
+    return directory.resolve()
 
 def get_locale_directory():
     if hasattr(sys, "frozen"):
@@ -58,15 +55,12 @@ def get_locale_directory():
     return get_locale_directory_source()
 
 def get_locale_directory_frozen():
-    directory = os.path.dirname(sys.argv[0])
-    directory = os.path.join(directory, "share", "locale")
-    return os.path.abspath(directory)
+    directory = Path(sys.argv[0]).parent / "share" / "locale"
+    return directory.resolve()
 
 def get_locale_directory_source():
-    directory = os.path.dirname(os.path.abspath(__file__))
-    directory = os.path.abspath(os.path.join(directory, ".."))
-    directory = os.path.join(directory, "locale")
-    return os.path.abspath(directory)
+    directory = Path(__file__).parent.parent / "locale"
+    return directory.resolve()
 
 CONFIG_HOME_DIR = get_config_home_directory()
 DATA_DIR = get_data_directory()

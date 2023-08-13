@@ -21,6 +21,7 @@ import tempfile
 import time
 
 from gi.repository import GLib
+from pathlib import Path
 
 
 class TestCase:
@@ -35,10 +36,15 @@ class TestCase:
     def new_nfo_file(self):
         handle, path = tempfile.mkstemp()
         with os.fdopen(handle, "w") as f:
-            f.write("qwertyuiop asdfghjkl zxcvbnm\n")
-            f.write("https://otsaloma.io/nfoview\n")
+            f.write(self.new_nfo_text())
         atexit.register(os.remove, path)
-        return path
+        return Path(path)
+
+    def new_nfo_text(self):
+        return "\n".join((
+            "qwertyuiop asdfghjkl zxcvbnm",
+            "https://otsaloma.io/nfoview",
+        )) + "\n"
 
     def setUp(self):
         self.setup_method(None)

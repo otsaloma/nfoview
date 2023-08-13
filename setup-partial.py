@@ -19,11 +19,11 @@ class InstallLib(install_lib):
         path = Path(self.build_dir) / "nfoview" / "paths.py"
         text = path.read_text("utf-8")
         patt = r"^DATA_DIR = .*$"
-        repl = f"DATA_DIR = {str(data_dir)!r}"
+        repl = f"DATA_DIR = Path({str(data_dir)!r})"
         text = re.sub(patt, repl, text, flags=re.MULTILINE)
         assert text.count(repl) == 1
         patt = r"^LOCALE_DIR = .*$"
-        repl = f"LOCALE_DIR = {str(locale_dir)!r}"
+        repl = f"LOCALE_DIR = Path({str(locale_dir)!r})"
         text = re.sub(patt, repl, text, flags=re.MULTILINE)
         assert text.count(repl) == 1
         path.write_text(text, "utf-8")
