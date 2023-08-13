@@ -4,6 +4,7 @@ runtime-version: "44"
 sdk: org.gnome.Sdk
 command: nfoview
 finish-args:
+  - --filesystem=home
   - --share=ipc
   - --socket=wayland
   - --socket=x11
