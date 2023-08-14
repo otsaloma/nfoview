@@ -4,6 +4,9 @@ PENDING: NFO Viewer 1.9
 * Use GTK 4 (#25)
 * Export to image functionality disabled for now (I don't know how to
   accomplish this in GTK 4)
+* Switch default font from Cascadia Code to Cascadia Mono (GTK 4 +
+  Cascadia Code would render ligatures, which don't fit well in NFO;
+  Mono is basically the same font, but without ligatures)
 * Bump required Python version to 3.8
 
 2022-10-03: NFO Viewer 1.29

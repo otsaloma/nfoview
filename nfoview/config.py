@@ -23,7 +23,7 @@ from pathlib import Path
 DEFAULTS = {
     "background_color": "#ffffff",
     "color_scheme": "default",
-    "font": "Cascadia Code 12",
+    "font": "Cascadia Mono 12",
     "foreground_color": "#2e3436",
     "link_color": "#2a76c6",
     "pixels_above_lines": 0,
