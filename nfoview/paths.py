@@ -28,13 +28,11 @@ def get_config_home_directory():
 
 def get_config_home_directory_windows():
     directory = os.environ.get("APPDATA", Path.home())
-    directory = Path(directory) / "NFO Viewer"
-    return directory.resolve()
+    return Path(directory) / "NFO Viewer"
 
 def get_config_home_directory_xdg():
     directory = os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config")
-    directory = Path(directory) / "nfoview"
-    return directory.resolve()
+    return Path(directory) / "nfoview"
 
 def get_data_directory():
     if hasattr(sys, "frozen"):
@@ -42,12 +40,10 @@ def get_data_directory():
     return get_data_directory_source()
 
 def get_data_directory_frozen():
-    directory = Path(sys.argv[0]).parent / "share" / "nfoview"
-    return directory.resolve()
+    return Path(sys.argv[0]).parent / "share" / "nfoview"
 
 def get_data_directory_source():
-    directory = Path(__file__).parent.parent / "data"
-    return directory.resolve()
+    return Path(__file__).parent.parent / "data"
 
 def get_locale_directory():
     if hasattr(sys, "frozen"):
@@ -55,13 +51,11 @@ def get_locale_directory():
     return get_locale_directory_source()
 
 def get_locale_directory_frozen():
-    directory = Path(sys.argv[0]).parent / "share" / "locale"
-    return directory.resolve()
+    return Path(sys.argv[0]).parent / "share" / "locale"
 
 def get_locale_directory_source():
-    directory = Path(__file__).parent.parent / "locale"
-    return directory.resolve()
+    return Path(__file__).parent.parent / "locale"
 
-CONFIG_HOME_DIR = get_config_home_directory()
-DATA_DIR = get_data_directory()
-LOCALE_DIR = get_locale_directory()
+CONFIG_HOME_DIR = get_config_home_directory().resolve()
+DATA_DIR = get_data_directory().resolve()
+LOCALE_DIR = get_locale_directory().resolve()
