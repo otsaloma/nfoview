@@ -64,6 +64,7 @@ class Window(Gtk.ApplicationWindow):
         self.set_title(_("NFO Viewer"))
         self.set_icon_name("io.otsaloma.nfoview")
         Gtk.Window.set_default_icon_name("io.otsaloma.nfoview")
+        self.connect("close-request", self._on_close_request)
         target = Gtk.DropTarget.new(Gio.File, Gdk.DragAction.COPY)
         target.connect("drop", self._on_drag_drop)
         self.view.add_controller(target)
@@ -97,6 +98,12 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_close_activate(self, *args):
         if hasattr(nfoview, "app"):
+            self.destroy()
+            nfoview.app.remove_window(self)
+
+    def _on_close_request(self, *args):
+        if hasattr(nfoview, "app"):
+            self.destroy()
             nfoview.app.remove_window(self)
 
     def _on_export_image_activate(self, *args):
