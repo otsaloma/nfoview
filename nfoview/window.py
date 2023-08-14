@@ -97,13 +97,13 @@ class Window(Gtk.ApplicationWindow):
         self._about_dialog.show()
 
     def _on_close_activate(self, *args):
+        self.destroy()
         if hasattr(nfoview, "app"):
-            self.destroy()
             nfoview.app.remove_window(self)
 
     def _on_close_request(self, *args):
+        self.destroy()
         if hasattr(nfoview, "app"):
-            self.destroy()
             nfoview.app.remove_window(self)
 
     def _on_export_image_activate(self, *args):
