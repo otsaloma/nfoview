@@ -5,6 +5,8 @@ sdk: org.gnome.Sdk
 command: nfoview
 finish-args:
   - --filesystem=home
+  - --filesystem=xdg-music
+  - --filesystem=xdg-videos
   - --share=ipc
   - --socket=wayland
   - --socket=x11
