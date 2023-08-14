@@ -32,6 +32,8 @@ class Window(Gtk.ApplicationWindow):
         GObject.GObject.__init__(self)
         self.path = Path(path) if path else None
         self.view = nfoview.TextView()
+        self._about_dialog = None
+        self._prefs_dialog = None
         self._init_properties()
         self._init_titlebar()
         self._init_contents()
@@ -84,7 +86,14 @@ class Window(Gtk.ApplicationWindow):
         nfoview.app.open_window(path)
 
     def _on_about_activate(self, *args):
-        nfoview.AboutDialog(self).show()
+        if self._about_dialog:
+            return self._about_dialog.present()
+        def on_close_request(dialog, *args, **kwargs):
+            dialog.hide()
+            return True
+        self._about_dialog = nfoview.AboutDialog(self)
+        self._about_dialog.connect("close-request", on_close_request)
+        self._about_dialog.show()
 
     def _on_close_activate(self, *args):
         if hasattr(nfoview, "app"):
@@ -136,7 +145,14 @@ class Window(Gtk.ApplicationWindow):
             nfoview.app.quit()
 
     def _on_preferences_activate(self, *args):
-        nfoview.PreferencesDialog(self).show()
+        if self._prefs_dialog:
+            return self._prefs_dialog.present()
+        def on_close_request(dialog, *args, **kwargs):
+            dialog.hide()
+            return True
+        self._prefs_dialog = nfoview.PreferencesDialog(self)
+        self._prefs_dialog.connect("close-request", on_close_request)
+        self._prefs_dialog.show()
 
     def _on_wrap_lines_activate(self, action, *args):
         action.set_state(not action.get_state())
