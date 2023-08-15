@@ -21,6 +21,7 @@
   <url type="translate">https://app.transifex.com/otsaloma/nfoview/</url>
   <launchable type="desktop-id">io.otsaloma.nfoview.desktop</launchable>
   <releases>
+    <release version="1.99"   date="2023-08-15"/>
     <release version="1.29"   date="2022-10-03"/>
     <release version="1.28.1" date="2021-10-06"/>
     <release version="1.28"   date="2020-04-28"/>

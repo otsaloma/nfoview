@@ -1,5 +1,5 @@
-PENDING: NFO Viewer 1.9
-=======================
+2023-08-15: NFO Viewer 1.99
+===========================
 
 * Use GTK 4 (#25)
 * Export to image functionality disabled for now (I don't know how to
