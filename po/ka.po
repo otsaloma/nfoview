@@ -3,28 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2009,2014-2016,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-14 23:10+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>, 2009,2014-2016,2018\n"
-"Language-Team: Polish (http://app.transifex.com/otsaloma/nfoview/language/pl/)\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://app.transifex.com/otsaloma/nfoview/language/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
-msgstr "Przeglądarka plików NFO"
+msgstr "პროგრამა NFO ფაილების დათვალიერებისთვის"
 
 #: nfoview/about.py:34
 msgid "About NFO Viewer"
-msgstr "O przeglądarce plików NFO"
+msgstr "NFO-ის დათვალიერების პროგრამის შესახებ"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
@@ -34,7 +33,7 @@ msgstr "O przeglądarce plików NFO"
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
-msgstr "Pliki NFO"
+msgstr "NFO-ის დათვალიერება"
 
 #. TRANSLATORS: This is a special message that shouldn't be translated
 #. literally. It is used in the about dialog to give credits to the
@@ -44,39 +43,39 @@ msgstr "Pliki NFO"
 #. lines seperated by newlines (\n).
 #: nfoview/about.py:52
 msgid "translator-credits"
-msgstr "Piotr Drąg <piotrdrag@gmail.com>, 2009, 2014-2016, 2018"
+msgstr "თარგმანი-შესრულებულია"
 
 #: nfoview/export.py:32
 msgid "Export Image"
-msgstr "Eksport obrazu"
+msgstr "გამოსახულების გატანა"
 
 #: nfoview/export.py:34 nfoview/open.py:34
 msgid "_Cancel"
-msgstr "_Anuluj"
+msgstr "გაუქმება"
 
 #: nfoview/export.py:35
 msgid "_Save"
-msgstr "_Zapisz"
+msgstr "_შენახვა"
 
 #: nfoview/open.py:32
 msgid "Open"
-msgstr "Otwarcie"
+msgstr "გახსნა"
 
 #: nfoview/open.py:35
 msgid "_Open"
-msgstr "_Otwórz"
+msgstr "_გახსნა"
 
 #: nfoview/open.py:41
 msgid "All files"
-msgstr "Wszystkie pliki"
+msgstr "ყველა ფაილი"
 
 #: nfoview/open.py:45
 msgid "NFO files (*.nfo)"
-msgstr "Pliki NFO (*.nfo)"
+msgstr "NFO ფაილები (*.nfo)"
 
 #: nfoview/preferences.py:43
 msgid "Preferences"
-msgstr "Preferencje"
+msgstr "მორგება"
 
 #: nfoview/preferences.py:55
 msgid "Font"
@@ -108,59 +107,59 @@ msgstr ""
 
 #: nfoview/schemes.py:47
 msgid "Black on white"
-msgstr "Czarne na białym"
+msgstr "შავი თეთრ ფონზე"
 
 #: nfoview/schemes.py:57
 msgid "Custom"
-msgstr "Niestandardowy"
+msgstr "განსხვავებული"
 
 #: nfoview/schemes.py:67
 msgid "Dark grey on light grey"
-msgstr "Ciemne szare na jaśniejszym szarym"
+msgstr "მუქი ნაცრისფერი ღია ნაცრისფერზე"
 
 #: nfoview/schemes.py:80
 msgid "System theme"
-msgstr "Motyw systemu"
+msgstr "სისტემური თემა"
 
 #: nfoview/schemes.py:90
 msgid "Grey on black"
-msgstr "Szare na czarnym"
+msgstr "ნაცხისფერი შავზე"
 
 #: nfoview/schemes.py:100
 msgid "Light grey on dark grey"
-msgstr "Jaśniejsze szare na ciemniejszym szarym"
+msgstr "ღია ნაცრისფერი  მუქ ნაცრისფერზე"
 
 #: nfoview/schemes.py:110
 msgid "White on black"
-msgstr "Białe na czarnym"
+msgstr "თეთრი შავ ფონზე"
 
 #: data/menu.ui:6
 msgid "_Open…"
-msgstr "_Otwórz…"
+msgstr "_გახსნა…"
 
 #: data/menu.ui:10
 msgid "_Export Image…"
-msgstr "Wy_eksportuj obraz…"
+msgstr "_გამოსახულების გატანა…"
 
 #: data/menu.ui:16
 msgid "_Wrap Lines"
-msgstr "Za_wijanie wierszy"
+msgstr "სიტყვების _გადატანა"
 
 #: data/menu.ui:22
 msgid "_Preferences"
-msgstr "_Preferencje"
+msgstr "გამართვა"
 
 #: data/menu.ui:26
 msgid "_About"
-msgstr "_O programie"
+msgstr "შესახებ"
 
 #: data/menu.ui:32
 msgid "_Close"
-msgstr "Za_mknij"
+msgstr "და_კეტვა"
 
 #: data/menu.ui:36
 msgid "_Quit"
-msgstr "Za_kończ"
+msgstr "_დამთავრება"
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
@@ -168,18 +167,18 @@ msgid ""
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
 "are preset font and encoding settings, automatic window size and clickable "
 "hyperlinks."
-msgstr "Przeglądarka plików NFO jest prostą przeglądarką plików NFO, które zawierają obrazy „ASCII” w stronie kodowej CP437. Zaletami używania przeglądarki plików NFO zamiast edytora tekstu są ustawienia czcionki i kodowania, automatyczny rozmiar okna i klikalne odnośniki."
+msgstr "NFO ფაილების გამხსნელი მარტივი პროგრამაა ფაილებისთვის, რომლებიც \"ASCII\" naxatebia CP437 კოდების გვერდში. ამ პროგრამის გამოყენების უპირატესობა ტექსტურ რედაქტორებში ფონტებისა და კოდირების ავტომატური პარამეტრები, ფანჯრის ზომა და გახსნადი ბმულებია."
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:36
 msgid "Main window"
-msgstr "Główne okno"
+msgstr "მთავარი ფანჯარა"
 
 #: data/io.otsaloma.nfoview.desktop.in:5
 msgid "View NFO files"
-msgstr "Wyświetlanie plików NFO"
+msgstr "NFO ფაილების ნახვა"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.otsaloma.nfoview.desktop.in:11
 msgid "information;"
-msgstr "informacje;"
+msgstr "ინფორმაცია;"

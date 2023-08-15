@@ -3,34 +3,34 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Åke Engelbrektson, 2017
+# Åke Engelbrektson, 2017,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-03 23:06+0300\n"
+"POT-Creation-Date: 2023-08-14 23:10+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
-"Last-Translator: Åke Engelbrektson, 2017\n"
-"Language-Team: Swedish (http://www.transifex.com/otsaloma/nfoview/language/sv/)\n"
+"Last-Translator: Åke Engelbrektson, 2017,2023\n"
+"Language-Team: Swedish (http://app.transifex.com/otsaloma/nfoview/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: nfoview/about.py:29
-msgid "About NFO Viewer"
-msgstr "Om NFO Viewer"
-
-#: nfoview/about.py:32 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Läsare för NFO-filer"
+
+#: nfoview/about.py:34
+msgid "About NFO Viewer"
+msgstr "Om NFO Viewer"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:40 nfoview/window.py:80
+#: nfoview/about.py:44 nfoview/window.py:64
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -42,68 +42,95 @@ msgstr "NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:47
+#: nfoview/about.py:52
 msgid "translator-credits"
 msgstr "Åke Engelbrektson"
 
-#: nfoview/about.py:50
-msgid "NFO Viewer Website"
-msgstr "NFO Viewer Webbsida"
-
-#: nfoview/export.py:33
+#: nfoview/export.py:32
 msgid "Export Image"
 msgstr "Exportera bild"
 
-#: nfoview/export.py:37 nfoview/export.py:40 nfoview/open.py:37
-#: nfoview/open.py:40
+#: nfoview/export.py:34 nfoview/open.py:34
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: nfoview/export.py:38 nfoview/export.py:41
+#: nfoview/export.py:35
 msgid "_Save"
 msgstr "_Spara"
 
-#: nfoview/open.py:33
+#: nfoview/open.py:32
 msgid "Open"
 msgstr "Öppna"
 
-#: nfoview/open.py:38 nfoview/open.py:41
+#: nfoview/open.py:35
 msgid "_Open"
 msgstr "_Öppna"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:41
 msgid "All files"
 msgstr "Alla filer"
 
-#: nfoview/open.py:49
+#: nfoview/open.py:45
 msgid "NFO files (*.nfo)"
 msgstr "NFO-filer (*.nfo)"
 
-#: nfoview/schemes.py:46
+#: nfoview/preferences.py:43
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: nfoview/preferences.py:55
+msgid "Font"
+msgstr "Teckensnitt"
+
+#: nfoview/preferences.py:66
+msgid "Line-spacing"
+msgstr "Radavstånd"
+
+#: nfoview/preferences.py:74
+msgid "Color scheme"
+msgstr "Färgschema"
+
+#: nfoview/preferences.py:85
+msgid "Foreground"
+msgstr "Förgrund"
+
+#: nfoview/preferences.py:94
+msgid "Background"
+msgstr "Bakgrund"
+
+#: nfoview/preferences.py:103
+msgid "Link"
+msgstr "Länk"
+
+#: nfoview/preferences.py:112
+msgid "Visited link"
+msgstr "Besökt länk"
+
+#: nfoview/schemes.py:47
 msgid "Black on white"
 msgstr "Svart på vitt"
 
-#: nfoview/schemes.py:56
+#: nfoview/schemes.py:57
 msgid "Custom"
 msgstr "Anpassa"
 
-#: nfoview/schemes.py:66
+#: nfoview/schemes.py:67
 msgid "Dark grey on light grey"
 msgstr "Mörkgrå på ljusgrå"
 
-#: nfoview/schemes.py:79
+#: nfoview/schemes.py:80
 msgid "System theme"
 msgstr "Systemtema"
 
-#: nfoview/schemes.py:89
+#: nfoview/schemes.py:90
 msgid "Grey on black"
 msgstr "Grå på svart"
 
-#: nfoview/schemes.py:99
+#: nfoview/schemes.py:100
 msgid "Light grey on dark grey"
 msgstr "Ljusgrå på mörkgrå"
 
-#: nfoview/schemes.py:109
+#: nfoview/schemes.py:110
 msgid "White on black"
 msgstr "Vitt på svart"
 
@@ -116,72 +143,24 @@ msgid "_Export Image…"
 msgstr "_Exportera bild…"
 
 #: data/menu.ui:16
-msgid "C_opy"
-msgstr "_Kopiera"
-
-#: data/menu.ui:20
-msgid "_Select All"
-msgstr "_Markera alla"
-
-#: data/menu.ui:24
 msgid "_Wrap Lines"
 msgstr "_Radbryt"
 
-#: data/menu.ui:30
+#: data/menu.ui:22
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: data/menu.ui:34
+#: data/menu.ui:26
 msgid "_About"
 msgstr "_Om"
 
-#: data/menu.ui:40
+#: data/menu.ui:32
 msgid "_Close"
 msgstr "_Stäng"
 
-#: data/menu.ui:44
+#: data/menu.ui:36
 msgid "_Quit"
 msgstr "_Avsluta"
-
-#: data/preferences-dialog.ui:51
-msgid "Text"
-msgstr "Text"
-
-#: data/preferences-dialog.ui:75
-msgid "_Font:"
-msgstr "_Teckensnitt:"
-
-#: data/preferences-dialog.ui:89
-msgid "Li_ne-spacing:"
-msgstr "Radavstå_nd:"
-
-#: data/preferences-dialog.ui:153
-msgid "Colors"
-msgstr "Färger"
-
-#: data/preferences-dialog.ui:176
-msgid "_Schemes:"
-msgstr "_Tema:"
-
-#: data/preferences-dialog.ui:190
-msgid "Fo_reground:"
-msgstr "Fö_rgrund:"
-
-#: data/preferences-dialog.ui:204
-msgid "Bac_kground:"
-msgstr "Ba_kgrund:"
-
-#: data/preferences-dialog.ui:218
-msgid "_Link:"
-msgstr "_Länk:"
-
-#: data/preferences-dialog.ui:232
-msgid "_Visited link:"
-msgstr "_Besökt länk:"
-
-#: data/preferences-dialog.ui:332
-msgid "Preferences"
-msgstr "Inställningar"
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
@@ -191,7 +170,7 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer är en enkel läsare för NFO-filer, vilket är \"ASCII-art \" i teckentabell CP437. Fördelen med att använda NFO Viewer, istället för en vanlig textredigerare, är förinställt teckensnitt och teckentabell, automatisk fönsterstorlek och klickbara hyperlänkar."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:35
+#: data/io.otsaloma.nfoview.appdata.xml.in:36
 msgid "Main window"
 msgstr "Programfönster"
 

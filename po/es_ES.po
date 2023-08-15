@@ -3,34 +3,34 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Xoan Sampaiño <xoansampainho@gmail.com>, 2018
+# Xoán Sampaíño <xoansampainho@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-03 23:06+0300\n"
+"POT-Creation-Date: 2023-08-14 23:10+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
-"Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>, 2018\n"
-"Language-Team: Spanish (Spain) (http://www.transifex.com/otsaloma/nfoview/language/es_ES/)\n"
+"Last-Translator: Xoán Sampaíño <xoansampainho@gmail.com>, 2018\n"
+"Language-Team: Spanish (Spain) (http://app.transifex.com/otsaloma/nfoview/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_ES\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: nfoview/about.py:29
-msgid "About NFO Viewer"
-msgstr "Acerca de NFO Viewer"
-
-#: nfoview/about.py:32 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Visor de archivos NFO"
+
+#: nfoview/about.py:34
+msgid "About NFO Viewer"
+msgstr "Acerca de NFO Viewer"
 
 #. TRANSLATORS: The application name "NFO Viewer" has been intentionally
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:40 nfoview/window.py:80
+#: nfoview/about.py:44 nfoview/window.py:64
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -42,68 +42,95 @@ msgstr "NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:47
+#: nfoview/about.py:52
 msgid "translator-credits"
 msgstr "Xoán Sampaíño <xoansampainho@gmail.com>"
 
-#: nfoview/about.py:50
-msgid "NFO Viewer Website"
-msgstr "Sitio web"
-
-#: nfoview/export.py:33
+#: nfoview/export.py:32
 msgid "Export Image"
 msgstr "Exportar imagen"
 
-#: nfoview/export.py:37 nfoview/export.py:40 nfoview/open.py:37
-#: nfoview/open.py:40
+#: nfoview/export.py:34 nfoview/open.py:34
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: nfoview/export.py:38 nfoview/export.py:41
+#: nfoview/export.py:35
 msgid "_Save"
 msgstr "_Guardar"
 
-#: nfoview/open.py:33
+#: nfoview/open.py:32
 msgid "Open"
 msgstr "Abrir"
 
-#: nfoview/open.py:38 nfoview/open.py:41
+#: nfoview/open.py:35
 msgid "_Open"
 msgstr "_Abrir"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:41
 msgid "All files"
 msgstr "Todos los archivos"
 
-#: nfoview/open.py:49
+#: nfoview/open.py:45
 msgid "NFO files (*.nfo)"
 msgstr "Archivos NFO (*.nfo)"
 
-#: nfoview/schemes.py:46
+#: nfoview/preferences.py:43
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: nfoview/preferences.py:55
+msgid "Font"
+msgstr ""
+
+#: nfoview/preferences.py:66
+msgid "Line-spacing"
+msgstr ""
+
+#: nfoview/preferences.py:74
+msgid "Color scheme"
+msgstr ""
+
+#: nfoview/preferences.py:85
+msgid "Foreground"
+msgstr ""
+
+#: nfoview/preferences.py:94
+msgid "Background"
+msgstr ""
+
+#: nfoview/preferences.py:103
+msgid "Link"
+msgstr ""
+
+#: nfoview/preferences.py:112
+msgid "Visited link"
+msgstr ""
+
+#: nfoview/schemes.py:47
 msgid "Black on white"
 msgstr "Negro sobre blanco"
 
-#: nfoview/schemes.py:56
+#: nfoview/schemes.py:57
 msgid "Custom"
 msgstr "Personalizado"
 
-#: nfoview/schemes.py:66
+#: nfoview/schemes.py:67
 msgid "Dark grey on light grey"
 msgstr "Gris oscuro sobre gris claro"
 
-#: nfoview/schemes.py:79
+#: nfoview/schemes.py:80
 msgid "System theme"
 msgstr "Colores del sistema"
 
-#: nfoview/schemes.py:89
+#: nfoview/schemes.py:90
 msgid "Grey on black"
 msgstr "Gris sobre negro"
 
-#: nfoview/schemes.py:99
+#: nfoview/schemes.py:100
 msgid "Light grey on dark grey"
 msgstr "Gris claro sobre gris oscuro"
 
-#: nfoview/schemes.py:109
+#: nfoview/schemes.py:110
 msgid "White on black"
 msgstr "Blanco sobre negro"
 
@@ -116,72 +143,24 @@ msgid "_Export Image…"
 msgstr "_Exportar imagen…"
 
 #: data/menu.ui:16
-msgid "C_opy"
-msgstr "C_opiar"
-
-#: data/menu.ui:20
-msgid "_Select All"
-msgstr "_Seleccionar todo"
-
-#: data/menu.ui:24
 msgid "_Wrap Lines"
 msgstr "A_justar líneas"
 
-#: data/menu.ui:30
+#: data/menu.ui:22
 msgid "_Preferences"
 msgstr "_Preferencias"
 
-#: data/menu.ui:34
+#: data/menu.ui:26
 msgid "_About"
 msgstr "A_cerca de"
 
-#: data/menu.ui:40
+#: data/menu.ui:32
 msgid "_Close"
 msgstr "_Cerrar"
 
-#: data/menu.ui:44
+#: data/menu.ui:36
 msgid "_Quit"
 msgstr "_Salir"
-
-#: data/preferences-dialog.ui:51
-msgid "Text"
-msgstr "Texto"
-
-#: data/preferences-dialog.ui:75
-msgid "_Font:"
-msgstr "_Tipo de letra:"
-
-#: data/preferences-dialog.ui:89
-msgid "Li_ne-spacing:"
-msgstr "Inter_lineado"
-
-#: data/preferences-dialog.ui:153
-msgid "Colors"
-msgstr "Colores"
-
-#: data/preferences-dialog.ui:176
-msgid "_Schemes:"
-msgstr "_Esquema"
-
-#: data/preferences-dialog.ui:190
-msgid "Fo_reground:"
-msgstr "_Primer plano:"
-
-#: data/preferences-dialog.ui:204
-msgid "Bac_kground:"
-msgstr "_Segundo plano:"
-
-#: data/preferences-dialog.ui:218
-msgid "_Link:"
-msgstr "_Enlace"
-
-#: data/preferences-dialog.ui:232
-msgid "_Visited link:"
-msgstr "Enlace _visitado:"
-
-#: data/preferences-dialog.ui:332
-msgid "Preferences"
-msgstr "Preferencias"
 
 #: data/io.otsaloma.nfoview.appdata.xml.in:9
 msgid ""
@@ -191,7 +170,7 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer es un visor sencillo de archivos NFO, que son arte «ASCII» en la página de códigos CP437. Las ventajas de utilizar NFO Viewer en lugar de un editor de texto son la configuración predeterminada de fuente y codificación, el tamaño de ventana automático y los hipervínculos seleccionables."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:35
+#: data/io.otsaloma.nfoview.appdata.xml.in:36
 msgid "Main window"
 msgstr "Ventana principal"
 

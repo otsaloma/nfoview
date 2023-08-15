@@ -8,6 +8,7 @@ PENDING: NFO Viewer 1.9
   Cascadia Code would render ligatures, which don't fit well in NFO;
   Mono is basically the same font, but without ligatures)
 * Bump required Python version to 3.8
+* Add Georgian translation
 
 2022-10-03: NFO Viewer 1.29
 ===========================
