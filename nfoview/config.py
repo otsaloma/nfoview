@@ -34,7 +34,6 @@ DEFAULTS = {
     "visited_link_color": "#215d9c",
 }
 
-
 class ConfigurationStore:
 
     path = Path(nfoview.CONFIG_HOME_DIR) / "nfoview.conf"

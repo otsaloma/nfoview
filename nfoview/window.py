@@ -25,7 +25,6 @@ from gi.repository import Gtk
 from nfoview.i18n  import _
 from pathlib import Path
 
-
 class Window(Gtk.ApplicationWindow):
 
     def __init__(self, path=None):

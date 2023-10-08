@@ -22,7 +22,6 @@ from gi.repository import Gio
 from gi.repository import GObject
 from gi.repository import Gtk
 
-
 class Application(Gtk.Application):
 
     def __init__(self, paths):

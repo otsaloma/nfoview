@@ -19,7 +19,6 @@ import nfoview
 
 from gi.repository import Gtk
 
-
 class TestOpenDialog(nfoview.TestCase):
 
     def run_dialog(self):

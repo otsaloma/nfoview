@@ -34,7 +34,6 @@ FIELDS = {
     "visited_link_color": "#ffff00",
 }
 
-
 class TestConfigurationStore(nfoview.TestCase):
 
     def setup_method(self, method):

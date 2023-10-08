@@ -20,7 +20,6 @@ import nfoview
 from gi.repository import Gdk
 from gi.repository import Gtk
 
-
 class TestPreferencesDialog(nfoview.TestCase):
 
     def run_dialog(self):

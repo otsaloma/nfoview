@@ -23,7 +23,6 @@ import time
 from gi.repository import GLib
 from pathlib import Path
 
-
 class TestCase:
 
     def main_loop(self, window):

@@ -17,7 +17,6 @@
 
 import nfoview
 
-
 class TestWindow(nfoview.TestCase):
 
     def run_window(self):

@@ -23,7 +23,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import Pango
 
-
 class TextView(Gtk.TextView):
 
     def __init__(self):

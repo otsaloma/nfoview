@@ -20,7 +20,6 @@ import sys
 
 from pathlib import Path
 
-
 def get_config_home_directory():
     if sys.platform == "win32":
         return get_config_home_directory_windows()

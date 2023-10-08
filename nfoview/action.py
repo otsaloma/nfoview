@@ -21,7 +21,6 @@ from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GObject
 
-
 class Action(Gio.SimpleAction):
 
     def __init__(self, name):
@@ -37,7 +36,6 @@ class Action(Gio.SimpleAction):
             self.set_enabled(True)
         except nfoview.AffirmationError:
             self.set_enabled(False)
-
 
 class ToggleAction(Action):
 

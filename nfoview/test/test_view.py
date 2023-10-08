@@ -19,7 +19,6 @@ import nfoview
 
 from gi.repository import Gtk
 
-
 class TestTextView(nfoview.TestCase):
 
     def run_window(self):

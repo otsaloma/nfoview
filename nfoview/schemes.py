@@ -30,7 +30,6 @@ __all__ = (
     "WhiteOnBlack",
 )
 
-
 class ColorScheme:
 
     name         = NotImplementedError
@@ -39,7 +38,6 @@ class ColorScheme:
     background   = NotImplementedError
     link         = NotImplementedError
     visited_link = NotImplementedError
-
 
 class BlackOnWhite(ColorScheme):
 
@@ -50,7 +48,6 @@ class BlackOnWhite(ColorScheme):
     link         = "#0000ff"
     visited_link = "#ff00ff"
 
-
 class Custom(ColorScheme):
 
     name         = "custom"
@@ -60,7 +57,6 @@ class Custom(ColorScheme):
     link         = nfoview.conf.link_color
     visited_link = nfoview.conf.visited_link_color
 
-
 class DarkGreyOnLightGray(ColorScheme):
 
     name         = "dark-grey-on-light-grey"
@@ -69,7 +65,6 @@ class DarkGreyOnLightGray(ColorScheme):
     background   = "#f2f2f2"
     link         = "#5555ff"
     visited_link = "#ff55ff"
-
 
 class Default(ColorScheme):
 
@@ -83,7 +78,6 @@ class Default(ColorScheme):
     link         = "#2a76c6"
     visited_link = "#215d9c"
 
-
 class GreyOnBlack(ColorScheme):
 
     name         = "grey-on-black"
@@ -92,7 +86,6 @@ class GreyOnBlack(ColorScheme):
     background   = "#000000"
     link         = "#aaaaff"
     visited_link = "#ffaaff"
-
 
 class LightGreyOnDarkGray(ColorScheme):
 
@@ -103,7 +96,6 @@ class LightGreyOnDarkGray(ColorScheme):
     link         = "#aaaaff"
     visited_link = "#ffaaff"
 
-
 class WhiteOnBlack(ColorScheme):
 
     name         = "white-on-black"
@@ -112,7 +104,6 @@ class WhiteOnBlack(ColorScheme):
     background   = "#000000"
     link         = "#aaaaff"
     visited_link = "#ffaaff"
-
 
 def _ensure_translated():
     for class_name in __all__:

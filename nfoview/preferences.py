@@ -21,7 +21,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n import _
 
-
 def boxwrap(widget):
     # Needed to get widget natural-size left-aligned in grid.
     box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
@@ -33,7 +32,6 @@ def build_label(text):
     label.add_css_class("dim-label")
     label.set_xalign(1)
     return label
-
 
 class PreferencesDialog(Gtk.Dialog):
 

@@ -21,7 +21,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-
 class AboutDialog(Gtk.AboutDialog):
 
     def __init__(self, parent):

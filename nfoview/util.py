@@ -27,7 +27,6 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
 
-
 def affirm(value):
     if not value:
         raise nfoview.AffirmationError(f"Not True: {value!r}")

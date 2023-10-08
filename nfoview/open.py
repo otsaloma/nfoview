@@ -19,7 +19,6 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n  import _
 
-
 # XXX: Gtk.FileChooserNative fails on GTK 4.10 with
 # "The folder contents could not be displayed"
 # "Operation was cancelled"

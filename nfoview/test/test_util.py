@@ -23,7 +23,6 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from unittest.mock import patch
 
-
 class TestModule(nfoview.TestCase):
 
     def test_affirm__false(self):
