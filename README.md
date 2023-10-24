@@ -50,7 +50,7 @@ Debian/Ubuntu you can install these with the following command.
 
 Then, to install NFO Viewer, run commands
 
-    make build
+    make PREFIX=/usr/local build
     sudo make PREFIX=/usr/local install
 
 ### Windows
