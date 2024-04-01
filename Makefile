@@ -2,34 +2,32 @@
 
 DESTDIR   =
 PREFIX    = /usr/local
+BINDIR    = $(DESTDIR)$(PREFIX)/bin
 DATADIR   = $(DESTDIR)$(PREFIX)/share
 LOCALEDIR = $(DESTDIR)$(PREFIX)/share/locale
-
-# Allow overriding setup.py paths. Note that we can't set
-# SETUP_PREFIX=PREFIX as many distros are automatically adding
-# 'local', causing '/usr/local/local' and a broken install.
-# https://bugzilla.redhat.com/show_bug.cgi?id=2026979
-SETUP_ROOT   = $(DESTDIR)
-SETUP_PREFIX =
 
 # EDITOR must wait!
 EDITOR = nano
 
-# TODO: Use either 'pip3 install' or 'python3 -m build' + 'python3 -m
-# installer' once either supports a sensible installation both from
-# source (--prefix=/usr/local, whether implicit or explicit) and
-# building a distro package (--destdir=pkg --prefix=/usr). As of 9/2022
-# it seems setup.py is deprecated, but there is no replacement.
-
 build:
 	@echo "BUILDING PYTHON PACKAGE..."
-	NFOVIEW_PREFIX=$(PREFIX) ./setup-partial.py build
+	mkdir -p build/nfoview
+	cp nfoview/*.py build/nfoview
+	sed -i "s|^DATA_DIR = .*$$|DATA_DIR = Path('$(DATADIR)/nfoview')|" build/nfoview/paths.py
+	sed -i "s|^LOCALE_DIR = .*$$|LOCALE_DIR = Path('$(LOCALEDIR)')|" build/nfoview/paths.py
+	fgrep -q "$(DATADIR)/nfoview" build/nfoview/paths.py
+	fgrep -q "$(LOCALEDIR)" build/nfoview/paths.py
+	flake8 build/nfoview/*.py
+	@echo "BUILDING SCRIPT..."
+	mkdir -p build/bin
+	cp bin/nfoview.in build/bin/nfoview
+	sed -i "s|%LIBDIR%|$(DATADIR)/nfoview|" build/bin/nfoview
+	fgrep -q "$(DATADIR)/nfoview" build/bin/nfoview
+	flake8 build/bin/nfoview
+	chmod +x build/bin/nfoview
 	@echo "BUILDING TRANSLATIONS..."
 	mkdir -p build/mo
-	for LANG in `cat po/LINGUAS`; do \
-	echo $$LANG; \
-	msgfmt po/$$LANG.po -o build/mo/$$LANG.mo; \
-	done
+	for LANG in `cat po/LINGUAS`; do msgfmt po/$$LANG.po -o build/mo/$$LANG.mo; done
 	@echo "BUILDING DESKTOP FILE..."
 	msgfmt --desktop -d po \
 	--template data/io.otsaloma.nfoview.desktop.in \
@@ -56,9 +54,11 @@ clean:
 install:
 	test -f build/.complete
 	@echo "INSTALLING PYTHON PACKAGE..."
-	NFOVIEW_PREFIX=$(PREFIX) ./setup-partial.py install \
-	$(if $(SETUP_ROOT),--root=$(SETUP_ROOT),) \
-	$(if $(SETUP_PREFIX),--prefix=$(SETUP_PREFIX),)
+	mkdir -p $(DATADIR)/nfoview/nfoview
+	cp -f build/nfoview/*.py $(DATADIR)/nfoview/nfoview
+	@echo "INSTALLING SCRIPT..."
+	mkdir -p $(BINDIR)
+	cp -f build/bin/nfoview $(BINDIR)
 	@echo "INSTALLING DATA FILES..."
 	mkdir -p $(DATADIR)/nfoview
 	cp -f data/*.ui $(DATADIR)/nfoview
@@ -68,11 +68,8 @@ install:
 	cp -f data/io.otsaloma.nfoview.svg $(DATADIR)/icons/hicolor/scalable/apps
 	cp -f data/io.otsaloma.nfoview-symbolic.svg $(DATADIR)/icons/hicolor/symbolic/apps
 	@echo "INSTALLING TRANSLATIONS..."
-	for LANG in `cat po/LINGUAS`; do \
-	echo $$LANG; \
-	mkdir -p $(LOCALEDIR)/$$LANG/LC_MESSAGES; \
-	cp -f build/mo/$$LANG.mo $(LOCALEDIR)/$$LANG/LC_MESSAGES/nfoview.mo; \
-	done
+	for LANG in `cat po/LINGUAS`; do mkdir -p $(LOCALEDIR)/$$LANG/LC_MESSAGES; done
+	for LANG in `cat po/LINGUAS`; do cp -f build/mo/$$LANG.mo $(LOCALEDIR)/$$LANG/LC_MESSAGES/nfoview.mo; done
 	@echo "INSTALLING DESKTOP FILE..."
 	mkdir -p $(DATADIR)/applications
 	cp -f build/io.otsaloma.nfoview.desktop $(DATADIR)/applications

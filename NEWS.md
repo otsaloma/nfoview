@@ -1,3 +1,9 @@
+PENDING: NFO Viewer 2.0
+=======================
+
+* Update installation to use just a Makefile and a private package
+  under $PREFIX/share/nfoview
+
 2023-08-15: NFO Viewer 1.99
 ===========================
 
