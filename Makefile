@@ -6,6 +6,12 @@ BINDIR    = $(DESTDIR)$(PREFIX)/bin
 DATADIR   = $(DESTDIR)$(PREFIX)/share
 LOCALEDIR = $(DESTDIR)$(PREFIX)/share/locale
 
+# Paths to patch in files,
+# referring to installed, final paths.
+BINDIR_FINAL    = $(PREFIX)/bin
+DATADIR_FINAL   = $(PREFIX)/share
+LOCALEDIR_FINAL = $(PREFIX)/share/locale
+
 # EDITOR must wait!
 EDITOR = nano
 
@@ -13,16 +19,16 @@ build:
 	@echo "BUILDING PYTHON PACKAGE..."
 	mkdir -p build/nfoview
 	cp nfoview/*.py build/nfoview
-	sed -i "s|^DATA_DIR = .*$$|DATA_DIR = Path('$(DATADIR)/nfoview')|" build/nfoview/paths.py
-	sed -i "s|^LOCALE_DIR = .*$$|LOCALE_DIR = Path('$(LOCALEDIR)')|" build/nfoview/paths.py
-	fgrep -q "$(DATADIR)/nfoview" build/nfoview/paths.py
-	fgrep -q "$(LOCALEDIR)" build/nfoview/paths.py
+	sed -i "s|^DATA_DIR = .*$$|DATA_DIR = Path('$(DATADIR_FINAL)/nfoview')|" build/nfoview/paths.py
+	sed -i "s|^LOCALE_DIR = .*$$|LOCALE_DIR = Path('$(LOCALEDIR_FINAL)')|" build/nfoview/paths.py
+	fgrep -q "$(DATADIR_FINAL)/nfoview" build/nfoview/paths.py
+	fgrep -q "$(LOCALEDIR_FINAL)" build/nfoview/paths.py
 	flake8 build/nfoview/*.py
 	@echo "BUILDING SCRIPT..."
 	mkdir -p build/bin
 	cp bin/nfoview.in build/bin/nfoview
-	sed -i "s|%LIBDIR%|$(DATADIR)/nfoview|" build/bin/nfoview
-	fgrep -q "$(DATADIR)/nfoview" build/bin/nfoview
+	sed -i "s|%LIBDIR%|$(DATADIR_FINAL)/nfoview|" build/bin/nfoview
+	fgrep -q "$(DATADIR_FINAL)/nfoview" build/bin/nfoview
 	flake8 build/bin/nfoview
 	chmod +x build/bin/nfoview
 	@echo "BUILDING TRANSLATIONS..."
