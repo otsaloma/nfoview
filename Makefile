@@ -94,6 +94,7 @@ release:
 	@echo "ADD RELEASE NOTES"
 	$(EDITOR) NEWS.md
 	$(EDITOR) data/io.otsaloma.nfoview.appdata.xml.in
+	appstream-util validate-relax --nonet data/io.otsaloma.nfoview.appdata.xml.in
 	sudo $(MAKE) PREFIX=/usr/local build install clean
 	/usr/local/bin/nfoview
 	tools/release
