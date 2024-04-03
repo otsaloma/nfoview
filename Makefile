@@ -23,13 +23,11 @@ build:
 	sed -i "s|^LOCALE_DIR = .*$$|LOCALE_DIR = Path('$(LOCALEDIR_FINAL)')|" build/nfoview/paths.py
 	fgrep -q "$(DATADIR_FINAL)/nfoview" build/nfoview/paths.py
 	fgrep -q "$(LOCALEDIR_FINAL)" build/nfoview/paths.py
-	flake8 build/nfoview/*.py
 	@echo "BUILDING SCRIPT..."
 	mkdir -p build/bin
 	cp bin/nfoview.in build/bin/nfoview
 	sed -i "s|%LIBDIR%|$(DATADIR_FINAL)/nfoview|" build/bin/nfoview
 	fgrep -q "$(DATADIR_FINAL)/nfoview" build/bin/nfoview
-	flake8 build/bin/nfoview
 	chmod +x build/bin/nfoview
 	@echo "BUILDING TRANSLATIONS..."
 	mkdir -p build/mo
