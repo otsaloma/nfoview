@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 22:19+0300\n"
+"POT-Creation-Date: 2024-04-03 21:44+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>, 2021,2023\n"
 "Language-Team: Dutch (http://app.transifex.com/otsaloma/nfoview/language/nl/)\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:29 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "Bekijk nfo-bestanden"
 
-#: nfoview/about.py:34
+#: nfoview/about.py:33
 msgid "About NFO Viewer"
 msgstr "Over NFO-weergave"
 
@@ -31,7 +31,7 @@ msgstr "Over NFO-weergave"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:44 nfoview/window.py:64
+#: nfoview/about.py:43 nfoview/window.py:63
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -43,95 +43,95 @@ msgstr "NFO-weergave"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:52
+#: nfoview/about.py:51
 msgid "translator-credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
-#: nfoview/export.py:32
+#: nfoview/export.py:31
 msgid "Export Image"
 msgstr "Afbeelding exporteren"
 
-#: nfoview/export.py:34 nfoview/open.py:34
+#: nfoview/export.py:33 nfoview/open.py:33
 msgid "_Cancel"
 msgstr "_Annuleren"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:34
 msgid "_Save"
 msgstr "Op_slaan"
 
-#: nfoview/open.py:32
+#: nfoview/open.py:31
 msgid "Open"
 msgstr "Openen"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:34
 msgid "_Open"
 msgstr "_Openen"
 
-#: nfoview/open.py:41
+#: nfoview/open.py:40
 msgid "All files"
 msgstr "Alle bestanden"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:44
 msgid "NFO files (*.nfo)"
 msgstr "Nfo-bestanden (*.nfo)"
 
-#: nfoview/preferences.py:43
+#: nfoview/preferences.py:41
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: nfoview/preferences.py:55
+#: nfoview/preferences.py:53
 msgid "Font"
 msgstr "Lettertype"
 
-#: nfoview/preferences.py:66
+#: nfoview/preferences.py:64
 msgid "Line-spacing"
 msgstr "Regelafstand"
 
-#: nfoview/preferences.py:74
+#: nfoview/preferences.py:72
 msgid "Color scheme"
 msgstr "Kleurenschema"
 
-#: nfoview/preferences.py:85
+#: nfoview/preferences.py:83
 msgid "Foreground"
 msgstr "Voorgrond"
 
-#: nfoview/preferences.py:94
+#: nfoview/preferences.py:92
 msgid "Background"
 msgstr "Achtergrond"
 
-#: nfoview/preferences.py:103
+#: nfoview/preferences.py:101
 msgid "Link"
 msgstr "Link"
 
-#: nfoview/preferences.py:112
+#: nfoview/preferences.py:110
 msgid "Visited link"
 msgstr "Bezochte link"
 
-#: nfoview/schemes.py:47
+#: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "Zwart op wit"
 
-#: nfoview/schemes.py:57
+#: nfoview/schemes.py:54
 msgid "Custom"
 msgstr "Aangepast"
 
-#: nfoview/schemes.py:67
+#: nfoview/schemes.py:63
 msgid "Dark grey on light grey"
 msgstr "Donkergrijs op lichtgrijs"
 
-#: nfoview/schemes.py:80
+#: nfoview/schemes.py:75
 msgid "System theme"
 msgstr "Systeemthema"
 
-#: nfoview/schemes.py:90
+#: nfoview/schemes.py:84
 msgid "Grey on black"
 msgstr "Grijs op zwart"
 
-#: nfoview/schemes.py:100
+#: nfoview/schemes.py:93
 msgid "Light grey on dark grey"
 msgstr "Lichtgrijs op donkergrijs"
 
-#: nfoview/schemes.py:110
+#: nfoview/schemes.py:102
 msgid "White on black"
 msgstr "Wit op zwart"
 
@@ -171,7 +171,7 @@ msgid ""
 "hyperlinks."
 msgstr "Met NFO-weergave bekijk je eenvoudig nfo-bestanden, welke zijn opgemaakt in ‘ASCII’ in de CP437-codepagina. NFO-weergave heeft een aantal voordelen t.o.v. een tekstbewerker: lettertype- en versleutelingsinstellingen, automatische venstergrootte en aanklikbare links."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:36
+#: data/io.otsaloma.nfoview.appdata.xml.in:37
 msgid "Main window"
 msgstr "Hoofdvenster"
 

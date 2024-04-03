@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-14 23:10+0300\n"
+"POT-Creation-Date: 2024-04-03 21:44+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Hebrew (http://app.transifex.com/otsaloma/nfoview/language/he/)\n"
@@ -15,13 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:29 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "מציג לקובצי NFO"
 
-#: nfoview/about.py:34
+#: nfoview/about.py:33
 msgid "About NFO Viewer"
 msgstr "על אודות מציג ה־NFO"
 
@@ -29,7 +29,7 @@ msgstr "על אודות מציג ה־NFO"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:44 nfoview/window.py:64
+#: nfoview/about.py:43 nfoview/window.py:63
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -41,95 +41,95 @@ msgstr "מציג NFO"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:52
+#: nfoview/about.py:51
 msgid "translator-credits"
 msgstr "Yaron Shahrabani <sh.yaron@gmail.com>"
 
-#: nfoview/export.py:32
+#: nfoview/export.py:31
 msgid "Export Image"
 msgstr ""
 
-#: nfoview/export.py:34 nfoview/open.py:34
+#: nfoview/export.py:33 nfoview/open.py:33
 msgid "_Cancel"
 msgstr ""
 
-#: nfoview/export.py:35
+#: nfoview/export.py:34
 msgid "_Save"
 msgstr ""
 
-#: nfoview/open.py:32
+#: nfoview/open.py:31
 msgid "Open"
 msgstr "פתיחה"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:34
 msgid "_Open"
 msgstr ""
 
-#: nfoview/open.py:41
+#: nfoview/open.py:40
 msgid "All files"
 msgstr "כל הקבצים"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:44
 msgid "NFO files (*.nfo)"
 msgstr "קובצי NFO‏ (*.nfo)"
 
-#: nfoview/preferences.py:43
+#: nfoview/preferences.py:41
 msgid "Preferences"
 msgstr "העדפות"
 
-#: nfoview/preferences.py:55
+#: nfoview/preferences.py:53
 msgid "Font"
 msgstr ""
 
-#: nfoview/preferences.py:66
+#: nfoview/preferences.py:64
 msgid "Line-spacing"
 msgstr ""
 
-#: nfoview/preferences.py:74
+#: nfoview/preferences.py:72
 msgid "Color scheme"
 msgstr ""
 
-#: nfoview/preferences.py:85
+#: nfoview/preferences.py:83
 msgid "Foreground"
 msgstr ""
 
-#: nfoview/preferences.py:94
+#: nfoview/preferences.py:92
 msgid "Background"
 msgstr ""
 
-#: nfoview/preferences.py:103
+#: nfoview/preferences.py:101
 msgid "Link"
 msgstr ""
 
-#: nfoview/preferences.py:112
+#: nfoview/preferences.py:110
 msgid "Visited link"
 msgstr ""
 
-#: nfoview/schemes.py:47
+#: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "שחור על לבן"
 
-#: nfoview/schemes.py:57
+#: nfoview/schemes.py:54
 msgid "Custom"
 msgstr "מותאם אישית"
 
-#: nfoview/schemes.py:67
+#: nfoview/schemes.py:63
 msgid "Dark grey on light grey"
 msgstr "אפור כהה על אפור בהיר"
 
-#: nfoview/schemes.py:80
+#: nfoview/schemes.py:75
 msgid "System theme"
 msgstr "ערכת המערכת"
 
-#: nfoview/schemes.py:90
+#: nfoview/schemes.py:84
 msgid "Grey on black"
 msgstr "אפור על שחור"
 
-#: nfoview/schemes.py:100
+#: nfoview/schemes.py:93
 msgid "Light grey on dark grey"
 msgstr "אפור בהיר על אפור כהה"
 
-#: nfoview/schemes.py:110
+#: nfoview/schemes.py:102
 msgid "White on black"
 msgstr "לבן על שחור"
 
@@ -169,7 +169,7 @@ msgid ""
 "hyperlinks."
 msgstr ""
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:36
+#: data/io.otsaloma.nfoview.appdata.xml.in:37
 msgid "Main window"
 msgstr ""
 

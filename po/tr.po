@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-14 23:10+0300\n"
+"POT-Creation-Date: 2024-04-03 21:44+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: mauron, 2015-2017\n"
 "Language-Team: Turkish (http://app.transifex.com/otsaloma/nfoview/language/tr/)\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:29 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "NFO dosyaları için görüntüleyici"
 
-#: nfoview/about.py:34
+#: nfoview/about.py:33
 msgid "About NFO Viewer"
 msgstr "NFO Viewer hakkında"
 
@@ -31,7 +31,7 @@ msgstr "NFO Viewer hakkında"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:44 nfoview/window.py:64
+#: nfoview/about.py:43 nfoview/window.py:63
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -43,95 +43,95 @@ msgstr "NFO Viewer"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:52
+#: nfoview/about.py:51
 msgid "translator-credits"
 msgstr "Anonim"
 
-#: nfoview/export.py:32
+#: nfoview/export.py:31
 msgid "Export Image"
 msgstr "Resmi dışa aktar"
 
-#: nfoview/export.py:34 nfoview/open.py:34
+#: nfoview/export.py:33 nfoview/open.py:33
 msgid "_Cancel"
 msgstr "_İptal"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:34
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: nfoview/open.py:32
+#: nfoview/open.py:31
 msgid "Open"
 msgstr "Aç"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:34
 msgid "_Open"
 msgstr "_Aç"
 
-#: nfoview/open.py:41
+#: nfoview/open.py:40
 msgid "All files"
 msgstr "Tüm dosyalar"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:44
 msgid "NFO files (*.nfo)"
 msgstr "NFO dosyaları (*.nfo)"
 
-#: nfoview/preferences.py:43
+#: nfoview/preferences.py:41
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: nfoview/preferences.py:55
+#: nfoview/preferences.py:53
 msgid "Font"
 msgstr ""
 
-#: nfoview/preferences.py:66
+#: nfoview/preferences.py:64
 msgid "Line-spacing"
 msgstr ""
 
-#: nfoview/preferences.py:74
+#: nfoview/preferences.py:72
 msgid "Color scheme"
 msgstr ""
 
-#: nfoview/preferences.py:85
+#: nfoview/preferences.py:83
 msgid "Foreground"
 msgstr ""
 
-#: nfoview/preferences.py:94
+#: nfoview/preferences.py:92
 msgid "Background"
 msgstr ""
 
-#: nfoview/preferences.py:103
+#: nfoview/preferences.py:101
 msgid "Link"
 msgstr ""
 
-#: nfoview/preferences.py:112
+#: nfoview/preferences.py:110
 msgid "Visited link"
 msgstr ""
 
-#: nfoview/schemes.py:47
+#: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "Beyaz üzerinde siyah"
 
-#: nfoview/schemes.py:57
+#: nfoview/schemes.py:54
 msgid "Custom"
 msgstr "Kişisel"
 
-#: nfoview/schemes.py:67
+#: nfoview/schemes.py:63
 msgid "Dark grey on light grey"
 msgstr "Açık gri üzerinde koyu gri"
 
-#: nfoview/schemes.py:80
+#: nfoview/schemes.py:75
 msgid "System theme"
 msgstr "Sistem teması"
 
-#: nfoview/schemes.py:90
+#: nfoview/schemes.py:84
 msgid "Grey on black"
 msgstr "Siyah üzerinde gri"
 
-#: nfoview/schemes.py:100
+#: nfoview/schemes.py:93
 msgid "Light grey on dark grey"
 msgstr "Koyu gri üzerinde açık gri"
 
-#: nfoview/schemes.py:110
+#: nfoview/schemes.py:102
 msgid "White on black"
 msgstr "Siyah üzerinde beyaz"
 
@@ -171,7 +171,7 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer, kod sayfası 437 ile yapılmış \"ASCII\" sanatı olan NFO dosyaları için sade bir görüntüleyicidir. Bir metin düzenleyicisi yerine NFO Viewer'ı kullanmanın avantajları, önayarlı yazıtipi ile kodlama, otomatik pencere boyutlanması ve tıklanabilir bağlantılardır."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:36
+#: data/io.otsaloma.nfoview.appdata.xml.in:37
 msgid "Main window"
 msgstr "Ana pencere"
 

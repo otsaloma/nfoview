@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-14 23:10+0300\n"
+"POT-Creation-Date: 2024-04-03 21:44+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Georgian (http://app.transifex.com/otsaloma/nfoview/language/ka/)\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Language: ka\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: nfoview/about.py:30 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:29 data/io.otsaloma.nfoview.appdata.xml.in:7
 msgid "Viewer for NFO files"
 msgstr "პროგრამა NFO ფაილების დათვალიერებისთვის"
 
-#: nfoview/about.py:34
+#: nfoview/about.py:33
 msgid "About NFO Viewer"
 msgstr "NFO-ის დათვალიერების პროგრამის შესახებ"
 
@@ -29,7 +29,7 @@ msgstr "NFO-ის დათვალიერების პროგრამ
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:44 nfoview/window.py:64
+#: nfoview/about.py:43 nfoview/window.py:63
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:4
 msgid "NFO Viewer"
@@ -41,95 +41,95 @@ msgstr "NFO-ის დათვალიერება"
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:52
+#: nfoview/about.py:51
 msgid "translator-credits"
 msgstr "თარგმანი-შესრულებულია"
 
-#: nfoview/export.py:32
+#: nfoview/export.py:31
 msgid "Export Image"
 msgstr "გამოსახულების გატანა"
 
-#: nfoview/export.py:34 nfoview/open.py:34
+#: nfoview/export.py:33 nfoview/open.py:33
 msgid "_Cancel"
 msgstr "გაუქმება"
 
-#: nfoview/export.py:35
+#: nfoview/export.py:34
 msgid "_Save"
 msgstr "_შენახვა"
 
-#: nfoview/open.py:32
+#: nfoview/open.py:31
 msgid "Open"
 msgstr "გახსნა"
 
-#: nfoview/open.py:35
+#: nfoview/open.py:34
 msgid "_Open"
 msgstr "_გახსნა"
 
-#: nfoview/open.py:41
+#: nfoview/open.py:40
 msgid "All files"
 msgstr "ყველა ფაილი"
 
-#: nfoview/open.py:45
+#: nfoview/open.py:44
 msgid "NFO files (*.nfo)"
 msgstr "NFO ფაილები (*.nfo)"
 
-#: nfoview/preferences.py:43
+#: nfoview/preferences.py:41
 msgid "Preferences"
 msgstr "მორგება"
 
-#: nfoview/preferences.py:55
+#: nfoview/preferences.py:53
 msgid "Font"
 msgstr ""
 
-#: nfoview/preferences.py:66
+#: nfoview/preferences.py:64
 msgid "Line-spacing"
 msgstr ""
 
-#: nfoview/preferences.py:74
+#: nfoview/preferences.py:72
 msgid "Color scheme"
 msgstr ""
 
-#: nfoview/preferences.py:85
+#: nfoview/preferences.py:83
 msgid "Foreground"
 msgstr ""
 
-#: nfoview/preferences.py:94
+#: nfoview/preferences.py:92
 msgid "Background"
 msgstr ""
 
-#: nfoview/preferences.py:103
+#: nfoview/preferences.py:101
 msgid "Link"
 msgstr ""
 
-#: nfoview/preferences.py:112
+#: nfoview/preferences.py:110
 msgid "Visited link"
 msgstr ""
 
-#: nfoview/schemes.py:47
+#: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "შავი თეთრ ფონზე"
 
-#: nfoview/schemes.py:57
+#: nfoview/schemes.py:54
 msgid "Custom"
 msgstr "განსხვავებული"
 
-#: nfoview/schemes.py:67
+#: nfoview/schemes.py:63
 msgid "Dark grey on light grey"
 msgstr "მუქი ნაცრისფერი ღია ნაცრისფერზე"
 
-#: nfoview/schemes.py:80
+#: nfoview/schemes.py:75
 msgid "System theme"
 msgstr "სისტემური თემა"
 
-#: nfoview/schemes.py:90
+#: nfoview/schemes.py:84
 msgid "Grey on black"
 msgstr "ნაცხისფერი შავზე"
 
-#: nfoview/schemes.py:100
+#: nfoview/schemes.py:93
 msgid "Light grey on dark grey"
 msgstr "ღია ნაცრისფერი  მუქ ნაცრისფერზე"
 
-#: nfoview/schemes.py:110
+#: nfoview/schemes.py:102
 msgid "White on black"
 msgstr "თეთრი შავ ფონზე"
 
@@ -169,7 +169,7 @@ msgid ""
 "hyperlinks."
 msgstr "NFO ფაილების გამხსნელი მარტივი პროგრამაა ფაილებისთვის, რომლებიც \"ASCII\" naxatebia CP437 კოდების გვერდში. ამ პროგრამის გამოყენების უპირატესობა ტექსტურ რედაქტორებში ფონტებისა და კოდირების ავტომატური პარამეტრები, ფანჯრის ზომა და გახსნადი ბმულებია."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:36
+#: data/io.otsaloma.nfoview.appdata.xml.in:37
 msgid "Main window"
 msgstr "მთავარი ფანჯარა"
 
