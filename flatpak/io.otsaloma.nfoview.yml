@@ -14,7 +14,7 @@ modules:
   - name: nfoview
     buildsystem: simple
     build-commands:
-      - make build
+      - make PREFIX=/app build
       - make PREFIX=/app install
     sources:
       - type: git
