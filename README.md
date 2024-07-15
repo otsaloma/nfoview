@@ -3,7 +3,6 @@ NFO Viewer
 
 [![Packages](https://repology.org/badge/tiny-repos/nfoview.svg)](https://repology.org/project/nfoview/versions)
 [![Flathub](https://img.shields.io/badge/download-flathub-blue.svg)](https://flathub.org/apps/io.otsaloma.nfoview)
-[![Chat](https://img.shields.io/badge/chat-linen-blue)](https://www.linen.dev/s/otsaloma/c/nfoview)
 
 NFO Viewer is a simple viewer for NFO files, which are "ASCII" art in
 the CP437 codepage. The advantages of using NFO Viewer instead of a text
