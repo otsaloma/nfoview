@@ -43,7 +43,9 @@ Debian/Ubuntu you can install these with the following command.
     sudo apt install fonts-cascadia-code \
                      gettext \
                      gir1.2-gtk-4.0 \
+                     gir1.2-pango-1.0 \
                      python3 \
+                     python3-cairo \
                      python3-dev \
                      python3-gi
 
