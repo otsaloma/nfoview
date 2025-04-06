@@ -24,6 +24,7 @@ DEFAULTS = {
     "background_color": "#ffffff",
     "color_scheme": "default",
     "font": "Cascadia Mono 12",
+    "export_scale": 1.0,
     "foreground_color": "#2e3436",
     "link_color": "#2a76c6",
     "pixels_above_lines": 0,

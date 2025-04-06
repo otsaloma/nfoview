@@ -115,6 +115,14 @@ class PreferencesDialog(Gtk.Dialog):
         grid.attach(self._vlink_color_label, 0, 6, 1, 1)
         grid.attach(boxwrap(self._vlink_color_button), 1, 6, 1, 1)
 
+        # Export Scaling
+        self._export_scale_label = build_label(_("Export to PNG scaling"))
+        self._export_scale_spin = Gtk.SpinButton.new_with_range(1, 5, 0.5)
+        self._export_scale_spin.set_value(nfoview.conf.export_scale)
+        self._export_scale_spin.connect("value-changed", self._on_export_scaling_spin_value_changed)
+        grid.attach(self._export_scale_label, 0, 7, 1, 1)
+        grid.attach(boxwrap(self._export_scale_spin), 1, 7, 1, 1)
+
         self._update_sensitivities()
         self.set_child(grid)
         self.show()
@@ -177,6 +185,9 @@ class PreferencesDialog(Gtk.Dialog):
         scheme.vlink = color
         for window in self._get_windows():
             window.view.update_style()
+
+    def _on_export_scaling_spin_value_changed(self, spin_button):
+        nfoview.conf.export_scale = spin_button.get_value()
 
     def _update_color_buttons(self, scheme):
         rgba = nfoview.util.hex_to_rgba
