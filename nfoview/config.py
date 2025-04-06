@@ -47,7 +47,7 @@ class ConfigurationStore:
         if not self.path.exists(): return
         entries = self.path.read_text().splitlines()
         entries = dict(
-            re.split(" *= *", x.strip(), 1)
+            re.split(" *= *", x.strip(), maxsplit=1)
             for x in entries
             if not x.startswith("#") and "=" in x
         )
