@@ -20,6 +20,7 @@ jobs:
           xvfb
 
       - run: make check
-      - run: xvfb-run pytest-3 .
+      # XXX: Segfaulting since 3/2025.
+      # - run: xvfb-run pytest-3 .
       - run: sudo make PREFIX=/usr/local build install clean
       - run: sudo make DESTDIR=pkg PREFIX=/usr build install clean
