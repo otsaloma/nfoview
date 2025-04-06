@@ -1,3 +1,10 @@
+PENDING: NFO Viewer 2.1
+=======================
+
+* Restore export to PNG functionality (#32)
+* Add dependencies on Cairo and Pango packages (python3-cairo and
+  gir1.2-pango-1.0 on Debian/Ubuntu)
+
 2024-04-03: NFO Viewer 2.0.1
 ============================
 
