@@ -27,7 +27,7 @@ class AboutDialog(Gtk.AboutDialog):
         GObject.GObject.__init__(self)
         self.set_authors(("Osmo Salomaa <otsaloma@iki.fi>",))
         self.set_comments(_("Viewer for NFO files"))
-        self.set_copyright("Copyright © 2005–2024 Osmo Salomaa")
+        self.set_copyright("Copyright © 2005–2025 Osmo Salomaa")
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_logo_icon_name("io.otsaloma.nfoview")
         self.set_title(_("About NFO Viewer"))

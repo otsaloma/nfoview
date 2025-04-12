@@ -124,7 +124,6 @@ class Window(Gtk.ApplicationWindow):
             Gtk.ResponseType.OK,
         ): return
         if not path: return
-
         # Get text buffer and full text
         buffer = self.view.get_buffer()
         start_iter = buffer.get_start_iter()

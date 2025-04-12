@@ -24,6 +24,7 @@ from pathlib import Path
 FIELDS = {
     "background_color": "#ff0000",
     "color_scheme": "default",
+    "export_scale": 2.0,
     "font": "monospace 12",
     "foreground_color": "#00ff00",
     "link_color": "#0000ff",
