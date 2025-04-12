@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-03 21:44+0300\n"
+"POT-Creation-Date: 2025-04-13 01:49+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: Xoán Sampaíño <xoansampainho@gmail.com>, 2018\n"
 "Language-Team: Spanish (Spain) (http://app.transifex.com/otsaloma/nfoview/language/es_ES/)\n"
@@ -30,9 +30,9 @@ msgstr "Acerca de NFO Viewer"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:43 nfoview/window.py:63
+#: nfoview/about.py:43 nfoview/window.py:66
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
-#: data/io.otsaloma.nfoview.desktop.in:4
+#: data/io.otsaloma.nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -106,6 +106,10 @@ msgstr ""
 msgid "Visited link"
 msgstr ""
 
+#: nfoview/preferences.py:119
+msgid "Export to PNG scaling"
+msgstr ""
+
 #: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "Negro sobre blanco"
@@ -170,16 +174,16 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer es un visor sencillo de archivos NFO, que son arte «ASCII» en la página de códigos CP437. Las ventajas de utilizar NFO Viewer en lugar de un editor de texto son la configuración predeterminada de fuente y codificación, el tamaño de ventana automático y los hipervínculos seleccionables."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:37
+#: data/io.otsaloma.nfoview.appdata.xml.in:40
 msgid "Main window"
 msgstr "Ventana principal"
 
-#: data/io.otsaloma.nfoview.desktop.in:5
+#: data/io.otsaloma.nfoview.desktop.in:4
 msgid "View NFO files"
 msgstr "Ver archivos NFO"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/io.otsaloma.nfoview.desktop.in:11
+#: data/io.otsaloma.nfoview.desktop.in:10
 msgid "information;"
 msgstr "información;"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-03 21:44+0300\n"
+"POT-Creation-Date: 2025-04-13 01:49+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Georgian (http://app.transifex.com/otsaloma/nfoview/language/ka/)\n"
@@ -29,9 +29,9 @@ msgstr "NFO-ის დათვალიერების პროგრამ
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:43 nfoview/window.py:63
+#: nfoview/about.py:43 nfoview/window.py:66
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
-#: data/io.otsaloma.nfoview.desktop.in:4
+#: data/io.otsaloma.nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "NFO-ის დათვალიერება"
 
@@ -105,6 +105,10 @@ msgstr ""
 msgid "Visited link"
 msgstr ""
 
+#: nfoview/preferences.py:119
+msgid "Export to PNG scaling"
+msgstr ""
+
 #: nfoview/schemes.py:45
 msgid "Black on white"
 msgstr "შავი თეთრ ფონზე"
@@ -169,16 +173,16 @@ msgid ""
 "hyperlinks."
 msgstr "NFO ფაილების გამხსნელი მარტივი პროგრამაა ფაილებისთვის, რომლებიც \"ASCII\" naxatebia CP437 კოდების გვერდში. ამ პროგრამის გამოყენების უპირატესობა ტექსტურ რედაქტორებში ფონტებისა და კოდირების ავტომატური პარამეტრები, ფანჯრის ზომა და გახსნადი ბმულებია."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:37
+#: data/io.otsaloma.nfoview.appdata.xml.in:40
 msgid "Main window"
 msgstr "მთავარი ფანჯარა"
 
-#: data/io.otsaloma.nfoview.desktop.in:5
+#: data/io.otsaloma.nfoview.desktop.in:4
 msgid "View NFO files"
 msgstr "NFO ფაილების ნახვა"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/io.otsaloma.nfoview.desktop.in:11
+#: data/io.otsaloma.nfoview.desktop.in:10
 msgid "information;"
 msgstr "ინფორმაცია;"

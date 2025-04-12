@@ -5,13 +5,14 @@
 # Translators:
 # mauron, 2015
 # mauron, 2015-2017
+# mauron, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: nfoview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-03 21:44+0300\n"
+"POT-Creation-Date: 2025-04-13 01:49+0300\n"
 "PO-Revision-Date: 2015-04-09 18:40+0000\n"
-"Last-Translator: mauron, 2015-2017\n"
+"Last-Translator: mauron, 2024\n"
 "Language-Team: Turkish (http://app.transifex.com/otsaloma/nfoview/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,9 +32,9 @@ msgstr "NFO Viewer hakkında"
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:43 nfoview/window.py:63
+#: nfoview/about.py:43 nfoview/window.py:66
 #: data/io.otsaloma.nfoview.appdata.xml.in:6
-#: data/io.otsaloma.nfoview.desktop.in:4
+#: data/io.otsaloma.nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr "NFO Viewer"
 
@@ -81,30 +82,34 @@ msgstr "Tercihler"
 
 #: nfoview/preferences.py:53
 msgid "Font"
-msgstr ""
+msgstr "Yazı tipi"
 
 #: nfoview/preferences.py:64
 msgid "Line-spacing"
-msgstr ""
+msgstr "Satır aralığı"
 
 #: nfoview/preferences.py:72
 msgid "Color scheme"
-msgstr ""
+msgstr "Renk şeması"
 
 #: nfoview/preferences.py:83
 msgid "Foreground"
-msgstr ""
+msgstr "Ön plan"
 
 #: nfoview/preferences.py:92
 msgid "Background"
-msgstr ""
+msgstr "Arka plan"
 
 #: nfoview/preferences.py:101
 msgid "Link"
-msgstr ""
+msgstr "Bağlantı"
 
 #: nfoview/preferences.py:110
 msgid "Visited link"
+msgstr "Ziyaret edilmiş bağlantı"
+
+#: nfoview/preferences.py:119
+msgid "Export to PNG scaling"
 msgstr ""
 
 #: nfoview/schemes.py:45
@@ -171,16 +176,16 @@ msgid ""
 "hyperlinks."
 msgstr "NFO Viewer, kod sayfası 437 ile yapılmış \"ASCII\" sanatı olan NFO dosyaları için sade bir görüntüleyicidir. Bir metin düzenleyicisi yerine NFO Viewer'ı kullanmanın avantajları, önayarlı yazıtipi ile kodlama, otomatik pencere boyutlanması ve tıklanabilir bağlantılardır."
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:37
+#: data/io.otsaloma.nfoview.appdata.xml.in:40
 msgid "Main window"
 msgstr "Ana pencere"
 
-#: data/io.otsaloma.nfoview.desktop.in:5
+#: data/io.otsaloma.nfoview.desktop.in:4
 msgid "View NFO files"
 msgstr "NFO dosyalarını görüntüle"
 
 #. TRANSLATORS: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/io.otsaloma.nfoview.desktop.in:11
+#: data/io.otsaloma.nfoview.desktop.in:10
 msgid "information;"
 msgstr "belge;göster;"
