@@ -29,26 +29,26 @@ import gi
 gi.require_version("Gdk", "4.0")
 gi.require_version("Gtk", "4.0")
 
-from nfoview.paths import CONFIG_HOME_DIR # noqa
-from nfoview.paths import DATA_DIR # noqa
-from nfoview.paths import LOCALE_DIR # noqa
-from nfoview import util # noqa
-from nfoview import i18n # noqa
-from nfoview.errors import AffirmationError # noqa
-from nfoview.config import ConfigurationStore # noqa
-conf = ConfigurationStore(read=True) # noqa
-from nfoview import schemes # noqa
-from nfoview.about import AboutDialog # noqa
-from nfoview.export import ExportImageDialog # noqa
-from nfoview.open import OpenDialog # noqa
-from nfoview.preferences import PreferencesDialog # noqa
-from nfoview.view import TextView # noqa
-from nfoview.action import Action # noqa
-from nfoview.action import ToggleAction # noqa
-from nfoview import actions # noqa
-from nfoview.window import Window # noqa
-from nfoview.application import Application # noqa
-from nfoview.unittest import TestCase # noqa
+from nfoview.paths import CONFIG_HOME_DIR
+from nfoview.paths import DATA_DIR
+from nfoview.paths import LOCALE_DIR
+from nfoview import util
+from nfoview import i18n
+from nfoview.errors import AffirmationError
+from nfoview.config import ConfigurationStore
+conf = ConfigurationStore(read=True)
+from nfoview import schemes
+from nfoview.about import AboutDialog
+from nfoview.export import ExportImageDialog
+from nfoview.open import OpenDialog
+from nfoview.preferences import PreferencesDialog
+from nfoview.view import TextView
+from nfoview.action import Action
+from nfoview.action import ToggleAction
+from nfoview import actions
+from nfoview.window import Window
+from nfoview.application import Application
+from nfoview.unittest import TestCase
 
 def main(paths):
     global app
