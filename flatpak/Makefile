@@ -7,6 +7,7 @@ clean:
 install:
 	$(MAKE) uninstall
 	rm -rf build .flatpak-builder/build
+	flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	flatpak-builder --install --install-deps-from=flathub build io.otsaloma.nfoview.yml
 
 run:
