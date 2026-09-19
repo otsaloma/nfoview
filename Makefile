@@ -54,6 +54,7 @@ clean:
 	rm -rf */__pycache__
 	rm -rf */*/__pycache__
 	rm -rf */*/*/__pycache__
+	rm -f po/LINGUAS
 
 install:
 	test -f build/.complete
