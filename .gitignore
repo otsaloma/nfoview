@@ -1,5 +1,6 @@
 *~
 .cache
+.claude/settings.local.json
 .pytest_cache
 __pycache__
 build
