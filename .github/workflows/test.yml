@@ -1,10 +1,13 @@
 name: Test
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - run: python3 -c "import sys; print(sys.version)"
       - run: >
           sudo apt-get update && sudo apt-get install -y
@@ -19,8 +22,6 @@ jobs:
           python3-pytest
           xvfb
 
-      - run: make check
-      # XXX: Segfaulting since 3/2025.
-      # - run: xvfb-run pytest-3 .
-      - run: sudo make PREFIX=/usr/local build install clean
-      - run: sudo make DESTDIR=pkg PREFIX=/usr build install clean
+      - run: xvfb-run make check
+      - run: xvfb-run pytest nfoview
+      - run: xvfb-run tools/test-install

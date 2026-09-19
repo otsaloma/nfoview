@@ -1,0 +1,23 @@
+#!/bin/sh
+set -ex
+cd "$(dirname "$0")/.."
+ROOT=$(mktemp -d)
+
+# Installation from source to a PREFIX.
+make PREFIX=$ROOT/prefix build install
+test -x $ROOT/prefix/bin/nfoview
+grep -qF "$ROOT/prefix/share/nfoview" $ROOT/prefix/bin/nfoview
+grep -qF "$ROOT/prefix/share/locale" $ROOT/prefix/share/nfoview/nfoview/paths.py
+env -C / PYTHONPATH=$ROOT/prefix/share/nfoview python3 -c "import nfoview"
+
+# Distro packaging with DESTDIR and PREFIX.
+make DESTDIR=$ROOT/destdir PREFIX=/usr build install
+test -x $ROOT/destdir/usr/bin/nfoview
+grep -qF "/usr/share/nfoview" $ROOT/destdir/usr/bin/nfoview
+grep -qF "/usr/share/locale" $ROOT/destdir/usr/share/nfoview/nfoview/paths.py
+env -C / PYTHONPATH=$ROOT/destdir/usr/share/nfoview python3 -c "import nfoview"
+
+rm -rf $ROOT
+make clean
+set +x
+echo "ALL OK"
