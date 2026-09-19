@@ -1,3 +1,8 @@
+# PENDING: NFO Viewer 2.2
+
+- Revise Makefile so that PREFIX and DESTDIR are used only at
+  install time, not during build
+
 # 2025-04-13: NFO Viewer 2.1
 
 - Restore export to PNG functionality (#32)
