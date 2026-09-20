@@ -25,7 +25,7 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import Pango
 from gi.repository import PangoCairo
-from nfoview.i18n  import _
+from nfoview.i18n import _
 from pathlib import Path
 
 class Window(Gtk.ApplicationWindow):
