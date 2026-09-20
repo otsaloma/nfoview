@@ -57,6 +57,7 @@ clean:
 install:
 	test -f build/.complete
 	@echo "INSTALLING PYTHON PACKAGE..."
+	rm -rf $(DESTDIR)$(LIBDIR)/nfoview
 	mkdir -p $(DESTDIR)$(LIBDIR)
 	cp -R build/nfoview $(DESTDIR)$(LIBDIR)
 	sed \
