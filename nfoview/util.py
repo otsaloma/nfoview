@@ -68,20 +68,6 @@ def apply_style(widget):
     priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
     style.add_provider_for_display(display, provider, priority)
 
-def connect(observer, observable, signal, *args):
-    # If observable is a string, it should be an attribute of observer.
-    # If observable is not a string it should be the same as observer.
-    method_name = signal.replace("-", "_").replace("::", "_")
-    if observer is not observable:
-        method_name = "_".join((observable, method_name))
-    method_name = f"_on_{method_name}".replace("__", "_")
-    if not hasattr(observer, method_name):
-        method_name = method_name[1:]
-    method = getattr(observer, method_name)
-    if observer is not observable:
-        observable = getattr(observer, observable)
-    return observable.connect(signal, method, *args)
-
 def detect_encoding(path, default="cp437"):
     with open(path, "rb") as f:
         line = f.readline()
