@@ -31,6 +31,7 @@ DEFAULTS = {
     "pixels_below_lines": 0,
     "text_view_max_chars": 160,
     "text_view_max_lines": 45,
+    "theme": "system",
     "version": "",
     "visited_link_color": "#215d9c",
 }

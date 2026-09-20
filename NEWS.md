@@ -1,5 +1,8 @@
 # PENDING: NFO Viewer 2.2
 
+- Follow the system-wide dark theme preference (GTK ≥ 4.20), overridable
+  with the `theme` config file option (#30)
+
 - Revise Makefile so that PREFIX and DESTDIR are used only at
   install time, not during build
 
