@@ -44,6 +44,14 @@ class Window(Gtk.ApplicationWindow):
         self.resize_to_text()
         self._update_actions_enabled()
 
+    def _hide_on_close(self, dialog):
+        # Keep the dialog around so that it can be presented again.
+        def on_close_request(dialog, *args):
+            dialog.hide()
+            return True
+        dialog.connect("close-request", on_close_request)
+        return dialog
+
     def _init_actions(self):
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
@@ -66,7 +74,7 @@ class Window(Gtk.ApplicationWindow):
         self.set_title(_("NFO Viewer"))
         self.set_icon_name("io.otsaloma.nfoview")
         Gtk.Window.set_default_icon_name("io.otsaloma.nfoview")
-        self.connect("close-request", self._on_close_request)
+        self.connect("close-request", self._on_close_activate)
         target = Gtk.DropTarget.new(Gio.File, Gdk.DragAction.COPY)
         target.connect("drop", self._on_drag_drop)
         self.view.add_controller(target)
@@ -89,21 +97,11 @@ class Window(Gtk.ApplicationWindow):
         nfoview.app.open_window(path)
 
     def _on_about_activate(self, *args):
-        if self._about_dialog:
-            return self._about_dialog.present()
-        def on_close_request(dialog, *args, **kwargs):
-            dialog.hide()
-            return True
-        self._about_dialog = nfoview.AboutDialog(self)
-        self._about_dialog.connect("close-request", on_close_request)
-        self._about_dialog.show()
+        if self._about_dialog is None:
+            self._about_dialog = self._hide_on_close(nfoview.AboutDialog(self))
+        self._about_dialog.present()
 
     def _on_close_activate(self, *args):
-        self.destroy()
-        if nfoview.app:
-            nfoview.app.remove_window(self)
-
-    def _on_close_request(self, *args):
         self.destroy()
         if nfoview.app:
             nfoview.app.remove_window(self)
@@ -134,29 +132,21 @@ class Window(Gtk.ApplicationWindow):
     def _on_open_activate_response(self, dialog, response):
         paths = [x.get_path() for x in dialog.get_files()]
         dialog.destroy()
-        if response not in (
-            Gtk.ResponseType.ACCEPT,
-            Gtk.ResponseType.OK,
-        ): return
+        if response != Gtk.ResponseType.ACCEPT: return
         for path in paths:
             if self.path is None:
                 self.open_file(path)
             elif nfoview.app:
                 nfoview.app.open_window(path)
 
+    def _on_preferences_activate(self, *args):
+        if self._prefs_dialog is None:
+            self._prefs_dialog = self._hide_on_close(nfoview.PreferencesDialog(self))
+        self._prefs_dialog.present()
+
     def _on_quit_activate(self, *args):
         if nfoview.app:
             nfoview.app.quit()
-
-    def _on_preferences_activate(self, *args):
-        if self._prefs_dialog:
-            return self._prefs_dialog.present()
-        def on_close_request(dialog, *args, **kwargs):
-            dialog.hide()
-            return True
-        self._prefs_dialog = nfoview.PreferencesDialog(self)
-        self._prefs_dialog.connect("close-request", on_close_request)
-        self._prefs_dialog.show()
 
     def _on_wrap_lines_activate(self, action, *args):
         action.set_state(not action.get_state())
