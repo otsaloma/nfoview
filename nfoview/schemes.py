@@ -20,16 +20,6 @@ import nfoview
 from nfoview.i18n import _
 from nfoview.i18n import __
 
-__all__ = (
-    "BlackOnWhite",
-    "Custom",
-    "DarkGreyOnLightGray",
-    "Default",
-    "GreyOnBlack",
-    "LightGreyOnDarkGray",
-    "WhiteOnBlack",
-)
-
 class ColorScheme:
 
     name         = NotImplementedError
@@ -105,16 +95,24 @@ class WhiteOnBlack(ColorScheme):
     link         = "#aaaaff"
     visited_link = "#ffaaff"
 
+ALL = (
+    BlackOnWhite,
+    Custom,
+    DarkGreyOnLightGray,
+    Default,
+    GreyOnBlack,
+    LightGreyOnDarkGray,
+    WhiteOnBlack,
+)
+
 def _ensure_translated():
-    for class_name in __all__:
-        scheme = globals()[class_name]
+    for scheme in ALL:
         if isinstance(scheme.label, __):
             scheme.label = _(scheme.label)
 
 def get(name, fallback=None):
     _ensure_translated()
-    for class_name in __all__:
-        scheme = globals()[class_name]
+    for scheme in ALL:
         if scheme.name == name:
             return scheme
     if fallback is not None:
@@ -123,10 +121,5 @@ def get(name, fallback=None):
 
 def get_all():
     _ensure_translated()
-    schemes = list(map(globals().get, __all__))
-    schemes.remove(Default)
-    schemes.remove(Custom)
-    schemes.sort(key=lambda x: x.label)
-    schemes.insert(0, Default)
-    schemes.append(Custom)
-    return schemes
+    others = [x for x in ALL if x not in (Default, Custom)]
+    return [Default, *sorted(others, key=lambda x: x.label), Custom]
