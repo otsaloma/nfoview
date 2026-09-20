@@ -47,7 +47,7 @@ class Window(Gtk.ApplicationWindow):
     def _init_actions(self):
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
-            if hasattr(nfoview, "app"):
+            if nfoview.app:
                 nfoview.app.set_accels_for_action(
                     f"win.{action.props.name}", action.accelerators)
             callback = f"_on_{action.props.name}_activate".replace("-", "_")
@@ -100,12 +100,12 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_close_activate(self, *args):
         self.destroy()
-        if hasattr(nfoview, "app"):
+        if nfoview.app:
             nfoview.app.remove_window(self)
 
     def _on_close_request(self, *args):
         self.destroy()
-        if hasattr(nfoview, "app"):
+        if nfoview.app:
             nfoview.app.remove_window(self)
 
     def _on_export_image_activate(self, *args):
@@ -169,11 +169,11 @@ class Window(Gtk.ApplicationWindow):
         for path in paths:
             if self.path is None:
                 self.open_file(path)
-            elif hasattr(nfoview, "app"):
+            elif nfoview.app:
                 nfoview.app.open_window(path)
 
     def _on_quit_activate(self, *args):
-        if hasattr(nfoview, "app"):
+        if nfoview.app:
             nfoview.app.quit()
 
     def _on_preferences_activate(self, *args):

@@ -128,7 +128,7 @@ class PreferencesDialog(Gtk.Dialog):
         self.show()
 
     def _get_windows(self):
-        return nfoview.app.get_windows() if hasattr(nfoview, "app") else []
+        return nfoview.app.get_windows() if nfoview.app else []
 
     def _on_bg_color_button_color_set(self, color_button):
         color = color_button.get_rgba()
