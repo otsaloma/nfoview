@@ -47,6 +47,14 @@ class TextView(Gtk.TextView):
         gesture.connect("pressed", self._on_pressed)
         self.update_style()
 
+    def _get_link_tag(self, x, y):
+        window = Gtk.TextWindowType.WIDGET
+        x, y = self.window_to_buffer_coords(window, x, y)
+        itr = self.get_iter_at_location(x, y).iter
+        for tag in itr.get_tags():
+            if hasattr(tag, "nfoview_url"):
+                return tag
+
     def get_text(self):
         text_buffer = self.get_buffer()
         start, end = text_buffer.get_bounds()
@@ -67,27 +75,18 @@ class TextView(Gtk.TextView):
         self._link_tags.append(tag)
 
     def _on_motion(self, controller, x, y, user_data=None):
-        window = Gtk.TextWindowType.WIDGET
-        x, y = self.window_to_buffer_coords(window, x, y)
-        if iter := self.get_iter_at_location(x, y):
-            for tag in iter.iter.get_tags():
-                if hasattr(tag, "nfoview_url"):
-                    return self.set_cursor(Gdk.Cursor.new_from_name("pointer"))
-        self.set_cursor(Gdk.Cursor.new_from_name("default"))
+        name = "pointer" if self._get_link_tag(x, y) else "default"
+        self.set_cursor(Gdk.Cursor.new_from_name(name))
 
     def _on_pressed(self, gesture, n_press, x, y, user_data=None):
-        text_buffer = self.get_buffer()
-        if text_buffer.get_selection_bounds(): return
-        window = Gtk.TextWindowType.WIDGET
-        x, y = self.window_to_buffer_coords(window, x, y)
-        if iter := self.get_iter_at_location(x, y):
-            for tag in iter.iter.get_tags():
-                if hasattr(tag, "nfoview_url"):
-                    nfoview.util.show_uri(tag.nfoview_url)
-                    if tag in self._link_tags:
-                        self._link_tags.remove(tag)
-                        self._visited_link_tags.append(tag)
-                        self.update_style()
+        if self.get_buffer().get_selection_bounds(): return
+        tag = self._get_link_tag(x, y)
+        if tag is None: return
+        nfoview.util.show_uri(tag.nfoview_url)
+        if tag in self._link_tags:
+            self._link_tags.remove(tag)
+            self._visited_link_tags.append(tag)
+            self.update_style()
 
     def set_text(self, text):
         URL = r"(\w+://(\S+\.)?\S+|www\.\S+)\.[\w\-.~:/?#\[\]@!$&'()*+,;=%]+"
