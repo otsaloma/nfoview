@@ -31,15 +31,11 @@ class TestPreferencesDialog(nfoview.TestCase):
         self.rgba = Gdk.RGBA()
         self.rgba.red = 1.0
 
-    def test__on_bg_color_button_color_set(self):
+    def test__on_color_button_color_set(self):
         self.dialog._scheme_combo.set_active(3)
-        self.dialog._bg_color_button.set_rgba(self.rgba)
-        self.dialog._bg_color_button.emit("color-set")
-
-    def test__on_fg_color_button_color_set(self):
-        self.dialog._scheme_combo.set_active(3)
-        self.dialog._fg_color_button.set_rgba(self.rgba)
-        self.dialog._fg_color_button.emit("color-set")
+        for button in self.dialog._color_buttons.values():
+            button.set_rgba(self.rgba)
+            button.emit("color-set")
 
     def test__on_font_button_font_set(self):
         self.dialog._font_button.set_font("monospace 8")
@@ -49,16 +45,6 @@ class TestPreferencesDialog(nfoview.TestCase):
         self.dialog._line_spacing_spin.set_value(-3)
         self.dialog._line_spacing_spin.set_value(+3)
 
-    def test__on_link_color_button_color_set(self):
-        self.dialog._scheme_combo.set_active(3)
-        self.dialog._link_color_button.set_rgba(self.rgba)
-        self.dialog._link_color_button.emit("color-set")
-
     def test__on_scheme_combo_changed(self):
         for i, scheme in enumerate(nfoview.schemes.get_all()):
             self.dialog._scheme_combo.set_active(i)
-
-    def test__on_vlink_color_button_color_set(self):
-        self.dialog._scheme_combo.set_active(3)
-        self.dialog._vlink_color_button.set_rgba(self.rgba)
-        self.dialog._vlink_color_button.emit("color-set")

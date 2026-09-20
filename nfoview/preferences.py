@@ -21,17 +21,14 @@ from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n import _
 
-def boxwrap(widget):
-    # Needed to get widget natural-size left-aligned in grid.
-    box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
-    box.append(widget)
-    return box
-
-def build_label(text):
+def attach_row(grid, row, text, widget):
     label = Gtk.Label.new(text)
     label.add_css_class("dim-label")
     label.set_xalign(1)
-    return label
+    grid.attach(label, 0, row, 1, 1)
+    # Keep the widget at its natural size instead of filling the cell.
+    widget.set_halign(Gtk.Align.START)
+    grid.attach(widget, 1, row, 1, 1)
 
 class PreferencesDialog(Gtk.Dialog):
 
@@ -50,78 +47,49 @@ class PreferencesDialog(Gtk.Dialog):
         grid.set_row_spacing(12)
 
         # Font
-        self._font_label = build_label(_("Font"))
         self._font_button = Gtk.FontButton()
         def monospace(family, *args, **kwargs):
             return family.is_monospace()
         self._font_button.set_filter_func(monospace, None)
         self._font_button.set_font(nfoview.conf.font)
         self._font_button.connect("font-set", self._on_font_button_font_set)
-        grid.attach(self._font_label, 0, 0, 1, 1)
-        grid.attach(boxwrap(self._font_button), 1, 0, 1, 1)
+        attach_row(grid, 0, _("Font"), self._font_button)
 
         # Line-spacing
-        self._line_spacing_label = build_label(_("Line-spacing"))
         self._line_spacing_spin = Gtk.SpinButton.new_with_range(-99, 99, 1)
         self._line_spacing_spin.set_value(nfoview.conf.pixels_above_lines)
         self._line_spacing_spin.connect("value-changed", self._on_line_spacing_spin_value_changed)
-        grid.attach(self._line_spacing_label, 0, 1, 1, 1)
-        grid.attach(boxwrap(self._line_spacing_spin), 1, 1, 1, 1)
+        attach_row(grid, 1, _("Line-spacing"), self._line_spacing_spin)
 
         # Color scheme
-        self._scheme_label = build_label(_("Color scheme"))
         self._scheme_combo = Gtk.ComboBoxText.new()
         for i, scheme in enumerate(nfoview.schemes.get_all()):
             self._scheme_combo.append_text(scheme.label)
             if scheme.name == nfoview.conf.color_scheme:
                 self._scheme_combo.set_active(i)
         self._scheme_combo.connect("changed", self._on_scheme_combo_changed)
-        grid.attach(self._scheme_label, 0, 2, 1, 1)
-        grid.attach(boxwrap(self._scheme_combo), 1, 2, 1, 1)
+        attach_row(grid, 2, _("Color scheme"), self._scheme_combo)
 
-        # Foreground
-        self._fg_color_label = build_label(_("Foreground"))
-        self._fg_color_button = Gtk.ColorButton()
-        color = nfoview.util.hex_to_rgba(nfoview.conf.foreground_color)
-        self._fg_color_button.set_rgba(color)
-        self._fg_color_button.connect("color-set", self._on_fg_color_button_color_set)
-        grid.attach(self._fg_color_label, 0, 3, 1, 1)
-        grid.attach(boxwrap(self._fg_color_button), 1, 3, 1, 1)
-
-        # Background
-        self._bg_color_label = build_label(_("Background"))
-        self._bg_color_button = Gtk.ColorButton()
-        color = nfoview.util.hex_to_rgba(nfoview.conf.background_color)
-        self._bg_color_button.set_rgba(color)
-        self._bg_color_button.connect("color-set", self._on_bg_color_button_color_set)
-        grid.attach(self._bg_color_label, 0, 4, 1, 1)
-        grid.attach(boxwrap(self._bg_color_button), 1, 4, 1, 1)
-
-        # Link
-        self._link_color_label = build_label(_("Link"))
-        self._link_color_button = Gtk.ColorButton()
-        color = nfoview.util.hex_to_rgba(nfoview.conf.link_color)
-        self._link_color_button.set_rgba(color)
-        self._link_color_button.connect("color-set", self._on_link_color_button_color_set)
-        grid.attach(self._link_color_label, 0, 5, 1, 1)
-        grid.attach(boxwrap(self._link_color_button), 1, 5, 1, 1)
-
-        # Visited link
-        self._vlink_color_label = build_label(_("Visited link"))
-        self._vlink_color_button = Gtk.ColorButton()
-        color = nfoview.util.hex_to_rgba(nfoview.conf.visited_link_color)
-        self._vlink_color_button.set_rgba(color)
-        self._vlink_color_button.connect("color-set", self._on_vlink_color_button_color_set)
-        grid.attach(self._vlink_color_label, 0, 6, 1, 1)
-        grid.attach(boxwrap(self._vlink_color_button), 1, 6, 1, 1)
+        # Colors of the custom color scheme
+        self._color_buttons = {}
+        for row, (text, option, attribute) in enumerate((
+            (_("Foreground"),   "foreground_color",   "foreground"),
+            (_("Background"),   "background_color",   "background"),
+            (_("Link"),         "link_color",         "link"),
+            (_("Visited link"), "visited_link_color", "visited_link"),
+        ), start=3):
+            button = Gtk.ColorButton()
+            color = getattr(nfoview.conf, option)
+            button.set_rgba(nfoview.util.hex_to_rgba(color))
+            button.connect("color-set", self._on_color_button_color_set, option, attribute)
+            attach_row(grid, row, text, button)
+            self._color_buttons[attribute] = button
 
         # Export Scaling
-        self._export_scale_label = build_label(_("Export to PNG scaling"))
         self._export_scale_spin = Gtk.SpinButton.new_with_range(1, 5, 0.5)
         self._export_scale_spin.set_value(nfoview.conf.export_scale)
-        self._export_scale_spin.connect("value-changed", self._on_export_scaling_spin_value_changed)
-        grid.attach(self._export_scale_label, 0, 7, 1, 1)
-        grid.attach(boxwrap(self._export_scale_spin), 1, 7, 1, 1)
+        self._export_scale_spin.connect("value-changed", self._on_export_scale_spin_value_changed)
+        attach_row(grid, 7, _("Export to PNG scaling"), self._export_scale_spin)
 
         self._update_sensitivities()
         self.set_child(grid)
@@ -130,28 +98,18 @@ class PreferencesDialog(Gtk.Dialog):
     def _get_windows(self):
         return nfoview.app.get_windows() if nfoview.app else []
 
-    def _on_bg_color_button_color_set(self, color_button):
-        color = color_button.get_rgba()
-        color = nfoview.util.rgba_to_hex(color)
-        nfoview.conf.background_color = color
-        scheme = nfoview.schemes.get("custom")
-        scheme.background = color
-        for window in self._get_windows():
-            window.view.update_style()
+    def _on_color_button_color_set(self, color_button, option, attribute):
+        color = nfoview.util.rgba_to_hex(color_button.get_rgba())
+        setattr(nfoview.conf, option, color)
+        setattr(nfoview.schemes.Custom, attribute, color)
+        self._update_views()
+
+    def _on_export_scale_spin_value_changed(self, spin_button):
+        nfoview.conf.export_scale = spin_button.get_value()
 
     def _on_font_button_font_set(self, font_button):
         nfoview.conf.font = font_button.get_font()
-        for window in self._get_windows():
-            window.view.update_style()
-
-    def _on_fg_color_button_color_set(self, color_button):
-        color = color_button.get_rgba()
-        color = nfoview.util.rgba_to_hex(color)
-        nfoview.conf.foreground_color = color
-        scheme = nfoview.schemes.get("custom")
-        scheme.foreground = color
-        for window in self._get_windows():
-            window.view.update_style()
+        self._update_views()
 
     def _on_line_spacing_spin_value_changed(self, spin_button):
         pixels = spin_button.get_value_as_int()
@@ -159,46 +117,24 @@ class PreferencesDialog(Gtk.Dialog):
         for window in self._get_windows():
             window.view.set_pixels_above_lines(pixels)
 
-    def _on_link_color_button_color_set(self, color_button):
-        color = color_button.get_rgba()
-        color = nfoview.util.rgba_to_hex(color)
-        nfoview.conf.link_color = color
-        scheme = nfoview.schemes.get("custom")
-        scheme.link = color
-        for window in self._get_windows():
-            window.view.update_style()
-
     def _on_scheme_combo_changed(self, combo_box):
         index = combo_box.get_active()
         scheme = nfoview.schemes.get_all()[index]
         nfoview.conf.color_scheme = scheme.name
         self._update_color_buttons(scheme)
-        for window in self._get_windows():
-            window.view.update_style()
+        self._update_views()
         self._update_sensitivities()
 
-    def _on_vlink_color_button_color_set(self, color_button):
-        color = color_button.get_rgba()
-        color = nfoview.util.rgba_to_hex(color)
-        nfoview.conf.visited_link_color = color
-        scheme = nfoview.schemes.get("custom")
-        scheme.vlink = color
-        for window in self._get_windows():
-            window.view.update_style()
-
-    def _on_export_scaling_spin_value_changed(self, spin_button):
-        nfoview.conf.export_scale = spin_button.get_value()
-
     def _update_color_buttons(self, scheme):
-        rgba = nfoview.util.hex_to_rgba
-        self._bg_color_button.set_rgba(rgba(scheme.background))
-        self._fg_color_button.set_rgba(rgba(scheme.foreground))
-        self._link_color_button.set_rgba(rgba(scheme.link))
-        self._vlink_color_button.set_rgba(rgba(scheme.visited_link))
+        for attribute, button in self._color_buttons.items():
+            color = getattr(scheme, attribute)
+            button.set_rgba(nfoview.util.hex_to_rgba(color))
 
     def _update_sensitivities(self):
         sensitive = (nfoview.conf.color_scheme == "custom")
-        self._bg_color_button.set_sensitive(sensitive)
-        self._fg_color_button.set_sensitive(sensitive)
-        self._link_color_button.set_sensitive(sensitive)
-        self._vlink_color_button.set_sensitive(sensitive)
+        for button in self._color_buttons.values():
+            button.set_sensitive(sensitive)
+
+    def _update_views(self):
+        for window in self._get_windows():
+            window.view.update_style()
