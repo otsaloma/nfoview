@@ -184,7 +184,7 @@ class Window(Gtk.ApplicationWindow):
         width, height = nfoview.util.get_text_view_size(text)
         max_width, max_height = nfoview.util.get_max_text_view_size()
         if width > max_width:
-            self.activate_action("wrap-lines", None)
+            self.activate_action("win.wrap-lines", None)
             text = "\n".join(textwrap.fill(x, 80) for x in text.split("\n"))
             width, height = nfoview.util.get_text_view_size(text)
         width = min(width, max_width)

@@ -2,7 +2,8 @@
 
 - Follow the system-wide dark theme preference (GTK ≥ 4.20), overridable
   with the `theme` config file option (#30)
-
+- Fix line wrapping not being turned on automatically for files
+  wider than the `text_view_max_chars` config file option
 - Revise Makefile so that PREFIX and DESTDIR are used only at
   install time, not during build
 
