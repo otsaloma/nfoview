@@ -16,9 +16,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import nfoview
-import re
-
-from pathlib import Path
 
 DEFAULTS = {
     "background_color": "#ffffff",
@@ -38,7 +35,7 @@ DEFAULTS = {
 
 class ConfigurationStore:
 
-    path = Path(nfoview.CONFIG_HOME_DIR) / "nfoview.conf"
+    path = nfoview.CONFIG_HOME_DIR / "nfoview.conf"
 
     def __init__(self, read=False):
         self.restore_defaults()
@@ -46,15 +43,12 @@ class ConfigurationStore:
 
     def read(self):
         if not self.path.exists(): return
-        entries = self.path.read_text().splitlines()
-        entries = dict(
-            re.split(" *= *", x.strip(), maxsplit=1)
-            for x in entries
-            if not x.startswith("#") and "=" in x
-        )
-        for name in set(DEFAULTS) & set(entries):
-            decode = type(DEFAULTS[name])
-            setattr(self, name, decode(entries[name]))
+        for line in self.path.read_text().splitlines():
+            line = line.strip()
+            if line.startswith("#") or "=" not in line: continue
+            name, value = (x.strip() for x in line.split("=", maxsplit=1))
+            if name not in DEFAULTS: continue
+            setattr(self, name, type(DEFAULTS[name])(value))
         self.version = nfoview.__version__
 
     def restore_defaults(self):
