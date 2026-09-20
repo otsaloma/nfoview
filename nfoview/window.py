@@ -117,39 +117,11 @@ class Window(Gtk.ApplicationWindow):
         dialog.show()
 
     def _on_export_image_activate_response(self, dialog, response):
-        path = dialog.get_file().get_path()
+        file = dialog.get_file()
         dialog.destroy()
-        if response not in (
-            Gtk.ResponseType.ACCEPT,
-            Gtk.ResponseType.OK,
-        ): return
-        if not path: return
-        # Get text buffer and full text
-        buffer = self.view.get_buffer()
-        start_iter = buffer.get_start_iter()
-        end_iter = buffer.get_end_iter()
-        text = buffer.get_text(start_iter, end_iter, True)
-        # Use Pango to measure
-        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1)
-        cr = cairo.Context(surface)
-        layout = PangoCairo.create_layout(cr)
-        font_desc = Pango.FontDescription(nfoview.conf.font)
-        layout.set_font_description(font_desc)
-        layout.set_text(text, -1)
-        width, height = layout.get_pixel_size()
-        # Create a surface to hold the full layout
-        scale = nfoview.conf.export_scale
-        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, (int)(scale * width), (int)(scale * height))
-        surface.set_device_scale(scale, scale)
-        cr = cairo.Context(surface)
-        # White background
-        cr.set_source_rgb(1, 1, 1)
-        cr.paint()
-        # Render text
-        PangoCairo.update_layout(cr, layout)
-        cr.set_source_rgb(0, 0, 0)
-        PangoCairo.show_layout(cr, layout)
-        surface.write_to_png(path)
+        if response != Gtk.ResponseType.ACCEPT: return
+        if file is None: return
+        self._write_png(file.get_path())
 
     def _on_open_activate(self, *args):
         dialog = nfoview.OpenDialog(self)
@@ -243,3 +215,24 @@ class Window(Gtk.ApplicationWindow):
         for name in self.list_actions():
             action = self.lookup_action(name)
             action.update_enabled(self)
+
+    def _write_png(self, path):
+        # Lay the text out on a dummy surface to measure the size needed.
+        dummy = cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1))
+        layout = PangoCairo.create_layout(dummy)
+        layout.set_font_description(Pango.FontDescription(nfoview.conf.font))
+        layout.set_text(self.view.get_text(), -1)
+        width, height = layout.get_pixel_size()
+        scale = nfoview.conf.export_scale
+        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                     int(scale * width),
+                                     int(scale * height))
+        surface.set_device_scale(scale, scale)
+        context = cairo.Context(surface)
+        # Always export black on white regardless of the color scheme.
+        context.set_source_rgb(1, 1, 1)
+        context.paint()
+        PangoCairo.update_layout(context, layout)
+        context.set_source_rgb(0, 0, 0)
+        PangoCairo.show_layout(context, layout)
+        surface.write_to_png(path)
