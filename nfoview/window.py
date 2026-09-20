@@ -180,26 +180,23 @@ class Window(Gtk.ApplicationWindow):
         # switch to line wrapping and use 80 characters width.
         # Limit height to 'text_view_max_lines'. Finally limit
         # width and height to 80% of the screen.
-        text = self.view.get_text()
-        text = text or "\n".join(["x" * 80] * 40)
-        size = list(nfoview.util.get_text_view_size(text))
-        max_size = nfoview.util.get_max_text_view_size()
-        if size[0] > max_size[0]:
+        text = self.view.get_text() or "\n".join(["x" * 80] * 40)
+        width, height = nfoview.util.get_text_view_size(text)
+        max_width, max_height = nfoview.util.get_max_text_view_size()
+        if width > max_width:
             self.activate_action("wrap-lines", None)
-            text = "\n".join(map(
-                lambda x: textwrap.fill(x, 80),
-                text.split("\n")))
-            size = list(nfoview.util.get_text_view_size(text))
-        size[0] = min(size[0], max_size[0])
-        size[1] = min(size[1], max_size[1])
+            text = "\n".join(textwrap.fill(x, 80) for x in text.split("\n"))
+            width, height = nfoview.util.get_text_view_size(text)
+        width = min(width, max_width)
+        height = min(height, max_height)
         # Assume 12 pixels total for text view margins,
         # 24 pixels for scrollbars, 48 pixels for header bar.
-        size[0] = max(400, size[0] + 12 + 24)
-        size[1] = max(248, size[1] + 12 + 24 + 48)
-        screen_size = nfoview.util.get_screen_size()
-        size[0] = min(size[0], int(0.8 * screen_size[0]))
-        size[1] = min(size[1], int(0.8 * screen_size[1]))
-        self.set_default_size(*size)
+        width = max(400, width + 12 + 24)
+        height = max(248, height + 12 + 24 + 48)
+        screen_width, screen_height = nfoview.util.get_screen_size()
+        width = min(width, int(0.8 * screen_width))
+        height = min(height, int(0.8 * screen_height))
+        self.set_default_size(width, height)
 
     def _update_actions_enabled(self):
         for name in self.list_actions():
