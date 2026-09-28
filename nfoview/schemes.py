@@ -17,6 +17,7 @@
 
 import nfoview
 
+from gi.repository import Gtk
 from nfoview.i18n import _
 from nfoview.i18n import __
 
@@ -68,6 +69,16 @@ class Default(ColorScheme):
     link         = "#0461be"
     visited_link = "#0e58a3"
 
+class DefaultDark(Default):
+
+    # Dark counterpart of the above, used in place of Default
+    # when GTK is in dark mode.
+
+    foreground   = "#ffffff"
+    background   = "#1d1d20"
+    link         = "#81d0ff"
+    visited_link = "#9ad9ff"
+
 class GreyOnBlack(ColorScheme):
 
     name         = "grey-on-black"
@@ -110,10 +121,17 @@ def _ensure_translated():
         if isinstance(scheme.label, __):
             scheme.label = _(scheme.label)
 
+def _is_dark():
+    settings = Gtk.Settings.get_default()
+    if settings.find_property("gtk-interface-color-scheme") is None: return False
+    return settings.props.gtk_interface_color_scheme == Gtk.InterfaceColorScheme.DARK
+
 def get(name, fallback=None):
     _ensure_translated()
     for scheme in ALL:
         if scheme.name == name:
+            if scheme is Default and _is_dark():
+                return DefaultDark
             return scheme
     if fallback is not None:
         return get(fallback)
@@ -122,4 +140,4 @@ def get(name, fallback=None):
 def get_all():
     _ensure_translated()
     others = [x for x in ALL if x not in (Default, Custom)]
-    return [Default, *sorted(others, key=lambda x: x.label), Custom]
+    return [get("default"), *sorted(others, key=lambda x: x.label), Custom]
