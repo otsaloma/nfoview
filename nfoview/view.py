@@ -27,7 +27,6 @@ class TextView(Gtk.TextView):
     def __init__(self):
         super().__init__()
         self._link_tags = []
-        self._visited_link_tags = []
         self.set_bottom_margin(6)
         self.set_cursor_visible(False)
         self.set_editable(False)
@@ -69,6 +68,7 @@ class TextView(Gtk.TextView):
         tag = text_buffer.create_tag(None)
         tag.props.underline = Pango.Underline.SINGLE
         tag.nfoview_url = url
+        tag.nfoview_visited = False
         itr = text_buffer.get_end_iter()
         text_buffer.insert_with_tags(itr, url, tag)
         self._link_tags.append(tag)
@@ -82,9 +82,8 @@ class TextView(Gtk.TextView):
         tag = self._get_link_tag(x, y)
         if tag is None: return
         nfoview.util.show_uri(tag.nfoview_url, self.get_root())
-        if tag in self._link_tags:
-            self._link_tags.remove(tag)
-            self._visited_link_tags.append(tag)
+        if not tag.nfoview_visited:
+            tag.nfoview_visited = True
             self.update_style()
 
     def set_text(self, text):
@@ -93,7 +92,6 @@ class TextView(Gtk.TextView):
         bounds = text_buffer.get_bounds()
         text_buffer.delete(*bounds)
         self._link_tags = []
-        self._visited_link_tags = []
         for line in text.splitlines():
             i = 0
             for match in re.finditer(URL, line):
@@ -110,8 +108,5 @@ class TextView(Gtk.TextView):
         name = nfoview.conf.color_scheme
         scheme = nfoview.schemes.get(name, "default")
         for tag in self._link_tags:
-            color = nfoview.util.hex_to_rgba(scheme.link)
-            tag.props.foreground_rgba = color
-        for tag in self._visited_link_tags:
-            color = nfoview.util.hex_to_rgba(scheme.visited_link)
-            tag.props.foreground_rgba = color
+            color = scheme.visited_link if tag.nfoview_visited else scheme.link
+            tag.props.foreground_rgba = nfoview.util.hex_to_rgba(color)

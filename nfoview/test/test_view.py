@@ -47,7 +47,6 @@ class TestTextView(nfoview.TestCase):
 
     def test_update_style(self):
         self.view.update_style()
-        tags = self.view._link_tags
-        self.view._link_tags = []
-        self.view._visited_link_tags = tags
+        for tag in self.view._link_tags:
+            tag.nfoview_visited = True
         self.view.update_style()
