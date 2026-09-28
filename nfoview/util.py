@@ -16,10 +16,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import codecs
-import contextlib
 import nfoview
 import sys
-import traceback
 import urllib.parse
 import webbrowser
 
@@ -142,13 +140,6 @@ def show_uri(uri, parent=None):
                 return webbrowser.open(uri)
             raise # Exception
     Gtk.UriLauncher.new(uri).launch(parent, None, on_finish)
-
-@contextlib.contextmanager
-def silent(*exceptions, tb=False):
-    try:
-        yield
-    except exceptions:
-        if tb: traceback.print_exc()
 
 def uri_to_path(uri):
     uri = urllib.parse.unquote(uri)

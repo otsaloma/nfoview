@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import contextlib
 import gettext
 import locale
 import nfoview
@@ -25,14 +26,14 @@ _translation = gettext.NullTranslations()
 class __(str): pass
 
 def bind(localedir=nfoview.LOCALE_DIR):
-    with nfoview.util.silent(Exception):
+    with contextlib.suppress(Exception):
         # Set locale to the user's default setting.
         # Might fail on misconfigured systems.
         locale.setlocale(locale.LC_ALL, "")
     # Make translations available to the gettext module.
     gettext.bindtextdomain("nfoview", localedir)
     gettext.textdomain("nfoview")
-    with nfoview.util.silent(Exception):
+    with contextlib.suppress(Exception):
         # Make translations available to GTK as well.
         # Not available on all platforms.
         locale.bindtextdomain("nfoview", localedir)
