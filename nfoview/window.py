@@ -73,7 +73,9 @@ class Window(Gtk.ApplicationWindow):
     def _init_titlebar(self):
         header = Gtk.HeaderBar()
         menu_button = Gtk.MenuButton()
-        menu_button.set_direction(Gtk.ArrowType.NONE)
+        menu_button.set_icon_name("open-menu-symbolic")
+        menu_button.set_primary(True)
+        menu_button.set_tooltip_text(_("Menu"))
         path = nfoview.DATA_DIR / "menu.ui"
         builder = Gtk.Builder.new_from_file(str(path))
         menu = builder.get_object("menu")
