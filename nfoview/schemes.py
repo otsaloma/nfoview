@@ -58,15 +58,15 @@ class DarkGreyOnLightGray(ColorScheme):
 
 class Default(ColorScheme):
 
-    # https://github.com/GNOME/gtk/blob/main/gtk/theme/Default/_colors.scss
-    # https://github.com/GNOME/gtk/blob/main/gtk/theme/Default/_colors-public.scss
+    # Light libadwaita 1.9 view and link colors with the default blue
+    # accent, translucent ones blended over the white background.
 
     name         = "default"
     label        = __("System theme")
-    foreground   = nfoview.util.lookup_color("theme_text_color", "#000000")
-    background   = nfoview.util.lookup_color("theme_base_color", "#ffffff")
-    link         = "#2a76c6"
-    visited_link = "#215d9c"
+    foreground   = "#333338"
+    background   = "#ffffff"
+    link         = "#0461be"
+    visited_link = "#0e58a3"
 
 class GreyOnBlack(ColorScheme):
 

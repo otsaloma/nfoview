@@ -123,15 +123,6 @@ def is_valid_encoding(encoding):
     except LookupError:
         return False
 
-def lookup_color(name, fallback):
-    entry = Gtk.Entry()
-    entry.show()
-    style = entry.get_style_context()
-    found, color = style.lookup_color(name)
-    if found:
-        return rgba_to_hex(color)
-    return fallback
-
 def rgba_to_hex(color):
     return "#{:02x}{:02x}{:02x}".format(
         int(color.red   * 255),

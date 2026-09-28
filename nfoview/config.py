@@ -22,15 +22,15 @@ DEFAULTS = {
     "color_scheme": "default",
     "export_scale": 1.0,
     "font": "Cascadia Mono 12",
-    "foreground_color": "#2e3436",
-    "link_color": "#2a76c6",
+    "foreground_color": "#333338",
+    "link_color": "#0461be",
     "pixels_above_lines": 0,
     "pixels_below_lines": 0,
     "text_view_max_chars": 160,
     "text_view_max_lines": 45,
     "theme": "system",
     "version": "",
-    "visited_link_color": "#215d9c",
+    "visited_link_color": "#0e58a3",
 }
 
 class ConfigurationStore:
