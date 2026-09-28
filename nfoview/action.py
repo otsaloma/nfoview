@@ -22,8 +22,8 @@ from gi.repository import GLib
 
 class Action(Gio.SimpleAction):
 
-    def __init__(self, name):
-        super().__init__(name=name)
+    def __init__(self, name, **kwargs):
+        super().__init__(name=name, **kwargs)
         self.accelerators = []
 
     def _affirm_doable(self, window):
@@ -38,15 +38,10 @@ class Action(Gio.SimpleAction):
 
 class ToggleAction(Action):
 
-    # Gio's abstraction makes toggle action instantiation and
-    # management of boolean state values look really stupid
-    # in Python. For proper instantiation, subclasses need to
-    # define __new__, call new and assign to __class__.
-
-    @staticmethod
-    def new(name, parameter_type=None):
-        return Gio.SimpleAction.new_stateful(
-            name, parameter_type, GLib.Variant("b", False))
+    def __init__(self, name):
+        # Supplying state produces a stateful action, like
+        # Gio.SimpleAction.new_stateful.
+        super().__init__(name, state=GLib.Variant("b", False))
 
     def get_state(self):
         return super().get_state().get_boolean()

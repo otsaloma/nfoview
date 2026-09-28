@@ -60,10 +60,6 @@ class QuitAction(nfoview.Action):
         self.accelerators = ["<Control>Q"]
 
 class WrapLinesAction(nfoview.ToggleAction):
-    def __new__(cls):
-        action = nfoview.ToggleAction.new("wrap-lines")
-        action.__class__ = cls
-        return action
     def __init__(self):
         super().__init__("wrap-lines")
         self.accelerators = ["<Control>R"]
