@@ -41,10 +41,6 @@ class Application(Gtk.Application):
                               if theme == "dark"
                               else Gtk.InterfaceColorScheme.LIGHT)
 
-        # Themes with separate dark stylesheets
-        # are only reloaded when the theme name changes.
-        settings.notify("gtk-theme-name")
-
     def _on_activate(self, app):
         self.open_window()
 
