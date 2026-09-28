@@ -15,7 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n import _
 
@@ -25,7 +24,7 @@ from nfoview.i18n import _
 class OpenDialog(Gtk.FileChooserDialog):
 
     def __init__(self, parent):
-        GObject.GObject.__init__(self)
+        super().__init__()
         self.set_action(Gtk.FileChooserAction.OPEN)
         self.set_select_multiple(True)
         self.set_title(_("Open"))

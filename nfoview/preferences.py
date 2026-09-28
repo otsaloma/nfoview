@@ -17,7 +17,6 @@
 
 import nfoview
 
-from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n import _
 
@@ -33,7 +32,7 @@ def attach_row(grid, row, text, widget):
 class PreferencesDialog(Gtk.Dialog):
 
     def __init__(self, parent):
-        GObject.GObject.__init__(self, use_header_bar=True)
+        super().__init__(use_header_bar=True)
         self.set_resizable(False)
         self.set_title(_("Preferences"))
         self.set_transient_for(parent)

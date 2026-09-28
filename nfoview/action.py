@@ -19,12 +19,11 @@ import nfoview
 
 from gi.repository import Gio
 from gi.repository import GLib
-from gi.repository import GObject
 
 class Action(Gio.SimpleAction):
 
     def __init__(self, name):
-        GObject.GObject.__init__(self, name=name)
+        super().__init__(name=name)
         self.accelerators = []
 
     def _affirm_doable(self, window):
@@ -50,7 +49,7 @@ class ToggleAction(Action):
             name, parameter_type, GLib.Variant("b", False))
 
     def get_state(self):
-        return Action.get_state(self).get_boolean()
+        return super().get_state().get_boolean()
 
     def set_state(self, value):
-        Action.set_state(self, GLib.Variant("b", value))
+        super().set_state(GLib.Variant("b", value))

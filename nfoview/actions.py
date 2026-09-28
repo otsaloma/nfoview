@@ -29,16 +29,16 @@ __all__ = (
 
 class AboutAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "about")
+        super().__init__("about")
 
 class CloseAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "close")
+        super().__init__("close")
         self.accelerators = ["<Control>W", "Escape"]
 
 class ExportImageAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "export-image")
+        super().__init__("export-image")
         self.accelerators = ["<Control>E"]
     def _affirm_doable(self, window):
         nfoview.util.affirm(window.path is not None)
@@ -47,16 +47,16 @@ class ExportImageAction(nfoview.Action):
 
 class OpenAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "open")
+        super().__init__("open")
         self.accelerators = ["<Control>O"]
 
 class PreferencesAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "preferences")
+        super().__init__("preferences")
 
 class QuitAction(nfoview.Action):
     def __init__(self):
-        nfoview.Action.__init__(self, "quit")
+        super().__init__("quit")
         self.accelerators = ["<Control>Q"]
 
 class WrapLinesAction(nfoview.ToggleAction):
@@ -65,7 +65,7 @@ class WrapLinesAction(nfoview.ToggleAction):
         action.__class__ = cls
         return action
     def __init__(self):
-        nfoview.Action.__init__(self, "wrap-lines")
+        super().__init__("wrap-lines")
         self.accelerators = ["<Control>R"]
     def _affirm_doable(self, window):
         nfoview.util.affirm(window.view is not None)

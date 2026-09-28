@@ -19,14 +19,13 @@ import nfoview
 import re
 
 from gi.repository import Gdk
-from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import Pango
 
 class TextView(Gtk.TextView):
 
     def __init__(self):
-        GObject.GObject.__init__(self)
+        super().__init__()
         self._link_tags = []
         self._visited_link_tags = []
         self.set_bottom_margin(6)

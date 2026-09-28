@@ -19,13 +19,12 @@ import nfoview
 import traceback
 
 from gi.repository import Gio
-from gi.repository import GObject
 from gi.repository import Gtk
 
 class Application(Gtk.Application):
 
     def __init__(self, paths):
-        GObject.GObject.__init__(self)
+        super().__init__()
         self.set_application_id("io.otsaloma.nfoview")
         self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
         self.connect("activate", self._on_activate, paths)

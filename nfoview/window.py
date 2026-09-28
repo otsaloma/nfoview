@@ -21,7 +21,6 @@ import textwrap
 
 from gi.repository import Gdk
 from gi.repository import Gio
-from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import Pango
 from gi.repository import PangoCairo
@@ -31,7 +30,7 @@ from pathlib import Path
 class Window(Gtk.ApplicationWindow):
 
     def __init__(self, path=None):
-        GObject.GObject.__init__(self)
+        super().__init__()
         self.path = Path(path) if path else None
         self.view = nfoview.TextView()
         self._about_dialog = None

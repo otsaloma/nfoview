@@ -17,14 +17,13 @@
 
 import nfoview
 
-from gi.repository import GObject
 from gi.repository import Gtk
 from nfoview.i18n import _
 
 class AboutDialog(Gtk.AboutDialog):
 
     def __init__(self, parent):
-        GObject.GObject.__init__(self)
+        super().__init__()
         self.set_authors(("Osmo Salomaa <otsaloma@iki.fi>",))
         self.set_comments(_("Viewer for NFO files"))
         self.set_copyright("Copyright © 2005–2026 Osmo Salomaa")
