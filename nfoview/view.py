@@ -81,7 +81,7 @@ class TextView(Gtk.TextView):
         if self.get_buffer().get_selection_bounds(): return
         tag = self._get_link_tag(x, y)
         if tag is None: return
-        nfoview.util.show_uri(tag.nfoview_url)
+        nfoview.util.show_uri(tag.nfoview_url, self.get_root())
         if tag in self._link_tags:
             self._link_tags.remove(tag)
             self._visited_link_tags.append(tag)

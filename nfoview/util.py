@@ -130,16 +130,18 @@ def rgba_to_hex(color):
         int(color.blue  * 255),
     )
 
-def show_uri(uri):
-    try:
-        return Gtk.show_uri(None, uri, Gdk.CURRENT_TIME)
-    except Exception:
-        # Gtk.show_uri fails on Windows and some misconfigured installations.
-        # GError: No application is registered as handling this file
-        # Gtk.show_uri: Operation not supported
-        if uri.startswith(("http://", "https://")):
-            return webbrowser.open(uri)
-        raise # Exception
+def show_uri(uri, parent=None):
+    def on_finish(launcher, result):
+        try:
+            launcher.launch_finish(result)
+        except Exception:
+            # Launching fails on Windows and some misconfigured installations.
+            # GError: No application is registered as handling this file
+            # GError: Operation not supported
+            if uri.startswith(("http://", "https://")):
+                return webbrowser.open(uri)
+            raise # Exception
+    Gtk.UriLauncher.new(uri).launch(parent, None, on_finish)
 
 @contextlib.contextmanager
 def silent(*exceptions, tb=False):
