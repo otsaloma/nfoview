@@ -27,6 +27,8 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
 
+_css_provider = None
+
 def affirm(value):
     if not value:
         raise nfoview.AffirmationError(f"Not True: {value!r}")
@@ -54,19 +56,15 @@ def apply_style(widget):
     css = css.replace("font-size: 0px;", "")
     css = css.replace("font-weight: 0;", "")
     css = "\n".join(filter(lambda x: x.strip(), css.splitlines()))
-    provider = Gtk.CssProvider()
-    try:
-        # The call signature of 'load_from_data' seems to have changed
-        # in some GTK version. Also, the whole function is deprecated
-        # and since GTK 4.12 we should use 'load_from_string'.
-        provider.load_from_data(css, -1)
-    except Exception:
-        provider.load_from_data(bytes(css.encode()))
-    style = widget.get_style_context()
-    style.add_class("nfoview-text-view")
-    display = Gdk.Display.get_default()
-    priority = Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-    style.add_provider_for_display(display, provider, priority)
+    global _css_provider
+    if _css_provider is None:
+        _css_provider = Gtk.CssProvider()
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(),
+            _css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+    _css_provider.load_from_string(css)
+    widget.add_css_class("nfoview-text-view")
 
 def detect_encoding(path, default="cp437"):
     with open(path, "rb") as f:
@@ -109,7 +107,6 @@ def get_text_view_size(text):
     label = Gtk.Label()
     apply_style(label)
     label.set_text(text)
-    label.show()
     width = label.measure(Gtk.Orientation.HORIZONTAL, -1)
     height = label.measure(Gtk.Orientation.VERTICAL, -1)
     return width.natural, height.natural
