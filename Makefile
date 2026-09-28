@@ -31,10 +31,10 @@ build:
 	msgfmt --desktop -d po \
 	--template data/io.otsaloma.nfoview.desktop.in \
 	-o build/io.otsaloma.nfoview.desktop
-	@echo "BUILDING APPDATA FILE..."
+	@echo "BUILDING METAINFO FILE..."
 	msgfmt --xml -d po \
-	--template data/io.otsaloma.nfoview.appdata.xml.in \
-	-o build/io.otsaloma.nfoview.appdata.xml
+	--template data/io.otsaloma.nfoview.metainfo.xml.in \
+	-o build/io.otsaloma.nfoview.metainfo.xml
 	touch build/.complete
 
 check:
@@ -87,9 +87,10 @@ install:
 	@echo "INSTALLING DESKTOP FILE..."
 	mkdir -p $(DESTDIR)$(DATADIR)/applications
 	cp -f build/io.otsaloma.nfoview.desktop $(DESTDIR)$(DATADIR)/applications
-	@echo "INSTALLING APPDATA FILE..."
+	@echo "INSTALLING METAINFO FILE..."
 	mkdir -p $(DESTDIR)$(DATADIR)/metainfo
-	cp -f build/io.otsaloma.nfoview.appdata.xml $(DESTDIR)$(DATADIR)/metainfo
+	rm -f $(DESTDIR)$(DATADIR)/metainfo/io.otsaloma.nfoview.appdata.xml
+	cp -f build/io.otsaloma.nfoview.metainfo.xml $(DESTDIR)$(DATADIR)/metainfo
 	@echo "INSTALLING MAN PAGE..."
 	mkdir -p $(DESTDIR)$(MANDIR)/man1
 	cp -f data/nfoview.1 $(DESTDIR)$(MANDIR)/man1
@@ -102,8 +103,8 @@ release:
 	$(EDITOR) nfoview/__init__.py
 	@echo "ADD RELEASE NOTES"
 	$(EDITOR) NEWS.md
-	$(EDITOR) data/io.otsaloma.nfoview.appdata.xml.in
-	appstreamcli validate --no-net data/io.otsaloma.nfoview.appdata.xml.in
+	$(EDITOR) data/io.otsaloma.nfoview.metainfo.xml.in
+	appstreamcli validate --no-net data/io.otsaloma.nfoview.metainfo.xml.in
 	sudo $(MAKE) build install clean
 	/usr/local/bin/nfoview
 	tools/release

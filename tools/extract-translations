@@ -23,12 +23,12 @@ xgettext \
     --from-code=UTF-8 \
     data/*.ui
 
-# AppData XML file
+# MetaInfo XML file
 xgettext \
     --output=po/nfoview.pot \
     --join-existing \
     --from-code=UTF-8 \
-    data/io.otsaloma.nfoview.appdata.xml.in
+    data/io.otsaloma.nfoview.metainfo.xml.in
 
 # Desktop file
 xgettext \
@@ -46,7 +46,7 @@ xgettext \
 # XXX: Fix charset=CHARSET which causes msggrep to fail.
 sed -i s/charset=CHARSET/charset=UTF-8/ po/nfoview.pot
 
-# Remove AppData entries that shouldn't be translated.
+# Remove MetaInfo entries that shouldn't be translated.
 msggrep \
     --invert-match \
     --msgid \
