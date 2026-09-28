@@ -9,7 +9,7 @@ finish-args:
   - --filesystem=xdg-videos
   - --share=ipc
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
 modules:
   - name: nfoview
     buildsystem: simple
