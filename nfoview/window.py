@@ -43,14 +43,6 @@ class Window(Gtk.ApplicationWindow):
         self.resize_to_text()
         self._update_actions_enabled()
 
-    def _hide_on_close(self, dialog):
-        # Keep the dialog around so that it can be presented again.
-        def on_close_request(dialog, *args):
-            dialog.hide()
-            return True
-        dialog.connect("close-request", on_close_request)
-        return dialog
-
     def _init_actions(self):
         for name in nfoview.actions.__all__:
             action = getattr(nfoview.actions, name)()
@@ -97,7 +89,8 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_about_activate(self, *args):
         if self._about_dialog is None:
-            self._about_dialog = self._hide_on_close(nfoview.AboutDialog(self))
+            self._about_dialog = nfoview.AboutDialog(self)
+            self._about_dialog.set_hide_on_close(True)
         self._about_dialog.present()
 
     def _on_close_activate(self, *args):
@@ -140,7 +133,8 @@ class Window(Gtk.ApplicationWindow):
 
     def _on_preferences_activate(self, *args):
         if self._prefs_dialog is None:
-            self._prefs_dialog = self._hide_on_close(nfoview.PreferencesDialog(self))
+            self._prefs_dialog = nfoview.PreferencesDialog(self)
+            self._prefs_dialog.set_hide_on_close(True)
         self._prefs_dialog.present()
 
     def _on_quit_activate(self, *args):
