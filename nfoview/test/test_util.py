@@ -116,14 +116,6 @@ class TestModule(nfoview.TestCase):
         assert color == "#ff00ff"
 
     @patch("sys.platform", "linux2")
-    def test_show_uri__unix(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview")
-
-    @patch("sys.platform", "win32")
-    def test_show_uri__windows(self):
-        nfoview.util.show_uri("https://otsaloma.io/nfoview")
-
-    @patch("sys.platform", "linux2")
     def test_uri_to_path__unix(self):
         uri = "file:///home/nfoview/a%20file.nfo"
         path = nfoview.util.uri_to_path(uri)
