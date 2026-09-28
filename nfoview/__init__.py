@@ -53,8 +53,8 @@ from nfoview.unittest import TestCase
 # Remains None when widgets are used outside the application, i.e. in tests.
 app = None
 
-def main(paths):
+def main(argv):
     global app
     i18n.bind()
-    app = Application(paths)
-    raise SystemExit(app.run())
+    app = Application()
+    raise SystemExit(app.run(argv))

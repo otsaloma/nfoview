@@ -23,12 +23,13 @@ from gi.repository import Gtk
 
 class Application(Gtk.Application):
 
-    def __init__(self, paths):
-        super().__init__()
-        self.set_application_id("io.otsaloma.nfoview")
-        self.set_flags(Gio.ApplicationFlags.NON_UNIQUE)
-        self.connect("activate", self._on_activate, paths)
+    def __init__(self):
+        super().__init__(application_id="io.otsaloma.nfoview",
+                         flags=Gio.ApplicationFlags.HANDLES_OPEN)
+        self.connect("activate", self._on_activate)
+        self.connect("open", self._on_open)
         self.connect("shutdown", self._on_shutdown)
+        self.connect("startup", self._on_startup)
 
     def _init_theme(self):
         theme = nfoview.conf.theme
@@ -44,26 +45,32 @@ class Application(Gtk.Application):
         # are only reloaded when the theme name changes.
         settings.notify("gtk-theme-name")
 
-    def _on_activate(self, app, paths):
-        try:
-            self._init_theme()
-        except Exception:
-            traceback.print_exc()
-        for path in sorted(paths):
-            self.open_window(path)
-        if not self.get_windows():
-            # If no arguments were given, or none of them exist,
+    def _on_activate(self, app):
+        self.open_window()
+
+    def _on_open(self, app, files, n_files, hint):
+        paths = sorted(filter(None, (x.get_path() for x in files)))
+        windows = [self.open_window(x) for x in paths]
+        if not any(windows):
+            # If none of the files could be opened,
             # open one blank window.
             self.open_window()
 
     def _on_shutdown(self, app):
         nfoview.conf.write()
 
+    def _on_startup(self, app):
+        try:
+            self._init_theme()
+        except Exception:
+            traceback.print_exc()
+
     def open_window(self, path=None):
         try:
             window = nfoview.Window(path)
             self.add_window(window)
             window.present()
+            return window
         except Exception as error:
             print(f"Failed to open {path!r}: {error!s}")
             traceback.print_exc()

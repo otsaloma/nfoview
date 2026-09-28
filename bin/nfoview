@@ -14,4 +14,4 @@ def prepare_paths():
 
 prepare_paths()
 import nfoview
-nfoview.main(sys.argv[1:])
+nfoview.main(sys.argv)
