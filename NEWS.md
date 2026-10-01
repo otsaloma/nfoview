@@ -4,6 +4,8 @@
   with the `theme` config file option (#30)
 - Fix line wrapping not being turned on automatically for files
   wider than the `text_view_max_chars` config file option
+- Bump required GTK version to 4.12 (#35)
+- Bump required PyGObject version to 3.40
 - Revise `Makefile` so that `PREFIX` and `DESTDIR` are used only at
   install time, not during build
 
