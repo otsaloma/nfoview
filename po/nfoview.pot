@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-13 01:51+0300\n"
+"POT-Creation-Date: 2026-10-01 21:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: nfoview/about.py:29 data/io.otsaloma.nfoview.appdata.xml.in:7
+#: nfoview/about.py:28 data/io.otsaloma.nfoview.metainfo.xml.in:7
 msgid "Viewer for NFO files"
 msgstr ""
 
-#: nfoview/about.py:33
+#: nfoview/about.py:32
 msgid "About NFO Viewer"
 msgstr ""
 
@@ -29,8 +29,8 @@ msgstr ""
 #. marked as translatable. If you manage to translate the name in a
 #. fluent manner, without changing the meaning, you may use that
 #. translation at your discretion.
-#: nfoview/about.py:43 nfoview/window.py:66
-#: data/io.otsaloma.nfoview.appdata.xml.in:6
+#: nfoview/about.py:42 nfoview/window.py:65
+#: data/io.otsaloma.nfoview.metainfo.xml.in:6
 #: data/io.otsaloma.nfoview.desktop.in:3
 msgid "NFO Viewer"
 msgstr ""
@@ -41,100 +41,104 @@ msgstr ""
 #. address. You can also include other translators who have contributed
 #. to this translation; in that case, please write them on separate
 #. lines seperated by newlines (\n).
-#: nfoview/about.py:51
+#: nfoview/about.py:50
 msgid "translator-credits"
 msgstr ""
 
-#: nfoview/export.py:31
+#: nfoview/export.py:30
 msgid "Export Image"
 msgstr ""
 
-#: nfoview/export.py:33 nfoview/open.py:33
+#: nfoview/export.py:32 nfoview/open.py:32
 msgid "_Cancel"
 msgstr ""
 
-#: nfoview/export.py:34
+#: nfoview/export.py:33
 msgid "_Save"
 msgstr ""
 
-#: nfoview/open.py:31
+#: nfoview/open.py:30
 msgid "Open"
 msgstr ""
 
-#: nfoview/open.py:34
+#: nfoview/open.py:33
 msgid "_Open"
 msgstr ""
 
-#: nfoview/open.py:40
+#: nfoview/open.py:39
 msgid "All files"
 msgstr ""
 
-#: nfoview/open.py:44
+#: nfoview/open.py:43
 msgid "NFO files (*.nfo)"
 msgstr ""
 
-#: nfoview/preferences.py:41
+#: nfoview/preferences.py:37
 msgid "Preferences"
 msgstr ""
 
-#: nfoview/preferences.py:53
+#: nfoview/preferences.py:55
 msgid "Font"
 msgstr ""
 
-#: nfoview/preferences.py:64
+#: nfoview/preferences.py:61
 msgid "Line-spacing"
 msgstr ""
 
-#: nfoview/preferences.py:72
+#: nfoview/preferences.py:70
 msgid "Color scheme"
 msgstr ""
 
-#: nfoview/preferences.py:83
+#: nfoview/preferences.py:75
 msgid "Foreground"
 msgstr ""
 
-#: nfoview/preferences.py:92
+#: nfoview/preferences.py:76
 msgid "Background"
 msgstr ""
 
-#: nfoview/preferences.py:101
+#: nfoview/preferences.py:77
 msgid "Link"
 msgstr ""
 
-#: nfoview/preferences.py:110
+#: nfoview/preferences.py:78
 msgid "Visited link"
 msgstr ""
 
-#: nfoview/preferences.py:119
+#: nfoview/preferences.py:91
 msgid "Export to PNG scaling"
 msgstr ""
 
-#: nfoview/schemes.py:45
+#: nfoview/schemes.py:36
 msgid "Black on white"
 msgstr ""
 
-#: nfoview/schemes.py:54
+#: nfoview/schemes.py:45
 msgid "Custom"
 msgstr ""
 
-#: nfoview/schemes.py:63
+#: nfoview/schemes.py:54
 msgid "Dark grey on light grey"
 msgstr ""
 
-#: nfoview/schemes.py:75
+#: nfoview/schemes.py:66
 msgid "System theme"
 msgstr ""
 
-#: nfoview/schemes.py:84
+#: nfoview/schemes.py:85
 msgid "Grey on black"
 msgstr ""
 
-#: nfoview/schemes.py:93
+#: nfoview/schemes.py:94
 msgid "Light grey on dark grey"
 msgstr ""
 
-#: nfoview/schemes.py:102
+#: nfoview/schemes.py:103
 msgid "White on black"
+msgstr ""
+
+#: nfoview/window.py:78
+msgid "Menu"
 msgstr ""
 
 #: data/menu.ui:6
@@ -165,7 +169,7 @@ msgstr ""
 msgid "_Quit"
 msgstr ""
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:9
+#: data/io.otsaloma.nfoview.metainfo.xml.in:9
 msgid ""
 "NFO Viewer is a simple viewer for NFO files, which are \"ASCII\" art in the "
 "CP437 codepage. The advantages of using NFO Viewer instead of a text editor "
@@ -173,7 +177,7 @@ msgid ""
 "hyperlinks."
 msgstr ""
 
-#: data/io.otsaloma.nfoview.appdata.xml.in:40
+#: data/io.otsaloma.nfoview.metainfo.xml.in:43
 msgid "Main window"
 msgstr ""
 
